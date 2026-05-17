@@ -1,2 +1,17 @@
 # imagen-coach
 General ImagenCoach site rebuild for Sonia McRorey
+
+## Source crawl
+
+Archive the current Weblium site before rebuilding:
+
+```bash
+python3 scripts/crawl_imagencoach_full.py
+```
+
+The crawl writes to `archive/imagencoach/`:
+
+- `raw-html/`: original HTML by URL
+- `text/`: extracted visible text, links, and image references by URL
+- `images/`: downloaded image assets grouped by page
+- `manifest.json`: auditable URL, status, title, link, and image inventory
