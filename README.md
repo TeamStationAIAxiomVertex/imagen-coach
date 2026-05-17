@@ -15,3 +15,5 @@ The crawl writes to `archive/imagencoach/`:
 - `text/`: extracted visible text, links, and image references by URL
 - `images/`: downloaded image assets grouped by page
 - `manifest.json`: auditable URL, status, title, link, and image inventory
+
+The canonical URL migration contract is documented in `docs/source-url-inventory.md`.
