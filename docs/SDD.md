@@ -1,0 +1,114 @@
+# Software Design Document
+
+## Project
+
+`imagen-coach`: full rebuild of `https://imagencoach.com`.
+
+## Objective
+
+Rebuild the current Weblium site as a GitHub-managed, Cloudflare-deployed static site while preserving:
+
+- all 35 canonical URLs
+- Sonia McRorey's source content and authorship
+- current image assets where available
+- existing article archive
+- SEO continuity
+- the polished UX/UI quality of `imagengdl.com`
+
+## Current State
+
+The current site is Weblium-hosted. This repo contains:
+
+- raw HTML archive of 35 pages
+- extracted text archive of 35 pages
+- downloaded and de-duplicated image assets
+- a clean content layer with obvious Weblium junk removed
+- a formal URL inventory
+
+## Target Architecture
+
+The first production implementation should be a static site unless future requirements prove otherwise.
+
+Recommended shape:
+
+- source content: `content/clean/`
+- source assets: `archive/imagencoach/images/_shared/` copied or referenced into the public asset tree during build
+- page registry: generated or hand-curated from `content/clean/manifest.json`
+- routes: one generated static page per canonical URL
+- shared layout: header, footer, CTA, article cards, service cards, contact section
+- generated output: Cloudflare Pages-compatible static artifact
+
+## Required Routes
+
+The site must build every route in `docs/source-url-inventory.md`.
+
+No canonical route may disappear during migration. If a page is consolidated, its old URL still needs a documented `301` redirect.
+
+## UX/UI Requirements
+
+Use the `guadalajara` site as the visual and interaction reference:
+
+- editorial corporate elegance
+- muted cool feminine palette
+- restrained typography
+- clean service cards
+- structured article cards
+- calm CTA rhythm
+- mobile-first readability
+
+Do not import Guadalajara positioning wholesale. `imagencoach.com` is the larger/general Sonia site, not the local Guadalajara-only funnel.
+
+## Content Requirements
+
+Use `content/clean/pages/*.md` as the implementation source. Keep raw crawl untouched for audit.
+
+The implementation must:
+
+- preserve Sonia's original ideas and wording where practical
+- remove duplicated Weblium nav/footer/form junk
+- map each page to its source URL and source archive file
+- preserve image intent by using the archived asset mapping
+- keep contact and CTA copy consistent across pages through shared components
+
+## SEO Requirements
+
+Every page needs:
+
+- canonical URL on `https://imagencoach.com`
+- title and description
+- Open Graph metadata
+- sensible article/service schema where applicable
+- sitemap inclusion
+- internal links that preserve crawl flow
+
+The sitemap must include all 35 canonical URLs.
+
+## Known Source Defects
+
+The current site has internal `/articulos/...` links that return 404. These must be removed or redirected to their matching `/imagen-presencia/...` article routes.
+
+One article has broken `undefined?w=...` image references in Weblium. These are not valid source assets and must not be implemented.
+
+## Deployment
+
+Target deployment is GitHub to Cloudflare Pages.
+
+Before DNS cutover:
+
+- preview build must pass
+- URL contract crawl must pass
+- asset validation must pass
+- rendered pages must be checked on desktop and mobile
+- redirects must be validated
+
+## Definition Of Done
+
+The rebuild is done only when:
+
+- all canonical URLs return `200`
+- planned legacy redirects return `301`
+- no Weblium junk appears in rendered pages
+- no broken local image paths exist
+- sitemap and canonical tags match production domain
+- Cloudflare Pages build is reproducible from a clean checkout
+- the site visually matches the `imagengdl.com` UX/UI standard while retaining `imagencoach.com` content identity

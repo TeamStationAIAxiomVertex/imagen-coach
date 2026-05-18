@@ -1,0 +1,27 @@
+# ImagenCoach Rebuild
+
+Repository: TeamStationAIAxiomVertex/imagen-coach
+Primary domain: https://imagencoach.com
+Purpose: Rebuild Sonia McRorey's larger/general ImagenCoach site from Weblium into a GitHub and Cloudflare-managed static site.
+
+## Important Context
+
+- This repo is not the Guadalajara-specific site.
+- `TeamStationAIAxiomVertex/guadalajara` / `imagengdl.com` is the UX/UI reference.
+- The content source of truth is the archived `imagencoach.com` crawl in this repo.
+- All 35 canonical URLs from the current sitemap must be preserved.
+
+## Key Files
+
+- `AGENTS.md`: agent instructions.
+- `docs/source-url-inventory.md`: canonical URL contract.
+- `docs/SDD.md`: software design document.
+- `docs/DDD.md`: domain-driven design document.
+- `docs/TDD.md`: test and QA strategy.
+- `docs/LLM_CONTEXT.md`: compact future-agent context.
+- `content/clean/manifest.json`: cleaned content manifest.
+- `archive/imagencoach/manifest.json`: raw crawl manifest.
+
+## Voice
+
+Sonia's voice is calm, intelligent, executive, reflective, and grounded. SEO must support her voice, not replace it.

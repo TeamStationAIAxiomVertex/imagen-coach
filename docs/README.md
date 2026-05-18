@@ -1,0 +1,23 @@
+# ImagenCoach Rebuild Wiki
+
+This folder is the project wiki for rebuilding `imagencoach.com`.
+
+## Core Docs
+
+- `source-url-inventory.md`: canonical URL contract from the current site.
+- `SDD.md`: software design document for the site rebuild.
+- `DDD.md`: domain-driven design model and language boundaries.
+- `TDD.md`: test-driven development and QA strategy.
+- `LLM_CONTEXT.md`: compact context for future LLM/agent sessions.
+- `SKILLS.md`: agentic skill map for crawl, cleanup, implementation, QA, and deployment.
+- `IMPLEMENTATION_ROADMAP.md`: current phase status and next engineering steps.
+
+## Source Data
+
+- Raw crawl: `../archive/imagencoach/`
+- Clean content: `../content/clean/`
+- Crawlers/scripts: `../scripts/`
+
+## Product Intent
+
+`imagencoach.com` is Sonia McRorey's larger/general site. It must use the same UX/UI quality as `imagengdl.com`, but it remains a separate site with its own full content architecture, article archive, canonical URLs, SEO, and deployment.
