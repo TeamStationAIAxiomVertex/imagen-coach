@@ -2,9 +2,9 @@
 
 ## Executive Summary
 
-The current rebuild preserves the full `imagencoach.com` URL surface, but the UI still reflects the old Weblium content shape too much: long written pages, repeated concepts, and article content without enough user-facing structure.
+The current rebuild preserves the full `imagencoach.com` URL surface and now renders the content through an SEO pillar architecture instead of one flat Weblium-style page/archive structure.
 
-The next SEO and UX step is not to add more writing. The next step is to turn Sonia's existing content into clear pillar pages, subtopic pages, article clusters, and visual decision paths.
+The next SEO and UX principle is not to add more writing. The site should keep turning Sonia's existing content into clear pillar pages, subtopic pages, article clusters, and visual decision paths.
 
 The goal is:
 
@@ -15,6 +15,19 @@ The goal is:
 - show proof/data points visually
 - help users choose the right service
 - strengthen SEO without diluting Sonia's voice
+
+## Implementation Status
+
+Implemented in the static generator:
+
+- homepage proof strip and service decision paths
+- four primary service/pillar cards
+- clustered `/imagen-presencia` article archive
+- related article clusters on service pages
+- related service CTA and sibling articles on article pages
+- clean display titles for legacy `Online Therapy`, emoji-prefix, `New`, and `article` title noise
+- image containment rules so mixed photos and graphic assets fit inside stable containers
+- validation that all articles belong to exactly one SEO cluster
 
 ## Current Site Audit
 

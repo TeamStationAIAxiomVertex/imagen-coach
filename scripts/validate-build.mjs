@@ -3,11 +3,28 @@ import { existsSync } from "node:fs";
 import path from "node:path";
 
 const manifest = JSON.parse(await readFile("content/clean/manifest.json", "utf8"));
+const strategy = JSON.parse(await readFile("content/strategy/article-clusters.json", "utf8"));
 const failures = [];
+const routeSet = new Set(manifest.pages.map((page) => page.route));
+const articleSet = new Set(manifest.pages.filter((page) => page.route.startsWith("/imagen-presencia/")).map((page) => page.route));
+const clusteredArticles = new Set();
 
 for (const page of manifest.pages) {
   const htmlPath = page.route === "/" ? "dist/index.html" : path.join("dist", page.route, "index.html");
   if (!existsSync(htmlPath)) failures.push(`Missing route output: ${page.route}`);
+}
+
+for (const cluster of strategy.clusters) {
+  if (!routeSet.has(cluster.primaryService)) failures.push(`Cluster ${cluster.id} has missing primary service: ${cluster.primaryService}`);
+  for (const route of cluster.articles) {
+    if (!articleSet.has(route)) failures.push(`Cluster ${cluster.id} references missing article: ${route}`);
+    if (clusteredArticles.has(route)) failures.push(`Article appears in multiple clusters: ${route}`);
+    clusteredArticles.add(route);
+  }
+}
+
+for (const route of articleSet) {
+  if (!clusteredArticles.has(route)) failures.push(`Article is not assigned to an SEO cluster: ${route}`);
 }
 
 for (const page of manifest.pages) {
@@ -33,7 +50,7 @@ async function walkHtml(directory) {
 const htmlFiles = await walkHtml("dist");
 for (const file of htmlFiles) {
   const html = await readFile(file, "utf8");
-  for (const junk of ["87fd0a60", "bf0dcab6", "Can't send form", "Please try again later", "Miscellaneous 234_solid", ">undefined<"]) {
+  for (const junk of ["87fd0a60", "bf0dcab6", "Can't send form", "Please try again later", "Miscellaneous 234_solid", ">undefined<", "Online Therapy"]) {
     if (html.includes(junk)) failures.push(`Junk leaked into ${file}: ${junk}`);
   }
 }

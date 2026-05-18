@@ -12,6 +12,32 @@ const CONTACT = {
   address: "WeWork | Av. Adolfo López Mateos Norte 95, Col. Italia Providencia, Guadalajara, Jalisco, 44648, México.",
   hours: "Solo con Citas: Lunes a viernes, de 9:00 a.m. a 6:00 p.m.",
 };
+const PILLARS = [
+  {
+    label: "Asesoría de imagen integral",
+    audience: "Profesionales, empresarias y mujeres que quieren ordenar estilo, guardarropa, color y presencia diaria.",
+    route: "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen",
+    keywords: "asesoría de imagen personal, colorimetría, estilo profesional",
+  },
+  {
+    label: "Coaching de imagen y presencia profesional",
+    audience: "Líderes y emprendedoras que necesitan sostener seguridad, identidad y autoridad visible.",
+    route: "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen",
+    keywords: "coaching de imagen, presencia profesional, liderazgo",
+  },
+  {
+    label: "Imagen empresarial y talleres",
+    audience: "Equipos, marcas y organizaciones que necesitan coherencia visual, comunicación y experiencia presencial.",
+    route: "/servicios-asesoria-de-imagen-coaching/talleres",
+    keywords: "talleres de imagen, imagen corporativa, capacitación de colaboradores",
+  },
+  {
+    label: "Mentalidad, abundancia y poder personal",
+    audience: "Procesos internos para sostener crecimiento, expansión y decisiones alineadas con la nueva imagen.",
+    route: "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia",
+    keywords: "coaching de abundancia, mentalidad, poder personal",
+  },
+];
 const BODY_JUNK_LINES = new Set([
   "Contactame",
   "Consulta Gratis",
@@ -119,13 +145,27 @@ function splitContent(markdown) {
   return normalizeContentLines(stripFrontMatter(markdown).split(/\r?\n/));
 }
 
+function cleanDisplayTitle(value = "") {
+  return String(value)
+    .replace(/[\p{Emoji_Presentation}\p{Extended_Pictographic}]/gu, "")
+    .replace(/\s*\|\s*Online Therapy/gi, "")
+    .replace(/\s*\|\s*Sonia\s*McRorey\s*[–-]\s*ImagenCoach/gi, "")
+    .replace(/\s*\|\s*SoniaMcRorey/gi, "")
+    .replace(/^New\s+/i, "")
+    .replace(/\s+article$/i, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 function titleFromLines(page, lines) {
   if (page.route === "/") return "Tu imagen ya debería reflejar el nivel que sostienes";
-  return lines.find((line) => line.length > 8 && !line.startsWith("https://")) || page.title;
+  const title = lines.find((line) => line.length > 8 && !line.startsWith("https://")) || page.title;
+  return cleanDisplayTitle(title);
 }
 
 function descriptionFromLines(lines) {
-  const line = lines.find((item) => item.length > 90) || lines.find((item) => item.length > 45) || "";
+  const cleaned = lines.map(cleanDisplayTitle).filter(Boolean);
+  const line = cleaned.find((item) => item.length > 90) || cleaned.find((item) => item.length > 45) || "";
   return line.slice(0, 158);
 }
 
@@ -165,6 +205,35 @@ function routeOutputPath(route) {
 
 function absoluteUrl(route) {
   return `${SITE_URL}${route === "/" ? "/" : route}`;
+}
+
+function pageByRoute(pages) {
+  return new Map(pages.map((page) => [page.route, page]));
+}
+
+function articleClusterByRoute(clusters) {
+  const map = new Map();
+  for (const cluster of clusters) {
+    for (const route of cluster.articles) map.set(route, cluster);
+  }
+  return map;
+}
+
+function pillarForRoute(route) {
+  return PILLARS.find((pillar) => pillar.route === route);
+}
+
+function serviceLabel(route, pages) {
+  const page = pageByRoute(pages).get(route);
+  return page?.heroTitle || pillarForRoute(route)?.label || "Servicio recomendado";
+}
+
+function cardDescription(page) {
+  return page.description || "Contenido de imagen, presencia y estrategia personal.";
+}
+
+function nonTitleLines(page, lines, start = 1) {
+  return lines.slice(start).filter((line) => cleanDisplayTitle(line) !== page.heroTitle);
 }
 
 function nav(currentRoute) {
@@ -242,7 +311,7 @@ function contentHeading(page) {
 
 function hero(page, lines) {
   const image = pickImage(page);
-  const lede = lines.slice(1, 3);
+  const lede = nonTitleLines(page, lines, 1).slice(0, 2);
   const eyebrow = page.type === "article" ? "Imagen, presencia y mentalidad" : page.type === "service" ? "Servicio" : page.type === "about" ? "Sobre Sonia" : "ImagenCoach";
   return `<section class="section hero imagen-hero">
     <div class="hero-copy">
@@ -262,7 +331,7 @@ function hero(page, lines) {
 }
 
 function contentSections(page, lines) {
-  const body = lines.slice(page.route === "/" ? 4 : 1);
+  const body = nonTitleLines(page, lines, page.route === "/" ? 4 : 1);
   const lead = body.slice(0, page.type === "article" ? 10 : 14);
   const rest = body.slice(lead.length);
   const chunks = [];
@@ -294,14 +363,15 @@ function supportingVisual(page, index) {
   return `<figure class="support-media"><img src="/assets/${path.basename(image.local_path)}" alt="${escapeHtml(page.heroTitle)}" /></figure>`;
 }
 
-function articleCards(pages) {
-  return pages
-    .filter((page) => page.type === "article")
+function articleCards(pages, { limit, clusterMap = new Map() } = {}) {
+  const articles = pages.filter((page) => page.type === "article");
+  const selected = Number.isInteger(limit) ? articles.slice(0, limit) : articles;
+  return selected
     .map((page) => `<a class="publication-link-card" href="${page.route}">
       <figure><img src="${pickImage(page)}" alt="${escapeHtml(page.heroTitle)}" /></figure>
-      <span>Artículo</span>
+      <span>${escapeHtml(clusterMap.get(page.route)?.label || "Artículo")}</span>
       <strong>${escapeHtml(page.heroTitle)}</strong>
-      <p>${escapeHtml(page.description)}</p>
+      <p>${escapeHtml(cardDescription(page))}</p>
       <small>Leer publicación</small>
     </a>`)
     .join("");
@@ -313,14 +383,73 @@ function serviceCards(pages) {
     .map((page) => `<a class="service-card" href="${page.route}">
       <figure><img src="${pickImage(page)}" alt="${escapeHtml(page.heroTitle)}" /></figure>
       <h3>${escapeHtml(page.heroTitle)}</h3>
-      <p>${escapeHtml(page.description)}</p>
+      <p>${escapeHtml(cardDescription(page))}</p>
       <span>Conocer servicio</span>
     </a>`)
     .join("");
 }
 
-function homeExtras(pages) {
-  return `<section class="section services">
+function proofStrip(pages) {
+  const articleCount = pages.filter((page) => page.type === "article").length;
+  const serviceCount = pages.filter((page) => page.type === "service").length;
+  return `<section class="section proof-strip" aria-label="Datos de confianza">
+    <div class="proof-item"><strong>14+</strong><span>años de experiencia profesional</span></div>
+    <div class="proof-item"><strong>${serviceCount}</strong><span>procesos de asesoría y coaching</span></div>
+    <div class="proof-item"><strong>${articleCount}</strong><span>publicaciones clasificadas por intención</span></div>
+    <div class="proof-item"><strong>AICI</strong><span>formación y criterio internacional</span></div>
+  </section>`;
+}
+
+function pillarCards(pages, { compact = false } = {}) {
+  const map = pageByRoute(pages);
+  return PILLARS.map((pillar) => {
+    const page = map.get(pillar.route);
+    return `<a class="pillar-card${compact ? " compact" : ""}" href="${pillar.route}">
+      <span>${escapeHtml(pillar.keywords)}</span>
+      <h3>${escapeHtml(page?.heroTitle || pillar.label)}</h3>
+      <p>${escapeHtml(pillar.audience)}</p>
+      <small>Ver ruta recomendada</small>
+    </a>`;
+  }).join("");
+}
+
+function clusterSections(pages, clusters, { limitPerCluster } = {}) {
+  const map = pageByRoute(pages);
+  const clusterMap = articleClusterByRoute(clusters);
+  return clusters
+    .map((cluster) => {
+      const articles = cluster.articles.map((route) => map.get(route)).filter(Boolean);
+      const shown = Number.isInteger(limitPerCluster) ? articles.slice(0, limitPerCluster) : articles;
+      return `<section class="section cluster-section" id="${escapeHtml(cluster.id)}">
+        <div class="cluster-header">
+          <div>
+            <p class="section-label">Pilar SEO</p>
+            <h2>${escapeHtml(cluster.label)}</h2>
+            <p>${escapeHtml(cluster.description)}</p>
+          </div>
+          <a class="btn secondary" href="${cluster.primaryService}">${escapeHtml(serviceLabel(cluster.primaryService, pages))}</a>
+        </div>
+        <div class="publication-grid">${articleCards(shown, { clusterMap })}</div>
+      </section>`;
+    })
+    .join("");
+}
+
+function servicePathSection(pages) {
+  return `<section class="section pillar-paths">
+    <div class="section-heading">
+      <p class="section-label">Arquitectura SEO</p>
+      <h2>Rutas claras para que cada visitante encuentre su proceso.</h2>
+    </div>
+    <div class="pillar-grid">${pillarCards(pages)}</div>
+  </section>`;
+}
+
+function homeExtras(pages, clusters) {
+  const clusterMap = articleClusterByRoute(clusters);
+  return `${proofStrip(pages)}
+  ${servicePathSection(pages)}
+  <section class="section services">
     <div class="section-heading">
       <p class="section-label">Servicios</p>
       <h2>Procesos para alinear imagen, presencia y decisiones.</h2>
@@ -330,18 +459,55 @@ function homeExtras(pages) {
   <section class="section journal">
     <div class="section-heading">
       <p class="section-label">Publicaciones</p>
-      <h2>Imagen, presencia y mentalidad.</h2>
+      <h2>Lecturas organizadas por intención de búsqueda.</h2>
     </div>
-    <div class="publication-grid">${articleCards(pages).split("</a>").slice(0, 6).join("</a>")}</div>
+    <div class="publication-grid">${articleCards(pages, { limit: 6, clusterMap })}</div>
   </section>`;
 }
 
-function indexExtras(pages) {
-  return `<section class="section journal"><div class="publication-grid">${articleCards(pages)}</div></section>`;
+function indexExtras(pages, clusters) {
+  return `${servicePathSection(pages)}
+  ${clusterSections(pages, clusters)}`;
 }
 
 function serviceHubExtras(pages) {
-  return `<section class="section services"><div class="service-grid">${serviceCards(pages)}</div></section>`;
+  return `${servicePathSection(pages)}
+  <section class="section services"><div class="service-grid">${serviceCards(pages)}</div></section>`;
+}
+
+function serviceExtras(page, pages, clusters) {
+  const relatedClusters = clusters.filter((cluster) => cluster.primaryService === page.route);
+  if (!relatedClusters.length) return "";
+  return `<section class="section related-path">
+    <div class="section-heading">
+      <p class="section-label">Contenido relacionado</p>
+      <h2>Lecturas que apoyan este proceso.</h2>
+    </div>
+  </section>
+  ${clusterSections(pages, relatedClusters, { limitPerCluster: 3 })}`;
+}
+
+function articleExtras(page, pages, clusters) {
+  const clusterMap = articleClusterByRoute(clusters);
+  const cluster = clusterMap.get(page.route);
+  if (!cluster) return "";
+  const map = pageByRoute(pages);
+  const related = cluster.articles
+    .filter((route) => route !== page.route)
+    .map((route) => map.get(route))
+    .filter(Boolean)
+    .slice(0, 3);
+  return `<section class="section article-context">
+    <div class="cluster-header">
+      <div>
+        <p class="section-label">${escapeHtml(cluster.label)}</p>
+        <h2>Esta lectura pertenece a una ruta completa.</h2>
+        <p>${escapeHtml(cluster.description)}</p>
+      </div>
+      <a class="btn primary" href="${cluster.primaryService}">${escapeHtml(serviceLabel(cluster.primaryService, pages))}</a>
+    </div>
+    <div class="publication-grid">${articleCards(related, { clusterMap })}</div>
+  </section>`;
 }
 
 function schema(page) {
@@ -356,18 +522,29 @@ function schema(page) {
   })}</script>`;
 }
 
-function renderPage(page, pages) {
+function renderPage(page, pages, clusters) {
   const lines = splitContent(page.markdown);
   page.heroTitle = titleFromLines(page, lines);
   page.description = descriptionFromLines(lines);
   const image = pickImage(page);
-  const extra = page.type === "home" ? homeExtras(pages) : page.type === "article-index" ? indexExtras(pages) : page.type === "service-hub" ? serviceHubExtras(pages) : "";
+  const extra =
+    page.type === "home"
+      ? homeExtras(pages, clusters)
+      : page.type === "article-index"
+        ? indexExtras(pages, clusters)
+        : page.type === "service-hub"
+          ? serviceHubExtras(pages)
+          : page.type === "service"
+            ? serviceExtras(page, pages, clusters)
+            : page.type === "article"
+              ? articleExtras(page, pages, clusters)
+              : "";
   return `<!doctype html>
 <html lang="es">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>${escapeHtml(page.title || page.heroTitle)} | Sonia McRorey</title>
+  <title>${escapeHtml(cleanDisplayTitle(page.title || page.heroTitle))} | Sonia McRorey</title>
   <meta name="description" content="${escapeHtml(page.description)}" />
   <link rel="canonical" href="${absoluteUrl(page.route)}" />
   <meta property="og:title" content="${escapeHtml(page.heroTitle)}" />
@@ -400,7 +577,17 @@ async function loadPages() {
     const markdown = await readFile(rootPath(item.clean_path), "utf8");
     pages.push({ ...item, markdown, type: pageType(item.route) });
   }
+  for (const page of pages) {
+    const lines = splitContent(page.markdown);
+    page.heroTitle = titleFromLines(page, lines);
+    page.description = descriptionFromLines(lines);
+  }
   return pages;
+}
+
+async function loadClusters() {
+  const strategy = JSON.parse(await readFile(rootPath("content/strategy/article-clusters.json"), "utf8"));
+  return strategy.clusters;
 }
 
 async function copyStatic() {
@@ -418,13 +605,14 @@ function sitemap(pages) {
 
 async function main() {
   const pages = await loadPages();
+  const clusters = await loadClusters();
   await rm(DIST, { recursive: true, force: true });
   await mkdir(DIST, { recursive: true });
   await copyStatic();
   for (const page of pages) {
     const out = routeOutputPath(page.route);
     await mkdir(path.dirname(out), { recursive: true });
-    await writeFile(out, renderPage(page, pages));
+    await writeFile(out, renderPage(page, pages, clusters));
   }
   await writeFile(distPath("sitemap.xml"), sitemap(pages));
   await writeFile(distPath("robots.txt"), `User-agent: *\nAllow: /\nSitemap: ${SITE_URL}/sitemap.xml\n`);
