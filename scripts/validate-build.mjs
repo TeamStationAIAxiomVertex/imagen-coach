@@ -1,4 +1,4 @@
-import { readFile, stat } from "node:fs/promises";
+import { readdir, readFile, stat } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import path from "node:path";
 
@@ -19,9 +19,23 @@ for (const page of manifest.pages) {
   }
 }
 
-const homepage = await readFile("dist/index.html", "utf8");
-for (const junk of ["87fd0a60", "bf0dcab6", "Can't send form", "Please try again later", "Miscellaneous 234_solid"]) {
-  if (homepage.includes(junk)) failures.push(`Junk leaked into homepage: ${junk}`);
+async function walkHtml(directory) {
+  const entries = await readdir(directory, { withFileTypes: true });
+  const files = [];
+  for (const entry of entries) {
+    const fullPath = path.join(directory, entry.name);
+    if (entry.isDirectory()) files.push(...(await walkHtml(fullPath)));
+    else if (entry.name.endsWith(".html")) files.push(fullPath);
+  }
+  return files;
+}
+
+const htmlFiles = await walkHtml("dist");
+for (const file of htmlFiles) {
+  const html = await readFile(file, "utf8");
+  for (const junk of ["87fd0a60", "bf0dcab6", "Can't send form", "Please try again later", "Miscellaneous 234_solid", ">undefined<"]) {
+    if (html.includes(junk)) failures.push(`Junk leaked into ${file}: ${junk}`);
+  }
 }
 
 const sitemap = await readFile("dist/sitemap.xml", "utf8");

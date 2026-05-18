@@ -12,6 +12,28 @@ const CONTACT = {
   address: "WeWork | Av. Adolfo López Mateos Norte 95, Col. Italia Providencia, Guadalajara, Jalisco, 44648, México.",
   hours: "Solo con Citas: Lunes a viernes, de 9:00 a.m. a 6:00 p.m.",
 };
+const BODY_JUNK_LINES = new Set([
+  "Contactame",
+  "Consulta Gratis",
+  "Primera Sesión",
+  "Primera Sesion",
+  "30 minutos",
+  "Agendar Sesion",
+  "Agendar",
+  "Precios",
+  "Leer Mas",
+  "Leer mas?",
+  "Leer mis publicaciones",
+  "Ver Servicios",
+  "Ver Talleres",
+  "Conocer servicio",
+  "Explorar el proceso",
+  "Siguiente paso",
+  "Contacto",
+  "Contáctanos para transformar tu imagen personal o empresarial.",
+  CONTACT.address,
+  CONTACT.hours,
+]);
 
 function rootPath(...parts) {
   return path.join(ROOT, ...parts);
@@ -34,11 +56,58 @@ function stripFrontMatter(markdown) {
   return match ? markdown.slice(match[0].length) : markdown;
 }
 
-function paragraphize(lines) {
+function normalizeContentLines(lines) {
+  const filtered = lines
+    .map((item) => item.trim())
+    .filter((item) => item && !BODY_JUNK_LINES.has(item));
+  const normalized = [];
+
+  for (let index = 0; index < filtered.length; index += 1) {
+    let line = filtered[index];
+    const next = filtered[index + 1];
+
+    if (line.length <= 2 && next && /^[a-záéíóúñ]/.test(next)) {
+      line = `${line}${next}`;
+      index += 1;
+    }
+
+    const previous = normalized[normalized.length - 1];
+    if (
+      previous &&
+      !isHeadingCandidate(line) &&
+      !isListLine(line) &&
+      !/[.!?…:]$/.test(previous) &&
+      /^[a-záéíóúñ,]/.test(line)
+    ) {
+      normalized[normalized.length - 1] = `${previous}${line.startsWith(",") ? "" : " "}${line}`;
+    } else {
+      normalized.push(line);
+    }
+  }
+
+  return normalized;
+}
+
+function isListLine(line) {
+  return /^[-•●✔️👉🌟💌🎓🟣✨]/.test(line);
+}
+
+function isHeadingCandidate(line) {
+  if (isListLine(line)) return false;
+  if (line.length > 92) return false;
+  if (/^https?:/.test(line)) return false;
+  if (/^[¿?]/.test(line)) return true;
+  if (/[.!]$/.test(line)) return false;
+  return /^[A-ZÁÉÍÓÚÑ]/.test(line) && line.split(/\s+/).length <= 11;
+}
+
+function paragraphize(lines, { allowHeadings = false } = {}) {
   const blocks = [];
-  for (const line of lines.map((item) => item.trim()).filter(Boolean)) {
-    if (/^[-•●✔️👉🌟💌🎓🟣✨]/.test(line)) {
+  for (const line of normalizeContentLines(lines)) {
+    if (isListLine(line)) {
       blocks.push(`<p class="bullet-line">${escapeHtml(line)}</p>`);
+    } else if (allowHeadings && isHeadingCandidate(line)) {
+      blocks.push(`<h3>${escapeHtml(line)}</h3>`);
     } else {
       blocks.push(`<p>${escapeHtml(line)}</p>`);
     }
@@ -47,8 +116,7 @@ function paragraphize(lines) {
 }
 
 function splitContent(markdown) {
-  const lines = stripFrontMatter(markdown).split(/\r?\n/).map((line) => line.trim()).filter(Boolean);
-  return lines;
+  return normalizeContentLines(stripFrontMatter(markdown).split(/\r?\n/));
 }
 
 function titleFromLines(page, lines) {
@@ -75,13 +143,19 @@ function pickImage(page) {
   if (page.route === "/" && existsSync(rootPath("assets/797aeda1281e5d5e.png"))) {
     return "/assets/797aeda1281e5d5e.png";
   }
-  const candidates = page.images?.filter((image) => image.local_path && /\.(jpe?g|png|webp)$/i.test(image.local_path)) || [];
+  const candidates = usableImages(page);
   const first =
     candidates.find((image) => /\.(jpe?g|webp)$/i.test(image.local_path) && Number(image.bytes || 0) > 50000) ||
     candidates.find((image) => /\.png$/i.test(image.local_path) && Number(image.bytes || 0) > 100000) ||
     candidates[0];
   if (!first) return "/assets/sonia-twitter-card.png";
   return `/assets/${path.basename(first.local_path)}`;
+}
+
+function usableImages(page) {
+  return (page.images || [])
+    .filter((image) => image.local_path && /\.(jpe?g|png|webp)$/i.test(image.local_path))
+    .filter((image) => Number(image.bytes || 0) >= 50000);
 }
 
 function routeOutputPath(route) {
@@ -142,14 +216,33 @@ function footer() {
 
 function breadcrumbs(page) {
   if (page.route === "/") return "";
-  const label = page.type === "article" ? "Imagen y Presencia" : page.type.includes("service") ? "Servicios" : "Inicio";
-  const parent = page.type === "article" ? "/imagen-presencia" : page.type.includes("service") ? "/servicios-asesoria-de-imagen-coaching" : "/";
+  if (page.type === "article-index") {
+    return `<nav class="breadcrumbs section" aria-label="Breadcrumbs"><a href="/">Inicio</a><span>/</span><span aria-current="page">Publicaciones</span></nav>`;
+  }
+  if (page.type === "service-hub") {
+    return `<nav class="breadcrumbs section" aria-label="Breadcrumbs"><a href="/">Inicio</a><span>/</span><span aria-current="page">Servicios</span></nav>`;
+  }
+  if (page.type === "about") {
+    return `<nav class="breadcrumbs section" aria-label="Breadcrumbs"><a href="/">Inicio</a><span>/</span><span aria-current="page">Sonia</span></nav>`;
+  }
+  const label = page.type === "article" ? "Imagen y Presencia" : "Servicios";
+  const parent = page.type === "article" ? "/imagen-presencia" : "/servicios-asesoria-de-imagen-coaching";
   return `<nav class="breadcrumbs section" aria-label="Breadcrumbs"><a href="/">Inicio</a><span>/</span><a href="${parent}">${label}</a><span>/</span><span aria-current="page">${escapeHtml(page.heroTitle)}</span></nav>`;
+}
+
+function contentHeading(page) {
+  if (page.type === "home") return ["Presencia profesional", "Cuando tu imagen sostiene tu nivel"];
+  if (page.type === "about") return ["Sobre Sonia", "Trayectoria, enfoque y forma de trabajo"];
+  if (page.type === "service-hub") return ["Servicios", "Elige el proceso que acompaña tu momento"];
+  if (page.type === "service") return ["Proceso", "Qué trabaja este acompañamiento"];
+  if (page.type === "article-index") return ["Publicaciones", "Archivo de Imagen, Presencia y Mentalidad"];
+  if (page.type === "article") return ["Artículo", "Lectura completa"];
+  return ["ImagenCoach", "Contenido principal"];
 }
 
 function hero(page, lines) {
   const image = pickImage(page);
-  const lede = lines.slice(1, 4);
+  const lede = lines.slice(1, 3);
   const eyebrow = page.type === "article" ? "Imagen, presencia y mentalidad" : page.type === "service" ? "Servicio" : page.type === "about" ? "Sobre Sonia" : "ImagenCoach";
   return `<section class="section hero imagen-hero">
     <div class="hero-copy">
@@ -170,27 +263,31 @@ function hero(page, lines) {
 
 function contentSections(page, lines) {
   const body = lines.slice(page.route === "/" ? 4 : 1);
-  const lead = body.slice(0, page.type === "article" ? 12 : 20);
+  const lead = body.slice(0, page.type === "article" ? 10 : 14);
   const rest = body.slice(lead.length);
   const chunks = [];
-  for (let index = 0; index < rest.length; index += 9) chunks.push(rest.slice(index, index + 9));
+  for (let index = 0; index < rest.length; index += page.type === "article" ? 8 : 7) {
+    chunks.push(rest.slice(index, index + (page.type === "article" ? 8 : 7)));
+  }
+  const [label, heading] = contentHeading(page);
   return `<section class="section content-flow">
     <div class="section-heading">
-      <p class="section-label">${page.type === "article" ? "Artículo" : "Contenido fuente"}</p>
-      <h2>${escapeHtml(page.type === "article" ? "Lectura completa" : "Contenido principal")}</h2>
+      <p class="section-label">${escapeHtml(label)}</p>
+      <h2>${escapeHtml(heading)}</h2>
     </div>
-    <article class="copy-panel">${paragraphize(lead)}</article>
+    <article class="copy-panel lead-panel">${paragraphize(lead, { allowHeadings: true })}</article>
   </section>
   ${chunks
     .map((chunk, index) => `<section class="section split-section ${index % 2 ? "reverse" : ""}">
-      <div class="copy-panel">${paragraphize(chunk)}</div>
+      <div class="copy-panel">${paragraphize(chunk, { allowHeadings: true })}</div>
       ${supportingVisual(page, index)}
     </section>`)
     .join("\n")}`;
 }
 
 function supportingVisual(page, index) {
-  const image = page.images?.[index + 1] || page.images?.[0];
+  const images = usableImages(page);
+  const image = images[index + 1] || images[0];
   if (!image?.local_path) {
     return `<aside class="quote-panel"><p>La imagen se sostiene cuando existe coherencia entre lo que haces, lo que decides y lo que proyectas.</p><span>Sonia McRorey</span></aside>`;
   }
@@ -201,8 +298,10 @@ function articleCards(pages) {
   return pages
     .filter((page) => page.type === "article")
     .map((page) => `<a class="publication-link-card" href="${page.route}">
+      <figure><img src="${pickImage(page)}" alt="${escapeHtml(page.heroTitle)}" /></figure>
       <span>Artículo</span>
       <strong>${escapeHtml(page.heroTitle)}</strong>
+      <p>${escapeHtml(page.description)}</p>
       <small>Leer publicación</small>
     </a>`)
     .join("");
@@ -212,7 +311,7 @@ function serviceCards(pages) {
   return pages
     .filter((page) => page.type === "service")
     .map((page) => `<a class="service-card" href="${page.route}">
-      <img class="card-icon" src="/assets/sonia-icon.svg" alt="" />
+      <figure><img src="${pickImage(page)}" alt="${escapeHtml(page.heroTitle)}" /></figure>
       <h3>${escapeHtml(page.heroTitle)}</h3>
       <p>${escapeHtml(page.description)}</p>
       <span>Conocer servicio</span>
