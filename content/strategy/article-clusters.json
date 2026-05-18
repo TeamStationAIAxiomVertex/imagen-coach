@@ -1,0 +1,62 @@
+{
+  "clusters": [
+    {
+      "id": "imagen-estilo-profesional",
+      "label": "Imagen y estilo profesional",
+      "primaryService": "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen",
+      "description": "Artículos sobre asesoría de imagen, estilo, guardarropa, colorimetría, rostro y proporciones.",
+      "articles": [
+        "/imagen-presencia/beneficios-de-asesoria-de-imagen",
+        "/imagen-presencia/la-importancia-de-tu-imagen-personal",
+        "/imagen-presencia/imagen-profesional-segun-industria-y-personalidad",
+        "/imagen-presencia/new-tu-guardarropa-te-refleja-o-te-limita",
+        "/imagen-presencia/tu-color-tu-poder-el-impacto-de-la-colorimetria",
+        "/imagen-presencia/la-ciencia-del-color-en-tu-imagen",
+        "/imagen-presencia/aprende-a-resaltar-tus-proporciones",
+        "/imagen-presencia/descubre-el-poder-de-tu-rostro",
+        "/imagen-presencia/como-vestirte-durante-los-festejos",
+        "/imagen-presencia/encuentra-tu-estilo",
+        "/imagen-presencia/los-secretos-de-una-asesora-de-imagen-exitosa"
+      ]
+    },
+    {
+      "id": "presencia-liderazgo-identidad",
+      "label": "Presencia, liderazgo e identidad",
+      "primaryService": "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen",
+      "description": "Artículos sobre presencia profesional, identidad, liderazgo, autoconcepto y sostener un nuevo nivel.",
+      "articles": [
+        "/imagen-presencia/amor-propio-estructura-interna-presencia-profesional",
+        "/imagen-presencia/presencia-profesional-estrategica",
+        "/imagen-presencia/imagen-identidad-liderazgo",
+        "/imagen-presencia/sostener-tu-siguiente-nivel-profesional",
+        "/imagen-presencia/sostener-el-crecimiento",
+        "/imagen-presencia/tu-autoconcepto-el-punto-de-partida-para-transformar-tu-imagen",
+        "/imagen-presencia/y-si-tu-imagen-no-fuera-un-disfraz-sino-una-puerta-para-regresar-a-ti-article"
+      ]
+    },
+    {
+      "id": "empresas-marcas-equipos",
+      "label": "Empresas, marcas y equipos",
+      "primaryService": "/servicios-asesoria-de-imagen-coaching/talleres",
+      "description": "Artículos sobre imagen corporativa, talleres, colaboradores, marcas y experiencias grupales.",
+      "articles": [
+        "/imagen-presencia/como-mejorar-la-imagen-de-tus-colaboradores",
+        "/imagen-presencia/manifiesta-tu-imagen-autenticar-talleres-de-verano-2025",
+        "/imagen-presencia/tu-imagen-y-tu-negocio-una-conexion-mas-poderosa-de-lo-que-imaginas"
+      ]
+    },
+    {
+      "id": "mentalidad-abundancia-poder-personal",
+      "label": "Mentalidad, abundancia y poder personal",
+      "primaryService": "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia",
+      "description": "Artículos sobre abundancia, poder personal, sistema nervioso, decisión y transformación interna.",
+      "articles": [
+        "/imagen-presencia/rebranding-imagen-mentalidad-abundancia",
+        "/imagen-presencia/mas-dinero-capacidad-interna-liderazgo-presencia",
+        "/imagen-presencia/soltar-lo-que-ya-no-vibra-y-vestir-tu-verdad",
+        "/imagen-presencia/como-puedo-ayudarte-hoy",
+        "/imagen-presencia/transforma-tu-imagen-consciente"
+      ]
+    }
+  ]
+}
