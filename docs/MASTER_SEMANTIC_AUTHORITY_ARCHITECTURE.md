@@ -30,6 +30,30 @@ Master semantic category:
 
 - imagen, presencia, percepción, liderazgo and posicionamiento profesional
 
+Owned category:
+
+- Coaching de Imagen con profundidad psicológica y posicionamiento profesional
+
+Semantic authority ladder:
+
+```text
+Imagen
+↓
+Presencia
+↓
+Percepción
+↓
+Liderazgo
+↓
+Posicionamiento
+↓
+Seguridad interna
+↓
+Resultados profesionales
+```
+
+The architecture wins by combining semantic precision, emotional sophistication, executive positioning and AI readability. It must not compete as fashion, influencer aesthetics, wellness coaching or cold corporate consulting.
+
 ## Static Publishing Doctrine
 
 Production must serve static assets only:
@@ -134,6 +158,14 @@ Every future static blog article must link to:
 - one authority page such as `/sobre-sonia-mcrorey-asesora-de-imagen` or a future methodology page
 
 The goal is semantic reinforcement, crawl circulation, entity reinforcement, topical depth, and distributed authority flow.
+
+Every strategic page must connect back into the core graph:
+
+```text
+Imagen Ejecutiva ↔ Presencia Profesional ↔ Liderazgo ↔ Seguridad Interna ↔ Percepción ↔ Posicionamiento
+```
+
+Internal links should make the site behave as one semantic ecosystem, not isolated brochure pages or standalone blog posts.
 
 ## Article Structure
 

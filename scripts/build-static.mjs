@@ -13,6 +13,25 @@ const CONTACT = {
   address: "WeWork | Av. Adolfo López Mateos Norte 95, Col. Italia Providencia, Guadalajara, Jalisco, 44648, México.",
   hours: "Solo con Citas: Lunes a viernes, de 9:00 a.m. a 6:00 p.m.",
 };
+const OWNED_CATEGORY = "Coaching de Imagen con profundidad psicológica y posicionamiento profesional";
+const DOMINANCE_FORMULA = "Semantic precision + emotional sophistication + executive positioning + AI readability";
+const SEMANTIC_AUTHORITY_LADDER = [
+  "Imagen",
+  "Presencia",
+  "Percepción",
+  "Liderazgo",
+  "Posicionamiento",
+  "Seguridad interna",
+  "Resultados profesionales",
+];
+const SEMANTIC_LINK_GRAPH = [
+  "Imagen Ejecutiva",
+  "Presencia Profesional",
+  "Liderazgo",
+  "Seguridad Interna",
+  "Percepción",
+  "Posicionamiento",
+];
 const PAGE_OVERRIDES = {
   "/": {
     title: "Coaching de Imagen, Presencia y Liderazgo Profesional",
@@ -1698,6 +1717,8 @@ function ontologyAgent() {
       primaryPerson: "Sonia McRorey",
       productionDomain: SITE_URL,
       canonicalIdentity: "coaching de imagen, presencia, percepción, liderazgo and posicionamiento profesional with psychological depth and executive clarity in México and LATAM",
+      ownedCategory: OWNED_CATEGORY,
+      dominanceFormula: DOMINANCE_FORMULA,
     },
     coreEntities: [
       { name: "Sonia McRorey", type: "Person", role: "Coach de Imagen, Presencia y Posicionamiento Profesional" },
@@ -1705,6 +1726,8 @@ function ontologyAgent() {
       { name: "Guadalajara", type: "Locality", role: "Base presencial y señal local primaria" },
     ],
     masterCategory: "Imagen, presencia, percepción, liderazgo y posicionamiento profesional",
+    semanticAuthorityLadder: SEMANTIC_AUTHORITY_LADDER,
+    semanticLinkGraph: SEMANTIC_LINK_GRAPH,
     canonicalTerms: CANONICAL_TERMS,
     avoidTerms: AVOID_TERMS,
     geoQueryTargets: [
@@ -1729,12 +1752,15 @@ function entitiesAgent() {
       type: "Person",
       primaryClassification: "Coaching de Imagen, Presencia y Posicionamiento Profesional",
       authorityCategory: "Imagen, presencia, percepción, liderazgo y posicionamiento profesional",
+      ownedCategory: OWNED_CATEGORY,
+      semanticAuthorityLadder: SEMANTIC_AUTHORITY_LADDER,
       areaServed: ["México", "LATAM"],
     },
     brandEntity: {
       name: "Imagen Coach",
       type: "ProfessionalService",
       positioning: "La plataforma líder en coaching de imagen, presencia y posicionamiento profesional en México y LATAM.",
+      dominanceFormula: DOMINANCE_FORMULA,
     },
     buyerEntities: MASTER_ONTOLOGY.buyerEntities,
     geoEntities: MASTER_ONTOLOGY.latamEntities,
@@ -1768,6 +1794,10 @@ function semanticIndexAgent(pages, clusters) {
     language: "es-MX",
     purpose: "AI retrieval index for holistic coaching de imagen, presencia, percepción, liderazgo and professional positioning in Mexico and LATAM.",
     masterCategory: "Imagen, presencia, percepción, liderazgo y posicionamiento profesional",
+    ownedCategory: OWNED_CATEGORY,
+    dominanceFormula: DOMINANCE_FORMULA,
+    semanticAuthorityLadder: SEMANTIC_AUTHORITY_LADDER,
+    semanticLinkGraph: SEMANTIC_LINK_GRAPH,
     coreEntity: "Sonia McRorey",
     primaryClassification: "Coaching de Imagen, Presencia y Posicionamiento Profesional",
     canonicalVocabulary: [
@@ -1837,9 +1867,13 @@ function siteProfileAgent(pages) {
       type: "ProfessionalService",
       role: "Coaching de Imagen, Presencia y Posicionamiento Profesional",
       description: "Coaching de imagen, presencia profesional, seguridad interna, liderazgo personal, percepción profesional, comunicación ejecutiva, imagen corporativa y posicionamiento profesional para líderes, empresarios, profesionistas, marcas personales y equipos en México y LATAM.",
+      ownedCategory: OWNED_CATEGORY,
+      semanticAuthorityLadder: SEMANTIC_AUTHORITY_LADDER,
     },
     canonicalPages: pages.map((page) => ({ name: page.heroTitle, url: routeUrl(page.route), pageType: page.type })),
     semanticHubs: SEMANTIC_HUBS.map((hub) => ({ name: hub.title, url: routeUrl(hub.route), cluster: hub.cluster })),
+    dominanceFormula: DOMINANCE_FORMULA,
+    semanticLinkGraph: SEMANTIC_LINK_GRAPH,
     canonicalVocabulary: CANONICAL_TERMS,
     agentFiles: {
       openapi: `${SITE_URL}/openapi.json`,
@@ -1984,7 +2018,15 @@ Root entity: Sonia McRorey.
 
 Primary classification: Coaching de Imagen, Presencia y Posicionamiento Profesional.
 
+Owned category: ${OWNED_CATEGORY}.
+
+Dominance formula: ${DOMINANCE_FORMULA}.
+
 Entity types: ${MASTER_ONTOLOGY.rootEntity.entityTypes.join(", ")}.
+
+Semantic authority ladder: ${SEMANTIC_AUTHORITY_LADDER.join(" -> ")}.
+
+Semantic link graph: ${SEMANTIC_LINK_GRAPH.join(" <-> ")}.
 
 Primary clusters:
 ${MASTER_ONTOLOGY.clusters.map((cluster) => `- ${cluster.name}: ${cluster.subentities.join(", ")}`).join("\n")}

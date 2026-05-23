@@ -35,6 +35,17 @@ const requiredExecutiveTerms = [
   "personal branding ejecutivo",
   "seguridad interna",
 ];
+const requiredAuthorityGraphTerms = [
+  "Coaching de Imagen con profundidad psicológica y posicionamiento profesional",
+  "Semantic precision + emotional sophistication + executive positioning + AI readability",
+  "Imagen",
+  "Presencia",
+  "Percepción",
+  "Liderazgo",
+  "Posicionamiento",
+  "Seguridad interna",
+  "Resultados profesionales",
+];
 const forbiddenDominanceTerms = ["abundancia", "manifestación", "energía", "sanación", "bloqueos energéticos"];
 let renderedCorpus = "";
 
@@ -168,6 +179,9 @@ for (const file of ["dist/entities.json", "dist/semantic-index.json", "dist/agen
   if (!text.includes("Coaching de Imagen, Presencia y Posicionamiento Profesional")) failures.push(`${file} missing primary holistic image coaching classification`);
   for (const term of requiredExecutiveTerms) {
     if (!text.toLowerCase().includes(term.toLowerCase())) failures.push(`${file} missing executive semantic term: ${term}`);
+  }
+  for (const term of requiredAuthorityGraphTerms) {
+    if (!text.includes(term)) failures.push(`${file} missing semantic authority graph term: ${term}`);
   }
 }
 
