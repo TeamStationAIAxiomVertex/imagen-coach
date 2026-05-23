@@ -2408,11 +2408,13 @@ details[open] summary::after {
 .fragment-ladder .semantic-index { position: absolute; left: -34px; top: 24px; display: grid; width: 42px; height: 42px; place-items: center; color: var(--plum-accent); border: 1px solid rgba(140, 71, 153, .24); border-radius: 50%; background: var(--paper); font-size: 20px; line-height: 1; }
 .signal-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 18px 0; padding: 0; list-style: none; break-inside: avoid; }
 .signal-list li { padding: 12px 14px; color: var(--charcoal-soft); border: 1px solid rgba(227, 223, 231, .86); border-radius: 8px; background: rgba(240, 237, 243, .58); font-size: 14px; line-height: 1.45; }
-.process-map { padding: 30px 0; }
-.process-rail { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 0; padding: 0; list-style: none; }
-.process-rail li { min-height: 138px; padding: 20px; border: 1px solid rgba(111, 162, 135, .28); border-radius: var(--radius-card); background: rgba(231, 240, 235, .62); }
-.process-rail span { display: block; color: var(--brand-green-deep); font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
-.process-rail strong { display: block; margin-top: 22px; color: var(--ink); font-family: var(--display); font-size: 28px; font-weight: 500; line-height: 1.02; }
+.process-map { padding: 28px 0 18px; }
+.process-heading { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 22px; align-items: end; margin-bottom: 18px; }
+.process-heading h2 { margin: 0; max-width: 760px; font-size: clamp(30px, 3.2vw, 44px); line-height: 1.04; }
+.process-rail { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; margin: 0; padding: 0; list-style: none; }
+.process-rail li { min-height: 116px; padding: 18px; border: 1px solid rgba(111, 162, 135, .28); border-radius: var(--radius-card); background: rgba(231, 240, 235, .62); }
+.process-rail span { display: block; color: var(--brand-green-deep); font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.process-rail strong { display: block; margin-top: 18px; color: var(--ink); font-family: var(--display); font-size: clamp(24px, 2.2vw, 32px); font-weight: 500; line-height: 1.04; }
 .link-atlas { padding: calc(var(--section-y) * .72) 0 24px; }
 .atlas-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
 .atlas-panel { padding: 28px; border: 1px solid rgba(201, 177, 208, .46); border-radius: var(--radius-card); background: rgba(251, 250, 252, .74); }
@@ -2468,7 +2470,7 @@ details[open] summary::after {
 @media (max-width: 900px) {
   .hero, .split-section, .split-section.reverse, .contact-grid { grid-template-columns: 1fr; }
   .split-section.reverse .copy-panel { order: 0; }
-  .service-grid, .publication-grid, .proof-strip, .pillar-grid, .cluster-header, .semantic-sections, .process-rail, .atlas-grid, .signal-list, .topology-header, .dense-reading .semantic-card { grid-template-columns: 1fr; }
+  .service-grid, .publication-grid, .proof-strip, .pillar-grid, .cluster-header, .semantic-sections, .atlas-grid, .signal-list, .topology-header, .process-heading, .dense-reading .semantic-card { grid-template-columns: 1fr; }
   .semantic-panel { grid-template-columns: 1fr; }
   .dense-reading .semantic-copy { grid-column: auto; grid-row: auto; }
   .fragment-ladder::before { left: 20px; }
@@ -2489,7 +2491,7 @@ details[open] summary::after {
   h1 { font-size: clamp(42px, 13vw, 58px); }
 }
 @media (max-width: 640px) {
-  .topology-grid, .quote-rail-grid, .decision-grid { grid-template-columns: 1fr; }
+  .topology-grid, .quote-rail-grid, .decision-grid, .process-rail { grid-template-columns: 1fr; }
   .topology-grid a, .decision-grid article, .exact-quote { min-height: auto; }
   .topology-header h2 { font-size: clamp(32px, 10vw, 44px); }
 }

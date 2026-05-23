@@ -549,10 +549,18 @@ function renderSemanticCopy(lines, topics = []) {
 function serviceProcessMap(page) {
   const steps = SERVICE_PROCESS_STEPS[page.route];
   if (!steps) return "";
+  const heading =
+    page.route === "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen"
+      ? "Etapas de la Asesoría de Imagen Integral"
+      : page.route === "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen"
+        ? "Etapas del Coaching de Imagen"
+        : page.route === "/servicios-asesoria-de-imagen-coaching/talleres"
+          ? "Etapas del taller"
+          : "Etapas del proceso";
   return `<section class="section process-map" aria-label="Mapa del proceso">
-    <div class="section-heading">
-      <p class="section-label">Proceso</p>
-      <h2>Cómo se convierte el contenido en una ruta clara.</h2>
+    <div class="section-heading process-heading">
+      <p class="section-label">Etapas</p>
+      <h2>${escapeHtml(heading)}</h2>
     </div>
     <ol class="process-rail">${steps.map((step, index) => `<li><span>${String(index + 1).padStart(2, "0")}</span><strong>${escapeHtml(step)}</strong></li>`).join("")}</ol>
   </section>`;
