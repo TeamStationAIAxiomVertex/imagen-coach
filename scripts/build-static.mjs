@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DIST = path.join(ROOT, "dist");
 const SITE_URL = "https://imagencoach.com";
-const ASSET_VERSION = "20260523-dense-copy-v3";
+const ASSET_VERSION = "20260523-no-internal-topology";
 const WHATSAPP = "https://wa.me/526646105348?text=Hola%20Sonia%2C%20me%20interesa%20agendar%20un%20diagn%C3%B3stico.";
 const CONTACT = {
   phone: "+52 664 610 5348",
@@ -597,39 +597,6 @@ function internalLinkAtlas(page, pages, clusters) {
   </section>`;
 }
 
-function readingTopology(sections, page, clusterMap) {
-  const items = sections.slice(0, 12).map((section, index) => {
-    const id = `tema-${index + 1}-${slugify(section.heading)}`;
-    const topics = sectionTopics([section.heading, ...section.lines], page, clusterMap, 2);
-    return { id, heading: visualSectionLabel(section.heading), topics };
-  });
-  if (!items.length) return "";
-  const isService = page.type === "service" || page.type === "service-hub";
-  const label = isService ? "Temas del servicio" : "Temas principales";
-  const heading = isService
-    ? `Áreas clave de ${visualSectionLabel(page.heroTitle)}`
-    : "Ideas principales de esta publicación";
-  const description = isService
-    ? "Explora las áreas principales del proceso para ubicar la necesidad, el trabajo que se realiza y el resultado esperado."
-    : "Explora las ideas centrales y conecta cada tema con presencia, imagen, identidad y acción.";
-  return `<section class="section reading-topology" aria-label="${escapeHtml(label)}">
-    <div class="topology-header">
-      <div>
-        <p class="section-label">${escapeHtml(label)}</p>
-        <h2>${escapeHtml(heading)}</h2>
-      </div>
-      <p>${escapeHtml(description)}</p>
-    </div>
-    <nav class="topology-grid" aria-label="Temas de esta página">
-      ${items.map((item, index) => `<a href="#${item.id}">
-        <span>${String(index + 1).padStart(2, "0")}</span>
-        <strong>${escapeHtml(item.heading)}</strong>
-        ${topicChips(item.topics)}
-      </a>`).join("")}
-    </nav>
-  </section>`;
-}
-
 function sectionWordCount(section) {
   return wordCount(section.lines.join(" "));
 }
@@ -661,7 +628,6 @@ function structuredContentSections(page, lines, pages, clusters) {
     </div>
     <article class="semantic-panel">${renderSemanticCopy(intro.lines, introTopics)}</article>
   </section>
-  ${readingTopology(sections, page, clusterMap)}
   ${serviceProcessMap(page)}
   <section class="section semantic-sections ${mode === "fragmented" ? "fragment-ladder" : ""} ${mode === "dense" ? "dense-reading" : ""}">
     ${rest.map((section, index) => {

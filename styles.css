@@ -2362,17 +2362,6 @@ details[open] summary::after {
 .ontology-chip { display: inline-flex; align-items: center; gap: 7px; min-height: 30px; padding: 6px 10px; color: var(--brand-green-deep); border: 1px solid rgba(111, 162, 135, .32); border-radius: 999px; background: rgba(231, 240, 235, .68); font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 .ontology-chip svg,
 .insight-icon svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-.reading-topology { padding: 26px 0 18px; }
-.topology-header { display: grid; grid-template-columns: minmax(0, .9fr) minmax(280px, .55fr); gap: clamp(22px, 5vw, 60px); align-items: end; margin-bottom: 18px; }
-.topology-header h2 { margin: 0; color: var(--ink); font-family: var(--display); font-size: clamp(34px, 4vw, 50px); font-weight: 500; line-height: 1.02; }
-.topology-header p:not(.section-label) { margin: 0; color: var(--muted); line-height: 1.62; }
-.topology-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; }
-.topology-grid a { min-height: 150px; padding: 18px; border: 1px solid rgba(227, 223, 231, .9); border-radius: var(--radius-card); background: rgba(251, 250, 252, .7); }
-.topology-grid a:hover { border-color: rgba(140, 71, 153, .34); background: rgba(251, 250, 252, .96); }
-.topology-grid a > span { display: block; color: rgba(140, 71, 153, .46); font-family: var(--display); font-size: 32px; line-height: .95; }
-.topology-grid strong { display: block; margin-top: 12px; color: var(--ink); font-size: 15px; line-height: 1.28; }
-.topology-grid .ontology-chips { margin-top: 14px; }
-.topology-grid .ontology-chip { font-size: 10px; padding: 5px 8px; }
 .insight-flow { display: grid; gap: 10px; margin: 0 0 18px; break-inside: avoid; }
 .semantic-panel > .insight-flow { margin: 0; }
 .insight-step { display: grid; grid-template-columns: 32px minmax(0, 1fr); gap: 12px; max-width: none; margin: 0; padding: 14px; border: 1px solid rgba(227, 223, 231, .86); border-radius: 8px; background: rgba(255, 255, 255, .44); }
@@ -2460,7 +2449,7 @@ details[open] summary::after {
 @media (max-width: 900px) {
   .hero, .split-section, .split-section.reverse, .contact-grid { grid-template-columns: 1fr; }
   .split-section.reverse .copy-panel { order: 0; }
-  .service-grid, .publication-grid, .proof-strip, .pillar-grid, .cluster-header, .semantic-sections, .atlas-grid, .signal-list, .topology-header, .process-heading, .dense-reading .semantic-card { grid-template-columns: 1fr; }
+  .service-grid, .publication-grid, .proof-strip, .pillar-grid, .cluster-header, .semantic-sections, .atlas-grid, .signal-list, .process-heading, .dense-reading .semantic-card { grid-template-columns: 1fr; }
   .semantic-panel { grid-template-columns: 1fr; }
   .dense-reading .semantic-copy { grid-template-columns: 1fr; grid-column: auto; grid-row: auto; }
   .fragment-ladder::before { left: 20px; }
@@ -2481,9 +2470,7 @@ details[open] summary::after {
   h1 { font-size: clamp(42px, 13vw, 58px); }
 }
 @media (max-width: 640px) {
-  .topology-grid, .process-rail { grid-template-columns: 1fr; }
-  .topology-grid a { min-height: auto; }
-  .topology-header h2 { font-size: clamp(32px, 10vw, 44px); }
+  .process-rail { grid-template-columns: 1fr; }
 }
 .brand { gap: 10px; flex-direction: column; align-items: flex-start; }
 .brand img { display: none; }
