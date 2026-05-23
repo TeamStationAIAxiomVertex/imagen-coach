@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DIST = path.join(ROOT, "dist");
 const SITE_URL = "https://imagencoach.com";
-const ASSET_VERSION = "20260523-no-internal-topology";
+const ASSET_VERSION = "20260523-service-visuals-v1";
 const WHATSAPP = "https://wa.me/526646105348?text=Hola%20Sonia%2C%20me%20interesa%20agendar%20un%20diagn%C3%B3stico.";
 const CONTACT = {
   phone: "+52 664 610 5348",
@@ -567,6 +567,42 @@ function serviceProcessMap(page) {
   </section>`;
 }
 
+function serviceSystemVisual(page, sections, clusterMap) {
+  if (page.type !== "service" && page.type !== "service-hub") return "";
+  const steps = SERVICE_PROCESS_STEPS[page.route] || [];
+  const topics = sectionTopics([page.heroTitle, ...sections.flatMap((section) => [section.heading, ...section.lines])], page, clusterMap, 4);
+  const axes = topics.length ? topics : ONTOLOGY_TOPICS.slice(0, 4);
+  const systemLine =
+    sections.flatMap((section) => section.lines)
+      .find((line) => /sistema|percepci[oó]n|presencia|coherencia/i.test(line)) ||
+    "La imagen se trabaja como un sistema que conecta percepción, presencia y coherencia.";
+  const metricItems = [
+    { value: steps.length || sections.length, label: steps.length ? "etapas del proceso" : "áreas de trabajo" },
+    { value: axes.length, label: "dimensiones principales" },
+    { value: page.type === "service-hub" ? PILLARS.length : 1, label: page.type === "service-hub" ? "rutas de servicio" : "proceso integral" },
+  ];
+  return `<section class="section service-system-visual" aria-label="Sistema visual del servicio">
+    <div class="system-visual-copy">
+      <p class="section-label">Sistema de imagen</p>
+      <h2>${escapeHtml(visualSectionLabel(page.heroTitle))}</h2>
+      <p>${highlightOntologyTerms(systemLine, axes, 3)}</p>
+      <div class="system-metrics">
+        ${metricItems.map((item) => `<div><strong>${escapeHtml(item.value)}</strong><span>${escapeHtml(item.label)}</span></div>`).join("")}
+      </div>
+    </div>
+    <div class="system-orbit" aria-hidden="true">
+      <div class="orbit-core">
+        <span>Imagen</span>
+        <strong>Integral</strong>
+      </div>
+      ${axes.map((topic, index) => `<div class="orbit-node orbit-node-${index + 1}">
+        <span>${topicIcon(topic.id)}</span>
+        <strong>${escapeHtml(topic.label)}</strong>
+      </div>`).join("")}
+    </div>
+  </section>`;
+}
+
 function internalLinkAtlas(page, pages, clusters) {
   const clusterMap = articleClusterByRoute(clusters);
   const currentCluster = clusterMap.get(page.route);
@@ -628,6 +664,7 @@ function structuredContentSections(page, lines, pages, clusters) {
     </div>
     <article class="semantic-panel">${renderSemanticCopy(intro.lines, introTopics)}</article>
   </section>
+  ${serviceSystemVisual(page, sections, clusterMap)}
   ${serviceProcessMap(page)}
   <section class="section semantic-sections ${mode === "fragmented" ? "fragment-ladder" : ""} ${mode === "dense" ? "dense-reading" : ""}">
     ${rest.map((section, index) => {
