@@ -142,6 +142,17 @@ const CONTENT_SECTION_LABELS = {
   article: "Lectura estructurada",
   "article-index": "Centro editorial",
 };
+const ONTOLOGY_TOPICS = [
+  { id: "identidad", label: "Identidad", terms: ["identidad", "autoconcepto", "quién eres", "esencia", "valores"] },
+  { id: "presencia", label: "Presencia", terms: ["presencia", "proyectas", "proyección", "comunicas", "comunicación"] },
+  { id: "percepcion", label: "Percepción", terms: ["perciben", "percepción", "leen", "credibilidad", "confianza"] },
+  { id: "decision", label: "Decisión", terms: ["decides", "decisión", "decisiones", "criterio", "claridad"] },
+  { id: "liderazgo", label: "Liderazgo", terms: ["liderazgo", "responsabilidad", "autoridad", "ejecutivo", "ejecutiva"] },
+  { id: "empresa", label: "Empresa", terms: ["empresa", "equipo", "organización", "marca", "clientes", "colaboradores"] },
+  { id: "color", label: "Color", terms: ["color", "colorimetría", "tono", "paleta", "rostro"] },
+  { id: "guardarropa", label: "Guardarropa", terms: ["ropa", "clóset", "guardarropa", "prendas", "compras", "vestimenta"] },
+  { id: "mentalidad", label: "Mentalidad", terms: ["mentalidad", "bloqueos", "sistema nervioso", "abundancia", "dinero", "seguridad interna"] },
+];
 
 function rootPath(...parts) {
   return path.join(ROOT, ...parts);
@@ -251,6 +262,54 @@ function repairSourceFragments(value = "") {
     .replace(/\bd onde\b/gi, "donde")
     .replace(/\bdí a\b/gi, "día")
     .replace(/\bqu é\b/gi, "qué");
+}
+
+function slugify(value = "") {
+  return value
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "")
+    .slice(0, 64);
+}
+
+function splitSentences(text = "") {
+  const trimmed = text.trim();
+  if (trimmed.length < 210) return [trimmed];
+  const parts = trimmed.split(/(?<=[.!?])\s+(?=[A-ZÁÉÍÓÚÑ¿])/u).filter(Boolean);
+  return parts.length > 1 ? parts : [trimmed];
+}
+
+function sectionTopics(lines = [], page, clusterMap = new Map(), limit = 4) {
+  const haystack = `${page?.heroTitle || ""} ${lines.join(" ")}`.toLowerCase();
+  const matched = ONTOLOGY_TOPICS.filter((topic) => topic.terms.some((term) => haystack.includes(term.toLowerCase())));
+  if (matched.length) return matched.slice(0, limit);
+  return pageTermSignals(page, clusterMap)
+    .map((term) => ONTOLOGY_TOPICS.find((topic) => topic.terms.some((candidate) => term.toLowerCase().includes(candidate.toLowerCase()))))
+    .filter(Boolean)
+    .filter((topic, index, list) => list.findIndex((item) => item.id === topic.id) === index)
+    .slice(0, limit);
+}
+
+function topicIcon(topicId = "presencia") {
+  const paths = {
+    identidad: '<circle cx="12" cy="8" r="3.2"></circle><path d="M5 20c1.4-4 4-6 7-6s5.6 2 7 6"></path>',
+    presencia: '<path d="M12 3v18"></path><path d="M5 9l7-6 7 6"></path><path d="M5 15l7 6 7-6"></path>',
+    percepcion: '<path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="3"></circle>',
+    decision: '<path d="M5 12l4 4L19 6"></path><path d="M4 20h16"></path>',
+    liderazgo: '<path d="M12 3l3 6 6 .8-4.5 4.3 1.1 6.1L12 17l-5.6 3.2 1.1-6.1L3 9.8 9 9z"></path>',
+    empresa: '<path d="M4 20V7l8-4 8 4v13"></path><path d="M9 20v-6h6v6"></path><path d="M8 9h.01M12 9h.01M16 9h.01"></path>',
+    color: '<circle cx="12" cy="12" r="8"></circle><path d="M12 4v16"></path><path d="M4 12h16"></path>',
+    guardarropa: '<path d="M8 4h8l2 4-6 3-6-3z"></path><path d="M6 8v12h12V8"></path>',
+    mentalidad: '<path d="M8 14c-2-1-3-3-3-5a5 5 0 0 1 9-3 5 5 0 0 1 5 5c0 3-2 5-5 5v4h-4v-4c-.8 0-1.5-.1-2-.4"></path>',
+  };
+  return `<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">${paths[topicId] || paths.presencia}</svg>`;
+}
+
+function topicChips(topics = []) {
+  if (!topics.length) return "";
+  return `<div class="ontology-chips">${topics.map((topic) => `<span class="ontology-chip">${topicIcon(topic.id)}${escapeHtml(topic.label)}</span>`).join("")}</div>`;
 }
 
 function splitContent(markdown) {
@@ -381,7 +440,19 @@ function classifyContent(page, lines) {
   return sections.filter((section) => section.heading && section.lines.length);
 }
 
-function renderSemanticCopy(lines) {
+function renderLongParagraph(line, topics) {
+  const sentences = splitSentences(line);
+  if (sentences.length < 2) return `<p>${escapeHtml(line)}</p>`;
+  const activeTopics = topics.length ? topics : [ONTOLOGY_TOPICS[1]];
+  return `<div class="insight-flow">
+    ${sentences.map((sentence, index) => {
+      const topic = activeTopics[index % activeTopics.length];
+      return `<p class="insight-step"><span class="insight-icon">${topicIcon(topic.id)}</span><span>${escapeHtml(sentence)}</span></p>`;
+    }).join("")}
+  </div>`;
+}
+
+function renderSemanticCopy(lines, topics = []) {
   const blocks = [];
   let list = [];
   const flushList = () => {
@@ -394,7 +465,7 @@ function renderSemanticCopy(lines) {
       list.push(line);
     } else {
       flushList();
-      blocks.push(`<p>${escapeHtml(line)}</p>`);
+      blocks.push(renderLongParagraph(line, topics));
     }
   }
   flushList();
@@ -443,25 +514,58 @@ function internalLinkAtlas(page, pages, clusters) {
   </section>`;
 }
 
+function readingTopology(sections, page, clusterMap) {
+  const items = sections.slice(0, 12).map((section, index) => {
+    const id = `tema-${index + 1}-${slugify(section.heading)}`;
+    const topics = sectionTopics([section.heading, ...section.lines], page, clusterMap, 2);
+    return { id, heading: section.heading, topics };
+  });
+  if (!items.length) return "";
+  return `<section class="section reading-topology" aria-label="Mapa de lectura">
+    <div class="topology-header">
+      <div>
+        <p class="section-label">Mapa de lectura</p>
+        <h2>Qué estás leyendo y por qué importa.</h2>
+      </div>
+      <p>El contenido se organiza por intención, tema y siguiente acción para que puedas absorberlo sin perder el hilo.</p>
+    </div>
+    <nav class="topology-grid" aria-label="Temas de esta página">
+      ${items.map((item, index) => `<a href="#${item.id}">
+        <span>${String(index + 1).padStart(2, "0")}</span>
+        <strong>${escapeHtml(item.heading)}</strong>
+        ${topicChips(item.topics)}
+      </a>`).join("")}
+    </nav>
+  </section>`;
+}
+
 function structuredContentSections(page, lines, pages, clusters) {
   const sections = classifyContent(page, lines);
   if (!sections.length) return "";
   const intro = sections[0];
   const rest = sections.slice(1);
-  return `<section class="section structured-intro">
+  const clusterMap = articleClusterByRoute(clusters);
+  const introTopics = sectionTopics([intro.heading, ...intro.lines], page, clusterMap);
+  return `<section class="section structured-intro" id="tema-1-${slugify(intro.heading)}">
     <div class="section-heading">
       <p class="section-label">${escapeHtml(CONTENT_SECTION_LABELS[page.type] || "Contenido")}</p>
       <h2>${escapeHtml(intro.heading)}</h2>
+      ${topicChips(introTopics)}
     </div>
-    <article class="semantic-panel">${renderSemanticCopy(intro.lines)}</article>
+    <article class="semantic-panel">${renderSemanticCopy(intro.lines, introTopics)}</article>
   </section>
+  ${readingTopology(sections, page, clusterMap)}
   ${serviceProcessMap(page)}
   <section class="section semantic-sections">
-    ${rest.map((section, index) => `<article class="semantic-card">
+    ${rest.map((section, index) => {
+      const topics = sectionTopics([section.heading, ...section.lines], page, clusterMap);
+      return `<article class="semantic-card" id="tema-${index + 2}-${slugify(section.heading)}">
       <div class="semantic-index">${String(index + 1).padStart(2, "0")}</div>
+      ${topicChips(topics)}
       <h2>${escapeHtml(section.heading)}</h2>
-      <div class="semantic-copy">${renderSemanticCopy(section.lines)}</div>
-    </article>`).join("\n")}
+      <div class="semantic-copy">${renderSemanticCopy(section.lines, topics)}</div>
+    </article>`;
+    }).join("\n")}
   </section>
   ${internalLinkAtlas(page, pages, clusters)}`;
 }
