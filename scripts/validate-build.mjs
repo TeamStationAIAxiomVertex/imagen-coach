@@ -51,13 +51,18 @@ async function walkHtml(directory) {
 const htmlFiles = await walkHtml("dist");
 for (const file of htmlFiles) {
   const html = await readFile(file, "utf8");
-  for (const junk of ["87fd0a60", "bf0dcab6", "Can't send form", "Please try again later", "Miscellaneous 234_solid", ">undefined<", "Online Therapy"]) {
+  for (const junk of ["87fd0a60", "bf0dcab6", "Can't send form", "Please try again later", "Miscellaneous 234_solid", ">undefined<", "Online Therapy", "localhost", "127.0.0.1", "weblium.site"]) {
     if (html.includes(junk)) failures.push(`Junk leaked into ${file}: ${junk}`);
   }
   if (!html.includes('lang="es-MX"')) failures.push(`Missing es-MX lang in ${file}`);
   if (!html.includes('rel="service-desc" type="application/openapi+json"')) failures.push(`Missing OpenAPI discovery link in ${file}`);
   if (!html.includes('href="https://imagencoach.com/llms-full.txt"')) failures.push(`Missing llms-full discovery link in ${file}`);
   if (!html.includes('hreflang="es-MX"')) failures.push(`Missing es-MX hreflang in ${file}`);
+  const route = file === path.join("dist", "index.html") ? "/" : `/${path.dirname(path.relative("dist", file)).replaceAll(path.sep, "/")}`;
+  const expectedCanonical = `${SITE_URL}${route === "/" ? "/" : route}`;
+  const canonicalMatch = html.match(/<link rel="canonical" href="([^"]+)" \/>/);
+  if (!canonicalMatch) failures.push(`Missing canonical link in ${file}`);
+  else if (canonicalMatch[1] !== expectedCanonical) failures.push(`Canonical mismatch in ${file}: expected ${expectedCanonical}, got ${canonicalMatch[1]}`);
 }
 
 const sitemap = await readFile("dist/sitemap.xml", "utf8");
@@ -86,8 +91,12 @@ for (const file of requiredAgentFiles) {
     continue;
   }
   if (file.endsWith(".json")) {
+    const jsonText = await readFile(file, "utf8");
+    for (const forbiddenHost of ["localhost", "127.0.0.1", "weblium.site"]) {
+      if (jsonText.includes(forbiddenHost)) failures.push(`Host leakage in ${file}: ${forbiddenHost}`);
+    }
     try {
-      JSON.parse(await readFile(file, "utf8"));
+      JSON.parse(jsonText);
     } catch (error) {
       failures.push(`Invalid JSON in ${file}: ${error.message}`);
     }

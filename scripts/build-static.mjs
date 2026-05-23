@@ -62,6 +62,10 @@ const CANONICAL_TERMS = [
   "guardarropa estratégico",
   "colorimetría ejecutiva",
   "talleres de imagen corporativa",
+  "imagen corporativa",
+  "coaching de abundancia",
+  "poder personal",
+  "mentalidad",
 ];
 const AVOID_TERMS = [
   "fashion influencer",
@@ -273,6 +277,62 @@ function cardDescription(page) {
 
 function nonTitleLines(page, lines, start = 1) {
   return lines.slice(start).filter((line) => cleanDisplayTitle(line) !== page.heroTitle);
+}
+
+function pageTermSignals(page, clusterMap) {
+  const routeTerms = {
+    "/": ["asesoría de imagen", "coaching de imagen", "presencia profesional", "imagen ejecutiva", "marca personal", "imagen profesional"],
+    "/servicios-asesoria-de-imagen-coaching": ["asesoría de imagen", "coaching de imagen", "talleres de imagen corporativa", "presencia profesional", "imagen profesional"],
+    "/sobre-sonia-mcrorey-asesora-de-imagen": ["asesoría de imagen", "coaching de imagen", "presencia profesional", "imagen profesional", "identidad profesional"],
+    "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen": [
+      "asesoría de imagen",
+      "asesoría de imagen integral",
+      "imagen ejecutiva",
+      "imagen profesional",
+      "percepción profesional",
+      "guardarropa estratégico",
+      "colorimetría ejecutiva",
+    ],
+    "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen": [
+      "coaching de imagen",
+      "presencia profesional",
+      "presencia ejecutiva",
+      "identidad profesional",
+      "posicionamiento profesional",
+      "autoridad profesional",
+    ],
+    "/servicios-asesoria-de-imagen-coaching/talleres": [
+      "talleres de imagen corporativa",
+      "imagen corporativa",
+      "comunicación ejecutiva",
+      "presencia profesional",
+      "imagen profesional",
+    ],
+    "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia": [
+      "coaching de abundancia",
+      "poder personal",
+      "mentalidad",
+      "coaching de imagen",
+      "liderazgo femenino",
+    ],
+    "/servicios-asesoria-de-imagen-coaching/preguntas-frequentes": [
+      "asesoría de imagen",
+      "coaching de imagen",
+      "presencia profesional",
+      "imagen profesional",
+      "talleres de imagen corporativa",
+    ],
+  };
+  const clusterTerms = {
+    "imagen-estilo-profesional": ["asesoría de imagen", "imagen profesional", "guardarropa estratégico", "colorimetría ejecutiva", "marca personal"],
+    "presencia-liderazgo-identidad": ["presencia profesional", "presencia ejecutiva", "identidad profesional", "liderazgo femenino", "autoridad profesional"],
+    "empresas-marcas-equipos": ["imagen corporativa", "talleres de imagen corporativa", "comunicación ejecutiva", "imagen profesional"],
+    "mentalidad-abundancia-poder-personal": ["mentalidad", "poder personal", "coaching de abundancia", "coaching de imagen"],
+  };
+  const curated = routeTerms[page.route] || clusterTerms[clusterMap.get(page.route)?.id] || [];
+  const haystack = `${page.heroTitle} ${page.description}`.toLowerCase();
+  const directMatches = CANONICAL_TERMS.filter((term) => haystack.includes(term.toLowerCase()));
+  return [...new Set([...curated, ...directMatches])].slice(0, 8);
 }
 
 function nav(currentRoute) {
@@ -670,10 +730,7 @@ function pageSignals(pages, clusters) {
       conversionIntent: page.type === "article" ? "continuar a servicio relacionado" : "agendar diagnóstico",
       relatedService:
         page.type === "article" ? clusterMap.get(page.route)?.primaryService ? routeUrl(clusterMap.get(page.route).primaryService) : null : null,
-      canonicalTerms: CANONICAL_TERMS.filter((term) => {
-        const haystack = `${page.heroTitle} ${page.description}`.toLowerCase();
-        return haystack.includes(term.toLowerCase().split(" ")[0]);
-      }).slice(0, 8),
+      canonicalTerms: pageTermSignals(page, clusterMap),
     })),
   };
 }

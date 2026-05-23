@@ -1,5 +1,20 @@
 # Implementation Roadmap
 
+## Current Status
+
+The rebuild has moved from source capture into a working static site and agentic GEO platform.
+
+Current verified state:
+
+- 35 canonical routes build from `content/clean/manifest.json`
+- generated output is static Cloudflare Pages-compatible HTML/CSS/JS
+- sitemap, robots, redirects and canonical metadata are generated
+- OpenAPI, `llms-full.txt` and `/agent/*.json` files are generated
+- article clusters exist in `content/strategy/article-clusters.json`
+- validation checks route coverage, assets, agent files, redirects, language/hreflang and junk leakage
+
+Remaining work is no longer basic route generation. The next work is content restructuring, blog import, social proof integration, visual QA and Cloudflare launch hardening.
+
 ## Phase 0: Source Capture
 
 Status: complete.
@@ -18,6 +33,7 @@ Status: complete.
 Evidence:
 
 - `docs/source-url-inventory.md`
+- `docs/REDIRECTS_AND_URL_RETENTION.md`
 - 35 canonical URLs validated against crawl manifest
 
 ## Phase 2: Clean Content Layer
@@ -30,32 +46,39 @@ Evidence:
 - `content/clean/pages/`
 - `scripts/build_clean_content.py`
 
-Current cleanup removes Weblium duplicates and known junk while keeping raw source available.
+The clean layer removes obvious Weblium duplicates and known junk while keeping the raw crawl available for audit.
 
 ## Phase 3: Theme Adoption
 
-Status: not started.
+Status: implemented, needs visual QA.
 
-Goal:
+Evidence:
 
-Bring the UX/UI system from `TeamStationAIAxiomVertex/guadalajara` into this repo without merging the two site identities.
+- `styles.css`
+- `script.js`
+- `assets/`
+- `scripts/build-static.mjs`
 
-Expected work:
+The site uses the Guadalajara visual system as a restrained reference while keeping ImagenCoach positioning separate.
 
-- inspect `guadalajara` layout, CSS, assets, build scripts, and deployment config
-- choose static implementation approach for this repo
-- bring over typography, spacing, color tokens, header/footer rhythm, CTA style, cards, article layout, and mobile behavior
-- adapt, do not copy, Guadalajara-specific content
+Remaining:
+
+- desktop/laptop/tablet/mobile screenshots
+- page-by-page image fit review
+- no-overlap UI QA
 
 ## Phase 4: Route Implementation
 
-Status: not started.
+Status: implemented.
 
-Goal:
+Evidence:
 
-Render all 35 canonical URLs from `content/clean/manifest.json`.
+- `scripts/build-static.mjs`
+- `npm run build`
+- `npm run validate`
+- generated `dist/` output
 
-Expected page templates:
+Implemented templates:
 
 - home
 - about
@@ -64,47 +87,150 @@ Expected page templates:
 - article index
 - article detail
 
+Remaining:
+
+- replace arbitrary text chunking with structured semantic sections
+- redesign core pages into visual modules using all source content
+
 ## Phase 5: SEO And Agent Files
 
-Status: partially started.
+Status: implemented, needs enrichment.
 
-Done:
+Implemented:
 
-- root `llms.txt`
-- documentation context
+- `sitemap.xml`
+- `robots.txt`
+- `_redirects`
+- canonical tags
+- Open Graph metadata
+- JSON-LD baseline
+- `llms.txt`
+- `llms-full.txt`
+- `/openapi.json`
+- `/agent/site-profile.json`
+- `/agent/services.json`
+- `/agent/contact.json`
+- `/agent/publications.json`
+- `/agent/ontology.json`
+- `/agent/page-signals.json`
+- `/agent/redirects.json`
+- `/agent/conversion-map.json`
 
 Remaining:
 
-- production `sitemap.xml`
-- `robots.txt`
-- Open Graph metadata
-- canonical tags
-- JSON-LD schema
-- article/service metadata model
+- richer `Person`, `ProfessionalService`, `FAQPage`, `BreadcrumbList`, `Article` and `BlogPosting` schema
+- curated page signal map
+- WordPress blog ingestion into publications graph
+- Instagram feed ingestion as static social proof
 
-## Phase 6: Validation
+## Phase 6: Content Restructure
 
-Status: not started.
+Status: planned.
 
-Required validation:
+Source plan:
 
-- source URL coverage
-- build
+- `docs/CONTENT_RESTRUCTURE_BLOG_SOCIAL_PLAN.md`
+
+Goal:
+
+Use all existing content word-for-word where meaningful, but classify it into page sections, visual modules, FAQs, process maps, comparison tables, testimonials and related-content blocks.
+
+Expected output:
+
+- `content/structured/pages/*.json`
+- `content/structured/manifest.json`
+- semantic H1/H2/H3/H4 hierarchy
+- redesigned core pages without loose text boxes
+
+## Phase 7: Weblium Blog Import And WordPress Publishing
+
+Status: planned.
+
+Goal:
+
+Before shutting down Weblium, archive every blog post and image. Then use WordPress as Sonia's blog authoring engine while the static site renders canonical public posts for interlinking, ontology and domain authority.
+
+Expected output:
+
+- `docs/blog-url-inventory.md`
+- `scripts/crawl_weblium_blog.py`
+- `scripts/import_wordpress_posts.mjs`
+- `content/blog/posts/*.json`
+- generated blog pages
+- updated sitemap
+- updated `/agent/publications.json`
+
+## Phase 8: Instagram Social Proof
+
+Status: planned.
+
+Goal:
+
+Pull a small approved Instagram feed into static cached data and display it as visual proof, not core SEO content.
+
+Expected output:
+
+- `scripts/import_instagram_feed.mjs`
+- `content/social/instagram.json`
+- static feed component
+- validation for media and permalinks
+
+## Phase 9: Validation
+
+Status: implemented, expanding.
+
+Current command:
+
+```bash
+npm run build && npm run validate
+```
+
+Current validation checks:
+
 - route output
-- asset existence
-- internal links
-- SEO metadata
-- visual QA on desktop/mobile
+- image assets
+- junk leakage
+- `es-MX` language and hreflang
+- discovery links
+- sitemap URLs
+- agentic files
+- JSON parsing
+- robots references
+- redirect preservation
+- canonical URL correctness
+- localhost/Weblium host leakage
+
+Remaining:
+
+- internal link crawl
+- structured data validation
+- WordPress import validation
+- Instagram import validation
+- visual QA screenshots
 - Cloudflare preview crawl
 
-## Phase 7: Cloudflare Deployment
+## Phase 10: Cloudflare Deployment
 
 Status: not started.
 
 Required work:
 
 - configure Cloudflare Pages project
-- set build command/output directory
+- build command: `npm run build`
+- output directory: `dist`
 - attach `imagencoach.com`
 - test preview before DNS cutover
 - keep rollback path to Weblium until production validation passes
+
+## Launch Gate
+
+Do not cut DNS from Weblium to Cloudflare until:
+
+- all 35 canonical URLs return 200 in preview
+- legacy redirects return 301
+- imported Weblium blog inventory is complete
+- WordPress canonical ownership is decided
+- sitemap validates
+- agent files validate
+- visual QA passes desktop and mobile
+- Search Console and analytics are ready for post-launch monitoring
