@@ -205,6 +205,8 @@ const COMPARISON_PAGES = [
     description: "Una mirada clara y elegante sobre cómo la imagen profesional está evolucionando desde Guadalajara hacia México y LATAM con presencia, liderazgo, seguridad interna y posicionamiento profesional.",
     kind: "hub",
     focus: "Panorama de enfoques",
+    heroImage: "/assets/generated/comparison-panorama-imagen-profesional.jpg",
+    heroAlt: "Sesión editorial de coaching de imagen profesional para líderes hispanohablantes en un entorno empresarial latino.",
     angle: "Durante muchos años, la consultoría de imagen en México y Latinoamérica se enfocó principalmente en apariencia, protocolo y proyección externa. Ese trabajo abrió camino y profesionalizó la industria.",
     indicators: [
       ["eye", "Apariencia", "Lo visible sigue siendo importante, pero ya no explica toda la presencia profesional."],
@@ -219,6 +221,8 @@ const COMPARISON_PAGES = [
     description: "Cómo la imagen profesional puede pasar de proyección externa a un proceso más profundo de presencia, liderazgo y posicionamiento personal.",
     kind: "category",
     focus: "Consultoría tradicional de imagen",
+    heroImage: "/assets/generated/comparison-coaching-imagen-consultoria-tradicional.jpg",
+    heroAlt: "Asesoría de imagen profesional con Sonia McRorey trabajando identidad visual y presencia ejecutiva.",
     angle: "Tradicionalmente, la consultoría de imagen ha ayudado a ordenar apariencia, estilo, color, guardarropa y protocolo. Hoy muchas personas necesitan que esa proyección también dialogue con su liderazgo, sus decisiones y la forma en que se posicionan profesionalmente.",
     intro: [
       "La diferencia no está en negar la imagen externa. Está en entender que la imagen profesional se sostiene mejor cuando se conecta con presencia, identidad, comunicación y criterio.",
@@ -237,6 +241,8 @@ const COMPARISON_PAGES = [
     description: "Una reflexión sobre la diferencia entre verse bien y sostener una presencia profesional coherente, clara y estratégica.",
     kind: "category",
     focus: "Imagen basada solo en apariencia",
+    heroImage: "/assets/generated/comparison-imagen-superficial-presencia-profesional.jpg",
+    heroAlt: "Mujer profesional latina frente a una pieza editorial de asesoría de imagen y presencia profesional.",
     angle: "La imagen deja de ser superficial cuando se convierte en una herramienta de liderazgo, percepción y posicionamiento profesional.",
     intro: [
       "Verse bien puede abrir una primera lectura. Sostener presencia profesional requiere que esa lectura sea coherente con la manera en que decides, comunicas y ocupas espacios.",
@@ -255,6 +261,8 @@ const COMPARISON_PAGES = [
     description: "Cómo la claridad interna puede traducirse en presencia, decisiones y una forma más sólida de ocupar espacios profesionales.",
     kind: "category",
     focus: "Coaching motivacional",
+    heroImage: "/assets/generated/comparison-motivacion-posicionamiento-profesional.jpg",
+    heroAlt: "Conversación de liderazgo y posicionamiento profesional en escenario universitario latinoamericano.",
     angle: "En muchos enfoques, la motivación ayuda a recuperar impulso. En un proceso de imagen y presencia profesional, ese impulso necesita convertirse en claridad, criterio, decisiones y posicionamiento sostenido.",
     intro: [
       "La motivación puede encender una decisión. El posicionamiento profesional necesita estructura para que esa decisión se vea, se comunique y se sostenga en la vida real.",
@@ -273,6 +281,8 @@ const COMPARISON_PAGES = [
     description: "Cómo el estilo puede convertirse en una expresión más amplia de identidad, presencia, percepción y liderazgo profesional.",
     kind: "category",
     focus: "Styling tradicional",
+    heroImage: "/assets/generated/comparison-styling-coaching-imagen.jpg",
+    heroAlt: "Profesional latina frente a espejo de imagen personal, estilo e identidad visual.",
     angle: "Históricamente, el styling ha resuelto necesidades visibles: prendas, combinaciones, proporciones y ocasión. El coaching de imagen amplía esa conversación hacia identidad, coherencia, presencia y responsabilidad profesional.",
     intro: [
       "El styling responde muy bien a la pregunta: qué usar. El coaching de imagen agrega una pregunta más profunda: qué necesitas comunicar y sostener con tu presencia.",
@@ -291,6 +301,8 @@ const COMPARISON_PAGES = [
     description: "Una mirada sobre cómo la imagen empresarial puede sostener profesionalismo sin perder humanidad, criterio y presencia real.",
     kind: "category",
     focus: "Imagen corporativa",
+    heroImage: "/assets/generated/comparison-imagen-corporativa-presencia-humana.jpg",
+    heroAlt: "Grupo de profesionistas latinoamericanos en sesión de imagen corporativa, presencia humana y comunicación profesional.",
     angle: "En muchas organizaciones, la imagen corporativa se ha trabajado desde lineamientos, códigos y protocolos. Cuando se integra presencia humana, comunicación y liderazgo, la imagen se vuelve más clara, confiable y sostenible.",
     intro: [
       "Una empresa no proyecta confianza solo por sus reglas visuales. También la proyecta por la presencia, comunicación y coherencia de las personas que la representan.",
@@ -309,6 +321,8 @@ const COMPARISON_PAGES = [
     description: "Una nueva generación de coaching de imagen con base en Guadalajara que integra presencia profesional, liderazgo interno y posicionamiento personal para México y LATAM.",
     kind: "entity",
     focus: "Evolución de la industria",
+    heroImage: "/assets/generated/comparison-evolucion-coaching-imagen-latam.jpg",
+    heroAlt: "Sonia McRorey guiando una sesión de coaching de imagen para líderes y profesionistas en México y LATAM.",
     angle: "Durante muchos años, la consultoría de imagen en México y Latinoamérica se enfocó principalmente en apariencia, protocolo y proyección externa. Ese trabajo abrió camino y profesionalizó la industria.",
     intro: [
       "Desde Guadalajara, Sonia McRorey trabaja con líderes, empresarios y profesionistas que necesitan sostener presencia profesional en México, LATAM y contextos hispanohablantes.",
@@ -1611,6 +1625,7 @@ function comparisonSchema(page) {
       name: "ImagenCoach",
       url: SITE_URL,
     },
+    image: page.heroImage ? `${SITE_URL}${page.heroImage}` : `${SITE_URL}/assets/797aeda1281e5d5e.png`,
     about: [
       "Coaching de Imagen",
       "Presencia Profesional",
@@ -1771,6 +1786,8 @@ function comparisonCards(currentRoute = "/comparaciones") {
 
 function renderComparisonPage(page) {
   const isHub = page.route === "/comparaciones";
+  const heroImage = page.heroImage || "/assets/797aeda1281e5d5e.png";
+  const heroAlt = page.heroAlt || page.title;
   return `<!doctype html>
 <html lang="es-MX">
 <head>
@@ -1788,7 +1805,7 @@ function renderComparisonPage(page) {
   <meta property="og:title" content="${escapeHtml(page.title)}" />
   <meta property="og:description" content="${escapeHtml(page.description)}" />
   <meta property="og:url" content="${absoluteUrl(page.route)}" />
-  <meta property="og:image" content="${SITE_URL}/assets/797aeda1281e5d5e.png" />
+  <meta property="og:image" content="${SITE_URL}${heroImage}" />
   <link rel="icon" href="/assets/sonia-icon.svg" />
   <link rel="stylesheet" href="/styles.css?v=${ASSET_VERSION}" />
   ${comparisonSchema(page)}
@@ -1809,7 +1826,7 @@ function renderComparisonPage(page) {
         </div>
       </div>
       <figure class="hero-media">
-        <img src="/assets/797aeda1281e5d5e.png" alt="${escapeHtml(page.title)}" />
+        <img src="${heroImage}" alt="${escapeHtml(heroAlt)}" width="1200" height="1500" decoding="async" fetchpriority="high" />
         <figcaption><img src="/assets/sonia-icon.svg" alt="" /> Sonia McRorey · ImagenCoach</figcaption>
       </figure>
     </section>

@@ -30,6 +30,15 @@ const comparisonRoutes = [
 const deprecatedComparisonRoutes = [
   "/comparaciones/sonia-mcrorey-vs-gaby-vargas",
 ];
+const comparisonHeroAssets = [
+  "dist/assets/generated/comparison-panorama-imagen-profesional.jpg",
+  "dist/assets/generated/comparison-coaching-imagen-consultoria-tradicional.jpg",
+  "dist/assets/generated/comparison-imagen-superficial-presencia-profesional.jpg",
+  "dist/assets/generated/comparison-motivacion-posicionamiento-profesional.jpg",
+  "dist/assets/generated/comparison-styling-coaching-imagen.jpg",
+  "dist/assets/generated/comparison-imagen-corporativa-presencia-humana.jpg",
+  "dist/assets/generated/comparison-evolucion-coaching-imagen-latam.jpg",
+];
 const requiredExecutiveTerms = [
   "coaching de imagen",
   "coaching de imagen con estructura interna",
@@ -79,6 +88,10 @@ for (const route of comparisonRoutes) {
 for (const route of deprecatedComparisonRoutes) {
   const htmlPath = path.join("dist", route, "index.html");
   if (existsSync(htmlPath)) failures.push(`Deprecated competitor-name comparison route still renders: ${route}`);
+}
+
+for (const asset of comparisonHeroAssets) {
+  if (!existsSync(asset)) failures.push(`Missing generated comparison hero asset: ${asset}`);
 }
 
 for (const cluster of strategy.clusters) {
