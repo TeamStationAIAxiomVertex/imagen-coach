@@ -81,6 +81,8 @@ Assert generated output includes:
 - `dist/openapi.json`
 - `dist/llms.txt`
 - `dist/llms-full.txt`
+- `dist/entities.json`
+- `dist/semantic-index.json`
 - `dist/agent/site-profile.json`
 - `dist/agent/services.json`
 - `dist/agent/contact.json`
@@ -97,6 +99,17 @@ Assert:
 - every rendered HTML page links to OpenAPI and LLM context
 - every rendered HTML page uses `lang="es-MX"`
 - every rendered HTML page has an `es-MX` hreflang alternate
+- no rendered HTML page contains `.term-highlight`, `data-topic`, visible SEO keyword bolding, or injected `<strong>` emphasis inside headings
+- machine-readable semantic terms remain in JSON files, not as visible page decoration
+
+### 6b. Semantic Classification Tests
+
+Assert:
+
+- `Consultora de Imagen Ejecutiva` is present in agent/entity output
+- `presencia ejecutiva`, `posicionamiento profesional`, `imagen profesional`, `liderazgo`, `autoridad`, `credibilidad`, `comunicación ejecutiva`, `percepción profesional`, `imagen corporativa`, and `personal branding ejecutivo` are exposed in machine-readable files
+- wellness/spiritual/self-help terms such as `abundancia`, `manifestación`, `energía`, `sanación`, and `bloqueos energéticos` do not dominate rendered HTML or agent JSON
+- service and footer language ladders into executive presence and professional positioning, not lifestyle, beauty, or influencer semantics
 
 ### 7. UI Regression Tests
 

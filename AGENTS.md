@@ -6,28 +6,30 @@ This repository is the new source of truth for the larger/general Sonia McRorey 
 
 ## Mission
 
-Rebuild `imagencoach.com` as a professional, production-ready static site using:
+Rebuild `imagencoach.com` as a professional, production-ready static site and semantic authority engine for executive image consulting in Mexico and LATAM using:
 
 - the exact canonical URL inventory from the current Weblium site
 - the archived source content and images in this repo
 - the cleaned migration content layer in this repo
 - the UX/UI language and visual system proven in the Guadalajara site
+- the executive-presence ontology in `docs/wiki.llm`
 
-The result must preserve Sonia's authorship, existing URLs, source images, SEO surface, and professional tone while removing Weblium duplication, broken internal junk, and implementation noise.
+The result must preserve Sonia's authorship, existing URLs, source images, SEO surface, and professional tone while removing Weblium duplication, broken internal junk, implementation noise, visible SEO gimmicks, and semantic drift into wellness/lifestyle positioning.
 
 ## Source Of Truth Order
 
 Use these sources in order:
 
-1. `docs/MASTER_SEMANTIC_AUTHORITY_ARCHITECTURE.md` for the static publishing, WordPress ingestion, ontology, hub and GEO contract.
-2. `docs/source-url-inventory.md` for every required route.
-3. `archive/imagencoach/manifest.json` for crawl evidence, page metadata, image mapping, and known failures.
-4. `archive/imagencoach/raw-html/` for original source proof.
-5. `archive/imagencoach/text/` for raw visible text and source links.
-6. `content/clean/` for rebuild-ready body content and deduplicated asset mapping.
-7. `docs/SDD.md`, `docs/DDD.md`, `docs/TDD.md`, and `docs/LLM_CONTEXT.md` for implementation decisions.
-8. `docs/wiki.llm`, `docs/UBIQUITOUS_LANGUAGE.md`, `docs/GEO_OPERATING_SYSTEM.md`, `docs/PAGE_SIGNAL_MAP.md`, `docs/SEARCH_INTENT_BOLDING_STRATEGY.md`, `docs/ICONOGRAPHY_SYSTEM.md`, and `docs/REDIRECTS_AND_URL_RETENTION.md` for agentic GEO, ontology, redirect, emphasis, iconography, and semantic governance.
-9. `TeamStationAIAxiomVertex/guadalajara` only as the UX/UI/theme reference, not as this site's content source.
+1. `docs/wiki.llm` for the master GEO, SEO, executive buyer intent, semantic ontology, UI, Cloudflare, SDD and TDD contract.
+2. `docs/MASTER_SEMANTIC_AUTHORITY_ARCHITECTURE.md` for the static publishing, WordPress ingestion, ontology, hub and GEO implementation contract.
+3. `docs/source-url-inventory.md` for every required legacy route.
+4. `archive/imagencoach/manifest.json` for crawl evidence, page metadata, image mapping, and known failures.
+5. `archive/imagencoach/raw-html/` for original source proof.
+6. `archive/imagencoach/text/` for raw visible text and source links.
+7. `content/clean/` for rebuild-ready body content and deduplicated asset mapping.
+8. `docs/SDD.md`, `docs/DDD.md`, `docs/TDD.md`, and `docs/LLM_CONTEXT.md` for implementation decisions.
+9. `docs/UBIQUITOUS_LANGUAGE.md`, `docs/GEO_OPERATING_SYSTEM.md`, `docs/PAGE_SIGNAL_MAP.md`, `docs/ICONOGRAPHY_SYSTEM.md`, and `docs/REDIRECTS_AND_URL_RETENTION.md` for agentic GEO, ontology, redirect, iconography, and semantic governance.
+10. `TeamStationAIAxiomVertex/guadalajara` only as the UX/UI/theme reference, not as this site's content source.
 
 Do not invent pages, slugs, services, images, schemas, or positioning without evidence.
 
@@ -88,6 +90,23 @@ Preserve:
 
 The voice must be calm, intelligent, executive, reflective, and grounded.
 
+Primary classification:
+
+- Sonia McRorey is a `Consultora de Imagen Ejecutiva`.
+
+Everything must reinforce:
+
+- presencia ejecutiva
+- imagen profesional
+- liderazgo
+- autoridad
+- credibilidad
+- comunicación ejecutiva
+- posicionamiento profesional
+- percepción profesional
+- imagen corporativa
+- personal branding ejecutivo
+
 Do not use:
 
 - generic marketing filler
@@ -97,6 +116,8 @@ Do not use:
 - SEO stuffing
 - invented frameworks
 - ungrounded claims
+- visible SEO keyword bolding injected into Sonia's copy
+- wellness, spirituality or self-help as dominant classification
 
 SEO supports Sonia's voice. SEO must not impersonate Sonia.
 
@@ -124,6 +145,10 @@ Before deployment, validation must prove:
 - the agentic files build and publish: `/openapi.json`, `/llms-full.txt`, and `/agent/*.json`
 - semantic hub sitemaps publish: `/blog-sitemap.xml`, `/category-sitemap.xml`, and `/service-sitemap.xml`
 - WordPress remains an ingestion source only and no production page requires WordPress at runtime
+- `/entities.json` and `/semantic-index.json` publish for AI retrieval
+- no generated visible markup such as `.term-highlight` or `data-topic` appears in rendered pages
+- headings do not contain injected `<strong>` SEO emphasis
+- wellness/spiritual/self-help language does not dominate rendered output or agent files
 
 ## Git Discipline
 

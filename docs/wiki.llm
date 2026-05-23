@@ -1,174 +1,501 @@
-# Imagen Coach Wiki.LLM
+# MASTER WIKI.LLM
+# IMAGENCOACH.COM
+# GEO + SEO + AGENTIC CLOUDFLARE EXECUTION SYSTEM
 
-## Purpose
+This file is the canonical operating contract for `imagencoach.com`.
 
-This file is the canonical ontology and semantic governance layer for Imagen Coach and Sonia McRorey.
+It governs content, routing, static publishing, SEO, GEO, AI retrieval, Cloudflare deployment, UI structure, and agent behavior. If another repository document conflicts with this file, this file wins.
 
-It exists so LLMs, Codex, search crawlers, AI retrieval systems and future agents describe the business with the same entity graph, terminology, route contract and conversion intent.
+## Primary Objective
 
-## Canonical Production Identity
+Transform `imagencoach.com` into the highest authority executive image consulting entity in Mexico and LATAM using:
+
+- semantic SEO
+- GEO optimization
+- AI retrieval optimization
+- static HTML architecture
+- Cloudflare edge delivery
+- executive buyer intent
+- semantic ontology reinforcement
+- high performance indexing
+
+The site must dominate both traditional SERPs and AI retrieval systems, including Google, Gemini, ChatGPT, Claude, Perplexity and Copilot.
+
+## Core Entity
 
 Entity:
 Sonia McRorey
 
-Brand platform:
-Imagen Coach
+Primary classification:
+Consultora de Imagen Ejecutiva
 
-Production domain:
-https://imagencoach.com
+Do not classify Sonia primarily as:
 
-Local SEO sibling:
-https://imagengdl.com
+- life coach
+- stylist
+- abundance coach
+- influencer
+- wellness mentor
 
-Repository:
-TeamStationAIAxiomVertex/imagen-coach
+## Master Semantic Category
 
-Primary market identity:
-Asesoría de imagen, coaching de imagen y presencia profesional.
+Everything in the site must reinforce:
 
-Expanded market identity:
-Executive image consulting, personal image coaching, professional presence, personal branding and corporate image workshops for professionals, executives, entrepreneurs, companies and women leaders in Mexico and Latin America.
+Presencia ejecutiva y posicionamiento profesional.
 
-## Core Entity Definitions
+All services, articles, FAQs, schema, agent files, footer links and internal links must ladder into that authority graph.
 
-### Imagen Coach
+## Target Audience
 
-Imagen Coach is the larger authority platform for Sonia McRorey's image consulting, coaching, presence, professional identity and editorial content.
+Primary buyer entities:
 
-It is not a fashion blog, beauty site or influencer funnel.
+- empresarios
+- directivos
+- líderes
+- profesionistas
+- ejecutivos
+- mujeres líderes
+- dueños de negocio
+- equipos corporativos
 
-### Sonia McRorey
+## Semantic Positioning
 
-Sonia McRorey is the human trust anchor and principal authority.
+The site must communicate:
 
-Use:
-Asesora y Coach de Imagen Personal y Empresarial.
-
-Do not flatten her into:
-stylist, fashion influencer, beauty consultant or personal shopper only.
-
-### Executive Presence / Presencia Ejecutiva
-
-Presencia ejecutiva is the relationship between professional identity, communication, visual coherence, confidence, decision-making and how leadership is perceived.
-
-Relationship graph:
-
-Presencia Ejecutiva
--> liderazgo
--> comunicación ejecutiva
--> imagen profesional
--> confianza
--> autoridad
--> percepción profesional
-
-### Marca Personal
-
-Marca personal is the deliberate professional positioning of identity, reputation, message, visual presence and authority.
-
-Relationship graph:
-
-Marca Personal
--> identidad profesional
--> reputación
--> posicionamiento profesional
--> comunicación
--> crecimiento profesional
-
-### Asesoría de Imagen Integral
-
-Asesoría de Imagen Integral is not superficial styling.
-
-It connects colorimetría personal, estilo personal, rostro, proporciones, clóset consciente, plan de compras and guardarropa estratégico with the professional moment a person needs to sustain.
-
-## Canonical Terminology
-
-Always prefer:
-
-- imagen ejecutiva
-- marca personal
-- presencia ejecutiva
+- autoridad
+- liderazgo
 - presencia profesional
-- asesoría de imagen
-- asesoría de imagen integral
-- coaching de imagen
+- credibilidad
+- posicionamiento ejecutivo
+- percepción estratégica
+- comunicación profesional
+
+The site must not drift into dominant positioning around:
+
+- autoayuda
+- transformación espiritual
+- abundancia energética
+- wellness coaching
+
+## Master Information Architecture
+
+Canonical future IA:
+
+```text
+/
+├── asesoria-imagen-ejecutiva/
+├── presencia-ejecutiva/
+├── coaching-posicionamiento-profesional/
+├── liderazgo-y-percepcion/
+├── imagen-corporativa/
+├── talleres-empresas/
+├── mujeres-lideres/
+├── empresarios/
+├── faq/
+├── sobre-sonia/
+├── casos/
+├── publicaciones/
+├── guadalajara/
+├── mexico/
+└── latam/
+```
+
+Legacy Weblium URLs must continue to resolve until a documented redirect decision exists.
+
+## GEO URL Strategy
+
+Required GEO pages:
+
+- `/asesoria-imagen-ejecutiva-guadalajara`
+- `/presencia-ejecutiva-mexico`
+- `/imagen-profesional-empresarios`
+- `/coaching-imagen-profesional`
+- `/imagen-corporativa-equipos`
+- `/asesora-imagen-ejecutiva-mexico`
+- `/personal-branding-ejecutivo`
+
+These routes must be created as static HTML pages or mapped through documented redirects before launch.
+
+## Cloudflare Deployment Rules
+
+Mandatory:
+
+- static HTML
+- semantic HTML
+- minimal JavaScript
+- Cloudflare Pages
+- GitHub CI/CD
+
+Forbidden:
+
+- SPA routing
+- runtime SEO
+- client-side rendering for indexed content
+- hydration SEO dependency
+
+## Performance Targets
+
+Hard limits:
+
+- LCP under 1.8 seconds
+- CLS under 0.05
+- TTFB under 200 milliseconds
+- minimized DOM depth
+- no render-blocking JavaScript
+- critical CSS inline where needed for launch performance
+
+Cloudflare edge settings:
+
+- HTTP/3
+- Brotli
+- Early Hints
+- Tiered Cache
+- Cache Everything
+- Auto Minify
+- Image Optimization
+- Smart Compression
+
+## UI System Rules
+
+Master design principle:
+
+The site must feel calm, executive, premium, spacious and low cognitive load.
+
+Uniform spacing system:
+
+Use an 8px base spacing system only.
+
+Allowed scale:
+
+- 8
+- 16
+- 24
+- 32
+- 48
+- 64
+- 96
+- 128
+
+No random spacing.
+
+Every page must maintain:
+
+- consistent vertical rhythm
+- equalized card spacing
+- uniform image ratios
+- consistent CTA spacing
+- aligned text widths
+- consistent max-width containers
+
+Required responsive breakpoints:
+
+- 320
+- 480
+- 768
+- 1024
+- 1280
+- 1440
+
+Mobile UX rules:
+
+- no text walls
+- no oversized paragraphs
+- no hidden semantic content
+- no oversized hero sections
+- no CLS image jumps
+
+Typography rules:
+
+- executive readability first
+- short paragraphs
+- 2 to 4 line maximum visible paragraph blocks where possible
+- strong H2 hierarchy
+- readable line-height
+- high semantic chunking
+
+## Master Semantic Vocabulary
+
+The site should naturally reinforce:
+
+- presencia ejecutiva
 - imagen profesional
-- liderazgo femenino
-- posicionamiento profesional
+- liderazgo
+- autoridad
+- credibilidad
 - comunicación ejecutiva
+- posicionamiento profesional
 - percepción profesional
-- autoridad profesional
-- identidad profesional
-- guardarropa estratégico
-- colorimetría ejecutiva
-- talleres de imagen corporativa
+- imagen corporativa
+- personal branding ejecutivo
 
-Do not drift into:
+## Forbidden Semantic Dominance
 
-- fashion influencer
-- lifestyle blogger
-- beauty guru
-- style content creator
-- outfit del día
-- look perfecto
-- moda rápida
-- glamour superficial
-- generic life coach
+These terms may appear lightly when they exist in Sonia's source content, but must not dominate:
 
-## GEO Query Targets
+- abundancia
+- manifestación
+- energía
+- sanación
+- bloqueos energéticos
 
-The site should answer these questions directly and consistently:
+Reason:
+Dominance of those terms shifts classification toward wellness, spirituality and self-help instead of executive advisory.
 
-- ¿Qué hace una asesora de imagen?
-- ¿Cómo mejorar mi imagen profesional?
-- ¿Cómo desarrollar presencia ejecutiva?
-- ¿Cómo proyectar liderazgo?
-- ¿Qué es una marca personal profesional?
-- ¿Dónde tomar asesoría de imagen en México?
-- ¿Quién ofrece talleres de imagen corporativa?
-- ¿Cómo alinear imagen, identidad y presencia profesional?
+## Universal Page Structure
 
-## Regional GEO Model
+Every strategic page must follow this meaning order:
 
-Primary locale:
-es-MX
+1. Executive Problem
+   Tu presencia ya no refleja el nivel de responsabilidad que hoy sostienes.
+2. Professional Consequence
+   Eso afecta percepción, liderazgo y posicionamiento profesional.
+3. Internal Alignment
+   Only then discuss clarity, confidence, mindset or internal patterns.
+4. Professional Outcome
+   Mayor autoridad, mayor claridad, mayor presencia and mayor credibilidad.
 
-Primary markets:
-México, Guadalajara, Zapopan, Jalisco and online sessions.
+## FAQ Strategy
 
-Secondary region:
-LATAM.
+Every strategic page requires:
 
-Future hreflang expansion:
+- 5 to 10 FAQs
+- direct answer formatting
+- AI retrieval optimization
+- no abstract internal-project phrasing
 
-- es-MX for Mexico canonical pages.
-- es-419 for LATAM pages.
-- en-US only for intentionally localized English authority pages.
+Good FAQ:
 
-Do not machine-duplicate the entire site into weak translations.
+```text
+¿Qué es la asesoría de imagen ejecutiva?
+La asesoría de imagen ejecutiva ayuda a líderes y profesionistas a fortalecer presencia, comunicación y percepción profesional para proyectar autoridad y credibilidad.
+```
 
-## Conversion Model
+Bad FAQ:
 
-Primary CTA:
-Agendar diagnóstico
+```text
+¿Desde qué enfoque trabajamos la imagen?
+```
 
-Primary channel:
-WhatsApp
+## Required Schema
 
-Canonical WhatsApp message:
-Hola Sonia, me interesa agendar un diagnóstico.
+Every page must include JSON-LD.
 
-Do not replace the conversion path with email-first or generic newsletter-first language.
+Global schema stack:
 
-## Machine-Readable Files
+- Organization
+- Person
+- ProfessionalService
+- WebSite
+- WebPage
+- BreadcrumbList
+- FAQPage
+- LocalBusiness
+- Service
+- ImageObject
+- Article where applicable
 
-- OpenAPI: https://imagencoach.com/openapi.json
-- LLM summary: https://imagencoach.com/llms.txt
-- Full LLM context: https://imagencoach.com/llms-full.txt
-- Site profile: https://imagencoach.com/agent/site-profile.json
-- Ontology: https://imagencoach.com/agent/ontology.json
-- Services: https://imagencoach.com/agent/services.json
-- Page signals: https://imagencoach.com/agent/page-signals.json
-- Conversion map: https://imagencoach.com/agent/conversion-map.json
-- Redirect map: https://imagencoach.com/agent/redirects.json
-- Publications: https://imagencoach.com/agent/publications.json
-- Contact: https://imagencoach.com/agent/contact.json
+Homepage schema:
+
+- Organization
+- Person
+- ProfessionalService
+- FAQPage
+- WebSite
+
+Service page schema:
+
+- Service
+- FAQPage
+- BreadcrumbList
+- ProfessionalService
+
+Blog page schema:
+
+- Article
+- Person
+- BreadcrumbList
+- FAQPage
+
+## Internal Linking Strategy
+
+Every strategic page must include:
+
+- 2 parent links
+- 3 sibling links
+- 2 GEO links
+- 2 FAQ links
+- 1 authority article
+- 1 conversion CTA
+
+## Footer Strategy
+
+The footer is semantic reinforcement infrastructure.
+
+Footer clusters:
+
+Servicios:
+
+- Asesoría de Imagen Ejecutiva
+- Coaching Profesional
+- Imagen Corporativa
+- Talleres Empresariales
+
+Liderazgo:
+
+- Presencia Ejecutiva
+- Posicionamiento Profesional
+- Comunicación Ejecutiva
+- Percepción y Autoridad
+
+Ubicaciones:
+
+- Guadalajara
+- CDMX
+- Monterrey
+- México
+- LATAM
+
+## Blog Strategy
+
+Categories:
+
+- Imagen Ejecutiva
+- Presencia Profesional
+- Liderazgo
+- CEO Presence
+- Mujeres Líderes
+- Imagen Corporativa
+- Comunicación Ejecutiva
+
+Blog title rules:
+
+Titles must match buyer intent, answer executive pain and improve retrieval.
+
+Good:
+
+```text
+Cómo fortalecer tu presencia ejecutiva en entornos de alta responsabilidad
+```
+
+Bad:
+
+```text
+Cuando sostener demasiado empieza a pesarte
+```
+
+## Image Rules
+
+All images must be:
+
+- AVIF or WebP where practical
+- responsive
+- lazy loaded when below the fold
+- width and height defined
+- named descriptively
+
+Bad filename:
+
+```text
+imagen1.webp
+```
+
+Good filename:
+
+```text
+sonia-mcrorey-consultora-imagen-ejecutiva-guadalajara.webp
+```
+
+## GEO Optimization Rules
+
+Every page must:
+
+- answer questions directly
+- use semantic chunking
+- expose meaning in raw HTML
+- avoid hidden JavaScript content
+
+## Required Files
+
+The static build must publish:
+
+- `/llms.txt`
+- `/llms-full.txt`
+- `/sitemap.xml`
+- `/robots.txt`
+- `/entities.json`
+- `/semantic-index.json`
+- `/openapi.json`
+
+## AI Retrieval Optimization
+
+Content must be:
+
+- quotable
+- chunkable
+- citeable
+- semantically compressed
+
+Required:
+
+- short paragraphs
+- direct answers
+- clear headers
+- strong semantic hierarchy
+- high information density
+
+Forbidden:
+
+- long emotional monologues
+- repeated concepts
+- abstract loops
+- dense text walls
+
+## Agent Directive
+
+The agent must optimize for:
+
+- SEO
+- GEO
+- AI retrieval
+- static crawlability
+- performance
+- executive buyer intent
+- semantic precision
+
+## SDD Rules
+
+Every implementation must validate:
+
+- semantic HTML
+- uniform spacing
+- responsive consistency
+- schema validation
+- internal link integrity
+- performance budgets
+- accessibility
+- Cloudflare optimization
+
+## TDD Rules
+
+Must automatically test:
+
+- Lighthouse scores
+- schema validity
+- broken links
+- CLS
+- LCP
+- heading hierarchy
+- meta duplication
+- canonical conflicts
+- image optimization
+- mobile rendering
+- no visible SEO term-bolding injected into Sonia's copy
+- no dominant wellness, spirituality or self-help semantic drift
+
+## Final Objective
+
+The site must become the highest authority executive image consulting entity in Mexico and LATAM, optimized for both search engines and AI retrieval systems.
+
+It is not a lifestyle site, wellness brand or coaching blog.
+
+It is executive authority infrastructure for leadership, perception and professional positioning.

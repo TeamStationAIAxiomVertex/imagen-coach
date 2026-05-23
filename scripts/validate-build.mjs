@@ -18,6 +18,20 @@ const semanticHubRoutes = [
   "/empresarias",
   "/imagen-estrategica",
 ];
+const requiredExecutiveTerms = [
+  "presencia ejecutiva",
+  "imagen profesional",
+  "liderazgo",
+  "autoridad",
+  "credibilidad",
+  "comunicación ejecutiva",
+  "posicionamiento profesional",
+  "percepción profesional",
+  "imagen corporativa",
+  "personal branding ejecutivo",
+];
+const forbiddenDominanceTerms = ["abundancia", "manifestación", "energía", "sanación", "bloqueos energéticos"];
+let renderedCorpus = "";
 
 for (const page of manifest.pages) {
   const htmlPath = page.route === "/" ? "dist/index.html" : path.join("dist", page.route, "index.html");
@@ -71,6 +85,12 @@ for (const file of htmlFiles) {
   for (const pattern of [/\bexpresión pe\b/i, /\bhe desarrolla\b/i, /\be visten\b/i, /\bSse visten\b/]) {
     if (pattern.test(html)) failures.push(`Broken source fragment leaked into ${file}: ${pattern}`);
   }
+  if (html.includes("term-highlight")) failures.push(`Visible SEO term highlighting leaked into ${file}`);
+  if (html.includes("data-topic=")) failures.push(`Visible ontology data-topic markup leaked into ${file}`);
+  for (const headingMatch of html.matchAll(/<h[1-6][^>]*>[\s\S]*?<\/h[1-6]>/gi)) {
+    if (/<strong\b/i.test(headingMatch[0])) failures.push(`Injected strong emphasis inside heading in ${file}`);
+  }
+  if (/<mark\b/i.test(html)) failures.push(`Injected mark emphasis leaked into ${file}`);
   if (!html.includes('lang="es-MX"')) failures.push(`Missing es-MX lang in ${file}`);
   if (!html.includes('rel="service-desc" type="application/openapi+json"')) failures.push(`Missing OpenAPI discovery link in ${file}`);
   if (!html.includes('href="https://imagencoach.com/llms-full.txt"')) failures.push(`Missing llms-full discovery link in ${file}`);
@@ -80,6 +100,7 @@ for (const file of htmlFiles) {
   const canonicalMatch = html.match(/<link rel="canonical" href="([^"]+)" \/>/);
   if (!canonicalMatch) failures.push(`Missing canonical link in ${file}`);
   else if (canonicalMatch[1] !== expectedCanonical) failures.push(`Canonical mismatch in ${file}: expected ${expectedCanonical}, got ${canonicalMatch[1]}`);
+  renderedCorpus += ` ${html.replace(/<script[\s\S]*?<\/script>/gi, " ").replace(/<style[\s\S]*?<\/style>/gi, " ").replace(/<[^>]+>/g, " ")}`;
 }
 
 const sitemap = await readFile("dist/sitemap.xml", "utf8");
@@ -102,6 +123,8 @@ for (const sitemapFile of ["dist/blog-sitemap.xml", "dist/category-sitemap.xml",
 
 const requiredAgentFiles = [
   "dist/openapi.json",
+  "dist/entities.json",
+  "dist/semantic-index.json",
   "dist/llms.txt",
   "dist/llms-full.txt",
   "dist/agent/site-profile.json",
@@ -132,6 +155,22 @@ for (const file of requiredAgentFiles) {
       failures.push(`Invalid JSON in ${file}: ${error.message}`);
     }
   }
+}
+
+for (const file of ["dist/entities.json", "dist/semantic-index.json", "dist/agent/site-profile.json", "dist/agent/ontology.json"]) {
+  if (!existsSync(file)) continue;
+  const text = await readFile(file, "utf8");
+  if (!text.includes("Consultora de Imagen Ejecutiva")) failures.push(`${file} missing primary entity classification`);
+  for (const term of requiredExecutiveTerms) {
+    if (!text.toLowerCase().includes(term.toLowerCase())) failures.push(`${file} missing executive semantic term: ${term}`);
+  }
+}
+
+const normalizedCorpus = renderedCorpus.toLowerCase();
+const executiveHitCount = requiredExecutiveTerms.reduce((count, term) => count + (normalizedCorpus.match(new RegExp(term, "g")) || []).length, 0);
+const forbiddenHitCount = forbiddenDominanceTerms.reduce((count, term) => count + (normalizedCorpus.match(new RegExp(term, "g")) || []).length, 0);
+if (forbiddenHitCount > executiveHitCount) {
+  failures.push(`Forbidden wellness/self-help terms dominate rendered corpus: forbidden=${forbiddenHitCount}, executive=${executiveHitCount}`);
 }
 
 const robots = await readFile("dist/robots.txt", "utf8");

@@ -1,6 +1,6 @@
 # Master Semantic Authority Architecture
 
-This document is the operating contract for turning `imagencoach.com` into Sonia McRorey's static semantic authority platform for executive image leadership in Mexico and LATAM.
+This document implements the master contract in `docs/wiki.llm` for turning `imagencoach.com` into Sonia McRorey's static semantic authority platform for executive image leadership in Mexico and LATAM.
 
 ## Core Objective
 
@@ -20,6 +20,14 @@ The site must become the authoritative semantic source for:
 - imagen profesional para líderes y empresarios
 
 The site is not a WordPress blog, lifestyle publication, fashion site, beauty site, influencer site, or SPA. It is a static semantic authority engine.
+
+Primary classification:
+
+- Sonia McRorey is a `Consultora de Imagen Ejecutiva`.
+
+Master semantic category:
+
+- presencia ejecutiva y posicionamiento profesional
 
 ## Static Publishing Doctrine
 
@@ -194,6 +202,10 @@ Do not create or reinforce:
 - lifestyle blogging
 - outfit-first positioning
 - superficial glamour language
+- wellness dominance
+- spirituality dominance
+- self-help dominance
+- abundance/manifestation dominance
 
 The ontology must stay executive, strategic, professional, leadership-oriented and authority-oriented.
 
@@ -208,6 +220,8 @@ The static build must generate:
 - `/llms.txt`
 - `/llms-full.txt`
 - `/openapi.json`
+- `/entities.json`
+- `/semantic-index.json`
 - `/agent/site-profile.json`
 - `/agent/services.json`
 - `/agent/publications.json`

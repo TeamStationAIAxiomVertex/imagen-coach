@@ -6,7 +6,7 @@
 
 ## Objective
 
-Rebuild the current Weblium site as a GitHub-managed, Cloudflare-deployed static site while preserving:
+Rebuild the current Weblium site as a GitHub-managed, Cloudflare-deployed static site and executive authority infrastructure while preserving:
 
 - all 35 canonical URLs
 - Sonia McRorey's source content and authorship
@@ -14,6 +14,8 @@ Rebuild the current Weblium site as a GitHub-managed, Cloudflare-deployed static
 - existing article archive
 - SEO continuity
 - the polished UX/UI quality of `imagengdl.com`
+
+The master positioning is defined in `docs/wiki.llm`: Sonia McRorey is a `Consultora de Imagen Ejecutiva`, and the site must reinforce presencia ejecutiva, posicionamiento profesional, autoridad, liderazgo, credibilidad, percepción estratégica and comunicación profesional.
 
 ## Current State
 
@@ -80,6 +82,9 @@ Every page needs:
 - sensible article/service schema where applicable
 - sitemap inclusion
 - internal links that preserve crawl flow
+- raw HTML semantic chunking for AI retrieval
+- executive buyer-intent headings and FAQs
+- no visible SEO keyword bolding or generated emphasis inside Sonia's page copy
 
 The sitemap must include all 35 canonical URLs.
 
@@ -90,6 +95,8 @@ The rebuilt site must publish machine-readable discovery files:
 - `/openapi.json`
 - `/llms.txt`
 - `/llms-full.txt`
+- `/entities.json`
+- `/semantic-index.json`
 - `/agent/site-profile.json`
 - `/agent/services.json`
 - `/agent/contact.json`
@@ -137,3 +144,5 @@ The rebuild is done only when:
 - sitemap and canonical tags match production domain
 - Cloudflare Pages build is reproducible from a clean checkout
 - the site visually matches the `imagengdl.com` UX/UI standard while retaining `imagencoach.com` content identity
+- rendered pages avoid dominant wellness, spirituality, abundance or self-help classification
+- all visible content preserves Sonia's wording without injected SEO emphasis
