@@ -1232,6 +1232,38 @@ function renderSemanticCopy(lines, topics = []) {
   return blocks.join("\n");
 }
 
+function articleLineBlocks(line, topics = []) {
+  const sentences = splitSentences(line);
+  const source = sentences.length > 1 ? sentences : [line];
+  return source.map((item) => `<p>${highlightOntologyTerms(item, topics, 2)}</p>`).join("\n");
+}
+
+function renderArticleProse(lines, topics = []) {
+  const blocks = [];
+  let list = [];
+  const flushList = () => {
+    if (!list.length) return;
+    blocks.push(`<ul class="article-prose-list">${list.map((item) => `<li>${highlightOntologyTerms(item.replace(/^[-•●✔️👉🌟💌🎓🟣✨]\s*/, ""), topics, 1)}</li>`).join("")}</ul>`);
+    list = [];
+  };
+
+  for (const line of lines) {
+    if (isListLine(line)) {
+      list.push(line);
+      continue;
+    }
+    flushList();
+    if (isHeadingCandidate(line)) {
+      blocks.push(`<h3>${escapeHtml(cleanDisplayTitle(line))}</h3>`);
+    } else {
+      blocks.push(articleLineBlocks(line, topics));
+    }
+  }
+
+  flushList();
+  return blocks.join("\n");
+}
+
 function serviceProcessMap(page) {
   const steps = SERVICE_PROCESS_STEPS[page.route];
   if (!steps) return "";
@@ -1745,7 +1777,7 @@ function renderArticleSection(page, section, index, previousSections, clusterMap
         ${topicChips(topics)}
       </div>
     </div>
-    <div class="article-copy">${renderSemanticCopy(section.lines, topics)}</div>
+    <div class="article-copy">${renderArticleProse(section.lines, topics)}</div>
   </section>`;
 }
 

@@ -192,6 +192,13 @@ for (const file of htmlFiles) {
   }
   if (routeForDensity === "/servicios-asesoria-de-imagen-coaching/preguntas-frequentes" && faqAnswerCount < 8) failures.push("FAQ page did not render the answer-card structure");
   if (routeForDensity === "/servicios-asesoria-de-imagen-coaching/preguntas-frequentes" && semanticCardCount > 0) failures.push("FAQ page should not render generic semantic cards");
+  if (articleSet.has(routeForDensity)) {
+    if (!/class="[^"]*\barticle-reading-map\b/.test(html)) failures.push(`Article missing reading map navigation: ${file}`);
+    if (!/class="[^"]*\barticle-layout\b/.test(html)) failures.push(`Article missing editorial layout: ${file}`);
+    if (!/<div class="article-copy">\s*<p>/.test(html)) failures.push(`Article body is not rendering as prose paragraphs: ${file}`);
+    if (/<div class="article-copy">[\s\S]*?class="insight-step"/.test(html)) failures.push(`Article body leaked service-style insight cards: ${file}`);
+    if (/<div class="article-copy">[\s\S]*?class="signal-list"/.test(html)) failures.push(`Article body leaked service-style signal lists: ${file}`);
+  }
   const route = file === path.join("dist", "index.html") ? "/" : `/${path.dirname(path.relative("dist", file)).replaceAll(path.sep, "/")}`;
   const expectedCanonical = `${SITE_URL}${route === "/" ? "/" : route}`;
   const canonicalMatch = html.match(/<link rel="canonical" href="([^"]+)" \/>/);
