@@ -111,6 +111,20 @@ Assert:
 - wellness/spiritual/self-help terms such as `abundancia`, `manifestación`, `energía`, `sanación`, and `bloqueos energéticos` do not dominate rendered HTML or agent JSON
 - service and footer language ladders into executive presence and professional positioning, not lifestyle, beauty, or influencer semantics
 
+### 6c. Global Title And Semantic Hierarchy Tests
+
+Assert every rendered HTML page:
+
+- has exactly one H1
+- does not repeat the H1 as an H2, H3, H4, H5 or H6
+- does not emit same-level duplicate headings
+- does not emit punctuation-only headings
+- does not emit heading truncation using `...` or `…`
+- does not expose internal labels such as `Pilar SEO`, `Sistema de imagen`, `intención de búsqueda`, or visible LLM/SEO utility labels
+- uses route-level semantic identity for H1, title tag, Open Graph title, schema name, nav labels, card titles, breadcrumbs and related links
+
+The canonical route identity must follow the matrix documented in `docs/SEMANTIC_HIERARCHY_REPAIR_REPORT.md`.
+
 ### 7. UI Regression Tests
 
 Before launch, test at minimum:

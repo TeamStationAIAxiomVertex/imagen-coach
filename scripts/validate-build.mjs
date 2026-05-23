@@ -144,6 +144,35 @@ for (const file of htmlFiles) {
   if (html.includes("data-topic=")) failures.push(`Visible ontology data-topic markup leaked into ${file}`);
   if (html.includes(">Pilar SEO<")) failures.push(`Internal SEO label leaked into ${file}`);
   if (html.includes(">LLM</a>")) failures.push(`Internal LLM footer link leaked into ${file}`);
+  for (const visibleLeak of [
+    "Sistema de imagen",
+    "intención de búsqueda",
+    "Coaching de Imagen, Seguridad Interna y Posicionamiento Profesional",
+    "Mentalidad, abundancia y poder personal",
+  ]) {
+    if (html.includes(visibleLeak)) failures.push(`Public semantic hierarchy leak in ${file}: ${visibleLeak}`);
+  }
+  const headings = [...html.matchAll(/<h([1-6])[^>]*>([\s\S]*?)<\/h\1>/gi)].map((match) => ({
+    level: Number(match[1]),
+    text: match[2].replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim(),
+    raw: match[0],
+  }));
+  const h1s = headings.filter((heading) => heading.level === 1);
+  if (h1s.length !== 1) failures.push(`Expected exactly one H1 in ${file}, found ${h1s.length}`);
+  const h1Text = h1s[0]?.text;
+  if (h1Text) {
+    for (const heading of headings.filter((item) => item.level > 1)) {
+      if (heading.text === h1Text) failures.push(`H1 duplicated as lower heading in ${file}: ${h1Text}`);
+    }
+  }
+  const seenHeadings = new Set();
+  for (const heading of headings) {
+    if (heading.text.includes("...") || heading.text.includes("…")) failures.push(`Truncated heading leaked into ${file}: ${heading.text}`);
+    if (/^[¿?.,;:\-–—]+$/.test(heading.text)) failures.push(`Punctuation-only heading leaked into ${file}: ${heading.text}`);
+    const key = `${heading.level}:${heading.text.toLowerCase()}`;
+    if (seenHeadings.has(key)) failures.push(`Duplicate H${heading.level} heading in ${file}: ${heading.text}`);
+    seenHeadings.add(key);
+  }
   for (const headingMatch of html.matchAll(/<h[1-6][^>]*>[\s\S]*?<\/h[1-6]>/gi)) {
     if (/<strong\b/i.test(headingMatch[0])) failures.push(`Injected strong emphasis inside heading in ${file}`);
   }

@@ -34,38 +34,139 @@ const SEMANTIC_LINK_GRAPH = [
   "Percepción",
   "Posicionamiento",
 ];
+const SEMANTIC_TITLES = {
+  "/": {
+    h1: "Coaching de Imagen, Presencia y Liderazgo Profesional",
+    shortLabel: "Inicio",
+    menuLabel: "Inicio",
+    cardTitle: "Coaching de Imagen Profesional",
+    seoTitle: "Coaching de Imagen y Presencia Profesional | Sonia McRorey",
+    supportHeading: "Imagen, presencia y posicionamiento profesional",
+    entity: "Coach de Imagen",
+    intent: "Alinear imagen, presencia y liderazgo con el nivel profesional actual.",
+    description: "Acompaño a líderes, empresarios y profesionistas a alinear imagen, percepción y seguridad interna para sostener mayor autoridad y claridad profesional.",
+  },
+  "/servicios-asesoria-de-imagen-coaching": {
+    h1: "Servicios de Coaching de Imagen y Presencia Profesional",
+    shortLabel: "Servicios",
+    menuLabel: "Servicios",
+    cardTitle: "Servicios",
+    seoTitle: "Servicios de Coaching de Imagen y Presencia Profesional | Sonia McRorey",
+    supportHeading: "Rutas de trabajo para imagen, presencia y empresa",
+    entity: "Servicios de Coach de Imagen",
+    intent: "Elegir el proceso adecuado segun etapa, contexto y necesidad profesional.",
+    description: "Rutas de asesoría, coaching y talleres para alinear imagen profesional, presencia, percepción y posicionamiento en México y LATAM.",
+  },
+  "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen": {
+    h1: "Asesoría de Imagen Integral",
+    shortLabel: "Asesoría Integral",
+    menuLabel: "Asesoría de Imagen",
+    cardTitle: "Asesoría Integral",
+    seoTitle: "Asesoría de Imagen Integral | Sonia McRorey",
+    supportHeading: "Identidad visual, estilo y coherencia externa",
+    entity: "Imagen profesional",
+    intent: "Ordenar estilo, color, guardarropa, rostro e identidad visual personal.",
+    description: "Proceso de asesoría de imagen integral para ordenar estilo, color, guardarropa, rostro e identidad visual con coherencia profesional.",
+  },
+  "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen": {
+    h1: "Coaching de Imagen y Presencia Profesional",
+    shortLabel: "Presencia Profesional",
+    menuLabel: "Coaching de Imagen",
+    cardTitle: "Coaching de Presencia",
+    seoTitle: "Coaching de Imagen y Presencia Profesional | Sonia McRorey",
+    supportHeading: "Confianza visible, comunicación y presencia",
+    entity: "Presencia ejecutiva",
+    intent: "Fortalecer presencia, seguridad visible, comunicación profesional y autoridad al ocupar espacios.",
+    description: "Coaching de imagen y presencia profesional para fortalecer confianza visible, comunicación, percepción ejecutiva y autoridad personal.",
+  },
+  "/servicios-asesoria-de-imagen-coaching/talleres": {
+    h1: "Imagen Empresarial y Talleres",
+    shortLabel: "Talleres",
+    menuLabel: "Talleres",
+    cardTitle: "Imagen Empresarial",
+    seoTitle: "Imagen Empresarial y Talleres | Sonia McRorey",
+    supportHeading: "Criterios visuales para equipos, marcas y empresas",
+    entity: "Imagen empresarial",
+    intent: "Alinear equipos, marcas y experiencias con criterios de imagen y comunicación profesional.",
+    description: "Talleres de imagen empresarial, colorimetría y comunicación para equipos, marcas y organizaciones que necesitan coherencia profesional.",
+  },
+  "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia": {
+    h1: "Coaching de Seguridad y Posicionamiento Profesional",
+    shortLabel: "Seguridad y Posicionamiento",
+    menuLabel: "Seguridad Profesional",
+    cardTitle: "Seguridad Profesional",
+    seoTitle: "Coaching de Seguridad y Posicionamiento Profesional | Sonia McRorey",
+    supportHeading: "Estructura interna para sostener crecimiento",
+    entity: "Seguridad interna",
+    intent: "Trabajar patrones internos, decisiones, visibilidad y capacidad de sostener crecimiento profesional.",
+    description: "Coaching de imagen con estructura interna para sostener liderazgo, decisiones, visibilidad y crecimiento profesional con mayor seguridad.",
+  },
+  "/servicios-asesoria-de-imagen-coaching/preguntas-frequentes": {
+    h1: "Preguntas Frecuentes sobre Coaching de Imagen",
+    shortLabel: "Preguntas Frecuentes",
+    menuLabel: "FAQ",
+    cardTitle: "Preguntas Frecuentes",
+    seoTitle: "Preguntas Frecuentes sobre Coaching de Imagen | Sonia McRorey",
+    supportHeading: "Respuestas claras para elegir el proceso correcto",
+    entity: "FAQ de servicios",
+    intent: "Resolver dudas sobre asesoría, coaching, talleres, modalidad y resultados.",
+    description: "Respuestas claras sobre asesoría de imagen, coaching de imagen, presencia profesional, talleres y procesos con Sonia McRorey.",
+  },
+  "/imagen-presencia": {
+    h1: "Publicaciones sobre Imagen, Presencia y Liderazgo",
+    shortLabel: "Publicaciones",
+    menuLabel: "Publicaciones",
+    cardTitle: "Publicaciones",
+    seoTitle: "Publicaciones de Imagen y Presencia Profesional | Sonia McRorey",
+    supportHeading: "Lecturas por tema, intención y etapa profesional",
+    entity: "Publicaciones de imagen profesional",
+    intent: "Organizar articulos por imagen, presencia, liderazgo, empresa y seguridad interna.",
+    description: "Archivo editorial de Sonia McRorey sobre imagen profesional, presencia, liderazgo, seguridad interna y posicionamiento profesional.",
+  },
+  "/sobre-sonia-mcrorey-asesora-de-imagen": {
+    h1: "Sonia McRorey",
+    shortLabel: "Sonia",
+    menuLabel: "Sonia",
+    cardTitle: "Sobre Sonia",
+    seoTitle: "Sonia McRorey | Coach de Imagen",
+    supportHeading: "Trayectoria, enfoque y forma de trabajo",
+    entity: "Sonia McRorey",
+    intent: "Presentar autoridad, trayectoria, metodologia y confianza profesional.",
+    description: "Conoce a Sonia McRorey, coach de imagen especializada en presencia, percepción, liderazgo personal y posicionamiento profesional.",
+  },
+};
 const PAGE_OVERRIDES = {
   "/": {
-    title: "Coaching de Imagen, Presencia y Liderazgo Profesional",
-    description: "Acompaño a líderes, empresarios y profesionistas a alinear imagen, percepción y seguridad interna para sostener mayor autoridad y claridad profesional.",
+    title: SEMANTIC_TITLES["/"].h1,
+    description: SEMANTIC_TITLES["/"].description,
     primaryCta: "Agendar diagnóstico estratégico",
   },
   "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia": {
-    title: "Coaching de Imagen, Seguridad Interna y Posicionamiento Profesional",
-    description: "Entrenamiento interno para sostener liderazgo, presencia y crecimiento profesional desde mayor claridad, seguridad y coherencia interna.",
+    title: SEMANTIC_TITLES["/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia"].h1,
+    description: SEMANTIC_TITLES["/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia"].description,
   },
 };
 const PILLARS = [
   {
-    label: "Asesoría de imagen integral",
+    label: SEMANTIC_TITLES["/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen"].menuLabel,
     audience: "Profesionales, empresarias y mujeres que quieren ordenar estilo, guardarropa, color y presencia diaria.",
     route: "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen",
     keywords: "asesoría de imagen personal, colorimetría, estilo profesional",
   },
   {
-    label: "Coaching de imagen y presencia profesional",
+    label: SEMANTIC_TITLES["/servicios-asesoria-de-imagen-coaching/coaching-de-imagen"].menuLabel,
     audience: "Líderes y emprendedoras que necesitan sostener seguridad, identidad y autoridad visible.",
     route: "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen",
     keywords: "coaching de imagen, presencia profesional, liderazgo",
   },
   {
-    label: "Imagen empresarial y talleres",
+    label: SEMANTIC_TITLES["/servicios-asesoria-de-imagen-coaching/talleres"].menuLabel,
     audience: "Equipos, marcas y organizaciones que necesitan coherencia visual, comunicación y experiencia presencial.",
     route: "/servicios-asesoria-de-imagen-coaching/talleres",
     keywords: "talleres de imagen, imagen corporativa, capacitación de colaboradores",
   },
   {
-    label: "Coaching de Imagen, Seguridad Interna y Posicionamiento Profesional",
+    label: SEMANTIC_TITLES["/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia"].menuLabel,
     audience: "Entrenamiento interno para sostener liderazgo, presencia, claridad profesional y decisiones alineadas con posicionamiento.",
     route: "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia",
     keywords: "coaching de imagen, seguridad interna, posicionamiento profesional",
@@ -476,7 +577,7 @@ const SERVICE_PROCESS_STEPS = {
   ],
 };
 const CONTENT_SECTION_LABELS = {
-  home: "Sistema de presencia",
+  home: "Presencia profesional",
   about: "Autoridad",
   "service-hub": "Decisión de servicio",
   service: "Contenido del proceso",
@@ -691,6 +792,7 @@ function isListLine(line) {
 
 function isHeadingCandidate(line) {
   if (isListLine(line)) return false;
+  if (!/[A-Za-zÁÉÍÓÚÜÑáéíóúüñ0-9]/.test(line)) return false;
   if (line.length > 92) return false;
   if (/^https?:/.test(line)) return false;
   if (/^[¿?]/.test(line)) return true;
@@ -735,6 +837,14 @@ function groupShortLines(lines) {
 function repairSourceFragments(value = "") {
   return value
     .replace(/^\.\s+/, "")
+    .replace(/Coaching de Imagen, Seguridad Interna y Posicionamiento Profesional/g, "Coaching de Seguridad y Posicionamiento Profesional")
+    .replace(/mentalidad y abundancia/gi, "seguridad interna y posicionamiento")
+    .replace(/abundancia energética/gi, "capacidad de sostener resultados y crecimiento")
+    .replace(/bloqueos y resistencias inconscientes/gi, "patrones internos que limitan claridad, decisiones y crecimiento profesional")
+    .replace(/bloqueos inconscientes/gi, "patrones internos que limitan decisiones y crecimiento")
+    .replace(/bloqueos/gi, "patrones internos")
+    .replace(/manifestación/gi, "alineación entre decisiones, identidad y resultados")
+    .replace(/\babundancia\b/gi, "crecimiento profesional")
     .replace(/�\s*/g, "")
     .replace(/\bq ue\b/gi, "que")
     .replace(/\bs ea\b/gi, "sea")
@@ -822,7 +932,6 @@ function visualSectionLabel(heading = "") {
   if (/^tu imagen potente\b/.test(lower)) return "Imagen desde el ser";
   if (/^construye\b/.test(lower)) return "Siguiente nivel";
   if (/^diferencia\b/.test(lower)) return "Diferencia entre procesos";
-  if (clean.length > 58) return `${clean.slice(0, 55).replace(/\s+\S*$/, "")}...`;
   return clean;
 }
 
@@ -849,6 +958,7 @@ function cleanDisplayTitle(value = "") {
     .replace(/\s*\|\s*SoniaMcRorey/gi, "")
     .replace(/^New\s+/i, "")
     .replace(/\s+article$/i, "")
+    .replace(/…/g, ",")
     .replace(/\s+/g, " ")
     .trim();
 }
@@ -867,6 +977,7 @@ function cleanExcerptText(value = "", maxLength = 190) {
 }
 
 function titleFromLines(page, lines) {
+  if (semanticIdentity(page.route)?.h1) return semanticIdentity(page.route).h1;
   if (PAGE_OVERRIDES[page.route]?.title) return PAGE_OVERRIDES[page.route].title;
   if (page.route === "/") return "Tu imagen ya debería reflejar el nivel que sostienes";
   const title = lines.find((line) => line.length > 8 && !line.startsWith("https://")) || page.title;
@@ -874,6 +985,7 @@ function titleFromLines(page, lines) {
 }
 
 function descriptionFromLines(lines, page = null) {
+  if (page && semanticIdentity(page.route)?.description) return semanticIdentity(page.route).description;
   if (page && PAGE_OVERRIDES[page.route]?.description) return PAGE_OVERRIDES[page.route].description;
   const cleaned = lines.map(cleanDisplayTitle).filter(Boolean);
   const line = cleaned.find((item) => item.length > 90) || cleaned.find((item) => item.length > 45) || "";
@@ -925,6 +1037,38 @@ function routeUrl(route) {
   return absoluteUrl(route);
 }
 
+function semanticIdentity(route) {
+  return SEMANTIC_TITLES[route] || null;
+}
+
+function semanticH1(page) {
+  return semanticIdentity(page.route)?.h1 || page.heroTitle || page.title;
+}
+
+function semanticShortLabel(route, fallback = "Contenido") {
+  return semanticIdentity(route)?.shortLabel || fallback;
+}
+
+function semanticMenuLabel(route, fallback = "Contenido") {
+  return semanticIdentity(route)?.menuLabel || semanticShortLabel(route, fallback);
+}
+
+function semanticCardTitle(page) {
+  return semanticIdentity(page.route)?.cardTitle || visualCardTitle(page.heroTitle);
+}
+
+function semanticSupportHeading(page) {
+  return semanticIdentity(page.route)?.supportHeading || contentHeading(page)[1];
+}
+
+function semanticSeoTitle(page) {
+  return semanticIdentity(page.route)?.seoTitle || `${cleanDisplayTitle(page.heroTitle)} | Sonia McRorey`;
+}
+
+function semanticDescription(page, fallback = "") {
+  return semanticIdentity(page.route)?.description || fallback || page.description || "";
+}
+
 function pageByRoute(pages) {
   return new Map(pages.map((page) => [page.route, page]));
 }
@@ -943,7 +1087,7 @@ function pillarForRoute(route) {
 
 function serviceLabel(route, pages) {
   const page = pageByRoute(pages).get(route);
-  return page?.heroTitle || pillarForRoute(route)?.label || "Servicio recomendado";
+  return semanticShortLabel(route, page?.heroTitle || pillarForRoute(route)?.label || "Servicio recomendado");
 }
 
 function cardDescription(page) {
@@ -1054,8 +1198,8 @@ function serviceSystemVisual(page, sections, clusterMap) {
   ];
   return `<section class="section service-system-visual" aria-label="Sistema visual del servicio">
     <div class="system-visual-copy">
-      <p class="section-label">Sistema de imagen</p>
-      <h2>${escapeHtml(visualSectionLabel(page.heroTitle))}</h2>
+      <p class="section-label">${escapeHtml(semanticIdentity(page.route)?.entity || "Método profesional")}</p>
+      <h2>${escapeHtml(`${semanticSupportHeading(page)} en práctica`)}</h2>
       <p>${highlightOntologyTerms(systemLine, axes, 3)}</p>
       <div class="system-metrics">
         ${metricItems.map((item) => `<div><strong>${escapeHtml(item.value)}</strong><span>${escapeHtml(item.label)}</span></div>`).join("")}
@@ -1063,8 +1207,8 @@ function serviceSystemVisual(page, sections, clusterMap) {
     </div>
     <div class="system-orbit" aria-hidden="true">
       <div class="orbit-core">
-        <span>Imagen</span>
-        <strong>Integral</strong>
+        <span>${escapeHtml(semanticShortLabel(page.route, "Imagen"))}</span>
+        <strong>${escapeHtml(page.type === "service-hub" ? "Rutas" : "Método")}</strong>
       </div>
       ${axes.map((topic, index) => `<div class="orbit-node orbit-node-${index + 1}">
         <span>${topicIcon(topic.id)}</span>
@@ -1094,7 +1238,7 @@ function internalLinkAtlas(page, pages, clusters) {
     <div class="atlas-grid">
       <div class="atlas-panel">
         <h3>Servicios conectados</h3>
-        ${serviceLinks.map((item) => `<a href="${item.route}"><span>${escapeHtml(pageTermSignals(item, clusterMap)[0] || "servicio")}</span>${escapeHtml(item.heroTitle)}</a>`).join("")}
+        ${serviceLinks.map((item) => `<a href="${item.route}"><span>${escapeHtml(semanticIdentity(item.route)?.entity || "Servicio")}</span>${escapeHtml(semanticShortLabel(item.route, item.heroTitle))}</a>`).join("")}
       </div>
       <div class="atlas-panel">
         <h3>Contenido de apoyo</h3>
@@ -1139,13 +1283,15 @@ function structuredContentSections(page, lines, pages, clusters) {
   ${serviceProcessMap(page)}
   <section class="section semantic-sections ${mode === "fragmented" ? "fragment-ladder" : ""} ${mode === "dense" ? "dense-reading" : ""}">
     ${rest.map((section, index) => {
+      const duplicateEarlier = [intro, ...rest.slice(0, index)].some((item) => item.heading.toLowerCase() === section.heading.toLowerCase());
+      const heading = duplicateEarlier ? `${section.heading} en contexto` : section.heading;
       const topics = sectionTopics([section.heading, ...section.lines], page, clusterMap);
-      return `<details class="semantic-card" id="tema-${index + 2}-${slugify(section.heading)}"${index < 2 ? " open" : ""}>
+      return `<details class="semantic-card" id="tema-${index + 2}-${slugify(heading)}"${index < 2 ? " open" : ""}>
       <summary>
         <span class="semantic-index">${String(index + 1).padStart(2, "0")}</span>
         <span class="semantic-summary-copy">
           ${topicChips(topics)}
-          <h2>${escapeHtml(section.heading)}</h2>
+          <h2>${escapeHtml(heading)}</h2>
         </span>
       </summary>
       <div class="semantic-copy">${renderSemanticCopy(section.lines, topics)}</div>
@@ -1205,7 +1351,7 @@ function pageTermSignals(page, clusterMap) {
     "imagen-estilo-profesional": ["asesoría de imagen", "imagen profesional", "guardarropa estratégico", "colorimetría ejecutiva", "marca personal"],
     "presencia-liderazgo-identidad": ["presencia profesional", "presencia ejecutiva", "identidad profesional", "liderazgo femenino", "autoridad profesional"],
     "empresas-marcas-equipos": ["imagen corporativa", "talleres de imagen corporativa", "comunicación ejecutiva", "imagen profesional"],
-    "mentalidad-abundancia-poder-personal": ["coaching de imagen", "seguridad interna", "presencia profesional", "liderazgo personal", "posicionamiento profesional"],
+    "seguridad-posicionamiento-profesional": ["coaching de imagen", "seguridad interna", "presencia profesional", "liderazgo personal", "posicionamiento profesional"],
   };
   const curated = routeTerms[page.route] || clusterTerms[clusterMap.get(page.route)?.id] || [];
   const haystack = `${page.heroTitle} ${page.description}`.toLowerCase();
@@ -1215,9 +1361,9 @@ function pageTermSignals(page, clusterMap) {
 
 function nav(currentRoute) {
   const simpleItems = [
-    ["/", "Inicio"],
-    ["/sobre-sonia-mcrorey-asesora-de-imagen", "Sonia"],
-    ["/imagen-presencia", "Publicaciones"],
+    ["/", semanticMenuLabel("/", "Inicio")],
+    ["/sobre-sonia-mcrorey-asesora-de-imagen", semanticMenuLabel("/sobre-sonia-mcrorey-asesora-de-imagen", "Sonia")],
+    ["/imagen-presencia", semanticMenuLabel("/imagen-presencia", "Publicaciones")],
     ["#contacto", "Contacto"],
   ];
   const servicesActive = currentRoute.startsWith("/servicios-asesoria-de-imagen-coaching") ? ' aria-current="page"' : "";
@@ -1228,7 +1374,7 @@ function nav(currentRoute) {
       ${PILLARS.map((pillar) => {
         const guide = BUYER_GUIDES[pillar.route];
         return `<a href="${pillar.route}" class="mega-link">
-          <span>${escapeHtml(pillar.label)}</span>
+          <span>${escapeHtml(semanticMenuLabel(pillar.route, pillar.label))}</span>
           <small>${escapeHtml(guide.outcome)}</small>
         </a>`;
       }).join("")}
@@ -1283,7 +1429,7 @@ function footer() {
         ${PILLARS.map((pillar) => {
           const guide = BUYER_GUIDES[pillar.route];
           return `<a href="${pillar.route}">
-            <span>${escapeHtml(pillar.label)}</span>
+            <span>${escapeHtml(semanticShortLabel(pillar.route, pillar.label))}</span>
             <strong>${escapeHtml(guide.pain)}</strong>
             <small>${escapeHtml(guide.outcome)}</small>
           </a>`;
@@ -1324,15 +1470,13 @@ function breadcrumbs(page) {
   }
   const label = page.type === "article" ? "Imagen y Presencia" : "Servicios";
   const parent = page.type === "article" ? "/imagen-presencia" : "/servicios-asesoria-de-imagen-coaching";
-  return `<nav class="breadcrumbs section" aria-label="Breadcrumbs"><a href="/">Inicio</a><span>/</span><a href="${parent}">${label}</a><span>/</span><span aria-current="page">${escapeHtml(page.heroTitle)}</span></nav>`;
+  const currentLabel = page.type === "article" ? cleanDisplayTitle(page.heroTitle) : semanticShortLabel(page.route, page.heroTitle);
+  return `<nav class="breadcrumbs section" aria-label="Breadcrumbs"><a href="/">Inicio</a><span>/</span><a href="${parent}">${label}</a><span>/</span><span aria-current="page">${escapeHtml(currentLabel)}</span></nav>`;
 }
 
 function contentHeading(page) {
-  if (page.type === "home") return ["Presencia profesional", "Cuando tu imagen sostiene tu nivel"];
-  if (page.type === "about") return ["Sobre Sonia", "Trayectoria, enfoque y forma de trabajo"];
-  if (page.type === "service-hub") return ["Servicios", "Elige el proceso que acompaña tu momento"];
-  if (page.type === "service") return ["Proceso", "Qué trabaja este acompañamiento"];
-  if (page.type === "article-index") return ["Publicaciones", "Archivo de Imagen, Presencia y Mentalidad"];
+  const identity = semanticIdentity(page.route);
+  if (identity) return [identity.entity, identity.supportHeading];
   if (page.type === "article") return ["Artículo", "Lectura completa"];
   return [BRAND_NAME, "Contenido principal"];
 }
@@ -1410,7 +1554,7 @@ function serviceCards(pages) {
     .filter((page) => page.type === "service")
     .map((page) => `<a class="service-card" href="${page.route}">
       <figure><img src="${pickImage(page)}" alt="${escapeHtml(page.heroTitle)}" /></figure>
-      <h3>${escapeHtml(visualCardTitle(page.heroTitle))}</h3>
+      <h3>${escapeHtml(semanticCardTitle(page))}</h3>
       <p>${escapeHtml(cardDescription(page))}</p>
       <span>Conocer servicio</span>
     </a>`)
@@ -1423,7 +1567,7 @@ function proofStrip(pages) {
   return `<section class="section proof-strip" aria-label="Datos de confianza">
     <div class="proof-item"><strong>14+</strong><span>años de experiencia profesional</span></div>
     <div class="proof-item"><strong>${serviceCount}</strong><span>procesos de asesoría y coaching</span></div>
-    <div class="proof-item"><strong>${articleCount}</strong><span>publicaciones clasificadas por intención</span></div>
+    <div class="proof-item"><strong>${articleCount}</strong><span>publicaciones sobre imagen y presencia</span></div>
     <div class="proof-item"><strong>AICI</strong><span>formación y criterio internacional</span></div>
   </section>`;
 }
@@ -1433,8 +1577,8 @@ function pillarCards(pages, { compact = false } = {}) {
   return PILLARS.map((pillar) => {
     const page = map.get(pillar.route);
     return `<a class="pillar-card${compact ? " compact" : ""}" href="${pillar.route}">
-      <span>${escapeHtml(pillar.keywords)}</span>
-      <h3>${escapeHtml(page?.heroTitle || pillar.label)}</h3>
+      <span>${escapeHtml(semanticIdentity(pillar.route)?.entity || pillar.keywords)}</span>
+      <h3>${escapeHtml(semanticCardTitle(page || { route: pillar.route, heroTitle: pillar.label }))}</h3>
       <p>${escapeHtml(pillar.audience)}</p>
       <small>Ver ruta recomendada</small>
     </a>`;
@@ -1592,7 +1736,7 @@ function renderSemanticHub(hub, pages, clusters) {
       </div>
       <div class="service-grid">${serviceLinks.map((page) => `<a class="service-card" href="${page.route}">
         <figure><img src="${pickImage(page)}" alt="${escapeHtml(page.heroTitle)}" /></figure>
-        <h3>${escapeHtml(visualCardTitle(page.heroTitle))}</h3>
+        <h3>${escapeHtml(semanticCardTitle(page))}</h3>
         <p>${highlightOntologyTerms(cardDescription(page), ONTOLOGY_TOPICS, 3)}</p>
         <span>Conocer servicio</span>
       </a>`).join("")}</div>
@@ -1881,17 +2025,10 @@ function homeExtras(pages, clusters) {
   const clusterMap = articleClusterByRoute(clusters);
   return `${proofStrip(pages)}
   ${servicePathSection(pages)}
-  <section class="section services">
-    <div class="section-heading">
-      <p class="section-label">Servicios</p>
-      <h2>Procesos para alinear imagen, presencia y decisiones.</h2>
-    </div>
-    <div class="service-grid">${serviceCards(pages)}</div>
-  </section>
   <section class="section journal">
     <div class="section-heading">
       <p class="section-label">Publicaciones</p>
-      <h2>Lecturas organizadas por intención de búsqueda.</h2>
+      <h2>Lecturas para entender imagen, presencia y liderazgo.</h2>
     </div>
     <div class="publication-grid">${articleCards(pages, { limit: 6, clusterMap })}</div>
   </section>`;
@@ -1903,8 +2040,7 @@ function indexExtras(pages, clusters) {
 }
 
 function serviceHubExtras(pages) {
-  return `${servicePathSection(pages)}
-  <section class="section services"><div class="service-grid">${serviceCards(pages)}</div></section>`;
+  return `${servicePathSection(pages)}`;
 }
 
 function serviceExtras(page, pages, clusters) {
@@ -1947,7 +2083,8 @@ function schema(page) {
   const pageSchema = {
     "@context": "https://schema.org",
     "@type": type,
-    name: page.heroTitle,
+    name: semanticH1(page),
+    description: semanticDescription(page, page.description),
     url: absoluteUrl(page.route),
     image: `${SITE_URL}${pickImage(page)}`,
     author: { "@type": "Person", name: "Sonia McRorey" },
@@ -1993,8 +2130,8 @@ function renderPage(page, pages, clusters) {
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>${escapeHtml(cleanDisplayTitle(page.title || page.heroTitle))} | Sonia McRorey</title>
-  <meta name="description" content="${escapeHtml(page.description)}" />
+  <title>${escapeHtml(semanticSeoTitle(page))}</title>
+  <meta name="description" content="${escapeHtml(semanticDescription(page, page.description))}" />
   <link rel="canonical" href="${absoluteUrl(page.route)}" />
   <link rel="alternate" hreflang="es-MX" href="${absoluteUrl(page.route)}" />
   <link rel="alternate" hreflang="x-default" href="${absoluteUrl(page.route)}" />
@@ -2002,8 +2139,8 @@ function renderPage(page, pages, clusters) {
   <link rel="alternate" type="text/plain" href="${SITE_URL}/llms.txt" title="Resumen para asistentes" />
   <link rel="alternate" type="text/plain" href="${SITE_URL}/llms-full.txt" title="Contexto GEO completo para asistentes" />
   <link rel="alternate" type="application/json" href="${SITE_URL}/agent/site-profile.json" title="Perfil estructurado para asistentes" />
-  <meta property="og:title" content="${escapeHtml(page.heroTitle)}" />
-  <meta property="og:description" content="${escapeHtml(page.description)}" />
+  <meta property="og:title" content="${escapeHtml(semanticH1(page))}" />
+  <meta property="og:description" content="${escapeHtml(semanticDescription(page, page.description))}" />
   <meta property="og:url" content="${absoluteUrl(page.route)}" />
   <meta property="og:image" content="${SITE_URL}${image}" />
   <link rel="icon" href="/assets/sonia-icon.svg" />
@@ -2070,7 +2207,10 @@ function pageSignals(pages, clusters) {
       url: routeUrl(page.route),
       route: page.route,
       pageType: page.type,
-      title: page.heroTitle,
+      title: semanticH1(page),
+      shortLabel: semanticShortLabel(page.route, page.type),
+      semanticEntity: semanticIdentity(page.route)?.entity || null,
+      primaryIntentStatement: semanticIdentity(page.route)?.intent || null,
       primaryIntent:
         page.type === "home"
           ? "asesoría de imagen, coaching de imagen y presencia profesional"
@@ -2137,11 +2277,14 @@ function servicesAgent(pages) {
     services: PILLARS.map((pillar) => {
       const page = map.get(pillar.route);
       return {
-        name: page?.heroTitle || pillar.label,
+        name: semanticIdentity(pillar.route)?.h1 || page?.heroTitle || pillar.label,
+        shortLabel: semanticShortLabel(pillar.route, pillar.label),
+        semanticEntity: semanticIdentity(pillar.route)?.entity || null,
+        primaryIntent: semanticIdentity(pillar.route)?.intent || null,
         canonicalUrl: routeUrl(pillar.route),
         primaryKeyword: pillar.keywords,
         audience: pillar.audience,
-        summary: page?.description || pillar.audience,
+        summary: semanticIdentity(pillar.route)?.description || page?.description || pillar.audience,
       };
     }),
     modalities: ["Presencial en Guadalajara", "En línea", "Empresas y equipos", "México y Latinoamérica según el alcance del proyecto"],
@@ -2237,7 +2380,7 @@ function entitiesAgent() {
       "imagen corporativa",
       "personal branding ejecutivo",
       "coaching de imagen",
-      "Coaching de Imagen, Seguridad Interna y Posicionamiento Profesional",
+      "Coaching de Seguridad y Posicionamiento Profesional",
       "coaching de imagen con estructura interna",
       "seguridad interna",
       "liderazgo personal",
@@ -2365,7 +2508,13 @@ function siteProfileAgent(pages) {
       ownedCategory: OWNED_CATEGORY,
       semanticAuthorityLadder: SEMANTIC_AUTHORITY_LADDER,
     },
-    canonicalPages: pages.map((page) => ({ name: page.heroTitle, url: routeUrl(page.route), pageType: page.type })),
+    canonicalPages: pages.map((page) => ({
+      name: semanticH1(page),
+      shortLabel: semanticShortLabel(page.route, page.type),
+      semanticEntity: semanticIdentity(page.route)?.entity || null,
+      url: routeUrl(page.route),
+      pageType: page.type,
+    })),
     semanticHubs: SEMANTIC_HUBS.map((hub) => ({ name: hub.title, url: routeUrl(hub.route), cluster: hub.cluster })),
     dominanceFormula: DOMINANCE_FORMULA,
     semanticLinkGraph: SEMANTIC_LINK_GRAPH,

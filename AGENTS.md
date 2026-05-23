@@ -189,6 +189,33 @@ Never expose internal strategy in visible content:
 
 Comparison pages must not use competitor names in visible page titles or public comparison URLs. Use editorial category titles such as `La evolucion del coaching de imagen en Mexico y LATAM` or `Del styling tradicional a la presencia profesional`.
 
+## Global Title And Label Hierarchy Rule
+
+Every route has one canonical semantic identity. Components must consume that identity instead of generating their own title, truncating strings, or inheriting a page H1 into cards, menus, breadcrumbs, schema, CTAs or support modules.
+
+Route identity fields are:
+
+- H1: primary commercial intent
+- SEO title: title tag
+- short label: breadcrumbs, related links and compact UI
+- menu label: navigation
+- card title: service and route cards
+- support heading: secondary visual/process modules
+- entity: visible category label where useful
+- intent: machine-readable page-to-intent mapping
+
+Rules:
+
+- one H1 only per page
+- no card title may repeat the page H1 on the same page
+- no support section may reuse the page H1 as an H2
+- no public heading may use ellipsis truncation
+- no generic visible label such as `Sistema`, `Imagen`, `Transformación` or `Presencia` may appear without business context
+- no visible label may expose SEO, GEO, ontology, ranking, agent, LLM or internal taxonomy language
+- long semantic descriptors belong in schema and agent JSON, not repeated across nav, cards and footer
+
+Use `docs/SEMANTIC_HIERARCHY_REPAIR_REPORT.md` as the current canonical naming and QA matrix.
+
 ## Engineering Rules
 
 - Read source files before editing.
