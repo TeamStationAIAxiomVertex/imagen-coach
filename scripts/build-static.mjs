@@ -576,6 +576,53 @@ const SERVICE_PROCESS_STEPS = {
     "Posicionamiento",
   ],
 };
+const SERVICE_PROCESS_DETAILS = {
+  "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen": [
+    "Lectura inicial de imagen, etapa personal y objetivos profesionales.",
+    "Armonía cromática, rostro y presencia visual.",
+    "Definición de estilo, identidad y códigos de comunicación.",
+    "Proporciones, silueta y decisiones de vestuario.",
+    "Revisión de clóset con criterios prácticos.",
+    "Compras alineadas con identidad, uso y presupuesto.",
+    "Aplicación cotidiana para sostener coherencia visual.",
+  ],
+  "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen": [
+    "Reconocer quién eres y qué necesitas comunicar.",
+    "Actualizar la forma en que te percibes.",
+    "Ordenar seguridad, merecimiento y valor visible.",
+    "Decidir cómo ocupar espacios con mayor claridad.",
+    "Sostener presencia en conversaciones, reuniones y exposición.",
+    "Alinear la lectura externa con tu nivel real.",
+  ],
+  "/servicios-asesoria-de-imagen-coaching/talleres": [
+    "Definir el objetivo del equipo o experiencia.",
+    "Leer marca, industria, clientes y contexto.",
+    "Diseñar contenido útil para el grupo.",
+    "Trabajar ejemplos y aplicación en vivo.",
+    "Crear criterios compartidos de imagen y comunicación.",
+    "Cerrar con acciones claras para sostener el cambio.",
+  ],
+  "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia": [
+    "Detectar patrones que interfieren con claridad, visibilidad y crecimiento.",
+    "Fortalecer seguridad interna para sostener nuevas decisiones.",
+    "Alinear presencia con responsabilidad, exposición y liderazgo.",
+    "Observar respuestas internas ante crecimiento, visibilidad y presión.",
+    "Convertir claridad interna en decisiones sostenibles.",
+    "Integrar una forma más sólida de ocupar tu lugar profesional.",
+  ],
+};
+const SERVICE_PROCESS_TOPIC_IDS = {
+  "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen": ["percepcion", "color", "identidad", "guardarropa", "guardarropa", "decision", "presencia"],
+  "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen": ["identidad", "percepcion", "decision", "liderazgo", "presencia", "percepcion"],
+  "/servicios-asesoria-de-imagen-coaching/talleres": ["decision", "empresa", "empresa", "presencia", "percepcion", "liderazgo"],
+  "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia": ["mentalidad", "identidad", "presencia", "mentalidad", "decision", "liderazgo"],
+};
+const SERVICE_INTRO_LABELS = {
+  "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen": ["Punto de partida", "Lo que se observa", "Objetivo visual", "Criterio profesional", "Aplicación práctica", "Resultado"],
+  "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen": ["Punto de partida", "Lo que se trabaja", "Presencia visible", "Confianza", "Aplicación", "Resultado"],
+  "/servicios-asesoria-de-imagen-coaching/talleres": ["Punto de partida", "Contexto de equipo", "Criterio compartido", "Aplicación", "Resultado", "Siguiente paso"],
+  "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia": ["Enfoque", "Punto de partida", "Consecuencia profesional", "Situación actual", "Perfil", "Lectura clave", "Acompañamiento", "Trabajo central"],
+};
 const CONTENT_SECTION_LABELS = {
   home: "Presencia profesional",
   about: "Autoridad",
@@ -1165,6 +1212,8 @@ function renderSemanticCopy(lines, topics = []) {
 function serviceProcessMap(page) {
   const steps = SERVICE_PROCESS_STEPS[page.route];
   if (!steps) return "";
+  const details = SERVICE_PROCESS_DETAILS[page.route] || [];
+  const topicIds = SERVICE_PROCESS_TOPIC_IDS[page.route] || [];
   const heading =
     page.route === "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen"
       ? "Etapas de la Asesoría de Imagen Integral"
@@ -1178,8 +1227,36 @@ function serviceProcessMap(page) {
       <p class="section-label">Etapas</p>
       <h2>${escapeHtml(heading)}</h2>
     </div>
-    <ol class="process-rail">${steps.map((step, index) => `<li><span>${String(index + 1).padStart(2, "0")}</span><strong>${escapeHtml(step)}</strong></li>`).join("")}</ol>
+    <ol class="process-rail process-flow">${steps.map((step, index) => {
+      const topicId = topicIds[index] || "presencia";
+      return `<li>
+        <div class="process-node-head">
+          <span class="process-number">${String(index + 1).padStart(2, "0")}</span>
+          <span class="process-icon">${topicIcon(topicId)}</span>
+        </div>
+        <strong>${escapeHtml(step)}</strong>
+        ${details[index] ? `<small>${escapeHtml(details[index])}</small>` : ""}
+      </li>`;
+    }).join("")}</ol>
   </section>`;
+}
+
+function renderServiceIntroPanel(page, intro, topics = []) {
+  if (page.type !== "service") return `<article class="semantic-panel">${renderSemanticCopy(intro.lines, topics)}</article>`;
+  const labels = SERVICE_INTRO_LABELS[page.route] || ["Punto de partida", "Contexto", "Proceso", "Resultado"];
+  const activeTopics = topics.length ? topics : ONTOLOGY_TOPICS.slice(0, 3);
+  return `<article class="semantic-panel service-context-panel" aria-label="Contexto del proceso">
+    ${intro.lines.map((line, index) => {
+      const topic = activeTopics[index % activeTopics.length] || ONTOLOGY_TOPICS[1];
+      return `<section class="context-card">
+        <div class="context-card-head">
+          <span class="context-icon">${topicIcon(topic.id)}</span>
+          <span>${escapeHtml(labels[index] || `Clave ${String(index + 1).padStart(2, "0")}`)}</span>
+        </div>
+        ${renderLongParagraph(line, [topic, ...activeTopics])}
+      </section>`;
+    }).join("")}
+  </article>`;
 }
 
 function serviceSystemVisual(page, sections, clusterMap) {
@@ -1276,7 +1353,7 @@ function structuredContentSections(page, lines, pages, clusters) {
       <h2>${escapeHtml(intro.heading)}</h2>
       ${topicChips(introTopics)}
     </div>
-    <article class="semantic-panel">${renderSemanticCopy(intro.lines, introTopics)}</article>
+    ${renderServiceIntroPanel(page, intro, introTopics)}
   </section>
   ${serviceSystemVisual(page, sections, clusterMap)}
   ${serviceProcessMap(page)}
