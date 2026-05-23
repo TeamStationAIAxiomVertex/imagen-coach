@@ -130,6 +130,81 @@ Assert:
 - cards do not resize unpredictably
 - color/typography match the Guadalajara UX/UI standard
 
+### 7a. Comparison Page UI/UX QA Findings
+
+Current comparison pages need a dedicated visual QA pass before they are considered production-quality.
+
+Observed issues on `/comparaciones/evolucion-coaching-imagen-mexico-latam/`:
+
+- Mobile hero hierarchy is too heavy. The H1 wraps into a large block and pushes the visual proof, comparison navigation and page substance too far down.
+- The breadcrumb exposes the full page title on mobile, creating a cramped title strip before the user reaches the actual page content.
+- The hero image is visually strong but too dominant on mobile; it consumes an entire viewport after the CTA and delays access to the comparison content.
+- The comparison switchboard stacks into tall repeated cards on mobile. It functions, but it feels like a list of text boxes rather than a compact decision/navigation control.
+- Section headings use oversized editorial display type even in utility sections such as context, comparison matrix and related reading. This weakens hierarchy because too many sections feel like hero sections.
+- Some text blocks still read as repeated category framing instead of page-specific buyer guidance. Each comparison page must carry a different emotional state and intent.
+- Indicator cards, definition cards and path cards help, but they need tighter labels, more consistent vertical rhythm and less repeated "presencia/liderazgo/posicionamiento" phrasing.
+- The comparison table remains desktop-oriented. On mobile it should become stacked comparison rows or compact attribute cards instead of forcing table scanning.
+- Related comparison cards use large display type and long copy, which creates another wall of cards at the bottom of the page.
+- CTA placement is not yet consistent after the comparison matrix; the user needs a clear next action after understanding the page.
+
+These are not SEO defects. They are comprehension, hierarchy and buyer-trust defects.
+
+### 7b. Comparison Page Execution Plan
+
+Implement the comparison page UI in this order:
+
+1. Hero compression
+
+   - Keep the H1 editorial, but constrain mobile H1 size and line height.
+   - Shorten breadcrumb current-page text on mobile.
+   - Reduce hero vertical padding on mobile.
+   - Keep CTA buttons above the fold and make them equal-width only when enough space exists.
+
+2. Navigation redesign
+
+   - Replace the mobile comparison switchboard card stack with a compact segmented navigation or horizontal scroll rail.
+   - Use short labels such as `Mapa`, `Consultoria`, `Apariencia`, `Motivacion`, `Styling`, `Empresa`, `Evolucion`.
+   - Preserve full descriptive titles in accessible labels and link text where appropriate without overwhelming the visible UI.
+
+3. Page-specific content territories
+
+   - Each comparison page must define its own `pain`, `shift`, `buyerQuestion`, `indicators`, `definitions`, `path` and `cta`.
+   - No comparison page may reuse the same intro paragraph structure unless the wording is intentionally different and fits that page intent.
+   - The evolution page owns industry evolution and Guadalajara/LATAM positioning.
+   - The styling page owns clothing-to-identity transition.
+   - The motivation page owns inspiration-to-positioning transition.
+   - The corporate page owns team consistency and client perception.
+   - The appearance page owns appearance-to-authority transition.
+   - The traditional consulting page owns external coherence-to-integrated presence transition.
+
+4. Section hierarchy
+
+   - Reserve hero-scale display type for the hero only.
+   - Use smaller, tighter H2 sizes for context, differentiator, table and related sections.
+   - Keep copy panels to short paragraphs with a max line length around 60-72 characters.
+
+5. Visual comprehension
+
+   - Convert the comparison matrix to responsive attribute cards on mobile.
+   - Add icon-supported summary cards only where they lower cognitive load.
+   - Avoid repeated generic icons when a page has a more specific industry cue.
+   - Use native `title` tooltips only as supplemental definitions; do not rely on tooltips for essential meaning.
+
+6. Conversion clarity
+
+   - Add one calm CTA after the comparison matrix.
+   - CTA language must match the page intent, for example `Agendar diagnostico de presencia profesional`.
+   - Avoid repeated generic CTAs between every section.
+
+7. Browser validation
+
+   - Validate desktop around 1280px.
+   - Validate tablet around 768px.
+   - Validate mobile around 375px.
+   - Capture screenshots for hero, comparison navigation, content cards, matrix and related/CTA area.
+   - Check console warnings/errors.
+   - Confirm no visible internal terms: SEO strategy, ontology, semantic graph, GEO engineering, ranking intent, AI optimization notes or URL planning.
+
 ### 8. Deployment Tests
 
 Assert:

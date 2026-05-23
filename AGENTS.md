@@ -62,6 +62,41 @@ Use the Guadalajara repo as the design reference for:
 
 Do not turn `imagencoach.com` into a local Guadalajara landing page. It is the larger general site.
 
+## Comparison Page UX Rule
+
+Comparison pages are premium editorial category pages. They must not feel like SEO landing pages, internal strategy notes, generic cards, or repeated text boxes.
+
+Before editing comparison pages, define the page-specific:
+
+- buyer question
+- emotional state
+- category shift
+- vocabulary cluster
+- visual indicators
+- next action
+
+The visible UI must provide:
+
+- compact page navigation for all comparison pages
+- clear active-state indicator
+- short section headings that do not compete with the hero
+- icon-supported indicators that explain the specific comparison
+- definitions only where they reduce cognitive load
+- responsive comparison attributes that work on mobile without horizontal scanning
+- one clear CTA after the comparison is understood
+
+Do not repeat the same generic intro, ladder, indicator labels or related-card language across all comparison pages. Repetition creates weak buyer trust and weak retrieval differentiation.
+
+On mobile:
+
+- hero title must not consume the whole viewport
+- breadcrumb current page text must not become a second page title
+- hero image must not delay the comparison content by more than one viewport
+- comparison navigation must be compact, not a long stack of oversized cards
+- tables must become readable cards or compact rows
+
+When QA finds title or text-area issues, record the concrete failure in `docs/TDD.md` before implementing the visual fix.
+
 ## Content Rules
 
 The raw crawl is evidence. Do not edit it casually.
