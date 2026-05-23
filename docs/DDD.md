@@ -8,9 +8,11 @@ This is not a fashion site, influencer brand, spa/luxury site, or generic coachi
 
 ## Bounded Contexts
 
-### General ImagenCoach Site
+### General Coach De Imagen Site
 
-Domain: `imagencoach.com`
+Domain: `coachdeimagen.com`
+
+Legacy source domain: `imagencoach.com`
 
 Purpose:
 

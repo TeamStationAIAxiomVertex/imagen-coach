@@ -5,7 +5,9 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DIST = path.join(ROOT, "dist");
-const SITE_URL = "https://imagencoach.com";
+const SITE_URL = "https://coachdeimagen.com";
+const LEGACY_SITE_URL = "https://imagencoach.com";
+const BRAND_NAME = "Coach De Imagen";
 const ASSET_VERSION = "20260523-semantic-authority-v1";
 const WHATSAPP = "https://wa.me/526646105348?text=Hola%20Sonia%2C%20me%20interesa%20agendar%20un%20diagn%C3%B3stico.";
 const CONTACT = {
@@ -370,7 +372,9 @@ const COMPARISON_DEFINITIONS = [
   },
 ];
 const LEGACY_REDIRECTS = [
-  ["https://www.imagencoach.com/*", "https://imagencoach.com/:splat", 301],
+  ["https://www.coachdeimagen.com/*", `${SITE_URL}/:splat`, 301],
+  [`${LEGACY_SITE_URL}/*`, `${SITE_URL}/:splat`, 301],
+  ["https://www.imagencoach.com/*", `${SITE_URL}/:splat`, 301],
   ["/comparaciones/sonia-mcrorey-vs-gaby-vargas", "/comparaciones/evolucion-coaching-imagen-mexico-latam", 301],
   ["/articulos/tu-color-tu-poder-el-impacto-de-la-colorimetria", "/imagen-presencia/tu-color-tu-poder-el-impacto-de-la-colorimetria", 301],
   ["/articulos/aprende-a-resaltar-tus-proporciones", "/imagen-presencia/aprende-a-resaltar-tus-proporciones", 301],
@@ -1251,9 +1255,9 @@ function nav(currentRoute) {
 
 function header(currentRoute) {
   return `<header class="site-header" data-header>
-    <a class="brand" href="/" aria-label="Sonia McRorey ImagenCoach">
+    <a class="brand" href="/" aria-label="Sonia McRorey ${BRAND_NAME}">
       <span class="brand-wordmark">Sonia McRorey</span>
-      <small>ImagenCoach</small>
+      <small>${BRAND_NAME}</small>
     </a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Abrir navegación"><span></span><span></span></button>
     <nav class="site-nav" aria-label="Navegación principal">${nav(currentRoute)}</nav>
@@ -1265,7 +1269,7 @@ function footer() {
   return `<footer class="footer" id="contacto">
     <section class="section footer-intelligence">
       <div class="footer-decision">
-        <p class="section-label">ImagenCoach</p>
+        <p class="section-label">${BRAND_NAME}</p>
         <h2>Encuentra la ruta correcta para tu imagen, presencia y siguiente nivel.</h2>
         <p>Sonia McRorey trabaja imagen integral, coaching de imagen, talleres para empresas y procesos de mentalidad para personas, marcas y equipos en México y LATAM.</p>
         <div class="actions">
@@ -1329,13 +1333,13 @@ function contentHeading(page) {
   if (page.type === "service") return ["Proceso", "Qué trabaja este acompañamiento"];
   if (page.type === "article-index") return ["Publicaciones", "Archivo de Imagen, Presencia y Mentalidad"];
   if (page.type === "article") return ["Artículo", "Lectura completa"];
-  return ["ImagenCoach", "Contenido principal"];
+  return [BRAND_NAME, "Contenido principal"];
 }
 
 function hero(page, lines) {
   const image = pickImage(page);
   const lede = nonTitleLines(page, lines, 1).slice(0, 2);
-  const eyebrow = page.type === "article" ? "Imagen, presencia y mentalidad" : page.type === "service" ? "Servicio" : page.type === "about" ? "Sobre Sonia" : "ImagenCoach";
+  const eyebrow = page.type === "article" ? "Imagen, presencia y mentalidad" : page.type === "service" ? "Servicio" : page.type === "about" ? "Sobre Sonia" : BRAND_NAME;
   return `<section class="section hero imagen-hero">
     <div class="hero-copy">
       <p class="eyebrow">${eyebrow}</p>
@@ -1348,7 +1352,7 @@ function hero(page, lines) {
     </div>
     <figure class="hero-media">
       <img src="${image}" alt="${escapeHtml(page.heroTitle)}" />
-      <figcaption><img src="/assets/sonia-icon.svg" alt="" /> Sonia McRorey · ImagenCoach</figcaption>
+      <figcaption><img src="/assets/sonia-icon.svg" alt="" /> Sonia McRorey · ${BRAND_NAME}</figcaption>
     </figure>
   </section>`;
 }
@@ -1498,7 +1502,7 @@ function hubSchema(hub) {
     url: absoluteUrl(hub.route),
     inLanguage: "es-MX",
     about: hub.terms.map((term) => ({ "@type": "Thing", name: term })),
-    isPartOf: { "@type": "WebSite", name: "ImagenCoach", url: SITE_URL },
+    isPartOf: { "@type": "WebSite", name: BRAND_NAME, url: SITE_URL },
   };
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -1568,7 +1572,7 @@ function renderSemanticHub(hub, pages, clusters) {
       </div>
       <figure class="hero-media">
         <img src="/assets/797aeda1281e5d5e.png" alt="${escapeHtml(hub.title)}" />
-        <figcaption><img src="/assets/sonia-icon.svg" alt="" /> Sonia McRorey · ImagenCoach</figcaption>
+        <figcaption><img src="/assets/sonia-icon.svg" alt="" /> Sonia McRorey · ${BRAND_NAME}</figcaption>
       </figure>
     </section>
     <section class="section authority-hub-map">
@@ -1622,7 +1626,7 @@ function comparisonSchema(page) {
     },
     publisher: {
       "@type": "Organization",
-      name: "ImagenCoach",
+      name: BRAND_NAME,
       url: SITE_URL,
     },
     image: page.heroImage ? `${SITE_URL}${page.heroImage}` : `${SITE_URL}/assets/797aeda1281e5d5e.png`,
@@ -1646,7 +1650,7 @@ function comparisonSchema(page) {
       { "@type": "Thing", name: "Posicionamiento Profesional" },
       { "@type": "Thing", name: OWNED_CATEGORY },
     ],
-    isPartOf: { "@type": "WebSite", name: "ImagenCoach", url: SITE_URL },
+    isPartOf: { "@type": "WebSite", name: BRAND_NAME, url: SITE_URL },
   };
   const breadcrumb = {
     "@context": "https://schema.org",
@@ -1827,7 +1831,7 @@ function renderComparisonPage(page) {
       </div>
       <figure class="hero-media">
         <img src="${heroImage}" alt="${escapeHtml(heroAlt)}" width="1200" height="1500" decoding="async" fetchpriority="high" />
-        <figcaption><img src="/assets/sonia-icon.svg" alt="" /> Sonia McRorey · ImagenCoach</figcaption>
+        <figcaption><img src="/assets/sonia-icon.svg" alt="" /> Sonia McRorey · ${BRAND_NAME}</figcaption>
       </figure>
     </section>
     ${comparisonCategoryNav(page.route)}
@@ -2168,7 +2172,7 @@ function ontologyAgent() {
     language: "es-MX",
     masterOntology: MASTER_ONTOLOGY,
     brandSystem: {
-      platform: "Imagen Coach",
+      platform: BRAND_NAME,
       primaryPerson: "Sonia McRorey",
       productionDomain: SITE_URL,
       canonicalIdentity: "coaching de imagen, presencia, percepción, liderazgo and posicionamiento profesional with psychological depth and executive clarity in México and LATAM",
@@ -2177,7 +2181,7 @@ function ontologyAgent() {
     },
     coreEntities: [
       { name: "Sonia McRorey", type: "Person", role: "Coach de Imagen, Presencia y Posicionamiento Profesional" },
-      { name: "Imagen Coach", type: "Brand", role: "Holistic executive image coaching platform for presence, perception, leadership and professional positioning" },
+      { name: BRAND_NAME, type: "Brand", role: "Holistic image coaching platform for presence, perception, leadership and professional positioning" },
       { name: "Guadalajara", type: "Locality", role: "Base presencial y señal local primaria" },
     ],
     masterCategory: "Imagen, presencia, percepción, liderazgo y posicionamiento profesional",
@@ -2212,7 +2216,7 @@ function entitiesAgent() {
       areaServed: ["México", "LATAM"],
     },
     brandEntity: {
-      name: "Imagen Coach",
+      name: BRAND_NAME,
       type: "ProfessionalService",
       positioning: "La plataforma líder en coaching de imagen, presencia y posicionamiento profesional en México y LATAM.",
       dominanceFormula: DOMINANCE_FORMULA,
@@ -2329,7 +2333,7 @@ function contactAgent() {
     language: "es-MX",
     business: {
       name: "Sonia McRorey",
-      brand: "Imagen Coach",
+      brand: BRAND_NAME,
       phone: CONTACT.phone,
       address: CONTACT.address,
       hours: CONTACT.hours,
@@ -2353,7 +2357,7 @@ function siteProfileAgent(pages) {
     language: "es-MX",
     entity: {
       name: "Sonia McRorey",
-      brand: "Imagen Coach",
+      brand: BRAND_NAME,
       type: "ProfessionalService",
       role: "Coaching de Imagen, Presencia y Posicionamiento Profesional",
       description: "Coaching de imagen, presencia profesional, seguridad interna, liderazgo personal, percepción profesional, comunicación ejecutiva, imagen corporativa y posicionamiento profesional para líderes, empresarios, profesionistas, marcas personales y equipos en México y LATAM.",
@@ -2396,7 +2400,7 @@ function conversionMapAgent() {
       message: "Hola Sonia, me interesa agendar un diagnóstico.",
     },
     funnel: [
-      { stage: "awareness", target: "/", signals: ["Imagen Coach", "Sonia McRorey", "consultora de imagen ejecutiva", "presencia ejecutiva"] },
+      { stage: "awareness", target: "/", signals: [BRAND_NAME, "Sonia McRorey", "coach de imagen", "presencia ejecutiva"] },
       { stage: "service-fit", target: "/servicios-asesoria-de-imagen-coaching", signals: ["asesoría de imagen ejecutiva", "coaching profesional", "imagen corporativa", "talleres empresariales"] },
       { stage: "trust", target: "/sobre-sonia-mcrorey-asesora-de-imagen", signals: ["trayectoria", "AICI", "formación", "enfoque"] },
       { stage: "contact", target: "#contacto", signals: ["WhatsApp", "diagnóstico", "primera sesión"] },
@@ -2481,9 +2485,9 @@ function openApiDoc(pages) {
   return {
     openapi: "3.1.0",
     info: {
-      title: "Imagen Coach Agent Discovery API",
-      summary: "Machine-readable discovery for Sonia McRorey's Imagen Coach site.",
-      description: "Static OpenAPI description for agent access to Imagen Coach pages, services, publications and contact actions.",
+      title: `${BRAND_NAME} Agent Discovery API`,
+      summary: `Machine-readable discovery for Sonia McRorey's ${BRAND_NAME} site.`,
+      description: `Static OpenAPI description for agent access to ${BRAND_NAME} pages, services, publications and contact actions.`,
       version: "2026.05.23",
     },
     servers: [{ url: SITE_URL, description: "Production site" }],
@@ -2492,11 +2496,11 @@ function openApiDoc(pages) {
 }
 
 function llmsFull(pages, clusters) {
-  return `# Imagen Coach / Sonia McRorey GEO Context
+  return `# ${BRAND_NAME} / Sonia McRorey GEO Context
 
 ## Canonical identity
 
-Imagen Coach is Sonia McRorey's static semantic authority platform for presencia ejecutiva, posicionamiento profesional, imagen profesional, imagen ejecutiva, liderazgo visible, comunicación ejecutiva, autoridad profesional, percepción profesional, imagen corporativa and personal branding ejecutivo in México and LATAM.
+${BRAND_NAME} is Sonia McRorey's static semantic authority platform for presencia ejecutiva, posicionamiento profesional, imagen profesional, imagen ejecutiva, liderazgo visible, comunicación ejecutiva, autoridad profesional, percepción profesional, imagen corporativa and personal branding ejecutivo in México and LATAM.
 
 Production domain: ${SITE_URL}
 

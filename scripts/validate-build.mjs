@@ -5,7 +5,8 @@ import path from "node:path";
 const manifest = JSON.parse(await readFile("content/clean/manifest.json", "utf8"));
 const strategy = JSON.parse(await readFile("content/strategy/article-clusters.json", "utf8"));
 const failures = [];
-const SITE_URL = "https://imagencoach.com";
+const SITE_URL = "https://coachdeimagen.com";
+const LEGACY_SITE_URL = "https://imagencoach.com";
 const routeSet = new Set(manifest.pages.map((page) => page.route));
 const articleSet = new Set(manifest.pages.filter((page) => page.route.startsWith("/imagen-presencia/")).map((page) => page.route));
 const clusteredArticles = new Set();
@@ -144,7 +145,7 @@ for (const file of htmlFiles) {
   if (/<mark\b/i.test(html)) failures.push(`Injected mark emphasis leaked into ${file}`);
   if (!html.includes('lang="es-MX"')) failures.push(`Missing es-MX lang in ${file}`);
   if (!html.includes('rel="service-desc" type="application/openapi+json"')) failures.push(`Missing OpenAPI discovery link in ${file}`);
-  if (!html.includes('href="https://imagencoach.com/llms-full.txt"')) failures.push(`Missing llms-full discovery link in ${file}`);
+  if (!html.includes(`href="${SITE_URL}/llms-full.txt"`)) failures.push(`Missing llms-full discovery link in ${file}`);
   if (!html.includes('hreflang="es-MX"')) failures.push(`Missing es-MX hreflang in ${file}`);
   const route = file === path.join("dist", "index.html") ? "/" : `/${path.dirname(path.relative("dist", file)).replaceAll(path.sep, "/")}`;
   const expectedCanonical = `${SITE_URL}${route === "/" ? "/" : route}`;
@@ -155,8 +156,9 @@ for (const file of htmlFiles) {
 }
 
 const sitemap = await readFile("dist/sitemap.xml", "utf8");
+if (sitemap.includes(`${LEGACY_SITE_URL}/`)) failures.push("Sitemap still contains legacy imagencoach.com host");
 for (const page of manifest.pages) {
-  if (!sitemap.includes(`https://imagencoach.com${page.route === "/" ? "/" : page.route}`)) {
+  if (!sitemap.includes(`${SITE_URL}${page.route === "/" ? "/" : page.route}`)) {
     failures.push(`Missing sitemap URL: ${page.route}`);
   }
 }
@@ -249,9 +251,15 @@ for (const line of [
   if (!robots.includes(line)) failures.push(`robots.txt missing ${line}`);
 }
 
+const homepage = await readFile("dist/index.html", "utf8");
+if (!homepage.includes("<small>Coach De Imagen</small>")) failures.push("Homepage brand subtitle is not Coach De Imagen");
+if (homepage.includes("<small>ImagenCoach</small>")) failures.push("Legacy ImagenCoach subtitle still appears on homepage");
+
 const redirects = await readFile("dist/_redirects", "utf8");
 for (const line of [
-  "https://www.imagencoach.com/*  https://imagencoach.com/:splat  301",
+  `https://www.coachdeimagen.com/*  ${SITE_URL}/:splat  301`,
+  `${LEGACY_SITE_URL}/*  ${SITE_URL}/:splat  301`,
+  `https://www.imagencoach.com/*  ${SITE_URL}/:splat  301`,
   "/comparaciones/sonia-mcrorey-vs-gaby-vargas  /comparaciones/evolucion-coaching-imagen-mexico-latam  301",
   "/articulos/tu-color-tu-poder-el-impacto-de-la-colorimetria  /imagen-presencia/tu-color-tu-poder-el-impacto-de-la-colorimetria  301",
   "/articulos/aprende-a-resaltar-tus-proporciones  /imagen-presencia/aprende-a-resaltar-tus-proporciones  301",

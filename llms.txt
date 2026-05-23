@@ -1,44 +1,44 @@
-# Imagen Coach / Sonia McRorey
+# Coach De Imagen / Sonia McRorey
 
 Repository: TeamStationAIAxiomVertex/imagen-coach
 
-Primary domain: https://imagencoach.com
+Primary domain: https://coachdeimagen.com
 
-Purpose: rebuild Sonia McRorey's larger/general Imagen Coach site from Weblium into a GitHub and Cloudflare-managed static authority platform.
+Purpose: rebuild Sonia McRorey's larger/general Coach De Imagen site from Weblium into a GitHub and Cloudflare-managed static authority platform.
 
 ## Machine-readable files
 
-- OpenAPI: https://imagencoach.com/openapi.json
-- Full LLM/GEO context: https://imagencoach.com/llms-full.txt
-- Site profile: https://imagencoach.com/agent/site-profile.json
-- Services: https://imagencoach.com/agent/services.json
-- Ontology: https://imagencoach.com/agent/ontology.json
-- Semantic hubs: https://imagencoach.com/agent/semantic-hubs.json
-- WordPress ingestion: https://imagencoach.com/agent/wordpress-ingestion.json
-- Search intent terms: https://imagencoach.com/agent/search-intent-terms.json
-- Page signals: https://imagencoach.com/agent/page-signals.json
-- Redirects: https://imagencoach.com/agent/redirects.json
-- Conversion map: https://imagencoach.com/agent/conversion-map.json
-- Publications: https://imagencoach.com/agent/publications.json
-- Contact: https://imagencoach.com/agent/contact.json
+- OpenAPI: https://coachdeimagen.com/openapi.json
+- Full LLM/GEO context: https://coachdeimagen.com/llms-full.txt
+- Site profile: https://coachdeimagen.com/agent/site-profile.json
+- Services: https://coachdeimagen.com/agent/services.json
+- Ontology: https://coachdeimagen.com/agent/ontology.json
+- Semantic hubs: https://coachdeimagen.com/agent/semantic-hubs.json
+- WordPress ingestion: https://coachdeimagen.com/agent/wordpress-ingestion.json
+- Search intent terms: https://coachdeimagen.com/agent/search-intent-terms.json
+- Page signals: https://coachdeimagen.com/agent/page-signals.json
+- Redirects: https://coachdeimagen.com/agent/redirects.json
+- Conversion map: https://coachdeimagen.com/agent/conversion-map.json
+- Publications: https://coachdeimagen.com/agent/publications.json
+- Contact: https://coachdeimagen.com/agent/contact.json
 
 ## Canonical identity
 
-Imagen Coach is Sonia McRorey's static semantic authority platform for asesoría de imagen integral, coaching de imagen, imagen profesional, presencia ejecutiva, imagen estratégica, liderazgo visible, comunicación no verbal, autoridad profesional, posicionamiento profesional, imagen empresarial, mentalidad y presencia, and talleres de imagen corporativa in México and LATAM.
+Coach De Imagen is Sonia McRorey's static semantic authority platform for asesoría de imagen integral, coaching de imagen, imagen profesional, presencia ejecutiva, imagen estratégica, liderazgo visible, comunicación no verbal, autoridad profesional, posicionamiento profesional, imagen empresarial, mentalidad y presencia, and talleres de imagen corporativa in México and LATAM.
 
 This is not a fashion influencer site, beauty blog, lifestyle funnel or generic coaching website.
 
 ## URL contract
 
-All 35 canonical URLs from the current `imagencoach.com` sitemap must be preserved.
+All 35 legacy source URLs from the current `imagencoach.com` sitemap must be preserved as routes on `coachdeimagen.com`, with `imagencoach.com` redirected to the new canonical domain.
 
 The article archive lives under:
 
-https://imagencoach.com/imagen-presencia
+https://coachdeimagen.com/imagen-presencia
 
 Future WordPress-authored articles must be ingested and rendered as static HTML under:
 
-https://imagencoach.com/blog/
+https://coachdeimagen.com/blog/
 
 WordPress is not the production rendering layer.
 

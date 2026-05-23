@@ -2,7 +2,7 @@
 
 ## Project
 
-`imagen-coach`: full rebuild of `https://imagencoach.com`.
+`imagen-coach`: full rebuild of Sonia McRorey's general site on the new canonical domain `https://coachdeimagen.com`.
 
 ## Objective
 
@@ -15,7 +15,7 @@ Rebuild the current Weblium site as a GitHub-managed, Cloudflare-deployed static
 - SEO continuity
 - the polished UX/UI quality of `imagengdl.com`
 
-The master positioning is defined in `docs/wiki.llm`: Imagen Coach is `Coaching de Imagen, Presencia y Posicionamiento Profesional`, and the site must preserve psychological depth plus executive clarity while reinforcing imagen, presencia, percepción, liderazgo and posicionamiento profesional.
+The master positioning is defined in `docs/wiki.llm`: Coach De Imagen is `Coaching de Imagen, Presencia y Posicionamiento Profesional`, and the site must preserve psychological depth plus executive clarity while reinforcing imagen, presencia, percepción, liderazgo and posicionamiento profesional.
 
 ## Current State
 
@@ -58,7 +58,7 @@ Use the `guadalajara` site as the visual and interaction reference:
 - calm CTA rhythm
 - mobile-first readability
 
-Do not import Guadalajara positioning wholesale. `imagencoach.com` is the larger/general Sonia site, not the local Guadalajara-only funnel.
+Do not import Guadalajara positioning wholesale. `coachdeimagen.com` is the larger/general Sonia site, not the local Guadalajara-only funnel.
 
 ## Content Requirements
 
@@ -76,7 +76,7 @@ The implementation must:
 
 Every page needs:
 
-- canonical URL on `https://imagencoach.com`
+- canonical URL on `https://coachdeimagen.com`
 - title and description
 - Open Graph metadata
 - sensible article/service schema where applicable
@@ -143,6 +143,6 @@ The rebuild is done only when:
 - no broken local image paths exist
 - sitemap and canonical tags match production domain
 - Cloudflare Pages build is reproducible from a clean checkout
-- the site visually matches the `imagengdl.com` UX/UI standard while retaining `imagencoach.com` content identity
+- the site visually matches the `imagengdl.com` UX/UI standard while retaining the Coach De Imagen content identity
 - rendered pages avoid dominant wellness, spirituality, abundance or self-help classification
 - all visible content preserves Sonia's wording without injected SEO emphasis

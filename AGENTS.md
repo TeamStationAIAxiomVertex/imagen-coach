@@ -1,14 +1,14 @@
-# ImagenCoach Rebuild Agent Instructions
+# Coach De Imagen Rebuild Agent Instructions
 
-You are operating in the `imagen-coach` repository for the full rebuild of `imagencoach.com`.
+You are operating in the `imagen-coach` repository for the full rebuild of Sonia McRorey's general site. The new production canonical domain is `coachdeimagen.com`; `imagencoach.com` is a legacy source domain that must redirect to the new canonical domain without losing paths.
 
 This repository is the new source of truth for the larger/general Sonia McRorey site. Do not confuse it with `TeamStationAIAxiomVertex/guadalajara`, which powers the Guadalajara-specific `imagengdl.com` site.
 
 ## Mission
 
-Rebuild `imagencoach.com` as a professional, production-ready static site and semantic authority engine for holistic coaching de imagen, presencia and posicionamiento profesional in Mexico and LATAM using:
+Rebuild `coachdeimagen.com` as a professional, production-ready static site and semantic authority engine for holistic coaching de imagen, presencia and posicionamiento profesional in Mexico and LATAM using:
 
-- the exact canonical URL inventory from the current Weblium site
+- the exact legacy URL inventory from the current Weblium site
 - the archived source content and images in this repo
 - the cleaned migration content layer in this repo
 - the UX/UI language and visual system proven in the Guadalajara site
@@ -60,7 +60,7 @@ Use the Guadalajara repo as the design reference for:
 - mobile behavior
 - clean editorial corporate tone
 
-Do not turn `imagencoach.com` into a local Guadalajara landing page. It is the larger general site.
+Do not turn `coachdeimagen.com` into a local Guadalajara landing page. It is the larger general site.
 
 ## Comparison Page UX Rule
 
@@ -128,7 +128,7 @@ The voice must be calm, intelligent, executive, reflective, emotionally sophisti
 
 Primary brand positioning:
 
-- Imagen Coach is `Coaching de Imagen, Presencia y Posicionamiento Profesional`.
+- Coach De Imagen is `Coaching de Imagen, Presencia y Posicionamiento Profesional`.
 - Sonia works at the intersection of imagen, sistema interno, presencia, liderazgo, percepción and decisiones.
 
 Everything must reinforce:
@@ -206,7 +206,7 @@ Before deployment, validation must prove:
 - all internal links resolve or intentionally redirect
 - all referenced local images exist
 - sitemap includes all canonical URLs
-- robots and canonical metadata point to `https://imagencoach.com`
+- robots and canonical metadata point to `https://coachdeimagen.com`
 - no Weblium UUID/nav/form junk leaks into rendered content
 - pages render cleanly on mobile and desktop
 - Cloudflare Pages can build from GitHub

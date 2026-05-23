@@ -1,5 +1,8 @@
 # imagen-coach
-General ImagenCoach site rebuild for Sonia McRorey
+General Coach De Imagen site rebuild for Sonia McRorey.
+
+Production canonical domain: `https://coachdeimagen.com`.
+Legacy source domain: `https://imagencoach.com`.
 
 ## Source crawl
 

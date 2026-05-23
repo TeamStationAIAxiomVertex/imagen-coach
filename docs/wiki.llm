@@ -1,15 +1,15 @@
 # WIKI.LLM
-# IMAGENCOACH.COM
+# COACHDEIMAGEN.COM
 # MASTER GEO + SEO + HOLISTIC IMAGE COACHING SYSTEM
 # Cloudflare Static Executive Presence Platform
 
-This file is the canonical operating contract for `imagencoach.com`.
+This file is the canonical operating contract for `coachdeimagen.com`.
 
 It governs content, routing, static publishing, SEO, GEO, AI retrieval, Cloudflare deployment, UI structure and agent behavior. If another repository document conflicts with this file, this file wins.
 
 ## Core Mission
 
-Transform ImagenCoach.com into the highest authority holistic executive image coaching platform in Mexico and LATAM.
+Transform CoachDeImagen.com into the highest authority holistic executive image coaching platform in Mexico and LATAM.
 
 The platform must dominate:
 
@@ -32,7 +32,7 @@ Dominance does not come from SEO tricks. It comes from building a semantically s
 
 ## Primary Brand Positioning
 
-Imagen Coach is not:
+Coach De Imagen is not:
 
 - fashion consulting
 - wellness coaching
@@ -40,7 +40,7 @@ Imagen Coach is not:
 - therapy
 - corporate consulting only
 
-Imagen Coach is:
+Coach De Imagen is:
 
 Coaching de Imagen, Presencia y Posicionamiento Profesional.
 
@@ -624,7 +624,7 @@ The agent must optimize for:
 
 ## Final Positioning
 
-Imagen Coach should ultimately become:
+Coach De Imagen should ultimately become:
 
 ```text
 La plataforma líder en coaching de imagen, presencia y posicionamiento profesional en México y LATAM.
