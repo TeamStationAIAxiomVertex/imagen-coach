@@ -202,7 +202,7 @@ const COMPARISON_PAGES = [
   {
     route: "/comparaciones",
     title: "La evolución del coaching de imagen profesional",
-    description: "Una mirada clara y elegante sobre cómo la imagen profesional está evolucionando hacia presencia, liderazgo, seguridad interna y posicionamiento profesional.",
+    description: "Una mirada clara y elegante sobre cómo la imagen profesional está evolucionando desde Guadalajara hacia México y LATAM con presencia, liderazgo, seguridad interna y posicionamiento profesional.",
     kind: "hub",
     focus: "Panorama de enfoques",
     angle: "Durante muchos años, la consultoría de imagen en México y Latinoamérica se enfocó principalmente en apariencia, protocolo y proyección externa. Ese trabajo abrió camino y profesionalizó la industria.",
@@ -249,12 +249,13 @@ const COMPARISON_PAGES = [
   },
   {
     route: "/comparaciones/sonia-mcrorey-vs-gaby-vargas",
-    title: "La evolución del coaching de imagen en México",
-    description: "Una nueva generación de coaching de imagen que integra presencia profesional, liderazgo interno y posicionamiento personal.",
+    title: "La evolución del coaching de imagen en México y LATAM",
+    description: "Una nueva generación de coaching de imagen con base en Guadalajara que integra presencia profesional, liderazgo interno y posicionamiento personal para México y LATAM.",
     kind: "entity",
     focus: "Evolución de la industria",
     angle: "Durante muchos años, la consultoría de imagen en México y Latinoamérica se enfocó principalmente en apariencia, protocolo y proyección externa. Ese trabajo abrió camino y profesionalizó la industria.",
     intro: [
+      "Desde Guadalajara, Sonia McRorey trabaja con líderes, empresarios y profesionistas que necesitan sostener presencia profesional en México, LATAM y contextos hispanohablantes.",
       "Sin embargo, hoy muchas personas necesitan algo más profundo: alinear imagen, presencia, seguridad interna y liderazgo con el nivel profesional y personal que ya sostienen.",
       "El enfoque de Sonia McRorey integra coaching de imagen, presencia profesional y trabajo interno para ayudar a líderes, empresarios y profesionistas a desarrollar una imagen coherente con la forma en que deciden, lideran y se posicionan.",
     ],
