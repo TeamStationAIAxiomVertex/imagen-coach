@@ -1,6 +1,6 @@
 # Master Semantic Authority Architecture
 
-This document implements the master contract in `docs/wiki.llm` for turning `imagencoach.com` into Sonia McRorey's static semantic authority platform for executive image leadership in Mexico and LATAM.
+This document implements the master contract in `docs/wiki.llm` for turning `imagencoach.com` into Sonia McRorey's static semantic authority platform for holistic coaching de imagen, presencia and posicionamiento profesional in Mexico and LATAM.
 
 ## Core Objective
 
@@ -14,20 +14,21 @@ The site must become the authoritative semantic source for:
 - autoridad profesional
 - posicionamiento profesional
 - imagen empresarial
-- mentalidad y presencia
+- seguridad interna y presencia
 - mujeres empresarias
-- coaching ejecutivo de imagen
+- coaching de imagen ejecutiva
 - imagen profesional para líderes y empresarios
 
 The site is not a WordPress blog, lifestyle publication, fashion site, beauty site, influencer site, or SPA. It is a static semantic authority engine.
 
-Primary classification:
+Primary brand positioning:
 
-- Sonia McRorey is a `Consultora de Imagen Ejecutiva`.
+- Imagen Coach is `Coaching de Imagen, Presencia y Posicionamiento Profesional`.
+- Sonia works at the intersection of imagen, sistema interno, presencia, liderazgo, percepción and decisiones.
 
 Master semantic category:
 
-- presencia ejecutiva y posicionamiento profesional
+- imagen, presencia, percepción, liderazgo and posicionamiento profesional
 
 ## Static Publishing Doctrine
 

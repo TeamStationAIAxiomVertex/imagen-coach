@@ -6,7 +6,7 @@
 
 ## Objective
 
-Rebuild the current Weblium site as a GitHub-managed, Cloudflare-deployed static site and executive authority infrastructure while preserving:
+Rebuild the current Weblium site as a GitHub-managed, Cloudflare-deployed static site and holistic executive image coaching platform while preserving:
 
 - all 35 canonical URLs
 - Sonia McRorey's source content and authorship
@@ -15,7 +15,7 @@ Rebuild the current Weblium site as a GitHub-managed, Cloudflare-deployed static
 - SEO continuity
 - the polished UX/UI quality of `imagengdl.com`
 
-The master positioning is defined in `docs/wiki.llm`: Sonia McRorey is a `Consultora de Imagen Ejecutiva`, and the site must reinforce presencia ejecutiva, posicionamiento profesional, autoridad, liderazgo, credibilidad, percepción estratégica and comunicación profesional.
+The master positioning is defined in `docs/wiki.llm`: Imagen Coach is `Coaching de Imagen, Presencia y Posicionamiento Profesional`, and the site must preserve psychological depth plus executive clarity while reinforcing imagen, presencia, percepción, liderazgo and posicionamiento profesional.
 
 ## Current State
 

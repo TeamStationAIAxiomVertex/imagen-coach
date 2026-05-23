@@ -106,8 +106,8 @@ Assert:
 
 Assert:
 
-- `Consultora de Imagen Ejecutiva` is present in agent/entity output
-- `presencia ejecutiva`, `posicionamiento profesional`, `imagen profesional`, `liderazgo`, `autoridad`, `credibilidad`, `comunicación ejecutiva`, `percepción profesional`, `imagen corporativa`, and `personal branding ejecutivo` are exposed in machine-readable files
+- `Coaching de Imagen, Presencia y Posicionamiento Profesional` is present in agent/entity output
+- `coaching de imagen`, `presencia ejecutiva`, `presencia profesional`, `posicionamiento profesional`, `imagen profesional`, `liderazgo`, `liderazgo personal`, `seguridad interna`, `autoridad`, `credibilidad`, `comunicación ejecutiva`, `percepción profesional`, `imagen corporativa`, and `personal branding ejecutivo` are exposed in machine-readable files
 - wellness/spiritual/self-help terms such as `abundancia`, `manifestación`, `energía`, `sanación`, and `bloqueos energéticos` do not dominate rendered HTML or agent JSON
 - service and footer language ladders into executive presence and professional positioning, not lifestyle, beauty, or influencer semantics
 

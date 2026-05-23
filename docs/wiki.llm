@@ -1,100 +1,130 @@
-# MASTER WIKI.LLM
+# WIKI.LLM
 # IMAGENCOACH.COM
-# GEO + SEO + AGENTIC CLOUDFLARE EXECUTION SYSTEM
+# MASTER GEO + SEO + HOLISTIC IMAGE COACHING SYSTEM
+# Cloudflare Static Executive Presence Platform
 
 This file is the canonical operating contract for `imagencoach.com`.
 
-It governs content, routing, static publishing, SEO, GEO, AI retrieval, Cloudflare deployment, UI structure, and agent behavior. If another repository document conflicts with this file, this file wins.
+It governs content, routing, static publishing, SEO, GEO, AI retrieval, Cloudflare deployment, UI structure and agent behavior. If another repository document conflicts with this file, this file wins.
 
-## Primary Objective
+## Core Mission
 
-Transform `imagencoach.com` into the highest authority executive image consulting entity in Mexico and LATAM using:
+Transform ImagenCoach.com into the highest authority holistic executive image coaching platform in Mexico and LATAM.
 
-- semantic SEO
-- GEO optimization
-- AI retrieval optimization
-- static HTML architecture
-- Cloudflare edge delivery
+The platform must dominate:
+
+- Google SERPs
+- GEO retrieval
+- AI search engines
 - executive buyer intent
-- semantic ontology reinforcement
-- high performance indexing
+- leadership positioning searches
+- image coaching semantic categories
 
-The site must dominate both traditional SERPs and AI retrieval systems, including Google, Gemini, ChatGPT, Claude, Perplexity and Copilot.
+while preserving Sonia's:
 
-## Core Entity
+- emotional sophistication
+- psychological depth
+- coaching philosophy
+- human warmth
+- holistic methodology
 
-Entity:
-Sonia McRorey
+## Primary Brand Positioning
 
-Primary classification:
-Consultora de Imagen Ejecutiva
+Imagen Coach is not:
 
-Do not classify Sonia primarily as:
+- fashion consulting
+- wellness coaching
+- spiritual coaching
+- therapy
+- corporate consulting only
 
-- life coach
-- stylist
-- abundance coach
-- influencer
-- wellness mentor
+Imagen Coach is:
 
-## Master Semantic Category
+Coaching de Imagen, Presencia y Posicionamiento Profesional.
 
-Everything in the site must reinforce:
+## Master Category
 
-Presencia ejecutiva y posicionamiento profesional.
+Everything must reinforce:
 
-All services, articles, FAQs, schema, agent files, footer links and internal links must ladder into that authority graph.
+- Imagen
+- Presencia
+- Percepción
+- Liderazgo
+- Posicionamiento Profesional
 
-## Target Audience
-
-Primary buyer entities:
-
-- empresarios
-- directivos
-- líderes
-- profesionistas
-- ejecutivos
-- mujeres líderes
-- dueños de negocio
-- equipos corporativos
+This is the central ontology.
 
 ## Semantic Positioning
 
 The site must communicate:
 
-- autoridad
-- liderazgo
-- presencia profesional
-- credibilidad
-- posicionamiento ejecutivo
-- percepción estratégica
-- comunicación profesional
+- Coaching de Imagen Ejecutiva
+- Presencia Profesional
+- Liderazgo Personal
+- Seguridad Interna
+- Percepción Profesional
+- Comunicación Ejecutiva
+- Imagen Corporativa
+- Posicionamiento
 
-The site must not drift into dominant positioning around:
+without sounding:
 
-- autoayuda
-- transformación espiritual
-- abundancia energética
-- wellness coaching
+- cold
+- robotic
+- hyper corporate
 
-## Master Information Architecture
+The emotional intelligence remains. The semantic ambiguity disappears.
 
-Canonical future IA:
+## Primary Audience
+
+Core buyers:
+
+- empresarios
+- mujeres líderes
+- ejecutivos
+- profesionistas
+- dueños de negocio
+- equipos organizacionales
+- marcas personales
+- líderes independientes
+
+## Core Differentiator
+
+The site must establish that Sonia works at the intersection of:
+
+- Imagen
+- Sistema interno
+- Presencia
+- Liderazgo
+- Percepción
+- Decisiones
+
+It is not aesthetics only. It is not mindset only.
+
+## Master Execution Principle
+
+All pages must preserve:
+
+Profundidad psicológica + claridad ejecutiva.
+
+That balance is mandatory.
+
+## Information Architecture
 
 ```text
 /
 ├── asesoria-imagen-ejecutiva/
-├── presencia-ejecutiva/
-├── coaching-posicionamiento-profesional/
-├── liderazgo-y-percepcion/
+├── coaching-de-imagen/
+├── coaching-de-presencia-profesional/
+├── coaching-liderazgo-personal/
 ├── imagen-corporativa/
-├── talleres-empresas/
-├── mujeres-lideres/
+├── talleres/
 ├── empresarios/
+├── mujeres-lideres/
 ├── faq/
+├── publicaciones/
 ├── sobre-sonia/
 ├── casos/
-├── publicaciones/
 ├── guadalajara/
 ├── mexico/
 └── latam/
@@ -102,183 +132,209 @@ Canonical future IA:
 
 Legacy Weblium URLs must continue to resolve until a documented redirect decision exists.
 
-## GEO URL Strategy
+## URL Strategy
 
-Required GEO pages:
+All URLs must be:
 
-- `/asesoria-imagen-ejecutiva-guadalajara`
-- `/presencia-ejecutiva-mexico`
-- `/imagen-profesional-empresarios`
-- `/coaching-imagen-profesional`
-- `/imagen-corporativa-equipos`
-- `/asesora-imagen-ejecutiva-mexico`
-- `/personal-branding-ejecutivo`
+- short
+- semantic
+- crawlable
+- static
+- Spanish first
 
-These routes must be created as static HTML pages or mapped through documented redirects before launch.
+Forbidden URL patterns for new canonical pages:
 
-## Cloudflare Deployment Rules
+- `coaching-de-abundancia`
+- `transformacion-total`
+- `energia-y-expansion`
 
-Mandatory:
+Recommended URL patterns:
 
-- static HTML
-- semantic HTML
-- minimal JavaScript
-- Cloudflare Pages
-- GitHub CI/CD
+- `coaching-presencia-profesional`
+- `coaching-imagen-liderazgo`
+- `seguridad-y-posicionamiento`
+- `presencia-ejecutiva`
+- `imagen-profesional`
 
-Forbidden:
+## Master SEO Strategy
 
-- SPA routing
-- runtime SEO
-- client-side rendering for indexed content
-- hydration SEO dependency
+The site must target:
 
-## Performance Targets
-
-Hard limits:
-
-- LCP under 1.8 seconds
-- CLS under 0.05
-- TTFB under 200 milliseconds
-- minimized DOM depth
-- no render-blocking JavaScript
-- critical CSS inline where needed for launch performance
-
-Cloudflare edge settings:
-
-- HTTP/3
-- Brotli
-- Early Hints
-- Tiered Cache
-- Cache Everything
-- Auto Minify
-- Image Optimization
-- Smart Compression
-
-## UI System Rules
-
-Master design principle:
-
-The site must feel calm, executive, premium, spacious and low cognitive load.
-
-Uniform spacing system:
-
-Use an 8px base spacing system only.
-
-Allowed scale:
-
-- 8
-- 16
-- 24
-- 32
-- 48
-- 64
-- 96
-- 128
-
-No random spacing.
-
-Every page must maintain:
-
-- consistent vertical rhythm
-- equalized card spacing
-- uniform image ratios
-- consistent CTA spacing
-- aligned text widths
-- consistent max-width containers
-
-Required responsive breakpoints:
-
-- 320
-- 480
-- 768
-- 1024
-- 1280
-- 1440
-
-Mobile UX rules:
-
-- no text walls
-- no oversized paragraphs
-- no hidden semantic content
-- no oversized hero sections
-- no CLS image jumps
-
-Typography rules:
-
-- executive readability first
-- short paragraphs
-- 2 to 4 line maximum visible paragraph blocks where possible
-- strong H2 hierarchy
-- readable line-height
-- high semantic chunking
-
-## Master Semantic Vocabulary
-
-The site should naturally reinforce:
-
+- asesoría de imagen ejecutiva
+- coaching de imagen
 - presencia ejecutiva
 - imagen profesional
-- liderazgo
-- autoridad
-- credibilidad
-- comunicación ejecutiva
-- posicionamiento profesional
-- percepción profesional
-- imagen corporativa
+- imagen para empresarios
+- liderazgo y presencia
+- consultora de imagen empresarial
 - personal branding ejecutivo
+- imagen corporativa
+- coaching de liderazgo
 
-## Forbidden Semantic Dominance
+## GEO Strategy
 
-These terms may appear lightly when they exist in Sonia's source content, but must not dominate:
+Every page must answer:
 
-- abundancia
-- manifestación
-- energía
-- sanación
-- bloqueos energéticos
+- what it is
+- who it helps
+- what changes
+- professional outcomes
+- executive relevance
 
-Reason:
-Dominance of those terms shifts classification toward wellness, spirituality and self-help instead of executive advisory.
+in direct semantic language.
+
+## AI Retrieval Rules
+
+Every page must:
+
+- expose meaning in raw HTML
+- avoid hidden JavaScript content
+- use semantic chunking
+- include direct answer blocks
+- use short paragraphs
+- avoid repetitive abstract loops
+
+## Homepage Strategy
+
+H1:
+
+```text
+Coaching de Imagen, Presencia y Liderazgo Profesional
+```
+
+Subheadline:
+
+```text
+Acompaño a líderes, empresarios y profesionistas a alinear imagen, percepción y seguridad interna para sostener mayor autoridad y claridad profesional.
+```
+
+CTA:
+
+```text
+Agendar diagnóstico estratégico
+```
 
 ## Universal Page Structure
 
-Every strategic page must follow this meaning order:
+Every strategic page must follow:
 
-1. Executive Problem
-   Tu presencia ya no refleja el nivel de responsabilidad que hoy sostienes.
-2. Professional Consequence
-   Eso afecta percepción, liderazgo y posicionamiento profesional.
-3. Internal Alignment
-   Only then discuss clarity, confidence, mindset or internal patterns.
+1. Professional Problem
+
+```text
+Tu presencia ya no refleja el nivel que hoy sostienes.
+```
+
+2. Consequence
+
+```text
+Eso afecta liderazgo, percepción y posicionamiento profesional.
+```
+
+3. Internal Layer
+
+Only then discuss:
+
+- nervous system
+- confidence
+- internal patterns
+- fear
+- visibility
+- identity
+
 4. Professional Outcome
-   Mayor autoridad, mayor claridad, mayor presencia and mayor credibilidad.
+
+```text
+Mayor claridad
+Mayor presencia
+Mayor autoridad
+Mayor coherencia
+Mayor seguridad profesional
+```
+
+## Coaching De Abundancia Page Rebuild
+
+Do not remove:
+
+- emotional depth
+- nervous system work
+- internal alignment
+
+Instead:
+
+- reposition semantically
+- compress language
+- strengthen executive framing
+
+Replace old page title:
+
+```text
+Coaching de Abundancia
+```
+
+with one of:
+
+```text
+Coaching de Presencia, Seguridad y Poder Personal
+```
+
+or:
+
+```text
+Coaching de Mentalidad y Posicionamiento Profesional
+```
+
+New page H1:
+
+```text
+Seguridad interna para sostener decisiones, liderazgo y crecimiento profesional
+```
+
+Required opening meaning:
+
+```text
+Muchas personas tienen capacidad, experiencia y estrategia, pero internamente siguen operando desde patrones que frenan visibilidad, decisiones y crecimiento.
+```
+
+Required system meaning:
+
+```text
+Este proceso trabaja la relación entre sistema interno, presencia y capacidad de sostener nuevos niveles de responsabilidad y expansión profesional.
+```
+
+Semantic replacements:
+
+- Replace `abundancia energética` with `capacidad de sostener resultados y crecimiento`.
+- Replace `bloqueos inconscientes` with `patrones internos que limitan decisiones y crecimiento`.
+- Replace `energía` with `claridad mental y enfoque interno`.
+- Replace `manifestación` with `alineación entre decisiones, identidad y resultados`.
 
 ## FAQ Strategy
 
-Every strategic page requires:
+Every page must contain:
 
 - 5 to 10 FAQs
-- direct answer formatting
-- AI retrieval optimization
-- no abstract internal-project phrasing
+- direct answers
+- executive terminology
+- coaching terminology
+- image terminology
 
 Good FAQ:
 
 ```text
-¿Qué es la asesoría de imagen ejecutiva?
-La asesoría de imagen ejecutiva ayuda a líderes y profesionistas a fortalecer presencia, comunicación y percepción profesional para proyectar autoridad y credibilidad.
+¿Qué es el coaching de imagen profesional?
+El coaching de imagen profesional ayuda a fortalecer presencia, percepción y seguridad interna para comunicar liderazgo y mayor claridad en entornos personales y profesionales.
 ```
 
-Bad FAQ:
+Good FAQ:
 
 ```text
-¿Desde qué enfoque trabajamos la imagen?
+¿Cómo impacta la imagen en el liderazgo profesional?
+La imagen influye en cómo una persona comunica autoridad, claridad y credibilidad dentro de equipos, negocios y espacios de decisión.
 ```
 
-## Required Schema
+## Schema Strategy
 
-Every page must include JSON-LD.
+Every page requires JSON-LD.
 
 Global schema stack:
 
@@ -291,211 +347,206 @@ Global schema stack:
 - FAQPage
 - LocalBusiness
 - Service
+- Article
 - ImageObject
-- Article where applicable
 
-Homepage schema:
-
-- Organization
-- Person
-- ProfessionalService
-- FAQPage
-- WebSite
-
-Service page schema:
+Service page schema must include:
 
 - Service
 - FAQPage
 - BreadcrumbList
 - ProfessionalService
 
-Blog page schema:
+## Blog Page Strategy
 
-- Article
-- Person
-- BreadcrumbList
-- FAQPage
+Categories:
+
+- Imagen Ejecutiva
+- Coaching de Imagen
+- Presencia Profesional
+- Liderazgo
+- Mujeres Líderes
+- Posicionamiento Profesional
+- Imagen Corporativa
+- Seguridad y Percepción
+
+Good blog titles:
+
+- Cómo fortalecer tu presencia profesional sin perder autenticidad
+- La relación entre imagen, liderazgo y seguridad interna
+- Qué comunica tu presencia antes de hablar
+
+Bad blog title:
+
+```text
+Cuando el universo no te deja avanzar
+```
+
+Reason: weak classification.
 
 ## Internal Linking Strategy
 
-Every strategic page must include:
+Every page must include:
 
 - 2 parent links
 - 3 sibling links
 - 2 GEO links
 - 2 FAQ links
-- 1 authority article
-- 1 conversion CTA
+- 1 blog article
+- 1 CTA
 
 ## Footer Strategy
 
-The footer is semantic reinforcement infrastructure.
+Footer becomes semantic authority infrastructure.
 
-Footer clusters:
+Coaching e Imagen:
 
-Servicios:
-
+- Coaching de Imagen
 - Asesoría de Imagen Ejecutiva
-- Coaching Profesional
+- Presencia Profesional
 - Imagen Corporativa
-- Talleres Empresariales
 
 Liderazgo:
 
-- Presencia Ejecutiva
+- Liderazgo Personal
 - Posicionamiento Profesional
-- Comunicación Ejecutiva
 - Percepción y Autoridad
+- Comunicación Ejecutiva
 
 Ubicaciones:
 
 - Guadalajara
 - CDMX
-- Monterrey
 - México
 - LATAM
 
-## Blog Strategy
+## UI System
 
-Categories:
-
-- Imagen Ejecutiva
-- Presencia Profesional
-- Liderazgo
-- CEO Presence
-- Mujeres Líderes
-- Imagen Corporativa
-- Comunicación Ejecutiva
-
-Blog title rules:
-
-Titles must match buyer intent, answer executive pain and improve retrieval.
-
-Good:
+Design principle:
 
 ```text
-Cómo fortalecer tu presencia ejecutiva en entornos de alta responsabilidad
+Calmado
+Elegante
+Espacioso
+Editorial
+Premium
+Humano
+Ejecutivo
 ```
 
-Bad:
+Mandatory spacing:
 
 ```text
-Cuando sostener demasiado empieza a pesarte
+8px spacing grid
 ```
+
+Allowed scale:
+
+```text
+8
+16
+24
+32
+48
+64
+96
+128
+```
+
+Required breakpoints:
+
+```text
+320
+480
+768
+1024
+1280
+1440
+```
+
+Mobile rules:
+
+- no text walls
+- no oversized hero blocks
+- no CLS jumps
+- no uneven spacing
+- no oversized padding
+- no inconsistent card alignment
 
 ## Image Rules
 
-All images must be:
+All images:
 
 - AVIF or WebP where practical
-- responsive
 - lazy loaded when below the fold
 - width and height defined
-- named descriptively
+- compressed
+- responsive
 
-Bad filename:
-
-```text
-imagen1.webp
-```
-
-Good filename:
+Bad alt/filename:
 
 ```text
-sonia-mcrorey-consultora-imagen-ejecutiva-guadalajara.webp
+image1.webp
 ```
 
-## GEO Optimization Rules
+Good alt/filename:
 
-Every page must:
+```text
+sonia-mcrorey-coaching-imagen-presencia-profesional.webp
+```
 
-- answer questions directly
-- use semantic chunking
-- expose meaning in raw HTML
-- avoid hidden JavaScript content
+## Performance Rules
 
-## Required Files
+Hard targets:
 
-The static build must publish:
+- LCP under 1.8s
+- CLS under 0.05
+- TTFB under 200ms
+- minimal JS
+- static rendering
 
-- `/llms.txt`
-- `/llms-full.txt`
-- `/sitemap.xml`
-- `/robots.txt`
-- `/entities.json`
-- `/semantic-index.json`
-- `/openapi.json`
+## Cloudflare Rules
 
-## AI Retrieval Optimization
+Enable:
 
-Content must be:
+- HTTP/3
+- Brotli
+- Early Hints
+- Tiered Cache
+- Auto Minify
+- Image Optimization
+- Smart Compression
 
-- quotable
-- chunkable
-- citeable
-- semantically compressed
-
-Required:
-
-- short paragraphs
-- direct answers
-- clear headers
-- strong semantic hierarchy
-- high information density
-
-Forbidden:
-
-- long emotional monologues
-- repeated concepts
-- abstract loops
-- dense text walls
-
-## Agent Directive
+## AGENTS.md Directive
 
 The agent must optimize for:
 
+- executive buyer intent
+- holistic coaching positioning
 - SEO
 - GEO
 - AI retrieval
-- static crawlability
 - performance
-- executive buyer intent
+- static crawlability
 - semantic precision
 
-## SDD Rules
+## Final Positioning
 
-Every implementation must validate:
+Imagen Coach should ultimately become:
 
-- semantic HTML
-- uniform spacing
-- responsive consistency
-- schema validation
-- internal link integrity
-- performance budgets
-- accessibility
-- Cloudflare optimization
+```text
+La plataforma líder en coaching de imagen, presencia y posicionamiento profesional en México y LATAM.
+```
 
-## TDD Rules
+Not:
 
-Must automatically test:
+- fashion
+- therapy
+- corporate consulting only
+- wellness
 
-- Lighthouse scores
-- schema validity
-- broken links
-- CLS
-- LCP
-- heading hierarchy
-- meta duplication
-- canonical conflicts
-- image optimization
-- mobile rendering
-- no visible SEO term-bolding injected into Sonia's copy
-- no dominant wellness, spirituality or self-help semantic drift
+But the hybrid category Sonia uniquely owns:
 
-## Final Objective
-
-The site must become the highest authority executive image consulting entity in Mexico and LATAM, optimized for both search engines and AI retrieval systems.
-
-It is not a lifestyle site, wellness brand or coaching blog.
-
-It is executive authority infrastructure for leadership, perception and professional positioning.
+```text
+Coaching de Imagen con profundidad psicológica, liderazgo personal y posicionamiento profesional.
+```

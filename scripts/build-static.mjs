@@ -13,6 +13,17 @@ const CONTACT = {
   address: "WeWork | Av. Adolfo López Mateos Norte 95, Col. Italia Providencia, Guadalajara, Jalisco, 44648, México.",
   hours: "Solo con Citas: Lunes a viernes, de 9:00 a.m. a 6:00 p.m.",
 };
+const PAGE_OVERRIDES = {
+  "/": {
+    title: "Coaching de Imagen, Presencia y Liderazgo Profesional",
+    description: "Acompaño a líderes, empresarios y profesionistas a alinear imagen, percepción y seguridad interna para sostener mayor autoridad y claridad profesional.",
+    primaryCta: "Agendar diagnóstico estratégico",
+  },
+  "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia": {
+    title: "Seguridad interna para sostener decisiones, liderazgo y crecimiento profesional",
+    description: "Coaching de presencia, seguridad y poder personal para ordenar el sistema interno, fortalecer liderazgo y sostener crecimiento profesional con mayor claridad.",
+  },
+};
 const PILLARS = [
   {
     label: "Asesoría de imagen integral",
@@ -33,10 +44,10 @@ const PILLARS = [
     keywords: "talleres de imagen, imagen corporativa, capacitación de colaboradores",
   },
   {
-    label: "Mentalidad ejecutiva y presencia profesional",
-    audience: "Procesos internos para sostener claridad, seguridad profesional y decisiones alineadas con presencia ejecutiva.",
+    label: "Coaching de Presencia, Seguridad y Poder Personal",
+    audience: "Procesos internos para sostener seguridad, liderazgo personal, claridad profesional y decisiones alineadas con presencia.",
     route: "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia",
-    keywords: "mentalidad ejecutiva, presencia profesional, posicionamiento profesional",
+    keywords: "coaching de imagen, seguridad interna, posicionamiento profesional",
   },
 ];
 const BUYER_GUIDES = {
@@ -56,9 +67,9 @@ const BUYER_GUIDES = {
     outcome: "Criterios compartidos para proyectar confianza y consistencia.",
   },
   "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia": {
-    pain: "El siguiente nivel profesional requiere más claridad, seguridad y presencia.",
-    solution: "Trabajo de mentalidad, seguridad interna y toma de decisiones profesionales.",
-    outcome: "Decisiones más claras para sostener liderazgo, crecimiento y presencia.",
+    pain: "Hay capacidad y estrategia, pero patrones internos frenan visibilidad, decisiones y crecimiento.",
+    solution: "Coaching de presencia, seguridad interna y posicionamiento profesional.",
+    outcome: "Mayor claridad, presencia, autoridad, coherencia y seguridad profesional.",
   },
 };
 const FOOTER_QUESTIONS = [
@@ -82,7 +93,7 @@ const FOOTER_QUESTIONS = [
 const MASTER_ONTOLOGY = {
   rootEntity: {
     name: "Sonia McRorey",
-    entityTypes: ["Consultora de Imagen Ejecutiva", "Executive Presence Consultant", "Strategic Image Consultant", "Professional Image Strategist"],
+    entityTypes: ["Coaching de Imagen, Presencia y Posicionamiento Profesional", "Executive Presence Consultant", "Strategic Image Consultant", "Professional Image Strategist"],
     areaServed: ["México", "LATAM"],
   },
   clusters: [
@@ -94,7 +105,7 @@ const MASTER_ONTOLOGY = {
     {
       name: "Mentalidad y Presencia",
       route: "/mentalidad",
-      subentities: ["seguridad interna", "identidad profesional", "confianza ejecutiva", "exposición profesional", "mentalidad ejecutiva", "claridad profesional"],
+      subentities: ["seguridad interna", "identidad profesional", "confianza ejecutiva", "exposición profesional", "sistema interno", "claridad profesional"],
     },
     {
       name: "Liderazgo Empresarial",
@@ -197,7 +208,9 @@ const CANONICAL_TERMS = [
   "talleres de imagen corporativa",
   "imagen corporativa",
   "personal branding ejecutivo",
-  "mentalidad ejecutiva",
+  "coaching de imagen",
+  "seguridad interna",
+  "liderazgo personal",
 ];
 const AVOID_TERMS = [
   "fashion influencer",
@@ -258,12 +271,12 @@ const SERVICE_PROCESS_STEPS = {
     "Resultado accionable",
   ],
   "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia": [
-    "Bloqueos inconscientes",
-    "Patrones de protección",
-    "Mentalidad",
-    "Sistema nervioso",
+    "Patrones internos",
     "Seguridad interna",
-    "Acción con impacto",
+    "Presencia",
+    "Sistema nervioso",
+    "Decisiones",
+    "Posicionamiento",
   ],
 };
 const CONTENT_SECTION_LABELS = {
@@ -283,7 +296,7 @@ const ONTOLOGY_TOPICS = [
   { id: "empresa", label: "Empresa", terms: ["empresa", "equipo", "organización", "marca", "clientes", "colaboradores"] },
   { id: "color", label: "Color", terms: ["color", "colorimetría", "tono", "paleta", "rostro"] },
   { id: "guardarropa", label: "Guardarropa", terms: ["ropa", "clóset", "guardarropa", "prendas", "compras", "vestimenta"] },
-  { id: "mentalidad", label: "Mentalidad", terms: ["mentalidad", "bloqueos", "sistema nervioso", "abundancia", "dinero", "seguridad interna"] },
+  { id: "mentalidad", label: "Sistema interno", terms: ["mentalidad", "patrones internos", "sistema nervioso", "seguridad interna", "visibilidad", "identidad"] },
 ];
 const SEARCH_INTENT_TERMS = [
   {
@@ -658,12 +671,14 @@ function cleanExcerptText(value = "", maxLength = 190) {
 }
 
 function titleFromLines(page, lines) {
+  if (PAGE_OVERRIDES[page.route]?.title) return PAGE_OVERRIDES[page.route].title;
   if (page.route === "/") return "Tu imagen ya debería reflejar el nivel que sostienes";
   const title = lines.find((line) => line.length > 8 && !line.startsWith("https://")) || page.title;
   return cleanDisplayTitle(title);
 }
 
-function descriptionFromLines(lines) {
+function descriptionFromLines(lines, page = null) {
+  if (page && PAGE_OVERRIDES[page.route]?.description) return PAGE_OVERRIDES[page.route].description;
   const cleaned = lines.map(cleanDisplayTitle).filter(Boolean);
   const line = cleaned.find((item) => item.length > 90) || cleaned.find((item) => item.length > 45) || "";
   return cleanExcerptText(line, 158);
@@ -971,11 +986,12 @@ function pageTermSignals(page, clusterMap) {
       "imagen profesional",
     ],
     "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia": [
-      "coaching de abundancia",
-      "poder personal",
-      "mentalidad",
       "coaching de imagen",
-      "liderazgo femenino",
+      "presencia profesional",
+      "seguridad interna",
+      "liderazgo personal",
+      "posicionamiento profesional",
+      "percepción profesional",
     ],
     "/servicios-asesoria-de-imagen-coaching/preguntas-frequentes": [
       "asesoría de imagen",
@@ -989,7 +1005,7 @@ function pageTermSignals(page, clusterMap) {
     "imagen-estilo-profesional": ["asesoría de imagen", "imagen profesional", "guardarropa estratégico", "colorimetría ejecutiva", "marca personal"],
     "presencia-liderazgo-identidad": ["presencia profesional", "presencia ejecutiva", "identidad profesional", "liderazgo femenino", "autoridad profesional"],
     "empresas-marcas-equipos": ["imagen corporativa", "talleres de imagen corporativa", "comunicación ejecutiva", "imagen profesional"],
-    "mentalidad-abundancia-poder-personal": ["mentalidad", "poder personal", "coaching de abundancia", "coaching de imagen"],
+    "mentalidad-abundancia-poder-personal": ["coaching de imagen", "seguridad interna", "presencia profesional", "liderazgo personal", "posicionamiento profesional"],
   };
   const curated = routeTerms[page.route] || clusterTerms[clusterMap.get(page.route)?.id] || [];
   const haystack = `${page.heroTitle} ${page.description}`.toLowerCase();
@@ -1116,7 +1132,7 @@ function hero(page, lines) {
       <h1>${escapeHtml(page.heroTitle)}</h1>
       <div class="hero-lede">${paragraphize(lede)}</div>
       <div class="actions">
-        <a class="btn primary" href="${WHATSAPP}" target="_blank" rel="noopener">Agendar diagnóstico</a>
+        <a class="btn primary" href="${WHATSAPP}" target="_blank" rel="noopener">${escapeHtml(PAGE_OVERRIDES[page.route]?.primaryCta || "Agendar diagnóstico")}</a>
         <a class="btn secondary" href="${page.type === "article" ? "/imagen-presencia" : "/servicios-asesoria-de-imagen-coaching"}">${page.type === "article" ? "Ver publicaciones" : "Ver servicios"}</a>
       </div>
     </div>
@@ -1539,7 +1555,7 @@ async function loadPages() {
   for (const page of pages) {
     const lines = splitContent(page.markdown);
     page.heroTitle = titleFromLines(page, lines);
-    page.description = descriptionFromLines(lines);
+    page.description = descriptionFromLines(lines, page);
   }
   return pages;
 }
@@ -1679,14 +1695,14 @@ function ontologyAgent() {
       platform: "Imagen Coach",
       primaryPerson: "Sonia McRorey",
       productionDomain: SITE_URL,
-      canonicalIdentity: "executive presence, strategic image, professional authority and leadership visibility for México and LATAM",
+      canonicalIdentity: "coaching de imagen, presencia, percepción, liderazgo and posicionamiento profesional with psychological depth and executive clarity in México and LATAM",
     },
     coreEntities: [
-      { name: "Sonia McRorey", type: "Person", role: "Strategic Image Consultant and Executive Presence Consultant" },
-      { name: "Imagen Coach", type: "Brand", role: "Semantic authority platform for professional image strategy and executive presence" },
+      { name: "Sonia McRorey", type: "Person", role: "Coach de Imagen, Presencia y Posicionamiento Profesional" },
+      { name: "Imagen Coach", type: "Brand", role: "Holistic executive image coaching platform for presence, perception, leadership and professional positioning" },
       { name: "Guadalajara", type: "Locality", role: "Base presencial y señal local primaria" },
     ],
-    masterCategory: "presencia ejecutiva y posicionamiento profesional",
+    masterCategory: "Imagen, presencia, percepción, liderazgo y posicionamiento profesional",
     canonicalTerms: CANONICAL_TERMS,
     avoidTerms: AVOID_TERMS,
     geoQueryTargets: [
@@ -1709,19 +1725,20 @@ function entitiesAgent() {
     rootEntity: {
       name: "Sonia McRorey",
       type: "Person",
-      primaryClassification: "Consultora de Imagen Ejecutiva",
-      authorityCategory: "Presencia ejecutiva y posicionamiento profesional",
+      primaryClassification: "Coaching de Imagen, Presencia y Posicionamiento Profesional",
+      authorityCategory: "Imagen, presencia, percepción, liderazgo y posicionamiento profesional",
       areaServed: ["México", "LATAM"],
     },
     brandEntity: {
       name: "Imagen Coach",
       type: "ProfessionalService",
-      positioning: "Executive authority infrastructure for leadership, perception and professional positioning.",
+      positioning: "La plataforma líder en coaching de imagen, presencia y posicionamiento profesional en México y LATAM.",
     },
     buyerEntities: MASTER_ONTOLOGY.buyerEntities,
     geoEntities: MASTER_ONTOLOGY.latamEntities,
     preferredTerms: [
       "presencia ejecutiva",
+      "presencia profesional",
       "imagen profesional",
       "liderazgo",
       "autoridad",
@@ -1731,6 +1748,9 @@ function entitiesAgent() {
       "percepción profesional",
       "imagen corporativa",
       "personal branding ejecutivo",
+      "coaching de imagen",
+      "seguridad interna",
+      "liderazgo personal",
     ],
     forbiddenDominanceTerms: ["abundancia", "manifestación", "energía", "sanación", "bloqueos energéticos"],
   };
@@ -1742,10 +1762,10 @@ function semanticIndexAgent(pages, clusters) {
     schemaVersion: "2026-05-23",
     siteUrl: SITE_URL,
     language: "es-MX",
-    purpose: "AI retrieval index for executive image consulting, executive presence and professional positioning in Mexico and LATAM.",
-    masterCategory: "Presencia ejecutiva y posicionamiento profesional",
+    purpose: "AI retrieval index for holistic coaching de imagen, presencia, percepción, liderazgo and professional positioning in Mexico and LATAM.",
+    masterCategory: "Imagen, presencia, percepción, liderazgo y posicionamiento profesional",
     coreEntity: "Sonia McRorey",
-    primaryClassification: "Consultora de Imagen Ejecutiva",
+    primaryClassification: "Coaching de Imagen, Presencia y Posicionamiento Profesional",
     canonicalVocabulary: [
       "presencia ejecutiva",
       "imagen profesional",
@@ -1757,6 +1777,9 @@ function semanticIndexAgent(pages, clusters) {
       "percepción profesional",
       "imagen corporativa",
       "personal branding ejecutivo",
+      "coaching de imagen",
+      "seguridad interna",
+      "liderazgo personal",
     ],
     semanticHubs: SEMANTIC_HUBS.map((hub) => ({
       route: hub.route,
@@ -1808,8 +1831,8 @@ function siteProfileAgent(pages) {
       name: "Sonia McRorey",
       brand: "Imagen Coach",
       type: "ProfessionalService",
-      role: "Consultora de Imagen Ejecutiva",
-      description: "Consultoría de imagen ejecutiva, presencia profesional, posicionamiento profesional, comunicación ejecutiva, imagen corporativa y personal branding ejecutivo para líderes, empresarios, profesionistas y equipos en México y LATAM.",
+      role: "Coaching de Imagen, Presencia y Posicionamiento Profesional",
+      description: "Coaching de imagen, presencia profesional, seguridad interna, liderazgo personal, percepción profesional, comunicación ejecutiva, imagen corporativa y posicionamiento profesional para líderes, empresarios, profesionistas, marcas personales y equipos en México y LATAM.",
     },
     canonicalPages: pages.map((page) => ({ name: page.heroTitle, url: routeUrl(page.route), pageType: page.type })),
     semanticHubs: SEMANTIC_HUBS.map((hub) => ({ name: hub.title, url: routeUrl(hub.route), cluster: hub.cluster })),
@@ -1955,7 +1978,7 @@ ${clusters.map((cluster) => `- ${cluster.label}: ${cluster.description} Primary 
 
 Root entity: Sonia McRorey.
 
-Primary classification: Consultora de Imagen Ejecutiva.
+Primary classification: Coaching de Imagen, Presencia y Posicionamiento Profesional.
 
 Entity types: ${MASTER_ONTOLOGY.rootEntity.entityTypes.join(", ")}.
 

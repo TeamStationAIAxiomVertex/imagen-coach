@@ -19,9 +19,12 @@ const semanticHubRoutes = [
   "/imagen-estrategica",
 ];
 const requiredExecutiveTerms = [
+  "coaching de imagen",
   "presencia ejecutiva",
+  "presencia profesional",
   "imagen profesional",
   "liderazgo",
+  "liderazgo personal",
   "autoridad",
   "credibilidad",
   "comunicación ejecutiva",
@@ -29,6 +32,7 @@ const requiredExecutiveTerms = [
   "percepción profesional",
   "imagen corporativa",
   "personal branding ejecutivo",
+  "seguridad interna",
 ];
 const forbiddenDominanceTerms = ["abundancia", "manifestación", "energía", "sanación", "bloqueos energéticos"];
 let renderedCorpus = "";
@@ -160,7 +164,7 @@ for (const file of requiredAgentFiles) {
 for (const file of ["dist/entities.json", "dist/semantic-index.json", "dist/agent/site-profile.json", "dist/agent/ontology.json"]) {
   if (!existsSync(file)) continue;
   const text = await readFile(file, "utf8");
-  if (!text.includes("Consultora de Imagen Ejecutiva")) failures.push(`${file} missing primary entity classification`);
+  if (!text.includes("Coaching de Imagen, Presencia y Posicionamiento Profesional")) failures.push(`${file} missing primary holistic image coaching classification`);
   for (const term of requiredExecutiveTerms) {
     if (!text.toLowerCase().includes(term.toLowerCase())) failures.push(`${file} missing executive semantic term: ${term}`);
   }

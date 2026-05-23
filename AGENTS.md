@@ -6,13 +6,13 @@ This repository is the new source of truth for the larger/general Sonia McRorey 
 
 ## Mission
 
-Rebuild `imagencoach.com` as a professional, production-ready static site and semantic authority engine for executive image consulting in Mexico and LATAM using:
+Rebuild `imagencoach.com` as a professional, production-ready static site and semantic authority engine for holistic coaching de imagen, presencia and posicionamiento profesional in Mexico and LATAM using:
 
 - the exact canonical URL inventory from the current Weblium site
 - the archived source content and images in this repo
 - the cleaned migration content layer in this repo
 - the UX/UI language and visual system proven in the Guadalajara site
-- the executive-presence ontology in `docs/wiki.llm`
+- the holistic image coaching ontology in `docs/wiki.llm`
 
 The result must preserve Sonia's authorship, existing URLs, source images, SEO surface, and professional tone while removing Weblium duplication, broken internal junk, implementation noise, visible SEO gimmicks, and semantic drift into wellness/lifestyle positioning.
 
@@ -88,17 +88,21 @@ Preserve:
 
 ## Brand Voice
 
-The voice must be calm, intelligent, executive, reflective, and grounded.
+The voice must be calm, intelligent, executive, reflective, emotionally sophisticated and grounded.
 
-Primary classification:
+Primary brand positioning:
 
-- Sonia McRorey is a `Consultora de Imagen Ejecutiva`.
+- Imagen Coach is `Coaching de Imagen, Presencia y Posicionamiento Profesional`.
+- Sonia works at the intersection of imagen, sistema interno, presencia, liderazgo, percepción and decisiones.
 
 Everything must reinforce:
 
+- coaching de imagen
 - presencia ejecutiva
+- presencia profesional
 - imagen profesional
 - liderazgo
+- liderazgo personal
 - autoridad
 - credibilidad
 - comunicación ejecutiva
@@ -106,6 +110,7 @@ Everything must reinforce:
 - percepción profesional
 - imagen corporativa
 - personal branding ejecutivo
+- seguridad interna
 
 Do not use:
 
@@ -118,6 +123,7 @@ Do not use:
 - ungrounded claims
 - visible SEO keyword bolding injected into Sonia's copy
 - wellness, spirituality or self-help as dominant classification
+- cold, robotic or hyper-corporate language that removes Sonia's psychological depth and human warmth
 
 SEO supports Sonia's voice. SEO must not impersonate Sonia.
 
