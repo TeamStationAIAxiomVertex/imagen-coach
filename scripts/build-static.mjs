@@ -462,7 +462,7 @@ function normalizeContentLines(lines) {
       previous &&
       !isHeadingCandidate(line) &&
       !isListLine(line) &&
-      !/[.!?…:]$/.test(previous) &&
+      (!/[.!?…:]$/.test(previous) || (previous.endsWith(":") && /^[a-záéíóúñ]/.test(line))) &&
       /^[a-záéíóúñ,]/.test(line)
     ) {
       normalized[normalized.length - 1] = `${previous}${line.startsWith(",") ? "" : " "}${line}`;
@@ -483,6 +483,7 @@ function isHeadingCandidate(line) {
   if (line.length > 92) return false;
   if (/^https?:/.test(line)) return false;
   if (/^[¿?]/.test(line)) return true;
+  if (/:$/.test(line)) return false;
   if (/[.!]$/.test(line)) return false;
   return /^[A-ZÁÉÍÓÚÑ]/.test(line) && line.split(/\s+/).length <= 11;
 }
@@ -529,7 +530,11 @@ function repairSourceFragments(value = "") {
     .replace(/\bs e\b/gi, "se")
     .replace(/\bd onde\b/gi, "donde")
     .replace(/\bdí a\b/gi, "día")
-    .replace(/\bqu é\b/gi, "qué");
+    .replace(/\bqu é\b/gi, "qué")
+    .replace(/\bdía a dí\b/gi, "día a día")
+    .replace(/\bexpresión pe\b/gi, "expresión personal")
+    .replace(/\be visten\b/gi, "se visten")
+    .replace(/\bSse visten\b/g, "Se visten");
 }
 
 function stripSourceMarkers(value = "") {
@@ -678,6 +683,19 @@ function cleanDisplayTitle(value = "") {
     .trim();
 }
 
+function cleanExcerptText(value = "", maxLength = 190) {
+  const text = cleanDisplayTitle(repairSourceFragments(value))
+    .replace(/\s+/g, " ")
+    .trim();
+  if (!text) return "";
+  const sentences = text.match(/[^.!?]+[.!?]+(?:["”])?/g) || [];
+  const usableSentence = sentences.map((item) => item.trim()).find((item) => item.length >= 42 && item.length <= maxLength);
+  if (usableSentence) return usableSentence;
+  if (text.length <= maxLength) return text;
+  const boundary = text.slice(0, maxLength).replace(/\s+\S*$/, "").trim();
+  return /[.!?]$/.test(boundary) ? boundary : `${boundary}.`;
+}
+
 function titleFromLines(page, lines) {
   if (page.route === "/") return "Tu imagen ya debería reflejar el nivel que sostienes";
   const title = lines.find((line) => line.length > 8 && !line.startsWith("https://")) || page.title;
@@ -687,7 +705,7 @@ function titleFromLines(page, lines) {
 function descriptionFromLines(lines) {
   const cleaned = lines.map(cleanDisplayTitle).filter(Boolean);
   const line = cleaned.find((item) => item.length > 90) || cleaned.find((item) => item.length > 45) || "";
-  return line.slice(0, 158);
+  return cleanExcerptText(line, 158);
 }
 
 function pageType(route) {
@@ -754,7 +772,10 @@ function serviceLabel(route, pages) {
 }
 
 function cardDescription(page) {
-  return page.description || "Contenido de imagen, presencia y estrategia personal.";
+  const lines = page.markdown ? splitContent(page.markdown) : [];
+  const body = nonTitleLines(page, lines, page.route === "/" ? 4 : 1);
+  const source = body.find((line) => /[.!?]$/.test(line) && line.length >= 48) || body.find((line) => line.length >= 48) || page.description;
+  return cleanExcerptText(source, 180) || "Contenido de imagen, presencia y estrategia personal.";
 }
 
 function nonTitleLines(page, lines, start = 1) {
@@ -944,12 +965,16 @@ function structuredContentSections(page, lines, pages, clusters) {
   <section class="section semantic-sections ${mode === "fragmented" ? "fragment-ladder" : ""} ${mode === "dense" ? "dense-reading" : ""}">
     ${rest.map((section, index) => {
       const topics = sectionTopics([section.heading, ...section.lines], page, clusterMap);
-      return `<article class="semantic-card" id="tema-${index + 2}-${slugify(section.heading)}">
-      <div class="semantic-index">${String(index + 1).padStart(2, "0")}</div>
-      ${topicChips(topics)}
-      <h2>${escapeHtml(section.heading)}</h2>
+      return `<details class="semantic-card" id="tema-${index + 2}-${slugify(section.heading)}"${index < 2 ? " open" : ""}>
+      <summary>
+        <span class="semantic-index">${String(index + 1).padStart(2, "0")}</span>
+        <span class="semantic-summary-copy">
+          ${topicChips(topics)}
+          <h2>${escapeHtml(section.heading)}</h2>
+        </span>
+      </summary>
       <div class="semantic-copy">${renderSemanticCopy(section.lines, topics)}</div>
-    </article>`;
+    </details>`;
     }).join("\n")}
   </section>
   ${internalLinkAtlas(page, pages, clusters)}`;
@@ -1021,24 +1046,14 @@ function nav(currentRoute) {
   const servicesActive = currentRoute.startsWith("/servicios-asesoria-de-imagen-coaching") ? ' aria-current="page"' : "";
   const servicesMenu = `<details class="nav-mega">
     <summary${servicesActive}>Servicios</summary>
-    <div class="mega-panel">
-      <div class="mega-intro">
-        <span>Dolor · Solución · Resultado</span>
-        <strong>Elige la ruta según lo que necesitas resolver.</strong>
-      </div>
-      <div class="mega-grid">
-        ${PILLARS.map((pillar) => {
-          const guide = BUYER_GUIDES[pillar.route];
-          return `<a href="${pillar.route}" class="mega-card">
-            <span>${escapeHtml(pillar.label)}</span>
-            <dl>
-              <dt>Dolor</dt><dd>${escapeHtml(guide.pain)}</dd>
-              <dt>Solución</dt><dd>${escapeHtml(guide.solution)}</dd>
-              <dt>Resultado</dt><dd>${escapeHtml(guide.outcome)}</dd>
-            </dl>
-          </a>`;
-        }).join("")}
-      </div>
+    <div class="mega-panel compact-menu">
+      ${PILLARS.map((pillar) => {
+        const guide = BUYER_GUIDES[pillar.route];
+        return `<a href="${pillar.route}" class="mega-link">
+          <span>${escapeHtml(pillar.label)}</span>
+          <small>${escapeHtml(guide.outcome)}</small>
+        </a>`;
+      }).join("")}
     </div>
   </details>`;
   return [

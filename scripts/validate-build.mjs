@@ -68,6 +68,9 @@ for (const file of htmlFiles) {
   for (const junk of ["87fd0a60", "bf0dcab6", "Can't send form", "Please try again later", "Miscellaneous 234_solid", ">undefined<", "Online Therapy", "localhost", "127.0.0.1", "weblium.site"]) {
     if (html.includes(junk)) failures.push(`Junk leaked into ${file}: ${junk}`);
   }
+  for (const pattern of [/\bexpresión pe\b/i, /\bhe desarrolla\b/i, /\be visten\b/i, /\bSse visten\b/]) {
+    if (pattern.test(html)) failures.push(`Broken source fragment leaked into ${file}: ${pattern}`);
+  }
   if (!html.includes('lang="es-MX"')) failures.push(`Missing es-MX lang in ${file}`);
   if (!html.includes('rel="service-desc" type="application/openapi+json"')) failures.push(`Missing OpenAPI discovery link in ${file}`);
   if (!html.includes('href="https://imagencoach.com/llms-full.txt"')) failures.push(`Missing llms-full discovery link in ${file}`);
