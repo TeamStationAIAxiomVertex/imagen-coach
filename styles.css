@@ -2411,8 +2411,9 @@ details[open] summary::after {
 .system-orbit::before,
 .system-orbit::after { content: ""; position: absolute; inset: 44px; border: 1px solid rgba(140, 71, 153, .18); border-radius: 50%; }
 .system-orbit::after { inset: 94px; border-color: rgba(111, 162, 135, .24); }
-.orbit-core { position: absolute; left: 50%; top: 50%; z-index: 2; display: grid; width: 142px; height: 142px; place-items: center; transform: translate(-50%, -50%); border: 1px solid rgba(111, 162, 135, .34); border-radius: 50%; background: rgba(251, 250, 252, .94); box-shadow: 0 18px 48px rgba(51, 43, 52, .1); text-align: center; }
-.orbit-core img { display: block; width: 82px; height: 82px; object-fit: contain; opacity: .84; }
+.orbit-core { position: absolute; left: 50%; top: 50%; z-index: 2; display: grid; width: 158px; height: 158px; place-items: center; transform: translate(-50%, -50%); border: 1px solid rgba(111, 162, 135, .38); border-radius: 50%; background: radial-gradient(circle at 50% 40%, rgba(255,255,255,.98), rgba(247,250,248,.94) 58%, rgba(231,240,235,.88)); box-shadow: 0 22px 54px rgba(51, 43, 52, .12), inset 0 0 0 12px rgba(255,255,255,.58), inset 0 0 0 13px rgba(111, 162, 135, .14); text-align: center; }
+.orbit-core::after { content: ""; position: absolute; inset: 18px; border: 1px solid rgba(140, 71, 153, .18); border-radius: 50%; pointer-events: none; }
+.orbit-brand-mark { display: block; width: 106px; height: 106px; background: linear-gradient(145deg, var(--brand-green-deep), #2f3340 72%); mask: url("/assets/sonia-icon.svg") center / contain no-repeat; -webkit-mask: url("/assets/sonia-icon.svg") center / contain no-repeat; filter: drop-shadow(0 8px 14px rgba(51,43,52,.14)); }
 .orbit-node { position: absolute; z-index: 3; display: inline-flex; align-items: center; gap: 8px; min-width: 142px; padding: 10px 12px; border: 1px solid rgba(111, 162, 135, .32); border-radius: 999px; background: rgba(251, 250, 252, .94); color: var(--brand-green-deep); box-shadow: 0 12px 34px rgba(51, 43, 52, .08); animation: orbitPulse 5.4s ease-in-out infinite; }
 .orbit-node span { display: inline-grid; width: 28px; height: 28px; place-items: center; border-radius: 50%; background: rgba(231, 240, 235, .8); }
 .orbit-node svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
