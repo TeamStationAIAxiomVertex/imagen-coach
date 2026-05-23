@@ -1207,8 +1207,7 @@ function serviceSystemVisual(page, sections, clusterMap) {
     </div>
     <div class="system-orbit" aria-hidden="true">
       <div class="orbit-core">
-        <span>${escapeHtml(semanticShortLabel(page.route, "Imagen"))}</span>
-        <strong>${escapeHtml(page.type === "service-hub" ? "Rutas" : "Método")}</strong>
+        <img src="/assets/sonia-icon.svg" alt="" width="82" height="82" loading="lazy" decoding="async" />
       </div>
       ${axes.map((topic, index) => `<div class="orbit-node orbit-node-${index + 1}">
         <span>${topicIcon(topic.id)}</span>
