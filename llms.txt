@@ -13,6 +13,9 @@ Purpose: rebuild Sonia McRorey's larger/general Imagen Coach site from Weblium i
 - Site profile: https://imagencoach.com/agent/site-profile.json
 - Services: https://imagencoach.com/agent/services.json
 - Ontology: https://imagencoach.com/agent/ontology.json
+- Semantic hubs: https://imagencoach.com/agent/semantic-hubs.json
+- WordPress ingestion: https://imagencoach.com/agent/wordpress-ingestion.json
+- Search intent terms: https://imagencoach.com/agent/search-intent-terms.json
 - Page signals: https://imagencoach.com/agent/page-signals.json
 - Redirects: https://imagencoach.com/agent/redirects.json
 - Conversion map: https://imagencoach.com/agent/conversion-map.json
@@ -21,7 +24,7 @@ Purpose: rebuild Sonia McRorey's larger/general Imagen Coach site from Weblium i
 
 ## Canonical identity
 
-Imagen Coach is Sonia McRorey's authority platform for asesoría de imagen, coaching de imagen, presencia profesional, imagen profesional, marca personal, liderazgo, percepción profesional and talleres de imagen corporativa.
+Imagen Coach is Sonia McRorey's static semantic authority platform for asesoría de imagen integral, coaching de imagen, imagen profesional, presencia ejecutiva, imagen estratégica, liderazgo visible, comunicación no verbal, autoridad profesional, posicionamiento profesional, imagen empresarial, mentalidad y presencia, and talleres de imagen corporativa in México and LATAM.
 
 This is not a fashion influencer site, beauty blog, lifestyle funnel or generic coaching website.
 
@@ -32,6 +35,12 @@ All 35 canonical URLs from the current `imagencoach.com` sitemap must be preserv
 The article archive lives under:
 
 https://imagencoach.com/imagen-presencia
+
+Future WordPress-authored articles must be ingested and rendered as static HTML under:
+
+https://imagencoach.com/blog/
+
+WordPress is not the production rendering layer.
 
 ## Voice
 

@@ -9,10 +9,24 @@ const SITE_URL = "https://imagencoach.com";
 const routeSet = new Set(manifest.pages.map((page) => page.route));
 const articleSet = new Set(manifest.pages.filter((page) => page.route.startsWith("/imagen-presencia/")).map((page) => page.route));
 const clusteredArticles = new Set();
+const semanticHubRoutes = [
+  "/imagen-profesional",
+  "/presencia-ejecutiva",
+  "/liderazgo",
+  "/comunicacion-no-verbal",
+  "/mentalidad",
+  "/empresarias",
+  "/imagen-estrategica",
+];
 
 for (const page of manifest.pages) {
   const htmlPath = page.route === "/" ? "dist/index.html" : path.join("dist", page.route, "index.html");
   if (!existsSync(htmlPath)) failures.push(`Missing route output: ${page.route}`);
+}
+
+for (const route of semanticHubRoutes) {
+  const htmlPath = path.join("dist", route, "index.html");
+  if (!existsSync(htmlPath)) failures.push(`Missing semantic hub output: ${route}`);
 }
 
 for (const cluster of strategy.clusters) {
@@ -71,6 +85,17 @@ for (const page of manifest.pages) {
     failures.push(`Missing sitemap URL: ${page.route}`);
   }
 }
+for (const route of semanticHubRoutes) {
+  if (!sitemap.includes(`${SITE_URL}${route}`)) failures.push(`Missing semantic hub in sitemap: ${route}`);
+}
+
+for (const sitemapFile of ["dist/blog-sitemap.xml", "dist/category-sitemap.xml", "dist/service-sitemap.xml"]) {
+  if (!existsSync(sitemapFile)) failures.push(`Missing sitemap file: ${sitemapFile}`);
+  else {
+    const text = await readFile(sitemapFile, "utf8");
+    if (!text.includes("<urlset")) failures.push(`Invalid sitemap file: ${sitemapFile}`);
+  }
+}
 
 const requiredAgentFiles = [
   "dist/openapi.json",
@@ -81,6 +106,9 @@ const requiredAgentFiles = [
   "dist/agent/contact.json",
   "dist/agent/publications.json",
   "dist/agent/ontology.json",
+  "dist/agent/semantic-hubs.json",
+  "dist/agent/wordpress-ingestion.json",
+  "dist/agent/search-intent-terms.json",
   "dist/agent/page-signals.json",
   "dist/agent/redirects.json",
   "dist/agent/conversion-map.json",
@@ -106,6 +134,9 @@ for (const file of requiredAgentFiles) {
 const robots = await readFile("dist/robots.txt", "utf8");
 for (const line of [
   `Sitemap: ${SITE_URL}/sitemap.xml`,
+  `Sitemap: ${SITE_URL}/blog-sitemap.xml`,
+  `Sitemap: ${SITE_URL}/category-sitemap.xml`,
+  `Sitemap: ${SITE_URL}/service-sitemap.xml`,
   `OpenAPI: ${SITE_URL}/openapi.json`,
   `LLMs: ${SITE_URL}/llms.txt`,
   `LLMs-Full: ${SITE_URL}/llms-full.txt`,

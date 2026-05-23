@@ -42,18 +42,20 @@ Always:
 ## Required Read Order Before Coding
 
 1. `AGENTS.md`
-2. `docs/source-url-inventory.md`
-3. `docs/wiki.llm`
-4. `docs/UBIQUITOUS_LANGUAGE.md`
-5. `docs/SDD.md`
-6. `docs/DDD.md`
-7. `docs/TDD.md`
-8. `docs/GEO_OPERATING_SYSTEM.md`
-9. `docs/PAGE_SIGNAL_MAP.md`
-10. `docs/REDIRECTS_AND_URL_RETENTION.md`
-11. `content/clean/manifest.json`
-12. `scripts/build-static.mjs`
-13. `scripts/validate-build.mjs`
+2. `docs/MASTER_SEMANTIC_AUTHORITY_ARCHITECTURE.md`
+3. `docs/source-url-inventory.md`
+4. `docs/wiki.llm`
+5. `docs/UBIQUITOUS_LANGUAGE.md`
+6. `docs/SEARCH_INTENT_BOLDING_STRATEGY.md`
+7. `docs/SDD.md`
+8. `docs/DDD.md`
+9. `docs/TDD.md`
+10. `docs/GEO_OPERATING_SYSTEM.md`
+11. `docs/PAGE_SIGNAL_MAP.md`
+12. `docs/REDIRECTS_AND_URL_RETENTION.md`
+13. `content/clean/manifest.json`
+14. `scripts/build-static.mjs`
+15. `scripts/validate-build.mjs`
 
 ## Deployment Gate
 

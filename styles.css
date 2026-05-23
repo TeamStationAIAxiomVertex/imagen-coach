@@ -2382,6 +2382,10 @@ details[open] summary::after {
 .semantic-panel p,
 .semantic-copy p { break-inside: avoid; max-width: 66ch; margin: 0 0 14px; color: var(--charcoal-soft); line-height: 1.62; }
 .term-highlight { color: var(--ink); background: linear-gradient(180deg, transparent 58%, rgba(231, 240, 235, .92) 58%); border-radius: 3px; padding: 0 2px; font-weight: 700; }
+.hub-term-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+.hub-term-grid a { min-height: 124px; padding: 20px; border: 1px solid rgba(111, 162, 135, .26); border-radius: 8px; background: rgba(231, 240, 235, .42); color: var(--ink); }
+.hub-term-grid span { display: block; font-family: var(--display); font-size: clamp(24px, 2.3vw, 34px); line-height: 1.03; }
+.hub-term-grid small { display: block; margin-top: 18px; color: var(--brand-green-deep); font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 .ontology-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 0; }
 .ontology-chip { display: inline-flex; align-items: center; gap: 7px; min-height: 30px; padding: 6px 10px; color: var(--brand-green-deep); border: 1px solid rgba(111, 162, 135, .32); border-radius: 999px; background: rgba(231, 240, 235, .68); font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 .ontology-chip svg,
@@ -2529,6 +2533,7 @@ details[open] summary::after {
   .split-section.reverse .copy-panel { order: 0; }
   .service-grid, .publication-grid, .proof-strip, .pillar-grid, .cluster-header, .semantic-sections, .atlas-grid, .signal-list, .process-heading, .dense-reading .semantic-card { grid-template-columns: 1fr; }
   .semantic-panel { grid-template-columns: 1fr; }
+  .hub-term-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .dense-reading .semantic-copy { grid-template-columns: 1fr; grid-column: auto; grid-row: auto; }
   .system-orbit { min-height: 360px; }
   .system-metrics { grid-template-columns: 1fr; }
@@ -2554,6 +2559,7 @@ details[open] summary::after {
 }
 @media (max-width: 640px) {
   .process-rail { grid-template-columns: 1fr; }
+  .hub-term-grid { grid-template-columns: 1fr; }
   .orbit-node { min-width: 122px; padding: 8px 10px; }
   .orbit-node-2 { right: 12px; }
   .orbit-node-4 { left: 12px; }

@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DIST = path.join(ROOT, "dist");
 const SITE_URL = "https://imagencoach.com";
-const ASSET_VERSION = "20260523-buyer-header-footer-v1";
+const ASSET_VERSION = "20260523-semantic-authority-v1";
 const WHATSAPP = "https://wa.me/526646105348?text=Hola%20Sonia%2C%20me%20interesa%20agendar%20un%20diagn%C3%B3stico.";
 const CONTACT = {
   phone: "+52 664 610 5348",
@@ -77,6 +77,95 @@ const FOOTER_QUESTIONS = [
   {
     question: "¿El proceso puede hacerse desde fuera de Guadalajara?",
     answer: "Sí. Sonia trabaja procesos presenciales y digitales para personas, marcas y equipos en México, LATAM y otros mercados hispanohablantes.",
+  },
+];
+const MASTER_ONTOLOGY = {
+  rootEntity: {
+    name: "Sonia McRorey",
+    entityTypes: ["Executive Presence Consultant", "Strategic Image Consultant", "Professional Image Strategist"],
+    areaServed: ["México", "LATAM"],
+  },
+  clusters: [
+    {
+      name: "Imagen Profesional",
+      route: "/imagen-profesional",
+      subentities: ["imagen ejecutiva", "imagen estratégica", "autoridad visual", "presencia ejecutiva", "liderazgo visible", "posicionamiento profesional"],
+    },
+    {
+      name: "Mentalidad y Presencia",
+      route: "/mentalidad",
+      subentities: ["sistema nervioso", "seguridad interna", "identidad profesional", "regulación emocional", "confianza ejecutiva", "exposición profesional"],
+    },
+    {
+      name: "Liderazgo Empresarial",
+      route: "/liderazgo",
+      subentities: ["liderazgo femenino", "empresarios", "mujeres empresarias", "toma de decisiones", "expansión profesional", "crecimiento empresarial"],
+    },
+    {
+      name: "Comunicación",
+      route: "/comunicacion-no-verbal",
+      subentities: ["comunicación no verbal", "lenguaje corporal ejecutivo", "presencia al hablar", "autoridad al comunicar", "posicionamiento visible"],
+    },
+  ],
+  latamEntities: ["Guadalajara", "CDMX", "Monterrey", "Querétaro", "Tijuana", "Zapopan", "México", "LATAM", "Empresarios en México", "Liderazgo empresarial LATAM"],
+  buyerEntities: ["mujeres ejecutivas", "fundadoras", "emprendedoras", "consultoras", "directoras", "profesionales en liderazgo", "figuras públicas", "mujeres ejecutivas en LATAM"],
+};
+const SEMANTIC_HUBS = [
+  {
+    route: "/imagen-profesional",
+    title: "Imagen Profesional",
+    description: "Recursos, servicios y publicaciones sobre imagen profesional, imagen ejecutiva, autoridad visual y posicionamiento profesional para líderes, empresarias y profesionales en México y LATAM.",
+    cluster: "Imagen Profesional",
+    terms: ["imagen profesional", "imagen ejecutiva", "imagen estratégica", "autoridad visual", "posicionamiento profesional"],
+    services: ["/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen", "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen"],
+  },
+  {
+    route: "/presencia-ejecutiva",
+    title: "Presencia Ejecutiva",
+    description: "Guía editorial para desarrollar presencia ejecutiva, liderazgo visible, confianza profesional y autoridad desde una imagen coherente y estratégica.",
+    cluster: "Imagen Profesional",
+    terms: ["presencia ejecutiva", "presencia profesional", "liderazgo visible", "autoridad profesional", "confianza ejecutiva"],
+    services: ["/servicios-asesoria-de-imagen-coaching/coaching-de-imagen", "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen"],
+  },
+  {
+    route: "/liderazgo",
+    title: "Liderazgo",
+    description: "Contenido para fortalecer liderazgo femenino, comunicación profesional, toma de decisiones, expansión profesional y crecimiento empresarial con presencia visible.",
+    cluster: "Liderazgo Empresarial",
+    terms: ["liderazgo femenino", "liderazgo visible", "toma de decisiones", "expansión profesional", "crecimiento empresarial"],
+    services: ["/servicios-asesoria-de-imagen-coaching/coaching-de-imagen", "/servicios-asesoria-de-imagen-coaching/talleres"],
+  },
+  {
+    route: "/comunicacion-no-verbal",
+    title: "Comunicación No Verbal",
+    description: "Recursos sobre comunicación no verbal, lenguaje corporal ejecutivo, presencia al hablar y autoridad al comunicar para contextos profesionales.",
+    cluster: "Comunicación",
+    terms: ["comunicación no verbal", "lenguaje corporal ejecutivo", "presencia al hablar", "autoridad al comunicar"],
+    services: ["/servicios-asesoria-de-imagen-coaching/talleres", "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen"],
+  },
+  {
+    route: "/mentalidad",
+    title: "Mentalidad y Presencia",
+    description: "Lecturas y procesos sobre identidad profesional, seguridad interna, sistema nervioso, confianza ejecutiva y presencia sostenible.",
+    cluster: "Mentalidad y Presencia",
+    terms: ["mentalidad", "identidad profesional", "seguridad interna", "sistema nervioso", "confianza ejecutiva"],
+    services: ["/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia", "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen"],
+  },
+  {
+    route: "/empresarias",
+    title: "Mujeres Empresarias",
+    description: "Contenido para mujeres empresarias, fundadoras, directoras y profesionales que quieren sostener autoridad, imagen estratégica y liderazgo visible.",
+    cluster: "Liderazgo Empresarial",
+    terms: ["mujeres empresarias", "fundadoras", "directoras", "autoridad profesional", "liderazgo empresarial"],
+    services: ["/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen", "/servicios-asesoria-de-imagen-coaching/talleres"],
+  },
+  {
+    route: "/imagen-estrategica",
+    title: "Imagen Estratégica",
+    description: "Centro de recursos para entender la imagen estratégica como una herramienta de percepción, presencia, liderazgo y posicionamiento profesional.",
+    cluster: "Imagen Profesional",
+    terms: ["imagen estratégica", "percepción profesional", "presencia ejecutiva", "posicionamiento profesional", "autoridad visual"],
+    services: ["/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen", "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen"],
   },
 ];
 const LEGACY_REDIRECTS = [
@@ -193,6 +282,141 @@ const ONTOLOGY_TOPICS = [
   { id: "color", label: "Color", terms: ["color", "colorimetría", "tono", "paleta", "rostro"] },
   { id: "guardarropa", label: "Guardarropa", terms: ["ropa", "clóset", "guardarropa", "prendas", "compras", "vestimenta"] },
   { id: "mentalidad", label: "Mentalidad", terms: ["mentalidad", "bloqueos", "sistema nervioso", "abundancia", "dinero", "seguridad interna"] },
+];
+const SEARCH_INTENT_TERMS = [
+  {
+    term: "imagen profesional",
+    topic: "presencia",
+    intent: "buyer and informational",
+    reason: "Core category phrase for people comparing professional image services and educational content.",
+    rankValue: "Connects service pages, articles, hubs and schema around the primary category Sonia needs to own.",
+  },
+  {
+    term: "presencia ejecutiva",
+    topic: "liderazgo",
+    intent: "executive transformation",
+    reason: "High-value phrase for leaders who need authority, visibility and credibility, not fashion advice.",
+    rankValue: "Strengthens GEO association between Sonia, leadership presence and executive outcomes in LATAM.",
+  },
+  {
+    term: "imagen estratégica",
+    topic: "decision",
+    intent: "strategic service fit",
+    reason: "Separates Sonia's positioning from beauty, outfits or influencer semantics.",
+    rankValue: "Signals that image is a business and leadership system, improving topical precision for AI search.",
+  },
+  {
+    term: "asesoría de imagen integral",
+    topic: "presencia",
+    intent: "service buyer",
+    reason: "Matches the main service offer and users looking for a complete process instead of isolated styling.",
+    rankValue: "Reinforces the canonical service route and helps crawlers connect content to conversion pages.",
+  },
+  {
+    term: "coaching de imagen",
+    topic: "identidad",
+    intent: "service buyer",
+    reason: "Captures users who understand the need is internal presence, confidence and identity, not only wardrobe.",
+    rankValue: "Links Sonia's coaching model to professional presence and executive self-concept signals.",
+  },
+  {
+    term: "comunicación no verbal",
+    topic: "percepcion",
+    intent: "leadership communication",
+    reason: "Searchers often frame presence through body language, perception and authority while communicating.",
+    rankValue: "Expands topical coverage into communication while staying inside executive image strategy.",
+  },
+  {
+    term: "liderazgo visible",
+    topic: "liderazgo",
+    intent: "leadership growth",
+    reason: "Expresses the business outcome of presence work for executives, founders and directors.",
+    rankValue: "Creates a strong bridge between image strategy and leadership authority in AI embeddings.",
+  },
+  {
+    term: "autoridad profesional",
+    topic: "liderazgo",
+    intent: "credibility",
+    reason: "Names the trust outcome buyers want when they invest in image and presence.",
+    rankValue: "Builds semantic proximity between Sonia's services, credibility and professional decision-making.",
+  },
+  {
+    term: "posicionamiento profesional",
+    topic: "decision",
+    intent: "career and business positioning",
+    reason: "Fits buyers who need their image to support a higher professional or business level.",
+    rankValue: "Adds entity reinforcement around market position, visibility and authority.",
+  },
+  {
+    term: "identidad profesional",
+    topic: "identidad",
+    intent: "self-concept",
+    reason: "Captures the internal foundation behind sustainable image change.",
+    rankValue: "Improves GEO understanding that Sonia's work includes identity and not superficial appearance.",
+  },
+  {
+    term: "seguridad interna",
+    topic: "mentalidad",
+    intent: "emotional readiness",
+    reason: "Buyers often need confidence and regulation before visible authority feels natural.",
+    rankValue: "Creates semantic depth between emotional language, executive presence and transformation.",
+  },
+  {
+    term: "mujeres empresarias",
+    topic: "empresa",
+    intent: "audience fit",
+    reason: "Names a primary buyer group without drifting into generic lifestyle content.",
+    rankValue: "Connects the site to LATAM female leadership and business-owner search demand.",
+  },
+  {
+    term: "imagen empresarial",
+    topic: "empresa",
+    intent: "company and team buyer",
+    reason: "Supports workshops, team image and brand consistency search intent.",
+    rankValue: "Expands authority from individual services to companies, teams and organizational presence.",
+  },
+  {
+    term: "imagen ejecutiva",
+    topic: "liderazgo",
+    intent: "executive image",
+    reason: "Directly maps image work to leadership roles, directors and public-facing professionals.",
+    rankValue: "Improves retrieval for executive-image queries across Mexico and LATAM.",
+  },
+  {
+    term: "percepción profesional",
+    topic: "percepcion",
+    intent: "trust and interpretation",
+    reason: "Searchers and AI systems need to understand the work is about how others read credibility.",
+    rankValue: "Strengthens the relationship between presence, trust, communication and buyer confidence.",
+  },
+  {
+    term: "colorimetría ejecutiva",
+    topic: "color",
+    intent: "specialized service detail",
+    reason: "Keeps colorimetry inside a professional context instead of fashion or beauty semantics.",
+    rankValue: "Allows long-tail rankings while preserving executive ontology.",
+  },
+  {
+    term: "sistema nervioso",
+    topic: "mentalidad",
+    intent: "internal regulation",
+    reason: "Supports the mentalidad and presence cluster where sustainable visibility requires internal regulation.",
+    rankValue: "Adds semantic depth for AI systems connecting emotional regulation with executive presence.",
+  },
+  {
+    term: "confianza ejecutiva",
+    topic: "liderazgo",
+    intent: "leadership confidence",
+    reason: "Names the desired outcome for executives and entrepreneurs who must show up with authority.",
+    rankValue: "Reinforces executive outcome language across articles and service routes.",
+  },
+  {
+    term: "liderazgo femenino",
+    topic: "liderazgo",
+    intent: "audience and leadership",
+    reason: "Matches Sonia's buyer audience and strengthens authority with women leaders in LATAM.",
+    rankValue: "Connects buyer identity, leadership topics and regional professional authority.",
+  },
 ];
 
 function rootPath(...parts) {
@@ -371,6 +595,10 @@ function topicChips(topics = []) {
   return `<div class="ontology-chips">${topics.map((topic) => `<span class="ontology-chip">${topicIcon(topic.id)}${escapeHtml(topic.label)}</span>`).join("")}</div>`;
 }
 
+function topicForId(topicId = "presencia") {
+  return ONTOLOGY_TOPICS.find((topic) => topic.id === topicId) || ONTOLOGY_TOPICS.find((topic) => topic.id === "presencia");
+}
+
 function visualSectionLabel(heading = "") {
   const clean = cleanDisplayTitle(heading)
     .replace(/[¿?]/g, "")
@@ -398,9 +626,16 @@ function visualCardTitle(title = "") {
 }
 
 function highlightOntologyTerms(text = "", topics = [], maxHighlights = 3) {
-  const candidates = topics
-    .flatMap((topic) => topic.terms.map((term) => ({ topic, term })))
-    .filter(({ term }) => wordCount(term) <= 4)
+  const activeTopicIds = new Set(topics.map((topic) => topic.id));
+  const searchIntentCandidates = SEARCH_INTENT_TERMS
+    .filter((item) => text.toLowerCase().includes(item.term.toLowerCase()))
+    .map((item) => ({ topic: topicForId(item.topic), term: item.term, priority: 2 }));
+  const topicCandidates = topics
+    .flatMap((topic) => topic.terms.map((term) => ({ topic, term, priority: activeTopicIds.has(topic.id) ? 1 : 0 })))
+    .filter(({ term }) => wordCount(term) >= 2 && wordCount(term) <= 4)
+    .filter(({ term }) => !["quién eres"].includes(term.toLowerCase()));
+  const candidates = [...searchIntentCandidates, ...topicCandidates]
+    .filter(({ term }, index, list) => list.findIndex((item) => item.term.toLowerCase() === term.toLowerCase()) === index)
     .sort((a, b) => b.term.length - a.term.length);
   const matches = [];
   for (const candidate of candidates) {
@@ -420,7 +655,7 @@ function highlightOntologyTerms(text = "", topics = [], maxHighlights = 3) {
   let output = "";
   for (const match of matches) {
     output += escapeHtml(text.slice(cursor, match.start));
-    output += `<mark class="term-highlight" data-topic="${escapeHtml(match.topic.id)}">${escapeHtml(text.slice(match.start, match.end))}</mark>`;
+    output += `<strong class="term-highlight" data-topic="${escapeHtml(match.topic.id)}">${escapeHtml(text.slice(match.start, match.end))}</strong>`;
     cursor = match.end;
   }
   output += escapeHtml(text.slice(cursor));
@@ -1024,11 +1259,149 @@ function clusterSections(pages, clusters, { limitPerCluster } = {}) {
 function servicePathSection(pages) {
   return `<section class="section pillar-paths">
     <div class="section-heading">
-      <p class="section-label">Arquitectura SEO</p>
-      <h2>Rutas claras para que cada visitante encuentre su proceso.</h2>
+      <p class="section-label">Servicios</p>
+      <h2>Rutas claras para elegir el proceso que acompaña tu momento.</h2>
     </div>
     <div class="pillar-grid">${pillarCards(pages)}</div>
   </section>`;
+}
+
+function hubRelatedArticles(hub, pages, clusters, limit = 6) {
+  const clusterMap = articleClusterByRoute(clusters);
+  const terms = hub.terms.map((term) => term.toLowerCase());
+  const scored = pages
+    .filter((page) => page.type === "article")
+    .map((page) => {
+      const signalTerms = pageTermSignals(page, clusterMap).map((term) => term.toLowerCase());
+      const haystack = `${page.heroTitle} ${page.description} ${signalTerms.join(" ")}`.toLowerCase();
+      const score = terms.reduce((sum, term) => sum + (haystack.includes(term) ? 2 : 0), 0) + (clusterMap.get(page.route)?.label === hub.cluster ? 1 : 0);
+      return { page, score };
+    })
+    .filter((item) => item.score > 0)
+    .sort((a, b) => b.score - a.score);
+  const selected = scored.map((item) => item.page);
+  if (selected.length >= limit) return selected.slice(0, limit);
+  return [
+    ...selected,
+    ...pages.filter((page) => page.type === "article" && !selected.some((item) => item.route === page.route)).slice(0, limit - selected.length),
+  ];
+}
+
+function hubSchema(hub) {
+  const collectionSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: hub.title,
+    description: hub.description,
+    url: absoluteUrl(hub.route),
+    inLanguage: "es-MX",
+    about: hub.terms.map((term) => ({ "@type": "Thing", name: term })),
+    isPartOf: { "@type": "WebSite", name: "ImagenCoach", url: SITE_URL },
+  };
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Inicio", item: `${SITE_URL}/` },
+      { "@type": "ListItem", position: 2, name: hub.title, item: absoluteUrl(hub.route) },
+    ],
+  };
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Sonia McRorey",
+    jobTitle: "Strategic Image Consultant",
+    areaServed: "Mexico and LATAM",
+    url: `${SITE_URL}/sobre-sonia-mcrorey-asesora-de-imagen`,
+  };
+  return `<script type="application/ld+json">${JSON.stringify(collectionSchema)}</script>
+  <script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script>
+  <script type="application/ld+json">${JSON.stringify(personSchema)}</script>`;
+}
+
+function hubBreadcrumbs(hub) {
+  return `<nav class="breadcrumbs section" aria-label="Breadcrumbs"><a href="/">Inicio</a><span>/</span><span aria-current="page">${escapeHtml(hub.title)}</span></nav>`;
+}
+
+function renderSemanticHub(hub, pages, clusters) {
+  const relatedArticles = hubRelatedArticles(hub, pages, clusters);
+  const map = pageByRoute(pages);
+  const serviceLinks = hub.services.map((route) => map.get(route)).filter(Boolean);
+  return `<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>${escapeHtml(hub.title)} | Sonia McRorey</title>
+  <meta name="description" content="${escapeHtml(hub.description)}" />
+  <link rel="canonical" href="${absoluteUrl(hub.route)}" />
+  <link rel="alternate" hreflang="es-MX" href="${absoluteUrl(hub.route)}" />
+  <link rel="alternate" hreflang="x-default" href="${absoluteUrl(hub.route)}" />
+  <link rel="service-desc" type="application/openapi+json" href="${SITE_URL}/openapi.json" />
+  <link rel="alternate" type="text/plain" href="${SITE_URL}/llms.txt" title="Resumen para asistentes" />
+  <link rel="alternate" type="text/plain" href="${SITE_URL}/llms-full.txt" title="Contexto GEO completo para asistentes" />
+  <link rel="alternate" type="application/json" href="${SITE_URL}/agent/site-profile.json" title="Perfil estructurado para asistentes" />
+  <meta property="og:title" content="${escapeHtml(hub.title)}" />
+  <meta property="og:description" content="${escapeHtml(hub.description)}" />
+  <meta property="og:url" content="${absoluteUrl(hub.route)}" />
+  <meta property="og:image" content="${SITE_URL}/assets/797aeda1281e5d5e.png" />
+  <link rel="icon" href="/assets/sonia-icon.svg" />
+  <link rel="stylesheet" href="/styles.css?v=${ASSET_VERSION}" />
+  ${hubSchema(hub)}
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  ${header(hub.route)}
+  <main id="contenido">
+    ${hubBreadcrumbs(hub)}
+    <section class="section hero imagen-hero hub-hero">
+      <div class="hero-copy">
+        <p class="eyebrow">${escapeHtml(hub.cluster)}</p>
+        <h1>${escapeHtml(hub.title)}</h1>
+        <div class="hero-lede"><p>${highlightOntologyTerms(hub.description, ONTOLOGY_TOPICS, 4)}</p></div>
+        <div class="actions">
+          <a class="btn primary" href="${WHATSAPP}" target="_blank" rel="noopener">Agendar diagnóstico</a>
+          <a class="btn secondary" href="/imagen-presencia">Ver publicaciones</a>
+        </div>
+      </div>
+      <figure class="hero-media">
+        <img src="/assets/797aeda1281e5d5e.png" alt="${escapeHtml(hub.title)}" />
+        <figcaption><img src="/assets/sonia-icon.svg" alt="" /> Sonia McRorey · ImagenCoach</figcaption>
+      </figure>
+    </section>
+    <section class="section authority-hub-map">
+      <div class="section-heading">
+        <p class="section-label">Temas principales</p>
+        <h2>${escapeHtml(hub.title)} en contexto profesional.</h2>
+      </div>
+      <div class="hub-term-grid">
+        ${hub.terms.map((term) => `<a href="/imagen-presencia"><span>${escapeHtml(term)}</span><small>México · LATAM · liderazgo profesional</small></a>`).join("")}
+      </div>
+    </section>
+    <section class="section services">
+      <div class="section-heading">
+        <p class="section-label">Servicios relacionados</p>
+        <h2>Procesos conectados con ${escapeHtml(hub.title.toLowerCase())}.</h2>
+      </div>
+      <div class="service-grid">${serviceLinks.map((page) => `<a class="service-card" href="${page.route}">
+        <figure><img src="${pickImage(page)}" alt="${escapeHtml(page.heroTitle)}" /></figure>
+        <h3>${escapeHtml(visualCardTitle(page.heroTitle))}</h3>
+        <p>${highlightOntologyTerms(cardDescription(page), ONTOLOGY_TOPICS, 3)}</p>
+        <span>Conocer servicio</span>
+      </a>`).join("")}</div>
+    </section>
+    <section class="section journal">
+      <div class="section-heading">
+        <p class="section-label">Publicaciones relacionadas</p>
+        <h2>Lecturas para profundizar en ${escapeHtml(hub.title.toLowerCase())}.</h2>
+      </div>
+      <div class="publication-grid">${articleCards(relatedArticles, { clusterMap: articleClusterByRoute(clusters) })}</div>
+    </section>
+  </main>
+  ${footer()}
+  <script src="/script.js" defer></script>
+</body>
+</html>`;
 }
 
 function homeExtras(pages, clusters) {
@@ -1207,9 +1580,9 @@ async function copyStatic() {
   }
 }
 
-function sitemap(pages) {
-  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${pages
-    .map((page) => `  <url><loc>${absoluteUrl(page.route)}</loc></url>`)
+function sitemap(items) {
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${items
+    .map((item) => `  <url><loc>${absoluteUrl(item.route)}</loc></url>`)
     .join("\n")}\n</urlset>\n`;
 }
 
@@ -1236,6 +1609,49 @@ function pageSignals(pages, clusters) {
         page.type === "article" ? clusterMap.get(page.route)?.primaryService ? routeUrl(clusterMap.get(page.route).primaryService) : null : null,
       canonicalTerms: pageTermSignals(page, clusterMap),
     })),
+  };
+}
+
+function semanticHubsAgent(pages, clusters) {
+  return {
+    schemaVersion: "2026-05-23",
+    siteUrl: SITE_URL,
+    language: "es-MX",
+    purpose: "Static category hubs that consolidate topical authority and route users from search intent to services and related publications.",
+    hubs: SEMANTIC_HUBS.map((hub) => ({
+      title: hub.title,
+      url: routeUrl(hub.route),
+      cluster: hub.cluster,
+      terms: hub.terms,
+      relatedServices: hub.services.map(routeUrl),
+      relatedArticles: hubRelatedArticles(hub, pages, clusters, 3).map((page) => routeUrl(page.route)),
+    })),
+  };
+}
+
+function wordpressIngestionAgent() {
+  return {
+    schemaVersion: "2026-05-23",
+    siteUrl: SITE_URL,
+    language: "es-MX",
+    rule: "WordPress is only an authoring and ingestion source. Production pages are generated as static HTML and do not depend on WordPress at runtime.",
+    rssUsage: ["detect new posts", "detect updated timestamps", "build publish queue"],
+    restApiUsage: ["full article body", "categories", "tags", "metadata", "featured image", "slug", "author", "dates"],
+    outputContract: {
+      canonicalBlogRoute: "/blog/{slug}/",
+      generatedFiles: ["static HTML", "Article JSON-LD", "Breadcrumb JSON-LD", "Organization JSON-LD", "Person JSON-LD", "sitemap entries", "internal link graph"],
+      forbiddenRuntimeDependencies: ["client-rendered content", "SPA rendering", "runtime CMS rendering", "dynamic blog rendering"],
+    },
+  };
+}
+
+function searchIntentTermsAgent() {
+  return {
+    schemaVersion: "2026-05-23",
+    siteUrl: SITE_URL,
+    language: "es-MX",
+    rule: "Bold semantic emphasis uses controlled buyer-intent and GEO terms only when the exact phrase exists in Sonia's copy or generated hub descriptions.",
+    terms: SEARCH_INTENT_TERMS,
   };
 }
 
@@ -1282,15 +1698,16 @@ function ontologyAgent() {
     schemaVersion: "2026-05-23",
     siteUrl: SITE_URL,
     language: "es-MX",
+    masterOntology: MASTER_ONTOLOGY,
     brandSystem: {
       platform: "Imagen Coach",
       primaryPerson: "Sonia McRorey",
       productionDomain: SITE_URL,
-      canonicalIdentity: "asesoría de imagen, coaching de imagen y presencia profesional",
+      canonicalIdentity: "executive presence, strategic image, professional authority and leadership visibility for México and LATAM",
     },
     coreEntities: [
-      { name: "Sonia McRorey", type: "Person", role: "Asesora y Coach de Imagen Personal y Empresarial" },
-      { name: "Imagen Coach", type: "Brand", role: "Plataforma de imagen, presencia, identidad y mentalidad profesional" },
+      { name: "Sonia McRorey", type: "Person", role: "Strategic Image Consultant and Executive Presence Consultant" },
+      { name: "Imagen Coach", type: "Brand", role: "Semantic authority platform for professional image strategy and executive presence" },
       { name: "Guadalajara", type: "Locality", role: "Base presencial y señal local primaria" },
     ],
     canonicalTerms: CANONICAL_TERMS,
@@ -1344,6 +1761,7 @@ function siteProfileAgent(pages) {
       description: "Asesoría de imagen, coaching de imagen, presencia profesional, marca personal y talleres para personas, líderes, empresas y marcas.",
     },
     canonicalPages: pages.map((page) => ({ name: page.heroTitle, url: routeUrl(page.route), pageType: page.type })),
+    semanticHubs: SEMANTIC_HUBS.map((hub) => ({ name: hub.title, url: routeUrl(hub.route), cluster: hub.cluster })),
     agentFiles: {
       openapi: `${SITE_URL}/openapi.json`,
       llms: `${SITE_URL}/llms.txt`,
@@ -1352,6 +1770,9 @@ function siteProfileAgent(pages) {
       ontology: `${SITE_URL}/agent/ontology.json`,
       pageSignals: `${SITE_URL}/agent/page-signals.json`,
       conversionMap: `${SITE_URL}/agent/conversion-map.json`,
+      semanticHubs: `${SITE_URL}/agent/semantic-hubs.json`,
+      wordpressIngestion: `${SITE_URL}/agent/wordpress-ingestion.json`,
+      searchIntentTerms: `${SITE_URL}/agent/search-intent-terms.json`,
       redirects: `${SITE_URL}/agent/redirects.json`,
       publications: `${SITE_URL}/agent/publications.json`,
       contact: `${SITE_URL}/agent/contact.json`,
@@ -1391,11 +1812,18 @@ function openApiDoc(pages) {
     "/openapi.json": "Get the OpenAPI description.",
     "/llms.txt": "Get the compact LLM context.",
     "/llms-full.txt": "Get the full LLM and GEO context.",
+    "/sitemap.xml": "Get the complete sitemap.",
+    "/blog-sitemap.xml": "Get the static blog sitemap.",
+    "/category-sitemap.xml": "Get semantic hub URLs.",
+    "/service-sitemap.xml": "Get service URLs.",
     "/agent/site-profile.json": "Get the structured site profile.",
     "/agent/services.json": "Get the structured service catalog.",
     "/agent/contact.json": "Get structured contact actions.",
     "/agent/publications.json": "Get publication and article signals.",
     "/agent/ontology.json": "Get canonical ontology and terms.",
+    "/agent/semantic-hubs.json": "Get static semantic hub definitions.",
+    "/agent/wordpress-ingestion.json": "Get WordPress static ingestion rules.",
+    "/agent/search-intent-terms.json": "Get controlled bold/search intent terms and reasons.",
     "/agent/page-signals.json": "Get per-page SEO and GEO signals.",
     "/agent/redirects.json": "Get redirect and URL-retention policy.",
     "/agent/conversion-map.json": "Get conversion funnel rules.",
@@ -1421,6 +1849,16 @@ function openApiDoc(pages) {
       },
     };
   }
+  for (const hub of SEMANTIC_HUBS) {
+    paths[hub.route] = {
+      get: {
+        tags: ["Semantic hubs"],
+        operationId: `get_${hub.route.replace(/^\/|\/$/g, "").replace(/[^a-z0-9]+/gi, "_")}`,
+        summary: hub.title,
+        responses: { 200: { description: hub.description } },
+      },
+    };
+  }
   return {
     openapi: "3.1.0",
     info: {
@@ -1439,7 +1877,7 @@ function llmsFull(pages, clusters) {
 
 ## Canonical identity
 
-Imagen Coach is Sonia McRorey's authority platform for asesoría de imagen, coaching de imagen, presencia profesional, marca personal, imagen empresarial and talleres.
+Imagen Coach is Sonia McRorey's static semantic authority platform for imagen profesional, presencia ejecutiva, imagen estratégica, liderazgo visible, comunicación no verbal, autoridad profesional, posicionamiento profesional, imagen empresarial, mentalidad y presencia, coaching ejecutivo de imagen and strategic image consulting in México and LATAM.
 
 Production domain: ${SITE_URL}
 
@@ -1449,9 +1887,30 @@ Primary language: es-MX.
 
 ${pages.map((page) => `- ${page.heroTitle}: ${routeUrl(page.route)}`).join("\n")}
 
+## Semantic category hubs
+
+${SEMANTIC_HUBS.map((hub) => `- ${hub.title}: ${routeUrl(hub.route)} Terms: ${hub.terms.join(", ")}`).join("\n")}
+
 ## SEO/GEO clusters
 
 ${clusters.map((cluster) => `- ${cluster.label}: ${cluster.description} Primary service: ${routeUrl(cluster.primaryService)}`).join("\n")}
+
+## Master ontology
+
+Root entity: Sonia McRorey.
+
+Entity types: ${MASTER_ONTOLOGY.rootEntity.entityTypes.join(", ")}.
+
+Primary clusters:
+${MASTER_ONTOLOGY.clusters.map((cluster) => `- ${cluster.name}: ${cluster.subentities.join(", ")}`).join("\n")}
+
+LATAM entities: ${MASTER_ONTOLOGY.latamEntities.join(", ")}.
+
+Buyer entities: ${MASTER_ONTOLOGY.buyerEntities.join(", ")}.
+
+## Static WordPress ingestion rule
+
+WordPress is only the authoring and ingestion source. RSS detects post changes and the WordPress REST API provides full article data. Production delivery is static HTML, CSS, XML and JSON. Blog pages must exist as raw generated HTML under /blog/{slug}/ and must not depend on WordPress at runtime.
 
 ## Machine-readable files
 
@@ -1460,6 +1919,9 @@ ${clusters.map((cluster) => `- ${cluster.label}: ${cluster.description} Primary 
 - Site profile: ${SITE_URL}/agent/site-profile.json
 - Services: ${SITE_URL}/agent/services.json
 - Ontology: ${SITE_URL}/agent/ontology.json
+- Semantic hubs: ${SITE_URL}/agent/semantic-hubs.json
+- WordPress ingestion: ${SITE_URL}/agent/wordpress-ingestion.json
+- Search intent terms: ${SITE_URL}/agent/search-intent-terms.json
 - Page signals: ${SITE_URL}/agent/page-signals.json
 - Conversion map: ${SITE_URL}/agent/conversion-map.json
 - Redirects: ${SITE_URL}/agent/redirects.json
@@ -1491,6 +1953,9 @@ async function writeAgentFiles(pages, clusters) {
   await writeJson("agent/contact.json", contactAgent());
   await writeJson("agent/publications.json", publicationsAgent(pages, clusters));
   await writeJson("agent/ontology.json", ontologyAgent());
+  await writeJson("agent/semantic-hubs.json", semanticHubsAgent(pages, clusters));
+  await writeJson("agent/wordpress-ingestion.json", wordpressIngestionAgent());
+  await writeJson("agent/search-intent-terms.json", searchIntentTermsAgent());
   await writeJson("agent/page-signals.json", pageSignals(pages, clusters));
   await writeJson("agent/redirects.json", redirectsAgent());
   await writeJson("agent/conversion-map.json", conversionMapAgent());
@@ -1508,10 +1973,21 @@ async function main() {
     await mkdir(path.dirname(out), { recursive: true });
     await writeFile(out, renderPage(page, pages, clusters));
   }
-  await writeFile(distPath("sitemap.xml"), sitemap(pages));
-  await writeFile(distPath("robots.txt"), `User-agent: *\nAllow: /\nSitemap: ${SITE_URL}/sitemap.xml\nOpenAPI: ${SITE_URL}/openapi.json\nLLMs: ${SITE_URL}/llms.txt\nLLMs-Full: ${SITE_URL}/llms-full.txt\nAgent-Profile: ${SITE_URL}/agent/site-profile.json\n`);
+  for (const hub of SEMANTIC_HUBS) {
+    const out = routeOutputPath(hub.route);
+    await mkdir(path.dirname(out), { recursive: true });
+    await writeFile(out, renderSemanticHub(hub, pages, clusters));
+  }
+  await writeFile(distPath("sitemap.xml"), sitemap([...pages, ...SEMANTIC_HUBS]));
+  await writeFile(distPath("category-sitemap.xml"), sitemap(SEMANTIC_HUBS));
+  await writeFile(distPath("service-sitemap.xml"), sitemap([
+    { route: "/servicios-asesoria-de-imagen-coaching" },
+    ...PILLARS.map((pillar) => ({ route: pillar.route })),
+  ]));
+  await writeFile(distPath("blog-sitemap.xml"), sitemap([]));
+  await writeFile(distPath("robots.txt"), `User-agent: *\nAllow: /\nSitemap: ${SITE_URL}/sitemap.xml\nSitemap: ${SITE_URL}/blog-sitemap.xml\nSitemap: ${SITE_URL}/category-sitemap.xml\nSitemap: ${SITE_URL}/service-sitemap.xml\nOpenAPI: ${SITE_URL}/openapi.json\nLLMs: ${SITE_URL}/llms.txt\nLLMs-Full: ${SITE_URL}/llms-full.txt\nAgent-Profile: ${SITE_URL}/agent/site-profile.json\n`);
   await writeFile(distPath("_redirects"), `${LEGACY_REDIRECTS.map(([from, to, status]) => `${from}  ${to}  ${status}`).join("\n")}\n`);
-  console.log(`Built ${pages.length} routes into dist`);
+  console.log(`Built ${pages.length + SEMANTIC_HUBS.length} routes into dist`);
 }
 
 main();

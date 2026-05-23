@@ -19,14 +19,15 @@ The result must preserve Sonia's authorship, existing URLs, source images, SEO s
 
 Use these sources in order:
 
-1. `docs/source-url-inventory.md` for every required route.
-2. `archive/imagencoach/manifest.json` for crawl evidence, page metadata, image mapping, and known failures.
-3. `archive/imagencoach/raw-html/` for original source proof.
-4. `archive/imagencoach/text/` for raw visible text and source links.
-5. `content/clean/` for rebuild-ready body content and deduplicated asset mapping.
-6. `docs/SDD.md`, `docs/DDD.md`, `docs/TDD.md`, and `docs/LLM_CONTEXT.md` for implementation decisions.
-7. `docs/wiki.llm`, `docs/UBIQUITOUS_LANGUAGE.md`, `docs/GEO_OPERATING_SYSTEM.md`, `docs/PAGE_SIGNAL_MAP.md`, and `docs/REDIRECTS_AND_URL_RETENTION.md` for agentic GEO, ontology, redirect, and semantic governance.
-8. `TeamStationAIAxiomVertex/guadalajara` only as the UX/UI/theme reference, not as this site's content source.
+1. `docs/MASTER_SEMANTIC_AUTHORITY_ARCHITECTURE.md` for the static publishing, WordPress ingestion, ontology, hub and GEO contract.
+2. `docs/source-url-inventory.md` for every required route.
+3. `archive/imagencoach/manifest.json` for crawl evidence, page metadata, image mapping, and known failures.
+4. `archive/imagencoach/raw-html/` for original source proof.
+5. `archive/imagencoach/text/` for raw visible text and source links.
+6. `content/clean/` for rebuild-ready body content and deduplicated asset mapping.
+7. `docs/SDD.md`, `docs/DDD.md`, `docs/TDD.md`, and `docs/LLM_CONTEXT.md` for implementation decisions.
+8. `docs/wiki.llm`, `docs/UBIQUITOUS_LANGUAGE.md`, `docs/GEO_OPERATING_SYSTEM.md`, `docs/PAGE_SIGNAL_MAP.md`, `docs/SEARCH_INTENT_BOLDING_STRATEGY.md`, and `docs/REDIRECTS_AND_URL_RETENTION.md` for agentic GEO, ontology, redirect, emphasis, and semantic governance.
+9. `TeamStationAIAxiomVertex/guadalajara` only as the UX/UI/theme reference, not as this site's content source.
 
 Do not invent pages, slugs, services, images, schemas, or positioning without evidence.
 
@@ -121,6 +122,8 @@ Before deployment, validation must prove:
 - pages render cleanly on mobile and desktop
 - Cloudflare Pages can build from GitHub
 - the agentic files build and publish: `/openapi.json`, `/llms-full.txt`, and `/agent/*.json`
+- semantic hub sitemaps publish: `/blog-sitemap.xml`, `/category-sitemap.xml`, and `/service-sitemap.xml`
+- WordPress remains an ingestion source only and no production page requires WordPress at runtime
 
 ## Git Discipline
 

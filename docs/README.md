@@ -5,6 +5,8 @@ This folder is the project wiki for rebuilding `imagencoach.com`.
 ## Core Docs
 
 - `source-url-inventory.md`: canonical URL contract from the current site.
+- `MASTER_SEMANTIC_AUTHORITY_ARCHITECTURE.md`: static semantic authority, WordPress ingestion, hub, ontology and GEO contract.
+- `SEARCH_INTENT_BOLDING_STRATEGY.md`: controlled bold phrase vocabulary and ranking rationale.
 - `SDD.md`: software design document for the site rebuild.
 - `DDD.md`: domain-driven design model and language boundaries.
 - `TDD.md`: test-driven development and QA strategy.
