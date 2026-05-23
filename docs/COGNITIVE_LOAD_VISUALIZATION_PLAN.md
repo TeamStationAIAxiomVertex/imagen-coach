@@ -22,8 +22,8 @@ Allowed transformations:
 - wrap exact words or phrases in semantic markup such as `mark`, `strong`, or `span`
 - split a long paragraph at sentence boundaries while preserving every sentence exactly
 - group existing lines under visual containers
-- create labels, icons, counters, and navigation text around the source copy
-- duplicate exact source snippets only when needed for pull quotes or reading guides
+- create customer-facing labels, icons, counters, and navigation text around the source copy
+- repeat exact source snippets only when they remain clearly tied to the original service or article context
 
 Disallowed transformations:
 
@@ -31,6 +31,7 @@ Disallowed transformations:
 - deleting meaningful source sentences
 - changing sentence wording to make it shorter
 - hiding main content behind JavaScript-only interactions
+- exposing internal planning language such as reading guides, decision maps, or content-orientation labels as customer-facing section headings
 
 ## Cognitive Load Findings
 
@@ -105,18 +106,7 @@ Each H2 section should start with a compact visual header:
 
 This gives the user a reason to keep reading before the paragraph begins.
 
-### 4. Pull Quote Rail
-
-For long articles, extract exact existing sentences as visual pull quotes. Do not rewrite them.
-
-Use this for:
-
-- `los-secretos-de-una-asesora-de-imagen-exitosa`
-- `beneficios-de-asesoria-de-imagen`
-- `la-importancia-de-tu-imagen-personal`
-- service pages with long explanation sections
-
-### 5. Service Decision Visuals
+### 4. Service Process Modules
 
 Service pages should not read like essays. They should show:
 
@@ -129,7 +119,9 @@ Service pages should not read like essays. They should show:
 
 The original content remains below or inside each visual unit.
 
-### 6. Fragment Ladders
+All headings must be service-facing and client-facing. They should name the actual service, result, method, topic, or article concept, never the internal reason the module exists.
+
+### 5. Fragment Ladders
 
 Short pages with many fragments should become vertical visual ladders:
 
@@ -145,15 +137,15 @@ This is especially important for the newer short-form leadership and internal-ca
 
 | Priority | Route | Content Load | Recommended Visualization |
 | --- | --- | ---: | --- |
-| Critical | `/imagen-presencia/los-secretos-de-una-asesora-de-imagen-exitosa` | 2511 words, 32 long lines | Pillar article layout, sticky reading map, pull quote rail, exact-sentence lesson cards, ontology highlights |
+| Critical | `/imagen-presencia/los-secretos-de-una-asesora-de-imagen-exitosa` | 2511 words, 32 long lines | Pillar article layout, topic navigation, source-preserving lesson cards, ontology highlights |
 | Critical | `/servicios-asesoria-de-imagen-coaching/talleres` | 1918 words | Workshop decision paths, corporate/persona split, use-case grid, FAQ accordion, highlighted service terms |
 | Critical | `/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen` | 1647 words, 9 long lines | Process map, module cards, highlighted terms, comparison panel vs coaching, sentence-level insight flow |
 | Critical | `/servicios-asesoria-de-imagen-coaching/preguntas-frequentes` | 1405 words | Real FAQ accordion, topic grouping, answer highlights, related-service CTAs |
-| Critical | `/imagen-presencia/beneficios-de-asesoria-de-imagen` | 1019 words, 9 long lines | Benefits matrix, lesson cards, exact pull quotes, checklist extraction |
+| Critical | `/imagen-presencia/beneficios-de-asesoria-de-imagen` | 1019 words, 9 long lines | Benefits matrix, lesson cards, source-preserving emphasis blocks, checklist extraction |
 | High | `/imagen-presencia/la-importancia-de-tu-imagen-personal` | 911 words | Guided article cards, key-term highlights, impact ladder, related asesoría bridge |
 | Medium | `/imagen-presencia/descubre-el-poder-de-tu-rostro` | 893 words | Face-analysis visual module, concept cards, highlighted rostro/color terms |
 | Medium | `/imagen-presencia` | 780 words | Topic hub filters, article clusters, search-intent cards, pillar navigation |
-| Medium | `/imagen-presencia/sostener-tu-siguiente-nivel-profesional` | 756 words | Internal-capacity ladder, leadership/presence chips, exact-sentence cards |
+| Medium | `/imagen-presencia/sostener-tu-siguiente-nivel-profesional` | 756 words | Internal-capacity ladder, leadership/presence chips, source-preserving cards |
 | Medium | `/` | 669 words | Executive summary bands, audience matrix, proof/result strips, clearer service path |
 | Medium | `/imagen-presencia/rebranding-imagen-mentalidad-abundancia` | 629 words | Before/after transformation map, mentalidad and abundancia highlights |
 | Medium | `/servicios-asesoria-de-imagen-coaching/coaching-de-imagen` | 620 words | Internal-to-external system map, comparison vs asesoría, outcomes grid |
@@ -163,7 +155,7 @@ This is especially important for the newer short-form leadership and internal-ca
 | Medium | `/imagen-presencia/como-puedo-ayudarte-hoy` | 544 words | Service selector, need-state cards, CTA bridge |
 | Fragmented | `/imagen-presencia/mas-dinero-capacidad-interna-liderazgo-presencia` | 360 words | Leadership capacity ladder, money/presence/decision ontology chips |
 | Fragmented | `/imagen-presencia/sostener-el-crecimiento` | 261 words | Growth-support ladder, internal/external contrast blocks |
-| Fragmented | `/imagen-presencia/imagen-identidad-liderazgo` | 260 words | Leadership diagnosis sequence, tension-to-decision visual flow |
+| Fragmented | `/imagen-presencia/imagen-identidad-liderazgo` | 260 words | Leadership diagnosis sequence, client-facing visual flow |
 | Fragmented | `/imagen-presencia/imagen-profesional-segun-industria-y-personalidad` | 251 words | Industry/personality comparison cards, professional identity matrix |
 | Low | `/imagen-presencia/transforma-tu-imagen-consciente` | 498 words | Compact lesson cards, related service bridge |
 | Low | `/imagen-presencia/encuentra-tu-estilo` | 470 words | Style identity cards, authenticity highlights |
@@ -191,7 +183,6 @@ Update `scripts/build-static.mjs` with:
 - paragraph load scoring by word count, sentence count, and topic density
 - section-level visual mode selection:
   - `insight-flow`
-  - `quote-rail`
   - `comparison-panel`
   - `fragment-ladder`
   - `faq-accordion`
@@ -249,4 +240,3 @@ Validation commands:
 npm run build
 npm run validate
 ```
-

@@ -580,8 +580,8 @@ function internalLinkAtlas(page, pages, clusters) {
     : pages.filter((item) => item.type === "article").slice(0, 4);
   return `<section class="section link-atlas" aria-label="Rutas internas relacionadas">
     <div class="section-heading">
-      <p class="section-label">Interlinking</p>
-      <h2>Rutas relacionadas para profundizar.</h2>
+      <p class="section-label">Contenido relacionado</p>
+      <h2>Servicios y publicaciones para seguir profundizando.</h2>
     </div>
     <div class="atlas-grid">
       <div class="atlas-panel">
@@ -603,13 +603,21 @@ function readingTopology(sections, page, clusterMap) {
     return { id, heading: visualSectionLabel(section.heading), topics };
   });
   if (!items.length) return "";
-  return `<section class="section reading-topology" aria-label="Mapa de lectura">
+  const isService = page.type === "service" || page.type === "service-hub";
+  const label = isService ? "Temas del servicio" : "Temas principales";
+  const heading = isService
+    ? `Áreas clave de ${visualSectionLabel(page.heroTitle)}`
+    : "Ideas principales de esta publicación";
+  const description = isService
+    ? "Explora las áreas principales del proceso para ubicar la necesidad, el trabajo que se realiza y el resultado esperado."
+    : "Explora las ideas centrales y conecta cada tema con presencia, imagen, identidad y acción.";
+  return `<section class="section reading-topology" aria-label="${escapeHtml(label)}">
     <div class="topology-header">
       <div>
-        <p class="section-label">Mapa de lectura</p>
-        <h2>Qué estás leyendo y por qué importa.</h2>
+        <p class="section-label">${escapeHtml(label)}</p>
+        <h2>${escapeHtml(heading)}</h2>
       </div>
-      <p>El contenido se organiza por intención, tema y siguiente acción para que puedas absorberlo sin perder el hilo.</p>
+      <p>${escapeHtml(description)}</p>
     </div>
     <nav class="topology-grid" aria-label="Temas de esta página">
       ${items.map((item, index) => `<a href="#${item.id}">
@@ -636,78 +644,6 @@ function pageReadingMode(page, sections) {
   return "guided";
 }
 
-function exactPullQuotes(sections, limit = 3) {
-  const candidates = [];
-  for (const section of sections) {
-    for (const line of section.lines) {
-      for (const sentence of splitSentences(line)) {
-        const count = wordCount(sentence);
-        if (count >= 12 && count <= 32) candidates.push({ quote: sentence, section: section.heading, count });
-      }
-    }
-  }
-  return candidates
-    .sort((a, b) => Math.abs(21 - a.count) - Math.abs(21 - b.count))
-    .slice(0, limit);
-}
-
-function pullQuoteRail(sections) {
-  const quotes = exactPullQuotes(sections);
-  if (quotes.length < 2) return "";
-  return `<section class="section pull-quote-rail" aria-label="Ideas clave de la lectura">
-    <div class="section-heading compact-heading">
-      <p class="section-label">Ideas clave</p>
-      <h2>Frases exactas para orientar la lectura.</h2>
-    </div>
-    <div class="quote-rail-grid">
-      ${quotes.map((item) => `<figure class="exact-quote">
-        <blockquote>${escapeHtml(item.quote)}</blockquote>
-        <figcaption>${escapeHtml(visualSectionLabel(item.section))}</figcaption>
-      </figure>`).join("")}
-    </div>
-  </section>`;
-}
-
-function sectionIntentLabel(section, topics) {
-  const heading = `${section.heading} ${section.lines.join(" ")}`.toLowerCase();
-  if (/diferencia|comparar|versus|vs/.test(heading)) return "Compara opciones";
-  if (/proceso|funciona|paso|diagnóstico|plan/.test(heading)) return "Ordena el proceso";
-  if (/beneficio|resultado|lograr|impacto/.test(heading)) return "Aclara resultados";
-  if (/para quién|para quien|equipo|empresa|marca|cliente/.test(heading)) return "Define para quién";
-  if (topics.some((topic) => topic.id === "mentalidad")) return "Conecta lo interno";
-  if (topics.some((topic) => topic.id === "guardarropa" || topic.id === "color")) return "Traduce a lo visual";
-  return "Idea central";
-}
-
-function sectionMeta(section, topics) {
-  return `<div class="section-meta">
-    <span>${escapeHtml(sectionIntentLabel(section, topics))}</span>
-    <span>${sectionWordCount(section)} palabras</span>
-  </div>`;
-}
-
-function serviceDecisionVisual(page, sections) {
-  if (page.type !== "service" && page.type !== "service-hub") return "";
-  const labels = page.type === "service-hub"
-    ? ["Necesidad", "Ruta", "Resultado", "Siguiente paso"]
-    : ["Problema", "Proceso", "Aplicación", "Resultado"];
-  const selected = sections.slice(0, 4);
-  if (selected.length < 3) return "";
-  return `<section class="section decision-visual" aria-label="Mapa de decisión del servicio">
-    <div class="section-heading compact-heading">
-      <p class="section-label">Mapa de decisión</p>
-      <h2>Cómo leer este servicio sin perderte en el texto.</h2>
-    </div>
-    <div class="decision-grid">
-      ${selected.map((section, index) => `<article>
-        <span>${escapeHtml(labels[index] || "Lectura")}</span>
-        <strong>${escapeHtml(visualSectionLabel(section.heading))}</strong>
-        <p>${highlightOntologyTerms(section.lines[0] || section.heading, sectionTopics([section.heading, ...section.lines], page), 2)}</p>
-      </article>`).join("")}
-    </div>
-  </section>`;
-}
-
 function structuredContentSections(page, lines, pages, clusters) {
   const sections = classifyContent(page, lines);
   if (!sections.length) return "";
@@ -725,8 +661,6 @@ function structuredContentSections(page, lines, pages, clusters) {
     <article class="semantic-panel">${renderSemanticCopy(intro.lines, introTopics)}</article>
   </section>
   ${readingTopology(sections, page, clusterMap)}
-  ${pullQuoteRail(sections)}
-  ${serviceDecisionVisual(page, sections)}
   ${serviceProcessMap(page)}
   <section class="section semantic-sections ${mode === "fragmented" ? "fragment-ladder" : ""} ${mode === "dense" ? "dense-reading" : ""}">
     ${rest.map((section, index) => {
@@ -734,7 +668,6 @@ function structuredContentSections(page, lines, pages, clusters) {
       return `<article class="semantic-card" id="tema-${index + 2}-${slugify(section.heading)}">
       <div class="semantic-index">${String(index + 1).padStart(2, "0")}</div>
       ${topicChips(topics)}
-      ${sectionMeta(section, topics)}
       <h2>${escapeHtml(section.heading)}</h2>
       <div class="semantic-copy">${renderSemanticCopy(section.lines, topics)}</div>
     </article>`;
