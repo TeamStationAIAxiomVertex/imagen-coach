@@ -26,7 +26,7 @@ Use these sources in order:
 5. `archive/imagencoach/text/` for raw visible text and source links.
 6. `content/clean/` for rebuild-ready body content and deduplicated asset mapping.
 7. `docs/SDD.md`, `docs/DDD.md`, `docs/TDD.md`, and `docs/LLM_CONTEXT.md` for implementation decisions.
-8. `docs/wiki.llm`, `docs/UBIQUITOUS_LANGUAGE.md`, `docs/GEO_OPERATING_SYSTEM.md`, `docs/PAGE_SIGNAL_MAP.md`, `docs/SEARCH_INTENT_BOLDING_STRATEGY.md`, and `docs/REDIRECTS_AND_URL_RETENTION.md` for agentic GEO, ontology, redirect, emphasis, and semantic governance.
+8. `docs/wiki.llm`, `docs/UBIQUITOUS_LANGUAGE.md`, `docs/GEO_OPERATING_SYSTEM.md`, `docs/PAGE_SIGNAL_MAP.md`, `docs/SEARCH_INTENT_BOLDING_STRATEGY.md`, `docs/ICONOGRAPHY_SYSTEM.md`, and `docs/REDIRECTS_AND_URL_RETENTION.md` for agentic GEO, ontology, redirect, emphasis, iconography, and semantic governance.
 9. `TeamStationAIAxiomVertex/guadalajara` only as the UX/UI/theme reference, not as this site's content source.
 
 Do not invent pages, slugs, services, images, schemas, or positioning without evidence.

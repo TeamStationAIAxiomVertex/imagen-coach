@@ -577,15 +577,15 @@ function sectionTopics(lines = [], page, clusterMap = new Map(), limit = 4) {
 
 function topicIcon(topicId = "presencia") {
   const paths = {
-    identidad: '<circle cx="12" cy="8" r="3.2"></circle><path d="M5 20c1.4-4 4-6 7-6s5.6 2 7 6"></path>',
-    presencia: '<path d="M12 3v18"></path><path d="M5 9l7-6 7 6"></path><path d="M5 15l7 6 7-6"></path>',
-    percepcion: '<path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="3"></circle>',
-    decision: '<path d="M5 12l4 4L19 6"></path><path d="M4 20h16"></path>',
-    liderazgo: '<path d="M12 3l3 6 6 .8-4.5 4.3 1.1 6.1L12 17l-5.6 3.2 1.1-6.1L3 9.8 9 9z"></path>',
-    empresa: '<path d="M4 20V7l8-4 8 4v13"></path><path d="M9 20v-6h6v6"></path><path d="M8 9h.01M12 9h.01M16 9h.01"></path>',
-    color: '<circle cx="12" cy="12" r="8"></circle><path d="M12 4v16"></path><path d="M4 12h16"></path>',
-    guardarropa: '<path d="M8 4h8l2 4-6 3-6-3z"></path><path d="M6 8v12h12V8"></path>',
-    mentalidad: '<path d="M8 14c-2-1-3-3-3-5a5 5 0 0 1 9-3 5 5 0 0 1 5 5c0 3-2 5-5 5v4h-4v-4c-.8 0-1.5-.1-2-.4"></path>',
+    identidad: '<rect x="4" y="5" width="16" height="14" rx="2.4"></rect><circle cx="9" cy="11" r="2"></circle><path d="M6.5 16c1.4-2 3.6-2 5 0"></path><path d="M14 10h3.5M14 14h3.5"></path>',
+    presencia: '<path d="M12 4v16"></path><path d="M7.5 9.5h9"></path><path d="M8.5 20h7"></path><path d="M6 15c1.7-2.4 3.7-3.6 6-3.6s4.3 1.2 6 3.6"></path>',
+    percepcion: '<path d="M3 12s3.4-6 9-6 9 6 9 6-3.4 6-9 6-9-6-9-6Z"></path><circle cx="12" cy="12" r="2.4"></circle><path d="M12 3.5v1.2M20.5 8l-1.1.6M20.5 16l-1.1-.6M3.5 8l1.1.6M3.5 16l1.1-.6"></path>',
+    decision: '<rect x="5" y="4" width="14" height="16" rx="2"></rect><path d="M8.5 9h7M8.5 13h4.5M8.5 17h3"></path><path d="m14 16.5 1.6 1.6 3-3.4"></path>',
+    liderazgo: '<path d="M4 20h16"></path><path d="M7 20v-5h3v5"></path><path d="M10.5 20v-8h3v8"></path><path d="M14 20v-11h3v11"></path><path d="m7 10 4-4 3 2 3-4"></path>',
+    empresa: '<rect x="4" y="7" width="16" height="12" rx="2"></rect><path d="M8 7V5h8v2"></path><path d="M4 12h16"></path><path d="M8 16h.01M12 16h.01M16 16h.01"></path>',
+    color: '<path d="M6 20V6a2 2 0 0 1 2-2h2v16H6z"></path><path d="M10 20V4h4a2 2 0 0 1 2 2v14"></path><path d="M6 15h10"></path><path d="M8 18h.01M13 18h.01"></path>',
+    guardarropa: '<path d="M12 6c0-1.4 1.1-2.5 2.5-2.5S17 4.6 17 6c0 2.4-5 2.4-5 5"></path><path d="M12 11 5 16.5c-.8.6-.4 1.8.6 1.8h12.8c1 0 1.4-1.2.6-1.8L12 11z"></path>',
+    mentalidad: '<path d="M9 18c-2.4-.9-4-3.2-4-6 0-3.6 2.7-6.5 6.1-6.5 1.6 0 3.1.7 4.1 1.8 2.2.4 3.8 2.3 3.8 4.7 0 2.8-2.2 5-5 5"></path><path d="M12 9v11"></path><path d="M9 12h6M10 15h4"></path>',
   };
   return `<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">${paths[topicId] || paths.presencia}</svg>`;
 }

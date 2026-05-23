@@ -47,15 +47,16 @@ Always:
 4. `docs/wiki.llm`
 5. `docs/UBIQUITOUS_LANGUAGE.md`
 6. `docs/SEARCH_INTENT_BOLDING_STRATEGY.md`
-7. `docs/SDD.md`
-8. `docs/DDD.md`
-9. `docs/TDD.md`
-10. `docs/GEO_OPERATING_SYSTEM.md`
-11. `docs/PAGE_SIGNAL_MAP.md`
-12. `docs/REDIRECTS_AND_URL_RETENTION.md`
-13. `content/clean/manifest.json`
-14. `scripts/build-static.mjs`
-15. `scripts/validate-build.mjs`
+7. `docs/ICONOGRAPHY_SYSTEM.md`
+8. `docs/SDD.md`
+9. `docs/DDD.md`
+10. `docs/TDD.md`
+11. `docs/GEO_OPERATING_SYSTEM.md`
+12. `docs/PAGE_SIGNAL_MAP.md`
+13. `docs/REDIRECTS_AND_URL_RETENTION.md`
+14. `content/clean/manifest.json`
+15. `scripts/build-static.mjs`
+16. `scripts/validate-build.mjs`
 
 ## Deployment Gate
 
