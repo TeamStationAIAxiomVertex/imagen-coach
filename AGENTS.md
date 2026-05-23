@@ -127,6 +127,32 @@ Do not use:
 
 SEO supports Sonia's voice. SEO must not impersonate Sonia.
 
+## Semantic Territory Rule
+
+Do not let every page repeat the same semantic payload with slightly different wording. Each page must own a distinct emotional state, buyer intent, vocabulary cluster and transformation outcome.
+
+Use this territory map before writing or generating visible copy:
+
+- Homepage: owns the broad category of imagen, presencia, percepcion profesional, liderazgo and posicionamiento. Buyer intent: "My image no longer reflects the level I currently sustain."
+- Asesoria de imagen integral: owns wardrobe, style, color, visual identity, executive image and external coherence. Do not center deep emotional work, nervous system regulation or subconscious patterns here.
+- Coaching de imagen y presencia profesional: owns confidence, visibility, occupying space, professional communication and executive perception.
+- Coaching de Imagen, Seguridad Interna y Posicionamiento Profesional: owns internal patterns, nervous system, fear, decision making, self sabotage and sustaining growth. This is the only service area where those themes should dominate semantically.
+- Imagen empresarial y talleres: owns teams, organizations, brand consistency, client perception, communication standards and corporate image.
+- Comparison pages: own industry evolution, editorial reflection, category differentiation and modern image coaching. They must not read like attack pages or SEO comparison spam.
+
+Never expose internal strategy in visible content:
+
+- SEO strategy
+- ontology
+- semantic graph
+- GEO engineering
+- ranking intent
+- AI optimization notes
+- URL planning
+- comparison SEO tactics
+
+Comparison pages must not use competitor names in visible page titles or public comparison URLs. Use editorial category titles such as `La evolucion del coaching de imagen en Mexico y LATAM` or `Del styling tradicional a la presencia profesional`.
+
 ## Engineering Rules
 
 - Read source files before editing.

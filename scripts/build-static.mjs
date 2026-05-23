@@ -304,7 +304,7 @@ const COMPARISON_PAGES = [
     path: ["Lineamientos", "Presencia humana", "Confianza organizacional"],
   },
   {
-    route: "/comparaciones/sonia-mcrorey-vs-gaby-vargas",
+    route: "/comparaciones/evolucion-coaching-imagen-mexico-latam",
     title: "La evolución del coaching de imagen en México y LATAM",
     description: "Una nueva generación de coaching de imagen con base en Guadalajara que integra presencia profesional, liderazgo interno y posicionamiento personal para México y LATAM.",
     kind: "entity",
@@ -357,6 +357,7 @@ const COMPARISON_DEFINITIONS = [
 ];
 const LEGACY_REDIRECTS = [
   ["https://www.imagencoach.com/*", "https://imagencoach.com/:splat", 301],
+  ["/comparaciones/sonia-mcrorey-vs-gaby-vargas", "/comparaciones/evolucion-coaching-imagen-mexico-latam", 301],
   ["/articulos/tu-color-tu-poder-el-impacto-de-la-colorimetria", "/imagen-presencia/tu-color-tu-poder-el-impacto-de-la-colorimetria", 301],
   ["/articulos/aprende-a-resaltar-tus-proporciones", "/imagen-presencia/aprende-a-resaltar-tus-proporciones", 301],
   ["/articulos/la-importancia-de-tu-imagen-personal", "/imagen-presencia/la-importancia-de-tu-imagen-personal", 301],
@@ -1592,6 +1593,31 @@ function renderSemanticHub(hub, pages, clusters) {
 }
 
 function comparisonSchema(page) {
+  const article = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: page.title,
+    description: page.description,
+    url: absoluteUrl(page.route),
+    inLanguage: "es-MX",
+    author: {
+      "@type": "Person",
+      name: "Sonia McRorey",
+      jobTitle: "Consultora de Imagen y Presencia Profesional",
+      url: `${SITE_URL}/sobre-sonia-mcrorey-asesora-de-imagen`,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "ImagenCoach",
+      url: SITE_URL,
+    },
+    about: [
+      "Coaching de Imagen",
+      "Presencia Profesional",
+      "Posicionamiento Profesional",
+      "Imagen Profesional",
+    ],
+  };
   const webPage = {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -1638,7 +1664,8 @@ function comparisonSchema(page) {
       },
     ],
   };
-  return `<script type="application/ld+json">${JSON.stringify(webPage)}</script>
+  return `<script type="application/ld+json">${JSON.stringify(article)}</script>
+  <script type="application/ld+json">${JSON.stringify(webPage)}</script>
   <script type="application/ld+json">${JSON.stringify(breadcrumb)}</script>
   <script type="application/ld+json">${JSON.stringify(faq)}</script>`;
 }

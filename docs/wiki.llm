@@ -688,3 +688,161 @@ Preferred replacement language:
 - Replace `bloqueos y resistencias inconscientes` with `patrones internos que limitan claridad, decisiones y crecimiento profesional`.
 - Replace `Te llevo a identificar y liberar esos bloqueos` with `Te acompaño a identificar patrones internos que hoy interfieren con tu capacidad de decidir, sostener liderazgo y avanzar con claridad.`
 - Replace `La abundancia deja de sentirse lejana` with `El crecimiento deja de sentirse forzado y comienza a sostenerse desde mayor claridad, seguridad y coherencia interna.`
+
+## Anti-Repetition Semantic Contract
+
+The site must not make every page repeat the same semantic payload with slightly different wording.
+
+Primary failure modes to prevent:
+
+- semantic duplication fatigue
+- embedding overlap
+- weak retrieval differentiation
+- topic cannibalization
+- AI-sounding repetition
+- pages that feel emotionally identical
+
+Every page must own a distinct:
+
+- emotional state
+- buyer intent
+- semantic territory
+- vocabulary cluster
+- transformation outcome
+
+Global ontology can support every page, but it must not dominate every page in the same way.
+
+## Page Territory Map
+
+Homepage owns the broad category:
+
+- imagen
+- presencia
+- liderazgo
+- percepcion profesional
+- posicionamiento
+
+Main intent:
+
+```text
+Mi imagen ya no refleja el nivel que actualmente sostengo.
+```
+
+Asesoria de imagen integral owns:
+
+- wardrobe
+- style
+- color
+- visual identity
+- executive image
+- external coherence
+
+It must not center deep emotional work, nervous system regulation or subconscious patterns.
+
+Main intent:
+
+```text
+Mi imagen y mi identidad visual ya no corresponden a mi etapa actual.
+```
+
+Coaching de imagen y presencia profesional owns:
+
+- presence
+- confidence
+- visibility
+- professional communication
+- occupying space
+- executive perception
+
+Main intent:
+
+```text
+Tengo capacidad, pero mi presencia no comunica confianza o autoridad.
+```
+
+Coaching de Imagen, Seguridad Interna y Posicionamiento Profesional owns:
+
+- internal patterns
+- nervous system
+- decision making
+- fear
+- self sabotage
+- sustaining growth
+
+This is the only service area where subconscious patterns and nervous system work should dominate semantically.
+
+Main intent:
+
+```text
+Algo interno interfiere con mi capacidad de sostener crecimiento, decisiones o visibilidad.
+```
+
+Imagen empresarial y talleres owns:
+
+- teams
+- organizations
+- brand consistency
+- client perception
+- communication standards
+- corporate image
+
+Main intent:
+
+```text
+Nuestro equipo o empresa proyecta inconsistencia y debil percepcion profesional.
+```
+
+Comparison pages own:
+
+- industry evolution
+- editorial reflections
+- category differentiation
+- modern image coaching
+
+They must read like premium editorial philosophy pieces, not attack pages, SEO comparison spam or direct competitor pages.
+
+Main intent:
+
+```text
+Como evoluciono el coaching de imagen desde styling hacia liderazgo, percepcion y posicionamiento profesional.
+```
+
+## Public Comparison Page Rules
+
+Comparison pages must never expose:
+
+- SEO strategy
+- ontology
+- semantic graph
+- GEO engineering
+- ranking intent
+- AI optimization notes
+- URL planning
+- comparison SEO tactics
+
+Comparison pages must not use competitor names in visible page titles or public comparison URLs.
+
+Wrong:
+
+```text
+/sonia-vs-competitor
+Best image consultant
+Why Sonia is better
+```
+
+Correct:
+
+```text
+La evolucion del coaching de imagen en Mexico y LATAM
+Del styling tradicional a la presencia profesional
+Como evoluciono la consultoria de imagen profesional
+```
+
+Preferred public framing:
+
+- Tradicionalmente...
+- Durante muchos anos...
+- Historicamente...
+- Hoy muchas personas necesitan algo mas profundo...
+
+The tone must be elegant editorial reflection, not direct comparison warfare.

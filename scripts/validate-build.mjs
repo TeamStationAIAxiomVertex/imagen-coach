@@ -25,6 +25,9 @@ const comparisonRoutes = [
   "/comparaciones/coaching-motivacional-vs-posicionamiento-profesional",
   "/comparaciones/styling-vs-coaching-de-imagen",
   "/comparaciones/imagen-corporativa-vs-presencia-humana",
+  "/comparaciones/evolucion-coaching-imagen-mexico-latam",
+];
+const deprecatedComparisonRoutes = [
   "/comparaciones/sonia-mcrorey-vs-gaby-vargas",
 ];
 const requiredExecutiveTerms = [
@@ -71,6 +74,11 @@ for (const route of semanticHubRoutes) {
 for (const route of comparisonRoutes) {
   const htmlPath = path.join("dist", route, "index.html");
   if (!existsSync(htmlPath)) failures.push(`Missing comparison page output: ${route}`);
+}
+
+for (const route of deprecatedComparisonRoutes) {
+  const htmlPath = path.join("dist", route, "index.html");
+  if (existsSync(htmlPath)) failures.push(`Deprecated competitor-name comparison route still renders: ${route}`);
 }
 
 for (const cluster of strategy.clusters) {
@@ -144,6 +152,10 @@ for (const route of semanticHubRoutes) {
 }
 for (const route of comparisonRoutes) {
   if (!sitemap.includes(`${SITE_URL}${route}`)) failures.push(`Missing comparison page in sitemap: ${route}`);
+}
+
+for (const route of deprecatedComparisonRoutes) {
+  if (sitemap.includes(`${SITE_URL}${route}`)) failures.push(`Deprecated comparison page in sitemap: ${route}`);
 }
 
 for (const sitemapFile of ["dist/blog-sitemap.xml", "dist/category-sitemap.xml", "dist/service-sitemap.xml"]) {
@@ -227,6 +239,7 @@ for (const line of [
 const redirects = await readFile("dist/_redirects", "utf8");
 for (const line of [
   "https://www.imagencoach.com/*  https://imagencoach.com/:splat  301",
+  "/comparaciones/sonia-mcrorey-vs-gaby-vargas  /comparaciones/evolucion-coaching-imagen-mexico-latam  301",
   "/articulos/tu-color-tu-poder-el-impacto-de-la-colorimetria  /imagen-presencia/tu-color-tu-poder-el-impacto-de-la-colorimetria  301",
   "/articulos/aprende-a-resaltar-tus-proporciones  /imagen-presencia/aprende-a-resaltar-tus-proporciones  301",
   "/articulos/la-importancia-de-tu-imagen-personal  /imagen-presencia/la-importancia-de-tu-imagen-personal  301",
