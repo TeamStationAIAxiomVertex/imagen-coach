@@ -20,8 +20,8 @@ const PAGE_OVERRIDES = {
     primaryCta: "Agendar diagnóstico estratégico",
   },
   "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia": {
-    title: "Seguridad interna para sostener decisiones, liderazgo y crecimiento profesional",
-    description: "Coaching de presencia, seguridad y poder personal para ordenar el sistema interno, fortalecer liderazgo y sostener crecimiento profesional con mayor claridad.",
+    title: "Coaching de Imagen, Seguridad Interna y Posicionamiento Profesional",
+    description: "Entrenamiento interno para sostener liderazgo, presencia y crecimiento profesional desde mayor claridad, seguridad y coherencia interna.",
   },
 };
 const PILLARS = [
@@ -44,8 +44,8 @@ const PILLARS = [
     keywords: "talleres de imagen, imagen corporativa, capacitación de colaboradores",
   },
   {
-    label: "Coaching de Presencia, Seguridad y Poder Personal",
-    audience: "Procesos internos para sostener seguridad, liderazgo personal, claridad profesional y decisiones alineadas con presencia.",
+    label: "Coaching de Imagen, Seguridad Interna y Posicionamiento Profesional",
+    audience: "Entrenamiento interno para sostener liderazgo, presencia, claridad profesional y decisiones alineadas con posicionamiento.",
     route: "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia",
     keywords: "coaching de imagen, seguridad interna, posicionamiento profesional",
   },
@@ -67,8 +67,8 @@ const BUYER_GUIDES = {
     outcome: "Criterios compartidos para proyectar confianza y consistencia.",
   },
   "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia": {
-    pain: "Hay capacidad y estrategia, pero patrones internos frenan visibilidad, decisiones y crecimiento.",
-    solution: "Coaching de presencia, seguridad interna y posicionamiento profesional.",
+    pain: "Tu capacidad ya existe, pero patrones internos interfieren con claridad, liderazgo y crecimiento.",
+    solution: "Coaching de imagen con estructura interna y posicionamiento profesional.",
     outcome: "Mayor claridad, presencia, autoridad, coherencia y seguridad profesional.",
   },
 };
@@ -209,6 +209,7 @@ const CANONICAL_TERMS = [
   "imagen corporativa",
   "personal branding ejecutivo",
   "coaching de imagen",
+  "coaching de imagen con estructura interna",
   "seguridad interna",
   "liderazgo personal",
 ];
@@ -972,6 +973,7 @@ function pageTermSignals(page, clusterMap) {
     ],
     "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen": [
       "coaching de imagen",
+      "coaching de imagen con estructura interna",
       "presencia profesional",
       "presencia ejecutiva",
       "identidad profesional",
@@ -1749,6 +1751,8 @@ function entitiesAgent() {
       "imagen corporativa",
       "personal branding ejecutivo",
       "coaching de imagen",
+      "Coaching de Imagen, Seguridad Interna y Posicionamiento Profesional",
+      "coaching de imagen con estructura interna",
       "seguridad interna",
       "liderazgo personal",
     ],

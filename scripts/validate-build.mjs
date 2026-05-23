@@ -20,6 +20,7 @@ const semanticHubRoutes = [
 ];
 const requiredExecutiveTerms = [
   "coaching de imagen",
+  "coaching de imagen con estructura interna",
   "presencia ejecutiva",
   "presencia profesional",
   "imagen profesional",

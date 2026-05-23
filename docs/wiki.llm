@@ -550,3 +550,49 @@ But the hybrid category Sonia uniquely owns:
 ```text
 Coaching de Imagen con profundidad psicológica, liderazgo personal y posicionamiento profesional.
 ```
+
+## Service Semantic Anchor: Former Abundance Route
+
+The legacy route `/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia` must keep working for URL retention, but its visible semantic anchor must be:
+
+```text
+Coaching de Imagen, Seguridad Interna y Posicionamiento Profesional
+```
+
+The page hierarchy must be:
+
+```text
+Imagen y presencia profesional
+↓
+Liderazgo y decisiones
+↓
+Seguridad interna
+↓
+Sistema nervioso
+↓
+Resultados sostenibles
+```
+
+The page must feel like:
+
+```text
+Entrenamiento interno para sostener liderazgo, presencia y crecimiento profesional.
+```
+
+It must not feel like:
+
+```text
+Manifestación personal
+```
+
+The correct category is:
+
+```text
+Coaching de Imagen con estructura interna y posicionamiento profesional.
+```
+
+Preferred replacement language:
+
+- Replace `bloqueos y resistencias inconscientes` with `patrones internos que limitan claridad, decisiones y crecimiento profesional`.
+- Replace `Te llevo a identificar y liberar esos bloqueos` with `Te acompaño a identificar patrones internos que hoy interfieren con tu capacidad de decidir, sostener liderazgo y avanzar con claridad.`
+- Replace `La abundancia deja de sentirse lejana` with `El crecimiento deja de sentirse forzado y comienza a sostenerse desde mayor claridad, seguridad y coherencia interna.`
