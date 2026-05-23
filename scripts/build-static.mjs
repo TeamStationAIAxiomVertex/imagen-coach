@@ -179,6 +179,7 @@ function normalizeContentLines(lines) {
   const filtered = lines
     .map((item) => item.trim())
     .map(repairSourceFragments)
+    .map(stripSourceMarkers)
     .filter((item) => item && !BODY_JUNK_LINES.has(item));
   const normalized = [];
 
@@ -256,12 +257,21 @@ function groupShortLines(lines) {
 
 function repairSourceFragments(value = "") {
   return value
+    .replace(/^\.\s+/, "")
+    .replace(/�\s*/g, "")
     .replace(/\bq ue\b/gi, "que")
     .replace(/\bs ea\b/gi, "sea")
     .replace(/\bs e\b/gi, "se")
     .replace(/\bd onde\b/gi, "donde")
     .replace(/\bdí a\b/gi, "día")
     .replace(/\bqu é\b/gi, "qué");
+}
+
+function stripSourceMarkers(value = "") {
+  return value
+    .replace(/^[\uFFFD\ufe0f\s]+/, "")
+    .replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}\ufe0f\u{1F3FB}-\u{1F3FF}\s]+/u, "")
+    .trim();
 }
 
 function slugify(value = "") {
@@ -318,6 +328,32 @@ function topicIcon(topicId = "presencia") {
 function topicChips(topics = []) {
   if (!topics.length) return "";
   return `<div class="ontology-chips">${topics.map((topic) => `<span class="ontology-chip">${topicIcon(topic.id)}${escapeHtml(topic.label)}</span>`).join("")}</div>`;
+}
+
+function visualSectionLabel(heading = "") {
+  const clean = cleanDisplayTitle(heading)
+    .replace(/[¿?]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+  const lower = clean.toLowerCase();
+  if (/^qué es\b/.test(lower)) return "Definición";
+  if (/^qué se trabaja\b/.test(lower)) return "Áreas de trabajo";
+  if (/^cómo funciona\b/.test(lower)) return "Funcionamiento";
+  if (/^cómo tu relación\b/.test(lower)) return "Relación con la ropa";
+  if (/^qué aspectos\b/.test(lower)) return "Aspectos del proceso";
+  if (/^buscas resultados\b/.test(lower)) return "Resultados reales";
+  if (/^tu imagen potente\b/.test(lower)) return "Imagen desde el ser";
+  if (/^construye\b/.test(lower)) return "Siguiente nivel";
+  if (/^diferencia\b/.test(lower)) return "Diferencia entre procesos";
+  if (clean.length > 58) return `${clean.slice(0, 55).replace(/\s+\S*$/, "")}...`;
+  return clean;
+}
+
+function visualCardTitle(title = "") {
+  return cleanDisplayTitle(title)
+    .replace(/[¿?]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 function highlightOntologyTerms(text = "", topics = [], maxHighlights = 3) {
@@ -556,7 +592,7 @@ function readingTopology(sections, page, clusterMap) {
   const items = sections.slice(0, 12).map((section, index) => {
     const id = `tema-${index + 1}-${slugify(section.heading)}`;
     const topics = sectionTopics([section.heading, ...section.lines], page, clusterMap, 2);
-    return { id, heading: section.heading, topics };
+    return { id, heading: visualSectionLabel(section.heading), topics };
   });
   if (!items.length) return "";
   return `<section class="section reading-topology" aria-label="Mapa de lectura">
@@ -618,7 +654,7 @@ function pullQuoteRail(sections) {
     <div class="quote-rail-grid">
       ${quotes.map((item) => `<figure class="exact-quote">
         <blockquote>${escapeHtml(item.quote)}</blockquote>
-        <figcaption>${escapeHtml(item.section)}</figcaption>
+        <figcaption>${escapeHtml(visualSectionLabel(item.section))}</figcaption>
       </figure>`).join("")}
     </div>
   </section>`;
@@ -657,7 +693,7 @@ function serviceDecisionVisual(page, sections) {
     <div class="decision-grid">
       ${selected.map((section, index) => `<article>
         <span>${escapeHtml(labels[index] || "Lectura")}</span>
-        <strong>${escapeHtml(section.heading)}</strong>
+        <strong>${escapeHtml(visualSectionLabel(section.heading))}</strong>
         <p>${highlightOntologyTerms(section.lines[0] || section.heading, sectionTopics([section.heading, ...section.lines], page), 2)}</p>
       </article>`).join("")}
     </div>
@@ -889,7 +925,7 @@ function articleCards(pages, { limit, clusterMap = new Map() } = {}) {
     .map((page) => `<a class="publication-link-card" href="${page.route}">
       <figure><img src="${pickImage(page)}" alt="${escapeHtml(page.heroTitle)}" /></figure>
       <span>${escapeHtml(clusterMap.get(page.route)?.label || "Artículo")}</span>
-      <strong>${escapeHtml(page.heroTitle)}</strong>
+      <strong>${escapeHtml(visualCardTitle(page.heroTitle))}</strong>
       <p>${escapeHtml(cardDescription(page))}</p>
       <small>Leer publicación</small>
     </a>`)
@@ -901,7 +937,7 @@ function serviceCards(pages) {
     .filter((page) => page.type === "service")
     .map((page) => `<a class="service-card" href="${page.route}">
       <figure><img src="${pickImage(page)}" alt="${escapeHtml(page.heroTitle)}" /></figure>
-      <h3>${escapeHtml(page.heroTitle)}</h3>
+      <h3>${escapeHtml(visualCardTitle(page.heroTitle))}</h3>
       <p>${escapeHtml(cardDescription(page))}</p>
       <span>Conocer servicio</span>
     </a>`)

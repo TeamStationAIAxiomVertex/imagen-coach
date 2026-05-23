@@ -2366,8 +2366,8 @@ details[open] summary::after {
 .topology-header { display: grid; grid-template-columns: minmax(0, .9fr) minmax(280px, .55fr); gap: clamp(22px, 5vw, 60px); align-items: end; margin-bottom: 18px; }
 .topology-header h2 { margin: 0; color: var(--ink); font-family: var(--display); font-size: clamp(34px, 4vw, 50px); font-weight: 500; line-height: 1.02; }
 .topology-header p:not(.section-label) { margin: 0; color: var(--muted); line-height: 1.62; }
-.topology-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
-.topology-grid a { min-height: 172px; padding: 18px; border: 1px solid rgba(227, 223, 231, .9); border-radius: var(--radius-card); background: rgba(251, 250, 252, .7); }
+.topology-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; }
+.topology-grid a { min-height: 150px; padding: 18px; border: 1px solid rgba(227, 223, 231, .9); border-radius: var(--radius-card); background: rgba(251, 250, 252, .7); }
 .topology-grid a:hover { border-color: rgba(140, 71, 153, .34); background: rgba(251, 250, 252, .96); }
 .topology-grid a > span { display: block; color: rgba(140, 71, 153, .46); font-family: var(--display); font-size: 32px; line-height: .95; }
 .topology-grid strong { display: block; margin-top: 12px; color: var(--ink); font-size: 15px; line-height: 1.28; }
@@ -2384,10 +2384,10 @@ details[open] summary::after {
 .exact-quote blockquote { margin: 0; color: var(--ink); font-family: var(--display); font-size: clamp(26px, 2.7vw, 38px); font-weight: 500; line-height: 1.08; }
 .exact-quote figcaption { margin-top: 18px; color: var(--plum-accent); font-size: 11px; font-weight: 800; letter-spacing: .08em; line-height: 1.4; text-transform: uppercase; }
 .decision-visual { padding: 30px 0 18px; }
-.decision-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
-.decision-grid article { min-height: 230px; padding: 20px; border: 1px solid rgba(111, 162, 135, .3); border-radius: var(--radius-card); background: rgba(231, 240, 235, .5); }
+.decision-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.decision-grid article { min-height: 210px; padding: 20px; border: 1px solid rgba(111, 162, 135, .3); border-radius: var(--radius-card); background: rgba(231, 240, 235, .5); }
 .decision-grid article > span { display: inline-flex; color: var(--brand-green-deep); font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
-.decision-grid strong { display: block; margin: 18px 0 12px; color: var(--ink); font-family: var(--display); font-size: clamp(26px, 2.8vw, 36px); font-weight: 500; line-height: 1.04; }
+.decision-grid strong { display: block; margin: 18px 0 12px; color: var(--ink); font-family: var(--display); font-size: clamp(24px, 2.4vw, 32px); font-weight: 500; line-height: 1.04; }
 .decision-grid p { margin: 0; color: var(--charcoal-soft); line-height: 1.58; }
 .section-meta { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 0; }
 .section-meta span { display: inline-flex; padding: 6px 9px; color: var(--muted); border: 1px solid rgba(227, 223, 231, .9); border-radius: 999px; background: rgba(255, 255, 255, .5); font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
@@ -2469,7 +2469,7 @@ details[open] summary::after {
 @media (max-width: 900px) {
   .hero, .split-section, .split-section.reverse, .contact-grid { grid-template-columns: 1fr; }
   .split-section.reverse .copy-panel { order: 0; }
-  .service-grid, .publication-grid, .proof-strip, .pillar-grid, .cluster-header, .semantic-sections, .process-rail, .atlas-grid, .signal-list, .topology-header, .topology-grid, .quote-rail-grid, .decision-grid, .dense-reading .semantic-card { grid-template-columns: 1fr; }
+  .service-grid, .publication-grid, .proof-strip, .pillar-grid, .cluster-header, .semantic-sections, .process-rail, .atlas-grid, .signal-list, .topology-header, .dense-reading .semantic-card { grid-template-columns: 1fr; }
   .semantic-panel { columns: 1; }
   .dense-reading .semantic-copy { grid-column: auto; grid-row: auto; }
   .fragment-ladder::before { left: 20px; }
@@ -2488,6 +2488,11 @@ details[open] summary::after {
   .nav-toggle { display: inline-grid; gap: 5px; width: 42px; height: 42px; place-content: center; border: 1px solid var(--line); border-radius: 8px; background: var(--paper); }
   .nav-toggle span { display: block; width: 18px; height: 2px; background: var(--header-nav); }
   h1 { font-size: clamp(42px, 13vw, 58px); }
+}
+@media (max-width: 640px) {
+  .topology-grid, .quote-rail-grid, .decision-grid { grid-template-columns: 1fr; }
+  .topology-grid a, .decision-grid article, .exact-quote { min-height: auto; }
+  .topology-header h2 { font-size: clamp(32px, 10vw, 44px); }
 }
 .brand { gap: 10px; flex-direction: column; align-items: flex-start; }
 .brand img { display: none; }
