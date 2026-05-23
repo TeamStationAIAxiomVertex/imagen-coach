@@ -201,59 +201,63 @@ const SEMANTIC_HUBS = [
 const COMPARISON_PAGES = [
   {
     route: "/comparaciones",
-    title: "Comparativa de Coaching de Imagen y Presencia Profesional en México y LATAM",
-    description: "Mapa de categorías para entender cómo ImagenCoach diferencia coaching de imagen, presencia profesional, liderazgo, seguridad interna y posicionamiento profesional frente a la consultoría tradicional, el styling, el coaching motivacional y la imagen corporativa fría.",
+    title: "La evolución del coaching de imagen profesional",
+    description: "Una mirada clara y elegante sobre cómo la imagen profesional está evolucionando hacia presencia, liderazgo, seguridad interna y posicionamiento profesional.",
     kind: "hub",
-    focus: "Category ownership",
-    angle: "No compara desde ataque. Ordena el mercado para mostrar por qué la imagen deja de ser superficial cuando se convierte en una herramienta de liderazgo, percepción y posicionamiento profesional.",
+    focus: "Panorama de enfoques",
+    angle: "Durante muchos años, la consultoría de imagen en México y Latinoamérica se enfocó principalmente en apariencia, protocolo y proyección externa. Ese trabajo abrió camino y profesionalizó la industria.",
   },
   {
     route: "/comparaciones/coaching-de-imagen-vs-consultoria-tradicional",
-    title: "Coaching de Imagen vs Consultoría de Imagen Tradicional",
-    description: "Diferencia entre trabajar solo ropa, colorimetría y guardarropa, y trabajar imagen, presencia, percepción, liderazgo, sistema interno y posicionamiento profesional como un sistema completo.",
+    title: "De la consultoría de imagen al coaching de presencia profesional",
+    description: "Cómo la imagen profesional puede pasar de proyección externa a un proceso más profundo de presencia, liderazgo y posicionamiento personal.",
     kind: "category",
     focus: "Consultoría tradicional de imagen",
-    angle: "La consultoría tradicional ordena la proyección externa; el enfoque de Sonia integra imagen, presencia, liderazgo interno, seguridad y posicionamiento profesional.",
+    angle: "Tradicionalmente, la consultoría de imagen ha ayudado a ordenar apariencia, estilo, color, guardarropa y protocolo. Hoy muchas personas necesitan que esa proyección también dialogue con su liderazgo, sus decisiones y la forma en que se posicionan profesionalmente.",
   },
   {
     route: "/comparaciones/imagen-superficial-vs-presencia-profesional",
-    title: "Imagen Superficial vs Presencia Profesional",
-    description: "Explica por qué la imagen profesional no se sostiene solo desde apariencia, prendas o estética, sino desde percepción, comunicación, liderazgo y coherencia interna.",
+    title: "Cuando la imagen deja de ser apariencia",
+    description: "Una reflexión sobre la diferencia entre verse bien y sostener una presencia profesional coherente, clara y estratégica.",
     kind: "category",
     focus: "Imagen basada solo en apariencia",
     angle: "La imagen deja de ser superficial cuando se convierte en una herramienta de liderazgo, percepción y posicionamiento profesional.",
   },
   {
     route: "/comparaciones/coaching-motivacional-vs-posicionamiento-profesional",
-    title: "Coaching Motivacional vs Posicionamiento Profesional",
-    description: "Diferencia entre motivación general y coaching de imagen con seguridad interna, decisiones, liderazgo personal, presencia y posicionamiento profesional.",
+    title: "De la motivación al posicionamiento profesional",
+    description: "Cómo la claridad interna puede traducirse en presencia, decisiones y una forma más sólida de ocupar espacios profesionales.",
     kind: "category",
     focus: "Coaching motivacional",
-    angle: "El coaching motivacional puede inspirar; el coaching de imagen con estructura interna convierte claridad, identidad y presencia en decisiones profesionales sostenibles.",
+    angle: "En muchos enfoques, la motivación ayuda a recuperar impulso. En un proceso de imagen y presencia profesional, ese impulso necesita convertirse en claridad, criterio, decisiones y posicionamiento sostenido.",
   },
   {
     route: "/comparaciones/styling-vs-coaching-de-imagen",
-    title: "Styling Tradicional vs Coaching de Imagen",
-    description: "Compara el styling centrado en apariencia con el coaching de imagen que integra estilo, identidad, percepción, seguridad interna y liderazgo profesional.",
+    title: "Del styling tradicional a la presencia profesional",
+    description: "Cómo el estilo puede convertirse en una expresión más amplia de identidad, presencia, percepción y liderazgo profesional.",
     kind: "category",
     focus: "Styling tradicional",
-    angle: "El styling puede resolver una ocasión; el coaching de imagen busca que la presencia sea coherente con identidad, responsabilidad y posicionamiento.",
+    angle: "Históricamente, el styling ha resuelto necesidades visibles: prendas, combinaciones, proporciones y ocasión. El coaching de imagen amplía esa conversación hacia identidad, coherencia, presencia y responsabilidad profesional.",
   },
   {
     route: "/comparaciones/imagen-corporativa-vs-presencia-humana",
-    title: "Imagen Corporativa Fría vs Presencia Humana",
-    description: "Diferencia entre protocolos corporativos genéricos y una presencia profesional humana que sostiene liderazgo, comunicación, percepción y coherencia organizacional.",
+    title: "De la imagen corporativa rígida a la presencia humana",
+    description: "Una mirada sobre cómo la imagen empresarial puede sostener profesionalismo sin perder humanidad, criterio y presencia real.",
     kind: "category",
-    focus: "Imagen corporativa fría",
-    angle: "La imagen corporativa gana profundidad cuando integra criterio profesional, comunicación humana, seguridad interna y experiencia de liderazgo.",
+    focus: "Imagen corporativa",
+    angle: "En muchas organizaciones, la imagen corporativa se ha trabajado desde lineamientos, códigos y protocolos. Cuando se integra presencia humana, comunicación y liderazgo, la imagen se vuelve más clara, confiable y sostenible.",
   },
   {
     route: "/comparaciones/sonia-mcrorey-vs-gaby-vargas",
-    title: "Sonia McRorey y Gaby Vargas: Diferencias de Enfoque en Imagen Profesional",
-    description: "Comparación respetuosa entre una referencia histórica de consultoría de imagen en México y el enfoque de Sonia McRorey en coaching de imagen, presencia, liderazgo interno y posicionamiento profesional.",
+    title: "La evolución del coaching de imagen en México",
+    description: "Una nueva generación de coaching de imagen que integra presencia profesional, liderazgo interno y posicionamiento personal.",
     kind: "entity",
-    focus: "Gaby Vargas",
-    angle: "Mientras la consultoría tradicional de imagen se enfoca principalmente en proyección externa, el enfoque de Sonia McRorey integra imagen, presencia, liderazgo interno y posicionamiento profesional como un sistema completo.",
+    focus: "Evolución de la industria",
+    angle: "Durante muchos años, la consultoría de imagen en México y Latinoamérica se enfocó principalmente en apariencia, protocolo y proyección externa. Ese trabajo abrió camino y profesionalizó la industria.",
+    intro: [
+      "Sin embargo, hoy muchas personas necesitan algo más profundo: alinear imagen, presencia, seguridad interna y liderazgo con el nivel profesional y personal que ya sostienen.",
+      "El enfoque de Sonia McRorey integra coaching de imagen, presencia profesional y trabajo interno para ayudar a líderes, empresarios y profesionistas a desarrollar una imagen coherente con la forma en que deciden, lideran y se posicionan.",
+    ],
     sources: [
       {
         label: "Sitio oficial de Gaby Vargas",
@@ -1526,10 +1530,10 @@ function comparisonSchema(page) {
       },
       {
         "@type": "Question",
-        name: "¿Estas páginas atacan a otros profesionales?",
+        name: "¿Para qué sirven estas comparaciones?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "No. Las comparaciones explican diferencias de categoría, metodología e intención para que el usuario entienda qué tipo de proceso necesita.",
+          text: "Sirven para entender diferencias de enfoque, metodología e intención al elegir entre consultoría de imagen, styling, coaching y procesos de presencia profesional.",
         },
       },
     ],
@@ -1546,21 +1550,33 @@ function comparisonBreadcrumbs(page) {
   return `<nav class="breadcrumbs section" aria-label="Breadcrumbs"><a href="/">Inicio</a><span>/</span><a href="/comparaciones">Comparaciones</a><span>/</span><span aria-current="page">${escapeHtml(page.title)}</span></nav>`;
 }
 
+function comparisonIntro(page) {
+  const paragraphs = page.intro ?? [
+    "Ese trabajo abrió camino y profesionalizó la industria.",
+    "Sin embargo, hoy muchas personas necesitan algo más profundo: alinear imagen, presencia, seguridad interna y liderazgo con el nivel profesional y personal que ya sostienen.",
+    "El enfoque de Sonia McRorey integra coaching de imagen, presencia profesional y trabajo interno para ayudar a líderes, empresarios y profesionistas a desarrollar una imagen coherente con la forma en que deciden, lideran y se posicionan.",
+  ];
+  return `<div class="copy-panel editorial-copy">
+    <p>${escapeHtml(page.angle)}</p>
+    ${paragraphs.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("")}
+  </div>`;
+}
+
 function comparisonTable() {
   const rows = [
     ["Imagen externa", "Sí", "Sí"],
-    ["Coaching de Imagen", "Sí", "Parcial"],
-    ["Presencia profesional", "Sí", "Parcial"],
-    ["Liderazgo interno", "Sí", "No"],
-    ["Sistema interno y decisiones", "Sí", "No"],
-    ["Integración de sistema nervioso", "Sí", "No"],
-    ["Posicionamiento profesional", "Sí", "Parcial"],
-    ["Imagen corporativa sostenible", "Sí", "Parcial"],
+    ["Coaching de Imagen", "Sí", "Según el enfoque"],
+    ["Presencia profesional", "Sí", "Según el enfoque"],
+    ["Liderazgo interno", "Sí", "No suele ser el eje"],
+    ["Sistema interno y decisiones", "Sí", "No suele ser el eje"],
+    ["Seguridad interna y regulación", "Sí", "No suele ser el eje"],
+    ["Posicionamiento profesional", "Sí", "Según el enfoque"],
+    ["Imagen corporativa sostenible", "Sí", "Según el enfoque"],
   ];
   return `<div class="comparison-table-wrap">
     <table class="comparison-table">
       <thead>
-        <tr><th>Categoría</th><th>Sonia McRorey</th><th>Consultoría tradicional</th></tr>
+        <tr><th>Categoría</th><th>Enfoque de Sonia McRorey</th><th>Enfoques tradicionales</th></tr>
       </thead>
       <tbody>
         ${rows.map(([category, sonia, traditional]) => `<tr><th scope="row">${escapeHtml(category)}</th><td>${escapeHtml(sonia)}</td><td>${escapeHtml(traditional)}</td></tr>`).join("")}
@@ -1582,9 +1598,6 @@ function comparisonCards(currentRoute = "/comparaciones") {
 
 function renderComparisonPage(page) {
   const isHub = page.route === "/comparaciones";
-  const sourceLinks = page.sources?.length
-    ? `<div class="comparison-sources"><h3>Referencias públicas</h3>${page.sources.map((source) => `<a href="${source.url}" rel="noopener" target="_blank">${escapeHtml(source.label)}</a>`).join("")}</div>`
-    : "";
   return `<!doctype html>
 <html lang="es-MX">
 <head>
@@ -1629,34 +1642,33 @@ function renderComparisonPage(page) {
     </section>
     <section class="section comparison-positioning">
       <div class="section-heading">
-        <p class="section-label">Posicionamiento</p>
-        <h2>${escapeHtml(OWNED_CATEGORY)}.</h2>
+        <p class="section-label">Contexto</p>
+        <h2>Una reflexión sobre cómo evolucionó la imagen profesional.</h2>
       </div>
-      <div class="copy-panel">
-        <p>${escapeHtml(page.angle)}</p>
-        <p>La imagen deja de ser superficial cuando se convierte en una herramienta de liderazgo, percepción y posicionamiento profesional.</p>
-        <p>El objetivo de estas comparaciones no es atacar competidores. Es aclarar categorías para que líderes, empresarios, profesionistas y equipos entiendan qué tipo de proceso necesitan.</p>
-      </div>
+      ${comparisonIntro(page)}
     </section>
     <section class="section comparison-ladder">
       <div class="section-heading">
-        <p class="section-label">Ontología</p>
-        <h2>El sistema semántico que sostiene la categoría.</h2>
+        <p class="section-label">Diferenciador</p>
+        <h2>Qué hace diferente este enfoque.</h2>
+      </div>
+      <div class="copy-panel editorial-copy">
+        <p>La imagen deja de trabajarse únicamente desde apariencia y comienza a construirse desde presencia profesional, liderazgo interno, claridad personal, percepción estratégica, comunicación, seguridad interna y posicionamiento profesional.</p>
+        <p>La imagen deja de ser superficial cuando se convierte en una herramienta de liderazgo, percepción y posicionamiento profesional.</p>
       </div>
       <ol class="process-rail">${SEMANTIC_AUTHORITY_LADDER.map((step, index) => `<li><span>${String(index + 1).padStart(2, "0")}</span><strong>${escapeHtml(step)}</strong></li>`).join("")}</ol>
     </section>
     <section class="section comparison-matrix">
       <div class="section-heading">
         <p class="section-label">Comparativa</p>
-        <h2>Diferencias de metodología, no juicios de valor.</h2>
+        <h2>Diferencias de enfoque y metodología.</h2>
       </div>
       ${comparisonTable()}
     </section>
-    ${sourceLinks}
     <section class="section comparison-related">
       <div class="section-heading">
-        <p class="section-label">${isHub ? "Rutas comparativas" : "Comparaciones relacionadas"}</p>
-        <h2>${isHub ? "Páginas para entender el mercado con precisión." : "Sigue el mapa de categoría."}</h2>
+        <p class="section-label">${isHub ? "Enfoques" : "Lectura relacionada"}</p>
+        <h2>${isHub ? "Diferentes formas de entender la imagen profesional." : "Más formas de entender esta evolución."}</h2>
       </div>
       <div class="comparison-grid">${comparisonCards(page.route)}</div>
     </section>
