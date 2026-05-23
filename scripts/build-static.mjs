@@ -281,6 +281,14 @@ function splitSentences(text = "") {
   return parts.length > 1 ? parts : [trimmed];
 }
 
+function wordCount(value = "") {
+  return (value.match(/[\p{L}\p{N}]+(?:['’][\p{L}\p{N}]+)?/gu) || []).length;
+}
+
+function escapeRegExp(value = "") {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
 function sectionTopics(lines = [], page, clusterMap = new Map(), limit = 4) {
   const haystack = `${page?.heroTitle || ""} ${lines.join(" ")}`.toLowerCase();
   const matched = ONTOLOGY_TOPICS.filter((topic) => topic.terms.some((term) => haystack.includes(term.toLowerCase())));
@@ -310,6 +318,36 @@ function topicIcon(topicId = "presencia") {
 function topicChips(topics = []) {
   if (!topics.length) return "";
   return `<div class="ontology-chips">${topics.map((topic) => `<span class="ontology-chip">${topicIcon(topic.id)}${escapeHtml(topic.label)}</span>`).join("")}</div>`;
+}
+
+function highlightOntologyTerms(text = "", topics = [], maxHighlights = 3) {
+  const candidates = topics
+    .flatMap((topic) => topic.terms.map((term) => ({ topic, term })))
+    .filter(({ term }) => wordCount(term) <= 4)
+    .sort((a, b) => b.term.length - a.term.length);
+  const matches = [];
+  for (const candidate of candidates) {
+    if (matches.length >= maxHighlights) break;
+    const pattern = new RegExp(`(^|[^\\p{L}\\p{N}])(${escapeRegExp(candidate.term)})(?=$|[^\\p{L}\\p{N}])`, "giu");
+    let match;
+    while ((match = pattern.exec(text)) && matches.length < maxHighlights) {
+      const start = match.index + match[1].length;
+      const end = start + match[2].length;
+      const overlaps = matches.some((item) => start < item.end && end > item.start);
+      if (!overlaps) matches.push({ start, end, topic: candidate.topic });
+    }
+  }
+  if (!matches.length) return escapeHtml(text);
+  matches.sort((a, b) => a.start - b.start);
+  let cursor = 0;
+  let output = "";
+  for (const match of matches) {
+    output += escapeHtml(text.slice(cursor, match.start));
+    output += `<mark class="term-highlight" data-topic="${escapeHtml(match.topic.id)}">${escapeHtml(text.slice(match.start, match.end))}</mark>`;
+    cursor = match.end;
+  }
+  output += escapeHtml(text.slice(cursor));
+  return output;
 }
 
 function splitContent(markdown) {
@@ -442,12 +480,12 @@ function classifyContent(page, lines) {
 
 function renderLongParagraph(line, topics) {
   const sentences = splitSentences(line);
-  if (sentences.length < 2) return `<p>${escapeHtml(line)}</p>`;
+  if (sentences.length < 2) return `<p>${highlightOntologyTerms(line, topics, 3)}</p>`;
   const activeTopics = topics.length ? topics : [ONTOLOGY_TOPICS[1]];
   return `<div class="insight-flow">
     ${sentences.map((sentence, index) => {
       const topic = activeTopics[index % activeTopics.length];
-      return `<p class="insight-step"><span class="insight-icon">${topicIcon(topic.id)}</span><span>${escapeHtml(sentence)}</span></p>`;
+      return `<p class="insight-step"><span class="insight-icon">${topicIcon(topic.id)}</span><span>${highlightOntologyTerms(sentence, [topic, ...activeTopics], 2)}</span></p>`;
     }).join("")}
   </div>`;
 }
@@ -457,7 +495,7 @@ function renderSemanticCopy(lines, topics = []) {
   let list = [];
   const flushList = () => {
     if (!list.length) return;
-    blocks.push(`<ul class="signal-list">${list.map((item) => `<li>${escapeHtml(item.replace(/^[-•●✔️👉🌟💌🎓🟣✨]\s*/, ""))}</li>`).join("")}</ul>`);
+    blocks.push(`<ul class="signal-list">${list.map((item) => `<li>${highlightOntologyTerms(item.replace(/^[-•●✔️👉🌟💌🎓🟣✨]\s*/, ""), topics, 2)}</li>`).join("")}</ul>`);
     list = [];
   };
   for (const line of lines) {
@@ -539,6 +577,93 @@ function readingTopology(sections, page, clusterMap) {
   </section>`;
 }
 
+function sectionWordCount(section) {
+  return wordCount(section.lines.join(" "));
+}
+
+function pageReadingMode(page, sections) {
+  const totalWords = sections.reduce((sum, section) => sum + sectionWordCount(section), 0);
+  const lineCounts = sections.flatMap((section) => section.lines.map(wordCount));
+  const longLines = lineCounts.filter((count) => count >= 45).length;
+  const avgWords = lineCounts.length ? totalWords / lineCounts.length : 0;
+  if (totalWords >= 1000 || longLines >= 8) return "dense";
+  if (page.type === "article" && lineCounts.length >= 20 && avgWords < 13) return "fragmented";
+  if (page.type === "service") return "service";
+  return "guided";
+}
+
+function exactPullQuotes(sections, limit = 3) {
+  const candidates = [];
+  for (const section of sections) {
+    for (const line of section.lines) {
+      for (const sentence of splitSentences(line)) {
+        const count = wordCount(sentence);
+        if (count >= 12 && count <= 32) candidates.push({ quote: sentence, section: section.heading, count });
+      }
+    }
+  }
+  return candidates
+    .sort((a, b) => Math.abs(21 - a.count) - Math.abs(21 - b.count))
+    .slice(0, limit);
+}
+
+function pullQuoteRail(sections) {
+  const quotes = exactPullQuotes(sections);
+  if (quotes.length < 2) return "";
+  return `<section class="section pull-quote-rail" aria-label="Ideas clave de la lectura">
+    <div class="section-heading compact-heading">
+      <p class="section-label">Ideas clave</p>
+      <h2>Frases exactas para orientar la lectura.</h2>
+    </div>
+    <div class="quote-rail-grid">
+      ${quotes.map((item) => `<figure class="exact-quote">
+        <blockquote>${escapeHtml(item.quote)}</blockquote>
+        <figcaption>${escapeHtml(item.section)}</figcaption>
+      </figure>`).join("")}
+    </div>
+  </section>`;
+}
+
+function sectionIntentLabel(section, topics) {
+  const heading = `${section.heading} ${section.lines.join(" ")}`.toLowerCase();
+  if (/diferencia|comparar|versus|vs/.test(heading)) return "Compara opciones";
+  if (/proceso|funciona|paso|diagnóstico|plan/.test(heading)) return "Ordena el proceso";
+  if (/beneficio|resultado|lograr|impacto/.test(heading)) return "Aclara resultados";
+  if (/para quién|para quien|equipo|empresa|marca|cliente/.test(heading)) return "Define para quién";
+  if (topics.some((topic) => topic.id === "mentalidad")) return "Conecta lo interno";
+  if (topics.some((topic) => topic.id === "guardarropa" || topic.id === "color")) return "Traduce a lo visual";
+  return "Idea central";
+}
+
+function sectionMeta(section, topics) {
+  return `<div class="section-meta">
+    <span>${escapeHtml(sectionIntentLabel(section, topics))}</span>
+    <span>${sectionWordCount(section)} palabras</span>
+  </div>`;
+}
+
+function serviceDecisionVisual(page, sections) {
+  if (page.type !== "service" && page.type !== "service-hub") return "";
+  const labels = page.type === "service-hub"
+    ? ["Necesidad", "Ruta", "Resultado", "Siguiente paso"]
+    : ["Problema", "Proceso", "Aplicación", "Resultado"];
+  const selected = sections.slice(0, 4);
+  if (selected.length < 3) return "";
+  return `<section class="section decision-visual" aria-label="Mapa de decisión del servicio">
+    <div class="section-heading compact-heading">
+      <p class="section-label">Mapa de decisión</p>
+      <h2>Cómo leer este servicio sin perderte en el texto.</h2>
+    </div>
+    <div class="decision-grid">
+      ${selected.map((section, index) => `<article>
+        <span>${escapeHtml(labels[index] || "Lectura")}</span>
+        <strong>${escapeHtml(section.heading)}</strong>
+        <p>${highlightOntologyTerms(section.lines[0] || section.heading, sectionTopics([section.heading, ...section.lines], page), 2)}</p>
+      </article>`).join("")}
+    </div>
+  </section>`;
+}
+
 function structuredContentSections(page, lines, pages, clusters) {
   const sections = classifyContent(page, lines);
   if (!sections.length) return "";
@@ -546,7 +671,8 @@ function structuredContentSections(page, lines, pages, clusters) {
   const rest = sections.slice(1);
   const clusterMap = articleClusterByRoute(clusters);
   const introTopics = sectionTopics([intro.heading, ...intro.lines], page, clusterMap);
-  return `<section class="section structured-intro" id="tema-1-${slugify(intro.heading)}">
+  const mode = pageReadingMode(page, sections);
+  return `<section class="section structured-intro ${mode}-intro" id="tema-1-${slugify(intro.heading)}">
     <div class="section-heading">
       <p class="section-label">${escapeHtml(CONTENT_SECTION_LABELS[page.type] || "Contenido")}</p>
       <h2>${escapeHtml(intro.heading)}</h2>
@@ -555,13 +681,16 @@ function structuredContentSections(page, lines, pages, clusters) {
     <article class="semantic-panel">${renderSemanticCopy(intro.lines, introTopics)}</article>
   </section>
   ${readingTopology(sections, page, clusterMap)}
+  ${pullQuoteRail(sections)}
+  ${serviceDecisionVisual(page, sections)}
   ${serviceProcessMap(page)}
-  <section class="section semantic-sections">
+  <section class="section semantic-sections ${mode === "fragmented" ? "fragment-ladder" : ""} ${mode === "dense" ? "dense-reading" : ""}">
     ${rest.map((section, index) => {
       const topics = sectionTopics([section.heading, ...section.lines], page, clusterMap);
       return `<article class="semantic-card" id="tema-${index + 2}-${slugify(section.heading)}">
       <div class="semantic-index">${String(index + 1).padStart(2, "0")}</div>
       ${topicChips(topics)}
+      ${sectionMeta(section, topics)}
       <h2>${escapeHtml(section.heading)}</h2>
       <div class="semantic-copy">${renderSemanticCopy(section.lines, topics)}</div>
     </article>`;

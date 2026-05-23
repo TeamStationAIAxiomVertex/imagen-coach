@@ -2357,6 +2357,7 @@ details[open] summary::after {
 .semantic-panel { padding: clamp(28px, 5vw, 54px); border: 1px solid rgba(201, 177, 208, 0.44); border-radius: var(--radius-card); background: rgba(251, 250, 252, 0.78); columns: 2 330px; column-gap: clamp(28px, 5vw, 64px); }
 .semantic-panel p,
 .semantic-copy p { break-inside: avoid; max-width: 76ch; margin: 0 0 16px; color: var(--charcoal-soft); line-height: 1.72; }
+.term-highlight { color: var(--ink); background: linear-gradient(180deg, transparent 58%, rgba(231, 240, 235, .92) 58%); border-radius: 3px; padding: 0 2px; font-weight: 700; }
 .ontology-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 0; }
 .ontology-chip { display: inline-flex; align-items: center; gap: 7px; min-height: 30px; padding: 6px 10px; color: var(--brand-green-deep); border: 1px solid rgba(111, 162, 135, .32); border-radius: 999px; background: rgba(231, 240, 235, .68); font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 .ontology-chip svg,
@@ -2375,11 +2376,37 @@ details[open] summary::after {
 .insight-flow { display: grid; gap: 10px; margin: 0 0 18px; break-inside: avoid; }
 .insight-step { display: grid; grid-template-columns: 32px minmax(0, 1fr); gap: 12px; max-width: none; margin: 0; padding: 14px; border: 1px solid rgba(227, 223, 231, .86); border-radius: 8px; background: rgba(255, 255, 255, .44); }
 .insight-icon { display: inline-grid; width: 32px; height: 32px; place-items: center; color: var(--plum-accent); border: 1px solid rgba(140, 71, 153, .22); border-radius: 50%; background: rgba(239, 232, 242, .82); }
+.compact-heading { margin-bottom: 18px; }
+.compact-heading h2 { max-width: 760px; }
+.pull-quote-rail { padding: 28px 0 18px; }
+.quote-rail-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.exact-quote { min-height: 210px; margin: 0; padding: clamp(22px, 3vw, 30px); border: 1px solid rgba(140, 71, 153, .22); border-radius: var(--radius-card); background: linear-gradient(180deg, rgba(251, 250, 252, .94), rgba(239, 232, 242, .54)); }
+.exact-quote blockquote { margin: 0; color: var(--ink); font-family: var(--display); font-size: clamp(26px, 2.7vw, 38px); font-weight: 500; line-height: 1.08; }
+.exact-quote figcaption { margin-top: 18px; color: var(--plum-accent); font-size: 11px; font-weight: 800; letter-spacing: .08em; line-height: 1.4; text-transform: uppercase; }
+.decision-visual { padding: 30px 0 18px; }
+.decision-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.decision-grid article { min-height: 230px; padding: 20px; border: 1px solid rgba(111, 162, 135, .3); border-radius: var(--radius-card); background: rgba(231, 240, 235, .5); }
+.decision-grid article > span { display: inline-flex; color: var(--brand-green-deep); font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.decision-grid strong { display: block; margin: 18px 0 12px; color: var(--ink); font-family: var(--display); font-size: clamp(26px, 2.8vw, 36px); font-weight: 500; line-height: 1.04; }
+.decision-grid p { margin: 0; color: var(--charcoal-soft); line-height: 1.58; }
+.section-meta { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 0; }
+.section-meta span { display: inline-flex; padding: 6px 9px; color: var(--muted); border: 1px solid rgba(227, 223, 231, .9); border-radius: 999px; background: rgba(255, 255, 255, .5); font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 .semantic-sections { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; padding: 32px 0; align-items: start; }
 .semantic-card { position: relative; min-height: 240px; padding: clamp(24px, 4vw, 42px); border: 1px solid var(--line); border-radius: var(--radius-card); background: rgba(251, 250, 252, 0.72); overflow: hidden; }
 .semantic-card::before { content: ""; position: absolute; inset: 0 0 auto; height: 4px; background: linear-gradient(90deg, rgba(111, 162, 135, .66), rgba(140, 71, 153, .32)); }
 .semantic-index { color: rgba(140, 71, 153, .36); font-family: var(--display); font-size: 42px; line-height: .9; }
 .semantic-card h2 { max-width: 680px; margin: 12px 0 20px; color: var(--ink); font-family: var(--display); font-size: clamp(32px, 4vw, 48px); font-weight: 500; line-height: 1.02; }
+.dense-reading { grid-template-columns: minmax(0, 1fr); }
+.dense-reading .semantic-card { display: grid; grid-template-columns: minmax(180px, .28fr) minmax(0, 1fr); gap: clamp(22px, 4vw, 54px); }
+.dense-reading .semantic-card .semantic-index,
+.dense-reading .semantic-card .ontology-chips,
+.dense-reading .semantic-card .section-meta,
+.dense-reading .semantic-card h2 { grid-column: 1; }
+.dense-reading .semantic-copy { grid-column: 2; grid-row: 1 / span 4; }
+.fragment-ladder { grid-template-columns: minmax(0, 1fr); position: relative; }
+.fragment-ladder::before { content: ""; position: absolute; left: 34px; top: 70px; bottom: 70px; width: 1px; background: linear-gradient(180deg, rgba(140, 71, 153, .1), rgba(111, 162, 135, .5), rgba(140, 71, 153, .1)); }
+.fragment-ladder .semantic-card { margin-left: 34px; min-height: auto; }
+.fragment-ladder .semantic-index { position: absolute; left: -34px; top: 24px; display: grid; width: 42px; height: 42px; place-items: center; color: var(--plum-accent); border: 1px solid rgba(140, 71, 153, .24); border-radius: 50%; background: var(--paper); font-size: 20px; line-height: 1; }
 .signal-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 18px 0; padding: 0; list-style: none; break-inside: avoid; }
 .signal-list li { padding: 12px 14px; color: var(--charcoal-soft); border: 1px solid rgba(227, 223, 231, .86); border-radius: 8px; background: rgba(240, 237, 243, .58); font-size: 14px; line-height: 1.45; }
 .process-map { padding: 30px 0; }
@@ -2442,8 +2469,12 @@ details[open] summary::after {
 @media (max-width: 900px) {
   .hero, .split-section, .split-section.reverse, .contact-grid { grid-template-columns: 1fr; }
   .split-section.reverse .copy-panel { order: 0; }
-  .service-grid, .publication-grid, .proof-strip, .pillar-grid, .cluster-header, .semantic-sections, .process-rail, .atlas-grid, .signal-list, .topology-header, .topology-grid { grid-template-columns: 1fr; }
+  .service-grid, .publication-grid, .proof-strip, .pillar-grid, .cluster-header, .semantic-sections, .process-rail, .atlas-grid, .signal-list, .topology-header, .topology-grid, .quote-rail-grid, .decision-grid, .dense-reading .semantic-card { grid-template-columns: 1fr; }
   .semantic-panel { columns: 1; }
+  .dense-reading .semantic-copy { grid-column: auto; grid-row: auto; }
+  .fragment-ladder::before { left: 20px; }
+  .fragment-ladder .semantic-card { margin-left: 22px; }
+  .fragment-ladder .semantic-index { left: -24px; }
   .semantic-card { min-height: auto; }
   .process-rail li { min-height: auto; }
   .proof-strip { padding-top: 18px; }
