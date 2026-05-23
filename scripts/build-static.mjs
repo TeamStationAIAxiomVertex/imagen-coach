@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DIST = path.join(ROOT, "dist");
 const SITE_URL = "https://imagencoach.com";
-const ASSET_VERSION = "20260523-service-visuals-v1";
+const ASSET_VERSION = "20260523-buyer-header-footer-v1";
 const WHATSAPP = "https://wa.me/526646105348?text=Hola%20Sonia%2C%20me%20interesa%20agendar%20un%20diagn%C3%B3stico.";
 const CONTACT = {
   phone: "+52 664 610 5348",
@@ -37,6 +37,46 @@ const PILLARS = [
     audience: "Procesos internos para sostener crecimiento, expansión y decisiones alineadas con la nueva imagen.",
     route: "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia",
     keywords: "coaching de abundancia, mentalidad, poder personal",
+  },
+];
+const BUYER_GUIDES = {
+  "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen": {
+    pain: "Tu imagen no refleja el nivel profesional que sostienes.",
+    solution: "Diagnóstico integral de estilo, color, rostro, guardarropa y presencia.",
+    outcome: "Una imagen coherente, funcional y fácil de sostener.",
+  },
+  "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen": {
+    pain: "Hay capacidad, pero falta seguridad visible o dirección interna.",
+    solution: "Coaching de identidad, autoconcepto, presencia y percepción externa.",
+    outcome: "Presencia profesional con claridad, confianza y autoridad.",
+  },
+  "/servicios-asesoria-de-imagen-coaching/talleres": {
+    pain: "El equipo comunica distinto y la experiencia visual pierde coherencia.",
+    solution: "Talleres de imagen, colorimetría y comunicación para marcas y equipos.",
+    outcome: "Criterios compartidos para proyectar confianza y consistencia.",
+  },
+  "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia": {
+    pain: "El siguiente nivel se bloquea por patrones internos, miedo o autosabotaje.",
+    solution: "Trabajo de mentalidad, seguridad interna, abundancia y poder personal.",
+    outcome: "Decisiones más claras para sostener crecimiento con presencia.",
+  },
+};
+const FOOTER_QUESTIONS = [
+  {
+    question: "¿Qué servicio necesito si mi imagen ya no refleja mi etapa actual?",
+    answer: "La asesoría de imagen integral ayuda a ordenar estilo, color, guardarropa, rostro y presencia para que tu imagen acompañe tu realidad profesional y personal.",
+  },
+  {
+    question: "¿Cuándo conviene coaching de imagen en lugar de solo asesoría visual?",
+    answer: "Conviene cuando la dificultad no está solo en la ropa, sino en seguridad, autoconcepto, percepción, liderazgo o claridad interna para sostener una nueva presencia.",
+  },
+  {
+    question: "¿Sonia trabaja con empresas, marcas y equipos?",
+    answer: "Sí. Los talleres de imagen y colorimetría ayudan a equipos y marcas a construir criterios visuales, comunicación profesional y una experiencia más coherente frente a clientes.",
+  },
+  {
+    question: "¿El proceso puede hacerse desde fuera de Guadalajara?",
+    answer: "Sí. Sonia trabaja procesos presenciales y digitales para personas, marcas y equipos en México, LATAM y otros mercados hispanohablantes.",
   },
 ];
 const LEGACY_REDIRECTS = [
@@ -737,19 +777,40 @@ function pageTermSignals(page, clusterMap) {
 }
 
 function nav(currentRoute) {
-  const items = [
+  const simpleItems = [
     ["/", "Inicio"],
     ["/sobre-sonia-mcrorey-asesora-de-imagen", "Sonia"],
-    ["/servicios-asesoria-de-imagen-coaching", "Servicios"],
     ["/imagen-presencia", "Publicaciones"],
     ["#contacto", "Contacto"],
   ];
-  return items
-    .map(([href, label]) => {
-      const active = href === currentRoute ? ' aria-current="page"' : "";
-      return `<a href="${href}"${active}>${label}</a>`;
-    })
-    .join("");
+  const servicesActive = currentRoute.startsWith("/servicios-asesoria-de-imagen-coaching") ? ' aria-current="page"' : "";
+  const servicesMenu = `<details class="nav-mega">
+    <summary${servicesActive}>Servicios</summary>
+    <div class="mega-panel">
+      <div class="mega-intro">
+        <span>Dolor · Solución · Resultado</span>
+        <strong>Elige la ruta según lo que necesitas resolver.</strong>
+      </div>
+      <div class="mega-grid">
+        ${PILLARS.map((pillar) => {
+          const guide = BUYER_GUIDES[pillar.route];
+          return `<a href="${pillar.route}" class="mega-card">
+            <span>${escapeHtml(pillar.label)}</span>
+            <dl>
+              <dt>Dolor</dt><dd>${escapeHtml(guide.pain)}</dd>
+              <dt>Solución</dt><dd>${escapeHtml(guide.solution)}</dd>
+              <dt>Resultado</dt><dd>${escapeHtml(guide.outcome)}</dd>
+            </dl>
+          </a>`;
+        }).join("")}
+      </div>
+    </div>
+  </details>`;
+  return [
+    simpleItems.slice(0, 2).map(([href, label]) => `<a href="${href}"${href === currentRoute ? ' aria-current="page"' : ""}>${label}</a>`).join(""),
+    servicesMenu,
+    simpleItems.slice(2).map(([href, label]) => `<a href="${href}"${href === currentRoute ? ' aria-current="page"' : ""}>${label}</a>`).join(""),
+  ].join("");
 }
 
 function header(currentRoute) {
@@ -766,18 +827,43 @@ function header(currentRoute) {
 
 function footer() {
   return `<footer class="footer" id="contacto">
-    <section class="section contact-grid">
-      <div>
-        <p class="section-label">Contacto</p>
-        <h2>Conversemos sobre la imagen que necesitas sostener.</h2>
-      </div>
-      <div class="contact-card">
-        <p>${CONTACT.address}</p>
-        <p>${CONTACT.hours}</p>
+    <section class="section footer-intelligence">
+      <div class="footer-decision">
+        <p class="section-label">ImagenCoach</p>
+        <h2>Encuentra la ruta correcta para tu imagen, presencia y siguiente nivel.</h2>
+        <p>Sonia McRorey trabaja imagen integral, coaching de imagen, talleres para empresas y procesos de mentalidad para personas, marcas y equipos en México y LATAM.</p>
         <div class="actions">
-          <a class="btn primary" href="${WHATSAPP}" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn primary" href="${WHATSAPP}" target="_blank" rel="noopener">Agendar diagnóstico</a>
           <a class="btn secondary" href="tel:+526646105348">${CONTACT.phone}</a>
         </div>
+      </div>
+      <div class="footer-paths" aria-label="Rutas principales de servicio">
+        ${PILLARS.map((pillar) => {
+          const guide = BUYER_GUIDES[pillar.route];
+          return `<a href="${pillar.route}">
+            <span>${escapeHtml(pillar.label)}</span>
+            <strong>${escapeHtml(guide.pain)}</strong>
+            <small>${escapeHtml(guide.outcome)}</small>
+          </a>`;
+        }).join("")}
+      </div>
+      <div class="footer-answers" aria-label="Preguntas frecuentes principales">
+        <h3>Preguntas clave</h3>
+        ${FOOTER_QUESTIONS.map((item) => `<details>
+          <summary>${escapeHtml(item.question)}</summary>
+          <p>${escapeHtml(item.answer)}</p>
+        </details>`).join("")}
+      </div>
+      <div class="footer-contact-panel">
+        <h3>Contacto</h3>
+        <p>${CONTACT.address}</p>
+        <p>${CONTACT.hours}</p>
+        <nav aria-label="Áreas de interés">
+          <a href="/servicios-asesoria-de-imagen-coaching">Servicios</a>
+          <a href="/imagen-presencia">Publicaciones</a>
+          <a href="/sobre-sonia-mcrorey-asesora-de-imagen">Sobre Sonia</a>
+          <a href="/llms.txt">LLM</a>
+        </nav>
       </div>
     </section>
   </footer>`;
@@ -1012,7 +1098,7 @@ function articleExtras(page, pages, clusters) {
 
 function schema(page) {
   const type = page.type === "article" ? "Article" : page.type.includes("service") ? "Service" : "WebPage";
-  return `<script type="application/ld+json">${JSON.stringify({
+  const pageSchema = {
     "@context": "https://schema.org",
     "@type": type,
     name: page.heroTitle,
@@ -1020,7 +1106,21 @@ function schema(page) {
     image: `${SITE_URL}${pickImage(page)}`,
     author: { "@type": "Person", name: "Sonia McRorey" },
     inLanguage: "es-MX",
-  })}</script>`;
+  };
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: FOOTER_QUESTIONS.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
+  return `<script type="application/ld+json">${JSON.stringify(pageSchema)}</script>
+  <script type="application/ld+json">${JSON.stringify(faqSchema)}</script>`;
 }
 
 function renderPage(page, pages, clusters) {
