@@ -141,6 +141,7 @@ Observed issues on `/comparaciones/evolucion-coaching-imagen-mexico-latam/`:
 - The hero image is visually strong but too dominant on mobile; it consumes an entire viewport after the CTA and delays access to the comparison content.
 - The comparison switchboard stacks into tall repeated cards on mobile. It functions, but it feels like a list of text boxes rather than a compact decision/navigation control.
 - Section headings use oversized editorial display type even in utility sections such as context, comparison matrix and related reading. This weakens hierarchy because too many sections feel like hero sections.
+- Section-to-section rhythm is inconsistent. On desktop, the comparison matrix heading can visually collide with the preceding path cards, making the page feel broken even when the content is correct.
 - Some text blocks still read as repeated category framing instead of page-specific buyer guidance. Each comparison page must carry a different emotional state and intent.
 - Indicator cards, definition cards and path cards help, but they need tighter labels, more consistent vertical rhythm and less repeated "presencia/liderazgo/posicionamiento" phrasing.
 - The comparison table remains desktop-oriented. On mobile it should become stacked comparison rows or compact attribute cards instead of forcing table scanning.
@@ -181,6 +182,7 @@ Implement the comparison page UI in this order:
 
    - Reserve hero-scale display type for the hero only.
    - Use smaller, tighter H2 sizes for context, differentiator, table and related sections.
+   - Enforce comparison-section vertical rhythm on the 8px spacing grid so headings never sit directly against the prior card group.
    - Keep copy panels to short paragraphs with a max line length around 60-72 characters.
 
 5. Visual comprehension

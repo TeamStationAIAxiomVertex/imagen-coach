@@ -80,6 +80,7 @@ The visible UI must provide:
 - compact page navigation for all comparison pages
 - clear active-state indicator
 - short section headings that do not compete with the hero
+- explicit section rhythm on the 8px spacing grid so headings, card groups, tables and CTAs never visually collide
 - icon-supported indicators that explain the specific comparison
 - definitions only where they reduce cognitive load
 - responsive comparison attributes that work on mobile without horizontal scanning

@@ -2466,6 +2466,22 @@ details[open] summary::after {
 .atlas-panel a:hover { color: var(--plum-accent); }
 .atlas-panel a span { display: block; margin-bottom: 5px; color: var(--plum-accent); font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 .comparison-menu { min-width: min(760px, calc(100vw - 48px)); grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.comparison-positioning,
+.comparison-ladder,
+.comparison-matrix,
+.comparison-related { padding-top: 64px; padding-bottom: 64px; }
+.comparison-positioning + .comparison-ladder,
+.comparison-ladder + .comparison-matrix,
+.comparison-matrix + .comparison-related { margin-top: 0; }
+.comparison-positioning .section-heading,
+.comparison-ladder .section-heading,
+.comparison-matrix .section-heading,
+.comparison-related .section-heading { grid-template-columns: minmax(140px, .28fr) minmax(0, .72fr); gap: 32px; margin-bottom: 32px; }
+.comparison-positioning .section-heading h2,
+.comparison-ladder .section-heading h2,
+.comparison-matrix .section-heading h2,
+.comparison-related .section-heading h2 { max-width: 780px; font-size: clamp(34px, 3.4vw, 48px); line-height: 1.04; }
+.comparison-matrix { border-top: 1px solid rgba(227, 223, 231, .86); }
 .comparison-switchboard { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; padding-top: 20px; padding-bottom: 20px; }
 .comparison-switchboard a { display: grid; min-height: 104px; align-content: space-between; padding: 16px; color: var(--ink); border: 1px solid rgba(201, 177, 208, .46); border-radius: var(--radius-card); background: rgba(251, 250, 252, .74); }
 .comparison-switchboard a:hover,
@@ -2482,7 +2498,7 @@ details[open] summary::after {
 .definition-card small { margin: 8px 0 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
 .definition-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 24px; }
 .definition-card { display: grid; gap: 12px; min-height: 188px; padding: 18px; border: 1px solid rgba(111, 162, 135, .28); border-radius: var(--radius-card); background: rgba(231, 240, 235, .5); font-style: normal; }
-.comparison-path { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 24px 0 0; padding: 0; list-style: none; }
+.comparison-path { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 32px 0 0; padding: 0; list-style: none; }
 .comparison-path li { min-height: 116px; padding: 18px; border: 1px solid rgba(201, 177, 208, .46); border-radius: var(--radius-card); background: linear-gradient(180deg, rgba(251, 250, 252, .9), rgba(240, 237, 243, .58)); }
 .comparison-path span { display: block; color: var(--plum-accent); font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
 .comparison-path strong { display: block; margin-top: 18px; color: var(--ink); font-family: var(--display); font-size: clamp(25px, 2.4vw, 34px); font-weight: 500; line-height: 1.04; }
@@ -2581,6 +2597,18 @@ details[open] summary::after {
   .hero, .split-section, .split-section.reverse, .contact-grid, .service-system-visual { grid-template-columns: 1fr; }
   .split-section.reverse .copy-panel { order: 0; }
   .service-grid, .publication-grid, .proof-strip, .pillar-grid, .cluster-header, .semantic-sections, .atlas-grid, .comparison-grid, .comparison-switchboard, .comparison-indicators, .definition-grid, .comparison-path, .signal-list, .process-heading, .dense-reading .semantic-card { grid-template-columns: 1fr; }
+  .comparison-positioning,
+  .comparison-ladder,
+  .comparison-matrix,
+  .comparison-related { padding-top: 48px; padding-bottom: 48px; }
+  .comparison-positioning .section-heading,
+  .comparison-ladder .section-heading,
+  .comparison-matrix .section-heading,
+  .comparison-related .section-heading { grid-template-columns: 1fr; gap: 16px; margin-bottom: 24px; }
+  .comparison-positioning .section-heading h2,
+  .comparison-ladder .section-heading h2,
+  .comparison-matrix .section-heading h2,
+  .comparison-related .section-heading h2 { font-size: clamp(32px, 9vw, 42px); }
   .semantic-panel { grid-template-columns: 1fr; }
   .hub-term-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .dense-reading .semantic-copy { grid-template-columns: 1fr; grid-column: auto; grid-row: auto; }
