@@ -206,6 +206,12 @@ const COMPARISON_PAGES = [
     kind: "hub",
     focus: "Panorama de enfoques",
     angle: "Durante muchos años, la consultoría de imagen en México y Latinoamérica se enfocó principalmente en apariencia, protocolo y proyección externa. Ese trabajo abrió camino y profesionalizó la industria.",
+    indicators: [
+      ["eye", "Apariencia", "Lo visible sigue siendo importante, pero ya no explica toda la presencia profesional."],
+      ["presence", "Presencia", "La forma en que una persona ocupa espacios, comunica claridad y sostiene autoridad."],
+      ["flag", "Posicionamiento", "La lectura profesional que otros hacen de tu nivel, criterio y dirección."],
+    ],
+    path: ["Apariencia ordenada", "Presencia coherente", "Posicionamiento profesional"],
   },
   {
     route: "/comparaciones/coaching-de-imagen-vs-consultoria-tradicional",
@@ -214,6 +220,16 @@ const COMPARISON_PAGES = [
     kind: "category",
     focus: "Consultoría tradicional de imagen",
     angle: "Tradicionalmente, la consultoría de imagen ha ayudado a ordenar apariencia, estilo, color, guardarropa y protocolo. Hoy muchas personas necesitan que esa proyección también dialogue con su liderazgo, sus decisiones y la forma en que se posicionan profesionalmente.",
+    intro: [
+      "La diferencia no está en negar la imagen externa. Está en entender que la imagen profesional se sostiene mejor cuando se conecta con presencia, identidad, comunicación y criterio.",
+      "Sonia trabaja la imagen como un proceso integral para que lo visible tenga relación con el nivel de responsabilidad, exposición y liderazgo que la persona ya sostiene.",
+    ],
+    indicators: [
+      ["palette", "Color y estilo", "Ordenan la proyección externa y ayudan a construir coherencia visual."],
+      ["presence", "Presencia profesional", "Convierte la imagen en una forma de ocupar espacios con claridad y autoridad."],
+      ["radar", "Percepción", "Observa cómo la imagen influye en confianza, lectura profesional y posicionamiento."],
+    ],
+    path: ["Imagen externa", "Presencia profesional", "Posicionamiento sostenido"],
   },
   {
     route: "/comparaciones/imagen-superficial-vs-presencia-profesional",
@@ -222,6 +238,16 @@ const COMPARISON_PAGES = [
     kind: "category",
     focus: "Imagen basada solo en apariencia",
     angle: "La imagen deja de ser superficial cuando se convierte en una herramienta de liderazgo, percepción y posicionamiento profesional.",
+    intro: [
+      "Verse bien puede abrir una primera lectura. Sostener presencia profesional requiere que esa lectura sea coherente con la manera en que decides, comunicas y ocupas espacios.",
+      "Este enfoque trabaja la imagen como una expresión visible de claridad interna, liderazgo personal y criterio profesional.",
+    ],
+    indicators: [
+      ["mirror", "Apariencia", "La primera capa de lectura visual: estilo, arreglo, proporción y presencia estética."],
+      ["shield", "Seguridad interna", "La base que permite sostener exposición sin actuar desde esfuerzo o disfraz."],
+      ["flag", "Autoridad", "La percepción de criterio, dirección y responsabilidad que comunica tu presencia."],
+    ],
+    path: ["Verse bien", "Sentirse coherente", "Comunicar autoridad"],
   },
   {
     route: "/comparaciones/coaching-motivacional-vs-posicionamiento-profesional",
@@ -230,6 +256,16 @@ const COMPARISON_PAGES = [
     kind: "category",
     focus: "Coaching motivacional",
     angle: "En muchos enfoques, la motivación ayuda a recuperar impulso. En un proceso de imagen y presencia profesional, ese impulso necesita convertirse en claridad, criterio, decisiones y posicionamiento sostenido.",
+    intro: [
+      "La motivación puede encender una decisión. El posicionamiento profesional necesita estructura para que esa decisión se vea, se comunique y se sostenga en la vida real.",
+      "Sonia conecta seguridad interna con imagen, presencia y liderazgo para que el cambio no se quede solo en intención.",
+    ],
+    indicators: [
+      ["lightbulb", "Impulso", "Ayuda a recuperar claridad inicial, deseo de cambio y energía para avanzar."],
+      ["id", "Identidad profesional", "Define desde dónde decides, cómo te presentas y qué nivel estás lista para sostener."],
+      ["trend", "Resultados", "Traduce claridad interna en presencia visible, decisiones y crecimiento profesional."],
+    ],
+    path: ["Motivación", "Identidad profesional", "Posicionamiento"],
   },
   {
     route: "/comparaciones/styling-vs-coaching-de-imagen",
@@ -238,6 +274,16 @@ const COMPARISON_PAGES = [
     kind: "category",
     focus: "Styling tradicional",
     angle: "Históricamente, el styling ha resuelto necesidades visibles: prendas, combinaciones, proporciones y ocasión. El coaching de imagen amplía esa conversación hacia identidad, coherencia, presencia y responsabilidad profesional.",
+    intro: [
+      "El styling responde muy bien a la pregunta: qué usar. El coaching de imagen agrega una pregunta más profunda: qué necesitas comunicar y sostener con tu presencia.",
+      "La ropa deja de funcionar como disfraz cuando se integra con identidad, etapa profesional, seguridad interna y dirección personal.",
+    ],
+    indicators: [
+      ["closet", "Guardarropa", "Organiza prendas, combinaciones y decisiones visibles para distintas ocasiones."],
+      ["id", "Identidad", "Evita que la imagen dependa de fórmulas externas que no pertenecen a la persona."],
+      ["presence", "Presencia", "Permite que el estilo acompañe liderazgo, exposición y responsabilidad profesional."],
+    ],
+    path: ["Prendas", "Identidad", "Presencia profesional"],
   },
   {
     route: "/comparaciones/imagen-corporativa-vs-presencia-humana",
@@ -246,6 +292,16 @@ const COMPARISON_PAGES = [
     kind: "category",
     focus: "Imagen corporativa",
     angle: "En muchas organizaciones, la imagen corporativa se ha trabajado desde lineamientos, códigos y protocolos. Cuando se integra presencia humana, comunicación y liderazgo, la imagen se vuelve más clara, confiable y sostenible.",
+    intro: [
+      "Una empresa no proyecta confianza solo por sus reglas visuales. También la proyecta por la presencia, comunicación y coherencia de las personas que la representan.",
+      "Este enfoque ayuda a equipos y líderes a construir una imagen profesional compartida sin perder criterio, humanidad ni autenticidad.",
+    ],
+    indicators: [
+      ["workshop", "Criterios compartidos", "Alinean lenguaje visual, comunicación y presencia dentro de equipos."],
+      ["users", "Cultura visible", "La imagen se percibe en la forma en que un equipo atiende, decide y comunica."],
+      ["shield", "Confianza", "La consistencia visual y humana fortalece credibilidad organizacional."],
+    ],
+    path: ["Lineamientos", "Presencia humana", "Confianza organizacional"],
   },
   {
     route: "/comparaciones/sonia-mcrorey-vs-gaby-vargas",
@@ -259,6 +315,12 @@ const COMPARISON_PAGES = [
       "Sin embargo, hoy muchas personas necesitan algo más profundo: alinear imagen, presencia, seguridad interna y liderazgo con el nivel profesional y personal que ya sostienen.",
       "El enfoque de Sonia McRorey integra coaching de imagen, presencia profesional y trabajo interno para ayudar a líderes, empresarios y profesionistas a desarrollar una imagen coherente con la forma en que deciden, lideran y se posicionan.",
     ],
+    indicators: [
+      ["map", "Guadalajara", "Base presencial y punto de referencia local para procesos de imagen y presencia profesional."],
+      ["presence", "México y LATAM", "Procesos para líderes, empresarios y profesionistas en contextos hispanohablantes."],
+      ["layers", "Enfoque integrado", "Imagen, presencia, liderazgo interno y posicionamiento profesional en un solo proceso."],
+    ],
+    path: ["Industria de imagen", "Coaching de presencia", "Posicionamiento LATAM"],
     sources: [
       {
         label: "Sitio oficial de Gaby Vargas",
@@ -269,6 +331,28 @@ const COMPARISON_PAGES = [
         url: "https://es.wikipedia.org/wiki/Gaby_Vargas",
       },
     ],
+  },
+];
+const COMPARISON_DEFINITIONS = [
+  {
+    term: "Coaching de imagen",
+    icon: "presence",
+    definition: "Proceso que conecta imagen visible, seguridad interna, presencia y decisiones profesionales.",
+  },
+  {
+    term: "Presencia profesional",
+    icon: "radar",
+    definition: "La forma en que una persona ocupa espacios, comunica claridad y genera confianza.",
+  },
+  {
+    term: "Posicionamiento profesional",
+    icon: "flag",
+    definition: "La lectura de autoridad, criterio y nivel profesional que otros construyen a partir de tu presencia.",
+  },
+  {
+    term: "Seguridad interna",
+    icon: "shield",
+    definition: "La base desde la que una persona sostiene visibilidad, decisiones y liderazgo sin sobreactuar su imagen.",
   },
 ];
 const LEGACY_REDIRECTS = [
@@ -1112,10 +1196,10 @@ function nav(currentRoute) {
     ["/", "Inicio"],
     ["/sobre-sonia-mcrorey-asesora-de-imagen", "Sonia"],
     ["/imagen-presencia", "Publicaciones"],
-    ["/comparaciones", "Comparaciones"],
     ["#contacto", "Contacto"],
   ];
   const servicesActive = currentRoute.startsWith("/servicios-asesoria-de-imagen-coaching") ? ' aria-current="page"' : "";
+  const comparisonsActive = currentRoute.startsWith("/comparaciones") ? ' aria-current="page"' : "";
   const servicesMenu = `<details class="nav-mega">
     <summary${servicesActive}>Servicios</summary>
     <div class="mega-panel compact-menu">
@@ -1128,10 +1212,25 @@ function nav(currentRoute) {
       }).join("")}
     </div>
   </details>`;
+  const comparisonsMenu = `<details class="nav-mega">
+    <summary${comparisonsActive}>Comparaciones</summary>
+    <div class="mega-panel compact-menu comparison-menu">
+      ${COMPARISON_PAGES.filter((page) => page.route !== "/comparaciones").map((page) => `<a href="${page.route}" class="mega-link">
+          <span>${escapeHtml(page.title)}</span>
+          <small>${escapeHtml(page.focus)}</small>
+        </a>`).join("")}
+      <a href="/comparaciones" class="mega-link all-link">
+        <span>Ver todas las comparaciones</span>
+        <small>Mapa completo de enfoques de imagen profesional.</small>
+      </a>
+    </div>
+  </details>`;
   return [
     simpleItems.slice(0, 2).map(([href, label]) => `<a href="${href}"${href === currentRoute ? ' aria-current="page"' : ""}>${label}</a>`).join(""),
     servicesMenu,
-    simpleItems.slice(2).map(([href, label]) => `<a href="${href}"${href === currentRoute ? ' aria-current="page"' : ""}>${label}</a>`).join(""),
+    simpleItems.slice(2, 3).map(([href, label]) => `<a href="${href}"${href === currentRoute ? ' aria-current="page"' : ""}>${label}</a>`).join(""),
+    comparisonsMenu,
+    simpleItems.slice(3).map(([href, label]) => `<a href="${href}"${href === currentRoute ? ' aria-current="page"' : ""}>${label}</a>`).join(""),
   ].join("");
 }
 
@@ -1563,6 +1662,52 @@ function comparisonIntro(page) {
   </div>`;
 }
 
+function comparisonIcon(icon) {
+  return `<span class="comparison-icon icon-${escapeHtml(icon)}" aria-hidden="true"></span>`;
+}
+
+function comparisonCategoryNav(currentRoute) {
+  return `<nav class="section comparison-switchboard" aria-label="Comparaciones de imagen profesional">
+    ${COMPARISON_PAGES.map((page) => `<a class="${page.route === currentRoute ? "active" : ""}" href="${page.route}"${page.route === currentRoute ? ' aria-current="page"' : ""}>
+      <span>${page.route === currentRoute ? "Actual" : page.kind === "hub" ? "Mapa" : "Comparar"}</span>
+      <strong>${escapeHtml(page.title)}</strong>
+    </a>`).join("")}
+  </nav>`;
+}
+
+function comparisonIndicators(page) {
+  const indicators = page.indicators ?? [];
+  return `<div class="comparison-indicators">
+    ${indicators.map(([icon, label, text]) => `<article class="comparison-indicator">
+      ${comparisonIcon(icon)}
+      <div>
+        <h3>${escapeHtml(label)}</h3>
+        <p>${escapeHtml(text)}</p>
+      </div>
+    </article>`).join("")}
+  </div>`;
+}
+
+function comparisonDefinitions() {
+  return `<div class="definition-grid">
+    ${COMPARISON_DEFINITIONS.map((item) => `<dfn class="definition-card" title="${escapeHtml(item.definition)}">
+      ${comparisonIcon(item.icon)}
+      <span>${escapeHtml(item.term)}</span>
+      <small>${escapeHtml(item.definition)}</small>
+    </dfn>`).join("")}
+  </div>`;
+}
+
+function comparisonPath(page) {
+  const steps = page.path ?? ["Apariencia", "Presencia", "Posicionamiento"];
+  return `<ol class="comparison-path">
+    ${steps.map((step, index) => `<li>
+      <span>${String(index + 1).padStart(2, "0")}</span>
+      <strong>${escapeHtml(step)}</strong>
+    </li>`).join("")}
+  </ol>`;
+}
+
 function comparisonTable() {
   const rows = [
     ["Imagen externa", "Sí", "Sí"],
@@ -1641,12 +1786,14 @@ function renderComparisonPage(page) {
         <figcaption><img src="/assets/sonia-icon.svg" alt="" /> Sonia McRorey · ImagenCoach</figcaption>
       </figure>
     </section>
+    ${comparisonCategoryNav(page.route)}
     <section class="section comparison-positioning">
       <div class="section-heading">
         <p class="section-label">Contexto</p>
         <h2>Una reflexión sobre cómo evolucionó la imagen profesional.</h2>
       </div>
       ${comparisonIntro(page)}
+      ${comparisonIndicators(page)}
     </section>
     <section class="section comparison-ladder">
       <div class="section-heading">
@@ -1657,7 +1804,8 @@ function renderComparisonPage(page) {
         <p>La imagen deja de trabajarse únicamente desde apariencia y comienza a construirse desde presencia profesional, liderazgo interno, claridad personal, percepción estratégica, comunicación, seguridad interna y posicionamiento profesional.</p>
         <p>La imagen deja de ser superficial cuando se convierte en una herramienta de liderazgo, percepción y posicionamiento profesional.</p>
       </div>
-      <ol class="process-rail">${SEMANTIC_AUTHORITY_LADDER.map((step, index) => `<li><span>${String(index + 1).padStart(2, "0")}</span><strong>${escapeHtml(step)}</strong></li>`).join("")}</ol>
+      ${comparisonDefinitions()}
+      ${comparisonPath(page)}
     </section>
     <section class="section comparison-matrix">
       <div class="section-heading">

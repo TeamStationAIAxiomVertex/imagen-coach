@@ -1028,6 +1028,11 @@ blockquote cite {
   mask-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='black'%20stroke-width='1.8'%20stroke-linecap='round'%20stroke-linejoin='round'%3E%3Ccircle%20cx='12'%20cy='12'%20r='9'/%3E%3Ccircle%20cx='12'%20cy='12'%20r='3'/%3E%3Cpath%20d='M12%2012l6-6M12%203v3M21%2012h-3M12%2021v-3M3%2012h3'/%3E%3C/svg%3E");
 }
 
+.icon-map {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='black'%20stroke-width='1.8'%20stroke-linecap='round'%20stroke-linejoin='round'%3E%3Cpath%20d='m9%2018-6%203V6l6-3%206%203%206-3v15l-6%203-6-3z'/%3E%3Cpath%20d='M9%203v15M15%206v15'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='black'%20stroke-width='1.8'%20stroke-linecap='round'%20stroke-linejoin='round'%3E%3Cpath%20d='m9%2018-6%203V6l6-3%206%203%206-3v15l-6%203-6-3z'/%3E%3Cpath%20d='M9%203v15M15%206v15'/%3E%3C/svg%3E");
+}
+
 .icon-quote {
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='black'%20stroke-width='1.8'%20stroke-linecap='round'%20stroke-linejoin='round'%3E%3Cpath%20d='M7%2017h4V9H6v5h3c0%202-1%203-2%203zM17%2017h4V9h-5v5h3c0%202-1%203-2%203z'/%3E%3C/svg%3E");
   mask-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='black'%20stroke-width='1.8'%20stroke-linecap='round'%20stroke-linejoin='round'%3E%3Cpath%20d='M7%2017h4V9H6v5h3c0%202-1%203-2%203zM17%2017h4V9h-5v5h3c0%202-1%203-2%203z'/%3E%3C/svg%3E");
@@ -2460,6 +2465,27 @@ details[open] summary::after {
 .atlas-panel a { display: block; padding: 16px 0; border-top: 1px solid var(--line); color: var(--ink); font-weight: 600; line-height: 1.35; }
 .atlas-panel a:hover { color: var(--plum-accent); }
 .atlas-panel a span { display: block; margin-bottom: 5px; color: var(--plum-accent); font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.comparison-menu { min-width: min(760px, calc(100vw - 48px)); grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.comparison-switchboard { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; padding-top: 20px; padding-bottom: 20px; }
+.comparison-switchboard a { display: grid; min-height: 104px; align-content: space-between; padding: 16px; color: var(--ink); border: 1px solid rgba(201, 177, 208, .46); border-radius: var(--radius-card); background: rgba(251, 250, 252, .74); }
+.comparison-switchboard a:hover,
+.comparison-switchboard a.active { border-color: rgba(111, 162, 135, .46); background: rgba(231, 240, 235, .7); }
+.comparison-switchboard span { color: var(--plum-accent); font-size: 10px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.comparison-switchboard strong { color: var(--ink); font-size: 14px; line-height: 1.25; }
+.editorial-copy p { max-width: 72ch; }
+.comparison-indicators { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 24px; }
+.comparison-indicator { display: grid; grid-template-columns: 42px minmax(0, 1fr); gap: 14px; min-height: 148px; padding: 20px; border: 1px solid rgba(227, 223, 231, .86); border-radius: var(--radius-card); background: rgba(255, 255, 255, .64); }
+.comparison-icon { display: inline-grid; width: 42px; height: 42px; place-items: center; color: var(--brand-green-deep); background: currentColor; border-radius: 50%; }
+.comparison-indicator h3,
+.definition-card span { margin: 0; color: var(--ink); font-size: 15px; font-weight: 800; letter-spacing: .01em; }
+.comparison-indicator p,
+.definition-card small { margin: 8px 0 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
+.definition-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 24px; }
+.definition-card { display: grid; gap: 12px; min-height: 188px; padding: 18px; border: 1px solid rgba(111, 162, 135, .28); border-radius: var(--radius-card); background: rgba(231, 240, 235, .5); font-style: normal; }
+.comparison-path { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 24px 0 0; padding: 0; list-style: none; }
+.comparison-path li { min-height: 116px; padding: 18px; border: 1px solid rgba(201, 177, 208, .46); border-radius: var(--radius-card); background: linear-gradient(180deg, rgba(251, 250, 252, .9), rgba(240, 237, 243, .58)); }
+.comparison-path span { display: block; color: var(--plum-accent); font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.comparison-path strong { display: block; margin-top: 18px; color: var(--ink); font-family: var(--display); font-size: clamp(25px, 2.4vw, 34px); font-weight: 500; line-height: 1.04; }
 .comparison-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
 .comparison-card { min-height: 220px; padding: 22px; border: 1px solid rgba(201, 177, 208, .46); border-radius: var(--radius-card); background: rgba(251, 250, 252, .74); }
 .comparison-card:hover { border-color: rgba(140, 71, 153, .34); background: rgba(251, 250, 252, .96); }
@@ -2554,7 +2580,7 @@ details[open] summary::after {
 @media (max-width: 900px) {
   .hero, .split-section, .split-section.reverse, .contact-grid, .service-system-visual { grid-template-columns: 1fr; }
   .split-section.reverse .copy-panel { order: 0; }
-  .service-grid, .publication-grid, .proof-strip, .pillar-grid, .cluster-header, .semantic-sections, .atlas-grid, .comparison-grid, .signal-list, .process-heading, .dense-reading .semantic-card { grid-template-columns: 1fr; }
+  .service-grid, .publication-grid, .proof-strip, .pillar-grid, .cluster-header, .semantic-sections, .atlas-grid, .comparison-grid, .comparison-switchboard, .comparison-indicators, .definition-grid, .comparison-path, .signal-list, .process-heading, .dense-reading .semantic-card { grid-template-columns: 1fr; }
   .semantic-panel { grid-template-columns: 1fr; }
   .hub-term-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .dense-reading .semantic-copy { grid-template-columns: 1fr; grid-column: auto; grid-row: auto; }
