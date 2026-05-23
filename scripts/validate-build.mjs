@@ -214,6 +214,10 @@ for (const sitemapFile of ["dist/blog-sitemap.xml", "dist/category-sitemap.xml",
     if (!text.includes("<urlset")) failures.push(`Invalid sitemap file: ${sitemapFile}`);
   }
 }
+const blogSitemap = existsSync("dist/blog-sitemap.xml") ? await readFile("dist/blog-sitemap.xml", "utf8") : "";
+for (const route of articleSet) {
+  if (!blogSitemap.includes(`${SITE_URL}${route}`)) failures.push(`Missing article in blog sitemap: ${route}`);
+}
 
 const requiredAgentFiles = [
   "dist/openapi.json",

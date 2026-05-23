@@ -881,6 +881,11 @@ function groupShortLines(lines) {
   return grouped;
 }
 
+function isSourceDateLine(line = "") {
+  return /^\d{1,2}\s+(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec|Ene|Feb|Abr|Ago|Dic)[a-záéíóú]*\.?\s+\d{4}$/i.test(line) ||
+    /^(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec|Ene|Feb|Abr|Ago|Dic)[a-záéíóú]*\.?\s+\d{1,2},?\s+\d{4}$/i.test(line);
+}
+
 function repairSourceFragments(value = "") {
   return value
     .replace(/^\.\s+/, "")
@@ -1023,6 +1028,19 @@ function cleanExcerptText(value = "", maxLength = 190) {
   return /[.!?]$/.test(boundary) ? boundary : `${boundary}.`;
 }
 
+function fitTitleLength(value = "", maxLength = 58) {
+  const text = cleanDisplayTitle(value);
+  if (text.length <= maxLength) return text;
+  const boundary = text.slice(0, maxLength).replace(/\s+\S*$/, "").trim();
+  return boundary.length >= 32 ? boundary : text.slice(0, maxLength).trim();
+}
+
+function fitMetaDescription(value = "", maxLength = 158) {
+  const text = cleanDisplayTitle(value).replace(/\s+/g, " ").trim();
+  if (text.length <= maxLength) return text;
+  return text.slice(0, maxLength).replace(/\s+\S*$/, "").replace(/[,:;]$/, "").trim();
+}
+
 function titleFromLines(page, lines) {
   if (semanticIdentity(page.route)?.h1) return semanticIdentity(page.route).h1;
   if (PAGE_OVERRIDES[page.route]?.title) return PAGE_OVERRIDES[page.route].title;
@@ -1036,7 +1054,11 @@ function descriptionFromLines(lines, page = null) {
   if (page && PAGE_OVERRIDES[page.route]?.description) return PAGE_OVERRIDES[page.route].description;
   const cleaned = lines.map(cleanDisplayTitle).filter(Boolean);
   const line = cleaned.find((item) => item.length > 90) || cleaned.find((item) => item.length > 45) || "";
-  return cleanExcerptText(line, 158);
+  const excerpt = cleanExcerptText(line, 158);
+  if (page?.type === "article" && excerpt.length < 120) {
+    return fitMetaDescription(`${excerpt.replace(/\.$/, "")}. Lectura sobre imagen profesional, presencia y posicionamiento con Sonia McRorey.`, 158);
+  }
+  return excerpt;
 }
 
 function pageType(route) {
@@ -1109,6 +1131,7 @@ function semanticSupportHeading(page) {
 }
 
 function semanticSeoTitle(page) {
+  if (page.type === "article") return `${fitTitleLength(page.heroTitle || page.title, 44)} | Sonia McRorey`;
   return semanticIdentity(page.route)?.seoTitle || `${cleanDisplayTitle(page.heroTitle)} | Sonia McRorey`;
 }
 
@@ -1145,7 +1168,7 @@ function cardDescription(page) {
 }
 
 function nonTitleLines(page, lines, start = 1) {
-  return lines.slice(start).filter((line) => cleanDisplayTitle(line) !== page.heroTitle);
+  return lines.slice(start).filter((line) => cleanDisplayTitle(line) !== page.heroTitle && !isSourceDateLine(line));
 }
 
 function coreBodyLines(page, lines) {
@@ -1340,6 +1363,7 @@ function pageReadingMode(page, sections) {
 }
 
 function structuredContentSections(page, lines, pages, clusters) {
+  if (page.type === "article") return articleStructuredContent(page, lines, pages, clusters);
   const sections = classifyContent(page, lines);
   if (!sections.length) return "";
   const intro = sections[0];
@@ -1609,6 +1633,83 @@ function supportingVisual(page, index) {
     return `<aside class="quote-panel"><p>La imagen se sostiene cuando existe coherencia entre lo que haces, lo que decides y lo que proyectas.</p><span>Sonia McRorey</span></aside>`;
   }
   return `<figure class="support-media"><img src="/assets/${path.basename(image.local_path)}" alt="${escapeHtml(page.heroTitle)}" /></figure>`;
+}
+
+function readingMinutes(lines = []) {
+  const words = wordCount(lines.join(" "));
+  return Math.max(2, Math.ceil(words / 185));
+}
+
+function articleMapHeading(cluster) {
+  const headings = {
+    "imagen-estilo-profesional": "Criterios de imagen profesional para leer tu estilo con más claridad.",
+    "presencia-liderazgo-identidad": "Presencia, identidad y liderazgo personal en una lectura práctica.",
+    "empresas-marcas-equipos": "Imagen empresarial, equipos y percepción profesional aplicada.",
+    "seguridad-posicionamiento-profesional": "Seguridad interna, decisiones y posicionamiento profesional sostenido.",
+  };
+  return headings[cluster?.id] || "Imagen, presencia y decisión profesional en una lectura práctica.";
+}
+
+function articleReadingMap(page, sections, cluster, pages) {
+  const service = cluster ? pageByRoute(pages).get(cluster.primaryService) : null;
+  const topics = sectionTopics([page.heroTitle, page.description, ...sections.flatMap((section) => [section.heading])], page, new Map(), 4);
+  const visibleSections = sections.slice(0, 6);
+  return `<section class="section article-reading-map" aria-label="Mapa de lectura">
+    <div class="article-map-copy">
+      <p class="section-label">${escapeHtml(cluster?.label || "Publicación")}</p>
+      <h2>${escapeHtml(articleMapHeading(cluster))}</h2>
+      <p>${escapeHtml(page.description || cardDescription(page))}</p>
+      ${topicChips(topics)}
+    </div>
+    <div class="article-map-panel">
+      <div class="article-meta-grid">
+        <span><strong>${readingMinutes(sections.flatMap((section) => section.lines))}</strong> min</span>
+        <span><strong>${sections.length}</strong> secciones</span>
+        <span><strong>${escapeHtml(service ? semanticShortLabel(service.route, service.heroTitle) : "Coach de Imagen")}</strong> ruta</span>
+      </div>
+      <nav class="article-toc" aria-label="Secciones de la publicación">
+        ${visibleSections.map((section, index) => `<a href="#articulo-${index + 1}-${slugify(section.heading)}"><span>${String(index + 1).padStart(2, "0")}</span>${escapeHtml(cleanDisplayTitle(section.heading))}</a>`).join("")}
+      </nav>
+    </div>
+  </section>`;
+}
+
+function renderArticleSection(page, section, index, previousSections, clusterMap) {
+  const duplicateEarlier = previousSections.some((item) => item.heading.toLowerCase() === section.heading.toLowerCase());
+  const heading = duplicateEarlier ? `${section.heading} en contexto` : section.heading;
+  const topics = sectionTopics([heading, ...section.lines], page, clusterMap);
+  const mode = section.lines.join(" ").length > 520 ? " long" : "";
+  return `<section class="article-section-card${mode}" id="articulo-${index + 1}-${slugify(section.heading)}">
+    <div class="article-section-head">
+      <span>${String(index + 1).padStart(2, "0")}</span>
+      <div>
+        <p class="section-label">${escapeHtml(topics[0]?.label || "Lectura")}</p>
+        <h2>${escapeHtml(heading)}</h2>
+        ${topicChips(topics)}
+      </div>
+    </div>
+    <div class="article-copy">${renderSemanticCopy(section.lines, topics)}</div>
+  </section>`;
+}
+
+function articleStructuredContent(page, lines, pages, clusters) {
+  const sections = classifyContent(page, lines);
+  if (!sections.length) return "";
+  const clusterMap = articleClusterByRoute(clusters);
+  const cluster = clusterMap.get(page.route);
+  const service = cluster ? pageByRoute(pages).get(cluster.primaryService) : null;
+  return `${articleReadingMap(page, sections, cluster, pages)}
+  <article class="section article-layout" aria-label="Contenido de la publicación">
+    <aside class="article-side-cta">
+      <p class="section-label">Ruta relacionada</p>
+      <h2>${escapeHtml(service ? semanticShortLabel(service.route, service.heroTitle) : "Coach de Imagen")}</h2>
+      <p>${escapeHtml(cluster?.description || "Lectura conectada con imagen, presencia y posicionamiento profesional.")}</p>
+      ${service ? `<a class="btn primary" href="${service.route}">${escapeHtml(serviceLabel(service.route, pages))}</a>` : `<a class="btn primary" href="${WHATSAPP}" target="_blank" rel="noopener">Agendar diagnóstico</a>`}
+    </aside>
+    <div class="article-main">
+      ${sections.map((section, index) => renderArticleSection(page, section, index, sections.slice(0, index), clusterMap)).join("")}
+    </div>
+  </article>`;
 }
 
 function articleCards(pages, { limit, clusterMap = new Map() } = {}) {
@@ -2145,7 +2246,7 @@ function articleExtras(page, pages, clusters) {
     <div class="cluster-header">
       <div>
         <p class="section-label">${escapeHtml(cluster.label)}</p>
-        <h2>Esta lectura pertenece a una ruta completa.</h2>
+        <h2>Continúa con una ruta práctica.</h2>
         <p>${escapeHtml(cluster.description)}</p>
       </div>
       <a class="btn primary" href="${cluster.primaryService}">${escapeHtml(serviceLabel(cluster.primaryService, pages))}</a>
@@ -2160,6 +2261,12 @@ function schema(page) {
     "@context": "https://schema.org",
     "@type": type,
     name: semanticH1(page),
+    ...(page.type === "article" ? {
+      headline: semanticH1(page),
+      mainEntityOfPage: absoluteUrl(page.route),
+      publisher: { "@type": "Organization", name: BRAND_NAME, url: SITE_URL },
+      about: ["Coaching de Imagen", "Presencia Profesional", "Posicionamiento Profesional", "Imagen Profesional"],
+    } : {}),
     description: semanticDescription(page, page.description),
     url: absoluteUrl(page.route),
     image: `${SITE_URL}${pickImage(page)}`,
@@ -2178,14 +2285,28 @@ function schema(page) {
       },
     })),
   };
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Inicio", item: `${SITE_URL}/` },
+      ...(page.type === "article"
+        ? [
+            { "@type": "ListItem", position: 2, name: "Publicaciones", item: `${SITE_URL}/imagen-presencia` },
+            { "@type": "ListItem", position: 3, name: semanticH1(page), item: absoluteUrl(page.route) },
+          ]
+        : [{ "@type": "ListItem", position: 2, name: semanticH1(page), item: absoluteUrl(page.route) }]),
+    ],
+  };
   return `<script type="application/ld+json">${JSON.stringify(pageSchema)}</script>
+  <script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script>
   <script type="application/ld+json">${JSON.stringify(faqSchema)}</script>`;
 }
 
 function renderPage(page, pages, clusters) {
   const lines = splitContent(page.markdown);
   page.heroTitle = titleFromLines(page, lines);
-  page.description = descriptionFromLines(lines);
+  page.description = descriptionFromLines(lines, page);
   const image = pickImage(page);
   const extra =
     page.type === "home"
@@ -2854,7 +2975,7 @@ async function main() {
     { route: "/servicios-asesoria-de-imagen-coaching" },
     ...PILLARS.map((pillar) => ({ route: pillar.route })),
   ]));
-  await writeFile(distPath("blog-sitemap.xml"), sitemap([]));
+  await writeFile(distPath("blog-sitemap.xml"), sitemap(pages.filter((page) => page.type === "article")));
   await writeFile(distPath("robots.txt"), `User-agent: *\nAllow: /\nSitemap: ${SITE_URL}/sitemap.xml\nSitemap: ${SITE_URL}/blog-sitemap.xml\nSitemap: ${SITE_URL}/category-sitemap.xml\nSitemap: ${SITE_URL}/service-sitemap.xml\nOpenAPI: ${SITE_URL}/openapi.json\nLLMs: ${SITE_URL}/llms.txt\nLLMs-Full: ${SITE_URL}/llms-full.txt\nAgent-Profile: ${SITE_URL}/agent/site-profile.json\n`);
   await writeFile(distPath("_redirects"), `${LEGACY_REDIRECTS.map(([from, to, status]) => `${from}  ${to}  ${status}`).join("\n")}\n`);
   console.log(`Built ${pages.length + SEMANTIC_HUBS.length} routes into dist`);
