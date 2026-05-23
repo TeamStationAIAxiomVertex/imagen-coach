@@ -2354,7 +2354,7 @@ details[open] summary::after {
 .lead-panel p { font-size: 18px; }
 .bullet-line { padding-left: 14px; border-left: 2px solid rgba(140, 71, 153, 0.24); }
 .structured-intro { padding: var(--section-y) 0 34px; border-top: 1px solid var(--line); }
-.semantic-panel { padding: clamp(28px, 5vw, 54px); border: 1px solid rgba(201, 177, 208, 0.44); border-radius: var(--radius-card); background: rgba(251, 250, 252, 0.78); columns: 2 330px; column-gap: clamp(28px, 5vw, 64px); }
+.semantic-panel { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; align-items: start; padding: clamp(24px, 4vw, 40px); border: 1px solid rgba(201, 177, 208, 0.44); border-radius: var(--radius-card); background: rgba(251, 250, 252, 0.78); }
 .semantic-panel p,
 .semantic-copy p { break-inside: avoid; max-width: 76ch; margin: 0 0 16px; color: var(--charcoal-soft); line-height: 1.72; }
 .term-highlight { color: var(--ink); background: linear-gradient(180deg, transparent 58%, rgba(231, 240, 235, .92) 58%); border-radius: 3px; padding: 0 2px; font-weight: 700; }
@@ -2374,6 +2374,7 @@ details[open] summary::after {
 .topology-grid .ontology-chips { margin-top: 14px; }
 .topology-grid .ontology-chip { font-size: 10px; padding: 5px 8px; }
 .insight-flow { display: grid; gap: 10px; margin: 0 0 18px; break-inside: avoid; }
+.semantic-panel > .insight-flow { margin: 0; }
 .insight-step { display: grid; grid-template-columns: 32px minmax(0, 1fr); gap: 12px; max-width: none; margin: 0; padding: 14px; border: 1px solid rgba(227, 223, 231, .86); border-radius: 8px; background: rgba(255, 255, 255, .44); }
 .insight-icon { display: inline-grid; width: 32px; height: 32px; place-items: center; color: var(--plum-accent); border: 1px solid rgba(140, 71, 153, .22); border-radius: 50%; background: rgba(239, 232, 242, .82); }
 .compact-heading { margin-bottom: 18px; }
@@ -2468,7 +2469,7 @@ details[open] summary::after {
   .hero, .split-section, .split-section.reverse, .contact-grid { grid-template-columns: 1fr; }
   .split-section.reverse .copy-panel { order: 0; }
   .service-grid, .publication-grid, .proof-strip, .pillar-grid, .cluster-header, .semantic-sections, .process-rail, .atlas-grid, .signal-list, .topology-header, .dense-reading .semantic-card { grid-template-columns: 1fr; }
-  .semantic-panel { columns: 1; }
+  .semantic-panel { grid-template-columns: 1fr; }
   .dense-reading .semantic-copy { grid-column: auto; grid-row: auto; }
   .fragment-ladder::before { left: 20px; }
   .fragment-ladder .semantic-card { margin-left: 22px; }
