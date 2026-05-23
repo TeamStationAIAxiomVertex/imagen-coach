@@ -94,6 +94,9 @@ for (const route of deprecatedComparisonRoutes) {
 for (const asset of comparisonHeroAssets) {
   if (!existsSync(asset)) failures.push(`Missing generated comparison hero asset: ${asset}`);
 }
+for (const asset of ["dist/assets/sonia-logo-ai.png", "dist/assets/sonia-logo-source.png", "dist/assets/sonia-mcrorey-about-760.avif"]) {
+  if (!existsSync(asset)) failures.push(`Missing supplied Sonia brand asset: ${asset}`);
+}
 
 for (const cluster of strategy.clusters) {
   if (!routeSet.has(cluster.primaryService)) failures.push(`Cluster ${cluster.id} has missing primary service: ${cluster.primaryService}`);
@@ -252,8 +255,10 @@ for (const line of [
 }
 
 const homepage = await readFile("dist/index.html", "utf8");
-if (!homepage.includes("<small>Coach De Imagen</small>")) failures.push("Homepage brand subtitle is not Coach De Imagen");
+if (!homepage.includes('src="/assets/sonia-logo-ai.png"')) failures.push("Homepage is not using the supplied Sonia logo asset");
 if (homepage.includes("<small>ImagenCoach</small>")) failures.push("Legacy ImagenCoach subtitle still appears on homepage");
+const aboutPage = await readFile("dist/sobre-sonia-mcrorey-asesora-de-imagen/index.html", "utf8");
+if (!aboutPage.includes('src="/assets/sonia-mcrorey-about-760.avif"')) failures.push("About page is not using the supplied Sonia headshot");
 
 const redirects = await readFile("dist/_redirects", "utf8");
 for (const line of [

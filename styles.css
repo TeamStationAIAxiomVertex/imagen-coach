@@ -158,24 +158,19 @@ p {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 14px;
+  width: min(260px, 34vw);
   color: var(--header-nav);
 }
 
 .brand img {
-  width: 188px;
+  display: block;
+  width: 100%;
   height: auto;
 }
 
 .brand::after {
-  content: "";
-  display: inline-block;
-  width: 28px;
-  height: 28px;
-  background: currentColor;
-  opacity: 0.82;
-  mask: url("assets/sonia-icon.svg?v=20260510-breadcrumbs") center / contain no-repeat;
-  -webkit-mask: url("assets/sonia-icon.svg?v=20260510-breadcrumbs") center / contain no-repeat;
+  display: none;
+  content: none;
 }
 
 .site-nav {
@@ -438,6 +433,11 @@ h2 em {
   object-fit: contain;
   object-position: center center;
   filter: saturate(0.86) contrast(0.86) brightness(1.05);
+}
+
+.about-hero .hero-media img {
+  object-fit: cover;
+  object-position: center top;
 }
 
 .hero-media figcaption {
@@ -2203,8 +2203,8 @@ details[open] summary::after {
     padding: 16px;
   }
 
-  .brand img {
-    width: 154px;
+  .brand {
+    width: min(220px, 58vw);
   }
 
   .hero {
@@ -2666,9 +2666,4 @@ details[open] summary::after {
 @media (prefers-reduced-motion: reduce) {
   .orbit-node { animation: none; }
 }
-.brand { gap: 10px; flex-direction: column; align-items: flex-start; }
-.brand img { display: none; }
-.brand-wordmark { color: var(--ink); font-family: var(--display); font-size: 34px; font-weight: 500; line-height: .9; }
-.brand small { color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
-.brand::after { position: absolute; transform: translate(205px, 6px); }
-.site-header { min-height: 112px; }
+.site-header { min-height: 96px; }

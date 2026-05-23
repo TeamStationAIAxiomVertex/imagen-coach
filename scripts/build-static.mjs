@@ -894,6 +894,9 @@ function pickImage(page) {
   if (page.route === "/" && existsSync(rootPath("assets/797aeda1281e5d5e.png"))) {
     return "/assets/797aeda1281e5d5e.png";
   }
+  if (page.route === "/sobre-sonia-mcrorey-asesora-de-imagen" && existsSync(rootPath("assets/sonia-mcrorey-about-760.avif"))) {
+    return "/assets/sonia-mcrorey-about-760.avif";
+  }
   const candidates = usableImages(page);
   const first =
     candidates.find((image) => /\.(jpe?g|webp)$/i.test(image.local_path) && Number(image.bytes || 0) > 50000) ||
@@ -1256,8 +1259,7 @@ function nav(currentRoute) {
 function header(currentRoute) {
   return `<header class="site-header" data-header>
     <a class="brand" href="/" aria-label="Sonia McRorey ${BRAND_NAME}">
-      <span class="brand-wordmark">Sonia McRorey</span>
-      <small>${BRAND_NAME}</small>
+      <img src="/assets/sonia-logo-ai.png" alt="Sonia McRorey - Coach De Imagen y Abundancia" width="512" height="126" decoding="async" />
     </a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Abrir navegación"><span></span><span></span></button>
     <nav class="site-nav" aria-label="Navegación principal">${nav(currentRoute)}</nav>
@@ -1340,7 +1342,7 @@ function hero(page, lines) {
   const image = pickImage(page);
   const lede = nonTitleLines(page, lines, 1).slice(0, 2);
   const eyebrow = page.type === "article" ? "Imagen, presencia y mentalidad" : page.type === "service" ? "Servicio" : page.type === "about" ? "Sobre Sonia" : BRAND_NAME;
-  return `<section class="section hero imagen-hero">
+  return `<section class="section hero imagen-hero ${page.type}-hero">
     <div class="hero-copy">
       <p class="eyebrow">${eyebrow}</p>
       <h1>${escapeHtml(page.heroTitle)}</h1>
