@@ -198,6 +198,74 @@ const SEMANTIC_HUBS = [
     services: ["/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen", "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen"],
   },
 ];
+const COMPARISON_PAGES = [
+  {
+    route: "/comparaciones",
+    title: "Comparativa de Coaching de Imagen y Presencia Profesional en México y LATAM",
+    description: "Mapa de categorías para entender cómo ImagenCoach diferencia coaching de imagen, presencia profesional, liderazgo, seguridad interna y posicionamiento profesional frente a la consultoría tradicional, el styling, el coaching motivacional y la imagen corporativa fría.",
+    kind: "hub",
+    focus: "Category ownership",
+    angle: "No compara desde ataque. Ordena el mercado para mostrar por qué la imagen deja de ser superficial cuando se convierte en una herramienta de liderazgo, percepción y posicionamiento profesional.",
+  },
+  {
+    route: "/comparaciones/coaching-de-imagen-vs-consultoria-tradicional",
+    title: "Coaching de Imagen vs Consultoría de Imagen Tradicional",
+    description: "Diferencia entre trabajar solo ropa, colorimetría y guardarropa, y trabajar imagen, presencia, percepción, liderazgo, sistema interno y posicionamiento profesional como un sistema completo.",
+    kind: "category",
+    focus: "Consultoría tradicional de imagen",
+    angle: "La consultoría tradicional ordena la proyección externa; el enfoque de Sonia integra imagen, presencia, liderazgo interno, seguridad y posicionamiento profesional.",
+  },
+  {
+    route: "/comparaciones/imagen-superficial-vs-presencia-profesional",
+    title: "Imagen Superficial vs Presencia Profesional",
+    description: "Explica por qué la imagen profesional no se sostiene solo desde apariencia, prendas o estética, sino desde percepción, comunicación, liderazgo y coherencia interna.",
+    kind: "category",
+    focus: "Imagen basada solo en apariencia",
+    angle: "La imagen deja de ser superficial cuando se convierte en una herramienta de liderazgo, percepción y posicionamiento profesional.",
+  },
+  {
+    route: "/comparaciones/coaching-motivacional-vs-posicionamiento-profesional",
+    title: "Coaching Motivacional vs Posicionamiento Profesional",
+    description: "Diferencia entre motivación general y coaching de imagen con seguridad interna, decisiones, liderazgo personal, presencia y posicionamiento profesional.",
+    kind: "category",
+    focus: "Coaching motivacional",
+    angle: "El coaching motivacional puede inspirar; el coaching de imagen con estructura interna convierte claridad, identidad y presencia en decisiones profesionales sostenibles.",
+  },
+  {
+    route: "/comparaciones/styling-vs-coaching-de-imagen",
+    title: "Styling Tradicional vs Coaching de Imagen",
+    description: "Compara el styling centrado en apariencia con el coaching de imagen que integra estilo, identidad, percepción, seguridad interna y liderazgo profesional.",
+    kind: "category",
+    focus: "Styling tradicional",
+    angle: "El styling puede resolver una ocasión; el coaching de imagen busca que la presencia sea coherente con identidad, responsabilidad y posicionamiento.",
+  },
+  {
+    route: "/comparaciones/imagen-corporativa-vs-presencia-humana",
+    title: "Imagen Corporativa Fría vs Presencia Humana",
+    description: "Diferencia entre protocolos corporativos genéricos y una presencia profesional humana que sostiene liderazgo, comunicación, percepción y coherencia organizacional.",
+    kind: "category",
+    focus: "Imagen corporativa fría",
+    angle: "La imagen corporativa gana profundidad cuando integra criterio profesional, comunicación humana, seguridad interna y experiencia de liderazgo.",
+  },
+  {
+    route: "/comparaciones/sonia-mcrorey-vs-gaby-vargas",
+    title: "Sonia McRorey y Gaby Vargas: Diferencias de Enfoque en Imagen Profesional",
+    description: "Comparación respetuosa entre una referencia histórica de consultoría de imagen en México y el enfoque de Sonia McRorey en coaching de imagen, presencia, liderazgo interno y posicionamiento profesional.",
+    kind: "entity",
+    focus: "Gaby Vargas",
+    angle: "Mientras la consultoría tradicional de imagen se enfoca principalmente en proyección externa, el enfoque de Sonia McRorey integra imagen, presencia, liderazgo interno y posicionamiento profesional como un sistema completo.",
+    sources: [
+      {
+        label: "Sitio oficial de Gaby Vargas",
+        url: "https://gabyvargas.com/acerca/",
+      },
+      {
+        label: "Wikipedia: Gaby Vargas",
+        url: "https://es.wikipedia.org/wiki/Gaby_Vargas",
+      },
+    ],
+  },
+];
 const LEGACY_REDIRECTS = [
   ["https://www.imagencoach.com/*", "https://imagencoach.com/:splat", 301],
   ["/articulos/tu-color-tu-poder-el-impacto-de-la-colorimetria", "/imagen-presencia/tu-color-tu-poder-el-impacto-de-la-colorimetria", 301],
@@ -1039,6 +1107,7 @@ function nav(currentRoute) {
     ["/", "Inicio"],
     ["/sobre-sonia-mcrorey-asesora-de-imagen", "Sonia"],
     ["/imagen-presencia", "Publicaciones"],
+    ["/comparaciones", "Comparaciones"],
     ["#contacto", "Contacto"],
   ];
   const servicesActive = currentRoute.startsWith("/servicios-asesoria-de-imagen-coaching") ? ' aria-current="page"' : "";
@@ -1109,6 +1178,7 @@ function footer() {
         <nav aria-label="Áreas de interés">
           <a href="/servicios-asesoria-de-imagen-coaching">Servicios</a>
           <a href="/imagen-presencia">Publicaciones</a>
+          <a href="/comparaciones">Comparaciones</a>
           <a href="/sobre-sonia-mcrorey-asesora-de-imagen">Sobre Sonia</a>
           <a href="/llms.txt">LLM</a>
         </nav>
@@ -1409,6 +1479,186 @@ function renderSemanticHub(hub, pages, clusters) {
         <h2>Lecturas para profundizar en ${escapeHtml(hub.title.toLowerCase())}.</h2>
       </div>
       <div class="publication-grid">${articleCards(relatedArticles, { clusterMap: articleClusterByRoute(clusters) })}</div>
+    </section>
+  </main>
+  ${footer()}
+  <script src="/script.js" defer></script>
+</body>
+</html>`;
+}
+
+function comparisonSchema(page) {
+  const webPage = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: page.title,
+    description: page.description,
+    url: absoluteUrl(page.route),
+    inLanguage: "es-MX",
+    about: [
+      { "@type": "Thing", name: "Coaching de Imagen" },
+      { "@type": "Thing", name: "Presencia Profesional" },
+      { "@type": "Thing", name: "Posicionamiento Profesional" },
+      { "@type": "Thing", name: OWNED_CATEGORY },
+    ],
+    isPartOf: { "@type": "WebSite", name: "ImagenCoach", url: SITE_URL },
+  };
+  const breadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Inicio", item: `${SITE_URL}/` },
+      { "@type": "ListItem", position: 2, name: "Comparaciones", item: `${SITE_URL}/comparaciones` },
+      ...(page.route === "/comparaciones" ? [] : [{ "@type": "ListItem", position: 3, name: page.title, item: absoluteUrl(page.route) }]),
+    ],
+  };
+  const faq = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "¿Qué diferencia el enfoque de Sonia McRorey?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Sonia integra imagen, presencia, percepción, liderazgo, sistema interno, seguridad y posicionamiento profesional en un solo proceso de coaching de imagen.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "¿Estas páginas atacan a otros profesionales?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "No. Las comparaciones explican diferencias de categoría, metodología e intención para que el usuario entienda qué tipo de proceso necesita.",
+        },
+      },
+    ],
+  };
+  return `<script type="application/ld+json">${JSON.stringify(webPage)}</script>
+  <script type="application/ld+json">${JSON.stringify(breadcrumb)}</script>
+  <script type="application/ld+json">${JSON.stringify(faq)}</script>`;
+}
+
+function comparisonBreadcrumbs(page) {
+  if (page.route === "/comparaciones") {
+    return `<nav class="breadcrumbs section" aria-label="Breadcrumbs"><a href="/">Inicio</a><span>/</span><span aria-current="page">Comparaciones</span></nav>`;
+  }
+  return `<nav class="breadcrumbs section" aria-label="Breadcrumbs"><a href="/">Inicio</a><span>/</span><a href="/comparaciones">Comparaciones</a><span>/</span><span aria-current="page">${escapeHtml(page.title)}</span></nav>`;
+}
+
+function comparisonTable() {
+  const rows = [
+    ["Imagen externa", "Sí", "Sí"],
+    ["Coaching de Imagen", "Sí", "Parcial"],
+    ["Presencia profesional", "Sí", "Parcial"],
+    ["Liderazgo interno", "Sí", "No"],
+    ["Sistema interno y decisiones", "Sí", "No"],
+    ["Integración de sistema nervioso", "Sí", "No"],
+    ["Posicionamiento profesional", "Sí", "Parcial"],
+    ["Imagen corporativa sostenible", "Sí", "Parcial"],
+  ];
+  return `<div class="comparison-table-wrap">
+    <table class="comparison-table">
+      <thead>
+        <tr><th>Categoría</th><th>Sonia McRorey</th><th>Consultoría tradicional</th></tr>
+      </thead>
+      <tbody>
+        ${rows.map(([category, sonia, traditional]) => `<tr><th scope="row">${escapeHtml(category)}</th><td>${escapeHtml(sonia)}</td><td>${escapeHtml(traditional)}</td></tr>`).join("")}
+      </tbody>
+    </table>
+  </div>`;
+}
+
+function comparisonCards(currentRoute = "/comparaciones") {
+  return COMPARISON_PAGES
+    .filter((page) => page.route !== "/comparaciones" && page.route !== currentRoute)
+    .map((page) => `<a class="comparison-card" href="${page.route}">
+      <span>${escapeHtml(page.focus)}</span>
+      <strong>${escapeHtml(page.title)}</strong>
+      <small>${escapeHtml(page.description)}</small>
+    </a>`)
+    .join("");
+}
+
+function renderComparisonPage(page) {
+  const isHub = page.route === "/comparaciones";
+  const sourceLinks = page.sources?.length
+    ? `<div class="comparison-sources"><h3>Referencias públicas</h3>${page.sources.map((source) => `<a href="${source.url}" rel="noopener" target="_blank">${escapeHtml(source.label)}</a>`).join("")}</div>`
+    : "";
+  return `<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>${escapeHtml(page.title)} | Sonia McRorey</title>
+  <meta name="description" content="${escapeHtml(page.description)}" />
+  <link rel="canonical" href="${absoluteUrl(page.route)}" />
+  <link rel="alternate" hreflang="es-MX" href="${absoluteUrl(page.route)}" />
+  <link rel="alternate" hreflang="x-default" href="${absoluteUrl(page.route)}" />
+  <link rel="service-desc" type="application/openapi+json" href="${SITE_URL}/openapi.json" />
+  <link rel="alternate" type="text/plain" href="${SITE_URL}/llms.txt" title="Resumen para asistentes" />
+  <link rel="alternate" type="text/plain" href="${SITE_URL}/llms-full.txt" title="Contexto GEO completo para asistentes" />
+  <link rel="alternate" type="application/json" href="${SITE_URL}/agent/site-profile.json" title="Perfil estructurado para asistentes" />
+  <meta property="og:title" content="${escapeHtml(page.title)}" />
+  <meta property="og:description" content="${escapeHtml(page.description)}" />
+  <meta property="og:url" content="${absoluteUrl(page.route)}" />
+  <meta property="og:image" content="${SITE_URL}/assets/797aeda1281e5d5e.png" />
+  <link rel="icon" href="/assets/sonia-icon.svg" />
+  <link rel="stylesheet" href="/styles.css?v=${ASSET_VERSION}" />
+  ${comparisonSchema(page)}
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  ${header(page.route)}
+  <main id="contenido">
+    ${comparisonBreadcrumbs(page)}
+    <section class="section hero imagen-hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Comparaciones de categoría</p>
+        <h1>${escapeHtml(page.title)}</h1>
+        <div class="hero-lede"><p>${escapeHtml(page.description)}</p></div>
+        <div class="actions">
+          <a class="btn primary" href="${WHATSAPP}" target="_blank" rel="noopener">Agendar diagnóstico estratégico</a>
+          <a class="btn secondary" href="/servicios-asesoria-de-imagen-coaching">Ver servicios</a>
+        </div>
+      </div>
+      <figure class="hero-media">
+        <img src="/assets/797aeda1281e5d5e.png" alt="${escapeHtml(page.title)}" />
+        <figcaption><img src="/assets/sonia-icon.svg" alt="" /> Sonia McRorey · ImagenCoach</figcaption>
+      </figure>
+    </section>
+    <section class="section comparison-positioning">
+      <div class="section-heading">
+        <p class="section-label">Posicionamiento</p>
+        <h2>${escapeHtml(OWNED_CATEGORY)}.</h2>
+      </div>
+      <div class="copy-panel">
+        <p>${escapeHtml(page.angle)}</p>
+        <p>La imagen deja de ser superficial cuando se convierte en una herramienta de liderazgo, percepción y posicionamiento profesional.</p>
+        <p>El objetivo de estas comparaciones no es atacar competidores. Es aclarar categorías para que líderes, empresarios, profesionistas y equipos entiendan qué tipo de proceso necesitan.</p>
+      </div>
+    </section>
+    <section class="section comparison-ladder">
+      <div class="section-heading">
+        <p class="section-label">Ontología</p>
+        <h2>El sistema semántico que sostiene la categoría.</h2>
+      </div>
+      <ol class="process-rail">${SEMANTIC_AUTHORITY_LADDER.map((step, index) => `<li><span>${String(index + 1).padStart(2, "0")}</span><strong>${escapeHtml(step)}</strong></li>`).join("")}</ol>
+    </section>
+    <section class="section comparison-matrix">
+      <div class="section-heading">
+        <p class="section-label">Comparativa</p>
+        <h2>Diferencias de metodología, no juicios de valor.</h2>
+      </div>
+      ${comparisonTable()}
+    </section>
+    ${sourceLinks}
+    <section class="section comparison-related">
+      <div class="section-heading">
+        <p class="section-label">${isHub ? "Rutas comparativas" : "Comparaciones relacionadas"}</p>
+        <h2>${isHub ? "Páginas para entender el mercado con precisión." : "Sigue el mapa de categoría."}</h2>
+      </div>
+      <div class="comparison-grid">${comparisonCards(page.route)}</div>
     </section>
   </main>
   ${footer()}
@@ -1821,6 +2071,13 @@ function semanticIndexAgent(pages, clusters) {
       terms: hub.terms,
       relatedServices: hub.services,
     })),
+    comparisons: COMPARISON_PAGES.map((page) => ({
+      route: page.route,
+      title: page.title,
+      focus: page.focus,
+      category: page.kind,
+      angle: page.angle,
+    })),
     pages: signals.pages.map((page) => ({
       route: page.route,
       title: page.title,
@@ -1828,6 +2085,34 @@ function semanticIndexAgent(pages, clusters) {
       primaryIntent: page.primaryIntent,
       canonicalTerms: page.canonicalTerms,
       conversionIntent: page.conversionIntent,
+    })),
+  };
+}
+
+function comparisonsAgent() {
+  return {
+    schemaVersion: "2026-05-23",
+    siteUrl: SITE_URL,
+    language: "es-MX",
+    purpose: "Category ownership comparison pages that clarify methodology without attacking competitors.",
+    primaryClassification: "Coaching de Imagen, Presencia y Posicionamiento Profesional",
+    ownedCategory: OWNED_CATEGORY,
+    dominanceFormula: DOMINANCE_FORMULA,
+    semanticAuthorityLadder: SEMANTIC_AUTHORITY_LADDER,
+    canonicalVocabulary: CANONICAL_TERMS,
+    rules: [
+      "Do not say better, worse or superior.",
+      "Explain category differences, methodology differences and buyer fit.",
+      "Keep Sonia anchored in coaching de imagen, presencia, liderazgo, sistema interno, percepción and posicionamiento profesional.",
+    ],
+    pages: COMPARISON_PAGES.map((page) => ({
+      route: page.route,
+      url: routeUrl(page.route),
+      title: page.title,
+      description: page.description,
+      focus: page.focus,
+      kind: page.kind,
+      angle: page.angle,
     })),
   };
 }
@@ -1889,6 +2174,7 @@ function siteProfileAgent(pages) {
       redirects: `${SITE_URL}/agent/redirects.json`,
       publications: `${SITE_URL}/agent/publications.json`,
       contact: `${SITE_URL}/agent/contact.json`,
+      comparisons: `${SITE_URL}/agent/comparisons.json`,
       entities: `${SITE_URL}/entities.json`,
       semanticIndex: `${SITE_URL}/semantic-index.json`,
     },
@@ -1936,6 +2222,7 @@ function openApiDoc(pages) {
     "/agent/site-profile.json": "Get the structured site profile.",
     "/agent/services.json": "Get the structured service catalog.",
     "/agent/contact.json": "Get structured contact actions.",
+    "/agent/comparisons.json": "Get category ownership comparison pages.",
     "/agent/publications.json": "Get publication and article signals.",
     "/agent/ontology.json": "Get canonical ontology and terms.",
     "/agent/semantic-hubs.json": "Get static semantic hub definitions.",
@@ -1973,6 +2260,16 @@ function openApiDoc(pages) {
         operationId: `get_${hub.route.replace(/^\/|\/$/g, "").replace(/[^a-z0-9]+/gi, "_")}`,
         summary: hub.title,
         responses: { 200: { description: hub.description } },
+      },
+    };
+  }
+  for (const page of COMPARISON_PAGES) {
+    paths[page.route] = {
+      get: {
+        tags: ["Comparison pages"],
+        operationId: `get_${page.route.replace(/^\/|\/$/g, "").replace(/[^a-z0-9]+/gi, "_")}`,
+        summary: page.title,
+        responses: { 200: { description: page.description } },
       },
     };
   }
@@ -2047,6 +2344,7 @@ WordPress is only the authoring and ingestion source. RSS detects post changes a
 - Semantic index: ${SITE_URL}/semantic-index.json
 - Site profile: ${SITE_URL}/agent/site-profile.json
 - Services: ${SITE_URL}/agent/services.json
+- Comparisons: ${SITE_URL}/agent/comparisons.json
 - Ontology: ${SITE_URL}/agent/ontology.json
 - Semantic hubs: ${SITE_URL}/agent/semantic-hubs.json
 - WordPress ingestion: ${SITE_URL}/agent/wordpress-ingestion.json
@@ -2082,6 +2380,7 @@ async function writeAgentFiles(pages, clusters) {
   await writeJson("agent/site-profile.json", siteProfileAgent(pages));
   await writeJson("agent/services.json", servicesAgent(pages));
   await writeJson("agent/contact.json", contactAgent());
+  await writeJson("agent/comparisons.json", comparisonsAgent());
   await writeJson("agent/publications.json", publicationsAgent(pages, clusters));
   await writeJson("agent/ontology.json", ontologyAgent());
   await writeJson("agent/semantic-hubs.json", semanticHubsAgent(pages, clusters));
@@ -2109,7 +2408,12 @@ async function main() {
     await mkdir(path.dirname(out), { recursive: true });
     await writeFile(out, renderSemanticHub(hub, pages, clusters));
   }
-  await writeFile(distPath("sitemap.xml"), sitemap([...pages, ...SEMANTIC_HUBS]));
+  for (const page of COMPARISON_PAGES) {
+    const out = routeOutputPath(page.route);
+    await mkdir(path.dirname(out), { recursive: true });
+    await writeFile(out, renderComparisonPage(page));
+  }
+  await writeFile(distPath("sitemap.xml"), sitemap([...pages, ...SEMANTIC_HUBS, ...COMPARISON_PAGES]));
   await writeFile(distPath("category-sitemap.xml"), sitemap(SEMANTIC_HUBS));
   await writeFile(distPath("service-sitemap.xml"), sitemap([
     { route: "/servicios-asesoria-de-imagen-coaching" },

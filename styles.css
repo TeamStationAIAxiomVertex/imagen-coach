@@ -2460,6 +2460,23 @@ details[open] summary::after {
 .atlas-panel a { display: block; padding: 16px 0; border-top: 1px solid var(--line); color: var(--ink); font-weight: 600; line-height: 1.35; }
 .atlas-panel a:hover { color: var(--plum-accent); }
 .atlas-panel a span { display: block; margin-bottom: 5px; color: var(--plum-accent); font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.comparison-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.comparison-card { min-height: 220px; padding: 22px; border: 1px solid rgba(201, 177, 208, .46); border-radius: var(--radius-card); background: rgba(251, 250, 252, .74); }
+.comparison-card:hover { border-color: rgba(140, 71, 153, .34); background: rgba(251, 250, 252, .96); }
+.comparison-card span { display: block; color: var(--brand-green-deep); font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.comparison-card strong { display: block; margin-top: 16px; color: var(--ink); font-family: var(--display); font-size: clamp(25px, 2.6vw, 34px); font-weight: 500; line-height: 1.04; }
+.comparison-card small { display: block; margin-top: 16px; color: var(--muted); font-size: 14px; line-height: 1.5; }
+.comparison-table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius-card); background: rgba(251, 250, 252, .78); }
+.comparison-table { width: 100%; min-width: 720px; border-collapse: collapse; color: var(--charcoal-soft); }
+.comparison-table th,
+.comparison-table td { padding: 16px 18px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+.comparison-table thead th { color: var(--brand-green-deep); font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.comparison-table tbody th { color: var(--ink); font-weight: 700; }
+.comparison-table tbody tr:last-child th,
+.comparison-table tbody tr:last-child td { border-bottom: 0; }
+.comparison-sources { max-width: var(--max); margin: 0 auto; padding: 24px 0; }
+.comparison-sources h3 { margin: 0 0 12px; color: var(--ink); font-family: var(--display); font-size: 30px; font-weight: 500; }
+.comparison-sources a { display: inline-flex; margin: 0 8px 8px 0; padding: 9px 12px; border: 1px solid rgba(111, 162, 135, .28); border-radius: 999px; color: var(--brand-green-deep); font-size: 12px; font-weight: 800; letter-spacing: .04em; }
 .split-section { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.72fr); gap: clamp(28px, 5vw, 68px); align-items: start; padding: 36px 0; }
 .split-section.reverse { grid-template-columns: minmax(320px, 0.72fr) minmax(0, 1.08fr); }
 .split-section.reverse .copy-panel { order: 2; }
@@ -2537,7 +2554,7 @@ details[open] summary::after {
 @media (max-width: 900px) {
   .hero, .split-section, .split-section.reverse, .contact-grid, .service-system-visual { grid-template-columns: 1fr; }
   .split-section.reverse .copy-panel { order: 0; }
-  .service-grid, .publication-grid, .proof-strip, .pillar-grid, .cluster-header, .semantic-sections, .atlas-grid, .signal-list, .process-heading, .dense-reading .semantic-card { grid-template-columns: 1fr; }
+  .service-grid, .publication-grid, .proof-strip, .pillar-grid, .cluster-header, .semantic-sections, .atlas-grid, .comparison-grid, .signal-list, .process-heading, .dense-reading .semantic-card { grid-template-columns: 1fr; }
   .semantic-panel { grid-template-columns: 1fr; }
   .hub-term-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .dense-reading .semantic-copy { grid-template-columns: 1fr; grid-column: auto; grid-row: auto; }

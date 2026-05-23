@@ -18,6 +18,15 @@ const semanticHubRoutes = [
   "/empresarias",
   "/imagen-estrategica",
 ];
+const comparisonRoutes = [
+  "/comparaciones",
+  "/comparaciones/coaching-de-imagen-vs-consultoria-tradicional",
+  "/comparaciones/imagen-superficial-vs-presencia-profesional",
+  "/comparaciones/coaching-motivacional-vs-posicionamiento-profesional",
+  "/comparaciones/styling-vs-coaching-de-imagen",
+  "/comparaciones/imagen-corporativa-vs-presencia-humana",
+  "/comparaciones/sonia-mcrorey-vs-gaby-vargas",
+];
 const requiredExecutiveTerms = [
   "coaching de imagen",
   "coaching de imagen con estructura interna",
@@ -57,6 +66,11 @@ for (const page of manifest.pages) {
 for (const route of semanticHubRoutes) {
   const htmlPath = path.join("dist", route, "index.html");
   if (!existsSync(htmlPath)) failures.push(`Missing semantic hub output: ${route}`);
+}
+
+for (const route of comparisonRoutes) {
+  const htmlPath = path.join("dist", route, "index.html");
+  if (!existsSync(htmlPath)) failures.push(`Missing comparison page output: ${route}`);
 }
 
 for (const cluster of strategy.clusters) {
@@ -128,6 +142,9 @@ for (const page of manifest.pages) {
 for (const route of semanticHubRoutes) {
   if (!sitemap.includes(`${SITE_URL}${route}`)) failures.push(`Missing semantic hub in sitemap: ${route}`);
 }
+for (const route of comparisonRoutes) {
+  if (!sitemap.includes(`${SITE_URL}${route}`)) failures.push(`Missing comparison page in sitemap: ${route}`);
+}
 
 for (const sitemapFile of ["dist/blog-sitemap.xml", "dist/category-sitemap.xml", "dist/service-sitemap.xml"]) {
   if (!existsSync(sitemapFile)) failures.push(`Missing sitemap file: ${sitemapFile}`);
@@ -146,6 +163,7 @@ const requiredAgentFiles = [
   "dist/agent/site-profile.json",
   "dist/agent/services.json",
   "dist/agent/contact.json",
+  "dist/agent/comparisons.json",
   "dist/agent/publications.json",
   "dist/agent/ontology.json",
   "dist/agent/semantic-hubs.json",
@@ -173,7 +191,7 @@ for (const file of requiredAgentFiles) {
   }
 }
 
-for (const file of ["dist/entities.json", "dist/semantic-index.json", "dist/agent/site-profile.json", "dist/agent/ontology.json"]) {
+for (const file of ["dist/entities.json", "dist/semantic-index.json", "dist/agent/site-profile.json", "dist/agent/ontology.json", "dist/agent/comparisons.json"]) {
   if (!existsSync(file)) continue;
   const text = await readFile(file, "utf8");
   if (!text.includes("Coaching de Imagen, Presencia y Posicionamiento Profesional")) failures.push(`${file} missing primary holistic image coaching classification`);
