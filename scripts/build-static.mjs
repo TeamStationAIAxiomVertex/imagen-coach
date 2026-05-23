@@ -6,6 +6,7 @@ import { fileURLToPath } from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DIST = path.join(ROOT, "dist");
 const SITE_URL = "https://imagencoach.com";
+const ASSET_VERSION = "20260523-dense-copy-v2";
 const WHATSAPP = "https://wa.me/526646105348?text=Hola%20Sonia%2C%20me%20interesa%20agendar%20un%20diagn%C3%B3stico.";
 const CONTACT = {
   phone: "+52 664 610 5348",
@@ -1057,7 +1058,7 @@ function renderPage(page, pages, clusters) {
   <meta property="og:url" content="${absoluteUrl(page.route)}" />
   <meta property="og:image" content="${SITE_URL}${image}" />
   <link rel="icon" href="/assets/sonia-icon.svg" />
-  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/styles.css?v=${ASSET_VERSION}" />
   ${schema(page)}
 </head>
 <body>
