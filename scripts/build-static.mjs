@@ -565,10 +565,6 @@ function wordCount(value = "") {
   return (value.match(/[\p{L}\p{N}]+(?:['’][\p{L}\p{N}]+)?/gu) || []).length;
 }
 
-function escapeRegExp(value = "") {
-  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-}
-
 function sectionTopics(lines = [], page, clusterMap = new Map(), limit = 4) {
   const haystack = `${page?.heroTitle || ""} ${lines.join(" ")}`.toLowerCase();
   const matched = ONTOLOGY_TOPICS.filter((topic) => topic.terms.some((term) => haystack.includes(term.toLowerCase())));
@@ -600,10 +596,6 @@ function topicChips(topics = []) {
   return `<div class="ontology-chips">${topics.map((topic) => `<span class="ontology-chip">${topicIcon(topic.id)}${escapeHtml(topic.label)}</span>`).join("")}</div>`;
 }
 
-function topicForId(topicId = "presencia") {
-  return ONTOLOGY_TOPICS.find((topic) => topic.id === topicId) || ONTOLOGY_TOPICS.find((topic) => topic.id === "presencia");
-}
-
 function visualSectionLabel(heading = "") {
   const clean = cleanDisplayTitle(heading)
     .replace(/[¿?]/g, "")
@@ -631,40 +623,7 @@ function visualCardTitle(title = "") {
 }
 
 function highlightOntologyTerms(text = "", topics = [], maxHighlights = 3) {
-  const activeTopicIds = new Set(topics.map((topic) => topic.id));
-  const searchIntentCandidates = SEARCH_INTENT_TERMS
-    .filter((item) => text.toLowerCase().includes(item.term.toLowerCase()))
-    .map((item) => ({ topic: topicForId(item.topic), term: item.term, priority: 2 }));
-  const topicCandidates = topics
-    .flatMap((topic) => topic.terms.map((term) => ({ topic, term, priority: activeTopicIds.has(topic.id) ? 1 : 0 })))
-    .filter(({ term }) => wordCount(term) >= 2 && wordCount(term) <= 4)
-    .filter(({ term }) => !["quién eres"].includes(term.toLowerCase()));
-  const candidates = [...searchIntentCandidates, ...topicCandidates]
-    .filter(({ term }, index, list) => list.findIndex((item) => item.term.toLowerCase() === term.toLowerCase()) === index)
-    .sort((a, b) => b.term.length - a.term.length);
-  const matches = [];
-  for (const candidate of candidates) {
-    if (matches.length >= maxHighlights) break;
-    const pattern = new RegExp(`(^|[^\\p{L}\\p{N}])(${escapeRegExp(candidate.term)})(?=$|[^\\p{L}\\p{N}])`, "giu");
-    let match;
-    while ((match = pattern.exec(text)) && matches.length < maxHighlights) {
-      const start = match.index + match[1].length;
-      const end = start + match[2].length;
-      const overlaps = matches.some((item) => start < item.end && end > item.start);
-      if (!overlaps) matches.push({ start, end, topic: candidate.topic });
-    }
-  }
-  if (!matches.length) return escapeHtml(text);
-  matches.sort((a, b) => a.start - b.start);
-  let cursor = 0;
-  let output = "";
-  for (const match of matches) {
-    output += escapeHtml(text.slice(cursor, match.start));
-    output += `<strong class="term-highlight" data-topic="${escapeHtml(match.topic.id)}">${escapeHtml(text.slice(match.start, match.end))}</strong>`;
-    cursor = match.end;
-  }
-  output += escapeHtml(text.slice(cursor));
-  return output;
+  return escapeHtml(text);
 }
 
 function splitContent(markdown) {
@@ -1665,7 +1624,7 @@ function searchIntentTermsAgent() {
     schemaVersion: "2026-05-23",
     siteUrl: SITE_URL,
     language: "es-MX",
-    rule: "Bold semantic emphasis uses controlled buyer-intent and GEO terms only when the exact phrase exists in Sonia's copy or generated hub descriptions.",
+    rule: "Search-intent terms are machine-readable for agents and SEO review; they must not add visible bolding, labels, or generated marketing language to Sonia's page copy.",
     terms: SEARCH_INTENT_TERMS,
   };
 }

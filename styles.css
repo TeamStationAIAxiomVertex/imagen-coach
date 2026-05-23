@@ -2381,7 +2381,6 @@ details[open] summary::after {
 .semantic-panel { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; align-items: start; padding: clamp(24px, 4vw, 40px); border: 1px solid rgba(201, 177, 208, 0.44); border-radius: var(--radius-card); background: rgba(251, 250, 252, 0.78); }
 .semantic-panel p,
 .semantic-copy p { break-inside: avoid; max-width: 66ch; margin: 0 0 14px; color: var(--charcoal-soft); line-height: 1.62; }
-.term-highlight { color: var(--ink); background: linear-gradient(180deg, transparent 58%, rgba(231, 240, 235, .92) 58%); border-radius: 3px; padding: 0 2px; font-weight: 700; }
 .hub-term-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
 .hub-term-grid a { min-height: 124px; padding: 20px; border: 1px solid rgba(111, 162, 135, .26); border-radius: 8px; background: rgba(231, 240, 235, .42); color: var(--ink); }
 .hub-term-grid span { display: block; font-family: var(--display); font-size: clamp(24px, 2.3vw, 34px); line-height: 1.03; }
