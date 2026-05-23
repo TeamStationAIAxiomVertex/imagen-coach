@@ -99,6 +99,49 @@ const BODY_JUNK_LINES = new Set([
   CONTACT.address,
   CONTACT.hours,
 ]);
+const SERVICE_PROCESS_STEPS = {
+  "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen": [
+    "Diagnóstico profundo",
+    "Colorimetría y rostro",
+    "Estilo e identidad",
+    "Cuerpo y proporciones",
+    "Clóset consciente",
+    "Compras estratégicas",
+    "Integración diaria",
+  ],
+  "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen": [
+    "Identidad",
+    "Autoconcepto",
+    "Valor personal",
+    "Decisión visible",
+    "Presencia profesional",
+    "Percepción externa",
+  ],
+  "/servicios-asesoria-de-imagen-coaching/talleres": [
+    "Objetivo del grupo",
+    "Contexto de marca",
+    "Contenido práctico",
+    "Aplicación en vivo",
+    "Criterios de imagen",
+    "Resultado accionable",
+  ],
+  "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia": [
+    "Bloqueos inconscientes",
+    "Patrones de protección",
+    "Mentalidad",
+    "Sistema nervioso",
+    "Seguridad interna",
+    "Acción con impacto",
+  ],
+};
+const CONTENT_SECTION_LABELS = {
+  home: "Sistema de presencia",
+  about: "Autoridad",
+  "service-hub": "Decisión de servicio",
+  service: "Contenido del proceso",
+  article: "Lectura estructurada",
+  "article-index": "Centro editorial",
+};
 
 function rootPath(...parts) {
   return path.join(ROOT, ...parts);
@@ -124,6 +167,7 @@ function stripFrontMatter(markdown) {
 function normalizeContentLines(lines) {
   const filtered = lines
     .map((item) => item.trim())
+    .map(repairSourceFragments)
     .filter((item) => item && !BODY_JUNK_LINES.has(item));
   const normalized = [];
 
@@ -132,7 +176,7 @@ function normalizeContentLines(lines) {
     const next = filtered[index + 1];
 
     if (line.length <= 2 && next && /^[a-záéíóúñ]/.test(next)) {
-      line = `${line}${next}`;
+      line = line.length === 1 ? `${line}${next}` : `${line} ${next}`;
       index += 1;
     }
 
@@ -178,6 +222,35 @@ function paragraphize(lines, { allowHeadings = false } = {}) {
     }
   }
   return blocks.join("\n");
+}
+
+function sentenceLike(line = "") {
+  return /[.!?…:]$/.test(line) || line.length > 78;
+}
+
+function groupShortLines(lines) {
+  const grouped = [];
+  for (let index = 0; index < lines.length; index += 1) {
+    const line = lines[index];
+    const next = lines[index + 1];
+    if (line.length <= 34 && next && /^[a-záéíóúñ,]/.test(next) && !sentenceLike(line)) {
+      grouped.push(`${line} ${next}`);
+      index += 1;
+    } else {
+      grouped.push(line);
+    }
+  }
+  return grouped;
+}
+
+function repairSourceFragments(value = "") {
+  return value
+    .replace(/\bq ue\b/gi, "que")
+    .replace(/\bs ea\b/gi, "sea")
+    .replace(/\bs e\b/gi, "se")
+    .replace(/\bd onde\b/gi, "donde")
+    .replace(/\bdí a\b/gi, "día")
+    .replace(/\bqu é\b/gi, "qué");
 }
 
 function splitContent(markdown) {
@@ -277,6 +350,120 @@ function cardDescription(page) {
 
 function nonTitleLines(page, lines, start = 1) {
   return lines.slice(start).filter((line) => cleanDisplayTitle(line) !== page.heroTitle);
+}
+
+function coreBodyLines(page, lines) {
+  return nonTitleLines(page, lines, page.route === "/" ? 4 : 1)
+    .map((line) => repairSourceFragments(line.replace(/\s+/g, " ").trim()))
+    .filter(Boolean)
+    .filter((line) => !["sesión gratuita", "A DONDE estes", "A DONDE estés", "desde DONDE ESTÉS"].includes(line));
+}
+
+function shouldStartSection(line, current) {
+  if (!isHeadingCandidate(line)) return false;
+  if (/^(Contacto|Agendar|Precios|Leer|Consulta Gratis|Primera Sesión|Primera Sesion)$/i.test(line)) return false;
+  if (current.heading === "Contenido principal" && current.lines.length === 0) return true;
+  return current.lines.length >= 2 || /[¿?]$/.test(line) || line.length <= 64;
+}
+
+function classifyContent(page, lines) {
+  const sections = [];
+  let current = { heading: contentHeading(page)[1], lines: [] };
+  for (const line of groupShortLines(coreBodyLines(page, lines))) {
+    if (shouldStartSection(line, current)) {
+      if (current.lines.length) sections.push(current);
+      current = { heading: cleanDisplayTitle(line), lines: [] };
+    } else {
+      current.lines.push(line);
+    }
+  }
+  if (current.lines.length) sections.push(current);
+  return sections.filter((section) => section.heading && section.lines.length);
+}
+
+function renderSemanticCopy(lines) {
+  const blocks = [];
+  let list = [];
+  const flushList = () => {
+    if (!list.length) return;
+    blocks.push(`<ul class="signal-list">${list.map((item) => `<li>${escapeHtml(item.replace(/^[-•●✔️👉🌟💌🎓🟣✨]\s*/, ""))}</li>`).join("")}</ul>`);
+    list = [];
+  };
+  for (const line of lines) {
+    if (isListLine(line) || (!sentenceLike(line) && line.length <= 84)) {
+      list.push(line);
+    } else {
+      flushList();
+      blocks.push(`<p>${escapeHtml(line)}</p>`);
+    }
+  }
+  flushList();
+  return blocks.join("\n");
+}
+
+function serviceProcessMap(page) {
+  const steps = SERVICE_PROCESS_STEPS[page.route];
+  if (!steps) return "";
+  return `<section class="section process-map" aria-label="Mapa del proceso">
+    <div class="section-heading">
+      <p class="section-label">Proceso</p>
+      <h2>Cómo se convierte el contenido en una ruta clara.</h2>
+    </div>
+    <ol class="process-rail">${steps.map((step, index) => `<li><span>${String(index + 1).padStart(2, "0")}</span><strong>${escapeHtml(step)}</strong></li>`).join("")}</ol>
+  </section>`;
+}
+
+function internalLinkAtlas(page, pages, clusters) {
+  const clusterMap = articleClusterByRoute(clusters);
+  const currentCluster = clusterMap.get(page.route);
+  const serviceRoutes = PILLARS.map((pillar) => pillar.route).filter((route) => route !== page.route);
+  const map = pageByRoute(pages);
+  const serviceLinks = serviceRoutes
+    .map((route) => map.get(route))
+    .filter(Boolean)
+    .slice(0, 4);
+  const relatedArticles = currentCluster
+    ? currentCluster.articles.map((route) => map.get(route)).filter(Boolean).filter((item) => item.route !== page.route).slice(0, 4)
+    : pages.filter((item) => item.type === "article").slice(0, 4);
+  return `<section class="section link-atlas" aria-label="Rutas internas relacionadas">
+    <div class="section-heading">
+      <p class="section-label">Interlinking</p>
+      <h2>Rutas relacionadas para profundizar.</h2>
+    </div>
+    <div class="atlas-grid">
+      <div class="atlas-panel">
+        <h3>Servicios conectados</h3>
+        ${serviceLinks.map((item) => `<a href="${item.route}"><span>${escapeHtml(pageTermSignals(item, clusterMap)[0] || "servicio")}</span>${escapeHtml(item.heroTitle)}</a>`).join("")}
+      </div>
+      <div class="atlas-panel">
+        <h3>Contenido de apoyo</h3>
+        ${relatedArticles.map((item) => `<a href="${item.route}"><span>${escapeHtml(clusterMap.get(item.route)?.label || "publicación")}</span>${escapeHtml(item.heroTitle)}</a>`).join("")}
+      </div>
+    </div>
+  </section>`;
+}
+
+function structuredContentSections(page, lines, pages, clusters) {
+  const sections = classifyContent(page, lines);
+  if (!sections.length) return "";
+  const intro = sections[0];
+  const rest = sections.slice(1);
+  return `<section class="section structured-intro">
+    <div class="section-heading">
+      <p class="section-label">${escapeHtml(CONTENT_SECTION_LABELS[page.type] || "Contenido")}</p>
+      <h2>${escapeHtml(intro.heading)}</h2>
+    </div>
+    <article class="semantic-panel">${renderSemanticCopy(intro.lines)}</article>
+  </section>
+  ${serviceProcessMap(page)}
+  <section class="section semantic-sections">
+    ${rest.map((section, index) => `<article class="semantic-card">
+      <div class="semantic-index">${String(index + 1).padStart(2, "0")}</div>
+      <h2>${escapeHtml(section.heading)}</h2>
+      <div class="semantic-copy">${renderSemanticCopy(section.lines)}</div>
+    </article>`).join("\n")}
+  </section>
+  ${internalLinkAtlas(page, pages, clusters)}`;
 }
 
 function pageTermSignals(page, clusterMap) {
@@ -639,6 +826,8 @@ function renderPage(page, pages, clusters) {
             : page.type === "article"
               ? articleExtras(page, pages, clusters)
               : "";
+  const beforeContent = ["home", "article-index", "service-hub"].includes(page.type) ? extra : "";
+  const afterContent = ["home", "article-index", "service-hub"].includes(page.type) ? "" : extra;
   return `<!doctype html>
 <html lang="es-MX">
 <head>
@@ -667,8 +856,9 @@ function renderPage(page, pages, clusters) {
   <main id="contenido">
     ${breadcrumbs(page)}
     ${hero(page, lines)}
-    ${extra}
-    ${contentSections(page, lines)}
+    ${beforeContent}
+    ${structuredContentSections(page, lines, pages, clusters)}
+    ${afterContent}
   </main>
   ${footer()}
   <script src="/script.js" defer></script>

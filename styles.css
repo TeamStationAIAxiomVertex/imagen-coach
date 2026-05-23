@@ -2353,6 +2353,29 @@ details[open] summary::after {
 .copy-panel h3:first-child { margin-top: 0; }
 .lead-panel p { font-size: 18px; }
 .bullet-line { padding-left: 14px; border-left: 2px solid rgba(140, 71, 153, 0.24); }
+.structured-intro { padding: var(--section-y) 0 34px; border-top: 1px solid var(--line); }
+.semantic-panel { padding: clamp(28px, 5vw, 54px); border: 1px solid rgba(201, 177, 208, 0.44); border-radius: var(--radius-card); background: rgba(251, 250, 252, 0.78); columns: 2 330px; column-gap: clamp(28px, 5vw, 64px); }
+.semantic-panel p,
+.semantic-copy p { break-inside: avoid; max-width: 76ch; margin: 0 0 16px; color: var(--charcoal-soft); line-height: 1.72; }
+.semantic-sections { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; padding: 32px 0; align-items: start; }
+.semantic-card { position: relative; min-height: 240px; padding: clamp(24px, 4vw, 42px); border: 1px solid var(--line); border-radius: var(--radius-card); background: rgba(251, 250, 252, 0.72); overflow: hidden; }
+.semantic-card::before { content: ""; position: absolute; inset: 0 0 auto; height: 4px; background: linear-gradient(90deg, rgba(111, 162, 135, .66), rgba(140, 71, 153, .32)); }
+.semantic-index { color: rgba(140, 71, 153, .36); font-family: var(--display); font-size: 42px; line-height: .9; }
+.semantic-card h2 { max-width: 680px; margin: 12px 0 20px; color: var(--ink); font-family: var(--display); font-size: clamp(32px, 4vw, 48px); font-weight: 500; line-height: 1.02; }
+.signal-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 18px 0; padding: 0; list-style: none; break-inside: avoid; }
+.signal-list li { padding: 12px 14px; color: var(--charcoal-soft); border: 1px solid rgba(227, 223, 231, .86); border-radius: 8px; background: rgba(240, 237, 243, .58); font-size: 14px; line-height: 1.45; }
+.process-map { padding: 30px 0; }
+.process-rail { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 0; padding: 0; list-style: none; }
+.process-rail li { min-height: 138px; padding: 20px; border: 1px solid rgba(111, 162, 135, .28); border-radius: var(--radius-card); background: rgba(231, 240, 235, .62); }
+.process-rail span { display: block; color: var(--brand-green-deep); font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.process-rail strong { display: block; margin-top: 22px; color: var(--ink); font-family: var(--display); font-size: 28px; font-weight: 500; line-height: 1.02; }
+.link-atlas { padding: calc(var(--section-y) * .72) 0 24px; }
+.atlas-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.atlas-panel { padding: 28px; border: 1px solid rgba(201, 177, 208, .46); border-radius: var(--radius-card); background: rgba(251, 250, 252, .74); }
+.atlas-panel h3 { margin: 0 0 18px; color: var(--ink); font-family: var(--display); font-size: clamp(28px, 3vw, 38px); font-weight: 500; }
+.atlas-panel a { display: block; padding: 16px 0; border-top: 1px solid var(--line); color: var(--ink); font-weight: 600; line-height: 1.35; }
+.atlas-panel a:hover { color: var(--plum-accent); }
+.atlas-panel a span { display: block; margin-bottom: 5px; color: var(--plum-accent); font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 .split-section { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.72fr); gap: clamp(28px, 5vw, 68px); align-items: start; padding: 36px 0; }
 .split-section.reverse { grid-template-columns: minmax(320px, 0.72fr) minmax(0, 1.08fr); }
 .split-section.reverse .copy-panel { order: 2; }
@@ -2401,7 +2424,10 @@ details[open] summary::after {
 @media (max-width: 900px) {
   .hero, .split-section, .split-section.reverse, .contact-grid { grid-template-columns: 1fr; }
   .split-section.reverse .copy-panel { order: 0; }
-  .service-grid, .publication-grid, .proof-strip, .pillar-grid, .cluster-header { grid-template-columns: 1fr; }
+  .service-grid, .publication-grid, .proof-strip, .pillar-grid, .cluster-header, .semantic-sections, .process-rail, .atlas-grid, .signal-list { grid-template-columns: 1fr; }
+  .semantic-panel { columns: 1; }
+  .semantic-card { min-height: auto; }
+  .process-rail li { min-height: auto; }
   .proof-strip { padding-top: 18px; }
   .proof-item { min-height: auto; }
   .pillar-card { min-height: 230px; }
