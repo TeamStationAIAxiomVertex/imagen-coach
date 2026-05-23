@@ -74,6 +74,30 @@ Assert each page has:
 
 Article pages should receive article-like metadata where applicable.
 
+### 6a. Agentic GEO Tests
+
+Assert generated output includes:
+
+- `dist/openapi.json`
+- `dist/llms.txt`
+- `dist/llms-full.txt`
+- `dist/agent/site-profile.json`
+- `dist/agent/services.json`
+- `dist/agent/contact.json`
+- `dist/agent/publications.json`
+- `dist/agent/ontology.json`
+- `dist/agent/page-signals.json`
+- `dist/agent/redirects.json`
+- `dist/agent/conversion-map.json`
+
+Assert:
+
+- each JSON file parses
+- `robots.txt` references OpenAPI, LLM and Agent Profile files
+- every rendered HTML page links to OpenAPI and LLM context
+- every rendered HTML page uses `lang="es-MX"`
+- every rendered HTML page has an `es-MX` hreflang alternate
+
 ### 7. UI Regression Tests
 
 Before launch, test at minimum:

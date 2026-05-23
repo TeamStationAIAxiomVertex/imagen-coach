@@ -1,27 +1,38 @@
-# ImagenCoach Rebuild
+# Imagen Coach / Sonia McRorey
 
 Repository: TeamStationAIAxiomVertex/imagen-coach
+
 Primary domain: https://imagencoach.com
-Purpose: Rebuild Sonia McRorey's larger/general ImagenCoach site from Weblium into a GitHub and Cloudflare-managed static site.
 
-## Important Context
+Purpose: rebuild Sonia McRorey's larger/general Imagen Coach site from Weblium into a GitHub and Cloudflare-managed static authority platform.
 
-- This repo is not the Guadalajara-specific site.
-- `TeamStationAIAxiomVertex/guadalajara` / `imagengdl.com` is the UX/UI reference.
-- The content source of truth is the archived `imagencoach.com` crawl in this repo.
-- All 35 canonical URLs from the current sitemap must be preserved.
+## Machine-readable files
 
-## Key Files
+- OpenAPI: https://imagencoach.com/openapi.json
+- Full LLM/GEO context: https://imagencoach.com/llms-full.txt
+- Site profile: https://imagencoach.com/agent/site-profile.json
+- Services: https://imagencoach.com/agent/services.json
+- Ontology: https://imagencoach.com/agent/ontology.json
+- Page signals: https://imagencoach.com/agent/page-signals.json
+- Redirects: https://imagencoach.com/agent/redirects.json
+- Conversion map: https://imagencoach.com/agent/conversion-map.json
+- Publications: https://imagencoach.com/agent/publications.json
+- Contact: https://imagencoach.com/agent/contact.json
 
-- `AGENTS.md`: agent instructions.
-- `docs/source-url-inventory.md`: canonical URL contract.
-- `docs/SDD.md`: software design document.
-- `docs/DDD.md`: domain-driven design document.
-- `docs/TDD.md`: test and QA strategy.
-- `docs/LLM_CONTEXT.md`: compact future-agent context.
-- `content/clean/manifest.json`: cleaned content manifest.
-- `archive/imagencoach/manifest.json`: raw crawl manifest.
+## Canonical identity
+
+Imagen Coach is Sonia McRorey's authority platform for asesoría de imagen, coaching de imagen, presencia profesional, imagen profesional, marca personal, liderazgo, percepción profesional and talleres de imagen corporativa.
+
+This is not a fashion influencer site, beauty blog, lifestyle funnel or generic coaching website.
+
+## URL contract
+
+All 35 canonical URLs from the current `imagencoach.com` sitemap must be preserved.
+
+The article archive lives under:
+
+https://imagencoach.com/imagen-presencia
 
 ## Voice
 
-Sonia's voice is calm, intelligent, executive, reflective, and grounded. SEO must support her voice, not replace it.
+Sonia's voice is calm, intelligent, executive, reflective and grounded. SEO and GEO must support Sonia's voice, not replace it.

@@ -22,13 +22,11 @@ Done:
 - images downloaded/mapped
 - source URL inventory documented
 - clean content layer generated
+- static route generator implemented
+- agentic discovery layer added to build output
 
 Not done yet:
 
-- copy/adapt Guadalajara UX/UI implementation
-- build actual static site routes
-- generate production sitemap/robots/metadata
-- implement redirects for broken legacy internal links
 - run browser visual QA
 - configure Cloudflare Pages for `imagencoach.com`
 
@@ -44,6 +42,27 @@ Not done yet:
 - `docs/SDD.md`: software design
 - `docs/DDD.md`: domain language and entities
 - `docs/TDD.md`: validation plan
+- `docs/wiki.llm`: ontology and agent-readable semantic governance
+- `docs/UBIQUITOUS_LANGUAGE.md`: approved language and forbidden drift
+- `docs/GEO_OPERATING_SYSTEM.md`: agentic GEO strategy
+- `docs/PAGE_SIGNAL_MAP.md`: page-level signal map
+- `docs/REDIRECTS_AND_URL_RETENTION.md`: URL and redirect rules
+
+## Agentic Files
+
+The Cloudflare build publishes:
+
+- `https://imagencoach.com/openapi.json`
+- `https://imagencoach.com/llms.txt`
+- `https://imagencoach.com/llms-full.txt`
+- `https://imagencoach.com/agent/site-profile.json`
+- `https://imagencoach.com/agent/services.json`
+- `https://imagencoach.com/agent/contact.json`
+- `https://imagencoach.com/agent/publications.json`
+- `https://imagencoach.com/agent/ontology.json`
+- `https://imagencoach.com/agent/page-signals.json`
+- `https://imagencoach.com/agent/redirects.json`
+- `https://imagencoach.com/agent/conversion-map.json`
 
 ## Route Contract
 

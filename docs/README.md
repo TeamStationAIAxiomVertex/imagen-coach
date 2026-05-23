@@ -9,6 +9,11 @@ This folder is the project wiki for rebuilding `imagencoach.com`.
 - `DDD.md`: domain-driven design model and language boundaries.
 - `TDD.md`: test-driven development and QA strategy.
 - `LLM_CONTEXT.md`: compact context for future LLM/agent sessions.
+- `wiki.llm`: canonical ontology and agent-readable semantic governance.
+- `UBIQUITOUS_LANGUAGE.md`: approved terminology and forbidden drift rules.
+- `GEO_OPERATING_SYSTEM.md`: agentic GEO operating strategy.
+- `PAGE_SIGNAL_MAP.md`: page-level SEO, GEO and conversion signal map.
+- `REDIRECTS_AND_URL_RETENTION.md`: URL preservation and redirect policy.
 - `SKILLS.md`: agentic skill map for crawl, cleanup, implementation, QA, and deployment.
 - `IMPLEMENTATION_ROADMAP.md`: current phase status and next engineering steps.
 

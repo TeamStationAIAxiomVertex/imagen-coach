@@ -73,6 +73,19 @@ Downloaded source image or graphic. Assets are content-addressed in the archive 
 
 A documented routing decision for a non-canonical or broken old URL.
 
+### Agentic File
+
+A machine-readable file that supports AI retrieval, GEO, service discovery, ontology consistency, redirects, conversion actions, or publication retrieval.
+
+Examples:
+
+- `openapi.json`
+- `llms-full.txt`
+- `agent/site-profile.json`
+- `agent/ontology.json`
+- `agent/page-signals.json`
+- `agent/conversion-map.json`
+
 ## Ubiquitous Language
 
 Approved language:
@@ -115,6 +128,12 @@ Forbidden drift:
 - imagen magnética
 - manifestación cuántica
 - gurú
+
+## Agentic GEO Bounded Context
+
+The agentic GEO layer must describe existing content and routes. It must not invent services, credentials, rankings, clients, awards or regional presence.
+
+Its job is to make the current 35-page authority graph easier for search engines, AI systems and agents to parse.
 
 ## Page Types
 

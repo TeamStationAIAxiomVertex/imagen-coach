@@ -83,6 +83,31 @@ Every page needs:
 
 The sitemap must include all 35 canonical URLs.
 
+## Agentic GEO Requirements
+
+The rebuilt site must publish machine-readable discovery files:
+
+- `/openapi.json`
+- `/llms.txt`
+- `/llms-full.txt`
+- `/agent/site-profile.json`
+- `/agent/services.json`
+- `/agent/contact.json`
+- `/agent/publications.json`
+- `/agent/ontology.json`
+- `/agent/page-signals.json`
+- `/agent/redirects.json`
+- `/agent/conversion-map.json`
+
+Each generated page must expose discovery links in the document head:
+
+- `rel="service-desc"` for OpenAPI
+- `rel="alternate"` for `llms.txt`
+- `rel="alternate"` for `llms-full.txt`
+- `rel="alternate"` for the structured site profile
+
+Every page uses `lang="es-MX"` and a self-referencing `hreflang="es-MX"` link.
+
 ## Known Source Defects
 
 The current site has internal `/articulos/...` links that return 404. These must be removed or redirected to their matching `/imagen-presencia/...` article routes.

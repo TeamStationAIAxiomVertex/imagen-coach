@@ -25,7 +25,8 @@ Use these sources in order:
 4. `archive/imagencoach/text/` for raw visible text and source links.
 5. `content/clean/` for rebuild-ready body content and deduplicated asset mapping.
 6. `docs/SDD.md`, `docs/DDD.md`, `docs/TDD.md`, and `docs/LLM_CONTEXT.md` for implementation decisions.
-7. `TeamStationAIAxiomVertex/guadalajara` only as the UX/UI/theme reference, not as this site's content source.
+7. `docs/wiki.llm`, `docs/UBIQUITOUS_LANGUAGE.md`, `docs/GEO_OPERATING_SYSTEM.md`, `docs/PAGE_SIGNAL_MAP.md`, and `docs/REDIRECTS_AND_URL_RETENTION.md` for agentic GEO, ontology, redirect, and semantic governance.
+8. `TeamStationAIAxiomVertex/guadalajara` only as the UX/UI/theme reference, not as this site's content source.
 
 Do not invent pages, slugs, services, images, schemas, or positioning without evidence.
 
@@ -119,6 +120,7 @@ Before deployment, validation must prove:
 - no Weblium UUID/nav/form junk leaks into rendered content
 - pages render cleanly on mobile and desktop
 - Cloudflare Pages can build from GitHub
+- the agentic files build and publish: `/openapi.json`, `/llms-full.txt`, and `/agent/*.json`
 
 ## Git Discipline
 
