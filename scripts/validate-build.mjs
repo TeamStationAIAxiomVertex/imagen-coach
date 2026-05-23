@@ -142,6 +142,8 @@ for (const file of htmlFiles) {
   }
   if (html.includes("term-highlight")) failures.push(`Visible SEO term highlighting leaked into ${file}`);
   if (html.includes("data-topic=")) failures.push(`Visible ontology data-topic markup leaked into ${file}`);
+  if (html.includes(">Pilar SEO<")) failures.push(`Internal SEO label leaked into ${file}`);
+  if (html.includes(">LLM</a>")) failures.push(`Internal LLM footer link leaked into ${file}`);
   for (const headingMatch of html.matchAll(/<h[1-6][^>]*>[\s\S]*?<\/h[1-6]>/gi)) {
     if (/<strong\b/i.test(headingMatch[0])) failures.push(`Injected strong emphasis inside heading in ${file}`);
   }

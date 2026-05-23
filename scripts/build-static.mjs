@@ -1305,7 +1305,6 @@ function footer() {
           <a href="/imagen-presencia">Publicaciones</a>
           <a href="/comparaciones">Comparaciones</a>
           <a href="/sobre-sonia-mcrorey-asesora-de-imagen">Sobre Sonia</a>
-          <a href="/llms.txt">LLM</a>
         </nav>
       </div>
     </section>
@@ -1452,7 +1451,7 @@ function clusterSections(pages, clusters, { limitPerCluster } = {}) {
       return `<section class="section cluster-section" id="${escapeHtml(cluster.id)}">
         <div class="cluster-header">
           <div>
-            <p class="section-label">Pilar SEO</p>
+            <p class="section-label">Ruta de lectura</p>
             <h2>${escapeHtml(cluster.label)}</h2>
             <p>${escapeHtml(cluster.description)}</p>
           </div>
