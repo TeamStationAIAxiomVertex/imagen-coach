@@ -1362,12 +1362,82 @@ function pageReadingMode(page, sections) {
   return "guided";
 }
 
-function structuredContentSections(page, lines, pages, clusters) {
-  if (page.type === "article") return articleStructuredContent(page, lines, pages, clusters);
+function structuredSectionBudget(page) {
+  if (page.type === "article-index") return 0;
+  if (page.type === "home") return 2;
+  if (page.type === "service-hub") return 2;
+  if (page.route === "/servicios-asesoria-de-imagen-coaching/preguntas-frequentes") return 0;
+  if (page.type === "service") return 3;
+  return 4;
+}
+
+function renderSemanticDetails(section, index, previousSections, page, clusterMap, { open = false, compact = false } = {}) {
+  const duplicateEarlier = previousSections.some((item) => item.heading.toLowerCase() === section.heading.toLowerCase());
+  const heading = duplicateEarlier ? `${section.heading} en contexto` : section.heading;
+  const topics = sectionTopics([section.heading, ...section.lines], page, clusterMap);
+  return `<details class="semantic-card${compact ? " compact-depth" : ""}" id="tema-${index + 2}-${slugify(heading)}"${open ? " open" : ""}>
+    <summary>
+      <span class="semantic-index">${String(index + 1).padStart(2, "0")}</span>
+      <span class="semantic-summary-copy">
+        ${topicChips(topics)}
+        <h2>${escapeHtml(heading)}</h2>
+      </span>
+    </summary>
+    <div class="semantic-copy">${renderSemanticCopy(section.lines, topics)}</div>
+  </details>`;
+}
+
+function deepReadingReserve(page, sections, previousSections, clusterMap) {
+  if (!sections.length) return "";
+  return `<section class="section deep-reading-reserve" aria-label="Material de profundización">
+    <div class="section-heading compact-heading">
+      <p class="section-label">Profundización</p>
+      <h2>Material completo para revisar con más calma.</h2>
+    </div>
+    <div class="semantic-sections reserve-grid">
+      ${sections.map((section, index) => renderSemanticDetails(section, previousSections.length + index, [...previousSections, ...sections.slice(0, index)], page, clusterMap, { compact: true })).join("\n")}
+    </div>
+  </section>`;
+}
+
+function faqStructuredContent(page, lines, pages, clusters) {
   const sections = classifyContent(page, lines);
   if (!sections.length) return "";
+  const clusterMap = articleClusterByRoute(clusters);
+  const intro = sections[0];
+  const questions = sections.slice(1);
+  const introTopics = sectionTopics([intro.heading, ...intro.lines], page, clusterMap);
+  return `<section class="section structured-intro service-intro" id="tema-1-${slugify(intro.heading)}">
+    <div class="section-heading">
+      <p class="section-label">Preguntas frecuentes</p>
+      <h2>${escapeHtml("Respuestas claras sobre asesoría y coaching de imagen.")}</h2>
+      ${topicChips(introTopics)}
+    </div>
+    ${renderServiceIntroPanel(page, intro, introTopics)}
+  </section>
+  <section class="section faq-answer-grid" aria-label="Preguntas frecuentes de imagen y presencia">
+    ${questions.map((section, index) => {
+      const topics = sectionTopics([section.heading, ...section.lines], page, clusterMap);
+      return `<details class="faq-answer-card"${index < 4 ? " open" : ""}>
+        <summary><span>${String(index + 1).padStart(2, "0")}</span>${escapeHtml(section.heading)}</summary>
+        <div>${renderSemanticCopy(section.lines, topics)}</div>
+      </details>`;
+    }).join("")}
+  </section>
+  ${internalLinkAtlas(page, pages, clusters)}`;
+}
+
+function structuredContentSections(page, lines, pages, clusters) {
+  if (page.type === "article") return articleStructuredContent(page, lines, pages, clusters);
+  if (page.route === "/servicios-asesoria-de-imagen-coaching/preguntas-frequentes") return faqStructuredContent(page, lines, pages, clusters);
+  const sections = classifyContent(page, lines);
+  if (!sections.length) return "";
+  const budget = structuredSectionBudget(page);
+  if (budget === 0) return "";
   const intro = sections[0];
   const rest = sections.slice(1);
+  const visibleRest = rest.slice(0, budget);
+  const reserveRest = rest.slice(budget);
   const clusterMap = articleClusterByRoute(clusters);
   const introTopics = sectionTopics([intro.heading, ...intro.lines], page, clusterMap);
   const mode = pageReadingMode(page, sections);
@@ -1379,26 +1449,13 @@ function structuredContentSections(page, lines, pages, clusters) {
     </div>
     ${renderServiceIntroPanel(page, intro, introTopics)}
   </section>
-  ${serviceSystemVisual(page, sections, clusterMap)}
-  ${serviceProcessMap(page)}
-  <section class="section semantic-sections ${mode === "fragmented" ? "fragment-ladder" : ""} ${mode === "dense" ? "dense-reading" : ""}">
-    ${rest.map((section, index) => {
-      const duplicateEarlier = [intro, ...rest.slice(0, index)].some((item) => item.heading.toLowerCase() === section.heading.toLowerCase());
-      const heading = duplicateEarlier ? `${section.heading} en contexto` : section.heading;
-      const topics = sectionTopics([section.heading, ...section.lines], page, clusterMap);
-      return `<details class="semantic-card" id="tema-${index + 2}-${slugify(heading)}"${index < 2 ? " open" : ""}>
-      <summary>
-        <span class="semantic-index">${String(index + 1).padStart(2, "0")}</span>
-        <span class="semantic-summary-copy">
-          ${topicChips(topics)}
-          <h2>${escapeHtml(heading)}</h2>
-        </span>
-      </summary>
-      <div class="semantic-copy">${renderSemanticCopy(section.lines, topics)}</div>
-    </details>`;
-    }).join("\n")}
-  </section>
-  ${internalLinkAtlas(page, pages, clusters)}`;
+	  ${serviceSystemVisual(page, sections, clusterMap)}
+	  ${serviceProcessMap(page)}
+	  <section class="section semantic-sections ${mode === "fragmented" ? "fragment-ladder" : ""} ${mode === "dense" ? "dense-reading" : ""}">
+	    ${visibleRest.map((section, index) => renderSemanticDetails(section, index, [intro, ...visibleRest.slice(0, index)], page, clusterMap, { open: index < 1 })).join("\n")}
+	  </section>
+	  ${deepReadingReserve(page, reserveRest, [intro, ...visibleRest], clusterMap)}
+	  ${internalLinkAtlas(page, pages, clusters)}`;
 }
 
 function pageTermSignals(page, clusterMap) {

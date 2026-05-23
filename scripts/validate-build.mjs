@@ -181,6 +181,17 @@ for (const file of htmlFiles) {
   if (!html.includes('rel="service-desc" type="application/openapi+json"')) failures.push(`Missing OpenAPI discovery link in ${file}`);
   if (!html.includes(`href="${SITE_URL}/llms-full.txt"`)) failures.push(`Missing llms-full discovery link in ${file}`);
   if (!html.includes('hreflang="es-MX"')) failures.push(`Missing es-MX hreflang in ${file}`);
+  const structuredIntroCount = (html.match(/class="[^"]*\bstructured-intro\b/g) || []).length;
+  const semanticCardCount = (html.match(/class="semantic-card/g) || []).length;
+  const openSemanticCardCount = (html.match(/class="semantic-card[^"]*"[^>]*\sopen\b/g) || []).length;
+  const faqAnswerCount = (html.match(/class="faq-answer-card/g) || []).length;
+  const routeForDensity = file === path.join("dist", "index.html") ? "/" : `/${path.dirname(path.relative("dist", file)).replaceAll(path.sep, "/")}`;
+  if (routeForDensity === "/imagen-presencia" && structuredIntroCount > 0) failures.push("Publication hub should not render migrated essay body as structured intro");
+  if (routeForDensity.startsWith("/servicios-asesoria-de-imagen-coaching") && routeForDensity !== "/servicios-asesoria-de-imagen-coaching/preguntas-frequentes" && openSemanticCardCount > 1) {
+    failures.push(`Too many open service content cards in ${file}: ${openSemanticCardCount}`);
+  }
+  if (routeForDensity === "/servicios-asesoria-de-imagen-coaching/preguntas-frequentes" && faqAnswerCount < 8) failures.push("FAQ page did not render the answer-card structure");
+  if (routeForDensity === "/servicios-asesoria-de-imagen-coaching/preguntas-frequentes" && semanticCardCount > 0) failures.push("FAQ page should not render generic semantic cards");
   const route = file === path.join("dist", "index.html") ? "/" : `/${path.dirname(path.relative("dist", file)).replaceAll(path.sep, "/")}`;
   const expectedCanonical = `${SITE_URL}${route === "/" ? "/" : route}`;
   const canonicalMatch = html.match(/<link rel="canonical" href="([^"]+)" \/>/);
