@@ -75,6 +75,17 @@ const SEMANTIC_TITLES = {
     intent: "Elegir el proceso adecuado segun etapa, contexto y necesidad profesional.",
     description: "Rutas de asesoría, coaching y talleres para alinear imagen profesional, presencia, percepción y posicionamiento en México y LATAM.",
   },
+  "/imagen-presencia/rebranding-imagen-mentalidad-abundancia": {
+    h1: "Imagen, mentalidad y claridad profesional",
+    shortLabel: "Rebranding de Imagen",
+    menuLabel: "Rebranding de Imagen",
+    cardTitle: "Rebranding de Imagen",
+    seoTitle: "Imagen, Mentalidad y Claridad Profesional | Sonia McRorey",
+    supportHeading: "Evolución de marca, presencia y posicionamiento",
+    entity: "Rebranding de imagen profesional",
+    intent: "Comprender la evolución de Sonia hacia un enfoque integral de imagen, presencia, mentalidad y claridad profesional.",
+    description: "La evolución del enfoque de Sonia McRorey: de la imagen estética a una metodología integral de imagen, mentalidad, presencia y posicionamiento profesional.",
+  },
   "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen": {
     h1: "Asesoría de Imagen Integral",
     shortLabel: "Asesoría Integral",
@@ -167,6 +178,7 @@ const PAGE_OVERRIDES = {
 const ROUTE_IMAGE_OVERRIDES = {
   "/imagen-presencia/beneficios-de-asesoria-de-imagen": "/assets/5ac09d77d814f447.jpg",
   "/imagen-presencia/la-importancia-de-tu-imagen-personal": "/assets/latina-profesional-espejo-coach-de-imagen.png",
+  "/imagen-presencia/rebranding-imagen-mentalidad-abundancia": "/assets/sonia-mcrorey-about-760.avif",
   "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen": "/assets/7ace6f0d3687c214.jpg",
   "/servicios-asesoria-de-imagen-coaching/preguntas-frequentes": "/assets/619a89970f5d1790.jpg",
 };
@@ -1670,6 +1682,7 @@ function descriptionFromLines(lines, page = null) {
 function pageType(route) {
   if (route === "/") return "home";
   if (route === "/imagen-presencia") return "article-index";
+  if (route === "/imagen-presencia/rebranding-imagen-mentalidad-abundancia") return "pillar";
   if (route.startsWith("/imagen-presencia/")) return "article";
   if (route === "/servicios-asesoria-de-imagen-coaching") return "service-hub";
   if (route.startsWith("/servicios-asesoria-de-imagen-coaching/")) return "service";
@@ -1703,6 +1716,15 @@ function usableImages(page) {
 function routeOutputPath(route) {
   if (route === "/") return distPath("index.html");
   return distPath(route.replace(/^\/+/, ""), "index.html");
+}
+
+function markdownRoute(route) {
+  if (route === "/") return "/index.md";
+  return `${route.replace(/\/$/, "")}.md`;
+}
+
+function markdownOutputPath(route) {
+  return distPath(markdownRoute(route).replace(/^\/+/, ""));
 }
 
 function absoluteUrl(route) {
@@ -2157,6 +2179,7 @@ function serviceHubContent(page, pages, clusters) {
 }
 
 function structuredContentSections(page, lines, pages, clusters) {
+  if (page.route === "/imagen-presencia/rebranding-imagen-mentalidad-abundancia") return rebrandPillarContent(page, lines, pages, clusters);
   if (page.type === "article") return articleStructuredContent(page, lines, pages, clusters);
   if (page.type === "home") return "";
   if (page.route === "/sobre-sonia-mcrorey-asesora-de-imagen") return aboutAuthorityContent();
@@ -2621,7 +2644,7 @@ function contactIntakeForm() {
     </label>
     <label class="concierge-check">
       <input type="checkbox" name="concierge_mode" value="1" checked />
-      <span>Permitir que el concierge AI resuma mi contexto para que Sonia responda con mayor precisión.</span>
+      <span>Permitir que el asistente privado resuma mi contexto para que Sonia responda con mayor precisión.</span>
     </label>
     <div class="form-actions">
       <button class="btn primary" type="submit">Enviar diagnóstico privado</button>
@@ -2647,7 +2670,10 @@ function renderContactPage() {
   <link rel="service-desc" type="application/openapi+json" href="${SITE_URL}/openapi.json" />
   <link rel="alternate" type="text/plain" href="${SITE_URL}/llms.txt" title="Resumen para asistentes" />
   <link rel="alternate" type="text/plain" href="${SITE_URL}/llms-full.txt" title="Contexto GEO completo para asistentes" />
+  <link rel="alternate" type="text/markdown" href="${SITE_URL}${markdownRoute(CONTACT_ROUTE)}" title="Versión Markdown para agentes" />
   <link rel="alternate" type="application/json" href="${SITE_URL}/agent/site-profile.json" title="Perfil estructurado para asistentes" />
+  <link rel="agent" type="application/json" href="${SITE_URL}/.well-known/agent.json" />
+  <link rel="api-catalog" type="application/json" href="${SITE_URL}/api-catalog.json" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="${title}" />
   <meta property="og:description" content="${description}" />
@@ -2663,9 +2689,9 @@ function renderContactPage() {
     <nav class="breadcrumbs section" aria-label="Breadcrumbs"><a href="/">Inicio</a><span>/</span><span aria-current="page">Contacto</span></nav>
     <section class="section concierge-hero">
       <div>
-        <p class="eyebrow">Concierge privado</p>
+        <p class="eyebrow">Atención privada</p>
         <h1>${headlineHtml("Contacto para diagnóstico de Coach de Imagen")}</h1>
-        <p>Un intake ejecutivo para entender tu etapa, tu contexto profesional y el tipo de presencia que necesitas sostener antes de definir una ruta con Sonia.</p>
+        <p>Un formulario privado para entender tu etapa, tu contexto profesional y el tipo de presencia que necesitas sostener antes de definir una ruta con Sonia.</p>
         <div class="concierge-signals" aria-label="Qué revisa Sonia">
           <span>${topicIcon("percepcion")}Percepción</span>
           <span>${topicIcon("presencia")}Presencia</span>
@@ -2678,13 +2704,13 @@ function renderContactPage() {
         <ol>
           <li><span>01</span>Compartes contexto profesional y área de interés.</li>
           <li><span>02</span>La solicitud se valida de forma segura antes de llegar al inbox de Sonia.</li>
-          <li><span>03</span>El concierge AI resume señales clave para responder con más precisión.</li>
+          <li><span>03</span>El asistente privado resume señales clave para responder con más precisión.</li>
         </ol>
       </aside>
     </section>
     <section class="section concierge-intake">
       <div class="section-heading">
-        <p class="section-label">Intake ejecutivo</p>
+        <p class="section-label">Diagnóstico privado</p>
         <h2>${headlineHtml("Cuéntale a Sonia qué necesitas resolver.")}</h2>
         <p>El formulario conserva accesibilidad, claridad semántica y una experiencia privada; el envío se procesa con validación y protección antispam.</p>
       </div>
@@ -2708,9 +2734,10 @@ function breadcrumbs(page) {
   if (page.type === "about") {
     return `<nav class="breadcrumbs section" aria-label="Breadcrumbs"><a href="/">Inicio</a><span>/</span><span aria-current="page">Sonia</span></nav>`;
   }
-  const label = page.type === "article" ? "Imagen y Presencia" : "Servicios";
-  const parent = page.type === "article" ? "/imagen-presencia" : "/servicios-asesoria-de-imagen-coaching";
-  const currentLabel = page.type === "article" ? cleanDisplayTitle(page.heroTitle) : semanticShortLabel(page.route, page.heroTitle);
+  const isImagenPresenciaRoute = page.route.startsWith("/imagen-presencia/");
+  const label = isImagenPresenciaRoute ? "Imagen y Presencia" : "Servicios";
+  const parent = isImagenPresenciaRoute ? "/imagen-presencia" : "/servicios-asesoria-de-imagen-coaching";
+  const currentLabel = isImagenPresenciaRoute ? semanticShortLabel(page.route, cleanDisplayTitle(page.heroTitle)) : semanticShortLabel(page.route, page.heroTitle);
   return `<nav class="breadcrumbs section" aria-label="Breadcrumbs"><a href="/">Inicio</a><span>/</span><a href="${parent}">${label}</a><span>/</span><span aria-current="page">${escapeHtml(currentLabel)}</span></nav>`;
 }
 
@@ -2718,6 +2745,7 @@ function contentHeading(page) {
   const identity = semanticIdentity(page.route);
   if (identity) return [identity.entity, identity.supportHeading];
   if (page.type === "article") return ["Artículo", "Lectura completa"];
+  if (page.type === "pillar") return ["Pilar editorial", semanticSupportHeading(page)];
   return [BRAND_NAME, "Contenido principal"];
 }
 
@@ -2738,8 +2766,9 @@ function hero(page, lines) {
   const commercialModel = COMMERCIAL_PAGE_MODELS[page.route];
   const lede = page.route === "/servicios-asesoria-de-imagen-coaching/preguntas-frequentes"
     ? [semanticDescription(page)]
+    : page.type === "pillar" ? [semanticDescription(page), semanticIdentity(page.route)?.intent].filter(Boolean)
     : commercialModel ? [commercialModel.intro] : nonTitleLines(page, lines, 1).slice(0, 2);
-  const eyebrow = page.type === "article" ? "Imagen, presencia y mentalidad" : page.type === "service" ? "Servicio" : page.type === "about" ? "Sobre Sonia" : BRAND_NAME;
+  const eyebrow = page.type === "article" ? "Imagen, presencia y mentalidad" : page.type === "pillar" ? "Imagen y presencia profesional" : page.type === "service" ? "Servicio" : page.type === "about" ? "Sobre Sonia" : BRAND_NAME;
   return `<section class="section hero imagen-hero ${page.type}-hero">
     <div class="hero-copy">
       <p class="eyebrow">${eyebrow}</p>
@@ -2748,7 +2777,7 @@ function hero(page, lines) {
       ${deliveryModeStrip(page)}
       <div class="actions">
         <a class="btn primary" href="${WHATSAPP}" target="_blank" rel="noopener">${escapeHtml(PAGE_OVERRIDES[page.route]?.primaryCta || "Agendar diagnóstico")}</a>
-        <a class="btn secondary" href="${page.type === "article" ? "/imagen-presencia" : "/servicios-asesoria-de-imagen-coaching"}">${page.type === "article" ? "Ver publicaciones" : "Ver servicios"}</a>
+        <a class="btn secondary" href="${page.type === "article" || page.type === "pillar" ? "/imagen-presencia" : "/servicios-asesoria-de-imagen-coaching"}">${page.type === "article" || page.type === "pillar" ? "Ver publicaciones" : "Ver servicios"}</a>
       </div>
     </div>
     <figure class="hero-media">
@@ -2866,6 +2895,78 @@ function articleStructuredContent(page, lines, pages, clusters) {
       ${sections.map((section, index) => renderArticleSection(page, section, index, sections.slice(0, index), clusterMap)).join("")}
     </div>
   </article>`;
+}
+
+function rebrandPillarContent(page, lines, pages, clusters) {
+  const sections = classifyContent(page, lines);
+  const clusterMap = articleClusterByRoute(clusters);
+  const credentialLines = lines
+    .map((line) => cleanDisplayTitle(line))
+    .filter((line) => /Maison|Garbo|Rossy|Colegio|Grupo Imagen|P\.Shopper|Domingo|AICI|Mujer Holística/i.test(line))
+    .filter((line, index, list) => line.length <= 150 && list.indexOf(line) === index);
+  const framework = [
+    ["Imagen", "La parte visible deja de funcionar como estética aislada y se vuelve una forma de comunicar etapa, presencia y dirección profesional."],
+    ["Mentalidad", "El autoconcepto, el merecimiento y la claridad interna explican por qué algunas personas se esconden aunque tengan capacidad."],
+    ["Presencia", "La imagen comienza a sostener liderazgo, comunicación, lenguaje corporal y percepción profesional de forma más coherente."],
+    ["Negocio", "El posicionamiento se conecta con mejores clientes, oportunidades, autoridad y una forma más sólida de ocupar el mercado."],
+  ];
+  const fit = [
+    "Profesionistas que ya no quieren perder tiempo en lo superficial.",
+    "Dueñas de negocio que necesitan sostener una etapa más visible.",
+    "Empresas y equipos que necesitan evolución en comunicación, presencia y cultura interna.",
+    "Personas en punto de inflexión que sienten que su imagen anterior ya no representa lo que hacen hoy.",
+  ];
+  return `<section class="section rebrand-pillar-intro">
+    <div class="section-heading compact-heading">
+      <p class="section-label">Evolución de marca</p>
+      <h2>${headlineHtml("De la imagen estética a una metodología integral.")}</h2>
+      <p>Aquí se ordena la evolución del enfoque de Sonia: imagen, mentalidad, presencia, negocio y claridad profesional como una sola ruta de trabajo.</p>
+    </div>
+    <div class="rebrand-framework">
+      ${framework.map(([label, text]) => `<article>
+        <span class="context-icon">${topicIcon(label === "Imagen" ? "percepcion" : label === "Mentalidad" ? "mentalidad" : label === "Presencia" ? "presencia" : "liderazgo")}</span>
+        <h3>${escapeHtml(label)}</h3>
+        <p>${escapeHtml(text)}</p>
+      </article>`).join("")}
+    </div>
+  </section>
+  <section class="section rebrand-authority-panel">
+    <div class="section-heading compact-heading">
+      <p class="section-label">Trayectoria</p>
+      <h2>${headlineHtml("Formación que sostiene el nuevo enfoque.")}</h2>
+      <p>El rebranding no nace de una moda visual. Nace de una trayectoria internacional en imagen, empresa, comunicación, psicología de la imagen, color, coaching y presencia profesional.</p>
+    </div>
+    <div class="credential-timeline">
+      ${credentialLines.slice(0, 10).map((line, index) => `<div>
+        <span>${String(index + 1).padStart(2, "0")}</span>
+        <strong>${escapeHtml(line.replace(/\s*[–-]\s*/g, " · "))}</strong>
+      </div>`).join("")}
+    </div>
+  </section>
+  <section class="section rebrand-fit-grid">
+    <div class="section-heading compact-heading">
+      <p class="section-label">Para quién</p>
+      <h2>${headlineHtml("Cuando la imagen anterior ya no representa la etapa actual.")}</h2>
+    </div>
+    <div class="fit-grid">
+      ${fit.map((text, index) => `<article class="fit-card">
+        <span>${String(index + 1).padStart(2, "0")}</span>
+        <h3>${escapeHtml(text)}</h3>
+      </article>`).join("")}
+    </div>
+  </section>
+  <section class="section article-layout rebrand-source-copy" aria-label="Lectura completa del rebranding">
+    <aside class="article-side-cta">
+      <p class="section-label">Ruta conectada</p>
+      <h2>${headlineHtml("Seguridad y Posicionamiento")}</h2>
+      <p>Si este contenido describe tu momento, la ruta más cercana es el trabajo de seguridad interna, presencia y posicionamiento profesional.</p>
+      <a class="btn primary" href="/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia">Ver ruta</a>
+    </aside>
+    <div class="article-main">
+      ${sections.map((section, index) => renderArticleSection(page, section, index, sections.slice(0, index), clusterMap)).join("")}
+    </div>
+  </section>
+  ${internalLinkAtlas(page, pages, clusters)}`;
 }
 
 function articleCards(pages, { limit, clusterMap = new Map() } = {}) {
@@ -3289,7 +3390,7 @@ function proofStrip(pages) {
   const articleCount = pages.filter((page) => page.type === "article").length;
   const serviceCount = pages.filter((page) => page.type === "service").length;
   return `<section class="section proof-strip" aria-label="Datos de confianza">
-    <div class="proof-item"><strong>14+</strong><span>años de experiencia profesional</span></div>
+    <div class="proof-item"><strong>15+</strong><span>años de experiencia profesional</span></div>
     <div class="proof-item"><strong>${serviceCount}</strong><span>procesos de asesoría y coaching</span></div>
     <div class="proof-item"><strong>${articleCount}</strong><span>publicaciones sobre imagen y presencia</span></div>
     <div class="proof-item"><strong>AICI</strong><span>formación y criterio internacional</span></div>
@@ -3408,6 +3509,8 @@ function renderSemanticHub(hub, pages, clusters) {
   <link rel="alternate" type="text/plain" href="${SITE_URL}/llms.txt" title="Resumen para asistentes" />
   <link rel="alternate" type="text/plain" href="${SITE_URL}/llms-full.txt" title="Contexto GEO completo para asistentes" />
   <link rel="alternate" type="application/json" href="${SITE_URL}/agent/site-profile.json" title="Perfil estructurado para asistentes" />
+  <link rel="agent" type="application/json" href="${SITE_URL}/.well-known/agent.json" />
+  <link rel="api-catalog" type="application/json" href="${SITE_URL}/api-catalog.json" />
   <meta property="og:title" content="${escapeHtml(hub.title)}" />
   <meta property="og:description" content="${escapeHtml(hub.description)}" />
   <meta property="og:url" content="${absoluteUrl(hub.route)}" />
@@ -3669,6 +3772,8 @@ function renderComparisonPage(page) {
   <link rel="alternate" type="text/plain" href="${SITE_URL}/llms.txt" title="Resumen para asistentes" />
   <link rel="alternate" type="text/plain" href="${SITE_URL}/llms-full.txt" title="Contexto GEO completo para asistentes" />
   <link rel="alternate" type="application/json" href="${SITE_URL}/agent/site-profile.json" title="Perfil estructurado para asistentes" />
+  <link rel="agent" type="application/json" href="${SITE_URL}/.well-known/agent.json" />
+  <link rel="api-catalog" type="application/json" href="${SITE_URL}/api-catalog.json" />
   <meta property="og:title" content="${escapeHtml(page.title)}" />
   <meta property="og:description" content="${escapeHtml(page.description)}" />
   <meta property="og:url" content="${absoluteUrl(page.route)}" />
@@ -3865,7 +3970,7 @@ function schema(page) {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Inicio", item: `${SITE_URL}/` },
-      ...(page.type === "article"
+      ...(page.type === "article" || page.type === "pillar"
         ? [
             { "@type": "ListItem", position: 2, name: "Publicaciones", item: `${SITE_URL}/imagen-presencia` },
             { "@type": "ListItem", position: 3, name: semanticH1(page), item: absoluteUrl(page.route) },
@@ -3912,6 +4017,8 @@ function renderPage(page, pages, clusters) {
   <link rel="alternate" type="text/plain" href="${SITE_URL}/llms.txt" title="Resumen para asistentes" />
   <link rel="alternate" type="text/plain" href="${SITE_URL}/llms-full.txt" title="Contexto GEO completo para asistentes" />
   <link rel="alternate" type="application/json" href="${SITE_URL}/agent/site-profile.json" title="Perfil estructurado para asistentes" />
+  <link rel="agent" type="application/json" href="${SITE_URL}/.well-known/agent.json" />
+  <link rel="api-catalog" type="application/json" href="${SITE_URL}/api-catalog.json" />
   <meta property="og:title" content="${escapeHtml(semanticH1(page))}" />
   <meta property="og:description" content="${escapeHtml(semanticDescription(page, page.description))}" />
   <meta property="og:url" content="${absoluteUrl(page.route)}" />
@@ -4397,11 +4504,184 @@ function redirectsAgent() {
   };
 }
 
+function contentSignalAgent() {
+  return {
+    schemaVersion: "2026-05-24",
+    siteUrl: SITE_URL,
+    policy: {
+      search: true,
+      aiInput: true,
+      aiTrain: false,
+    },
+    header: "Content-Signal: search=yes, ai-input=yes, ai-train=no",
+    purpose:
+      "Allow search indexing and AI answer grounding while reserving Sonia McRorey's content from model training by default.",
+  };
+}
+
+function apiCatalogAgent() {
+  return {
+    schemaVersion: "2026-05-24",
+    siteUrl: SITE_URL,
+    catalogs: [
+      {
+        name: "OpenAPI",
+        type: "openapi",
+        url: `${SITE_URL}/openapi.json`,
+        description: "Static discovery API for pages, services, publications, contact and machine-readable agent files.",
+      },
+      {
+        name: "Agent Card",
+        type: "agent-card",
+        url: `${SITE_URL}/.well-known/agent.json`,
+        description: "High-level agent discovery card for Sonia McRorey's Coach de Imagen authority site.",
+      },
+      {
+        name: "LLMs compact context",
+        type: "llms",
+        url: `${SITE_URL}/llms.txt`,
+        description: "Compact LLM-readable context for the site.",
+      },
+      {
+        name: "LLMs full context",
+        type: "llms-full",
+        url: `${SITE_URL}/llms-full.txt`,
+        description: "Full GEO and ontology context for AI retrieval.",
+      },
+      {
+        name: "Semantic index",
+        type: "semantic-index",
+        url: `${SITE_URL}/semantic-index.json`,
+        description: "Machine-readable page, hub, comparison and search-intent index.",
+      },
+      {
+        name: "Service catalog",
+        type: "services",
+        url: `${SITE_URL}/agent/services.json`,
+        description: "Structured service catalog and delivery modalities.",
+      },
+      {
+        name: "Publications",
+        type: "publications",
+        url: `${SITE_URL}/agent/publications.json`,
+        description: "Static article and publication index.",
+      },
+      {
+        name: "Contact action",
+        type: "contact",
+        url: `${SITE_URL}/agent/contact.json`,
+        description: "Private diagnostic contact action and intake fields.",
+      },
+    ],
+  };
+}
+
+function agentCard(pages) {
+  return {
+    schemaVersion: "2026-05-24",
+    name: `${BRAND_NAME} | Sonia McRorey`,
+    url: SITE_URL,
+    description:
+      "Static, Spanish-language authority site for coaching de imagen, presencia profesional, liderazgo, percepción and posicionamiento profesional in Guadalajara, México and LATAM.",
+    language: "es-MX",
+    provider: {
+      name: "Sonia McRorey",
+      type: "ProfessionalService",
+      location: "Guadalajara, Jalisco, México",
+      areaServed: ["Guadalajara", "México", "LATAM", "mercados hispanohablantes"],
+    },
+    capabilities: [
+      "Answer questions about coaching de imagen and professional presence.",
+      "Recommend the right service route from visible static content.",
+      "Navigate static articles, services, FAQs, comparisons and contact pages.",
+      "Use OpenAPI and agent JSON files for structured discovery.",
+    ],
+    preferredActions: [
+      {
+        name: "Agendar diagnóstico privado",
+        url: absoluteUrl(CONTACT_ROUTE),
+        method: "GET",
+      },
+      {
+        name: "Consultar servicios",
+        url: absoluteUrl("/servicios-asesoria-de-imagen-coaching"),
+        method: "GET",
+      },
+      {
+        name: "Leer publicaciones",
+        url: absoluteUrl("/imagen-presencia"),
+        method: "GET",
+      },
+    ],
+    discovery: {
+      openapi: `${SITE_URL}/openapi.json`,
+      apiCatalog: `${SITE_URL}/api-catalog.json`,
+      llms: `${SITE_URL}/llms.txt`,
+      llmsFull: `${SITE_URL}/llms-full.txt`,
+      sitemap: `${SITE_URL}/sitemap.xml`,
+      semanticIndex: `${SITE_URL}/semantic-index.json`,
+      contentSignal: `${SITE_URL}/content-signal.json`,
+    },
+    pageCount: pages.length,
+    trainingPolicy: "ai-train=no",
+  };
+}
+
+function agentSkillsAgent() {
+  return {
+    schemaVersion: "2026-05-24",
+    siteUrl: SITE_URL,
+    skills: [
+      {
+        id: "choose-service-route",
+        name: "Elegir ruta de Coach de Imagen",
+        description: "Ayuda a elegir entre asesoría integral, presencia profesional, talleres o seguridad interna usando necesidades visibles del usuario.",
+        inputHints: ["imagen profesional", "presencia", "empresa", "seguridad interna", "posicionamiento"],
+        output: "Recommended static service URL and reason.",
+      },
+      {
+        id: "answer-faq",
+        name: "Responder preguntas frecuentes",
+        description: "Responde con base en la página de preguntas frecuentes y las páginas de servicio.",
+        inputHints: ["diferencia entre asesoría y coaching", "online", "empresas", "Guadalajara"],
+        output: "Direct answer with a relevant static URL.",
+      },
+      {
+        id: "retrieve-publication-context",
+        name: "Buscar publicaciones relacionadas",
+        description: "Encuentra artículos estáticos por tema de imagen, presencia, liderazgo, colorimetría o seguridad interna.",
+        inputHints: ["artículo", "publicación", "colorimetría", "liderazgo", "imagen profesional"],
+        output: "Related publication URLs and service bridge.",
+      },
+    ],
+  };
+}
+
+function unavailableProtocol(name, route) {
+  return {
+    schemaVersion: "2026-05-24",
+    name,
+    url: `${SITE_URL}${route}`,
+    status: "not-implemented",
+    reason:
+      "This project is a static HTML authority and lead-intake site. No live remote agent protocol endpoint is exposed until a production Worker or MCP server is intentionally deployed.",
+    alternatives: [`${SITE_URL}/openapi.json`, `${SITE_URL}/api-catalog.json`, `${SITE_URL}/.well-known/agent.json`],
+  };
+}
+
 function openApiDoc(pages) {
   const staticPaths = {
     "/openapi.json": "Get the OpenAPI description.",
     "/llms.txt": "Get the compact LLM context.",
     "/llms-full.txt": "Get the full LLM and GEO context.",
+    "/api-catalog.json": "Get the API and agent discovery catalog.",
+    "/content-signal.json": "Get the AI content usage policy.",
+    "/.well-known/agent.json": "Get the agent discovery card.",
+    "/.well-known/ai-plugin.json": "Get ChatGPT plugin-style discovery metadata.",
+    "/.well-known/agent-skills.json": "Get static agent skill descriptions.",
+    "/.well-known/mcp.json": "Get MCP availability status.",
+    "/.well-known/a2a.json": "Get A2A availability status.",
+    "/.well-known/webmcp.json": "Get WebMCP availability status.",
     "/entities.json": "Get root entity, buyer entities, GEO entities and semantic guardrails.",
     "/semantic-index.json": "Get the AI retrieval semantic index.",
     "/sitemap.xml": "Get the complete sitemap.",
@@ -4606,10 +4886,31 @@ async function writeJson(relativePath, data) {
 
 async function writeAgentFiles(pages, clusters) {
   await mkdir(distPath("agent"), { recursive: true });
+  await mkdir(distPath(".well-known"), { recursive: true });
   await writeJson("openapi.json", openApiDoc(pages));
   await writeFile(distPath("llms-full.txt"), llmsFull(pages, clusters));
+  await writeJson("api-catalog.json", apiCatalogAgent());
+  await writeJson("content-signal.json", contentSignalAgent());
   await writeJson("entities.json", entitiesAgent());
   await writeJson("semantic-index.json", semanticIndexAgent(pages, clusters));
+  await writeJson(".well-known/agent.json", agentCard(pages));
+  await writeJson(".well-known/ai-plugin.json", {
+    schema_version: "v1",
+    name_for_human: `${BRAND_NAME} | Sonia McRorey`,
+    name_for_model: "coach_de_imagen_sonia_mcrorey",
+    description_for_human: "Coaching de imagen, presencia profesional y posicionamiento profesional en México y LATAM.",
+    description_for_model:
+      "Use this static site to answer questions about Sonia McRorey's coaching de imagen, professional presence, leadership perception, articles, services and private diagnostic contact path.",
+    auth: { type: "none" },
+    api: { type: "openapi", url: `${SITE_URL}/openapi.json` },
+    logo_url: `${SITE_URL}/assets/sonia-logo-ai.png`,
+    contact_email: "contact@coachdeimagen.com",
+    legal_info_url: `${SITE_URL}/contacto/`,
+  });
+  await writeJson(".well-known/agent-skills.json", agentSkillsAgent());
+  await writeJson(".well-known/mcp.json", unavailableProtocol("MCP", "/.well-known/mcp.json"));
+  await writeJson(".well-known/a2a.json", unavailableProtocol("A2A", "/.well-known/a2a.json"));
+  await writeJson(".well-known/webmcp.json", unavailableProtocol("WebMCP", "/.well-known/webmcp.json"));
   await writeJson("agent/site-profile.json", siteProfileAgent(pages));
   await writeJson("agent/services.json", servicesAgent(pages));
   await writeJson("agent/contact.json", contactAgent());
@@ -4638,6 +4939,9 @@ async function main() {
     const out = routeOutputPath(page.route);
     await mkdir(path.dirname(out), { recursive: true });
     await writeFile(out, renderPage(page, pages, clusters));
+    const markdownOut = markdownOutputPath(page.route);
+    await mkdir(path.dirname(markdownOut), { recursive: true });
+    await writeFile(markdownOut, page.markdown);
   }
   for (const hub of SEMANTIC_HUBS) {
     const out = routeOutputPath(hub.route);
@@ -4653,6 +4957,21 @@ async function main() {
   const contactOut = routeOutputPath(CONTACT_ROUTE);
   await mkdir(path.dirname(contactOut), { recursive: true });
   await writeFile(contactOut, renderContactPage());
+  const contactMarkdownOut = markdownOutputPath(CONTACT_ROUTE);
+  await mkdir(path.dirname(contactMarkdownOut), { recursive: true });
+  await writeFile(contactMarkdownOut, `# Contacto privado para diagnostico de Coach de Imagen
+
+Solicita un diagnostico privado con Sonia McRorey para coaching de imagen, presencia profesional, posicionamiento, imagen empresarial o seguridad profesional.
+
+- Nombre completo
+- Email
+- Telefono / WhatsApp
+- Ciudad y pais
+- Servicio de interes
+- Contexto profesional
+
+La solicitud se procesa mediante una ruta segura de Cloudflare Workers para validacion, proteccion antispam y resumen privado del contexto antes de llegar al inbox de Sonia.
+`);
   await writeFile(distPath("sitemap.xml"), sitemap([...pages, ...SEMANTIC_HUBS, ...COMPARISON_PAGES, contactPage]));
   await writeFile(distPath("category-sitemap.xml"), sitemap(SEMANTIC_HUBS));
   await writeFile(distPath("service-sitemap.xml"), sitemap([
@@ -4660,7 +4979,7 @@ async function main() {
     ...PILLARS.map((pillar) => ({ route: pillar.route })),
   ]));
   await writeFile(distPath("blog-sitemap.xml"), sitemap(pages.filter((page) => page.type === "article")));
-  await writeFile(distPath("robots.txt"), `User-agent: *\nAllow: /\nSitemap: ${SITE_URL}/sitemap.xml\nSitemap: ${SITE_URL}/blog-sitemap.xml\nSitemap: ${SITE_URL}/category-sitemap.xml\nSitemap: ${SITE_URL}/service-sitemap.xml\nOpenAPI: ${SITE_URL}/openapi.json\nLLMs: ${SITE_URL}/llms.txt\nLLMs-Full: ${SITE_URL}/llms-full.txt\nAgent-Profile: ${SITE_URL}/agent/site-profile.json\n`);
+  await writeFile(distPath("robots.txt"), `User-agent: *\nAllow: /\n\nUser-agent: GPTBot\nAllow: /\n\nUser-agent: ChatGPT-User\nAllow: /\n\nUser-agent: OAI-SearchBot\nAllow: /\n\nUser-agent: ClaudeBot\nAllow: /\n\nUser-agent: Claude-User\nAllow: /\n\nUser-agent: PerplexityBot\nAllow: /\n\nUser-agent: Google-Extended\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\nSitemap: ${SITE_URL}/blog-sitemap.xml\nSitemap: ${SITE_URL}/category-sitemap.xml\nSitemap: ${SITE_URL}/service-sitemap.xml\nOpenAPI: ${SITE_URL}/openapi.json\nAPI-Catalog: ${SITE_URL}/api-catalog.json\nLLMs: ${SITE_URL}/llms.txt\nLLMs-Full: ${SITE_URL}/llms-full.txt\nAgent-Profile: ${SITE_URL}/agent/site-profile.json\nAgent-Card: ${SITE_URL}/.well-known/agent.json\nContent-Signal: ${SITE_URL}/content-signal.json\n`);
   await writeFile(distPath("_redirects"), `${LEGACY_REDIRECTS.map(([from, to, status]) => `${from}  ${to}  ${status}`).join("\n")}\n`);
   console.log(`Built ${pages.length + SEMANTIC_HUBS.length + COMPARISON_PAGES.length + 1} routes into dist`);
 }

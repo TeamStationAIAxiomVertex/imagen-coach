@@ -8,7 +8,12 @@ const failures = [];
 const SITE_URL = "https://coachdeimagen.com";
 const LEGACY_SITE_URL = "https://imagencoach.com";
 const routeSet = new Set(manifest.pages.map((page) => page.route));
-const articleSet = new Set(manifest.pages.filter((page) => page.route.startsWith("/imagen-presencia/")).map((page) => page.route));
+const pillarRoutes = new Set([
+  "/imagen-presencia/rebranding-imagen-mentalidad-abundancia",
+]);
+const articleSet = new Set(manifest.pages
+  .filter((page) => page.route.startsWith("/imagen-presencia/") && !pillarRoutes.has(page.route))
+  .map((page) => page.route));
 const clusteredArticles = new Set();
 const semanticHubRoutes = [
   "/imagen-profesional",
@@ -108,7 +113,7 @@ for (const asset of ["dist/assets/sonia-logo-ai.png", "dist/assets/sonia-logo-so
 for (const cluster of strategy.clusters) {
   if (!routeSet.has(cluster.primaryService)) failures.push(`Cluster ${cluster.id} has missing primary service: ${cluster.primaryService}`);
   for (const route of cluster.articles) {
-    if (!articleSet.has(route)) failures.push(`Cluster ${cluster.id} references missing article: ${route}`);
+    if (!routeSet.has(route)) failures.push(`Cluster ${cluster.id} references missing content route: ${route}`);
     if (clusteredArticles.has(route)) failures.push(`Article appears in multiple clusters: ${route}`);
     clusteredArticles.add(route);
   }
@@ -256,6 +261,12 @@ for (const file of htmlFiles) {
   }
   if (routeForDensity === "/servicios-asesoria-de-imagen-coaching/preguntas-frequentes" && faqAnswerCount < 8) failures.push("FAQ page did not render the answer-card structure");
   if (routeForDensity === "/servicios-asesoria-de-imagen-coaching/preguntas-frequentes" && semanticCardCount > 0) failures.push("FAQ page should not render generic semantic cards");
+  if (pillarRoutes.has(routeForDensity)) {
+    if (!/class="[^"]*\brebrand-framework\b/.test(html)) failures.push(`Pillar page missing rebrand framework: ${file}`);
+    if (!/class="[^"]*\bcredential-timeline\b/.test(html)) failures.push(`Pillar page missing credential timeline: ${file}`);
+    if (!html.includes("/assets/sonia-mcrorey-about-760.avif")) failures.push(`Pillar page missing Sonia authority image: ${file}`);
+    if (jsonLdTypes.includes("Article")) failures.push(`Pillar page should not render Article JSON-LD: ${file}`);
+  }
   if (articleSet.has(routeForDensity)) {
     if (!/class="[^"]*\barticle-reading-map\b/.test(html)) failures.push(`Article missing reading map navigation: ${file}`);
     if (!/class="[^"]*\barticle-layout\b/.test(html)) failures.push(`Article missing editorial layout: ${file}`);

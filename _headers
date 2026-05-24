@@ -1,11 +1,14 @@
 /
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
+  Content-Signal: search=yes, ai-input=yes, ai-train=no
+  Link: <https://coachdeimagen.com/openapi.json>; rel="service-desc"; type="application/openapi+json", <https://coachdeimagen.com/llms.txt>; rel="alternate"; type="text/plain", <https://coachdeimagen.com/llms-full.txt>; rel="alternate"; type="text/plain", <https://coachdeimagen.com/.well-known/agent.json>; rel="agent"; type="application/json", <https://coachdeimagen.com/api-catalog.json>; rel="api-catalog"; type="application/json"
   Cache-Control: public, max-age=300, stale-while-revalidate=86400
 
 /*.html
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
+  Content-Signal: search=yes, ai-input=yes, ai-train=no
   Cache-Control: public, max-age=300, stale-while-revalidate=86400
 
 /assets/*
@@ -18,13 +21,42 @@
   Cache-Control: public, max-age=31536000, immutable
 
 /openapi.json
+  Access-Control-Allow-Origin: *
+  Content-Signal: search=yes, ai-input=yes, ai-train=no
   Cache-Control: public, max-age=600, stale-while-revalidate=86400
 
 /agent/*
+  Access-Control-Allow-Origin: *
+  Content-Signal: search=yes, ai-input=yes, ai-train=no
+  Cache-Control: public, max-age=600, stale-while-revalidate=86400
+
+/.well-known/*
+  Access-Control-Allow-Origin: *
+  Content-Signal: search=yes, ai-input=yes, ai-train=no
   Cache-Control: public, max-age=600, stale-while-revalidate=86400
 
 /llms.txt
+  Access-Control-Allow-Origin: *
+  Content-Signal: search=yes, ai-input=yes, ai-train=no
   Cache-Control: public, max-age=600, stale-while-revalidate=86400
 
 /llms-full.txt
+  Access-Control-Allow-Origin: *
+  Content-Signal: search=yes, ai-input=yes, ai-train=no
+  Cache-Control: public, max-age=600, stale-while-revalidate=86400
+
+/*.md
+  X-Content-Type-Options: nosniff
+  Access-Control-Allow-Origin: *
+  Content-Signal: search=yes, ai-input=yes, ai-train=no
+  Cache-Control: public, max-age=600, stale-while-revalidate=86400
+
+/api-catalog.json
+  Access-Control-Allow-Origin: *
+  Content-Signal: search=yes, ai-input=yes, ai-train=no
+  Cache-Control: public, max-age=600, stale-while-revalidate=86400
+
+/content-signal.json
+  Access-Control-Allow-Origin: *
+  Content-Signal: search=yes, ai-input=yes, ai-train=no
   Cache-Control: public, max-age=600, stale-while-revalidate=86400
