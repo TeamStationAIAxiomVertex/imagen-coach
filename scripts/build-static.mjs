@@ -146,6 +146,10 @@ const PAGE_OVERRIDES = {
     description: SEMANTIC_TITLES["/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia"].description,
   },
 };
+const ROUTE_IMAGE_OVERRIDES = {
+  "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen": "/assets/7ace6f0d3687c214.jpg",
+  "/servicios-asesoria-de-imagen-coaching/preguntas-frequentes": "/assets/619a89970f5d1790.jpg",
+};
 const COMMERCIAL_PAGE_MODELS = {
   "/servicios-asesoria-de-imagen-coaching/talleres": {
     label: "Imagen empresarial",
@@ -324,22 +328,46 @@ const BUYER_GUIDES = {
     outcome: "Mayor claridad, presencia, autoridad, coherencia y seguridad profesional.",
   },
 };
-const FOOTER_QUESTIONS = [
+const FAQ_PAGE_QUESTIONS = [
   {
-    question: "¿Qué servicio necesito si mi imagen ya no refleja mi etapa actual?",
-    answer: "La asesoría de imagen integral ayuda a ordenar estilo, color, guardarropa, rostro y presencia para que tu imagen acompañe tu realidad profesional y personal.",
+    question: "¿Cómo sé si la asesoría de imagen es adecuada para mi momento profesional o personal?",
+    answer: "La asesoría de imagen es valiosa cuando tu forma de presentarte ya no acompaña la responsabilidad, visibilidad o etapa que hoy sostienes. No se trata de verte mejor de forma superficial, sino de alinear imagen, presencia y percepción con tu realidad profesional y personal.",
   },
   {
-    question: "¿Cuándo conviene coaching de imagen en lugar de solo asesoría visual?",
-    answer: "Conviene cuando la dificultad no está solo en la ropa, sino en seguridad, autoconcepto, percepción, liderazgo o claridad interna para sostener una nueva presencia.",
+    question: "¿Qué diferencia hay entre asesoría de imagen y coaching de imagen?",
+    answer: "La asesoría de imagen ordena elementos visibles como estilo, color, rostro, proporciones, guardarropa y criterios de vestimenta. El coaching de imagen integra también seguridad interna, presencia profesional, percepción, comunicación y posicionamiento.",
+  },
+  {
+    question: "¿Cómo se define el alcance y la duración de un proceso?",
+    answer: "El alcance se define a partir de tus objetivos, contexto profesional, nivel de exposición y lo que necesitas sostener. No parte de un paquete rígido, sino de la ruta que tenga sentido para construir una imagen coherente y sostenible.",
   },
   {
     question: "¿Sonia trabaja con empresas, marcas y equipos?",
-    answer: "Sí. Los talleres de imagen y colorimetría ayudan a equipos y marcas a construir criterios visuales, comunicación profesional y una experiencia más coherente frente a clientes.",
+    answer: "Sí. Sonia diseña procesos y talleres para empresas, marcas, equipos directivos, colaboradores, experiencias VIP y grupos que necesitan coherencia visual, comunicación profesional y una percepción más clara frente a clientes o audiencias.",
+  },
+  {
+    question: "¿Cuál es el impacto real de la imagen en la proyección profesional?",
+    answer: "La imagen influye en cómo se recibe un mensaje, la credibilidad que generas y la claridad con la que otros leen tu posición. Cuando está alineada con lo que comunicas, reduce fricción y fortalece liderazgo, negociación y toma de decisiones.",
+  },
+  {
+    question: "¿Qué resultados puedo esperar después de trabajar con Sonia?",
+    answer: "Puedes esperar mayor claridad sobre cómo eres percibida, decisiones visuales más conscientes, presencia más coherente y una imagen que acompaña tu nivel profesional sin sentirse actuada, rígida o impuesta.",
+  },
+  {
+    question: "¿La asesoría de imagen es solo para momentos de cambio?",
+    answer: "No. También funciona para consolidar posicionamiento, ordenar una presencia ya establecida o afinar la imagen cuando cambia tu contexto profesional, tu nivel de exposición o la responsabilidad que sostienes.",
+  },
+  {
+    question: "¿Qué papel juega el cuerpo y la comodidad en una imagen profesional sólida?",
+    answer: "Un cuerpo incómodo comunica tensión, rigidez o desconexión. El proceso busca que la imagen acompañe tu forma natural de moverte, comunicar y estar presente para que tu presencia se perciba clara, segura y creíble.",
+  },
+  {
+    question: "¿La imagen influye en la percepción de valor profesional?",
+    answer: "Sí. La imagen está vinculada con percepción de valor, autoridad, merecimiento y posicionamiento. La forma en que te presentas impacta en cómo te leen, qué oportunidades se abren y qué nivel de intercambio se genera.",
   },
   {
     question: "¿El proceso puede hacerse desde fuera de Guadalajara?",
-    answer: "Sí. Sonia trabaja procesos presenciales y digitales para personas, marcas y equipos en México, LATAM y otros mercados hispanohablantes.",
+    answer: "Sí. Sonia trabaja desde Guadalajara con procesos presenciales y digitales para personas, marcas y equipos en México, LATAM y otros mercados hispanohablantes.",
   },
 ];
 const MASTER_ONTOLOGY = {
@@ -379,6 +407,7 @@ const SEMANTIC_HUBS = [
     title: "Imagen Profesional",
     description: "Recursos, servicios y publicaciones sobre imagen profesional, imagen ejecutiva, autoridad visual y posicionamiento profesional para líderes, empresarias y profesionales en México y LATAM.",
     cluster: "Imagen Profesional",
+    image: "/assets/00510af3bb9f4e03.jpg",
     terms: ["imagen profesional", "imagen ejecutiva", "imagen estratégica", "autoridad visual", "posicionamiento profesional"],
     services: ["/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen", "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen"],
   },
@@ -387,6 +416,7 @@ const SEMANTIC_HUBS = [
     title: "Presencia Ejecutiva",
     description: "Guía editorial para desarrollar presencia ejecutiva, liderazgo visible, confianza profesional y autoridad desde una imagen coherente y estratégica.",
     cluster: "Imagen Profesional",
+    image: "/assets/197a202b3e5022be.jpg",
     terms: ["presencia ejecutiva", "presencia profesional", "liderazgo visible", "autoridad profesional", "confianza ejecutiva"],
     services: ["/servicios-asesoria-de-imagen-coaching/coaching-de-imagen", "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen"],
   },
@@ -395,6 +425,7 @@ const SEMANTIC_HUBS = [
     title: "Liderazgo",
     description: "Contenido para fortalecer liderazgo femenino, comunicación profesional, toma de decisiones, expansión profesional y crecimiento empresarial con presencia visible.",
     cluster: "Liderazgo Empresarial",
+    image: "/assets/205ebbd87f0d84e6.jpg",
     terms: ["liderazgo femenino", "liderazgo visible", "toma de decisiones", "expansión profesional", "crecimiento empresarial"],
     services: ["/servicios-asesoria-de-imagen-coaching/coaching-de-imagen", "/servicios-asesoria-de-imagen-coaching/talleres"],
   },
@@ -403,6 +434,7 @@ const SEMANTIC_HUBS = [
     title: "Comunicación No Verbal",
     description: "Recursos sobre comunicación no verbal, lenguaje corporal ejecutivo, presencia al hablar y autoridad al comunicar para contextos profesionales.",
     cluster: "Comunicación",
+    image: "/assets/335a6b7f7fe1585b.jpg",
     terms: ["comunicación no verbal", "lenguaje corporal ejecutivo", "presencia al hablar", "autoridad al comunicar"],
     services: ["/servicios-asesoria-de-imagen-coaching/talleres", "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen"],
   },
@@ -411,6 +443,7 @@ const SEMANTIC_HUBS = [
     title: "Mentalidad y Presencia",
     description: "Lecturas y procesos sobre identidad profesional, seguridad interna, sistema nervioso, confianza ejecutiva y presencia sostenible.",
     cluster: "Mentalidad y Presencia",
+    image: "/assets/3d87f9c0beaeac46.jpg",
     terms: ["mentalidad", "identidad profesional", "seguridad interna", "sistema nervioso", "confianza ejecutiva"],
     services: ["/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia", "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen"],
   },
@@ -419,6 +452,7 @@ const SEMANTIC_HUBS = [
     title: "Mujeres Empresarias",
     description: "Contenido para mujeres empresarias, fundadoras, directoras y profesionales que quieren sostener autoridad, imagen estratégica y liderazgo visible.",
     cluster: "Liderazgo Empresarial",
+    image: "/assets/5212502709f47db5.jpg",
     terms: ["mujeres empresarias", "fundadoras", "directoras", "autoridad profesional", "liderazgo empresarial"],
     services: ["/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen", "/servicios-asesoria-de-imagen-coaching/talleres"],
   },
@@ -427,6 +461,7 @@ const SEMANTIC_HUBS = [
     title: "Imagen Estratégica",
     description: "Centro de recursos para entender la imagen estratégica como una herramienta de percepción, presencia, liderazgo y posicionamiento profesional.",
     cluster: "Imagen Profesional",
+    image: "/assets/57f2c54cee517d06.jpg",
     terms: ["imagen estratégica", "percepción profesional", "presencia ejecutiva", "posicionamiento profesional", "autoridad visual"],
     services: ["/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen", "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen"],
   },
@@ -1226,6 +1261,7 @@ function pageType(route) {
 }
 
 function pickImage(page) {
+  if (ROUTE_IMAGE_OVERRIDES[page.route]) return ROUTE_IMAGE_OVERRIDES[page.route];
   if (page.route === "/" && existsSync(rootPath("assets/797aeda1281e5d5e.png"))) {
     return "/assets/797aeda1281e5d5e.png";
   }
@@ -1587,24 +1623,24 @@ function deepReadingReserve(page, sections, previousSections, clusterMap) {
 }
 
 function faqStructuredContent(page, lines, pages, clusters) {
-  const sections = classifyContent(page, lines);
-  if (!sections.length) return "";
-  const clusterMap = articleClusterByRoute(clusters);
-  const intro = sections[0];
-  const questions = sections.slice(1);
-  const introTopics = sectionTopics([intro.heading, ...intro.lines], page, clusterMap);
   const categories = [
     ["Elegir proceso", "Cuándo conviene asesoría, coaching, talleres o seguridad profesional."],
     ["Resultados", "Qué cambia en imagen, presencia, percepción, liderazgo y decisiones."],
     ["Empresas", "Cómo se adaptan procesos y talleres a marcas, equipos y experiencias."],
   ];
-  return `<section class="section structured-intro service-intro" id="tema-1-${slugify(intro.heading)}">
+  return `<section class="section structured-intro service-intro" id="preguntas-frecuentes">
     <div class="section-heading">
       <p class="section-label">Preguntas frecuentes</p>
       <h2>${headlineHtml("Respuestas claras sobre asesoría y coaching de imagen.")}</h2>
-      ${topicChips(introTopics)}
+      <p>Esta página concentra las dudas principales para elegir un proceso con Sonia sin llenar el footer ni las páginas comerciales con respuestas repetidas.</p>
     </div>
-    ${renderServiceIntroPanel(page, intro, introTopics)}
+    <div class="service-context-panel">
+      ${categories.map(([label, text], index) => `<article class="context-card">
+        <span class="context-icon">${topicIcon(index === 0 ? "decision" : index === 1 ? "presencia" : "empresa")}</span>
+        <h3>${escapeHtml(label)}</h3>
+        <p>${escapeHtml(text)}</p>
+      </article>`).join("")}
+    </div>
   </section>
   <section class="section commercial-intent-map faq-router" aria-label="Rutas de preguntas">
     <div class="section-heading compact-heading">
@@ -1615,17 +1651,16 @@ function faqStructuredContent(page, lines, pages, clusters) {
     <div class="intent-card-grid">
       ${categories.map(([label, text], index) => `<article class="intent-card">
         <span>${String(index + 1).padStart(2, "0")}</span>
-        <h3>${escapeHtml(label)}</h3>
+        <h3>${escapeHtml(`${label} en detalle`)}</h3>
         <p>${escapeHtml(text)}</p>
       </article>`).join("")}
     </div>
   </section>
   <section class="section faq-answer-grid" aria-label="Preguntas frecuentes de imagen y presencia">
-    ${questions.map((section, index) => {
-      const topics = sectionTopics([section.heading, ...section.lines], page, clusterMap);
+    ${FAQ_PAGE_QUESTIONS.map((item, index) => {
       return `<details class="faq-answer-card"${index < 4 ? " open" : ""}>
-        <summary><span>${String(index + 1).padStart(2, "0")}</span>${escapeHtml(section.heading)}</summary>
-        <div>${renderSemanticCopy(section.lines, topics)}</div>
+        <summary><span>${String(index + 1).padStart(2, "0")}</span>${escapeHtml(item.question)}</summary>
+        <div><p>${escapeHtml(item.answer)}</p></div>
       </details>`;
     }).join("")}
   </section>
@@ -1917,16 +1952,16 @@ function footer() {
 
       <div class="footer-directory" aria-label="Directorio de conocimiento">
         <nav aria-label="Hubs editoriales">
-          <h3>Hubs de autoridad</h3>
+          <h3>Explorar por tema</h3>
           ${footerHubs.map(([href, label]) => `<a href="${href}">${label}</a>`).join("")}
         </nav>
         <nav aria-label="Lecturas recomendadas">
-          <h3>Lecturas clave</h3>
+          <h3>Leer por contexto</h3>
           ${footerArticles.map(([href, label]) => `<a href="${href}">${label}</a>`).join("")}
           <a href="/imagen-presencia">Todas las publicaciones</a>
         </nav>
         <nav aria-label="Comparaciones y decisiones">
-          <h3>Decisión informada</h3>
+          <h3>Elegir ruta</h3>
           <a href="/comparaciones">Evolución del coaching de imagen</a>
           <a href="/comparaciones/coaching-de-imagen-vs-consultoria-tradicional">Coaching de imagen vs consultoría tradicional</a>
           <a href="/comparaciones/styling-vs-coaching-de-imagen">Styling vs coaching de imagen</a>
@@ -1934,12 +1969,10 @@ function footer() {
         </nav>
       </div>
 
-      <div class="footer-answers" aria-label="Preguntas frecuentes principales">
-        <h3>Respuestas rápidas</h3>
-        ${FOOTER_QUESTIONS.map((item, index) => `<details${index === 0 ? " open" : ""}>
-          <summary>${escapeHtml(item.question)}</summary>
-          <p>${escapeHtml(item.answer)}</p>
-        </details>`).join("")}
+      <div class="footer-faq-panel" aria-label="Preguntas frecuentes">
+        <h3>Preguntas frecuentes</h3>
+        <p>Las respuestas sobre alcance, resultados, empresas, procesos online y diferencias entre asesoría y coaching viven en una página dedicada.</p>
+        <a class="btn secondary" href="/servicios-asesoria-de-imagen-coaching/preguntas-frequentes">Ver preguntas frecuentes</a>
       </div>
 
       <div class="footer-contact-panel">
@@ -1987,7 +2020,9 @@ function contentHeading(page) {
 function hero(page, lines) {
   const image = pickImage(page);
   const commercialModel = COMMERCIAL_PAGE_MODELS[page.route];
-  const lede = commercialModel ? [commercialModel.intro] : nonTitleLines(page, lines, 1).slice(0, 2);
+  const lede = page.route === "/servicios-asesoria-de-imagen-coaching/preguntas-frequentes"
+    ? [semanticDescription(page)]
+    : commercialModel ? [commercialModel.intro] : nonTitleLines(page, lines, 1).slice(0, 2);
   const eyebrow = page.type === "article" ? "Imagen, presencia y mentalidad" : page.type === "service" ? "Servicio" : page.type === "about" ? "Sobre Sonia" : BRAND_NAME;
   return `<section class="section hero imagen-hero ${page.type}-hero">
     <div class="hero-copy">
@@ -2590,7 +2625,7 @@ function renderSemanticHub(hub, pages, clusters) {
   <meta property="og:title" content="${escapeHtml(hub.title)}" />
   <meta property="og:description" content="${escapeHtml(hub.description)}" />
   <meta property="og:url" content="${absoluteUrl(hub.route)}" />
-  <meta property="og:image" content="${SITE_URL}/assets/797aeda1281e5d5e.png" />
+  <meta property="og:image" content="${SITE_URL}${hub.image}" />
   <link rel="icon" href="/assets/sonia-icon.svg" />
   <link rel="stylesheet" href="/styles.css?v=${ASSET_VERSION}" />
   ${hubSchema(hub)}
@@ -2611,7 +2646,7 @@ function renderSemanticHub(hub, pages, clusters) {
         </div>
       </div>
       <figure class="hero-media">
-        <img src="/assets/797aeda1281e5d5e.png" alt="${escapeHtml(hub.title)}" />
+        <img src="${hub.image}" alt="${escapeHtml(hub.title)}" />
         <figcaption><img src="/assets/sonia-icon.svg" alt="" /> Sonia McRorey · ${BRAND_NAME}</figcaption>
       </figure>
     </section>
@@ -3003,7 +3038,8 @@ function articleExtras(page, pages, clusters) {
 }
 
 function schema(page) {
-  const type = page.type === "article" ? "Article" : page.type.includes("service") ? "Service" : "WebPage";
+  const isFaqRoute = page.route === "/servicios-asesoria-de-imagen-coaching/preguntas-frequentes";
+  const type = page.type === "article" ? "Article" : page.type.includes("service") && !isFaqRoute ? "Service" : "WebPage";
   const pageSchema = {
     "@context": "https://schema.org",
     "@type": type,
@@ -3020,10 +3056,13 @@ function schema(page) {
     author: { "@type": "Person", name: "Sonia McRorey" },
     inLanguage: "es-MX",
   };
-  const faqSchema = {
+  const pageFaqItems = isFaqRoute
+    ? FAQ_PAGE_QUESTIONS
+    : COMMERCIAL_PAGE_MODELS[page.route]?.faq?.map(([question, answer]) => ({ question, answer })) || [];
+  const faqSchema = pageFaqItems.length ? {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: FOOTER_QUESTIONS.map((item) => ({
+    mainEntity: pageFaqItems.map((item) => ({
       "@type": "Question",
       name: item.question,
       acceptedAnswer: {
@@ -3031,7 +3070,7 @@ function schema(page) {
         text: item.answer,
       },
     })),
-  };
+  } : null;
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -3047,7 +3086,7 @@ function schema(page) {
   };
   return `<script type="application/ld+json">${JSON.stringify(pageSchema)}</script>
   <script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script>
-  <script type="application/ld+json">${JSON.stringify(faqSchema)}</script>`;
+  ${faqSchema ? `<script type="application/ld+json">${JSON.stringify(faqSchema)}</script>` : ""}`;
 }
 
 function renderPage(page, pages, clusters) {

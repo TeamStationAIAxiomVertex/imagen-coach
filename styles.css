@@ -2889,11 +2889,12 @@ details[open] summary::after {
 .footer-service-map,
 .footer-signal-panel,
 .footer-directory,
-.footer-answers,
+.footer-faq-panel,
 .footer-contact-panel {
   border: 1px solid rgba(227, 223, 231, .92);
   border-radius: var(--radius-card);
   background: rgba(251, 250, 252, .72);
+  align-self: start;
 }
 
 .footer-identity {
@@ -3079,7 +3080,7 @@ details[open] summary::after {
 }
 
 .footer-directory h3,
-.footer-answers h3,
+.footer-faq-panel h3,
 .footer-contact-panel h3 {
   margin: 0 0 18px;
   color: var(--ink);
@@ -3099,25 +3100,14 @@ details[open] summary::after {
   line-height: 1.38;
 }
 
-.footer-answers,
+.footer-faq-panel,
 .footer-contact-panel {
   padding: 24px;
 }
 
-.footer-answers details {
-  border-top: 1px solid var(--line);
-}
-
-.footer-answers summary {
-  cursor: pointer;
-  padding: 14px 0;
-  color: var(--ink);
-  font-weight: 750;
-  line-height: 1.35;
-}
-
-.footer-answers details p {
-  margin: 0 0 16px;
+.footer-faq-panel p {
+  max-width: 44ch;
+  margin: 0 0 18px;
   color: var(--muted);
   font-size: 14px;
   line-height: 1.58;
