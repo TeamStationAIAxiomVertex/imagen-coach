@@ -1481,6 +1481,10 @@ function sentenceLike(line = "") {
   return /[.!?…:]$/.test(line) || line.length > 78;
 }
 
+function hasSentenceEnd(line = "") {
+  return /[.!?…]$/.test(line.trim());
+}
+
 function groupShortLines(lines) {
   const grouped = [];
   for (let index = 0; index < lines.length; index += 1) {
@@ -1494,6 +1498,60 @@ function groupShortLines(lines) {
     }
   }
   return grouped;
+}
+
+function isArticleHeadingCandidate(line = "") {
+  const text = cleanDisplayTitle(line);
+  if (/^##\s+/.test(String(line))) return true;
+  const words = wordCount(text);
+  if (isListLine(text) || isSourceDateLine(text)) return false;
+  if (!/[A-Za-zÁÉÍÓÚÜÑáéíóúüñ0-9]/.test(text)) return false;
+  if (text.length < 14 || text.length > 96) return false;
+  if (/^https?:/i.test(text)) return false;
+  if (/[:.]$/.test(text)) return false;
+  if (/[.!]$/.test(text)) return false;
+  if (/^[¿?]/.test(text)) return words >= 5 && words <= 13;
+  if (/^(Un|Una|El|Los|Las|Y|Pero|Porque|Es|Son|Ambos|A mayor|Tu|Tus|Cada)\b/i.test(text) && !/^La imagen\b/i.test(text)) {
+    return false;
+  }
+  if (/^(Imagen|Códigos|No se trata|La imagen|Cómo|Qué|Por qué|Cuándo|Dónde|Beneficios|Claves|Errores|Señales|Pasos|Tips|Recomendaciones|Conclusión|En resumen)\b/i.test(text)) {
+    return words >= 3 && words <= 13;
+  }
+  return false;
+}
+
+function consolidateArticleFragments(lines = []) {
+  const output = [];
+  let paragraph = [];
+  const flushParagraph = () => {
+    if (!paragraph.length) return;
+    output.push(paragraph.join(" ").replace(/\s+([.,;:!?])/g, "$1").replace(/\s+/g, " ").trim());
+    paragraph = [];
+  };
+
+  const entries = lines
+    .map((raw) => ({ raw: String(raw || ""), line: cleanDisplayTitle(raw) }))
+    .filter((entry) => entry.line);
+  for (let index = 0; index < entries.length; index += 1) {
+    const { raw, line } = entries[index];
+    const next = entries[index + 1]?.line;
+    if (/^##\s+/.test(String(raw)) || isListLine(line)) {
+      flushParagraph();
+      output.push(line);
+      continue;
+    }
+    if (isArticleHeadingCandidate(line)) {
+      flushParagraph();
+      output.push(line);
+      continue;
+    }
+    paragraph.push(line);
+    if (hasSentenceEnd(line) || (next && isArticleHeadingCandidate(next))) {
+      flushParagraph();
+    }
+  }
+  flushParagraph();
+  return output.filter(Boolean);
 }
 
 function isSourceDateLine(line = "") {
@@ -1620,8 +1678,16 @@ function splitContent(markdown) {
   return normalizeContentLines(stripFrontMatter(markdown).split(/\r?\n/));
 }
 
+function contentLinesForPage(page, fallbackLines = []) {
+  if (page.type === "article" && Array.isArray(page.sourceLines) && page.sourceLines.length) {
+    return page.sourceLines;
+  }
+  return fallbackLines;
+}
+
 function cleanDisplayTitle(value = "") {
   return String(value)
+    .replace(/^#+\s+/, "")
     .replace(/[\p{Emoji_Presentation}\p{Extended_Pictographic}]/gu, "")
     .replace(/\s*\|\s*Online Therapy/gi, "")
     .replace(/\s*\|\s*Sonia\s*McRorey\s*[–-]\s*ImagenCoach/gi, "")
@@ -1631,6 +1697,44 @@ function cleanDisplayTitle(value = "") {
     .replace(/…/g, ",")
     .replace(/\s+/g, " ")
     .trim();
+}
+
+function decodeHtmlEntities(value = "") {
+  return value
+    .replace(/&nbsp;/gi, " ")
+    .replace(/&amp;/gi, "&")
+    .replace(/&quot;/gi, "\"")
+    .replace(/&#39;/gi, "'")
+    .replace(/&apos;/gi, "'")
+    .replace(/&lt;/gi, "<")
+    .replace(/&gt;/gi, ">")
+    .replace(/&#(\d+);/g, (_, code) => String.fromCharCode(Number(code)))
+    .replace(/&#x([0-9a-f]+);/gi, (_, code) => String.fromCharCode(parseInt(code, 16)));
+}
+
+function htmlToText(value = "") {
+  return cleanDisplayTitle(decodeHtmlEntities(value)
+    .replace(/<br\s*\/?>/gi, " ")
+    .replace(/<\/(?:p|h[1-6]|li)>/gi, " ")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\s+([.,;:!?])/g, "$1")
+    .replace(/\s+/g, " ")
+    .trim());
+}
+
+function structuredArticleLinesFromHtml(html = "") {
+  const lines = [];
+  const articleTag = /<(h[1-3]|p|li)\b([^>]*)>([\s\S]*?)<\/\1>/gi;
+  for (const match of html.matchAll(articleTag)) {
+    const [, tag, attrs, inner] = match;
+    if (!/w-article__(?:heading|text|list-item)/.test(attrs)) continue;
+    const text = htmlToText(inner);
+    if (!text || isSourceDateLine(text)) continue;
+    if (/^h[1-3]$/i.test(tag)) lines.push(`## ${text}`);
+    else if (/w-article__list-item/.test(attrs)) lines.push(`• ${text}`);
+    else lines.push(text);
+  }
+  return lines;
 }
 
 function cleanExcerptText(value = "", maxLength = 190) {
@@ -1807,8 +1911,9 @@ function coreBodyLines(page, lines) {
     .filter((line) => !["sesión gratuita", "A DONDE estes", "A DONDE estés", "desde DONDE ESTÉS"].includes(line));
 }
 
-function shouldStartSection(line, current) {
-  if (!isHeadingCandidate(line)) return false;
+function shouldStartSection(line, current, page = null) {
+  const headingCandidate = page?.type === "article" ? isArticleHeadingCandidate(line) : isHeadingCandidate(line);
+  if (!headingCandidate) return false;
   if (/^(Contacto|Agendar|Precios|Leer|Consulta Gratis|Primera Sesión|Primera Sesion)$/i.test(line)) return false;
   if (current.heading === "Contenido principal" && current.lines.length === 0) return true;
   return current.lines.length >= 2 || /[¿?]$/.test(line) || line.length <= 64;
@@ -1817,8 +1922,11 @@ function shouldStartSection(line, current) {
 function classifyContent(page, lines) {
   const sections = [];
   let current = { heading: contentHeading(page)[1], lines: [] };
-  for (const line of groupShortLines(coreBodyLines(page, lines))) {
-    if (shouldStartSection(line, current)) {
+  const bodyLines = page.type === "article"
+    ? consolidateArticleFragments(coreBodyLines(page, lines))
+    : groupShortLines(coreBodyLines(page, lines));
+  for (const line of bodyLines) {
+    if (shouldStartSection(line, current, page)) {
       if (current.lines.length) sections.push(current);
       current = { heading: cleanDisplayTitle(line), lines: [] };
     } else {
@@ -2179,6 +2287,7 @@ function serviceHubContent(page, pages, clusters) {
 }
 
 function structuredContentSections(page, lines, pages, clusters) {
+  lines = contentLinesForPage(page, lines);
   if (page.route === "/imagen-presencia/rebranding-imagen-mentalidad-abundancia") return rebrandPillarContent(page, lines, pages, clusters);
   if (page.type === "article") return articleStructuredContent(page, lines, pages, clusters);
   if (page.type === "home") return "";
@@ -4049,7 +4158,13 @@ async function loadPages() {
   const pages = [];
   for (const item of manifest.pages) {
     const markdown = await readFile(rootPath(item.clean_path), "utf8");
-    pages.push({ ...item, markdown, type: pageType(item.route) });
+    const type = pageType(item.route);
+    let sourceLines = [];
+    if (type === "article" && item.source_html_path && existsSync(rootPath(item.source_html_path))) {
+      const sourceHtml = await readFile(rootPath(item.source_html_path), "utf8");
+      sourceLines = structuredArticleLinesFromHtml(sourceHtml);
+    }
+    pages.push({ ...item, markdown, sourceLines, type });
   }
   for (const page of pages) {
     const lines = splitContent(page.markdown);

@@ -2368,8 +2368,25 @@ details[open] summary::after {
 .semantic-panel > .insight-flow { margin: 0; }
 .insight-step { display: grid; grid-template-columns: 32px minmax(0, 1fr); gap: 12px; max-width: none; margin: 0; padding: 14px; border: 1px solid rgba(227, 223, 231, .86); border-radius: 8px; background: rgba(255, 255, 255, .44); }
 .insight-icon { display: inline-grid; width: 32px; height: 32px; place-items: center; color: var(--plum-accent); border: 1px solid rgba(140, 71, 153, .22); border-radius: 50%; background: rgba(239, 232, 242, .82); }
-.compact-heading { margin-bottom: 18px; }
-.compact-heading h2 { max-width: 760px; }
+.section-heading.compact-heading {
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
+  gap: 14px;
+  max-width: 980px;
+  margin-right: auto;
+  margin-bottom: 32px;
+  margin-left: auto;
+  text-align: center;
+}
+.section-heading.compact-heading h2 { max-width: 880px; text-wrap: balance; }
+.section-heading.compact-heading > p:not(.section-label) {
+  max-width: 68ch;
+  margin: 2px auto 0;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.62;
+}
+.section-heading.compact-heading .section-label { justify-self: center; }
 .commercial-intent-map,
 .commercial-fit,
 .commercial-method-notes,
