@@ -1,4 +1,5 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { existsSync } from "node:fs";
 import path from "node:path";
 
 const manifest = JSON.parse(await readFile("content/clean/manifest.json", "utf8"));
@@ -30,9 +31,10 @@ const comparisonPrefix = "/comparaciones";
 const articlePrefix = "/imagen-presencia/";
 
 const budgets = {
-  commercial: { targetMin: 850, targetMax: 1200, paragraphMaxWords: 55 },
+  commercial: { targetMin: 300, targetMax: 1200, paragraphMaxWords: 55 },
   hub: { targetMin: 450, targetMax: 900, paragraphMaxWords: 50 },
   comparison: { targetMin: 650, targetMax: 1100, paragraphMaxWords: 52 },
+  faq: { targetMin: 900, targetMax: 1900, paragraphMaxWords: 70 },
   article: { targetMin: 500, targetMax: null, paragraphMaxWords: 85 },
 };
 
@@ -67,6 +69,7 @@ function stripMarkdown(value = "") {
 function classifyRoute(route) {
   if (route.startsWith(articlePrefix)) return "article";
   if (route.startsWith(comparisonPrefix)) return "comparison";
+  if (route.endsWith("/preguntas-frequentes")) return "faq";
   if (serviceRoutes.has(route) || supportRoutes.has(route)) return "commercial";
   if (hubRoutes.has(route)) return "hub";
   return "commercial";
@@ -82,10 +85,16 @@ function cleanLines(markdown = "") {
 
 async function pageMetrics(page) {
   const markdown = await readFile(page.clean_path, "utf8");
-  const lines = cleanLines(markdown);
-  const body = lines.join("\n");
   const type = classifyRoute(page.route);
   const budget = budgets[type];
+  const renderedPath = page.route === "/" ? "dist/index.html" : path.join("dist", page.route, "index.html");
+  const renderedHtml = existsSync(renderedPath) ? await readFile(renderedPath, "utf8") : "";
+  const renderedMain = renderedHtml.match(/<main[\s\S]*?<\/main>/i)?.[0] || "";
+  const renderedText = renderedMain
+    ? renderedMain.replace(/<script[\s\S]*?<\/script>/gi, " ").replace(/<style[\s\S]*?<\/style>/gi, " ").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim()
+    : "";
+  const lines = renderedText ? renderedText.split(/(?<=[.!?])\s+|\n+/u).map((line) => line.trim()).filter(Boolean) : cleanLines(markdown);
+  const body = renderedText || lines.join("\n");
   const lineWordCounts = lines.map(wordCount);
   const longLines = lineWordCounts.filter((count) => count > budget.paragraphMaxWords).length;
   const repeatedTerms = Object.fromEntries(weightedTerms.map((term) => {
@@ -109,6 +118,7 @@ async function pageMetrics(page) {
     status: overload ? "overloaded" : sparse ? "thin" : "within-budget",
     repeatedTerms,
     cluster: cluster?.label || "",
+    measuredSource: renderedText ? "rendered-main" : "clean-source",
   };
 }
 
@@ -170,10 +180,11 @@ Reduce cognitive load on commercial and hub pages without deleting Sonia's autho
 
 | Page type | Target words | Paragraph max before redesign |
 | --- | ---: | ---: |
-| Commercial | 850-1200 | 55 words |
-| Hub | 450-900 | 50 words |
-| Comparison | 650-1100 | 52 words |
-| Article | 500+ | 85 words |
+| Commercial | ${budgets.commercial.targetMin}-${budgets.commercial.targetMax} | ${budgets.commercial.paragraphMaxWords} words |
+| Hub | ${budgets.hub.targetMin}-${budgets.hub.targetMax} | ${budgets.hub.paragraphMaxWords} words |
+| FAQ | ${budgets.faq.targetMin}-${budgets.faq.targetMax} | ${budgets.faq.paragraphMaxWords} words |
+| Comparison | ${budgets.comparison.targetMin}-${budgets.comparison.targetMax} | ${budgets.comparison.paragraphMaxWords} words |
+| Article | ${budgets.article.targetMin}+ | ${budgets.article.paragraphMaxWords} words |
 
 ## Route Audit
 

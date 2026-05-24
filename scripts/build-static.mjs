@@ -146,6 +146,136 @@ const PAGE_OVERRIDES = {
     description: SEMANTIC_TITLES["/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia"].description,
   },
 };
+const COMMERCIAL_PAGE_MODELS = {
+  "/servicios-asesoria-de-imagen-coaching/talleres": {
+    label: "Imagen empresarial",
+    heading: "Talleres diseñados para que equipos, marcas y grupos apliquen imagen con criterio.",
+    intro: "Los talleres no son charlas teóricas. Son experiencias prácticas para resolver una necesidad real de imagen, presencia, color, comunicación o percepción dentro de un grupo.",
+    decision: [
+      ["Problema", "El equipo comunica distinto, la experiencia visual pierde coherencia o la marca necesita una presencia más clara frente a clientes."],
+      ["Solución", "Un taller diseñado según objetivo, contexto, industria, audiencia y tipo de experiencia que la organización necesita sostener."],
+      ["Resultado", "Criterios compartidos para decidir mejor, comunicar con más consistencia y aplicar cambios visibles desde la experiencia."],
+    ],
+    fit: [
+      ["Empresas", "Equipos comerciales, directivos o colaboradores que necesitan coherencia visual y comunicación profesional."],
+      ["Marcas", "Experiencias VIP, lanzamientos, clientes o comunidades que quieren elevar percepción y confianza."],
+      ["Grupos", "Amigas, colegas o comunidades que buscan una experiencia práctica de imagen, color y presencia."],
+    ],
+    outcomes: [
+      "Imagen y comunicación más consistentes.",
+      "Criterios de color, estilo y presencia aplicables.",
+      "Mayor claridad sobre lo que el grupo proyecta.",
+      "Experiencia útil, concreta y accionable.",
+    ],
+    faq: [
+      ["¿Los talleres son para empresas o también para grupos?", "Pueden diseñarse para empresas, marcas, equipos, comunidades o grupos privados. El formato depende del objetivo y del contexto."],
+      ["¿Se puede adaptar el contenido a una marca?", "Sí. El taller se diseña a partir de la industria, el público, la experiencia deseada y lo que la marca necesita comunicar."],
+      ["¿Qué cambia después de un taller?", "El grupo se lleva criterios claros para aplicar imagen, color, presencia y comunicación de forma más coherente."],
+    ],
+    articles: [
+      "/imagen-presencia/como-mejorar-la-imagen-de-tus-colaboradores",
+      "/imagen-presencia/manifiesta-tu-imagen-autenticar-talleres-de-verano-2025",
+      "/imagen-presencia/tu-imagen-y-tu-negocio-una-conexion-mas-poderosa-de-lo-que-imaginas",
+    ],
+    cta: "Diseñar un taller para mi equipo",
+  },
+  "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen": {
+    label: "Asesoría integral",
+    heading: "Ordenar imagen, estilo, color y presencia para que lo visible acompañe tu etapa actual.",
+    intro: "La asesoría de imagen integral trabaja la parte externa de la imagen sin separarla de tu realidad, tu estilo de vida y el nivel profesional o personal que hoy sostienes.",
+    decision: [
+      ["Problema", "Tu imagen, guardarropa o estilo ya no corresponden con tu etapa, responsabilidad o forma de presentarte."],
+      ["Solución", "Diagnóstico de color, estilo, rostro, proporciones, clóset y decisiones visuales con criterio profesional."],
+      ["Resultado", "Una imagen coherente, funcional y sostenible que puedes habitar sin sentirla impuesta o artificial."],
+    ],
+    fit: [
+      ["Profesionales", "Personas que necesitan verse y sentirse alineadas en reuniones, escenarios digitales y espacios de decisión."],
+      ["Marcas personales", "Emprendedoras, consultoras y líderes que requieren coherencia entre imagen, mensaje y posicionamiento."],
+      ["Vida diaria", "Quienes quieren dejar de improvisar con ropa, color y estilo para construir un sistema práctico."],
+    ],
+    outcomes: [
+      "Paleta de color y lectura de rostro.",
+      "Estilo personal conectado con identidad.",
+      "Guardarropa más funcional y consciente.",
+      "Criterios de compra y vestimenta más claros.",
+    ],
+    faq: [
+      ["¿La asesoría de imagen es solo ropa?", "No. Incluye ropa, color, rostro, proporciones, clóset y estilo, pero siempre conectados con presencia, percepción y contexto."],
+      ["¿Necesito cambiar todo mi guardarropa?", "No necesariamente. El proceso ordena primero criterio, uso, coherencia y funcionalidad antes de comprar más."],
+      ["¿Sirve para imagen ejecutiva?", "Sí. La asesoría ayuda a que la imagen profesional comunique credibilidad, claridad y congruencia con el nivel que ocupas."],
+    ],
+    articles: [
+      "/imagen-presencia/beneficios-de-asesoria-de-imagen",
+      "/imagen-presencia/aprende-a-resaltar-tus-proporciones",
+      "/imagen-presencia/tu-color-tu-poder-el-impacto-de-la-colorimetria",
+    ],
+    cta: "Agendar asesoría integral",
+  },
+  "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen": {
+    label: "Presencia profesional",
+    heading: "Fortalecer la forma en que ocupas espacios, comunicas seguridad y eres percibida.",
+    intro: "El coaching de imagen trabaja la relación entre identidad, presencia, percepción y comunicación para que tu imagen no sea solo correcta, sino creíble y sostenible.",
+    decision: [
+      ["Problema", "Tienes capacidad, pero tu presencia no comunica con la seguridad o autoridad que necesitas."],
+      ["Solución", "Coaching de imagen, autoconcepto, visibilidad y comunicación profesional aplicado a tu contexto real."],
+      ["Resultado", "Mayor seguridad visible, claridad al presentarte y una presencia que acompaña tu liderazgo."],
+    ],
+    fit: [
+      ["Líderes", "Personas que necesitan sostener conversaciones, reuniones y exposición con más presencia."],
+      ["Profesionistas", "Quienes quieren proyectar seguridad sin actuar un personaje rígido."],
+      ["Marcas personales", "Quienes comunican, venden, lideran o representan su propio posicionamiento."],
+    ],
+    outcomes: [
+      "Presencia más clara en espacios profesionales.",
+      "Comunicación no verbal más coherente.",
+      "Mayor confianza para ocupar visibilidad.",
+      "Imagen alineada con identidad y valor profesional.",
+    ],
+    faq: [
+      ["¿En qué se diferencia de asesoría de imagen?", "La asesoría ordena la parte visual; el coaching trabaja también seguridad, presencia, percepción e identidad profesional."],
+      ["¿Es para hablar mejor en público?", "Puede ayudar, pero el foco es más amplio: cómo ocupas espacios, comunicas valor y sostienes presencia profesional."],
+      ["¿Se trabaja online?", "Sí. Puede trabajarse de forma digital cuando el objetivo es presencia, comunicación, percepción y posicionamiento."],
+    ],
+    articles: [
+      "/imagen-presencia/como-puedo-ayudarte-hoy",
+      "/imagen-presencia/imagen-identidad-liderazgo",
+      "/imagen-presencia/presencia-profesional-estrategica",
+    ],
+    cta: "Explorar coaching de presencia",
+  },
+  "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia": {
+    label: "Seguridad profesional",
+    heading: "Entrenamiento interno para sostener decisiones, visibilidad y crecimiento profesional.",
+    intro: "Este proceso trabaja los patrones internos que interfieren con claridad, liderazgo y capacidad de sostener nuevos niveles de responsabilidad.",
+    decision: [
+      ["Problema", "Haces mucho hacia afuera, pero algo interno frena decisiones, visibilidad o crecimiento."],
+      ["Solución", "Coaching de imagen con estructura interna, seguridad profesional, sistema nervioso y posicionamiento."],
+      ["Resultado", "Decisiones más limpias, mayor presencia y crecimiento sostenido desde claridad interna."],
+    ],
+    fit: [
+      ["Empresarias", "Cuando el siguiente nivel exige más visibilidad, decisión y seguridad profesional."],
+      ["Líderes", "Cuando la responsabilidad crece y necesitas sostener presencia sin sobreexigirte."],
+      ["Profesionistas", "Cuando el bloqueo no es falta de capacidad, sino un patrón interno que limita avanzar."],
+    ],
+    outcomes: [
+      "Patrones internos más claros.",
+      "Decisiones profesionales más sostenibles.",
+      "Mayor seguridad para ocupar visibilidad.",
+      "Presencia alineada con crecimiento y posicionamiento.",
+    ],
+    faq: [
+      ["¿Es coaching de abundancia?", "La ruta conserva el URL histórico, pero el enfoque visible es seguridad interna, decisiones, presencia y posicionamiento profesional."],
+      ["¿Qué se trabaja internamente?", "Patrones de decisión, miedo a la visibilidad, regulación, autoconcepto y capacidad de sostener crecimiento."],
+      ["¿Para quién es?", "Para personas con capacidad y experiencia que necesitan ordenar lo interno para sostener más liderazgo, presencia y resultados."],
+    ],
+    articles: [
+      "/imagen-presencia/mas-dinero-capacidad-interna-liderazgo-presencia",
+      "/imagen-presencia/sostener-tu-siguiente-nivel-profesional",
+      "/imagen-presencia/rebranding-imagen-mentalidad-abundancia",
+    ],
+    cta: "Trabajar seguridad profesional",
+  },
+};
 const PILLARS = [
   {
     label: SEMANTIC_TITLES["/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen"].menuLabel,
@@ -1439,6 +1569,11 @@ function faqStructuredContent(page, lines, pages, clusters) {
   const intro = sections[0];
   const questions = sections.slice(1);
   const introTopics = sectionTopics([intro.heading, ...intro.lines], page, clusterMap);
+  const categories = [
+    ["Elegir proceso", "Cuándo conviene asesoría, coaching, talleres o seguridad profesional."],
+    ["Resultados", "Qué cambia en imagen, presencia, percepción, liderazgo y decisiones."],
+    ["Empresas", "Cómo se adaptan procesos y talleres a marcas, equipos y experiencias."],
+  ];
   return `<section class="section structured-intro service-intro" id="tema-1-${slugify(intro.heading)}">
     <div class="section-heading">
       <p class="section-label">Preguntas frecuentes</p>
@@ -1446,6 +1581,20 @@ function faqStructuredContent(page, lines, pages, clusters) {
       ${topicChips(introTopics)}
     </div>
     ${renderServiceIntroPanel(page, intro, introTopics)}
+  </section>
+  <section class="section commercial-intent-map faq-router" aria-label="Rutas de preguntas">
+    <div class="section-heading compact-heading">
+      <p class="section-label">Qué resolver primero</p>
+      <h2>Empieza por la duda que está frenando tu decisión.</h2>
+      <p>Las respuestas están escritas para aclarar alcance, diferencia entre procesos, resultados y aplicaciones para personas, marcas y empresas.</p>
+    </div>
+    <div class="intent-card-grid">
+      ${categories.map(([label, text], index) => `<article class="intent-card">
+        <span>${String(index + 1).padStart(2, "0")}</span>
+        <h3>${escapeHtml(label)}</h3>
+        <p>${escapeHtml(text)}</p>
+      </article>`).join("")}
+    </div>
   </section>
   <section class="section faq-answer-grid" aria-label="Preguntas frecuentes de imagen y presencia">
     ${questions.map((section, index) => {
@@ -1456,11 +1605,90 @@ function faqStructuredContent(page, lines, pages, clusters) {
       </details>`;
     }).join("")}
   </section>
+  ${ctaBridge(page, "Resolver mi duda con Sonia")}
+  ${internalLinkAtlas(page, pages, clusters)}`;
+}
+
+function serviceHubContent(page, pages, clusters) {
+  const paths = PILLARS.map((pillar) => {
+    const guide = BUYER_GUIDES[pillar.route];
+    const identity = semanticIdentity(pillar.route);
+    return {
+      ...pillar,
+      guide,
+      identity,
+      model: COMMERCIAL_PAGE_MODELS[pillar.route],
+    };
+  });
+  const decisionSteps = [
+    ["Identifica el punto de fricción", "Visual, presencia, equipo o estructura interna. El servicio correcto depende de dónde se rompe la coherencia."],
+    ["Elige la ruta de trabajo", "Cada proceso tiene un foco distinto para evitar mezclar guardarropa, coaching, empresa y seguridad profesional en una sola conversación."],
+    ["Conecta con artículos guía", "Las publicaciones profundizan el contexto sin sobrecargar las páginas comerciales."],
+    ["Agenda diagnóstico", "La decisión final se ajusta a etapa, objetivo, disponibilidad y tipo de acompañamiento."],
+  ];
+  return `<section class="section commercial-intent-map service-hub-router" aria-label="Mapa de servicios">
+    <div class="section-heading compact-heading">
+      <p class="section-label">Elegir ruta</p>
+      <h2>Cuatro formas de trabajar imagen, presencia y posicionamiento profesional.</h2>
+      <p>Elige por necesidad principal: imagen visible, presencia profesional, equipo o seguridad interna. Cada ruta conserva su intención para que la decisión sea más clara.</p>
+    </div>
+    <div class="intent-card-grid service-route-grid">
+      ${paths.map((item, index) => `<a class="intent-card service-route-card" href="${item.route}">
+        <span>${String(index + 1).padStart(2, "0")}</span>
+        <small>${escapeHtml(item.identity?.entity || item.label)}</small>
+        <strong class="intent-title">${escapeHtml(semanticShortLabel(item.route, item.label))}</strong>
+        <p>${escapeHtml(item.guide.pain)}</p>
+        <strong>${escapeHtml(item.guide.outcome)}</strong>
+      </a>`).join("")}
+    </div>
+  </section>
+  <section class="section commercial-fit service-fit-map" aria-label="Qué servicio necesito">
+    <div class="section-heading compact-heading">
+      <p class="section-label">Por necesidad</p>
+      <h2>Qué revisar primero según el momento profesional.</h2>
+    </div>
+    <div class="fit-grid">
+      ${paths.map((item) => `<article class="fit-card">
+        <span>${topicIcon(item.route.includes("talleres") ? "empresa" : item.route.includes("abundancia") ? "mentalidad" : item.route.includes("coaching-de-imagen") ? "presencia" : "guardarropa")}</span>
+        <strong class="fit-title">${escapeHtml(item.model.label)}</strong>
+        <p>${escapeHtml(item.model.intro)}</p>
+        <a class="text-link" href="${item.route}">${escapeHtml(item.model.cta)}</a>
+      </article>`).join("")}
+    </div>
+  </section>
+  <section class="section commercial-workflow service-decision-workflow" aria-label="Proceso de decisión">
+    <div class="section-heading compact-heading">
+      <p class="section-label">Decisión</p>
+      <h2>Cómo pasar de confusión a una ruta de trabajo clara.</h2>
+      <p>El objetivo del hub no es explicar todo. Es separar intención, acelerar la decisión y llevarte al proceso que corresponde.</p>
+    </div>
+    <ol class="workflow-track">
+      ${decisionSteps.map(([label, text], index) => `<li>
+        <span>${topicIcon(index === 0 ? "percepcion" : index === 1 ? "decision" : index === 2 ? "presencia" : "liderazgo")}</span>
+        <strong>${escapeHtml(label)}</strong>
+        <p>${escapeHtml(text)}</p>
+      </li>`).join("")}
+    </ol>
+  </section>
+  <section class="section commercial-article-bridge compact-publications" aria-label="Lecturas para elegir servicio">
+    <div class="section-heading compact-heading">
+      <p class="section-label">Lecturas guía</p>
+      <h2>Publicaciones que ayudan a reconocer qué necesitas trabajar.</h2>
+    </div>
+    <div class="publication-grid">
+      ${articleCards(pages, { limit: 3, clusterMap: articleClusterByRoute(clusters) })}
+    </div>
+  </section>
+  ${ctaBridge(page, "Quiero elegir mi proceso")}
   ${internalLinkAtlas(page, pages, clusters)}`;
 }
 
 function structuredContentSections(page, lines, pages, clusters) {
   if (page.type === "article") return articleStructuredContent(page, lines, pages, clusters);
+  if (page.type === "home") return "";
+  if (page.route === "/sobre-sonia-mcrorey-asesora-de-imagen") return aboutAuthorityContent();
+  if (page.route === "/servicios-asesoria-de-imagen-coaching") return serviceHubContent(page, pages, clusters);
+  if (COMMERCIAL_PAGE_MODELS[page.route]) return commercialPageContent(page, pages, clusters);
   if (page.route === "/servicios-asesoria-de-imagen-coaching/preguntas-frequentes") return faqStructuredContent(page, lines, pages, clusters);
   const sections = classifyContent(page, lines);
   if (!sections.length) return "";
@@ -1672,7 +1900,8 @@ function contentHeading(page) {
 
 function hero(page, lines) {
   const image = pickImage(page);
-  const lede = nonTitleLines(page, lines, 1).slice(0, 2);
+  const commercialModel = COMMERCIAL_PAGE_MODELS[page.route];
+  const lede = commercialModel ? [commercialModel.intro] : nonTitleLines(page, lines, 1).slice(0, 2);
   const eyebrow = page.type === "article" ? "Imagen, presencia y mentalidad" : page.type === "service" ? "Servicio" : page.type === "about" ? "Sobre Sonia" : BRAND_NAME;
   return `<section class="section hero imagen-hero ${page.type}-hero">
     <div class="hero-copy">
@@ -1813,6 +2042,222 @@ function articleCards(pages, { limit, clusterMap = new Map() } = {}) {
       <small>Leer publicación</small>
     </a>`)
     .join("");
+}
+
+function commercialIntentMap(page, model) {
+  const guide = BUYER_GUIDES[page.route];
+  const items = model.decision || [
+    ["Dolor", guide?.pain || "La imagen actual no acompaña el nivel que necesitas sostener."],
+    ["Proceso", guide?.solution || "Un proceso de Coach de Imagen diseñado desde contexto, presencia y objetivo profesional."],
+    ["Resultado", guide?.outcome || "Mayor claridad, presencia y coherencia profesional."],
+  ];
+  return `<section class="section commercial-intent-map" aria-label="Mapa de decisión">
+    <div class="section-heading compact-heading">
+      <p class="section-label">${escapeHtml(model.label || semanticIdentity(page.route)?.entity || "Ruta")}</p>
+      <h2>${escapeHtml(model.heading || "Elige con claridad el proceso que necesitas.")}</h2>
+      <p>${escapeHtml(model.intro || semanticDescription(page, page.description))}</p>
+    </div>
+    <div class="intent-card-grid">
+      ${items.map(([label, text], index) => `<article class="intent-card">
+        <span>${String(index + 1).padStart(2, "0")}</span>
+        <h3>${escapeHtml(label)}</h3>
+        <p>${escapeHtml(text)}</p>
+      </article>`).join("")}
+    </div>
+  </section>`;
+}
+
+function commercialFitGrid(model) {
+  if (!model.fit?.length) return "";
+  return `<section class="section commercial-fit" aria-label="Para quién es">
+    <div class="section-heading compact-heading">
+      <p class="section-label">Para quién</p>
+      <h2>Cuando este proceso hace sentido.</h2>
+    </div>
+    <div class="fit-grid">
+      ${model.fit.map(([label, text]) => `<article class="fit-card">
+        <span>${topicIcon(label.toLowerCase().includes("empresa") || label.toLowerCase().includes("marca") ? "empresa" : "identidad")}</span>
+        <h3>${escapeHtml(label)}</h3>
+        <p>${escapeHtml(text)}</p>
+      </article>`).join("")}
+    </div>
+  </section>`;
+}
+
+function commercialWorkflow(page) {
+  const steps = SERVICE_PROCESS_STEPS[page.route] || [];
+  if (!steps.length) return "";
+  const details = SERVICE_PROCESS_DETAILS[page.route] || [];
+  const topicIds = SERVICE_PROCESS_TOPIC_IDS[page.route] || [];
+  return `<section class="section commercial-workflow" aria-label="Proceso de trabajo">
+    <div class="section-heading compact-heading">
+      <p class="section-label">Proceso</p>
+      <h2>${escapeHtml(semanticSupportHeading(page))}.</h2>
+      <p>Una ruta clara para convertir intención en decisiones aplicables.</p>
+    </div>
+    <ol class="workflow-track">
+      ${steps.map((step, index) => `<li>
+        <span>${topicIcon(topicIds[index] || "decision")}</span>
+        <strong>${String(index + 1).padStart(2, "0")} ${escapeHtml(step)}</strong>
+        <p>${escapeHtml(details[index] || "Paso del proceso.")}</p>
+      </li>`).join("")}
+    </ol>
+  </section>`;
+}
+
+function commercialOutcomes(model) {
+  if (!model.outcomes?.length) return "";
+  return `<section class="section outcome-state-map" aria-label="Resultados">
+    <div class="section-heading compact-heading">
+      <p class="section-label">Resultados</p>
+      <h2>Lo que la persona o el equipo puede sostener mejor.</h2>
+    </div>
+    <div class="outcome-grid">
+      ${model.outcomes.map((outcome) => `<div class="outcome-card">${topicIcon("decision")}<span>${escapeHtml(outcome)}</span></div>`).join("")}
+    </div>
+  </section>`;
+}
+
+function commercialMethodNotes(page, model) {
+  const notes = {
+    "/servicios-asesoria-de-imagen-coaching/talleres": [
+      ["Diseño a medida", "Cada taller parte de un objetivo claro: equipo, marca, experiencia, cliente, industria o necesidad concreta."],
+      ["Aplicación real", "El trabajo sucede con ejemplos, decisiones y ejercicios que el grupo puede aplicar durante la experiencia."],
+      ["Criterio compartido", "El cierre no es inspiración. Es una base común para decidir imagen, color, presencia y comunicación."],
+    ],
+    "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen": [
+      ["Lectura integral", "La imagen se revisa desde estilo, color, rostro, proporciones, clóset y contexto de vida real."],
+      ["Sistema práctico", "El objetivo no es verse bien una vez, sino construir criterios para decidir con menos desgaste."],
+      ["Coherencia externa", "Lo visible acompaña identidad, responsabilidad, entorno y nivel de exposición profesional."],
+    ],
+    "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen": [
+      ["Presencia visible", "La imagen se trabaja desde seguridad, comunicación, autoconcepto y forma de ocupar espacios."],
+      ["Contexto profesional", "El proceso considera conversaciones, reuniones, exposición digital, liderazgo y percepción externa."],
+      ["Autoridad natural", "No se busca actuar una imagen rígida. Se fortalece una presencia clara, creíble y propia."],
+    ],
+    "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia": [
+      ["Estructura interna", "La ruta observa patrones que aparecen justo cuando toca decidir, crecer, exponerse o sostener más."],
+      ["Cuerpo y decisión", "La seguridad profesional también necesita un sistema interno capaz de sostener visibilidad y presión."],
+      ["Crecimiento sostenible", "El objetivo es que el avance no dependa de empuje, sino de claridad, presencia y coherencia interna."],
+    ],
+  }[page.route] || [];
+  if (!notes.length) return "";
+  return `<section class="section commercial-method-notes" aria-label="Cómo se entiende este proceso">
+    <div class="section-heading compact-heading">
+      <p class="section-label">Enfoque</p>
+      <h2>${escapeHtml(model.label)} con contexto, criterio y aplicación.</h2>
+    </div>
+    <div class="method-note-grid">
+      ${notes.map(([label, text]) => `<article>
+        <span>${topicIcon("percepcion")}</span>
+        <h3>${escapeHtml(label)}</h3>
+        <p>${escapeHtml(text)}</p>
+      </article>`).join("")}
+    </div>
+  </section>`;
+}
+
+function commercialRelatedArticles(model, pages, clusters) {
+  const map = pageByRoute(pages);
+  const selected = (model.articles || []).map((route) => map.get(route)).filter(Boolean);
+  if (!selected.length) return "";
+  return `<section class="section commercial-article-bridge" aria-label="Lecturas relacionadas">
+    <div class="cluster-header">
+      <div>
+        <p class="section-label">Profundizar</p>
+        <h2>Lecturas para entender el contexto antes de decidir.</h2>
+        <p>El servicio se mantiene claro; la profundidad editorial vive en estas publicaciones.</p>
+      </div>
+      <a class="btn secondary" href="/imagen-presencia">Ver publicaciones</a>
+    </div>
+    <div class="publication-grid compact-publications">${articleCards(selected, { clusterMap: articleClusterByRoute(clusters) })}</div>
+  </section>`;
+}
+
+function commercialFaq(model) {
+  if (!model.faq?.length) return "";
+  return `<section class="section commercial-faq" aria-label="Preguntas clave">
+    <div class="section-heading compact-heading">
+      <p class="section-label">Preguntas clave</p>
+      <h2>Respuestas directas para elegir con menos fricción.</h2>
+    </div>
+    <div class="faq-answer-grid compact-faq">
+      ${model.faq.map(([question, answer], index) => `<details class="faq-answer-card"${index === 0 ? " open" : ""}>
+        <summary><span>${String(index + 1).padStart(2, "0")}</span>${escapeHtml(question)}</summary>
+        <div><p>${escapeHtml(answer)}</p></div>
+      </details>`).join("")}
+    </div>
+  </section>`;
+}
+
+function ctaBridge(page, label = "Agendar diagnóstico") {
+  return `<section class="section cta-bridge" aria-label="Siguiente paso">
+    <div>
+      <p class="section-label">Siguiente paso</p>
+      <h2>Evalúa si esta ruta corresponde a tu momento.</h2>
+      <p>La conversación inicial permite ubicar objetivo, contexto y tipo de acompañamiento antes de elegir un proceso.</p>
+    </div>
+    <a class="btn primary" href="${WHATSAPP}" target="_blank" rel="noopener">${escapeHtml(label)}</a>
+  </section>`;
+}
+
+function commercialPageContent(page, pages, clusters) {
+  const model = COMMERCIAL_PAGE_MODELS[page.route];
+  if (!model) return "";
+  return `${commercialIntentMap(page, model)}
+  ${commercialFitGrid(model)}
+  ${commercialMethodNotes(page, model)}
+  ${commercialWorkflow(page)}
+  ${commercialOutcomes(model)}
+  ${commercialRelatedArticles(model, pages, clusters)}
+  ${commercialFaq(model)}
+  ${ctaBridge(page, model.cta)}`;
+}
+
+function aboutAuthorityContent() {
+  const credentials = [
+    "Vicepresidenta y VP de Educación - AICI Guadalajara (2024-2026)",
+    "Miembro activo de la Asociación Internacional de Consultores de Imagen (AICI)",
+    "Asesora de Imagen por Maison Aubele (2010) - Argentina",
+    "Asesora de Imagen Personal y Empresarial por Garbo Imagen (2012) - Uruguay",
+    "Imagen Masculina por Rossy Garbbez (2014) - México",
+    "Consultora de Imagen Empresarial por el Colegio de Imagen Pública (2019) - México",
+    "Psicología de la Imagen por Domingo Delgado (2022) - España",
+    "Colorimetría: Sistema Tonal y Contraste por Pshopper School (2022) - México",
+  ];
+  return `<section class="section commercial-intent-map about-authority" aria-label="Autoridad profesional">
+    <div class="section-heading compact-heading">
+      <p class="section-label">Sobre Sonia</p>
+      <h2>Imagen y presencia para tu siguiente nivel profesional.</h2>
+      <p>Trabajo en la intersección entre imagen, identidad y mentalidad aplicada al contexto profesional para personas, marcas y equipos en Guadalajara, México y LATAM.</p>
+    </div>
+    <div class="intent-card-grid">
+      <article class="intent-card"><span>01</span><h3>Para quién</h3><p>Líderes, profesionistas, ejecutivos, empresas y marcas personales que necesitan alinear presencia con responsabilidad, decisiones y crecimiento.</p></article>
+      <article class="intent-card"><span>02</span><h3>Qué hago</h3><p>Diseño procesos estratégicos donde imagen, presencia y mentalidad se trabajan de forma integrada y aplicada a tu contexto profesional.</p></article>
+      <article class="intent-card"><span>03</span><h3>Cómo se sostiene</h3><p>La imagen no se trabaja para impresionar, sino para que lo que piensas, decides y proyectas esté alineado.</p></article>
+    </div>
+  </section>
+  <section class="section commercial-method-notes" aria-label="Enfoque de Sonia">
+    <div class="section-heading compact-heading">
+      <p class="section-label">Enfoque</p>
+      <h2>Lo interno y lo externo como un sistema.</h2>
+    </div>
+    <div class="method-note-grid">
+      <article><span>${topicIcon("identidad")}</span><h3>Identidad</h3><p>Cómo te percibes, valoras y decides influye en la forma en que tu imagen comunica.</p></article>
+      <article><span>${topicIcon("presencia")}</span><h3>Presencia</h3><p>La presencia se vuelve coherente cuando acompaña el rol, la responsabilidad y el nivel de confianza que necesitas generar.</p></article>
+      <article><span>${topicIcon("liderazgo")}</span><h3>Posicionamiento</h3><p>El objetivo es que lo que proyectas sea coherente con tu nivel profesional y con el lugar que estás sosteniendo.</p></article>
+    </div>
+  </section>
+  <section class="section outcome-state-map" aria-label="Formación y credenciales">
+    <div class="section-heading compact-heading">
+      <p class="section-label">Formación</p>
+      <h2>Criterio profesional construido en imagen, empresa, comunicación y psicología de la imagen.</h2>
+    </div>
+    <div class="credential-grid">
+      ${credentials.map((item) => `<div>${escapeHtml(item)}</div>`).join("")}
+    </div>
+  </section>
+  ${ctaBridge({ route: "/sobre-sonia-mcrorey-asesora-de-imagen" }, "Agendar diagnóstico con Sonia")}`;
 }
 
 function serviceCards(pages) {
@@ -2301,8 +2746,36 @@ function homeExtras(pages, clusters) {
 }
 
 function indexExtras(pages, clusters) {
-  return `${servicePathSection(pages)}
-  ${clusterSections(pages, clusters)}`;
+  const map = pageByRoute(pages);
+  return `<section class="section publication-guide" aria-label="Guía de publicaciones">
+    <div class="section-heading compact-heading">
+      <p class="section-label">Centro editorial</p>
+      <h2>Elige una línea de lectura según lo que necesitas comprender.</h2>
+      <p>Las publicaciones conservan la profundidad de Sonia; esta página organiza el acceso por intención para no convertir el archivo en una lista pesada.</p>
+    </div>
+    <div class="article-cluster-nav">
+      ${clusters.map((cluster) => `<a href="#${escapeHtml(cluster.id)}">
+        <span>${escapeHtml(cluster.label)}</span>
+        <small>${cluster.articles.length} publicaciones · ${escapeHtml(serviceLabel(cluster.primaryService, pages))}</small>
+      </a>`).join("")}
+    </div>
+  </section>
+  ${servicePathSection(pages)}
+  ${clusters.map((cluster) => {
+    const shown = cluster.articles.map((route) => map.get(route)).filter(Boolean).slice(0, 3);
+    return `<section class="section cluster-section" id="${escapeHtml(cluster.id)}">
+      <div class="cluster-header">
+        <div>
+          <p class="section-label">Ruta de lectura</p>
+          <h2>${escapeHtml(cluster.label)}</h2>
+          <p>${escapeHtml(cluster.description)}</p>
+        </div>
+        <a class="btn secondary" href="${cluster.primaryService}">${escapeHtml(serviceLabel(cluster.primaryService, pages))}</a>
+      </div>
+      <div class="publication-grid compact-publications">${articleCards(shown, { clusterMap: articleClusterByRoute(clusters) })}</div>
+    </section>`;
+  }).join("")}
+  ${ctaBridge({ route: "/imagen-presencia" }, "Agendar diagnóstico")}`;
 }
 
 function serviceHubExtras(pages) {
@@ -2310,6 +2783,7 @@ function serviceHubExtras(pages) {
 }
 
 function serviceExtras(page, pages, clusters) {
+  if (COMMERCIAL_PAGE_MODELS[page.route]) return "";
   const relatedClusters = clusters.filter((cluster) => cluster.primaryService === page.route);
   if (!relatedClusters.length) return "";
   return `<section class="section related-path">
