@@ -1326,6 +1326,82 @@ async function generateOptimizedImages() {
   OPTIMIZED_IMAGE_SOURCES = optimized;
 }
 
+function wrapSvgText(text = "", maxChars = 28, maxLines = 3) {
+  const words = cleanDisplayTitle(text).split(/\s+/).filter(Boolean);
+  const lines = [];
+  let current = "";
+  for (const word of words) {
+    const next = current ? `${current} ${word}` : word;
+    if (next.length > maxChars && current) {
+      lines.push(current);
+      current = word;
+    } else {
+      current = next;
+    }
+  }
+  if (current) lines.push(current);
+  if (lines.length <= maxLines) return lines;
+  const kept = lines.slice(0, maxLines);
+  kept[maxLines - 1] = fitTitleLength(kept[maxLines - 1], maxChars - 1);
+  return kept;
+}
+
+function socialCardSvg({ title, description, kicker, route, logoBase64 }) {
+  const titleLines = wrapSvgText(title, 24, 3);
+  const descriptionLines = wrapSvgText(description, 54, 2);
+  const titleTspans = titleLines.map((line, index) => `<tspan x="72" dy="${index === 0 ? 0 : 74}">${escapeHtml(line)}</tspan>`).join("");
+  const descriptionTspans = descriptionLines.map((line, index) => `<tspan x="72" dy="${index === 0 ? 0 : 32}">${escapeHtml(line)}</tspan>`).join("");
+  return `<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#F7F4F7"/>
+  <rect x="34" y="32" width="1132" height="566" rx="30" fill="#FBFAFB" stroke="#DCD6DF" stroke-width="2"/>
+  <rect x="64" y="64" width="1072" height="502" rx="22" fill="#F2F5F1" stroke="#C8D9CE" stroke-width="1.5"/>
+  <circle cx="986" cy="170" r="92" fill="#E8EFEA" stroke="#C8D9CE" stroke-width="1.5"/>
+  <circle cx="986" cy="170" r="48" fill="#FBFAFB" stroke="#D7C5DD" stroke-width="1.5"/>
+  <image href="data:image/png;base64,${logoBase64}" x="72" y="78" width="330" height="78" preserveAspectRatio="xMinYMid meet"/>
+  <text x="72" y="210" fill="#216448" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="5">${escapeHtml(kicker.toUpperCase())}</text>
+  <text x="72" y="296" fill="#2F3440" font-family="Cormorant Garamond, Georgia, serif" font-size="66" font-weight="600" letter-spacing="0">${titleTspans}</text>
+  <text x="72" y="490" fill="#67616B" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="400">${descriptionTspans}</text>
+  <text x="72" y="558" fill="#216448" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="3">COACHDEIMAGEN.COM</text>
+  <text x="1128" y="558" text-anchor="end" fill="#8D4A9A" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="2">MÉXICO · LATAM</text>
+</svg>`;
+}
+
+function preparePageMetadata(page) {
+  if (!page?.markdown) return page;
+  const lines = splitContent(page.markdown);
+  page.heroTitle = titleFromLines(page, lines);
+  page.description = descriptionFromLines(lines, page);
+  return page;
+}
+
+async function generateSocialCards(pages, hubs, comparisons) {
+  const socialDir = distPath("assets", "social");
+  await mkdir(socialDir, { recursive: true });
+  const logoPath = rootPath("assets", "sonia-logo-ai.png");
+  const logoBase64 = (await readFile(logoPath)).toString("base64");
+  const routes = [
+    ...pages.map((page) => preparePageMetadata(page)),
+    ...hubs.map((hub) => ({ route: hub.route, title: hub.title, heroTitle: hub.title, description: hub.description, cluster: hub.cluster })),
+    ...comparisons.map((page) => ({ route: page.route, title: page.title, heroTitle: page.title, description: page.description, focus: page.focus })),
+    {
+      route: CONTACT_ROUTE,
+      title: "Contacto privado para diagnóstico de Coach de Imagen",
+      heroTitle: "Contacto privado para diagnóstico de Coach de Imagen",
+      description: "Agenda un diagnóstico privado con Sonia McRorey para imagen, presencia y posicionamiento profesional en México y LATAM.",
+    },
+  ];
+  for (const page of routes) {
+    const svg = socialCardSvg({
+      title: socialTitleForPage(page),
+      description: metaDescriptionForPage(page, page.description),
+      kicker: socialKickerForPage(page),
+      route: page.route,
+      logoBase64,
+    });
+    await sharp(Buffer.from(svg)).png({ compressionLevel: 9, quality: 92 }).toFile(distPath(socialCardPath(page.route).slice(1)));
+  }
+}
+
 function imageAttributes(src, options = {}) {
   const renderSrc = optimizedAssetPath(src);
   const size = imageDimensions(src);
@@ -1762,10 +1838,63 @@ function fitTitleLength(value = "", maxLength = 58) {
   return boundary.length >= 32 ? boundary : text.slice(0, maxLength).trim();
 }
 
-function fitMetaDescription(value = "", maxLength = 158) {
+function fitMetaDescription(value = "", maxLength = 145) {
   const text = cleanDisplayTitle(value).replace(/\s+/g, " ").trim();
   if (text.length <= maxLength) return text;
   return text.slice(0, maxLength).replace(/\s+\S*$/, "").replace(/[,:;]$/, "").trim();
+}
+
+function routeSlug(route = "/") {
+  if (route === "/") return "inicio";
+  return route.replace(/^\/+|\/+$/g, "").replace(/[^a-z0-9]+/gi, "-").replace(/^-+|-+$/g, "").toLowerCase();
+}
+
+function socialCardPath(route = "/") {
+  return `/assets/social/${routeSlug(route)}.png`;
+}
+
+function metaDescriptionForPage(page, fallback = "") {
+  const description = semanticDescription(page, fallback || page.description);
+  const routeContext = page.route === "/"
+    ? "Coach de Imagen en Guadalajara, México y LATAM para presencia, liderazgo y posicionamiento profesional."
+    : "Coach de Imagen en México y LATAM para imagen profesional, presencia, liderazgo y posicionamiento.";
+  const merged = description && description.length >= 90 ? description : `${description || cleanDisplayTitle(page.title || page.heroTitle)}. ${routeContext}`;
+  return fitMetaDescription(merged, 145);
+}
+
+function seoTitleForPage(page) {
+  const title = semanticSeoTitle(page);
+  return fitTitleLength(title, 64);
+}
+
+function socialTitleForPage(page) {
+  const base = cleanDisplayTitle(semanticH1(page) || page.title || BRAND_NAME);
+  return fitTitleLength(base, 76);
+}
+
+function socialKickerForPage(page) {
+  if (page.route === "/") return "Coach De Imagen";
+  if (page.route === CONTACT_ROUTE) return "Diagnóstico Privado";
+  if (page.route.startsWith("/comparaciones")) return "Comparaciones";
+  if (page.route.startsWith("/imagen-presencia/")) return "Publicación";
+  if (page.route.startsWith("/servicios-asesoria-de-imagen-coaching")) return "Servicio";
+  return semanticIdentity(page.route)?.entity || page.cluster || page.focus || "Coach De Imagen";
+}
+
+function socialMetaTags(page, description, type = "website") {
+  const title = socialTitleForPage(page);
+  const image = `${SITE_URL}${socialCardPath(page.route)}`;
+  return `<meta property="og:type" content="${type}" />
+  <meta property="og:title" content="${escapeHtml(title)}" />
+  <meta property="og:description" content="${escapeHtml(description)}" />
+  <meta property="og:url" content="${absoluteUrl(page.route)}" />
+  <meta property="og:image" content="${image}" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="${escapeHtml(title)}" />
+  <meta name="twitter:description" content="${escapeHtml(description)}" />
+  <meta name="twitter:image" content="${image}" />`;
 }
 
 function titleFromLines(page, lines) {
@@ -1781,9 +1910,9 @@ function descriptionFromLines(lines, page = null) {
   if (page && PAGE_OVERRIDES[page.route]?.description) return PAGE_OVERRIDES[page.route].description;
   const cleaned = lines.map(cleanDisplayTitle).filter(Boolean);
   const line = cleaned.find((item) => item.length > 90) || cleaned.find((item) => item.length > 45) || "";
-  const excerpt = cleanExcerptText(line, 158);
+  const excerpt = cleanExcerptText(line, 145);
   if (page?.type === "article" && excerpt.length < 120) {
-    return fitMetaDescription(`${excerpt.replace(/\.$/, "")}. Lectura sobre imagen profesional, presencia y posicionamiento con Sonia McRorey.`, 158);
+    return fitMetaDescription(`${excerpt.replace(/\.$/, "")}. Lectura sobre imagen profesional, presencia y posicionamiento con Sonia McRorey.`, 145);
   }
   return excerpt;
 }
@@ -2775,13 +2904,15 @@ function contactIntakeForm() {
 function renderContactPage() {
   const title = "Contacto privado para diagnóstico de Coach de Imagen";
   const description = "Solicita un diagnóstico privado con Sonia McRorey para coaching de imagen, presencia profesional, posicionamiento, imagen empresarial o seguridad profesional.";
+  const page = { route: CONTACT_ROUTE, title, heroTitle: title, description };
+  const metaDescription = metaDescriptionForPage(page, description);
   return `<!doctype html>
 <html lang="es-MX">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>${title} | Sonia McRorey</title>
-  <meta name="description" content="${description}" />
+  <title>${escapeHtml(seoTitleForPage(page))}</title>
+  <meta name="description" content="${escapeHtml(metaDescription)}" />
   <link rel="canonical" href="${absoluteUrl(CONTACT_ROUTE)}" />
   <link rel="alternate" hreflang="es-MX" href="${absoluteUrl(CONTACT_ROUTE)}" />
   <link rel="alternate" hreflang="x-default" href="${absoluteUrl(CONTACT_ROUTE)}" />
@@ -2792,11 +2923,7 @@ function renderContactPage() {
   <link rel="alternate" type="application/json" href="${SITE_URL}/agent/site-profile.json" title="Perfil estructurado para asistentes" />
   <link rel="agent" type="application/json" href="${SITE_URL}/.well-known/agent.json" />
   <link rel="api-catalog" type="application/json" href="${SITE_URL}/api-catalog.json" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="${title}" />
-  <meta property="og:description" content="${description}" />
-  <meta property="og:url" content="${absoluteUrl(CONTACT_ROUTE)}" />
-  <meta property="og:image" content="${SITE_URL}/assets/sonia-twitter-card.png" />
+  ${socialMetaTags(page, metaDescription, "website")}
   <link rel="icon" href="/assets/sonia-icon.svg" />
   ${stylesheetLinks()}
   ${contactPageSchema()}
@@ -3613,13 +3740,15 @@ function renderSemanticHub(hub, pages, clusters) {
   const relatedArticles = hubRelatedArticles(hub, pages, clusters);
   const map = pageByRoute(pages);
   const serviceLinks = hub.services.map((route) => map.get(route)).filter(Boolean);
+  const pageMeta = { route: hub.route, title: hub.title, heroTitle: hub.title, description: hub.description, cluster: hub.cluster };
+  const metaDescription = metaDescriptionForPage(pageMeta, hub.description);
   return `<!doctype html>
 <html lang="es-MX">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>${escapeHtml(hub.title)} | Sonia McRorey</title>
-  <meta name="description" content="${escapeHtml(hub.description)}" />
+  <title>${escapeHtml(seoTitleForPage(pageMeta))}</title>
+  <meta name="description" content="${escapeHtml(metaDescription)}" />
   <link rel="canonical" href="${absoluteUrl(hub.route)}" />
   <link rel="alternate" hreflang="es-MX" href="${absoluteUrl(hub.route)}" />
   <link rel="alternate" hreflang="x-default" href="${absoluteUrl(hub.route)}" />
@@ -3629,10 +3758,7 @@ function renderSemanticHub(hub, pages, clusters) {
   <link rel="alternate" type="application/json" href="${SITE_URL}/agent/site-profile.json" title="Perfil estructurado para asistentes" />
   <link rel="agent" type="application/json" href="${SITE_URL}/.well-known/agent.json" />
   <link rel="api-catalog" type="application/json" href="${SITE_URL}/api-catalog.json" />
-  <meta property="og:title" content="${escapeHtml(hub.title)}" />
-  <meta property="og:description" content="${escapeHtml(hub.description)}" />
-  <meta property="og:url" content="${absoluteUrl(hub.route)}" />
-  <meta property="og:image" content="${SITE_URL}${hub.image}" />
+  ${socialMetaTags(pageMeta, metaDescription, "website")}
   <link rel="icon" href="/assets/sonia-icon.svg" />
   ${preloadImageLink(hub.image)}
   ${stylesheetLinks()}
@@ -3876,13 +4002,15 @@ function renderComparisonPage(page) {
   const isHub = page.route === "/comparaciones";
   const heroImage = page.heroImage || "/assets/797aeda1281e5d5e.png";
   const heroAlt = page.heroAlt || page.title;
+  const pageMeta = { ...page, heroTitle: page.title };
+  const metaDescription = metaDescriptionForPage(pageMeta, page.description);
   return `<!doctype html>
 <html lang="es-MX">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>${escapeHtml(page.title)} | Sonia McRorey</title>
-  <meta name="description" content="${escapeHtml(page.description)}" />
+  <title>${escapeHtml(seoTitleForPage(pageMeta))}</title>
+  <meta name="description" content="${escapeHtml(metaDescription)}" />
   <link rel="canonical" href="${absoluteUrl(page.route)}" />
   <link rel="alternate" hreflang="es-MX" href="${absoluteUrl(page.route)}" />
   <link rel="alternate" hreflang="x-default" href="${absoluteUrl(page.route)}" />
@@ -3892,10 +4020,7 @@ function renderComparisonPage(page) {
   <link rel="alternate" type="application/json" href="${SITE_URL}/agent/site-profile.json" title="Perfil estructurado para asistentes" />
   <link rel="agent" type="application/json" href="${SITE_URL}/.well-known/agent.json" />
   <link rel="api-catalog" type="application/json" href="${SITE_URL}/api-catalog.json" />
-  <meta property="og:title" content="${escapeHtml(page.title)}" />
-  <meta property="og:description" content="${escapeHtml(page.description)}" />
-  <meta property="og:url" content="${absoluteUrl(page.route)}" />
-  <meta property="og:image" content="${SITE_URL}${heroImage}" />
+  ${socialMetaTags(pageMeta, metaDescription, "article")}
   <link rel="icon" href="/assets/sonia-icon.svg" />
   ${preloadImageLink(heroImage)}
   ${stylesheetLinks()}
@@ -4107,6 +4232,8 @@ function renderPage(page, pages, clusters) {
   page.heroTitle = titleFromLines(page, lines);
   page.description = descriptionFromLines(lines, page);
   const image = pickImage(page);
+  const metaDescription = metaDescriptionForPage(page, page.description);
+  const socialType = page.type === "article" ? "article" : "website";
   const extra =
     page.type === "home"
       ? homeExtras(pages, clusters)
@@ -4126,8 +4253,8 @@ function renderPage(page, pages, clusters) {
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>${escapeHtml(semanticSeoTitle(page))}</title>
-  <meta name="description" content="${escapeHtml(semanticDescription(page, page.description))}" />
+  <title>${escapeHtml(seoTitleForPage(page))}</title>
+  <meta name="description" content="${escapeHtml(metaDescription)}" />
   <link rel="canonical" href="${absoluteUrl(page.route)}" />
   <link rel="alternate" hreflang="es-MX" href="${absoluteUrl(page.route)}" />
   <link rel="alternate" hreflang="x-default" href="${absoluteUrl(page.route)}" />
@@ -4137,10 +4264,7 @@ function renderPage(page, pages, clusters) {
   <link rel="alternate" type="application/json" href="${SITE_URL}/agent/site-profile.json" title="Perfil estructurado para asistentes" />
   <link rel="agent" type="application/json" href="${SITE_URL}/.well-known/agent.json" />
   <link rel="api-catalog" type="application/json" href="${SITE_URL}/api-catalog.json" />
-  <meta property="og:title" content="${escapeHtml(semanticH1(page))}" />
-  <meta property="og:description" content="${escapeHtml(semanticDescription(page, page.description))}" />
-  <meta property="og:url" content="${absoluteUrl(page.route)}" />
-  <meta property="og:image" content="${SITE_URL}${image}" />
+  ${socialMetaTags(page, metaDescription, socialType)}
   <link rel="icon" href="/assets/sonia-icon.svg" />
   ${preloadImageLink(image)}
   ${stylesheetLinks()}
@@ -5058,6 +5182,7 @@ async function main() {
   await mkdir(DIST, { recursive: true });
   await copyStatic();
   await generateOptimizedImages();
+  await generateSocialCards(pages, SEMANTIC_HUBS, COMPARISON_PAGES);
   await writeAgentFiles(pages, clusters);
   for (const page of pages) {
     const out = routeOutputPath(page.route);

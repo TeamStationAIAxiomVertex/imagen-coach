@@ -279,6 +279,34 @@ for (const file of htmlFiles) {
   const canonicalMatch = html.match(/<link rel="canonical" href="([^"]+)" \/>/);
   if (!canonicalMatch) failures.push(`Missing canonical link in ${file}`);
   else if (canonicalMatch[1] !== expectedCanonical) failures.push(`Canonical mismatch in ${file}: expected ${expectedCanonical}, got ${canonicalMatch[1]}`);
+  const titleMatch = html.match(/<title>([\s\S]*?)<\/title>/i);
+  const metaDescriptionMatch = html.match(/<meta name="description" content="([^"]*)" \/>/i);
+  if (!titleMatch) failures.push(`Missing title in ${file}`);
+  else {
+    const titleText = titleMatch[1].replace(/&amp;/g, "&").replace(/&quot;/g, "\"").trim();
+    if (titleText.length > 64) failures.push(`SEO title too long in ${file}: ${titleText.length} characters`);
+  }
+  if (!metaDescriptionMatch) failures.push(`Missing meta description in ${file}`);
+  else {
+    const descriptionText = metaDescriptionMatch[1].replace(/&amp;/g, "&").replace(/&quot;/g, "\"").trim();
+    if (descriptionText.length > 145) failures.push(`Meta description too long in ${file}: ${descriptionText.length} characters`);
+    if (descriptionText.length < 50) failures.push(`Meta description too short in ${file}: ${descriptionText.length} characters`);
+  }
+  const socialSlug = route === "/" ? "inicio" : route.replace(/^\/+|\/+$/g, "").replace(/[^a-z0-9]+/gi, "-").replace(/^-+|-+$/g, "").toLowerCase();
+  const expectedSocialImage = `${SITE_URL}/assets/social/${socialSlug}.png`;
+  const socialImagePath = path.join("dist", "assets", "social", `${socialSlug}.png`);
+  for (const socialTag of [
+    '<meta name="twitter:card" content="summary_large_image" />',
+    '<meta name="twitter:title"',
+    '<meta name="twitter:description"',
+    '<meta name="twitter:image"',
+    '<meta property="og:image:width" content="1200" />',
+    '<meta property="og:image:height" content="630" />',
+  ]) {
+    if (!html.includes(socialTag)) failures.push(`Missing social metadata in ${file}: ${socialTag}`);
+  }
+  if (!html.includes(`content="${expectedSocialImage}"`)) failures.push(`Social image URL mismatch in ${file}: expected ${expectedSocialImage}`);
+  if (!existsSync(socialImagePath)) failures.push(`Missing generated social card for ${route}: ${socialImagePath}`);
   renderedCorpus += ` ${html.replace(/<script[\s\S]*?<\/script>/gi, " ").replace(/<style[\s\S]*?<\/style>/gi, " ").replace(/<[^>]+>/g, " ")}`;
 }
 
