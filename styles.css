@@ -2387,6 +2387,46 @@ details[open] summary::after {
   line-height: 1.62;
 }
 .section-heading.compact-heading .section-label { justify-self: center; }
+
+.comparison-positioning,
+.comparison-ladder,
+.comparison-matrix,
+.comparison-related,
+.rebrand-pillar-intro,
+.rebrand-authority-panel,
+.rebrand-fit-grid {
+  padding: clamp(56px, 7vw, 88px) 0;
+}
+
+.comparison-positioning + .comparison-ladder,
+.comparison-ladder + .comparison-matrix,
+.comparison-matrix + .comparison-related,
+.rebrand-pillar-intro + .rebrand-authority-panel,
+.rebrand-authority-panel + .rebrand-fit-grid,
+.rebrand-fit-grid + .rebrand-source-copy {
+  margin-top: 0;
+}
+
+.comparison-positioning .section-heading,
+.comparison-ladder .section-heading,
+.comparison-matrix .section-heading,
+.comparison-related .section-heading,
+.rebrand-pillar-intro .section-heading,
+.rebrand-authority-panel .section-heading,
+.rebrand-fit-grid .section-heading {
+  margin-bottom: clamp(32px, 4vw, 48px);
+}
+
+.comparison-positioning .section-heading.compact-heading,
+.comparison-ladder .section-heading.compact-heading,
+.comparison-matrix .section-heading.compact-heading,
+.comparison-related .section-heading.compact-heading,
+.rebrand-pillar-intro .section-heading.compact-heading,
+.rebrand-authority-panel .section-heading.compact-heading,
+.rebrand-fit-grid .section-heading.compact-heading {
+  padding-inline: clamp(16px, 2vw, 24px);
+}
+
 .commercial-intent-map,
 .commercial-fit,
 .commercial-method-notes,
