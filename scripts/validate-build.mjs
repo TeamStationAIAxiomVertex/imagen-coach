@@ -421,12 +421,11 @@ for (const line of [
   `Sitemap: ${SITE_URL}/blog-sitemap.xml`,
   `Sitemap: ${SITE_URL}/category-sitemap.xml`,
   `Sitemap: ${SITE_URL}/service-sitemap.xml`,
-  `OpenAPI: ${SITE_URL}/openapi.json`,
-  `LLMs: ${SITE_URL}/llms.txt`,
-  `LLMs-Full: ${SITE_URL}/llms-full.txt`,
-  `Agent-Profile: ${SITE_URL}/agent/site-profile.json`,
 ]) {
   if (!robots.includes(line)) failures.push(`robots.txt missing ${line}`);
+}
+for (const invalidDirective of ["OpenAPI:", "API-Catalog:", "LLMs:", "LLMs-Full:", "Agent-Profile:", "Agent-Card:", "Content-Signal:"]) {
+  if (robots.includes(invalidDirective)) failures.push(`robots.txt contains non-standard directive ${invalidDirective}`);
 }
 
 const homepage = await readFile("dist/index.html", "utf8");
@@ -437,6 +436,7 @@ if (!aboutPage.includes('src="/assets/sonia-mcrorey-about-760.avif"')) failures.
 
 const redirects = await readFile("dist/_redirects", "utf8");
 const headers = await readFile("dist/_headers", "utf8");
+const agentRedirects = JSON.parse(await readFile("dist/agent/redirects.json", "utf8"));
 for (const line of [
   "/assets/*",
   "Cache-Control: public, max-age=31536000, immutable",
@@ -446,17 +446,25 @@ for (const line of [
 ]) {
   if (!headers.includes(line)) failures.push(`_headers missing performance cache rule: ${line}`);
 }
+for (const absoluteSource of ["https://", "http://"]) {
+  if (redirects.includes(absoluteSource)) failures.push(`_redirects contains unsupported absolute source URL: ${absoluteSource}`);
+}
+for (const rule of [
+  ["https://www.coachdeimagen.com/", `${SITE_URL}/`, 301],
+  ["https://www.coachdeimagen.com/*", `${SITE_URL}/:splat`, 301],
+  [`${LEGACY_SITE_URL}/`, `${SITE_URL}/`, 301],
+  [`${LEGACY_SITE_URL}/sitemap_pages.xml`, `${SITE_URL}/sitemap.xml`, 301],
+  [`${LEGACY_SITE_URL}/imagen-presencia/sitemap.xml`, `${SITE_URL}/blog-sitemap.xml`, 301],
+  [`${LEGACY_SITE_URL}/*`, `${SITE_URL}/:splat`, 301],
+  ["https://www.imagencoach.com/", `${SITE_URL}/`, 301],
+  ["https://www.imagencoach.com/sitemap_pages.xml", `${SITE_URL}/sitemap.xml`, 301],
+  ["https://www.imagencoach.com/imagen-presencia/sitemap.xml", `${SITE_URL}/blog-sitemap.xml`, 301],
+  ["https://www.imagencoach.com/*", `${SITE_URL}/:splat`, 301],
+]) {
+  const found = agentRedirects.redirects?.some((redirect) => redirect.from === rule[0] && redirect.to === rule[1] && redirect.status === rule[2]);
+  if (!found) failures.push(`agent redirect manifest missing host rule: ${rule.join(" -> ")}`);
+}
 for (const line of [
-  `https://www.coachdeimagen.com/  ${SITE_URL}/  301`,
-  `https://www.coachdeimagen.com/*  ${SITE_URL}/:splat  301`,
-  `${LEGACY_SITE_URL}/  ${SITE_URL}/  301`,
-  `${LEGACY_SITE_URL}/sitemap_pages.xml  ${SITE_URL}/sitemap.xml  301`,
-  `${LEGACY_SITE_URL}/imagen-presencia/sitemap.xml  ${SITE_URL}/blog-sitemap.xml  301`,
-  `${LEGACY_SITE_URL}/*  ${SITE_URL}/:splat  301`,
-  `https://www.imagencoach.com/  ${SITE_URL}/  301`,
-  `https://www.imagencoach.com/sitemap_pages.xml  ${SITE_URL}/sitemap.xml  301`,
-  `https://www.imagencoach.com/imagen-presencia/sitemap.xml  ${SITE_URL}/blog-sitemap.xml  301`,
-  `https://www.imagencoach.com/*  ${SITE_URL}/:splat  301`,
   "/sitemap_pages.xml  /sitemap.xml  301",
   "/imagen-presencia/sitemap.xml  /blog-sitemap.xml  301",
   "/comparaciones/sonia-mcrorey-vs-gaby-vargas  /comparaciones/evolucion-coaching-imagen-mexico-latam  301",
@@ -468,13 +476,12 @@ for (const line of [
   if (!redirects.includes(line)) failures.push(`_redirects missing ${line}`);
 }
 
-const redirectLines = redirects.trim().split(/\n+/).filter(Boolean);
 for (const route of expectedRoutes) {
   const legacyUrl = `${LEGACY_SITE_URL}${route === "/" ? "/" : route}`;
   const targetUrl = `${SITE_URL}${route === "/" ? "/" : route}`;
-  const exactRule = `${legacyUrl}  ${targetUrl}  301`;
-  const coveredByWildcard = redirectLines.includes(`${LEGACY_SITE_URL}/*  ${SITE_URL}/:splat  301`);
-  if (!coveredByWildcard && !redirectLines.includes(exactRule)) {
+  const coveredByWildcard = agentRedirects.redirects?.some((redirect) => redirect.from === `${LEGACY_SITE_URL}/*` && redirect.to === `${SITE_URL}/:splat` && redirect.status === 301);
+  const exactRule = agentRedirects.redirects?.some((redirect) => redirect.from === legacyUrl && redirect.to === targetUrl && redirect.status === 301);
+  if (!coveredByWildcard && !exactRule) {
     failures.push(`Legacy domain route is not covered by redirect contract: ${legacyUrl}`);
   }
 }

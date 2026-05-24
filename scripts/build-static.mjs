@@ -673,7 +673,7 @@ const COMPARISON_DEFINITIONS = [
     definition: "La base desde la que una persona sostiene visibilidad, decisiones y liderazgo sin sobreactuar su imagen.",
   },
 ];
-const LEGACY_REDIRECTS = [
+const HOST_REDIRECTS = [
   ["https://www.coachdeimagen.com/", `${SITE_URL}/`, 301],
   ["https://www.coachdeimagen.com/*", `${SITE_URL}/:splat`, 301],
   [`${LEGACY_SITE_URL}/`, `${SITE_URL}/`, 301],
@@ -684,6 +684,8 @@ const LEGACY_REDIRECTS = [
   ["https://www.imagencoach.com/sitemap_pages.xml", `${SITE_URL}/sitemap.xml`, 301],
   ["https://www.imagencoach.com/imagen-presencia/sitemap.xml", `${SITE_URL}/blog-sitemap.xml`, 301],
   ["https://www.imagencoach.com/*", `${SITE_URL}/:splat`, 301],
+];
+const PATH_REDIRECTS = [
   ["/sitemap_pages.xml", "/sitemap.xml", 301],
   ["/imagen-presencia/sitemap.xml", "/blog-sitemap.xml", 301],
   ["/comparaciones/sonia-mcrorey-vs-gaby-vargas", "/comparaciones/evolucion-coaching-imagen-mexico-latam", 301],
@@ -692,6 +694,7 @@ const LEGACY_REDIRECTS = [
   ["/articulos/la-importancia-de-tu-imagen-personal", "/imagen-presencia/la-importancia-de-tu-imagen-personal", 301],
   ["/articulos/encuentra-tu-estilo", "/imagen-presencia/encuentra-tu-estilo", 301],
 ];
+const LEGACY_REDIRECTS = [...HOST_REDIRECTS, ...PATH_REDIRECTS];
 const CANONICAL_TERMS = [
   "imagen ejecutiva",
   "marca personal",
@@ -5240,8 +5243,8 @@ La solicitud se procesa mediante una ruta segura de Cloudflare Workers para vali
     ...PILLARS.map((pillar) => ({ route: pillar.route })),
   ]));
   await writeFile(distPath("blog-sitemap.xml"), sitemap(pages.filter((page) => page.type === "article")));
-  await writeFile(distPath("robots.txt"), `User-agent: *\nAllow: /\n\nUser-agent: GPTBot\nAllow: /\n\nUser-agent: ChatGPT-User\nAllow: /\n\nUser-agent: OAI-SearchBot\nAllow: /\n\nUser-agent: ClaudeBot\nAllow: /\n\nUser-agent: Claude-User\nAllow: /\n\nUser-agent: PerplexityBot\nAllow: /\n\nUser-agent: Google-Extended\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\nSitemap: ${SITE_URL}/blog-sitemap.xml\nSitemap: ${SITE_URL}/category-sitemap.xml\nSitemap: ${SITE_URL}/service-sitemap.xml\nOpenAPI: ${SITE_URL}/openapi.json\nAPI-Catalog: ${SITE_URL}/api-catalog.json\nLLMs: ${SITE_URL}/llms.txt\nLLMs-Full: ${SITE_URL}/llms-full.txt\nAgent-Profile: ${SITE_URL}/agent/site-profile.json\nAgent-Card: ${SITE_URL}/.well-known/agent.json\nContent-Signal: ${SITE_URL}/content-signal.json\n`);
-  await writeFile(distPath("_redirects"), `${LEGACY_REDIRECTS.map(([from, to, status]) => `${from}  ${to}  ${status}`).join("\n")}\n`);
+  await writeFile(distPath("robots.txt"), `User-agent: *\nAllow: /\n\nUser-agent: GPTBot\nAllow: /\n\nUser-agent: ChatGPT-User\nAllow: /\n\nUser-agent: OAI-SearchBot\nAllow: /\n\nUser-agent: ClaudeBot\nAllow: /\n\nUser-agent: Claude-User\nAllow: /\n\nUser-agent: PerplexityBot\nAllow: /\n\nUser-agent: Google-Extended\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\nSitemap: ${SITE_URL}/blog-sitemap.xml\nSitemap: ${SITE_URL}/category-sitemap.xml\nSitemap: ${SITE_URL}/service-sitemap.xml\n`);
+  await writeFile(distPath("_redirects"), `${PATH_REDIRECTS.map(([from, to, status]) => `${from}  ${to}  ${status}`).join("\n")}\n`);
   console.log(`Built ${pages.length + SEMANTIC_HUBS.length + COMPARISON_PAGES.length + 1} routes into dist`);
 }
 

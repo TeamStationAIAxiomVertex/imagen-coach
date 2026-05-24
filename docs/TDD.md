@@ -95,7 +95,8 @@ Assert generated output includes:
 Assert:
 
 - each JSON file parses
-- `robots.txt` references OpenAPI, LLM and Agent Profile files
+- `robots.txt` contains only standards-compliant crawl directives and sitemap references
+- every rendered HTML page exposes OpenAPI, LLM and Agent Profile links in the document head
 - every rendered HTML page links to OpenAPI and LLM context
 - every rendered HTML page uses `lang="es-MX"`
 - every rendered HTML page has an `es-MX` hreflang alternate
