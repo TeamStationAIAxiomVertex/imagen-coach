@@ -15,6 +15,18 @@ const CONTACT = {
   address: "WeWork | Av. Adolfo López Mateos Norte 95, Col. Italia Providencia, Guadalajara, Jalisco, 44648, México.",
   hours: "Solo con Citas: Lunes a viernes, de 9:00 a.m. a 6:00 p.m.",
 };
+const CONTACT_ROUTE = "/contacto";
+const CONTACT_SERVICE_OPTIONS = [
+  "Imagen Profesional",
+  "Presencia Ejecutiva",
+  "Coaching de Imagen",
+  "Imagen Estratégica",
+  "Empresarias",
+  "Comunicación No Verbal",
+  "Posicionamiento Profesional",
+  "Coaching de Mentalidad",
+];
+const CONTACT_COUNTRIES = ["México", "Estados Unidos", "Colombia", "Chile", "Perú", "Argentina", "España", "Otro país"];
 const OWNED_CATEGORY = "Coaching de Imagen con profundidad psicológica y posicionamiento profesional";
 const DOMINANCE_FORMULA = "Semantic precision + emotional sophistication + executive positioning + AI readability";
 const SEMANTIC_AUTHORITY_LADDER = [
@@ -1518,10 +1530,13 @@ function serviceSystemVisual(page, sections, clusterMap) {
     { value: axes.length, label: "dimensiones principales" },
     { value: page.type === "service-hub" ? PILLARS.length : 1, label: page.type === "service-hub" ? "rutas de servicio" : "proceso integral" },
   ];
+  const visualHeading = page.type === "service-hub"
+    ? "Mapa visual para elegir tu ruta de trabajo"
+    : `${semanticSupportHeading(page)} en práctica`;
   return `<section class="section service-system-visual" aria-label="Sistema visual del servicio">
     <div class="system-visual-copy">
       <p class="section-label">${escapeHtml(semanticIdentity(page.route)?.entity || "Método profesional")}</p>
-      <h2>${headlineHtml(`${semanticSupportHeading(page)} en práctica`)}</h2>
+      <h2>${headlineHtml(visualHeading)}</h2>
       <p>${highlightOntologyTerms(systemLine, axes, 3)}</p>
       <div class="system-metrics">
         ${metricItems.map((item) => `<div><strong>${escapeHtml(item.value)}</strong><span>${escapeHtml(item.label)}</span></div>`).join("")}
@@ -1679,13 +1694,18 @@ function serviceHubContent(page, pages, clusters) {
       model: COMMERCIAL_PAGE_MODELS[pillar.route],
     };
   });
+  const hubVisualSections = paths.map((item) => ({
+    heading: semanticShortLabel(item.route, item.label),
+    lines: [item.guide.pain, item.guide.solution, item.guide.outcome],
+  }));
   const decisionSteps = [
     ["Identifica el punto de fricción", "Visual, presencia, equipo o estructura interna. El servicio correcto depende de dónde se rompe la coherencia."],
     ["Elige la ruta de trabajo", "Cada proceso tiene un foco distinto para evitar mezclar guardarropa, coaching, empresa y seguridad profesional en una sola conversación."],
     ["Conecta con artículos guía", "Las publicaciones profundizan el contexto sin sobrecargar las páginas comerciales."],
     ["Agenda diagnóstico", "La decisión final se ajusta a etapa, objetivo, disponibilidad y tipo de acompañamiento."],
   ];
-  return `<section class="section commercial-intent-map service-hub-router" aria-label="Mapa de servicios">
+  return `${serviceSystemVisual(page, hubVisualSections, articleClusterByRoute(clusters))}
+  <section class="section commercial-intent-map service-hub-router" aria-label="Mapa de servicios">
     <div class="section-heading compact-heading">
       <p class="section-label">Elegir ruta</p>
       <h2>${headlineHtml("Cuatro formas de trabajar imagen, presencia y posicionamiento profesional.")}</h2>
@@ -1840,7 +1860,7 @@ function nav(currentRoute) {
     ["/", semanticMenuLabel("/", "Inicio")],
     ["/sobre-sonia-mcrorey-asesora-de-imagen", semanticMenuLabel("/sobre-sonia-mcrorey-asesora-de-imagen", "Sonia")],
     ["/imagen-presencia", semanticMenuLabel("/imagen-presencia", "Publicaciones")],
-    ["#contacto", "Contacto"],
+    [CONTACT_ROUTE, "Contacto"],
   ];
   const servicesActive = currentRoute.startsWith("/servicios-asesoria-de-imagen-coaching") ? ' aria-current="page"' : "";
   const comparisonsActive = currentRoute.startsWith("/comparaciones") ? ' aria-current="page"' : "";
@@ -1885,7 +1905,7 @@ function header(currentRoute) {
     </a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Abrir navegación"><span></span><span></span></button>
     <nav class="site-nav" aria-label="Navegación principal">${nav(currentRoute)}</nav>
-    <a class="header-cta" href="${WHATSAPP}" target="_blank" rel="noopener">Agendar</a>
+    <a class="header-cta" href="${CONTACT_ROUTE}">Agendar</a>
   </header>`;
 }
 
@@ -1915,7 +1935,7 @@ function footer() {
         <h2>Imagen, presencia y posicionamiento profesional con profundidad psicológica.</h2>
         <p>Desde Guadalajara para México y LATAM, Sonia McRorey integra imagen profesional, presencia visible, seguridad interna, percepción estratégica y liderazgo personal en un sistema de trabajo humano, elegante y práctico.</p>
         <div class="actions">
-          <a class="btn primary" href="${WHATSAPP}" target="_blank" rel="noopener">Agendar diagnóstico</a>
+          <a class="btn primary" href="${CONTACT_ROUTE}">Agendar diagnóstico</a>
           <a class="btn secondary" href="/servicios-asesoria-de-imagen-coaching">Ver servicios</a>
         </div>
       </div>
@@ -1981,7 +2001,8 @@ function footer() {
         <p>${CONTACT.hours}</p>
         <p><a href="tel:+526646105348">${CONTACT.phone}</a></p>
         <div class="footer-contact-actions">
-          <a class="btn primary" href="${WHATSAPP}" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn primary" href="${CONTACT_ROUTE}">Formulario privado</a>
+          <a class="btn secondary" href="${WHATSAPP}" target="_blank" rel="noopener">WhatsApp</a>
           <a class="btn secondary" href="/sobre-sonia-mcrorey-asesora-de-imagen">Sobre Sonia</a>
         </div>
       </div>
@@ -1991,6 +2012,157 @@ function footer() {
       <p>Coaching de Imagen, Presencia y Posicionamiento Profesional en Guadalajara, México y LATAM.</p>
     </div>
   </footer>`;
+}
+
+function contactPageSchema() {
+  const page = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    name: "Contacto privado para diagnóstico de Coach de Imagen",
+    url: absoluteUrl(CONTACT_ROUTE),
+    description: "Formulario privado para solicitar un diagnóstico con Sonia McRorey sobre coaching de imagen, presencia profesional y posicionamiento.",
+    inLanguage: "es-MX",
+    about: {
+      "@type": "ProfessionalService",
+      name: `${BRAND_NAME} | Sonia McRorey`,
+      areaServed: ["Guadalajara", "México", "LATAM", "Mercados hispanohablantes"],
+      serviceType: CONTACT_SERVICE_OPTIONS,
+    },
+  };
+  const breadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Inicio", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: "Contacto", item: absoluteUrl(CONTACT_ROUTE) },
+    ],
+  };
+  return `<script type="application/ld+json">${JSON.stringify(page)}</script>
+  <script type="application/ld+json">${JSON.stringify(breadcrumb)}</script>`;
+}
+
+function contactIntakeForm() {
+  const serviceOptions = CONTACT_SERVICE_OPTIONS.map((item) => `<option value="${escapeHtml(item)}">${escapeHtml(item)}</option>`).join("");
+  const countryOptions = CONTACT_COUNTRIES.map((item) => `<option value="${escapeHtml(item)}">${escapeHtml(item)}</option>`).join("");
+  return `<form class="concierge-form" data-contact-form action="/api/contact" method="post" novalidate>
+    <input type="hidden" name="source_page" value="${CONTACT_ROUTE}" />
+    <input type="hidden" name="started_at" value="" data-started-at />
+    <input type="hidden" name="utm_source" value="" data-utm="utm_source" />
+    <input type="hidden" name="utm_medium" value="" data-utm="utm_medium" />
+    <input type="hidden" name="utm_campaign" value="" data-utm="utm_campaign" />
+    <label class="bot-field" aria-hidden="true">Sitio web<input type="text" name="company_website" tabindex="-1" autocomplete="off" /></label>
+    <div class="form-row two">
+      <label>Nombre completo
+        <input name="name" autocomplete="name" required maxlength="90" placeholder="Tu nombre" />
+      </label>
+      <label>Email
+        <input name="email" type="email" autocomplete="email" required maxlength="140" placeholder="tu@email.com" />
+      </label>
+    </div>
+    <div class="form-row two">
+      <label>Teléfono / WhatsApp
+        <input name="phone" autocomplete="tel" required maxlength="40" placeholder="+52..." />
+      </label>
+      <label>LinkedIn o sitio profesional
+        <input name="linkedin" type="url" maxlength="220" placeholder="https://www.linkedin.com/in/..." />
+      </label>
+    </div>
+    <div class="form-row three">
+      <label>Ciudad
+        <input name="city" autocomplete="address-level2" maxlength="90" placeholder="Guadalajara, CDMX, Monterrey..." />
+      </label>
+      <label>País
+        <select name="country" autocomplete="country-name">
+          <option value="">Seleccionar</option>
+          ${countryOptions}
+        </select>
+      </label>
+      <label>Área de interés
+        <select name="service_interest" required>
+          <option value="">Seleccionar</option>
+          ${serviceOptions}
+        </select>
+      </label>
+    </div>
+    <label>¿Qué necesitas sostener, ordenar o proyectar mejor?
+      <textarea name="message" required rows="7" maxlength="1800" placeholder="Cuéntale a Sonia el contexto: etapa profesional, reto de imagen o presencia, audiencia, urgencia y resultado que buscas."></textarea>
+    </label>
+    <label class="concierge-check">
+      <input type="checkbox" name="concierge_mode" value="1" checked />
+      <span>Permitir que el concierge AI resuma mi contexto para que Sonia responda con mayor precisión.</span>
+    </label>
+    <div class="form-actions">
+      <button class="btn primary" type="submit">Enviar diagnóstico privado</button>
+      <a class="btn secondary" href="${WHATSAPP}" target="_blank" rel="noopener">Prefiero WhatsApp</a>
+    </div>
+    <p class="form-status" role="status" aria-live="polite"></p>
+  </form>`;
+}
+
+function renderContactPage() {
+  const title = "Contacto privado para diagnóstico de Coach de Imagen";
+  const description = "Solicita un diagnóstico privado con Sonia McRorey para coaching de imagen, presencia profesional, posicionamiento, imagen empresarial o seguridad profesional.";
+  return `<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>${title} | Sonia McRorey</title>
+  <meta name="description" content="${description}" />
+  <link rel="canonical" href="${absoluteUrl(CONTACT_ROUTE)}" />
+  <link rel="alternate" hreflang="es-MX" href="${absoluteUrl(CONTACT_ROUTE)}" />
+  <link rel="alternate" hreflang="x-default" href="${absoluteUrl(CONTACT_ROUTE)}" />
+  <link rel="service-desc" type="application/openapi+json" href="${SITE_URL}/openapi.json" />
+  <link rel="alternate" type="text/plain" href="${SITE_URL}/llms.txt" title="Resumen para asistentes" />
+  <link rel="alternate" type="text/plain" href="${SITE_URL}/llms-full.txt" title="Contexto GEO completo para asistentes" />
+  <link rel="alternate" type="application/json" href="${SITE_URL}/agent/site-profile.json" title="Perfil estructurado para asistentes" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="${title}" />
+  <meta property="og:description" content="${description}" />
+  <meta property="og:url" content="${absoluteUrl(CONTACT_ROUTE)}" />
+  <meta property="og:image" content="${SITE_URL}/assets/sonia-twitter-card.png" />
+  <link rel="icon" href="/assets/sonia-icon.svg" />
+  <link rel="stylesheet" href="/styles.css?v=${ASSET_VERSION}" />
+  ${contactPageSchema()}
+</head>
+<body>
+  ${header(CONTACT_ROUTE)}
+  <main id="contenido">
+    <nav class="breadcrumbs section" aria-label="Breadcrumbs"><a href="/">Inicio</a><span>/</span><span aria-current="page">Contacto</span></nav>
+    <section class="section concierge-hero">
+      <div>
+        <p class="eyebrow">Concierge privado</p>
+        <h1>${headlineHtml("Contacto para diagnóstico de Coach de Imagen")}</h1>
+        <p>Un intake ejecutivo para entender tu etapa, tu contexto profesional y el tipo de presencia que necesitas sostener antes de definir una ruta con Sonia.</p>
+        <div class="concierge-signals" aria-label="Qué revisa Sonia">
+          <span>${topicIcon("percepcion")}Percepción</span>
+          <span>${topicIcon("presencia")}Presencia</span>
+          <span>${topicIcon("decision")}Decisiones</span>
+          <span>${topicIcon("empresa")}Empresa</span>
+        </div>
+      </div>
+      <aside class="concierge-note">
+        <p class="section-label">Cómo se usa</p>
+        <ol>
+          <li><span>01</span>Compartes contexto profesional y área de interés.</li>
+          <li><span>02</span>La solicitud se valida de forma segura antes de llegar al inbox de Sonia.</li>
+          <li><span>03</span>El concierge AI resume señales clave para responder con más precisión.</li>
+        </ol>
+      </aside>
+    </section>
+    <section class="section concierge-intake">
+      <div class="section-heading">
+        <p class="section-label">Intake ejecutivo</p>
+        <h2>${headlineHtml("Cuéntale a Sonia qué necesitas resolver.")}</h2>
+        <p>El formulario conserva accesibilidad, claridad semántica y una experiencia privada; el envío se procesa con validación y protección antispam.</p>
+      </div>
+      ${contactIntakeForm()}
+    </section>
+  </main>
+  ${footer()}
+  <script src="/script.js" defer></script>
+</body>
+</html>`;
 }
 
 function breadcrumbs(page) {
@@ -3458,6 +3630,8 @@ function contactAgent() {
     schemaVersion: "2026-05-23",
     siteUrl: SITE_URL,
     language: "es-MX",
+    endpoint: `${SITE_URL}/api/contact`,
+    intakePage: absoluteUrl(CONTACT_ROUTE),
     business: {
       name: "Sonia McRorey",
       brand: BRAND_NAME,
@@ -3466,10 +3640,22 @@ function contactAgent() {
       hours: CONTACT.hours,
       serviceArea: ["Guadalajara", "Zapopan", "México", "Latinoamérica", "sesiones en línea"],
     },
+    privacy: {
+      publicEmail: false,
+      secrets: ["RESEND_API_KEY", "LEAD_TO_EMAIL", "RESEND_FROM_EMAIL", "OPENAI_API_KEY", "OPENAI_MODEL"],
+      antispam: ["KV IP rate limiting", "honeypot", "timestamp validation", "disposable email block", "link threshold", "HTML sanitization"],
+    },
+    serviceInterestOptions: CONTACT_SERVICE_OPTIONS,
     actions: [
       {
         name: "Agendar diagnóstico",
-        type: "WhatsApp",
+        type: "Static contact form",
+        url: absoluteUrl(CONTACT_ROUTE),
+        endpoint: `${SITE_URL}/api/contact`,
+      },
+      {
+        name: "WhatsApp directo",
+        type: "WhatsApp fallback",
         url: WHATSAPP,
         message: "Hola Sonia, me interesa agendar un diagnóstico.",
       },
@@ -3529,14 +3715,15 @@ function conversionMapAgent() {
     siteUrl: SITE_URL,
     primaryConversion: {
       name: "Agendar diagnóstico",
-      actionUrl: WHATSAPP,
-      message: "Hola Sonia, me interesa agendar un diagnóstico.",
+      actionUrl: absoluteUrl(CONTACT_ROUTE),
+      apiEndpoint: `${SITE_URL}/api/contact`,
+      fallbackUrl: WHATSAPP,
     },
     funnel: [
       { stage: "awareness", target: "/", signals: [BRAND_NAME, "Sonia McRorey", "coach de imagen", "presencia ejecutiva"] },
       { stage: "service-fit", target: "/servicios-asesoria-de-imagen-coaching", signals: ["asesoría de imagen ejecutiva", "coaching profesional", "imagen corporativa", "talleres empresariales"] },
       { stage: "trust", target: "/sobre-sonia-mcrorey-asesora-de-imagen", signals: ["trayectoria", "AICI", "formación", "enfoque"] },
-      { stage: "contact", target: "#contacto", signals: ["WhatsApp", "diagnóstico", "primera sesión"] },
+      { stage: "contact", target: CONTACT_ROUTE, signals: ["formulario privado", "concierge AI", "diagnóstico", "primera sesión"] },
     ],
   };
 }
@@ -3573,6 +3760,7 @@ function openApiDoc(pages) {
     "/agent/page-signals.json": "Get per-page SEO and GEO signals.",
     "/agent/redirects.json": "Get redirect and URL-retention policy.",
     "/agent/conversion-map.json": "Get conversion funnel rules.",
+    [CONTACT_ROUTE]: "Get the private contact intake page.",
   };
   const paths = {};
   for (const [apiPath, summary] of Object.entries(staticPaths)) {
@@ -3615,6 +3803,43 @@ function openApiDoc(pages) {
       },
     };
   }
+  paths["/api/contact"] = {
+    post: {
+      tags: ["Contact"],
+      operationId: "submit_contact_intake",
+      summary: "Submit a private Coach de Imagen lead intake.",
+      requestBody: {
+        required: true,
+        content: {
+          "application/json": {
+            schema: {
+              type: "object",
+              required: ["name", "email", "phone", "service_interest", "message", "started_at"],
+              properties: {
+                name: { type: "string" },
+                email: { type: "string", format: "email" },
+                phone: { type: "string" },
+                city: { type: "string" },
+                country: { type: "string" },
+                linkedin: { type: "string" },
+                service_interest: { type: "string", enum: CONTACT_SERVICE_OPTIONS },
+                message: { type: "string" },
+                concierge_mode: { type: "boolean" },
+                source_page: { type: "string" },
+                started_at: { type: "string" },
+              },
+            },
+          },
+        },
+      },
+      responses: {
+        200: { description: "Lead accepted and emailed to Sonia." },
+        400: { description: "Validation failed." },
+        429: { description: "Rate limit exceeded." },
+        500: { description: "Contact service unavailable." },
+      },
+    },
+  };
   return {
     openapi: "3.1.0",
     info: {
@@ -3755,7 +3980,11 @@ async function main() {
     await mkdir(path.dirname(out), { recursive: true });
     await writeFile(out, renderComparisonPage(page));
   }
-  await writeFile(distPath("sitemap.xml"), sitemap([...pages, ...SEMANTIC_HUBS, ...COMPARISON_PAGES]));
+  const contactPage = { route: CONTACT_ROUTE };
+  const contactOut = routeOutputPath(CONTACT_ROUTE);
+  await mkdir(path.dirname(contactOut), { recursive: true });
+  await writeFile(contactOut, renderContactPage());
+  await writeFile(distPath("sitemap.xml"), sitemap([...pages, ...SEMANTIC_HUBS, ...COMPARISON_PAGES, contactPage]));
   await writeFile(distPath("category-sitemap.xml"), sitemap(SEMANTIC_HUBS));
   await writeFile(distPath("service-sitemap.xml"), sitemap([
     { route: "/servicios-asesoria-de-imagen-coaching" },
