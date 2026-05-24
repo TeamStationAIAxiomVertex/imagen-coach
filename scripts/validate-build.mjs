@@ -28,6 +28,8 @@ const comparisonRoutes = [
   "/comparaciones/imagen-corporativa-vs-presencia-humana",
   "/comparaciones/evolucion-coaching-imagen-mexico-latam",
 ];
+const contactRoutes = ["/contacto"];
+const expectedRoutes = new Set([...routeSet, ...semanticHubRoutes, ...comparisonRoutes, ...contactRoutes]);
 const deprecatedComparisonRoutes = [
   "/comparaciones/sonia-mcrorey-vs-gaby-vargas",
 ];
@@ -86,6 +88,11 @@ for (const route of comparisonRoutes) {
   if (!existsSync(htmlPath)) failures.push(`Missing comparison page output: ${route}`);
 }
 
+for (const route of contactRoutes) {
+  const htmlPath = path.join("dist", route, "index.html");
+  if (!existsSync(htmlPath)) failures.push(`Missing contact page output: ${route}`);
+}
+
 for (const route of deprecatedComparisonRoutes) {
   const htmlPath = path.join("dist", route, "index.html");
   if (existsSync(htmlPath)) failures.push(`Deprecated competitor-name comparison route still renders: ${route}`);
@@ -132,6 +139,14 @@ async function walkHtml(directory) {
 }
 
 const htmlFiles = await walkHtml("dist");
+const renderedRoutes = new Set(htmlFiles.map((file) => (file === path.join("dist", "index.html") ? "/" : `/${path.dirname(path.relative("dist", file)).replaceAll(path.sep, "/")}`)));
+for (const route of expectedRoutes) {
+  if (!renderedRoutes.has(route)) failures.push(`Expected route did not render HTML: ${route}`);
+}
+for (const route of renderedRoutes) {
+  if (!expectedRoutes.has(route)) failures.push(`Unexpected rendered route missing from route registry: ${route}`);
+}
+
 for (const file of htmlFiles) {
   const html = await readFile(file, "utf8");
   for (const junk of ["87fd0a60", "bf0dcab6", "Can't send form", "Please try again later", "Miscellaneous 234_solid", ">undefined<", "Online Therapy", "localhost", "127.0.0.1", "weblium.site"]) {
@@ -181,6 +196,55 @@ for (const file of htmlFiles) {
   if (!html.includes('rel="service-desc" type="application/openapi+json"')) failures.push(`Missing OpenAPI discovery link in ${file}`);
   if (!html.includes(`href="${SITE_URL}/llms-full.txt"`)) failures.push(`Missing llms-full discovery link in ${file}`);
   if (!html.includes('hreflang="es-MX"')) failures.push(`Missing es-MX hreflang in ${file}`);
+  if (/rel="stylesheet"\s+href="\/styles\.css/.test(html)) failures.push(`Rendered page still blocks on external CSS in ${file}`);
+  if (/@font-face|\.ttf/i.test(html)) failures.push(`Rendered page leaks font-face or TTF dependency in ${file}`);
+  const jsonLdTypes = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].flatMap((match) => {
+    try {
+      const parsed = JSON.parse(match[1]);
+      return Array.isArray(parsed["@type"]) ? parsed["@type"] : [parsed["@type"]].filter(Boolean);
+    } catch {
+      failures.push(`Invalid JSON-LD in ${file}`);
+      return [];
+    }
+  });
+  for (const requiredType of ["Organization", "Person", "ProfessionalService", "WebSite", "BreadcrumbList"]) {
+    if (!jsonLdTypes.includes(requiredType)) failures.push(`Missing ${requiredType} JSON-LD in ${file}`);
+  }
+  const routeForSchema = file === path.join("dist", "index.html") ? "/" : `/${path.dirname(path.relative("dist", file)).replaceAll(path.sep, "/")}`;
+  if (routeForSchema.startsWith("/servicios-asesoria-de-imagen-coaching") && routeForSchema !== "/servicios-asesoria-de-imagen-coaching/preguntas-frequentes" && !jsonLdTypes.includes("Service")) {
+    failures.push(`Service page missing Service JSON-LD in ${file}`);
+  }
+  if (articleSet.has(routeForSchema) && !jsonLdTypes.includes("Article")) failures.push(`Article page missing Article JSON-LD in ${file}`);
+  if ((routeForSchema === "/contacto" || routeForSchema === "/servicios-asesoria-de-imagen-coaching/preguntas-frequentes" || routeForSchema.startsWith("/comparaciones")) && !jsonLdTypes.includes("FAQPage") && routeForSchema !== "/contacto") {
+    failures.push(`FAQ-intent page missing FAQPage JSON-LD in ${file}`);
+  }
+  const visibleWords = html
+    .replace(/<script[\s\S]*?<\/script>/gi, " ")
+    .replace(/<style[\s\S]*?<\/style>/gi, " ")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean).length;
+  const minWords = articleSet.has(routeForSchema) ? 500 : 250;
+  if (visibleWords < minWords) failures.push(`Thin rendered page in ${file}: ${visibleWords} words`);
+  for (const imgMatch of html.matchAll(/<img\b([^>]*)>/gi)) {
+    const attrs = imgMatch[1];
+    if (!/\bwidth="[^"]+"/.test(attrs) || !/\bheight="[^"]+"/.test(attrs)) failures.push(`Image missing fixed dimensions in ${file}: ${imgMatch[0].slice(0, 140)}`);
+    if (!/\bdecoding="async"/.test(attrs)) failures.push(`Image missing async decoding in ${file}: ${imgMatch[0].slice(0, 140)}`);
+    const src = attrs.match(/\bsrc="([^"]+)"/)?.[1];
+    if (src?.startsWith("/assets/optimized/") && !existsSync(path.join("dist", src))) failures.push(`Optimized image referenced but not generated in ${file}: ${src}`);
+  }
+  const heroFigure = html.match(/<figure class="hero-media">([\s\S]*?)<\/figure>/i)?.[1] || "";
+  if (heroFigure) {
+    const heroImgAttrs = heroFigure.match(/<img\b([^>]*)>/i)?.[1] || "";
+    if (!/fetchpriority="high"/.test(heroImgAttrs)) failures.push(`Hero image missing high fetchpriority in ${file}`);
+    if (!/\bwidth="[^"]+"/.test(heroImgAttrs) || !/\bheight="[^"]+"/.test(heroImgAttrs)) failures.push(`Hero image missing dimensions in ${file}`);
+    const heroSrc = heroImgAttrs.match(/\bsrc="([^"]+)"/)?.[1] || "";
+    if (/\.(jpe?g|png|webp)$/i.test(heroSrc) && !heroSrc.startsWith("/assets/optimized/") && !heroSrc.includes("sonia-logo")) {
+      failures.push(`Hero raster image is not using optimized delivery in ${file}: ${heroSrc}`);
+    }
+  }
   const structuredIntroCount = (html.match(/class="[^"]*\bstructured-intro\b/g) || []).length;
   const semanticCardCount = (html.match(/class="semantic-card/g) || []).length;
   const openSemanticCardCount = (html.match(/class="semantic-card[^"]*"[^>]*\sopen\b/g) || []).length;
@@ -219,6 +283,9 @@ for (const route of semanticHubRoutes) {
 }
 for (const route of comparisonRoutes) {
   if (!sitemap.includes(`${SITE_URL}${route}`)) failures.push(`Missing comparison page in sitemap: ${route}`);
+}
+for (const route of contactRoutes) {
+  if (!sitemap.includes(`${SITE_URL}${route}`)) failures.push(`Missing contact page in sitemap: ${route}`);
 }
 
 for (const route of deprecatedComparisonRoutes) {
@@ -314,6 +381,16 @@ const aboutPage = await readFile("dist/sobre-sonia-mcrorey-asesora-de-imagen/ind
 if (!aboutPage.includes('src="/assets/sonia-mcrorey-about-760.avif"')) failures.push("About page is not using the supplied Sonia headshot");
 
 const redirects = await readFile("dist/_redirects", "utf8");
+const headers = await readFile("dist/_headers", "utf8");
+for (const line of [
+  "/assets/*",
+  "Cache-Control: public, max-age=31536000, immutable",
+  "/styles.css",
+  "/script.js",
+  "Cache-Control: public, max-age=600, stale-while-revalidate=86400",
+]) {
+  if (!headers.includes(line)) failures.push(`_headers missing performance cache rule: ${line}`);
+}
 for (const line of [
   `https://www.coachdeimagen.com/*  ${SITE_URL}/:splat  301`,
   `${LEGACY_SITE_URL}/*  ${SITE_URL}/:splat  301`,
@@ -332,4 +409,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log(`Validated ${manifest.pages.length} routes and mapped assets.`);
+console.log(`Validated ${expectedRoutes.size} routes and mapped assets.`);

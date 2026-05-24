@@ -1,7 +1,9 @@
-import { cp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
+import { cp, mkdir, readFile, readdir, rm, writeFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { imageSize } from "image-size";
+import sharp from "sharp";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DIST = path.join(ROOT, "dist");
@@ -27,6 +29,10 @@ const CONTACT_SERVICE_OPTIONS = [
   "Coaching de Mentalidad",
 ];
 const CONTACT_COUNTRIES = ["México", "Estados Unidos", "Colombia", "Chile", "Perú", "Argentina", "España", "Otro país"];
+const DEFAULT_IMAGE_DIMENSIONS = { width: 1200, height: 1500 };
+let IMAGE_DIMENSIONS = new Map();
+let OPTIMIZED_IMAGE_SOURCES = new Map();
+let INLINE_CSS = "";
 const OWNED_CATEGORY = "Coaching de Imagen con profundidad psicológica y posicionamiento profesional";
 const DOMINANCE_FORMULA = "Semantic precision + emotional sophistication + executive positioning + AI readability";
 const SEMANTIC_AUTHORITY_LADDER = [
@@ -961,6 +967,132 @@ function rootPath(...parts) {
 
 function distPath(...parts) {
   return path.join(DIST, ...parts);
+}
+
+function toPublicAssetPath(filePath) {
+  const relative = path.relative(rootPath("assets"), filePath).split(path.sep).join("/");
+  return `/assets/${relative}`;
+}
+
+async function walkAssetImages(directory) {
+  const entries = await readdir(directory, { withFileTypes: true });
+  const files = [];
+  for (const entry of entries) {
+    const fullPath = path.join(directory, entry.name);
+    if (entry.isDirectory()) files.push(...(await walkAssetImages(fullPath)));
+    else if (/\.(avif|jpe?g|png|webp|svg)$/i.test(entry.name)) files.push(fullPath);
+  }
+  return files;
+}
+
+async function loadImageDimensions() {
+  const dimensions = new Map();
+  const files = await walkAssetImages(rootPath("assets"));
+  for (const file of files) {
+    const publicPath = toPublicAssetPath(file);
+    if (/\.svg$/i.test(file)) {
+      if (publicPath.endsWith("sonia-icon.svg")) dimensions.set(publicPath, { width: 64, height: 64 });
+      continue;
+    }
+    try {
+      const size = imageSize(await readFile(file));
+      if (size?.width && size?.height) dimensions.set(publicPath, { width: size.width, height: size.height });
+    } catch {
+      dimensions.set(publicPath, DEFAULT_IMAGE_DIMENSIONS);
+    }
+  }
+  return dimensions;
+}
+
+function imageDimensions(src) {
+  const renderSrc = optimizedAssetPath(src);
+  return IMAGE_DIMENSIONS.get(renderSrc) || IMAGE_DIMENSIONS.get(src) || DEFAULT_IMAGE_DIMENSIONS;
+}
+
+function optimizedAssetPath(src) {
+  return OPTIMIZED_IMAGE_SOURCES.get(src) || src;
+}
+
+async function generateOptimizedImages() {
+  const optimizedDir = distPath("assets", "optimized");
+  await mkdir(optimizedDir, { recursive: true });
+  const optimized = new Map();
+  for (const [src, dimensions] of IMAGE_DIMENSIONS.entries()) {
+    if (!/^\/assets\/.+\.(jpe?g|png|webp)$/i.test(src)) continue;
+    if (src.includes("/optimized/")) continue;
+    if (src.includes("/sonia-logo")) continue;
+    if (src.includes("/sonia-twitter-card")) continue;
+    const sourceFile = rootPath(src.slice(1));
+    if (!existsSync(sourceFile)) continue;
+    const basename = path.basename(src, path.extname(src));
+    const targetPublicPath = `/assets/optimized/${basename}.webp`;
+    const targetFile = distPath(targetPublicPath.slice(1));
+    const targetWidth = Math.min(dimensions.width || DEFAULT_IMAGE_DIMENSIONS.width, 960);
+    try {
+      const info = await sharp(sourceFile)
+        .rotate()
+        .resize({ width: targetWidth, withoutEnlargement: true })
+        .webp({ quality: 72, effort: 5 })
+        .toFile(targetFile);
+      if (info?.width && info?.height) {
+        optimized.set(src, targetPublicPath);
+        IMAGE_DIMENSIONS.set(targetPublicPath, { width: info.width, height: info.height });
+      }
+    } catch {
+      // Keep the original source if an imported image cannot be optimized.
+    }
+  }
+  OPTIMIZED_IMAGE_SOURCES = optimized;
+}
+
+function imageAttributes(src, options = {}) {
+  const renderSrc = optimizedAssetPath(src);
+  const size = imageDimensions(src);
+  const attrs = [
+    `src="${renderSrc}"`,
+    `alt="${escapeHtml(options.alt || "")}"`,
+    `width="${size.width}"`,
+    `height="${size.height}"`,
+    `decoding="async"`,
+  ];
+  if (options.className) attrs.push(`class="${escapeHtml(options.className)}"`);
+  if (options.loading) attrs.push(`loading="${options.loading}"`);
+  if (options.fetchpriority) attrs.push(`fetchpriority="${options.fetchpriority}"`);
+  return attrs.join(" ");
+}
+
+function imageTag(src, alt, options = {}) {
+  return `<img ${imageAttributes(src, { alt, ...options })} />`;
+}
+
+function heroImageTag(src, alt, options = {}) {
+  return imageTag(src, alt, { fetchpriority: "high", ...options });
+}
+
+function lazyImageTag(src, alt, options = {}) {
+  return imageTag(src, alt, { loading: "lazy", ...options });
+}
+
+function iconImageTag(src, alt = "") {
+  return lazyImageTag(src, alt);
+}
+
+function preloadImageLink(src) {
+  if (!src) return "";
+  return `<link rel="preload" as="image" href="${optimizedAssetPath(src)}" fetchpriority="high" />`;
+}
+
+function minifyCss(css) {
+  return css
+    .replace(/\/\*[\s\S]*?\*\//g, "")
+    .replace(/\s+/g, " ")
+    .replace(/\s*([{}:;,>])\s*/g, "$1")
+    .replace(/;}/g, "}")
+    .trim();
+}
+
+function stylesheetLinks() {
+  return `<style>${INLINE_CSS}</style>`;
 }
 
 function escapeHtml(value = "") {
@@ -1901,7 +2033,7 @@ function nav(currentRoute) {
 function header(currentRoute) {
   return `<header class="site-header" data-header>
     <a class="brand" href="/" aria-label="Sonia McRorey ${BRAND_NAME}">
-      <img src="/assets/sonia-logo-ai.png" alt="Sonia McRorey - Coach De Imagen y Abundancia" width="512" height="126" decoding="async" />
+      ${imageTag("/assets/sonia-logo-ai.png", "Sonia McRorey - Coach De Imagen y Abundancia")}
     </a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Abrir navegación"><span></span><span></span></button>
     <nav class="site-nav" aria-label="Navegación principal">${nav(currentRoute)}</nav>
@@ -1929,7 +2061,7 @@ function footer() {
     <section class="section footer-intelligence" aria-label="Mapa de Coach De Imagen">
       <div class="footer-identity">
         <a class="footer-mark" href="/" aria-label="Inicio ${BRAND_NAME}">
-          <img src="/assets/sonia-logo-ai.png" alt="Sonia McRorey - Coach De Imagen y Abundancia" width="512" height="126" loading="lazy" decoding="async" />
+          ${lazyImageTag("/assets/sonia-logo-ai.png", "Sonia McRorey - Coach De Imagen y Abundancia")}
         </a>
         <p class="section-label">${BRAND_NAME}</p>
         <h2>Imagen, presencia y posicionamiento profesional con profundidad psicológica.</h2>
@@ -2014,6 +2146,58 @@ function footer() {
   </footer>`;
 }
 
+function globalSchemaStack() {
+  const organization = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: BRAND_NAME,
+    url: SITE_URL,
+    logo: `${SITE_URL}/assets/sonia-logo-ai.png`,
+    founder: { "@type": "Person", name: "Sonia McRorey" },
+    areaServed: ["Guadalajara", "México", "LATAM", "Mercados hispanohablantes"],
+  };
+  const person = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Sonia McRorey",
+    jobTitle: "Coach de Imagen, Presencia y Posicionamiento Profesional",
+    url: `${SITE_URL}/sobre-sonia-mcrorey-asesora-de-imagen`,
+    image: `${SITE_URL}/assets/sonia-mcrorey-about-760.avif`,
+    worksFor: { "@type": "Organization", name: BRAND_NAME, url: SITE_URL },
+    areaServed: ["Guadalajara", "México", "LATAM"],
+  };
+  const service = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: `${BRAND_NAME} | Sonia McRorey`,
+    url: SITE_URL,
+    image: `${SITE_URL}/assets/797aeda1281e5d5e.png`,
+    telephone: CONTACT.phone,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Av. Adolfo López Mateos Norte 95, Col. Italia Providencia",
+      addressLocality: "Guadalajara",
+      addressRegion: "Jalisco",
+      postalCode: "44648",
+      addressCountry: "MX",
+    },
+    areaServed: ["Guadalajara", "Zapopan", "México", "LATAM", "Mercados hispanohablantes"],
+    serviceType: CONTACT_SERVICE_OPTIONS,
+    founder: { "@type": "Person", name: "Sonia McRorey" },
+  };
+  const website = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: BRAND_NAME,
+    url: SITE_URL,
+    inLanguage: "es-MX",
+    publisher: { "@type": "Organization", name: BRAND_NAME, url: SITE_URL },
+  };
+  return [organization, person, service, website]
+    .map((item) => `<script type="application/ld+json">${JSON.stringify(item)}</script>`)
+    .join("\n  ");
+}
+
 function contactPageSchema() {
   const page = {
     "@context": "https://schema.org",
@@ -2038,7 +2222,8 @@ function contactPageSchema() {
     ],
   };
   return `<script type="application/ld+json">${JSON.stringify(page)}</script>
-  <script type="application/ld+json">${JSON.stringify(breadcrumb)}</script>`;
+  <script type="application/ld+json">${JSON.stringify(breadcrumb)}</script>
+  ${globalSchemaStack()}`;
 }
 
 function contactIntakeForm() {
@@ -2122,7 +2307,7 @@ function renderContactPage() {
   <meta property="og:url" content="${absoluteUrl(CONTACT_ROUTE)}" />
   <meta property="og:image" content="${SITE_URL}/assets/sonia-twitter-card.png" />
   <link rel="icon" href="/assets/sonia-icon.svg" />
-  <link rel="stylesheet" href="/styles.css?v=${ASSET_VERSION}" />
+  ${stylesheetLinks()}
   ${contactPageSchema()}
 </head>
 <body>
@@ -2207,8 +2392,8 @@ function hero(page, lines) {
       </div>
     </div>
     <figure class="hero-media">
-      <img src="${image}" alt="${escapeHtml(page.heroTitle)}" />
-      <figcaption><img src="/assets/sonia-icon.svg" alt="" /> Sonia McRorey · ${BRAND_NAME}</figcaption>
+      ${heroImageTag(image, page.heroTitle)}
+      <figcaption>${iconImageTag("/assets/sonia-icon.svg")} Sonia McRorey · ${BRAND_NAME}</figcaption>
     </figure>
   </section>`;
 }
@@ -2243,7 +2428,7 @@ function supportingVisual(page, index) {
   if (!image?.local_path) {
     return `<aside class="quote-panel"><p>La imagen se sostiene cuando existe coherencia entre lo que haces, lo que decides y lo que proyectas.</p><span>Sonia McRorey</span></aside>`;
   }
-  return `<figure class="support-media"><img src="/assets/${path.basename(image.local_path)}" alt="${escapeHtml(page.heroTitle)}" /></figure>`;
+  return `<figure class="support-media">${lazyImageTag(`/assets/${path.basename(image.local_path)}`, page.heroTitle)}</figure>`;
 }
 
 function readingMinutes(lines = []) {
@@ -2328,7 +2513,7 @@ function articleCards(pages, { limit, clusterMap = new Map() } = {}) {
   const selected = Number.isInteger(limit) ? articles.slice(0, limit) : articles;
   return selected
     .map((page) => `<a class="publication-link-card" href="${page.route}">
-      <figure><img src="${pickImage(page)}" alt="${escapeHtml(page.heroTitle)}" /></figure>
+      <figure>${lazyImageTag(pickImage(page), page.heroTitle)}</figure>
       <span>${escapeHtml(clusterMap.get(page.route)?.label || "Artículo")}</span>
       <strong>${escapeHtml(visualCardTitle(page.heroTitle))}</strong>
       <p>${escapeHtml(cardDescription(page))}</p>
@@ -2655,7 +2840,7 @@ function serviceCards(pages) {
   return pages
     .filter((page) => page.type === "service")
     .map((page) => `<a class="service-card" href="${page.route}">
-      <figure><img src="${pickImage(page)}" alt="${escapeHtml(page.heroTitle)}" /></figure>
+      <figure>${lazyImageTag(pickImage(page), page.heroTitle)}</figure>
       <h3>${escapeHtml(semanticCardTitle(page))}</h3>
       <p>${escapeHtml(cardDescription(page))}</p>
       <span>Conocer servicio</span>
@@ -2759,17 +2944,9 @@ function hubSchema(hub) {
       { "@type": "ListItem", position: 2, name: hub.title, item: absoluteUrl(hub.route) },
     ],
   };
-  const personSchema = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    name: "Sonia McRorey",
-    jobTitle: "Strategic Image Consultant",
-    areaServed: "Mexico and LATAM",
-    url: `${SITE_URL}/sobre-sonia-mcrorey-asesora-de-imagen`,
-  };
   return `<script type="application/ld+json">${JSON.stringify(collectionSchema)}</script>
   <script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script>
-  <script type="application/ld+json">${JSON.stringify(personSchema)}</script>`;
+  ${globalSchemaStack()}`;
 }
 
 function hubBreadcrumbs(hub) {
@@ -2799,7 +2976,8 @@ function renderSemanticHub(hub, pages, clusters) {
   <meta property="og:url" content="${absoluteUrl(hub.route)}" />
   <meta property="og:image" content="${SITE_URL}${hub.image}" />
   <link rel="icon" href="/assets/sonia-icon.svg" />
-  <link rel="stylesheet" href="/styles.css?v=${ASSET_VERSION}" />
+  ${preloadImageLink(hub.image)}
+  ${stylesheetLinks()}
   ${hubSchema(hub)}
 </head>
 <body>
@@ -2818,8 +2996,8 @@ function renderSemanticHub(hub, pages, clusters) {
         </div>
       </div>
       <figure class="hero-media">
-        <img src="${hub.image}" alt="${escapeHtml(hub.title)}" />
-        <figcaption><img src="/assets/sonia-icon.svg" alt="" /> Sonia McRorey · ${BRAND_NAME}</figcaption>
+        ${heroImageTag(hub.image, hub.title)}
+        <figcaption>${iconImageTag("/assets/sonia-icon.svg")} Sonia McRorey · ${BRAND_NAME}</figcaption>
       </figure>
     </section>
     <section class="section authority-hub-map">
@@ -2837,7 +3015,7 @@ function renderSemanticHub(hub, pages, clusters) {
         <h2>${headlineHtml(`Procesos conectados con ${hub.title.toLowerCase()}.`)}</h2>
       </div>
       <div class="service-grid">${serviceLinks.map((page) => `<a class="service-card" href="${page.route}">
-        <figure><img src="${pickImage(page)}" alt="${escapeHtml(page.heroTitle)}" /></figure>
+        <figure>${lazyImageTag(pickImage(page), page.heroTitle)}</figure>
         <h3>${escapeHtml(semanticCardTitle(page))}</h3>
         <p>${highlightOntologyTerms(cardDescription(page), ONTOLOGY_TOPICS, 3)}</p>
         <span>Conocer servicio</span>
@@ -2933,7 +3111,8 @@ function comparisonSchema(page) {
   return `<script type="application/ld+json">${JSON.stringify(article)}</script>
   <script type="application/ld+json">${JSON.stringify(webPage)}</script>
   <script type="application/ld+json">${JSON.stringify(breadcrumb)}</script>
-  <script type="application/ld+json">${JSON.stringify(faq)}</script>`;
+  <script type="application/ld+json">${JSON.stringify(faq)}</script>
+  ${globalSchemaStack()}`;
 }
 
 function comparisonBreadcrumbs(page) {
@@ -3058,7 +3237,8 @@ function renderComparisonPage(page) {
   <meta property="og:url" content="${absoluteUrl(page.route)}" />
   <meta property="og:image" content="${SITE_URL}${heroImage}" />
   <link rel="icon" href="/assets/sonia-icon.svg" />
-  <link rel="stylesheet" href="/styles.css?v=${ASSET_VERSION}" />
+  ${preloadImageLink(heroImage)}
+  ${stylesheetLinks()}
   ${comparisonSchema(page)}
 </head>
 <body>
@@ -3077,8 +3257,8 @@ function renderComparisonPage(page) {
         </div>
       </div>
       <figure class="hero-media">
-        <img src="${heroImage}" alt="${escapeHtml(heroAlt)}" width="1200" height="1500" decoding="async" fetchpriority="high" />
-        <figcaption><img src="/assets/sonia-icon.svg" alt="" /> Sonia McRorey · ${BRAND_NAME}</figcaption>
+        ${heroImageTag(heroImage, heroAlt)}
+        <figcaption>${iconImageTag("/assets/sonia-icon.svg")} Sonia McRorey · ${BRAND_NAME}</figcaption>
       </figure>
     </section>
     ${comparisonCategoryNav(page.route)}
@@ -3258,7 +3438,8 @@ function schema(page) {
   };
   return `<script type="application/ld+json">${JSON.stringify(pageSchema)}</script>
   <script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script>
-  ${faqSchema ? `<script type="application/ld+json">${JSON.stringify(faqSchema)}</script>` : ""}`;
+  ${faqSchema ? `<script type="application/ld+json">${JSON.stringify(faqSchema)}</script>` : ""}
+  ${globalSchemaStack()}`;
 }
 
 function renderPage(page, pages, clusters) {
@@ -3299,7 +3480,8 @@ function renderPage(page, pages, clusters) {
   <meta property="og:url" content="${absoluteUrl(page.route)}" />
   <meta property="og:image" content="${SITE_URL}${image}" />
   <link rel="icon" href="/assets/sonia-icon.svg" />
-  <link rel="stylesheet" href="/styles.css?v=${ASSET_VERSION}" />
+  ${preloadImageLink(image)}
+  ${stylesheetLinks()}
   ${schema(page)}
 </head>
 <body>
@@ -3961,9 +4143,12 @@ async function writeAgentFiles(pages, clusters) {
 async function main() {
   const pages = await loadPages();
   const clusters = await loadClusters();
+  IMAGE_DIMENSIONS = await loadImageDimensions();
+  INLINE_CSS = minifyCss(await readFile(rootPath("styles.css"), "utf8"));
   await rm(DIST, { recursive: true, force: true });
   await mkdir(DIST, { recursive: true });
   await copyStatic();
+  await generateOptimizedImages();
   await writeAgentFiles(pages, clusters);
   for (const page of pages) {
     const out = routeOutputPath(page.route);
@@ -3993,7 +4178,7 @@ async function main() {
   await writeFile(distPath("blog-sitemap.xml"), sitemap(pages.filter((page) => page.type === "article")));
   await writeFile(distPath("robots.txt"), `User-agent: *\nAllow: /\nSitemap: ${SITE_URL}/sitemap.xml\nSitemap: ${SITE_URL}/blog-sitemap.xml\nSitemap: ${SITE_URL}/category-sitemap.xml\nSitemap: ${SITE_URL}/service-sitemap.xml\nOpenAPI: ${SITE_URL}/openapi.json\nLLMs: ${SITE_URL}/llms.txt\nLLMs-Full: ${SITE_URL}/llms-full.txt\nAgent-Profile: ${SITE_URL}/agent/site-profile.json\n`);
   await writeFile(distPath("_redirects"), `${LEGACY_REDIRECTS.map(([from, to, status]) => `${from}  ${to}  ${status}`).join("\n")}\n`);
-  console.log(`Built ${pages.length + SEMANTIC_HUBS.length} routes into dist`);
+  console.log(`Built ${pages.length + SEMANTIC_HUBS.length + COMPARISON_PAGES.length + 1} routes into dist`);
 }
 
 main();

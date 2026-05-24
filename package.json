@@ -9,7 +9,9 @@
     "validate": "node scripts/validate-build.mjs"
   },
   "dependencies": {
-    "resend": "^6.12.3"
+    "image-size": "^2.0.2",
+    "resend": "^6.12.3",
+    "sharp": "^0.34.5"
   },
   "devDependencies": {
     "wrangler": "^4.94.0"
