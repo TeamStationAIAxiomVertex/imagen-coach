@@ -136,6 +136,22 @@ Content budgets:
 
 Do not solve weak SEO by adding more prose. Solve it with clearer semantic identity, better internal links, better schema, stronger section hierarchy and visual compression.
 
+## Search Intent Matrix Rule
+
+The LATAM search intent matrix lives in the static agent layer, especially `dist/agent/search-intent-terms.json`, `dist/agent/page-signals.json`, `dist/semantic-index.json`, and `dist/llms-full.txt`.
+
+Use it to connect each page to:
+
+- direct commercial buyer intent
+- executive transformation intent
+- hidden psychological buyer intent
+- leadership and authority positioning
+- visibility and nervous system searches
+- professional reinvention and business-growth searches
+- Guadalajara, México and LATAM location intent
+
+Do not expose matrix labels, SEO/GEO language, strategy notes, or internal phrases such as "hidden goldmine" in public-facing page copy. The visible UI must stay premium, calm, human and commercially clear.
+
 ## Brand Voice
 
 The voice must be calm, intelligent, executive, reflective, emotionally sophisticated and grounded.

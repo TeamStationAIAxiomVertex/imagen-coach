@@ -960,6 +960,260 @@ const SEARCH_INTENT_TERMS = [
     rankValue: "Connects buyer identity, leadership topics and regional professional authority.",
   },
 ];
+const SEARCH_INTENT_LAYERS = [
+  {
+    id: "L1",
+    name: "Direct commercial buyer intent",
+    value: "Highest",
+    role: "Capture buyers who already know they need a coach, asesora or consultora de imagen.",
+    terms: [
+      "coach de imagen profesional",
+      "coach de imagen ejecutiva",
+      "consultora de imagen profesional",
+      "asesora de imagen profesional",
+      "asesoría de imagen ejecutiva",
+      "imagen ejecutiva para mujeres",
+      "consultoría de imagen empresarial",
+      "coach de presencia ejecutiva",
+      "imagen profesional para empresarias",
+      "coach de imagen online",
+      "consultora de imagen empresarial",
+      "asesoría de imagen para ejecutivas",
+      "imagen profesional femenina",
+      "imagen estratégica empresarial",
+      "imagen ejecutiva femenina",
+      "posicionamiento profesional mujeres",
+      "consultoría de presencia ejecutiva",
+      "imagen corporativa ejecutiva",
+      "presencia ejecutiva mujeres",
+      "consultora de imagen para líderes",
+      "coach de imagen para mujeres empresarias",
+      "imagen ejecutiva para directoras",
+      "imagen profesional para líderes empresariales",
+      "asesoría de imagen para mujeres ejecutivas",
+      "imagen estratégica para empresarias",
+      "presencia ejecutiva para fundadoras",
+      "coach de imagen para conferencistas",
+      "consultora de imagen para CEOs",
+      "imagen ejecutiva para mujeres líderes",
+      "imagen profesional para emprendedoras",
+      "asesoría de imagen premium mujeres",
+      "imagen profesional para abogadas",
+      "imagen ejecutiva para médicas",
+      "coach de imagen para psicólogas",
+      "imagen profesional para consultoras",
+      "imagen estratégica para ventas premium",
+      "presencia ejecutiva para mujeres en negocios",
+      "imagen profesional para LinkedIn",
+      "branding personal para ejecutivas",
+      "posicionamiento ejecutivo femenino",
+    ],
+  },
+  {
+    id: "L2",
+    name: "Executive transformation intent",
+    value: "Extremely high",
+    role: "Capture professionals who describe the desired external outcome before naming the service.",
+    terms: [
+      "cómo verme más ejecutiva",
+      "cómo verme más profesional",
+      "cómo proyectar autoridad",
+      "cómo verme más segura profesionalmente",
+      "cómo proyectar liderazgo",
+      "cómo tener presencia ejecutiva",
+      "cómo verme premium",
+      "cómo mejorar mi imagen profesional",
+      "cómo tener más presencia",
+      "cómo verme más sofisticada",
+      "cómo verme como líder",
+      "cómo proyectar seguridad",
+      "cómo elevar mi presencia profesional",
+      "cómo verme exitosa profesionalmente",
+      "cómo construir una imagen profesional fuerte",
+      "cómo prepararme para un puesto directivo",
+      "imagen para ascenso profesional",
+      "cómo verme como directora",
+      "cómo verme más líder en el trabajo",
+      "cómo proyectar más autoridad en reuniones",
+      "cómo ganar presencia en el trabajo",
+      "cómo verme más segura al hablar",
+      "cómo dejar de verme insegura",
+      "cómo verme más elegante profesionalmente",
+      "cómo posicionarme como experta",
+    ],
+  },
+  {
+    id: "L3",
+    name: "Hidden psychological buyer intent",
+    value: "Extremely high",
+    role: "Capture users who search from professional insecurity, authority anxiety and visibility friction.",
+    terms: [
+      "inseguridad profesional mujeres",
+      "miedo a hablar en público trabajo",
+      "miedo al juicio profesional",
+      "miedo a destacar profesionalmente",
+      "cómo sentirme segura profesionalmente",
+      "cómo dejar de sentirme pequeña",
+      "cómo tener más confianza profesional",
+      "cómo dejar de esconderme",
+      "cómo sentirme suficiente profesionalmente",
+      "síndrome del impostor mujeres líderes",
+      "autoestima profesional femenina",
+      "miedo a ser visible",
+      "cómo ocupar más espacio profesional",
+      "cómo dejar de minimizarme",
+      "cómo ganar seguridad ejecutiva",
+      "por qué no me siento profesional",
+      "por qué no me siento suficiente",
+      "por qué me cuesta mostrarme",
+      "por qué no puedo sostener liderazgo",
+      "por qué me da miedo crecer",
+      "por qué me cuesta cobrar más",
+      "por qué me siento insegura al hablar",
+      "por qué no proyecto autoridad",
+      "cómo tener más confianza ejecutiva",
+      "cómo dejar de dudar de mí",
+    ],
+  },
+  {
+    id: "L4",
+    name: "Leadership and power positioning intent",
+    value: "Extremely high",
+    role: "Capture high-status perception, women leadership and authority projection searches.",
+    terms: [
+      "liderazgo femenino empresarial",
+      "liderazgo visible mujeres",
+      "autoridad femenina profesional",
+      "presencia ejecutiva femenina",
+      "liderazgo e imagen profesional",
+      "mujeres líderes y presencia",
+      "cómo proyectar liderazgo femenino",
+      "imagen para mujeres poderosas",
+      "imagen profesional de alto nivel",
+      "imagen ejecutiva premium",
+      "imagen para empresarias exitosas",
+      "liderazgo y presencia ejecutiva",
+      "posicionamiento ejecutivo femenino",
+      "autoridad visual femenina",
+      "presencia ejecutiva para mujeres líderes",
+      "cómo verme premium profesionalmente",
+      "cómo verme sofisticada",
+      "cómo verme elegante profesionalmente",
+      "cómo elevar mi imagen",
+      "cómo tener una imagen de alto valor",
+      "cómo verme más exclusiva",
+      "imagen premium mujeres empresarias",
+      "presencia premium profesional",
+      "cómo verme de alto nivel",
+      "imagen de mujer exitosa",
+    ],
+  },
+  {
+    id: "L5",
+    name: "Visibility and nervous system intent",
+    value: "Hidden category creation",
+    role: "Capture the internal capacity needed to sustain visibility, leadership and growth.",
+    terms: [
+      "sistema nervioso y liderazgo",
+      "sistema nervioso e imagen profesional",
+      "regulación emocional liderazgo",
+      "regulación emocional empresarias",
+      "cómo sostener crecimiento profesional",
+      "cómo sostener más visibilidad",
+      "cómo sostener liderazgo",
+      "cómo dejar de autosabotearme profesionalmente",
+      "cómo sostener éxito profesional",
+      "identidad profesional y sistema nervioso",
+      "seguridad interna profesional",
+      "miedo a exponerse profesionalmente",
+      "cómo dejar de tener miedo al éxito",
+      "miedo a ser visible profesionalmente",
+      "miedo a crecer profesionalmente",
+      "miedo a destacar",
+      "miedo a tener éxito",
+      "miedo a liderar",
+      "miedo a mostrarme",
+      "cómo sentirme cómoda siendo visible",
+      "cómo dejar de esconderme profesionalmente",
+      "cómo sostener exposición profesional",
+      "miedo a ocupar espacios grandes",
+    ],
+  },
+  {
+    id: "L6",
+    name: "Professional reinvention and business growth intent",
+    value: "Massive long-tail",
+    role: "Capture transitions where the user needs a new professional identity, image or market position.",
+    terms: [
+      "reinventarme profesionalmente",
+      "nueva etapa profesional imagen",
+      "cambio de imagen profesional",
+      "actualizar mi imagen profesional",
+      "nueva identidad profesional",
+      "evolución profesional mujeres",
+      "nueva imagen ejecutiva",
+      "reconstruir mi imagen profesional",
+      "reposicionamiento profesional",
+      "elevar mi identidad profesional",
+      "cambio profesional mujeres",
+      "cómo reinventarme después de los 40",
+      "cómo reinventarme como mujer profesional",
+      "nueva versión profesional",
+      "imagen para emprendedoras",
+      "presencia ejecutiva emprendedoras",
+      "imagen para fundadoras",
+      "branding personal empresarias",
+      "imagen para mujeres de negocios",
+      "imagen profesional para vender más",
+      "presencia profesional para consultoras",
+      "imagen estratégica para negocios",
+      "posicionamiento personal premium",
+      "cómo construir autoridad online",
+    ],
+  },
+  {
+    id: "L7",
+    name: "GEO and LATAM location intent",
+    value: "Regional authority",
+    role: "Connect the category to Guadalajara, Mexico, LATAM and Spanish-speaking professional markets.",
+    terms: [
+      "coach de imagen CDMX",
+      "coach de imagen Guadalajara",
+      "coach de imagen Monterrey",
+      "coach de imagen Querétaro",
+      "coach de imagen Tijuana",
+      "coach de imagen Zapopan",
+      "imagen ejecutiva Guadalajara",
+      "presencia ejecutiva Monterrey",
+      "imagen profesional CDMX",
+      "imagen profesional Guadalajara",
+      "coach de imagen México",
+      "coach de imagen Colombia",
+      "coach de imagen Chile",
+      "coach de imagen Perú",
+      "coach de imagen Panamá",
+      "coach de imagen Costa Rica",
+      "coach de imagen LATAM",
+      "imagen profesional LATAM",
+      "presencia ejecutiva LATAM",
+      "imagen estratégica México",
+    ],
+  },
+];
+const SEARCH_INTENT_PAGE_TARGETS = [
+  { route: "/", layers: ["L1", "L2", "L4"], primaryNeed: "understand the category and choose a direction" },
+  { route: "/imagen-profesional", layers: ["L1", "L2", "L6"], primaryNeed: "update or strengthen professional image" },
+  { route: "/presencia-ejecutiva", layers: ["L2", "L4", "L5"], primaryNeed: "project authority, presence and leadership" },
+  { route: "/imagen-estrategica", layers: ["L1", "L4", "L6"], primaryNeed: "connect image with positioning and premium perception" },
+  { route: "/liderazgo", layers: ["L4", "L5"], primaryNeed: "make leadership visible and credible" },
+  { route: "/comunicacion-no-verbal", layers: ["L2", "L4"], primaryNeed: "strengthen presence while speaking, meeting and communicating" },
+  { route: "/empresarias", layers: ["L1", "L4", "L6"], primaryNeed: "support founders, business owners and women leaders" },
+  { route: "/mentalidad", layers: ["L3", "L5", "L6"], primaryNeed: "resolve internal friction around visibility, growth and leadership" },
+  { route: "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen", layers: ["L1", "L2", "L6"], primaryNeed: "align style, color, wardrobe and visual identity with the current professional stage" },
+  { route: "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen", layers: ["L1", "L2", "L4", "L5"], primaryNeed: "build presence, confidence and professional perception" },
+  { route: "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia", layers: ["L3", "L5", "L6"], primaryNeed: "strengthen internal security to sustain growth, decisions and visibility" },
+  { route: "/servicios-asesoria-de-imagen-coaching/talleres", layers: ["L1", "L4", "L7"], primaryNeed: "improve team, company and organizational image consistency" },
+];
 
 function rootPath(...parts) {
   return path.join(ROOT, ...parts);
@@ -1985,6 +2239,41 @@ function pageTermSignals(page, clusterMap) {
   const haystack = `${page.heroTitle} ${page.description}`.toLowerCase();
   const directMatches = CANONICAL_TERMS.filter((term) => haystack.includes(term.toLowerCase()));
   return [...new Set([...curated, ...directMatches])].slice(0, 8);
+}
+
+function pageIntentTarget(page, clusterMap) {
+  if (SEARCH_INTENT_PAGE_TARGETS.find((target) => target.route === page.route)) {
+    return SEARCH_INTENT_PAGE_TARGETS.find((target) => target.route === page.route);
+  }
+  const clusterId = clusterMap.get(page.route)?.id;
+  if (clusterId === "imagen-estilo-profesional") return SEARCH_INTENT_PAGE_TARGETS.find((target) => target.route === "/imagen-profesional");
+  if (clusterId === "presencia-liderazgo-identidad") return SEARCH_INTENT_PAGE_TARGETS.find((target) => target.route === "/presencia-ejecutiva");
+  if (clusterId === "empresas-marcas-equipos") return SEARCH_INTENT_PAGE_TARGETS.find((target) => target.route === "/servicios-asesoria-de-imagen-coaching/talleres");
+  if (clusterId === "seguridad-posicionamiento-profesional") return SEARCH_INTENT_PAGE_TARGETS.find((target) => target.route === "/mentalidad");
+  if (page.type === "article") return SEARCH_INTENT_PAGE_TARGETS.find((target) => target.route === "/imagen-profesional");
+  return SEARCH_INTENT_PAGE_TARGETS.find((target) => target.route === "/");
+}
+
+function pageIntentLayers(page, clusterMap) {
+  const target = pageIntentTarget(page, clusterMap);
+  return (target?.layers || [])
+    .map((id) => SEARCH_INTENT_LAYERS.find((layer) => layer.id === id))
+    .filter(Boolean)
+    .map((layer) => ({
+      id: layer.id,
+      name: layer.name,
+      value: layer.value,
+      role: layer.role,
+    }));
+}
+
+function pageExpandedIntentTerms(page, clusterMap) {
+  const target = pageIntentTarget(page, clusterMap);
+  const baseTerms = pageTermSignals(page, clusterMap);
+  const layerTerms = (target?.layers || [])
+    .flatMap((id) => SEARCH_INTENT_LAYERS.find((layer) => layer.id === id)?.terms || [])
+    .slice(0, 18);
+  return [...new Set([...baseTerms, ...layerTerms])].slice(0, 24);
 }
 
 function nav(currentRoute) {
@@ -3558,6 +3847,9 @@ function pageSignals(pages, clusters) {
       relatedService:
         page.type === "article" ? clusterMap.get(page.route)?.primaryService ? routeUrl(clusterMap.get(page.route).primaryService) : null : null,
       canonicalTerms: pageTermSignals(page, clusterMap),
+      searchIntentLayers: pageIntentLayers(page, clusterMap),
+      expandedSearchIntentTerms: pageExpandedIntentTerms(page, clusterMap),
+      hiddenBuyerNeed: pageIntentTarget(page, clusterMap)?.primaryNeed || null,
     })),
   };
 }
@@ -3601,6 +3893,22 @@ function searchIntentTermsAgent() {
     siteUrl: SITE_URL,
     language: "es-MX",
     rule: "Search-intent terms are machine-readable for agents and SEO review; they must not add visible bolding, labels, or generated marketing language to Sonia's page copy.",
+    strategicRealization:
+      "High-value demand is not only direct coach de imagen searches. The strongest opportunity is the buyer language underneath leadership anxiety, visibility fear, authority projection, professional transition and internal security.",
+    masterIntentModel: SEARCH_INTENT_LAYERS.map((layer) => ({
+      id: layer.id,
+      name: layer.name,
+      value: layer.value,
+      role: layer.role,
+      termCount: layer.terms.length,
+      terms: layer.terms,
+    })),
+    pageTargets: SEARCH_INTENT_PAGE_TARGETS.map((target) => ({
+      route: target.route,
+      url: routeUrl(target.route),
+      intentLayers: target.layers,
+      primaryNeed: target.primaryNeed,
+    })),
     terms: SEARCH_INTENT_TERMS,
   };
 }
@@ -3669,6 +3977,13 @@ function ontologyAgent() {
     semanticAuthorityLadder: SEMANTIC_AUTHORITY_LADDER,
     semanticLinkGraph: SEMANTIC_LINK_GRAPH,
     canonicalTerms: CANONICAL_TERMS,
+    searchIntentLayers: SEARCH_INTENT_LAYERS.map((layer) => ({
+      id: layer.id,
+      name: layer.name,
+      value: layer.value,
+      role: layer.role,
+      termExamples: layer.terms.slice(0, 8),
+    })),
     avoidTerms: AVOID_TERMS,
     geoQueryTargets: [
       "¿Qué hace una asesora de imagen?",
@@ -3755,6 +4070,21 @@ function semanticIndexAgent(pages, clusters) {
       "seguridad interna",
       "liderazgo personal",
     ],
+    searchIntentModel: {
+      layers: SEARCH_INTENT_LAYERS.map((layer) => ({
+        id: layer.id,
+        name: layer.name,
+        value: layer.value,
+        role: layer.role,
+        terms: layer.terms,
+      })),
+      pageTargets: SEARCH_INTENT_PAGE_TARGETS.map((target) => ({
+        route: target.route,
+        url: routeUrl(target.route),
+        layers: target.layers,
+        primaryNeed: target.primaryNeed,
+      })),
+    },
     semanticHubs: SEMANTIC_HUBS.map((hub) => ({
       route: hub.route,
       title: hub.title,
@@ -4080,6 +4410,12 @@ ${MASTER_ONTOLOGY.clusters.map((cluster) => `- ${cluster.name}: ${cluster.subent
 LATAM entities: ${MASTER_ONTOLOGY.latamEntities.join(", ")}.
 
 Buyer entities: ${MASTER_ONTOLOGY.buyerEntities.join(", ")}.
+
+## Search intent capture model
+
+The site should answer direct commercial searches and the psychological intent underneath professional visibility, authority, identity and growth transitions.
+
+${SEARCH_INTENT_LAYERS.map((layer) => `- ${layer.id} ${layer.name}: ${layer.value}. ${layer.role} Examples: ${layer.terms.slice(0, 8).join(", ")}`).join("\n")}
 
 ## Static WordPress ingestion rule
 

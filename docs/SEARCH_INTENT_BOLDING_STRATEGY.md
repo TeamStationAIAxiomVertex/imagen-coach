@@ -58,3 +58,24 @@ Any new bold phrase must be added to the controlled vocabulary with:
 - rank value
 
 If a phrase cannot be justified, it should not be bolded.
+
+## LATAM Search Intent Matrix
+
+The full LATAM intent matrix is generated into:
+
+- `/agent/search-intent-terms.json`
+- `/agent/page-signals.json`
+- `/semantic-index.json`
+- `/llms-full.txt`
+
+The matrix separates seven intent layers:
+
+- L1 direct commercial buyer intent
+- L2 executive transformation intent
+- L3 hidden psychological buyer intent
+- L4 leadership and power positioning intent
+- L5 visibility and nervous system intent
+- L6 professional reinvention and business growth intent
+- L7 GEO and LATAM location intent
+
+This matrix is for machine-readable retrieval, page planning, page-to-intent mapping and semantic QA. It must not be copied into visible UI headings, cards, footers or page copy.

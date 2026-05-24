@@ -353,6 +353,20 @@ for (const file of ["dist/entities.json", "dist/semantic-index.json", "dist/agen
   }
 }
 
+if (existsSync("dist/agent/search-intent-terms.json")) {
+  const searchIntent = JSON.parse(await readFile("dist/agent/search-intent-terms.json", "utf8"));
+  const layers = searchIntent.masterIntentModel || [];
+  const layerIds = layers.map((layer) => layer.id);
+  for (const id of ["L1", "L2", "L3", "L4", "L5", "L6", "L7"]) {
+    if (!layerIds.includes(id)) failures.push(`Search intent matrix missing layer ${id}`);
+  }
+  const intentCorpus = JSON.stringify(searchIntent).toLowerCase();
+  for (const term of ["coach de imagen guadalajara", "miedo a ser visible profesionalmente", "cómo proyectar autoridad", "sistema nervioso y liderazgo", "imagen profesional para empresarias"]) {
+    if (!intentCorpus.includes(term)) failures.push(`Search intent matrix missing term: ${term}`);
+  }
+  if (!Array.isArray(searchIntent.pageTargets) || searchIntent.pageTargets.length < 8) failures.push("Search intent matrix missing page targets");
+}
+
 const normalizedCorpus = renderedCorpus.toLowerCase();
 const executiveHitCount = requiredExecutiveTerms.reduce((count, term) => count + (normalizedCorpus.match(new RegExp(term, "g")) || []).length, 0);
 const forbiddenHitCount = forbiddenDominanceTerms.reduce((count, term) => count + (normalizedCorpus.match(new RegExp(term, "g")) || []).length, 0);
