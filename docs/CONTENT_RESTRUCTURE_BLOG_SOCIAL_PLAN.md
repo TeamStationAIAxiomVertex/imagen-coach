@@ -2,7 +2,7 @@
 
 ## Objective
 
-Rebuild the site content architecture so Sonia McRorey's existing words remain present, but the user experience no longer feels like loose text fragments.
+Rebuild the site content architecture so Sonia McRorey's authority remains present, but the user experience no longer feels like loose text fragments or all of Sonia's notes placed on every page.
 
 The site must become:
 
@@ -11,6 +11,7 @@ The site must become:
 - a WordPress-fed publication system once Weblium is shut down
 - a machine-readable GEO/LLM source with clean ontology, page signals and internal links
 - a visual education experience, not a wall of paragraphs
+- a conversion-first service system where long-form depth is routed into article pages
 
 ## Current Content Audit
 
@@ -46,15 +47,30 @@ These pages need classification and visual presentation, not content removal.
 
 ## Non-Negotiable Content Rule
 
-Do not omit Sonia's source content.
+Do not delete Sonia's source content from the project or from the authority layer.
 
 Instead:
 
-- keep every meaningful source sentence in raw HTML
+- keep every meaningful source sentence in the raw archive, clean source layer, article layer or appropriate structured route
 - classify each sentence into a named section
 - remove only duplicated navigation, form, footer and known junk lines
 - preserve source traceability to `content/clean/manifest.json` and `archive/imagencoach/`
-- show long material through designed modules, accordions, comparison tables, process maps, FAQ schema and related-content blocks
+- show long material where it belongs: article routes, FAQs, hubs and related-content blocks
+- compress commercial pages into decision modules, process maps, outcome cards, FAQs and CTA bridges
+
+Commercial pages do not need to display every migrated paragraph. Their job is to help the buyer understand fit and act. Article pages carry the long-form SEO/GEO depth.
+
+## Content Budgets
+
+| Page type | Visible word target | Primary job |
+| --- | ---: | --- |
+| Homepage | 850-1200 | Category authority plus service selection |
+| Service/commercial pages | 850-1200 | Conversion and fit clarity |
+| Hub pages | 450-900 | Topic organization and crawl distribution |
+| Comparison pages | 650-1100 | Editorial category differentiation |
+| Article pages | 500+ | Long-tail authority and thought leadership |
+
+Use `npm run audit:content` to regenerate `docs/CONTENT_DENSITY_AUDIT.md` before and after major content refactors.
 
 ## New Content Model
 

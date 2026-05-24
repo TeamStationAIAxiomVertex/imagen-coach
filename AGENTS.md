@@ -16,6 +16,8 @@ Rebuild `coachdeimagen.com` as a professional, production-ready static site and 
 
 The result must preserve Sonia's authorship, existing URLs, source images, SEO surface, and professional tone while removing Weblium duplication, broken internal junk, implementation noise, visible SEO gimmicks, and semantic drift into wellness/lifestyle positioning.
 
+The current repositioning is `coachdeimagen.com`, not ImagenCoach as the public category label. The site must feel like the definitive LATAM authority in Coach de Imagen, not a dump of every note Sonia has written.
+
 ## Source Of Truth Order
 
 Use these sources in order:
@@ -116,11 +118,23 @@ Remove:
 Preserve:
 
 - Sonia's wording and cadence
-- article titles and body concepts
+- article titles and body concepts on article routes
 - testimonials where present
 - contact details where still valid
 - source image mappings
 - page intent and route identity
+
+Commercial and hub pages must not expose the entire migrated essay layer. Long-form depth belongs in static article pages and supporting hubs. Service and commercial pages must compress visible copy into decision modules, workflows, state maps, outcomes, FAQs, related article links and CTA bridges.
+
+Content budgets:
+
+- homepage: target 850-1200 visible words
+- service and commercial pages: target 850-1200 visible words
+- hub pages: target 450-900 visible words
+- comparison pages: target 650-1100 visible words
+- article pages: no sales-page cap; use normal article flow with H2/H3 sections, reading map, service bridge, related reading and CTA
+
+Do not solve weak SEO by adding more prose. Solve it with clearer semantic identity, better internal links, better schema, stronger section hierarchy and visual compression.
 
 ## Brand Voice
 
@@ -175,6 +189,40 @@ Use this territory map before writing or generating visible copy:
 - Coaching de Imagen, Seguridad Interna y Posicionamiento Profesional: owns internal patterns, nervous system, fear, decision making, self sabotage and sustaining growth. This is the only service area where those themes should dominate semantically.
 - Imagen empresarial y talleres: owns teams, organizations, brand consistency, client perception, communication standards and corporate image.
 - Comparison pages: own industry evolution, editorial reflection, category differentiation and modern image coaching. They must not read like attack pages or SEO comparison spam.
+
+## Visual Semantic Authority Rule
+
+The presentation layer must be semantic-first, visual-first, authority-first and conversion-first.
+
+Every non-article page needs:
+
+- clear semantic identity
+- compressed cognitive load
+- contextual imagery
+- Sonia-specific iconography
+- workflow or state visualization where useful
+- service segmentation
+- decision pathway
+- CTA bridge after the user understands the section
+- direct FAQ answers
+- internal links to the article authority layer
+
+Use visual modules for:
+
+- service workflows
+- before/after state maps
+- decision trees
+- outcome grids
+- comparison matrices
+- article clusters
+
+Avoid:
+
+- text walls
+- article dumping
+- repeated emotional framing across pages
+- repeated generic terms such as presencia, liderazgo, claridad and coherencia without page-specific context
+- visual boxes that exist only to hold loose paragraphs
 
 Never expose internal strategy in visible content:
 

@@ -40,6 +40,14 @@ Recommended shape:
 - shared layout: header, footer, CTA, article cards, service cards, contact section
 - generated output: Cloudflare Pages-compatible static artifact
 
+The presentation architecture must separate:
+
+- commercial pages: short, visual, decision-oriented conversion pages
+- hub pages: category maps that organize services, articles, FAQs and comparisons
+- article pages: long-form static authority pages with normal editorial reading flow
+
+Do not reuse article rendering rules for service pages, and do not reuse service/pillar card treatments inside article body prose.
+
 ## Required Routes
 
 The site must build every route in `docs/source-url-inventory.md`.
@@ -71,6 +79,15 @@ The implementation must:
 - map each page to its source URL and source archive file
 - preserve image intent by using the archived asset mapping
 - keep contact and CTA copy consistent across pages through shared components
+
+Content density requirements:
+
+- commercial pages target 850-1200 visible words
+- hub pages target 450-900 visible words
+- comparison pages target 650-1100 visible words
+- article pages may be long, but must remain readable through article navigation, H2/H3 hierarchy, service bridges and related reading
+
+Run `npm run audit:content` before large content refactors and use `docs/CONTENT_DENSITY_AUDIT.md` as the current baseline.
 
 ## SEO Requirements
 

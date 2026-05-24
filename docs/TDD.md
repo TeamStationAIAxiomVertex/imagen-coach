@@ -221,6 +221,30 @@ Implement the comparison page UI in this order:
    - Check console warnings/errors.
    - Confirm no visible internal terms: SEO strategy, ontology, semantic graph, GEO engineering, ranking intent, AI optimization notes or URL planning.
 
+### 7c. Content Density And Article/Commercial Separation Tests
+
+Current failure mode:
+
+- commercial pages can become overloaded with article-like material
+- article pages can accidentally inherit service/pillar card treatments
+- hub pages can become article dumps instead of topic maps
+- repeated semantic terms can make different pages feel identical
+
+Required tests:
+
+- `npm run audit:content` generates `docs/CONTENT_DENSITY_AUDIT.md`
+- commercial pages are reviewed against an 850-1200 visible-word target
+- hub pages are reviewed against a 450-900 visible-word target
+- comparison pages are reviewed against a 650-1100 visible-word target
+- article pages keep long-form depth, but render as editorial posts with reading map, H2/H3 section flow, service bridge, related reading and CTA
+- service/pillar visual cards must not leak into article body prose
+- long-tail article content must not be dumped into service pages just to increase keyword volume
+
+Current audit baseline:
+
+- overloaded non-article routes: `/servicios-asesoria-de-imagen-coaching/talleres`, `/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen`, `/servicios-asesoria-de-imagen-coaching/preguntas-frequentes`, `/imagen-presencia`
+- thin but commercially important routes that need direct-answer authority and better service context: `/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia`, `/sobre-sonia-mcrorey-asesora-de-imagen`
+
 ### 8. Deployment Tests
 
 Assert:

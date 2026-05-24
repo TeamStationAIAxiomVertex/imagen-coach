@@ -30,6 +30,17 @@ while preserving Sonia's:
 
 Dominance does not come from SEO tricks. It comes from building a semantically superior architecture that search engines, LLMs and executive buyers can understand consistently.
 
+The site must evolve from blog-heavy, emotionally dense and paragraph-first into:
+
+- semantic-first
+- visual-first
+- authority-first
+- conversion-first
+- GEO-native
+- AI crawler optimized
+
+The problem to solve is not lack of content. The problem is semantic overload, weak information hierarchy, repeated emotional concepts, weak decision acceleration and too much reading before the buyer understands what Sonia does.
+
 ## Primary Brand Positioning
 
 Coach De Imagen is not:
@@ -200,6 +211,85 @@ All pages must preserve:
 Profundidad psicológica + claridad ejecutiva.
 
 That balance is mandatory.
+
+## Visual Semantic Authority Engine
+
+The operating model is:
+
+```text
+Visual communication > text walls
+```
+
+Every major page must help the user answer quickly:
+
+- what Sonia does
+- who it is for
+- what changes
+- why it matters professionally
+- which service fits
+- what to do next
+
+Use visual compression before adding more prose:
+
+- process timelines
+- vertical workflows
+- decision trees
+- before/after state maps
+- icon-supported concept anchors
+- article clusters by user intent
+- contextual CTA bridges
+
+Never expose internal SEO, GEO, ontology, ranking or architecture language in public-facing copy.
+
+## Page Type Contract
+
+### Commercial Pages
+
+Goal: convert.
+
+Target visible word count: 850-1200.
+
+Required structure:
+
+- hero
+- professional problem
+- who it helps
+- what changes
+- process workflow
+- outcomes
+- related articles
+- FAQ
+- CTA
+
+These pages must not behave like essays. Extended depth moves into articles and hubs.
+
+### Article Pages
+
+Goal: long-tail SEO, GEO and thought-leadership authority.
+
+Article pages may be long. They must read like normal editorial posts with:
+
+- breadcrumbs
+- article schema
+- reading map
+- H2/H3 section flow
+- pull quotes where useful
+- contextual diagrams where useful
+- internal service bridge
+- related reading
+- CTA bridge
+
+Do not confuse article templates with pillar/service templates.
+
+### Hub Pages
+
+Goal: category intelligence.
+
+Hub pages organize services, articles, FAQs, comparisons and workflows for one semantic topic such as imagen profesional, presencia ejecutiva, seguridad profesional, imagen empresarial, colorimetría or imagen femenina ejecutiva.
+
+Target visible word count: 450-900.
+
+Hubs are not article dumps. They are topic maps.
 
 ## Information Architecture
 

@@ -63,9 +63,19 @@ A conversion-oriented offering, currently represented by:
 - services hub
 - FAQ
 
+Services are not article containers. In the rebuilt domain model, a service page exists to clarify fit, explain the process, show outcomes, route the visitor to the right next step and connect to supporting articles.
+
 ### Article
 
 Editorial content under `/imagen-presencia`. Articles preserve Sonia's deeper thought leadership and support internal linking into services.
+
+Articles carry long-form authority. They may preserve deeper psychological, stylistic and professional arguments, but they must render as editorial publications with article navigation, H2/H3 flow, related service bridge and related reading.
+
+### Hub
+
+A category intelligence page that organizes one semantic territory such as imagen profesional, presencia ejecutiva, seguridad profesional, imagen empresarial or colorimetría.
+
+Hubs connect services, articles, FAQs and comparisons. They are not article archives or long essays.
 
 ### Asset
 

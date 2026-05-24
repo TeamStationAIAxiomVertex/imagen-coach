@@ -15,6 +15,8 @@ Current verified state:
 
 Remaining work is no longer basic route generation. The next work is content restructuring, blog import, social proof integration, visual QA and Cloudflare launch hardening.
 
+The current strategic pivot is content-density reduction and visual semantic compression. `coachdeimagen.com` must become a visual semantic authority engine, not a paragraph-first archive.
+
 ## Phase 0: Source Capture
 
 Status: complete.
@@ -125,19 +127,27 @@ Remaining:
 
 ## Phase 6: Content Restructure
 
-Status: planned.
+Status: in progress.
 
 Source plan:
 
 - `docs/CONTENT_RESTRUCTURE_BLOG_SOCIAL_PLAN.md`
+- `docs/CONTENT_DENSITY_AUDIT.md`
 
 Goal:
 
-Use all existing content word-for-word where meaningful, but classify it into page sections, visual modules, FAQs, process maps, comparison tables, testimonials and related-content blocks.
+Compress commercial pages into clear buyer decisions while keeping Sonia's long-form authority in article pages, hubs and structured FAQ blocks.
+
+Commercial/service pages target 850-1200 visible words. Hubs target 450-900 visible words. Article pages keep long-form depth and should read as editorial posts, not pillar/service pages.
 
 Expected output:
 
 - `content/structured/pages/*.json`
+- visible content budgets by page type
+- service workflow modules
+- decision trees and before/after state maps
+- article cluster bridges instead of article dumps
+- CTA bridges after major decision points
 - `content/structured/manifest.json`
 - semantic H1/H2/H3/H4 hierarchy
 - redesigned core pages without loose text boxes
