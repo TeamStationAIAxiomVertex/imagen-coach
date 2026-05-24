@@ -1346,23 +1346,33 @@ function wrapSvgText(text = "", maxChars = 28, maxLines = 3) {
   return kept;
 }
 
-function socialCardSvg({ title, description, kicker, route, logoBase64 }) {
-  const titleLines = wrapSvgText(title, 24, 3);
-  const descriptionLines = wrapSvgText(description, 54, 2);
-  const titleTspans = titleLines.map((line, index) => `<tspan x="72" dy="${index === 0 ? 0 : 74}">${escapeHtml(line)}</tspan>`).join("");
-  const descriptionTspans = descriptionLines.map((line, index) => `<tspan x="72" dy="${index === 0 ? 0 : 32}">${escapeHtml(line)}</tspan>`).join("");
+function socialCardSvg({ title, description, kicker, route, logoBase64, iconBase64 }) {
+  const titleLines = wrapSvgText(title, 23, 3);
+  const descriptionLines = wrapSvgText(description, 45, 2);
+  const titleTspans = titleLines.map((line, index) => `<tspan x="88" dy="${index === 0 ? 0 : 68}">${escapeHtml(line)}</tspan>`).join("");
+  const descriptionTspans = descriptionLines.map((line, index) => `<tspan x="88" dy="${index === 0 ? 0 : 31}">${escapeHtml(line)}</tspan>`).join("");
   return `<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1200" height="630" fill="#F7F4F7"/>
-  <rect x="34" y="32" width="1132" height="566" rx="30" fill="#FBFAFB" stroke="#DCD6DF" stroke-width="2"/>
-  <rect x="64" y="64" width="1072" height="502" rx="22" fill="#F2F5F1" stroke="#C8D9CE" stroke-width="1.5"/>
-  <circle cx="986" cy="170" r="92" fill="#E8EFEA" stroke="#C8D9CE" stroke-width="1.5"/>
-  <circle cx="986" cy="170" r="48" fill="#FBFAFB" stroke="#D7C5DD" stroke-width="1.5"/>
-  <image href="data:image/png;base64,${logoBase64}" x="72" y="78" width="330" height="78" preserveAspectRatio="xMinYMid meet"/>
-  <text x="72" y="210" fill="#216448" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="5">${escapeHtml(kicker.toUpperCase())}</text>
-  <text x="72" y="296" fill="#2F3440" font-family="Cormorant Garamond, Georgia, serif" font-size="66" font-weight="600" letter-spacing="0">${titleTspans}</text>
-  <text x="72" y="490" fill="#67616B" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="400">${descriptionTspans}</text>
-  <text x="72" y="558" fill="#216448" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="3">COACHDEIMAGEN.COM</text>
-  <text x="1128" y="558" text-anchor="end" fill="#8D4A9A" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="2">MÉXICO · LATAM</text>
+  <rect width="1200" height="630" fill="#F6F3F7"/>
+  <rect x="34" y="32" width="1132" height="566" rx="26" fill="#FBFAFB" stroke="#DAD5DD" stroke-width="2"/>
+  <rect x="64" y="64" width="1072" height="502" rx="18" fill="#F8F9F7" stroke="#C9DACE" stroke-width="1.5"/>
+  <rect x="64" y="64" width="10" height="502" rx="5" fill="#8D4A9A"/>
+  <rect x="838" y="64" width="298" height="502" rx="18" fill="#205C40"/>
+  <rect x="862" y="88" width="250" height="454" rx="14" fill="#276A4B" stroke="#86AF99" stroke-width="1"/>
+  <circle cx="987" cy="168" r="78" fill="#F8F9F7" stroke="#C9DACE" stroke-width="2"/>
+  <circle cx="987" cy="168" r="50" fill="#FBFAFB" stroke="#D8C5DE" stroke-width="2"/>
+  <image href="data:image/svg+xml;base64,${iconBase64}" x="948" y="129" width="78" height="78" preserveAspectRatio="xMidYMid meet"/>
+  <image href="data:image/png;base64,${logoBase64}" x="88" y="82" width="330" height="78" preserveAspectRatio="xMinYMid meet"/>
+  <text x="88" y="214" fill="#216448" font-family="Inter, Arial, sans-serif" font-size="21" font-weight="800" letter-spacing="5">${escapeHtml(kicker.toUpperCase())}</text>
+  <text x="88" y="294" fill="#2F3440" font-family="Cormorant Garamond, Georgia, serif" font-size="61" font-weight="600" letter-spacing="0">${titleTspans}</text>
+  <text x="88" y="492" fill="#67616B" font-family="Inter, Arial, sans-serif" font-size="23" font-weight="400">${descriptionTspans}</text>
+  <text x="88" y="552" fill="#216448" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800" letter-spacing="3">COACHDEIMAGEN.COM</text>
+  <text x="987" y="294" text-anchor="middle" fill="#FBFAFB" font-family="Cormorant Garamond, Georgia, serif" font-size="34" font-weight="500">Sonia McRorey</text>
+  <text x="987" y="332" text-anchor="middle" fill="#D7C5DE" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="800" letter-spacing="3">COACH DE IMAGEN</text>
+  <line x1="902" y1="366" x2="1072" y2="366" stroke="#86AF99" stroke-width="1"/>
+  <text x="987" y="406" text-anchor="middle" fill="#FBFAFB" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="700">Imagen · Presencia</text>
+  <text x="987" y="438" text-anchor="middle" fill="#FBFAFB" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="700">Liderazgo profesional</text>
+  <rect x="900" y="478" width="174" height="42" rx="21" fill="#F8F9F7"/>
+  <text x="987" y="505" text-anchor="middle" fill="#205C40" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="800" letter-spacing="2">MÉXICO · LATAM</text>
 </svg>`;
 }
 
@@ -1379,6 +1389,7 @@ async function generateSocialCards(pages, hubs, comparisons) {
   await mkdir(socialDir, { recursive: true });
   const logoPath = rootPath("assets", "sonia-logo-ai.png");
   const logoBase64 = (await readFile(logoPath)).toString("base64");
+  const iconBase64 = (await readFile(rootPath("assets", "sonia-icon.svg"))).toString("base64");
   const routes = [
     ...pages.map((page) => preparePageMetadata(page)),
     ...hubs.map((hub) => ({ route: hub.route, title: hub.title, heroTitle: hub.title, description: hub.description, cluster: hub.cluster })),
@@ -1397,6 +1408,7 @@ async function generateSocialCards(pages, hubs, comparisons) {
       kicker: socialKickerForPage(page),
       route: page.route,
       logoBase64,
+      iconBase64,
     });
     await sharp(Buffer.from(svg)).png({ compressionLevel: 9, quality: 92 }).toFile(distPath(socialCardPath(page.route).slice(1)));
   }
