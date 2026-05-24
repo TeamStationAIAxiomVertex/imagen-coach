@@ -1,5 +1,5 @@
 :root {
-  --bg: #f7f5f8;
+  --bg: #faf9fb;
   --paper: #fbfafc;
   --ink: #353535;
   --muted: #76717a;
@@ -14,8 +14,8 @@
   --charcoal-soft: #5b5660;
   --violet: #8c4799;
   --violet-soft: #efe8f2;
-  --header-bg: #f7f5f8;
-  --header-border: #e4dfe8;
+  --header-bg: #fbfafc;
+  --header-border: #ece8ef;
   --header-nav: #6d6670;
   --header-nav-hover: #7b5f83;
   --max: 1200px;
