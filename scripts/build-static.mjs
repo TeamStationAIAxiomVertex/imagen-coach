@@ -2130,6 +2130,89 @@ function articleCards(pages, { limit, clusterMap = new Map() } = {}) {
     .join("");
 }
 
+const COMMERCIAL_READING_CONTEXT = {
+  "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen": [
+    {
+      icon: "decision",
+      label: "Criterio de imagen",
+      reason: "Aclara por qué una asesoría integral no se queda en ropa: organiza decisiones visibles con propósito, estilo y contexto real.",
+      outcome: "Ayuda a decidir si necesitas diagnóstico de imagen, clóset, color y estilo.",
+    },
+    {
+      icon: "guardarropa",
+      label: "Cuerpo y proporción",
+      reason: "Conecta silueta, proporciones y vestuario con una lectura práctica para elegir prendas con menos duda.",
+      outcome: "Traduce el servicio a decisiones concretas frente al espejo y el guardarropa.",
+    },
+    {
+      icon: "color",
+      label: "Colorimetría",
+      reason: "Ubica el color como herramienta de presencia, no como tendencia decorativa o regla aislada.",
+      outcome: "Explica cómo el color cambia percepción, coherencia visual y seguridad al presentarte.",
+    },
+  ],
+  "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen": [
+    {
+      icon: "presencia",
+      label: "Presencia visible",
+      reason: "Muestra cómo la presencia comunica antes de hablar y por qué la seguridad necesita verse en la forma de ocupar espacios.",
+      outcome: "Ayuda a reconocer si el reto está en presencia, comunicación o confianza visible.",
+    },
+    {
+      icon: "percepcion",
+      label: "Percepción profesional",
+      reason: "Ordena la relación entre imagen, lectura externa y autoridad personal en entornos profesionales.",
+      outcome: "Da contexto para trabajar la imagen como herramienta de posicionamiento.",
+    },
+    {
+      icon: "identidad",
+      label: "Identidad",
+      reason: "Conecta imagen, autoconcepto y liderazgo personal sin convertir el proceso en una fórmula rígida.",
+      outcome: "Ayuda a sostener una presencia más propia, clara y creíble.",
+    },
+  ],
+  "/servicios-asesoria-de-imagen-coaching/talleres": [
+    {
+      icon: "empresa",
+      label: "Equipos",
+      reason: "Explica por qué la imagen de colaboradores influye en confianza, experiencia de cliente y coherencia de marca.",
+      outcome: "Ayuda a decidir si el equipo necesita criterios compartidos de imagen profesional.",
+    },
+    {
+      icon: "presencia",
+      label: "Experiencia grupal",
+      reason: "Muestra cómo un taller puede convertir imagen, color y presencia en una experiencia práctica para un grupo.",
+      outcome: "Aclara el valor de un formato aplicado, no solo una charla inspiracional.",
+    },
+    {
+      icon: "liderazgo",
+      label: "Marca y negocio",
+      reason: "Conecta imagen personal, negocio y percepción pública para marcas que necesitan comunicar con más consistencia.",
+      outcome: "Ayuda a alinear equipo, marca y experiencia frente a clientes.",
+    },
+  ],
+  "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia": [
+    {
+      icon: "mentalidad",
+      label: "Sistema interno",
+      reason: "Explica cómo los patrones internos pueden aparecer justo cuando toca crecer, decidir o sostener mayor visibilidad.",
+      outcome: "Ayuda a distinguir entre falta de capacidad y falta de estructura interna.",
+    },
+    {
+      icon: "decision",
+      label: "Decisiones",
+      reason: "Conecta seguridad interna con decisiones profesionales, exposición y capacidad de avanzar sin sabotaje.",
+      outcome: "Aterriza el proceso en crecimiento, claridad y responsabilidad profesional.",
+    },
+    {
+      icon: "liderazgo",
+      label: "Sostener crecimiento",
+      reason: "Muestra cómo el avance necesita presencia, regulación y coherencia para no depender solo del empuje.",
+      outcome: "Da contexto para trabajar posicionamiento desde seguridad y liderazgo personal.",
+    },
+  ],
+};
+
 function commercialIntentMap(page, model) {
   const guide = BUYER_GUIDES[page.route];
   const items = model.decision || [
@@ -2243,20 +2326,35 @@ function commercialMethodNotes(page, model) {
   </section>`;
 }
 
-function commercialRelatedArticles(model, pages, clusters) {
+function commercialRelatedArticles(page, model, pages, clusters) {
   const map = pageByRoute(pages);
   const selected = (model.articles || []).map((route) => map.get(route)).filter(Boolean);
   if (!selected.length) return "";
-  return `<section class="section commercial-article-bridge" aria-label="Lecturas relacionadas">
+  const readingContext = COMMERCIAL_READING_CONTEXT[page.route] || COMMERCIAL_READING_CONTEXT["/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen"];
+  const clusterMap = articleClusterByRoute(clusters);
+  return `<section id="lecturas-relacionadas" class="section commercial-article-bridge" aria-label="Lecturas relacionadas">
     <div class="cluster-header">
       <div>
         <p class="section-label">Profundizar</p>
-        <h2>${headlineHtml("Lecturas para entender el contexto antes de decidir.")}</h2>
-        <p>El servicio se mantiene claro; la profundidad editorial vive en estas publicaciones.</p>
+        <h2>${headlineHtml("Lecturas que amplían la decisión sin saturar el servicio.")}</h2>
+        <p>Cada lectura refuerza una parte del proceso para que puedas entender si esta ruta corresponde a tu momento.</p>
       </div>
       <a class="btn secondary" href="/imagen-presencia">Ver publicaciones</a>
     </div>
-    <div class="publication-grid compact-publications">${articleCards(selected, { clusterMap: articleClusterByRoute(clusters) })}</div>
+    <div class="reading-path-grid">
+      ${selected.map((article, index) => {
+        const context = readingContext[index] || readingContext[readingContext.length - 1];
+        const clusterLabel = clusterMap.get(article.route)?.label || "Publicación";
+        return `<a class="reading-path-card" href="${article.route}">
+          <span class="reading-icon">${topicIcon(context.icon)}</span>
+          <span class="reading-kicker">${escapeHtml(context.label)} · ${escapeHtml(clusterLabel)}</span>
+          <strong>${escapeHtml(visualCardTitle(article.heroTitle))}</strong>
+          <p>${escapeHtml(context.reason)}</p>
+          <small>${escapeHtml(context.outcome)}</small>
+          <b>Leer publicación</b>
+        </a>`;
+      }).join("")}
+    </div>
   </section>`;
 }
 
@@ -2295,7 +2393,7 @@ function commercialPageContent(page, pages, clusters) {
   ${commercialMethodNotes(page, model)}
   ${commercialWorkflow(page)}
   ${commercialOutcomes(model)}
-  ${commercialRelatedArticles(model, pages, clusters)}
+  ${commercialRelatedArticles(page, model, pages, clusters)}
   ${commercialFaq(model)}
   ${ctaBridge(page, model.cta)}`;
 }
