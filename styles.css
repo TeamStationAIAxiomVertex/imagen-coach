@@ -2848,6 +2848,148 @@ details[open] summary::after {
   .orbit-node-2 { right: 12px; }
   .orbit-node-4 { left: 12px; }
 }
+
+/* Image layout QA: keep editorial media inside its frame on every generated page. */
+.hero-media,
+.support-media,
+.service-card figure,
+.publication-link-card figure {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.hero-media {
+  align-self: center;
+  max-height: min(64vh, 640px);
+}
+
+.service-hero .hero-media {
+  aspect-ratio: 16 / 10;
+  max-height: min(54vh, 520px);
+}
+
+.hero-media picture,
+.support-media picture,
+.hero-media img,
+.support-media img,
+.service-card figure img,
+.publication-link-card figure img {
+  display: block;
+  max-width: 100%;
+}
+
+.hero-media img,
+.support-media img,
+.service-card figure img,
+.publication-link-card figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.about-hero .hero-media img {
+  object-position: center top;
+}
+
+.support-media {
+  aspect-ratio: 4 / 5;
+  max-height: 560px;
+}
+
+.support-media img,
+.service-card figure img,
+.publication-link-card figure img {
+  aspect-ratio: auto;
+}
+
+.service-card figure,
+.publication-link-card figure {
+  aspect-ratio: 4 / 3;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    gap: 32px;
+  }
+
+  .hero,
+  .hero > *,
+  .service-hero,
+  .service-hero > * {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .hero-media {
+    max-height: min(56vh, 520px);
+  }
+
+  .service-hero {
+    padding-bottom: 48px;
+  }
+
+  .service-hero .hero-media {
+    aspect-ratio: 16 / 11;
+    max-height: min(44vh, 360px);
+  }
+
+  .split-section .support-media,
+  .split-section.reverse .support-media {
+    aspect-ratio: 16 / 11;
+    max-height: 420px;
+  }
+}
+
+@media (max-width: 640px) {
+  h1,
+  h2,
+  .hero-copy,
+  .hero-lede,
+  .section-heading {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .service-hero h1,
+  .hero h1 {
+    max-width: 100%;
+    font-size: 44px;
+    line-height: 1;
+    overflow-wrap: normal;
+    text-wrap: balance;
+  }
+
+  .service-hero h1 .headline-accent,
+  .hero h1 .headline-accent {
+    display: block;
+    max-width: 100%;
+  }
+
+  .hero-media {
+    max-height: 460px;
+  }
+
+  .service-hero .hero-media {
+    aspect-ratio: 4 / 3;
+    max-height: 300px;
+  }
+
+  .hero-media figcaption {
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
+    min-height: 48px;
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+
+  .service-card figure,
+  .publication-link-card figure {
+    margin-bottom: 16px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .orbit-node { animation: none; }
 }
