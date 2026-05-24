@@ -1855,46 +1855,108 @@ function header(currentRoute) {
 }
 
 function footer() {
+  const footerHubs = [
+    ["/imagen-profesional", "Imagen profesional"],
+    ["/presencia-ejecutiva", "Presencia ejecutiva"],
+    ["/imagen-estrategica", "Imagen estratégica"],
+    ["/mentalidad", "Seguridad interna"],
+    ["/liderazgo", "Liderazgo visible"],
+    ["/empresarias", "Mujeres líderes"],
+  ];
+  const footerArticles = [
+    ["/imagen-presencia/imagen-profesional-segun-industria-y-personalidad", "Imagen profesional según industria y personalidad"],
+    ["/imagen-presencia/presencia-profesional-estrategica", "Presencia profesional estratégica"],
+    ["/imagen-presencia/imagen-identidad-liderazgo", "Imagen, identidad y liderazgo"],
+  ];
+  const audienceSignals = ["Empresarios", "Mujeres líderes", "Directivos", "Profesionistas", "Marcas personales", "Equipos"];
+  const locationSignals = ["Guadalajara", "México", "LATAM", "Mercados hispanohablantes"];
   return `<footer class="footer" id="contacto">
-    <section class="section footer-intelligence">
-      <div class="footer-decision">
+    <section class="section footer-intelligence" aria-label="Mapa de Coach De Imagen">
+      <div class="footer-identity">
+        <a class="footer-mark" href="/" aria-label="Inicio ${BRAND_NAME}">
+          <img src="/assets/sonia-logo-ai.png" alt="Sonia McRorey - Coach De Imagen y Abundancia" width="512" height="126" loading="lazy" decoding="async" />
+        </a>
         <p class="section-label">${BRAND_NAME}</p>
-        <h2>Encuentra la ruta correcta para tu imagen, presencia y siguiente nivel.</h2>
-        <p>Sonia McRorey trabaja imagen integral, coaching de imagen, talleres para empresas y procesos de mentalidad para personas, marcas y equipos en México y LATAM.</p>
+        <h2>Imagen, presencia y posicionamiento profesional con profundidad psicológica.</h2>
+        <p>Desde Guadalajara para México y LATAM, Sonia McRorey integra imagen profesional, presencia visible, seguridad interna, percepción estratégica y liderazgo personal en un sistema de trabajo humano, elegante y práctico.</p>
         <div class="actions">
           <a class="btn primary" href="${WHATSAPP}" target="_blank" rel="noopener">Agendar diagnóstico</a>
-          <a class="btn secondary" href="tel:+526646105348">${CONTACT.phone}</a>
+          <a class="btn secondary" href="/servicios-asesoria-de-imagen-coaching">Ver servicios</a>
         </div>
       </div>
-      <div class="footer-paths" aria-label="Rutas principales de servicio">
+
+      <div class="footer-method" aria-label="Sistema de trabajo de Sonia">
+        <p class="section-label">Sistema</p>
+        <ol>
+          ${SEMANTIC_AUTHORITY_LADDER.map((item, index) => `<li><span>${String(index + 1).padStart(2, "0")}</span>${escapeHtml(item)}</li>`).join("")}
+        </ol>
+      </div>
+
+      <nav class="footer-service-map" aria-label="Rutas principales de servicio">
+        <p class="section-label">Rutas de trabajo</p>
         ${PILLARS.map((pillar) => {
           const guide = BUYER_GUIDES[pillar.route];
           return `<a href="${pillar.route}">
             <span>${escapeHtml(semanticShortLabel(pillar.route, pillar.label))}</span>
-            <strong>${escapeHtml(guide.pain)}</strong>
+            <strong>${escapeHtml(guide.solution)}</strong>
             <small>${escapeHtml(guide.outcome)}</small>
           </a>`;
         }).join("")}
+      </nav>
+
+      <div class="footer-signal-panel" aria-label="Autoridad semántica y mercados">
+        <div>
+          <p class="section-label">Para quién</p>
+          <ul>${audienceSignals.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+        </div>
+        <div>
+          <p class="section-label">Alcance</p>
+          <ul>${locationSignals.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+        </div>
       </div>
+
+      <div class="footer-directory" aria-label="Directorio de conocimiento">
+        <nav aria-label="Hubs editoriales">
+          <h3>Hubs de autoridad</h3>
+          ${footerHubs.map(([href, label]) => `<a href="${href}">${label}</a>`).join("")}
+        </nav>
+        <nav aria-label="Lecturas recomendadas">
+          <h3>Lecturas clave</h3>
+          ${footerArticles.map(([href, label]) => `<a href="${href}">${label}</a>`).join("")}
+          <a href="/imagen-presencia">Todas las publicaciones</a>
+        </nav>
+        <nav aria-label="Comparaciones y decisiones">
+          <h3>Decisión informada</h3>
+          <a href="/comparaciones">Evolución del coaching de imagen</a>
+          <a href="/comparaciones/coaching-de-imagen-vs-consultoria-tradicional">Coaching de imagen vs consultoría tradicional</a>
+          <a href="/comparaciones/styling-vs-coaching-de-imagen">Styling vs coaching de imagen</a>
+          <a href="/servicios-asesoria-de-imagen-coaching/preguntas-frequentes">Preguntas frecuentes</a>
+        </nav>
+      </div>
+
       <div class="footer-answers" aria-label="Preguntas frecuentes principales">
-        <h3>Preguntas clave</h3>
-        ${FOOTER_QUESTIONS.map((item) => `<details>
+        <h3>Respuestas rápidas</h3>
+        ${FOOTER_QUESTIONS.map((item, index) => `<details${index === 0 ? " open" : ""}>
           <summary>${escapeHtml(item.question)}</summary>
           <p>${escapeHtml(item.answer)}</p>
         </details>`).join("")}
       </div>
+
       <div class="footer-contact-panel">
         <h3>Contacto</h3>
-        <p>${CONTACT.address}</p>
+        <p><strong>Sonia McRorey</strong><br>${CONTACT.address}</p>
         <p>${CONTACT.hours}</p>
-        <nav aria-label="Áreas de interés">
-          <a href="/servicios-asesoria-de-imagen-coaching">Servicios</a>
-          <a href="/imagen-presencia">Publicaciones</a>
-          <a href="/comparaciones">Comparaciones</a>
-          <a href="/sobre-sonia-mcrorey-asesora-de-imagen">Sobre Sonia</a>
-        </nav>
+        <p><a href="tel:+526646105348">${CONTACT.phone}</a></p>
+        <div class="footer-contact-actions">
+          <a class="btn primary" href="${WHATSAPP}" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn secondary" href="/sobre-sonia-mcrorey-asesora-de-imagen">Sobre Sonia</a>
+        </div>
       </div>
     </section>
+    <div class="section footer-legal">
+      <p>© ${new Date().getFullYear()} Sonia McRorey · ${BRAND_NAME}</p>
+      <p>Coaching de Imagen, Presencia y Posicionamiento Profesional en Guadalajara, México y LATAM.</p>
+    </div>
   </footer>`;
 }
 
