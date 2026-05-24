@@ -2746,7 +2746,8 @@ details[open] summary::after {
 
 .compact-publications .publication-link-card {
   display: grid;
-  align-content: center;
+  grid-template-rows: auto auto minmax(0, 1fr) auto;
+  align-content: start;
   gap: 14px;
   min-height: 232px;
   padding: 24px;
@@ -2761,7 +2762,7 @@ details[open] summary::after {
 }
 
 .compact-publications .publication-link-card span {
-  align-self: end;
+  align-self: start;
   color: var(--plum-accent);
 }
 
@@ -2774,7 +2775,7 @@ details[open] summary::after {
 }
 
 .compact-publications .publication-link-card small {
-  align-self: start;
+  align-self: end;
   padding-top: 8px;
 }
 
