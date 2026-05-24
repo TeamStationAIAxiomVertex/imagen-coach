@@ -4,6 +4,15 @@ const form = document.querySelector("[data-form]");
 const contactForm = document.querySelector("[data-contact-form]");
 const whatsappNumber = "526646105348";
 
+document.documentElement.classList.add("js-ready");
+
+const syncHeaderState = () => {
+  header?.classList.toggle("is-scrolled", window.scrollY > 12);
+};
+
+syncHeaderState();
+window.addEventListener("scroll", syncHeaderState, { passive: true });
+
 navToggle?.addEventListener("click", () => {
   const isOpen = header.classList.toggle("is-open");
   navToggle.setAttribute("aria-expanded", String(isOpen));
@@ -15,6 +24,37 @@ document.querySelectorAll(".site-nav a").forEach((link) => {
     navToggle?.setAttribute("aria-expanded", "false");
   });
 });
+
+document.querySelectorAll(".faq-answer-grid").forEach((grid) => {
+  grid.addEventListener(
+    "toggle",
+    (event) => {
+      const card = event.target;
+      if (!(card instanceof HTMLDetailsElement) || !card.open) return;
+      grid.querySelectorAll("details.faq-answer-card[open]").forEach((other) => {
+        if (other !== card) other.open = false;
+      });
+    },
+    true,
+  );
+});
+
+if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObserver" in window) {
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        revealObserver.unobserve(entry.target);
+      });
+    },
+    { rootMargin: "0px 0px -12% 0px", threshold: 0.08 },
+  );
+
+  document
+    .querySelectorAll(".intent-card, .fit-card, .workflow-track li, .reading-path-card, .faq-answer-card, .footer-intelligence > *")
+    .forEach((element) => revealObserver.observe(element));
+}
 
 form?.addEventListener("submit", (event) => {
   event.preventDefault();

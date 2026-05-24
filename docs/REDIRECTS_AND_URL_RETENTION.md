@@ -22,9 +22,21 @@ Canonical:
 
 WWW and legacy hostnames must redirect to the new apex:
 
+- `https://www.coachdeimagen.com/ -> https://coachdeimagen.com/`
 - `https://www.coachdeimagen.com/* -> https://coachdeimagen.com/:splat`
+- `https://imagencoach.com/ -> https://coachdeimagen.com/`
 - `https://imagencoach.com/* -> https://coachdeimagen.com/:splat`
+- `https://www.imagencoach.com/ -> https://coachdeimagen.com/`
 - `https://www.imagencoach.com/* -> https://coachdeimagen.com/:splat`
+
+Legacy sitemap endpoints must also be retained for crawler continuity:
+
+- `https://imagencoach.com/sitemap_pages.xml -> https://coachdeimagen.com/sitemap.xml`
+- `https://www.imagencoach.com/sitemap_pages.xml -> https://coachdeimagen.com/sitemap.xml`
+- `https://imagencoach.com/imagen-presencia/sitemap.xml -> https://coachdeimagen.com/blog-sitemap.xml`
+- `https://www.imagencoach.com/imagen-presencia/sitemap.xml -> https://coachdeimagen.com/blog-sitemap.xml`
+- `/sitemap_pages.xml -> /sitemap.xml`
+- `/imagen-presencia/sitemap.xml -> /blog-sitemap.xml`
 
 ## Known Non-Canonical 404 Redirects
 
@@ -49,5 +61,7 @@ Build validation must fail if:
 
 - sitemap omits a canonical route
 - `_redirects` loses the known legacy redirects
+- the legacy `imagencoach.com` wildcard redirect is removed
+- legacy sitemap endpoints stop redirecting to current sitemap files
 - canonical metadata points away from `https://coachdeimagen.com`
 - generated content references localhost, preview domains or Weblium junk

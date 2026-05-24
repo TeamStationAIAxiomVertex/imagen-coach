@@ -297,6 +297,7 @@ for (const sitemapFile of ["dist/blog-sitemap.xml", "dist/category-sitemap.xml",
   else {
     const text = await readFile(sitemapFile, "utf8");
     if (!text.includes("<urlset")) failures.push(`Invalid sitemap file: ${sitemapFile}`);
+    if (text.includes(`${LEGACY_SITE_URL}/`)) failures.push(`${sitemapFile} still contains legacy imagencoach.com host`);
   }
 }
 const blogSitemap = existsSync("dist/blog-sitemap.xml") ? await readFile("dist/blog-sitemap.xml", "utf8") : "";
@@ -375,6 +376,7 @@ if (forbiddenHitCount > executiveHitCount) {
 }
 
 const robots = await readFile("dist/robots.txt", "utf8");
+if (robots.includes(`${LEGACY_SITE_URL}/`)) failures.push("robots.txt still points to legacy imagencoach.com host");
 for (const line of [
   `Sitemap: ${SITE_URL}/sitemap.xml`,
   `Sitemap: ${SITE_URL}/blog-sitemap.xml`,
@@ -406,9 +408,18 @@ for (const line of [
   if (!headers.includes(line)) failures.push(`_headers missing performance cache rule: ${line}`);
 }
 for (const line of [
+  `https://www.coachdeimagen.com/  ${SITE_URL}/  301`,
   `https://www.coachdeimagen.com/*  ${SITE_URL}/:splat  301`,
+  `${LEGACY_SITE_URL}/  ${SITE_URL}/  301`,
+  `${LEGACY_SITE_URL}/sitemap_pages.xml  ${SITE_URL}/sitemap.xml  301`,
+  `${LEGACY_SITE_URL}/imagen-presencia/sitemap.xml  ${SITE_URL}/blog-sitemap.xml  301`,
   `${LEGACY_SITE_URL}/*  ${SITE_URL}/:splat  301`,
+  `https://www.imagencoach.com/  ${SITE_URL}/  301`,
+  `https://www.imagencoach.com/sitemap_pages.xml  ${SITE_URL}/sitemap.xml  301`,
+  `https://www.imagencoach.com/imagen-presencia/sitemap.xml  ${SITE_URL}/blog-sitemap.xml  301`,
   `https://www.imagencoach.com/*  ${SITE_URL}/:splat  301`,
+  "/sitemap_pages.xml  /sitemap.xml  301",
+  "/imagen-presencia/sitemap.xml  /blog-sitemap.xml  301",
   "/comparaciones/sonia-mcrorey-vs-gaby-vargas  /comparaciones/evolucion-coaching-imagen-mexico-latam  301",
   "/articulos/tu-color-tu-poder-el-impacto-de-la-colorimetria  /imagen-presencia/tu-color-tu-poder-el-impacto-de-la-colorimetria  301",
   "/articulos/aprende-a-resaltar-tus-proporciones  /imagen-presencia/aprende-a-resaltar-tus-proporciones  301",
@@ -416,6 +427,17 @@ for (const line of [
   "/articulos/encuentra-tu-estilo  /imagen-presencia/encuentra-tu-estilo  301",
 ]) {
   if (!redirects.includes(line)) failures.push(`_redirects missing ${line}`);
+}
+
+const redirectLines = redirects.trim().split(/\n+/).filter(Boolean);
+for (const route of expectedRoutes) {
+  const legacyUrl = `${LEGACY_SITE_URL}${route === "/" ? "/" : route}`;
+  const targetUrl = `${SITE_URL}${route === "/" ? "/" : route}`;
+  const exactRule = `${legacyUrl}  ${targetUrl}  301`;
+  const coveredByWildcard = redirectLines.includes(`${LEGACY_SITE_URL}/*  ${SITE_URL}/:splat  301`);
+  if (!coveredByWildcard && !redirectLines.includes(exactRule)) {
+    failures.push(`Legacy domain route is not covered by redirect contract: ${legacyUrl}`);
+  }
 }
 
 if (failures.length) {

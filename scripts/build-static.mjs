@@ -165,6 +165,8 @@ const PAGE_OVERRIDES = {
   },
 };
 const ROUTE_IMAGE_OVERRIDES = {
+  "/imagen-presencia/beneficios-de-asesoria-de-imagen": "/assets/5ac09d77d814f447.jpg",
+  "/imagen-presencia/la-importancia-de-tu-imagen-personal": "/assets/latina-profesional-espejo-coach-de-imagen.png",
   "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen": "/assets/7ace6f0d3687c214.jpg",
   "/servicios-asesoria-de-imagen-coaching/preguntas-frequentes": "/assets/619a89970f5d1790.jpg",
 };
@@ -193,6 +195,7 @@ const COMMERCIAL_PAGE_MODELS = {
       ["¿Los talleres son para empresas o también para grupos?", "Pueden diseñarse para empresas, marcas, equipos, comunidades o grupos privados. El formato depende del objetivo y del contexto."],
       ["¿Se puede adaptar el contenido a una marca?", "Sí. El taller se diseña a partir de la industria, el público, la experiencia deseada y lo que la marca necesita comunicar."],
       ["¿Qué cambia después de un taller?", "El grupo se lleva criterios claros para aplicar imagen, color, presencia y comunicación de forma más coherente."],
+      ["¿Qué necesita definir una empresa antes de solicitar un taller?", "Conviene definir el objetivo principal: coherencia de equipo, experiencia de cliente, comunicación visual, colorimetría, presencia profesional o posicionamiento de marca."],
     ],
     articles: [
       "/imagen-presencia/como-mejorar-la-imagen-de-tus-colaboradores",
@@ -225,6 +228,7 @@ const COMMERCIAL_PAGE_MODELS = {
       ["¿La asesoría de imagen es solo ropa?", "No. Incluye ropa, color, rostro, proporciones, clóset y estilo, pero siempre conectados con presencia, percepción y contexto."],
       ["¿Necesito cambiar todo mi guardarropa?", "No necesariamente. El proceso ordena primero criterio, uso, coherencia y funcionalidad antes de comprar más."],
       ["¿Sirve para imagen ejecutiva?", "Sí. La asesoría ayuda a que la imagen profesional comunique credibilidad, claridad y congruencia con el nivel que ocupas."],
+      ["¿Qué obtengo al final del proceso?", "Obtienes criterios claros para elegir color, prendas, combinaciones, proporciones y estilo con más intención, menos improvisación y mayor coherencia profesional."],
     ],
     articles: [
       "/imagen-presencia/beneficios-de-asesoria-de-imagen",
@@ -257,6 +261,7 @@ const COMMERCIAL_PAGE_MODELS = {
       ["¿En qué se diferencia de asesoría de imagen?", "La asesoría ordena la parte visual; el coaching trabaja también seguridad, presencia, percepción e identidad profesional."],
       ["¿Es para hablar mejor en público?", "Puede ayudar, pero el foco es más amplio: cómo ocupas espacios, comunicas valor y sostienes presencia profesional."],
       ["¿Se trabaja online?", "Sí. Puede trabajarse de forma digital cuando el objetivo es presencia, comunicación, percepción y posicionamiento."],
+      ["¿Cómo sé si necesito coaching de imagen?", "Cuando ya tienes capacidad, experiencia o preparación, pero tu presencia no comunica con la claridad, seguridad o autoridad que necesitas sostener."],
     ],
     articles: [
       "/imagen-presencia/como-puedo-ayudarte-hoy",
@@ -289,6 +294,7 @@ const COMMERCIAL_PAGE_MODELS = {
       ["¿Es coaching de abundancia?", "La ruta conserva el URL histórico, pero el enfoque visible es seguridad interna, decisiones, presencia y posicionamiento profesional."],
       ["¿Qué se trabaja internamente?", "Patrones de decisión, miedo a la visibilidad, regulación, autoconcepto y capacidad de sostener crecimiento."],
       ["¿Para quién es?", "Para personas con capacidad y experiencia que necesitan ordenar lo interno para sostener más liderazgo, presencia y resultados."],
+      ["¿Qué cambia cuando la seguridad interna se ordena?", "Las decisiones se vuelven más claras, la visibilidad pesa menos y la presencia profesional puede sostener crecimiento sin depender solo del esfuerzo."],
     ],
     articles: [
       "/imagen-presencia/mas-dinero-capacidad-interna-liderazgo-presencia",
@@ -656,9 +662,18 @@ const COMPARISON_DEFINITIONS = [
   },
 ];
 const LEGACY_REDIRECTS = [
+  ["https://www.coachdeimagen.com/", `${SITE_URL}/`, 301],
   ["https://www.coachdeimagen.com/*", `${SITE_URL}/:splat`, 301],
+  [`${LEGACY_SITE_URL}/`, `${SITE_URL}/`, 301],
+  [`${LEGACY_SITE_URL}/sitemap_pages.xml`, `${SITE_URL}/sitemap.xml`, 301],
+  [`${LEGACY_SITE_URL}/imagen-presencia/sitemap.xml`, `${SITE_URL}/blog-sitemap.xml`, 301],
   [`${LEGACY_SITE_URL}/*`, `${SITE_URL}/:splat`, 301],
+  ["https://www.imagencoach.com/", `${SITE_URL}/`, 301],
+  ["https://www.imagencoach.com/sitemap_pages.xml", `${SITE_URL}/sitemap.xml`, 301],
+  ["https://www.imagencoach.com/imagen-presencia/sitemap.xml", `${SITE_URL}/blog-sitemap.xml`, 301],
   ["https://www.imagencoach.com/*", `${SITE_URL}/:splat`, 301],
+  ["/sitemap_pages.xml", "/sitemap.xml", 301],
+  ["/imagen-presencia/sitemap.xml", "/blog-sitemap.xml", 301],
   ["/comparaciones/sonia-mcrorey-vs-gaby-vargas", "/comparaciones/evolucion-coaching-imagen-mexico-latam", 301],
   ["/articulos/tu-color-tu-poder-el-impacto-de-la-colorimetria", "/imagen-presencia/tu-color-tu-poder-el-impacto-de-la-colorimetria", 301],
   ["/articulos/aprende-a-resaltar-tus-proporciones", "/imagen-presencia/aprende-a-resaltar-tus-proporciones", 301],
@@ -1368,8 +1383,9 @@ function headlineHtml(value = "") {
     .sort((a, b) => a.index - b.index)[0];
 
   if (selected) {
-    const lead = text.slice(0, selected.index).trim();
-    const accent = text.slice(selected.index).trim();
+    const lead = selected.token === ", " ? text.slice(0, selected.index + 1).trim() : text.slice(0, selected.index).trim();
+    const accentStart = selected.token === ", " ? selected.index + selected.token.length : selected.index;
+    const accent = text.slice(accentStart).trim();
     return `${escapeHtml(lead)} <em class="headline-accent">${escapeHtml(accent)}</em>`;
   }
 
@@ -1547,6 +1563,9 @@ function topicIcon(topicId = "presencia") {
     color: '<path d="M6 20V6a2 2 0 0 1 2-2h2v16H6z"></path><path d="M10 20V4h4a2 2 0 0 1 2 2v14"></path><path d="M6 15h10"></path><path d="M8 18h.01M13 18h.01"></path>',
     guardarropa: '<path d="M12 6c0-1.4 1.1-2.5 2.5-2.5S17 4.6 17 6c0 2.4-5 2.4-5 5"></path><path d="M12 11 5 16.5c-.8.6-.4 1.8.6 1.8h12.8c1 0 1.4-1.2.6-1.8L12 11z"></path>',
     mentalidad: '<path d="M9 18c-2.4-.9-4-3.2-4-6 0-3.6 2.7-6.5 6.1-6.5 1.6 0 3.1.7 4.1 1.8 2.2.4 3.8 2.3 3.8 4.7 0 2.8-2.2 5-5 5"></path><path d="M12 9v11"></path><path d="M9 12h6M10 15h4"></path>',
+    ubicacion: '<path d="M12 21s6-5.2 6-11a6 6 0 1 0-12 0c0 5.8 6 11 6 11Z"></path><circle cx="12" cy="10" r="2"></circle>',
+    video: '<rect x="3.5" y="6" width="12" height="12" rx="2"></rect><path d="m15.5 10 5-3v10l-5-3"></path><path d="M7.5 10h4M7.5 14h2.5"></path>',
+    viaje: '<path d="M3 11.5 21 5l-6.5 16-3.2-7.2L3 11.5Z"></path><path d="m11.3 13.8 4.4-4.4"></path>',
   };
   return `<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">${paths[topicId] || paths.presencia}</svg>`;
 }
@@ -2024,42 +2043,31 @@ function deepReadingReserve(page, sections, previousSections, clusterMap) {
 }
 
 function faqStructuredContent(page, lines, pages, clusters) {
-  const categories = [
-    ["Elegir proceso", "Cuándo conviene asesoría, coaching, talleres o seguridad profesional."],
-    ["Resultados", "Qué cambia en imagen, presencia, percepción, liderazgo y decisiones."],
-    ["Empresas", "Cómo se adaptan procesos y talleres a marcas, equipos y experiencias."],
+  const decisionRoutes = [
+    ["Elegir proceso", "Qué conviene para tu momento", "#pregunta-01", "decision"],
+    ["Diferenciar enfoques", "Asesoría, coaching y presencia", "#pregunta-02", "presencia"],
+    ["Empresas", "Marcas, equipos y talleres", "#pregunta-04", "empresa"],
+    ["Proceso online", "Guadalajara, México y LATAM", "#pregunta-10", "ubicacion"],
   ];
   return `<section class="section structured-intro service-intro" id="preguntas-frecuentes">
-    <div class="section-heading">
-      <p class="section-label">Preguntas frecuentes</p>
-      <h2>${headlineHtml("Respuestas claras sobre asesoría y coaching de imagen.")}</h2>
-      <p>Esta página concentra las dudas principales para elegir un proceso con Sonia sin llenar el footer ni las páginas comerciales con respuestas repetidas.</p>
-    </div>
-    <div class="service-context-panel">
-      ${categories.map(([label, text], index) => `<article class="context-card">
-        <span class="context-icon">${topicIcon(index === 0 ? "decision" : index === 1 ? "presencia" : "empresa")}</span>
-        <h3>${escapeHtml(label)}</h3>
-        <p>${escapeHtml(text)}</p>
-      </article>`).join("")}
-    </div>
-  </section>
-  <section class="section commercial-intent-map faq-router" aria-label="Rutas de preguntas">
-    <div class="section-heading compact-heading">
-      <p class="section-label">Qué resolver primero</p>
-      <h2>${headlineHtml("Empieza por la duda que está frenando tu decisión.")}</h2>
-      <p>Las respuestas están escritas para aclarar alcance, diferencia entre procesos, resultados y aplicaciones para personas, marcas y empresas.</p>
-    </div>
-    <div class="intent-card-grid">
-      ${categories.map(([label, text], index) => `<article class="intent-card">
-        <span>${String(index + 1).padStart(2, "0")}</span>
-        <h3>${escapeHtml(`${label} en detalle`)}</h3>
-        <p>${escapeHtml(text)}</p>
-      </article>`).join("")}
+    <div class="faq-context-panel">
+      <div class="faq-context-copy">
+        <p class="section-label">Preguntas frecuentes</p>
+        <h2>${headlineHtml("Respuestas claras sobre asesoría y coaching de imagen.")}</h2>
+        <p>Esta página reúne las dudas principales para entender qué proceso corresponde a tu momento, tu contexto y el tipo de resultado que necesitas sostener.</p>
+      </div>
+      <nav class="faq-context-list" aria-label="Temas frecuentes">
+        ${decisionRoutes.map(([label, text, href, icon]) => `<a href="${href}">
+          <span class="context-icon">${topicIcon(icon)}</span>
+          <strong>${escapeHtml(label)}</strong>
+          <small>${escapeHtml(text)}</small>
+        </a>`).join("")}
+      </nav>
     </div>
   </section>
   <section class="section faq-answer-grid" aria-label="Preguntas frecuentes de imagen y presencia">
     ${FAQ_PAGE_QUESTIONS.map((item, index) => {
-      return `<details class="faq-answer-card"${index < 4 ? " open" : ""}>
+      return `<details class="faq-answer-card" id="pregunta-${String(index + 1).padStart(2, "0")}"${index === 0 ? " open" : ""}>
         <summary><span>${String(index + 1).padStart(2, "0")}</span>${escapeHtml(item.question)}</summary>
         <div><p>${escapeHtml(item.answer)}</p></div>
       </details>`;
@@ -2102,7 +2110,7 @@ function serviceHubContent(page, pages, clusters) {
         <span>${String(index + 1).padStart(2, "0")}</span>
         <small>${escapeHtml(item.identity?.entity || item.label)}</small>
         <strong class="intent-title">${escapeHtml(semanticShortLabel(item.route, item.label))}</strong>
-        <p>${escapeHtml(item.guide.pain)}</p>
+        <p>${escapeHtml(item.guide.pain.length > 82 ? `${item.guide.pain.slice(0, 79).trim()}...` : item.guide.pain)}</p>
         <strong>${escapeHtml(item.guide.outcome)}</strong>
       </a>`).join("")}
     </div>
@@ -2331,10 +2339,18 @@ function header(currentRoute) {
 }
 
 function footer() {
+  const footerServices = [
+    ["/servicios-asesoria-de-imagen-coaching", "Servicios", "Elegir la ruta correcta."],
+    ["/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen", "Asesoría integral", "Estilo, color, rostro y guardarropa."],
+    ["/servicios-asesoria-de-imagen-coaching/coaching-de-imagen", "Presencia profesional", "Identidad, comunicación y seguridad visible."],
+    ["/servicios-asesoria-de-imagen-coaching/talleres", "Talleres", "Imagen y comunicación para marcas y equipos."],
+    ["/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia", "Seguridad interna", "Decisiones, presencia y posicionamiento."],
+  ];
   const footerHubs = [
     ["/imagen-profesional", "Imagen profesional"],
     ["/presencia-ejecutiva", "Presencia ejecutiva"],
     ["/imagen-estrategica", "Imagen estratégica"],
+    ["/comunicacion-no-verbal", "Comunicación no verbal"],
     ["/mentalidad", "Seguridad interna"],
     ["/liderazgo", "Liderazgo visible"],
     ["/empresarias", "Mujeres líderes"],
@@ -2343,18 +2359,66 @@ function footer() {
     ["/imagen-presencia/imagen-profesional-segun-industria-y-personalidad", "Imagen profesional según industria y personalidad"],
     ["/imagen-presencia/presencia-profesional-estrategica", "Presencia profesional estratégica"],
     ["/imagen-presencia/imagen-identidad-liderazgo", "Imagen, identidad y liderazgo"],
+    ["/imagen-presencia/tu-color-tu-poder-el-impacto-de-la-colorimetria", "Colorimetría e imagen profesional"],
+    ["/imagen-presencia/mas-dinero-capacidad-interna-liderazgo-presencia", "Liderazgo, capacidad interna y presencia"],
   ];
-  const audienceSignals = ["Empresarios", "Mujeres líderes", "Directivos", "Profesionistas", "Marcas personales", "Equipos"];
-  const locationSignals = ["Guadalajara", "México", "LATAM", "Mercados hispanohablantes"];
+  const footerComparisons = [
+    ["/comparaciones", "Comparaciones"],
+    ["/comparaciones/coaching-de-imagen-vs-consultoria-tradicional", "Coaching de imagen vs consultoría"],
+    ["/comparaciones/imagen-superficial-vs-presencia-profesional", "Imagen superficial vs presencia profesional"],
+    ["/comparaciones/styling-vs-coaching-de-imagen", "Styling vs coaching de imagen"],
+    ["/comparaciones/imagen-corporativa-vs-presencia-humana", "Imagen corporativa y presencia humana"],
+  ];
+  const audienceSignals = [
+    ["Empresarios", "/imagen-estrategica"],
+    ["Mujeres líderes", "/empresarias"],
+    ["Directivos", "/presencia-ejecutiva"],
+    ["Profesionistas", "/imagen-profesional"],
+    ["Marcas personales", "/imagen-estrategica"],
+    ["Equipos", "/servicios-asesoria-de-imagen-coaching/talleres"],
+  ];
+  const locationSignals = [
+    ["Guadalajara", CONTACT_ROUTE],
+    ["México", CONTACT_ROUTE],
+    ["LATAM", CONTACT_ROUTE],
+    ["Online", CONTACT_ROUTE],
+    ["Mercados hispanohablantes", CONTACT_ROUTE],
+  ];
+  const footerDirectoryGroups = [
+    {
+      icon: "percepcion",
+      heading: "Explorar por tema",
+      text: "Entrar por intención: imagen, presencia, liderazgo o seguridad interna.",
+      links: footerHubs,
+    },
+    {
+      icon: "decision",
+      heading: "Elegir servicio",
+      text: "Comparar las rutas de trabajo antes de agendar diagnóstico.",
+      links: footerServices,
+    },
+    {
+      icon: "presencia",
+      heading: "Leer contexto",
+      text: "Profundizar con publicaciones para entender el momento profesional.",
+      links: [...footerArticles, ["/imagen-presencia", "Todas las publicaciones"]],
+    },
+    {
+      icon: "liderazgo",
+      heading: "Tomar decisión",
+      text: "Revisar comparaciones, preguntas y diferencias entre enfoques.",
+      links: [...footerComparisons, ["/servicios-asesoria-de-imagen-coaching/preguntas-frequentes", "Preguntas frecuentes"]],
+    },
+  ];
   return `<footer class="footer" id="contacto">
-    <section class="section footer-intelligence" aria-label="Mapa de Coach De Imagen">
+    <section class="section footer-intelligence" aria-label="Pie de sitio Coach De Imagen">
       <div class="footer-identity">
         <a class="footer-mark" href="/" aria-label="Inicio ${BRAND_NAME}">
           ${lazyImageTag("/assets/sonia-logo-ai.png", "Sonia McRorey - Coach De Imagen y Abundancia")}
         </a>
         <p class="section-label">${BRAND_NAME}</p>
-        <h2>Imagen, presencia y posicionamiento profesional con profundidad psicológica.</h2>
-        <p>Desde Guadalajara para México y LATAM, Sonia McRorey integra imagen profesional, presencia visible, seguridad interna, percepción estratégica y liderazgo personal en un sistema de trabajo humano, elegante y práctico.</p>
+        <h2>Coach de Imagen en Guadalajara y LATAM.</h2>
+        <p>Imagen, presencia, seguridad interna y posicionamiento profesional para líderes, empresarios, marcas personales y equipos.</p>
         <div class="actions">
           <a class="btn primary" href="${CONTACT_ROUTE}">Agendar diagnóstico</a>
           <a class="btn secondary" href="/servicios-asesoria-de-imagen-coaching">Ver servicios</a>
@@ -2362,7 +2426,7 @@ function footer() {
       </div>
 
       <div class="footer-method" aria-label="Sistema de trabajo de Sonia">
-        <p class="section-label">Sistema</p>
+        <p class="section-label">Método</p>
         <ol>
           ${SEMANTIC_AUTHORITY_LADDER.map((item, index) => `<li><span>${String(index + 1).padStart(2, "0")}</span>${escapeHtml(item)}</li>`).join("")}
         </ol>
@@ -2370,12 +2434,10 @@ function footer() {
 
       <nav class="footer-service-map" aria-label="Rutas principales de servicio">
         <p class="section-label">Rutas de trabajo</p>
-        ${PILLARS.map((pillar) => {
-          const guide = BUYER_GUIDES[pillar.route];
-          return `<a href="${pillar.route}">
-            <span>${escapeHtml(semanticShortLabel(pillar.route, pillar.label))}</span>
-            <strong>${escapeHtml(guide.solution)}</strong>
-            <small>${escapeHtml(guide.outcome)}</small>
+        ${footerServices.map(([route, label, description]) => {
+          return `<a href="${route}">
+            <span>${escapeHtml(label)}</span>
+            <strong>${escapeHtml(description)}</strong>
           </a>`;
         }).join("")}
       </nav>
@@ -2383,31 +2445,27 @@ function footer() {
       <div class="footer-signal-panel" aria-label="Autoridad semántica y mercados">
         <div>
           <p class="section-label">Para quién</p>
-          <ul>${audienceSignals.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+          <ul>${audienceSignals.map(([label, href]) => `<li><a href="${href}">${escapeHtml(label)}</a></li>`).join("")}</ul>
         </div>
         <div>
           <p class="section-label">Alcance</p>
-          <ul>${locationSignals.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+          <ul>${locationSignals.map(([label, href]) => `<li><a href="${href}">${escapeHtml(label)}</a></li>`).join("")}</ul>
         </div>
       </div>
 
       <div class="footer-directory" aria-label="Directorio de conocimiento">
-        <nav aria-label="Hubs editoriales">
-          <h3>Explorar por tema</h3>
-          ${footerHubs.map(([href, label]) => `<a href="${href}">${label}</a>`).join("")}
-        </nav>
-        <nav aria-label="Lecturas recomendadas">
-          <h3>Leer por contexto</h3>
-          ${footerArticles.map(([href, label]) => `<a href="${href}">${label}</a>`).join("")}
-          <a href="/imagen-presencia">Todas las publicaciones</a>
-        </nav>
-        <nav aria-label="Comparaciones y decisiones">
-          <h3>Elegir ruta</h3>
-          <a href="/comparaciones">Evolución del coaching de imagen</a>
-          <a href="/comparaciones/coaching-de-imagen-vs-consultoria-tradicional">Coaching de imagen vs consultoría tradicional</a>
-          <a href="/comparaciones/styling-vs-coaching-de-imagen">Styling vs coaching de imagen</a>
-          <a href="/servicios-asesoria-de-imagen-coaching/preguntas-frequentes">Preguntas frecuentes</a>
-        </nav>
+        ${footerDirectoryGroups.map((group) => `<nav class="footer-directory-card" aria-label="${escapeHtml(group.heading)}">
+          <div class="directory-head">
+            <span class="directory-icon">${topicIcon(group.icon)}</span>
+            <div>
+              <h3>${escapeHtml(group.heading)}</h3>
+              <p>${escapeHtml(group.text)}</p>
+            </div>
+          </div>
+          <div class="directory-links">
+            ${group.links.map(([href, label]) => `<a href="${href}"><span>${escapeHtml(label)}</span><small>Ver</small></a>`).join("")}
+          </div>
+        </nav>`).join("")}
       </div>
 
       <div class="footer-faq-panel" aria-label="Preguntas frecuentes">
@@ -2663,6 +2721,18 @@ function contentHeading(page) {
   return [BRAND_NAME, "Contenido principal"];
 }
 
+function deliveryModeStrip(page) {
+  if (!["home", "service", "service-hub", "about"].includes(page.type)) return "";
+  const options = [
+    ["ubicacion", "Presencial", "Guadalajara"],
+    ["video", "Video", "México y LATAM"],
+    ["viaje", "Viaje corporativo", "conferencias y empresas"],
+  ];
+  return `<div class="delivery-strip" aria-label="Modalidades de atención">
+    ${options.map(([icon, label, text]) => `<span class="delivery-chip">${topicIcon(icon)}<span><strong>${escapeHtml(label)}</strong><small>${escapeHtml(text)}</small></span></span>`).join("")}
+  </div>`;
+}
+
 function hero(page, lines) {
   const image = pickImage(page);
   const commercialModel = COMMERCIAL_PAGE_MODELS[page.route];
@@ -2675,6 +2745,7 @@ function hero(page, lines) {
       <p class="eyebrow">${eyebrow}</p>
       <h1>${headlineHtml(page.heroTitle)}</h1>
       <div class="hero-lede">${paragraphize(lede)}</div>
+      ${deliveryModeStrip(page)}
       <div class="actions">
         <a class="btn primary" href="${WHATSAPP}" target="_blank" rel="noopener">${escapeHtml(PAGE_OVERRIDES[page.route]?.primaryCta || "Agendar diagnóstico")}</a>
         <a class="btn secondary" href="${page.type === "article" ? "/imagen-presencia" : "/servicios-asesoria-de-imagen-coaching"}">${page.type === "article" ? "Ver publicaciones" : "Ver servicios"}</a>
@@ -3081,14 +3152,78 @@ function commercialPageContent(page, pages, clusters) {
 
 function aboutAuthorityContent() {
   const credentials = [
-    "Vicepresidenta y VP de Educación - AICI Guadalajara (2024-2026)",
-    "Miembro activo de la Asociación Internacional de Consultores de Imagen (AICI)",
-    "Asesora de Imagen por Maison Aubele (2010) - Argentina",
-    "Asesora de Imagen Personal y Empresarial por Garbo Imagen (2012) - Uruguay",
-    "Imagen Masculina por Rossy Garbbez (2014) - México",
-    "Consultora de Imagen Empresarial por el Colegio de Imagen Pública (2019) - México",
-    "Psicología de la Imagen por Domingo Delgado (2022) - España",
-    "Colorimetría: Sistema Tonal y Contraste por Pshopper School (2022) - México",
+    {
+      icon: "liderazgo",
+      level: "Autoridad institucional",
+      title: "Vicepresidenta y VP de Educación",
+      organization: "AICI Guadalajara",
+      meta: "2024-2026",
+      region: "Guadalajara",
+      text: "Liderazgo activo dentro del capítulo local de una asociación internacional de consultores de imagen.",
+    },
+    {
+      icon: "presencia",
+      level: "Asociación internacional",
+      title: "Miembro activo",
+      organization: "Asociación Internacional de Consultores de Imagen (AICI)",
+      meta: "Criterio profesional",
+      region: "Global",
+      text: "Vinculación con estándares, comunidad profesional y actualización constante en consultoría de imagen.",
+    },
+    {
+      icon: "identidad",
+      level: "Formación internacional",
+      title: "Asesora de Imagen",
+      organization: "Maison Aubele",
+      meta: "2010",
+      region: "Argentina",
+      text: "Base profesional en asesoría de imagen, estilo, percepción y lectura visual aplicada.",
+    },
+    {
+      icon: "empresa",
+      level: "Imagen personal y empresarial",
+      title: "Asesora de Imagen Personal y Empresarial",
+      organization: "Garbo Imagen",
+      meta: "2012",
+      region: "Uruguay",
+      text: "Criterio para conectar imagen individual con presencia profesional, empresa y contexto de marca.",
+    },
+    {
+      icon: "guardarropa",
+      level: "Imagen masculina",
+      title: "Imagen Masculina",
+      organization: "Rossy Garbbez",
+      meta: "2014",
+      region: "México",
+      text: "Especialización para ampliar lectura de estilo, proporciones, presencia y códigos visuales masculinos.",
+    },
+    {
+      icon: "empresa",
+      level: "Imagen empresarial",
+      title: "Consultora de Imagen Empresarial",
+      organization: "Colegio de Imagen Pública",
+      meta: "2019",
+      region: "México",
+      text: "Formación orientada a percepción pública, imagen corporativa y comunicación profesional.",
+    },
+    {
+      icon: "mentalidad",
+      level: "Psicología de la imagen",
+      title: "Psicología de la Imagen",
+      organization: "Domingo Delgado",
+      meta: "2022",
+      region: "España",
+      text: "Profundidad psicológica para trabajar imagen, autopercepción, identidad y presencia con mayor criterio.",
+    },
+    {
+      icon: "color",
+      level: "Colorimetría aplicada",
+      title: "Sistema Tonal y Contraste",
+      organization: "Pshopper School",
+      meta: "2022",
+      region: "México",
+      text: "Especialización en color, contraste y lectura visual para decisiones de imagen más precisas.",
+    },
   ];
   return `<section class="section commercial-intent-map about-authority" aria-label="Autoridad profesional">
     <div class="section-heading compact-heading">
@@ -3117,9 +3252,22 @@ function aboutAuthorityContent() {
     <div class="section-heading compact-heading">
       <p class="section-label">Formación</p>
       <h2>${headlineHtml("Criterio profesional construido en imagen, empresa, comunicación y psicología de la imagen.")}</h2>
+      <p>Estas credenciales sostienen el nivel de autoridad de Sonia como Coach de Imagen con formación internacional, liderazgo profesional y experiencia aplicada en México y LATAM.</p>
     </div>
     <div class="credential-grid">
-      ${credentials.map((item) => `<div>${escapeHtml(item)}</div>`).join("")}
+      ${credentials.map((item, index) => `<article class="credential-card ${index < 2 ? "is-featured" : ""}">
+        <div class="credential-icon">${topicIcon(item.icon)}</div>
+        <div class="credential-copy">
+          <small>${escapeHtml(item.level)}</small>
+          <h3>${escapeHtml(item.title)}</h3>
+          <p><strong>${escapeHtml(item.organization)}</strong></p>
+          <div class="credential-meta">
+            <span>${escapeHtml(item.meta)}</span>
+            <span>${escapeHtml(item.region)}</span>
+          </div>
+          <p>${escapeHtml(item.text)}</p>
+        </div>
+      </article>`).join("")}
     </div>
   </section>
   ${ctaBridge({ route: "/sobre-sonia-mcrorey-asesora-de-imagen" }, "Agendar diagnóstico con Sonia")}`;
