@@ -2456,6 +2456,58 @@ details[open] summary::after {
 .commercial-workflow .section-heading h2,
 .outcome-state-map .section-heading h2,
 .commercial-faq .section-heading h2 { font-size: clamp(34px, 3.8vw, 52px); line-height: 1.04; }
+
+.commercial-intent-map .section-heading.compact-heading,
+.commercial-fit .section-heading.compact-heading,
+.commercial-workflow .section-heading.compact-heading,
+.commercial-method-notes .section-heading.compact-heading,
+.outcome-state-map .section-heading.compact-heading,
+.commercial-article-bridge .section-heading.compact-heading,
+.commercial-faq .section-heading.compact-heading {
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
+  gap: 14px;
+  max-width: 980px;
+  margin-right: auto;
+  margin-bottom: 32px;
+  margin-left: auto;
+  text-align: center;
+}
+
+.commercial-intent-map .section-heading.compact-heading h2,
+.commercial-fit .section-heading.compact-heading h2,
+.commercial-workflow .section-heading.compact-heading h2,
+.commercial-method-notes .section-heading.compact-heading h2,
+.outcome-state-map .section-heading.compact-heading h2,
+.commercial-article-bridge .section-heading.compact-heading h2,
+.commercial-faq .section-heading.compact-heading h2 {
+  max-width: 880px;
+  font-size: clamp(34px, 3.2vw, 48px);
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+.commercial-intent-map .section-heading.compact-heading > p:not(.section-label),
+.commercial-workflow .section-heading.compact-heading > p:not(.section-label),
+.commercial-method-notes .section-heading.compact-heading > p:not(.section-label),
+.commercial-article-bridge .section-heading.compact-heading > p:not(.section-label),
+.commercial-faq .section-heading.compact-heading > p:not(.section-label) {
+  max-width: 68ch;
+  margin: 2px auto 0;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.62;
+}
+
+.commercial-intent-map .section-heading.compact-heading .section-label,
+.commercial-fit .section-heading.compact-heading .section-label,
+.commercial-workflow .section-heading.compact-heading .section-label,
+.commercial-method-notes .section-heading.compact-heading .section-label,
+.outcome-state-map .section-heading.compact-heading .section-label,
+.commercial-article-bridge .section-heading.compact-heading .section-label,
+.commercial-faq .section-heading.compact-heading .section-label {
+  justify-self: center;
+}
 .intent-card-grid,
 .fit-grid,
 .method-note-grid,
