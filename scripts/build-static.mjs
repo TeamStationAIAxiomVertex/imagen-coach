@@ -1535,7 +1535,12 @@ function consolidateArticleFragments(lines = []) {
   for (let index = 0; index < entries.length; index += 1) {
     const { raw, line } = entries[index];
     const next = entries[index + 1]?.line;
-    if (/^##\s+/.test(String(raw)) || isListLine(line)) {
+    if (/^##\s+/.test(String(raw))) {
+      flushParagraph();
+      output.push(raw.trim());
+      continue;
+    }
+    if (isListLine(line)) {
       flushParagraph();
       output.push(line);
       continue;
@@ -1679,7 +1684,7 @@ function splitContent(markdown) {
 }
 
 function contentLinesForPage(page, fallbackLines = []) {
-  if (page.type === "article" && Array.isArray(page.sourceLines) && page.sourceLines.length) {
+  if (Array.isArray(page.sourceLines) && page.sourceLines.length) {
     return page.sourceLines;
   }
   return fallbackLines;
@@ -1792,6 +1797,10 @@ function pageType(route) {
   if (route.startsWith("/servicios-asesoria-de-imagen-coaching/")) return "service";
   if (route.startsWith("/sobre-sonia")) return "about";
   return "page";
+}
+
+function isEditorialSourcePage(page) {
+  return page?.type === "article" || page?.route === "/imagen-presencia/rebranding-imagen-mentalidad-abundancia";
 }
 
 function pickImage(page) {
@@ -1912,7 +1921,7 @@ function coreBodyLines(page, lines) {
 }
 
 function shouldStartSection(line, current, page = null) {
-  const headingCandidate = page?.type === "article" ? isArticleHeadingCandidate(line) : isHeadingCandidate(line);
+  const headingCandidate = isEditorialSourcePage(page) ? isArticleHeadingCandidate(line) : isHeadingCandidate(line);
   if (!headingCandidate) return false;
   if (/^(Contacto|Agendar|Precios|Leer|Consulta Gratis|Primera Sesión|Primera Sesion)$/i.test(line)) return false;
   if (current.heading === "Contenido principal" && current.lines.length === 0) return true;
@@ -1922,7 +1931,7 @@ function shouldStartSection(line, current, page = null) {
 function classifyContent(page, lines) {
   const sections = [];
   let current = { heading: contentHeading(page)[1], lines: [] };
-  const bodyLines = page.type === "article"
+  const bodyLines = isEditorialSourcePage(page)
     ? consolidateArticleFragments(coreBodyLines(page, lines))
     : groupShortLines(coreBodyLines(page, lines));
   for (const line of bodyLines) {
@@ -4160,7 +4169,7 @@ async function loadPages() {
     const markdown = await readFile(rootPath(item.clean_path), "utf8");
     const type = pageType(item.route);
     let sourceLines = [];
-    if (type === "article" && item.source_html_path && existsSync(rootPath(item.source_html_path))) {
+    if ((type === "article" || item.route === "/imagen-presencia/rebranding-imagen-mentalidad-abundancia") && item.source_html_path && existsSync(rootPath(item.source_html_path))) {
       const sourceHtml = await readFile(rootPath(item.source_html_path), "utf8");
       sourceLines = structuredArticleLinesFromHtml(sourceHtml);
     }
