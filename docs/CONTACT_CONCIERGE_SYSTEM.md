@@ -24,7 +24,9 @@ wrangler secret put OPENAI_MODEL
 
 ## Cloudflare KV
 
-Create a KV namespace for IP rate limiting and replace the placeholder IDs in `wrangler.jsonc`.
+Create a KV namespace for IP rate limiting and bind it to the Pages project as `CONTACT_RATE_LIMIT`.
+Do not commit placeholder KV IDs in `wrangler.jsonc`; Cloudflare Pages rejects invalid namespace IDs during deployment.
+If the binding is absent, the contact function still deploys and uses the remaining validation, honeypot and sanitization controls.
 
 ```bash
 wrangler kv namespace create CONTACT_RATE_LIMIT
