@@ -341,10 +341,28 @@ h1 {
 
 h1 em,
 h2 em {
-  display: block;
+  display: inline-block;
   color: var(--plum-accent);
+  background: linear-gradient(110deg, var(--plum-accent), #b46c9d 42%, var(--brand-green-deep));
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-family: var(--display);
   font-style: italic;
   font-weight: 500;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 10px 34px rgba(140, 71, 153, .08);
+}
+
+h1 .headline-accent,
+h2 .headline-accent {
+  margin-left: .08em;
+}
+
+.hero h1 .headline-accent,
+.service-hero h1 .headline-accent,
+.hub-hero h1 .headline-accent {
+  display: block;
+  margin-left: 0;
 }
 
 .anchor-line {

@@ -924,6 +924,30 @@ function escapeHtml(value = "") {
     .replaceAll('"', "&quot;");
 }
 
+function headlineHtml(value = "") {
+  const text = cleanDisplayTitle(value);
+  if (!text) return "";
+  const splitters = [", ", " para ", " con ", " en ", " y "];
+  const minimumLead = Math.min(18, Math.max(10, Math.floor(text.length * 0.34)));
+  const selected = splitters
+    .map((token) => ({ token, index: text.indexOf(token) }))
+    .filter((item) => item.index >= minimumLead && item.index <= text.length - 8)
+    .sort((a, b) => a.index - b.index)[0];
+
+  if (selected) {
+    const lead = text.slice(0, selected.index).trim();
+    const accent = text.slice(selected.index).trim();
+    return `${escapeHtml(lead)} <em class="headline-accent">${escapeHtml(accent)}</em>`;
+  }
+
+  const words = text.split(/\s+/);
+  if (words.length < 4) return escapeHtml(text);
+  const accentWords = Math.min(3, Math.max(2, Math.ceil(words.length * 0.34)));
+  const lead = words.slice(0, -accentWords).join(" ");
+  const accent = words.slice(-accentWords).join(" ");
+  return `${escapeHtml(lead)} <em class="headline-accent">${escapeHtml(accent)}</em>`;
+}
+
 function stripFrontMatter(markdown) {
   const match = markdown.match(/^---\n[\s\S]*?\n---\n\n?/);
   return match ? markdown.slice(match[0].length) : markdown;
@@ -1410,7 +1434,7 @@ function serviceProcessMap(page) {
   return `<section class="section process-map" aria-label="Mapa del proceso">
     <div class="section-heading process-heading">
       <p class="section-label">Etapas</p>
-      <h2>${escapeHtml(heading)}</h2>
+      <h2>${headlineHtml(heading)}</h2>
     </div>
     <ol class="process-rail process-flow">${steps.map((step, index) => {
       const topicId = topicIds[index] || "presencia";
@@ -1461,7 +1485,7 @@ function serviceSystemVisual(page, sections, clusterMap) {
   return `<section class="section service-system-visual" aria-label="Sistema visual del servicio">
     <div class="system-visual-copy">
       <p class="section-label">${escapeHtml(semanticIdentity(page.route)?.entity || "Método profesional")}</p>
-      <h2>${escapeHtml(`${semanticSupportHeading(page)} en práctica`)}</h2>
+      <h2>${headlineHtml(`${semanticSupportHeading(page)} en práctica`)}</h2>
       <p>${highlightOntologyTerms(systemLine, axes, 3)}</p>
       <div class="system-metrics">
         ${metricItems.map((item) => `<div><strong>${escapeHtml(item.value)}</strong><span>${escapeHtml(item.label)}</span></div>`).join("")}
@@ -1494,7 +1518,7 @@ function internalLinkAtlas(page, pages, clusters) {
   return `<section class="section link-atlas" aria-label="Rutas internas relacionadas">
     <div class="section-heading">
       <p class="section-label">Contenido relacionado</p>
-      <h2>Servicios y publicaciones para seguir profundizando.</h2>
+      <h2>${headlineHtml("Servicios y publicaciones para seguir profundizando.")}</h2>
     </div>
     <div class="atlas-grid">
       <div class="atlas-panel">
@@ -1542,7 +1566,7 @@ function renderSemanticDetails(section, index, previousSections, page, clusterMa
       <span class="semantic-index">${String(index + 1).padStart(2, "0")}</span>
       <span class="semantic-summary-copy">
         ${topicChips(topics)}
-        <h2>${escapeHtml(heading)}</h2>
+        <h2>${headlineHtml(heading)}</h2>
       </span>
     </summary>
     <div class="semantic-copy">${renderSemanticCopy(section.lines, topics)}</div>
@@ -1554,7 +1578,7 @@ function deepReadingReserve(page, sections, previousSections, clusterMap) {
   return `<section class="section deep-reading-reserve" aria-label="Material de profundización">
     <div class="section-heading compact-heading">
       <p class="section-label">Profundización</p>
-      <h2>Material completo para revisar con más calma.</h2>
+      <h2>${headlineHtml("Material completo para revisar con más calma.")}</h2>
     </div>
     <div class="semantic-sections reserve-grid">
       ${sections.map((section, index) => renderSemanticDetails(section, previousSections.length + index, [...previousSections, ...sections.slice(0, index)], page, clusterMap, { compact: true })).join("\n")}
@@ -1577,7 +1601,7 @@ function faqStructuredContent(page, lines, pages, clusters) {
   return `<section class="section structured-intro service-intro" id="tema-1-${slugify(intro.heading)}">
     <div class="section-heading">
       <p class="section-label">Preguntas frecuentes</p>
-      <h2>${escapeHtml("Respuestas claras sobre asesoría y coaching de imagen.")}</h2>
+      <h2>${headlineHtml("Respuestas claras sobre asesoría y coaching de imagen.")}</h2>
       ${topicChips(introTopics)}
     </div>
     ${renderServiceIntroPanel(page, intro, introTopics)}
@@ -1585,7 +1609,7 @@ function faqStructuredContent(page, lines, pages, clusters) {
   <section class="section commercial-intent-map faq-router" aria-label="Rutas de preguntas">
     <div class="section-heading compact-heading">
       <p class="section-label">Qué resolver primero</p>
-      <h2>Empieza por la duda que está frenando tu decisión.</h2>
+      <h2>${headlineHtml("Empieza por la duda que está frenando tu decisión.")}</h2>
       <p>Las respuestas están escritas para aclarar alcance, diferencia entre procesos, resultados y aplicaciones para personas, marcas y empresas.</p>
     </div>
     <div class="intent-card-grid">
@@ -1629,7 +1653,7 @@ function serviceHubContent(page, pages, clusters) {
   return `<section class="section commercial-intent-map service-hub-router" aria-label="Mapa de servicios">
     <div class="section-heading compact-heading">
       <p class="section-label">Elegir ruta</p>
-      <h2>Cuatro formas de trabajar imagen, presencia y posicionamiento profesional.</h2>
+      <h2>${headlineHtml("Cuatro formas de trabajar imagen, presencia y posicionamiento profesional.")}</h2>
       <p>Elige por necesidad principal: imagen visible, presencia profesional, equipo o seguridad interna. Cada ruta conserva su intención para que la decisión sea más clara.</p>
     </div>
     <div class="intent-card-grid service-route-grid">
@@ -1645,7 +1669,7 @@ function serviceHubContent(page, pages, clusters) {
   <section class="section commercial-fit service-fit-map" aria-label="Qué servicio necesito">
     <div class="section-heading compact-heading">
       <p class="section-label">Por necesidad</p>
-      <h2>Qué revisar primero según el momento profesional.</h2>
+      <h2>${headlineHtml("Qué revisar primero según el momento profesional.")}</h2>
     </div>
     <div class="fit-grid">
       ${paths.map((item) => `<article class="fit-card">
@@ -1659,7 +1683,7 @@ function serviceHubContent(page, pages, clusters) {
   <section class="section commercial-workflow service-decision-workflow" aria-label="Proceso de decisión">
     <div class="section-heading compact-heading">
       <p class="section-label">Decisión</p>
-      <h2>Cómo pasar de confusión a una ruta de trabajo clara.</h2>
+      <h2>${headlineHtml("Cómo pasar de confusión a una ruta de trabajo clara.")}</h2>
       <p>El objetivo del hub no es explicar todo. Es separar intención, acelerar la decisión y llevarte al proceso que corresponde.</p>
     </div>
     <ol class="workflow-track">
@@ -1673,7 +1697,7 @@ function serviceHubContent(page, pages, clusters) {
   <section class="section commercial-article-bridge compact-publications" aria-label="Lecturas para elegir servicio">
     <div class="section-heading compact-heading">
       <p class="section-label">Lecturas guía</p>
-      <h2>Publicaciones que ayudan a reconocer qué necesitas trabajar.</h2>
+      <h2>${headlineHtml("Publicaciones que ayudan a reconocer qué necesitas trabajar.")}</h2>
     </div>
     <div class="publication-grid">
       ${articleCards(pages, { limit: 3, clusterMap: articleClusterByRoute(clusters) })}
@@ -1704,7 +1728,7 @@ function structuredContentSections(page, lines, pages, clusters) {
   return `<section class="section structured-intro ${mode}-intro" id="tema-1-${slugify(intro.heading)}">
     <div class="section-heading">
       <p class="section-label">${escapeHtml(CONTENT_SECTION_LABELS[page.type] || "Contenido")}</p>
-      <h2>${escapeHtml(intro.heading)}</h2>
+      <h2>${headlineHtml(intro.heading)}</h2>
       ${topicChips(introTopics)}
     </div>
     ${renderServiceIntroPanel(page, intro, introTopics)}
@@ -1906,7 +1930,7 @@ function hero(page, lines) {
   return `<section class="section hero imagen-hero ${page.type}-hero">
     <div class="hero-copy">
       <p class="eyebrow">${eyebrow}</p>
-      <h1>${escapeHtml(page.heroTitle)}</h1>
+      <h1>${headlineHtml(page.heroTitle)}</h1>
       <div class="hero-lede">${paragraphize(lede)}</div>
       <div class="actions">
         <a class="btn primary" href="${WHATSAPP}" target="_blank" rel="noopener">${escapeHtml(PAGE_OVERRIDES[page.route]?.primaryCta || "Agendar diagnóstico")}</a>
@@ -1932,7 +1956,7 @@ function contentSections(page, lines) {
   return `<section class="section content-flow">
     <div class="section-heading">
       <p class="section-label">${escapeHtml(label)}</p>
-      <h2>${escapeHtml(heading)}</h2>
+      <h2>${headlineHtml(heading)}</h2>
     </div>
     <article class="copy-panel lead-panel">${paragraphize(lead, { allowHeadings: true })}</article>
   </section>
@@ -1975,7 +1999,7 @@ function articleReadingMap(page, sections, cluster, pages) {
   return `<section class="section article-reading-map" aria-label="Mapa de lectura">
     <div class="article-map-copy">
       <p class="section-label">${escapeHtml(cluster?.label || "Publicación")}</p>
-      <h2>${escapeHtml(articleMapHeading(cluster))}</h2>
+      <h2>${headlineHtml(articleMapHeading(cluster))}</h2>
       <p>${escapeHtml(page.description || cardDescription(page))}</p>
       ${topicChips(topics)}
     </div>
@@ -2002,7 +2026,7 @@ function renderArticleSection(page, section, index, previousSections, clusterMap
       <span>${String(index + 1).padStart(2, "0")}</span>
       <div>
         <p class="section-label">${escapeHtml(topics[0]?.label || "Lectura")}</p>
-        <h2>${escapeHtml(heading)}</h2>
+        <h2>${headlineHtml(heading)}</h2>
         ${topicChips(topics)}
       </div>
     </div>
@@ -2020,7 +2044,7 @@ function articleStructuredContent(page, lines, pages, clusters) {
   <article class="section article-layout" aria-label="Contenido de la publicación">
     <aside class="article-side-cta">
       <p class="section-label">Ruta relacionada</p>
-      <h2>${escapeHtml(service ? semanticShortLabel(service.route, service.heroTitle) : "Coach de Imagen")}</h2>
+      <h2>${headlineHtml(service ? semanticShortLabel(service.route, service.heroTitle) : "Coach de Imagen")}</h2>
       <p>${escapeHtml(cluster?.description || "Lectura conectada con imagen, presencia y posicionamiento profesional.")}</p>
       ${service ? `<a class="btn primary" href="${service.route}">${escapeHtml(serviceLabel(service.route, pages))}</a>` : `<a class="btn primary" href="${WHATSAPP}" target="_blank" rel="noopener">Agendar diagnóstico</a>`}
     </aside>
@@ -2054,7 +2078,7 @@ function commercialIntentMap(page, model) {
   return `<section class="section commercial-intent-map" aria-label="Mapa de decisión">
     <div class="section-heading compact-heading">
       <p class="section-label">${escapeHtml(model.label || semanticIdentity(page.route)?.entity || "Ruta")}</p>
-      <h2>${escapeHtml(model.heading || "Elige con claridad el proceso que necesitas.")}</h2>
+      <h2>${headlineHtml(model.heading || "Elige con claridad el proceso que necesitas.")}</h2>
       <p>${escapeHtml(model.intro || semanticDescription(page, page.description))}</p>
     </div>
     <div class="intent-card-grid">
@@ -2072,7 +2096,7 @@ function commercialFitGrid(model) {
   return `<section class="section commercial-fit" aria-label="Para quién es">
     <div class="section-heading compact-heading">
       <p class="section-label">Para quién</p>
-      <h2>Cuando este proceso hace sentido.</h2>
+      <h2>${headlineHtml("Cuando este proceso hace sentido.")}</h2>
     </div>
     <div class="fit-grid">
       ${model.fit.map(([label, text]) => `<article class="fit-card">
@@ -2092,7 +2116,7 @@ function commercialWorkflow(page) {
   return `<section class="section commercial-workflow" aria-label="Proceso de trabajo">
     <div class="section-heading compact-heading">
       <p class="section-label">Proceso</p>
-      <h2>${escapeHtml(semanticSupportHeading(page))}.</h2>
+      <h2>${headlineHtml(`${semanticSupportHeading(page)}.`)}</h2>
       <p>Una ruta clara para convertir intención en decisiones aplicables.</p>
     </div>
     <ol class="workflow-track">
@@ -2110,7 +2134,7 @@ function commercialOutcomes(model) {
   return `<section class="section outcome-state-map" aria-label="Resultados">
     <div class="section-heading compact-heading">
       <p class="section-label">Resultados</p>
-      <h2>Lo que la persona o el equipo puede sostener mejor.</h2>
+      <h2>${headlineHtml("Lo que la persona o el equipo puede sostener mejor.")}</h2>
     </div>
     <div class="outcome-grid">
       ${model.outcomes.map((outcome) => `<div class="outcome-card">${topicIcon("decision")}<span>${escapeHtml(outcome)}</span></div>`).join("")}
@@ -2145,7 +2169,7 @@ function commercialMethodNotes(page, model) {
   return `<section class="section commercial-method-notes" aria-label="Cómo se entiende este proceso">
     <div class="section-heading compact-heading">
       <p class="section-label">Enfoque</p>
-      <h2>${escapeHtml(model.label)} con contexto, criterio y aplicación.</h2>
+      <h2>${headlineHtml(`${model.label} con contexto, criterio y aplicación.`)}</h2>
     </div>
     <div class="method-note-grid">
       ${notes.map(([label, text]) => `<article>
@@ -2165,7 +2189,7 @@ function commercialRelatedArticles(model, pages, clusters) {
     <div class="cluster-header">
       <div>
         <p class="section-label">Profundizar</p>
-        <h2>Lecturas para entender el contexto antes de decidir.</h2>
+        <h2>${headlineHtml("Lecturas para entender el contexto antes de decidir.")}</h2>
         <p>El servicio se mantiene claro; la profundidad editorial vive en estas publicaciones.</p>
       </div>
       <a class="btn secondary" href="/imagen-presencia">Ver publicaciones</a>
@@ -2179,7 +2203,7 @@ function commercialFaq(model) {
   return `<section class="section commercial-faq" aria-label="Preguntas clave">
     <div class="section-heading compact-heading">
       <p class="section-label">Preguntas clave</p>
-      <h2>Respuestas directas para elegir con menos fricción.</h2>
+      <h2>${headlineHtml("Respuestas directas para elegir con menos fricción.")}</h2>
     </div>
     <div class="faq-answer-grid compact-faq">
       ${model.faq.map(([question, answer], index) => `<details class="faq-answer-card"${index === 0 ? " open" : ""}>
@@ -2194,7 +2218,7 @@ function ctaBridge(page, label = "Agendar diagnóstico") {
   return `<section class="section cta-bridge" aria-label="Siguiente paso">
     <div>
       <p class="section-label">Siguiente paso</p>
-      <h2>Evalúa si esta ruta corresponde a tu momento.</h2>
+      <h2>${headlineHtml("Evalúa si esta ruta corresponde a tu momento.")}</h2>
       <p>La conversación inicial permite ubicar objetivo, contexto y tipo de acompañamiento antes de elegir un proceso.</p>
     </div>
     <a class="btn primary" href="${WHATSAPP}" target="_blank" rel="noopener">${escapeHtml(label)}</a>
@@ -2228,7 +2252,7 @@ function aboutAuthorityContent() {
   return `<section class="section commercial-intent-map about-authority" aria-label="Autoridad profesional">
     <div class="section-heading compact-heading">
       <p class="section-label">Sobre Sonia</p>
-      <h2>Imagen y presencia para tu siguiente nivel profesional.</h2>
+      <h2>${headlineHtml("Imagen y presencia para tu siguiente nivel profesional.")}</h2>
       <p>Trabajo en la intersección entre imagen, identidad y mentalidad aplicada al contexto profesional para personas, marcas y equipos en Guadalajara, México y LATAM.</p>
     </div>
     <div class="intent-card-grid">
@@ -2240,7 +2264,7 @@ function aboutAuthorityContent() {
   <section class="section commercial-method-notes" aria-label="Enfoque de Sonia">
     <div class="section-heading compact-heading">
       <p class="section-label">Enfoque</p>
-      <h2>Lo interno y lo externo como un sistema.</h2>
+      <h2>${headlineHtml("Lo interno y lo externo como un sistema.")}</h2>
     </div>
     <div class="method-note-grid">
       <article><span>${topicIcon("identidad")}</span><h3>Identidad</h3><p>Cómo te percibes, valoras y decides influye en la forma en que tu imagen comunica.</p></article>
@@ -2251,7 +2275,7 @@ function aboutAuthorityContent() {
   <section class="section outcome-state-map" aria-label="Formación y credenciales">
     <div class="section-heading compact-heading">
       <p class="section-label">Formación</p>
-      <h2>Criterio profesional construido en imagen, empresa, comunicación y psicología de la imagen.</h2>
+      <h2>${headlineHtml("Criterio profesional construido en imagen, empresa, comunicación y psicología de la imagen.")}</h2>
     </div>
     <div class="credential-grid">
       ${credentials.map((item) => `<div>${escapeHtml(item)}</div>`).join("")}
@@ -2322,7 +2346,7 @@ function servicePathSection(pages) {
   return `<section class="section pillar-paths">
     <div class="section-heading">
       <p class="section-label">Servicios</p>
-      <h2>Rutas claras para elegir el proceso que acompaña tu momento.</h2>
+      <h2>${headlineHtml("Rutas claras para elegir el proceso que acompaña tu momento.")}</h2>
     </div>
     <div class="pillar-grid">${pillarCards(pages)}</div>
   </section>`;
@@ -2419,7 +2443,7 @@ function renderSemanticHub(hub, pages, clusters) {
     <section class="section hero imagen-hero hub-hero">
       <div class="hero-copy">
         <p class="eyebrow">${escapeHtml(hub.cluster)}</p>
-        <h1>${escapeHtml(hub.title)}</h1>
+        <h1>${headlineHtml(hub.title)}</h1>
         <div class="hero-lede"><p>${highlightOntologyTerms(hub.description, ONTOLOGY_TOPICS, 4)}</p></div>
         <div class="actions">
           <a class="btn primary" href="${WHATSAPP}" target="_blank" rel="noopener">Agendar diagnóstico</a>
@@ -2434,7 +2458,7 @@ function renderSemanticHub(hub, pages, clusters) {
     <section class="section authority-hub-map">
       <div class="section-heading">
         <p class="section-label">Temas principales</p>
-        <h2>${escapeHtml(hub.title)} en contexto profesional.</h2>
+        <h2>${headlineHtml(`${hub.title} en contexto profesional.`)}</h2>
       </div>
       <div class="hub-term-grid">
         ${hub.terms.map((term) => `<a href="/imagen-presencia"><span>${escapeHtml(term)}</span><small>México · LATAM · liderazgo profesional</small></a>`).join("")}
@@ -2443,7 +2467,7 @@ function renderSemanticHub(hub, pages, clusters) {
     <section class="section services">
       <div class="section-heading">
         <p class="section-label">Servicios relacionados</p>
-        <h2>Procesos conectados con ${escapeHtml(hub.title.toLowerCase())}.</h2>
+        <h2>${headlineHtml(`Procesos conectados con ${hub.title.toLowerCase()}.`)}</h2>
       </div>
       <div class="service-grid">${serviceLinks.map((page) => `<a class="service-card" href="${page.route}">
         <figure><img src="${pickImage(page)}" alt="${escapeHtml(page.heroTitle)}" /></figure>
@@ -2455,7 +2479,7 @@ function renderSemanticHub(hub, pages, clusters) {
     <section class="section journal">
       <div class="section-heading">
         <p class="section-label">Publicaciones relacionadas</p>
-        <h2>Lecturas para profundizar en ${escapeHtml(hub.title.toLowerCase())}.</h2>
+        <h2>${headlineHtml(`Lecturas para profundizar en ${hub.title.toLowerCase()}.`)}</h2>
       </div>
       <div class="publication-grid">${articleCards(relatedArticles, { clusterMap: articleClusterByRoute(clusters) })}</div>
     </section>
@@ -2678,7 +2702,7 @@ function renderComparisonPage(page) {
     <section class="section hero imagen-hero">
       <div class="hero-copy">
         <p class="eyebrow">Comparaciones de categoría</p>
-        <h1>${escapeHtml(page.title)}</h1>
+        <h1>${headlineHtml(page.title)}</h1>
         <div class="hero-lede"><p>${escapeHtml(page.description)}</p></div>
         <div class="actions">
           <a class="btn primary" href="${WHATSAPP}" target="_blank" rel="noopener">Agendar diagnóstico estratégico</a>
@@ -2694,7 +2718,7 @@ function renderComparisonPage(page) {
     <section class="section comparison-positioning">
       <div class="section-heading">
         <p class="section-label">Contexto</p>
-        <h2>Una reflexión sobre cómo evolucionó la imagen profesional.</h2>
+        <h2>${headlineHtml("Una reflexión sobre cómo evolucionó la imagen profesional.")}</h2>
       </div>
       ${comparisonIntro(page)}
       ${comparisonIndicators(page)}
@@ -2702,7 +2726,7 @@ function renderComparisonPage(page) {
     <section class="section comparison-ladder">
       <div class="section-heading">
         <p class="section-label">Diferenciador</p>
-        <h2>Qué hace diferente este enfoque.</h2>
+        <h2>${headlineHtml("Qué hace diferente este enfoque.")}</h2>
       </div>
       <div class="copy-panel editorial-copy">
         <p>La imagen deja de trabajarse únicamente desde apariencia y comienza a construirse desde presencia profesional, liderazgo interno, claridad personal, percepción estratégica, comunicación, seguridad interna y posicionamiento profesional.</p>
@@ -2714,14 +2738,14 @@ function renderComparisonPage(page) {
     <section class="section comparison-matrix">
       <div class="section-heading">
         <p class="section-label">Comparativa</p>
-        <h2>Diferencias de enfoque y metodología.</h2>
+        <h2>${headlineHtml("Diferencias de enfoque y metodología.")}</h2>
       </div>
       ${comparisonTable()}
     </section>
     <section class="section comparison-related">
       <div class="section-heading">
         <p class="section-label">${isHub ? "Enfoques" : "Lectura relacionada"}</p>
-        <h2>${isHub ? "Diferentes formas de entender la imagen profesional." : "Más formas de entender esta evolución."}</h2>
+        <h2>${headlineHtml(isHub ? "Diferentes formas de entender la imagen profesional." : "Más formas de entender esta evolución.")}</h2>
       </div>
       <div class="comparison-grid">${comparisonCards(page.route)}</div>
     </section>
@@ -2739,7 +2763,7 @@ function homeExtras(pages, clusters) {
   <section class="section journal">
     <div class="section-heading">
       <p class="section-label">Publicaciones</p>
-      <h2>Lecturas para entender imagen, presencia y liderazgo.</h2>
+      <h2>${headlineHtml("Lecturas para entender imagen, presencia y liderazgo.")}</h2>
     </div>
     <div class="publication-grid">${articleCards(pages, { limit: 6, clusterMap })}</div>
   </section>`;
@@ -2750,7 +2774,7 @@ function indexExtras(pages, clusters) {
   return `<section class="section publication-guide" aria-label="Guía de publicaciones">
     <div class="section-heading compact-heading">
       <p class="section-label">Centro editorial</p>
-      <h2>Elige una línea de lectura según lo que necesitas comprender.</h2>
+      <h2>${headlineHtml("Elige una línea de lectura según lo que necesitas comprender.")}</h2>
       <p>Las publicaciones conservan la profundidad de Sonia; esta página organiza el acceso por intención para no convertir el archivo en una lista pesada.</p>
     </div>
     <div class="article-cluster-nav">
@@ -2767,7 +2791,7 @@ function indexExtras(pages, clusters) {
       <div class="cluster-header">
         <div>
           <p class="section-label">Ruta de lectura</p>
-          <h2>${escapeHtml(cluster.label)}</h2>
+          <h2>${headlineHtml(cluster.label)}</h2>
           <p>${escapeHtml(cluster.description)}</p>
         </div>
         <a class="btn secondary" href="${cluster.primaryService}">${escapeHtml(serviceLabel(cluster.primaryService, pages))}</a>
@@ -2789,7 +2813,7 @@ function serviceExtras(page, pages, clusters) {
   return `<section class="section related-path">
     <div class="section-heading">
       <p class="section-label">Contenido relacionado</p>
-      <h2>Lecturas que apoyan este proceso.</h2>
+      <h2>${headlineHtml("Lecturas que apoyan este proceso.")}</h2>
     </div>
   </section>
   ${clusterSections(pages, relatedClusters, { limitPerCluster: 3 })}`;
@@ -2809,7 +2833,7 @@ function articleExtras(page, pages, clusters) {
     <div class="cluster-header">
       <div>
         <p class="section-label">${escapeHtml(cluster.label)}</p>
-        <h2>Continúa con una ruta práctica.</h2>
+        <h2>${headlineHtml("Continúa con una ruta práctica.")}</h2>
         <p>${escapeHtml(cluster.description)}</p>
       </div>
       <a class="btn primary" href="${cluster.primaryService}">${escapeHtml(serviceLabel(cluster.primaryService, pages))}</a>
