@@ -2955,7 +2955,7 @@ function globalSchemaStack() {
     url: SITE_URL,
     image: `${SITE_URL}/assets/797aeda1281e5d5e.png`,
     telephone: CONTACT.phone,
-    email: "contact@coachdeimagen.com",
+    email: "sonia@coachdeimagen.com",
     priceRange: "$$$",
     address: {
       "@type": "PostalAddress",
@@ -5644,7 +5644,7 @@ async function writeAgentFiles(pages, clusters) {
     auth: { type: "none" },
     api: { type: "openapi", url: `${SITE_URL}/openapi.json` },
     logo_url: `${SITE_URL}/assets/sonia-logo-ai.png`,
-    contact_email: "contact@coachdeimagen.com",
+    contact_email: "sonia@coachdeimagen.com",
     legal_info_url: `${SITE_URL}/contacto/`,
   });
   await writeJson(".well-known/agent-skills.json", agentSkillsAgent());

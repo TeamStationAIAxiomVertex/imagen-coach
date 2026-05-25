@@ -62,6 +62,12 @@ wrangler kv namespace create CONTACT_RATE_LIMIT --preview
 
 Use Resend domain verification for `send.coachdeimagen.com`. Add SPF, DKIM and DMARC records in Cloudflare DNS exactly as provided by Resend.
 
+## Cloudflare Email Routing
+
+`sonia@coachdeimagen.com` is the receiving inbox identity and forwards to Sonia's Gmail through Cloudflare Email Routing. This is the correct value for `LEAD_TO_EMAIL`.
+
+Cloudflare Email Routing is inbound forwarding. It does not replace the outbound sender needed by the contact form. The Pages Function still requires a verified Resend sender and `RESEND_API_KEY` to deliver form submissions.
+
 Recommended sender:
 
 ```txt
