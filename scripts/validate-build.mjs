@@ -7,6 +7,7 @@ const strategy = JSON.parse(await readFile("content/strategy/article-clusters.js
 const failures = [];
 const SITE_URL = "https://coachdeimagen.com";
 const LEGACY_SITE_URL = "https://imagencoach.com";
+const SOCIAL_CARD_VERSION = "v2";
 const routeSet = new Set(manifest.pages.map((page) => page.route));
 const pillarRoutes = new Set([
   "/imagen-presencia/rebranding-imagen-mentalidad-abundancia",
@@ -309,8 +310,8 @@ for (const file of htmlFiles) {
     if (descriptionText.length < 50) failures.push(`Meta description too short in ${file}: ${descriptionText.length} characters`);
   }
   const socialSlug = route === "/" ? "inicio" : route.replace(/^\/+|\/+$/g, "").replace(/[^a-z0-9]+/gi, "-").replace(/^-+|-+$/g, "").toLowerCase();
-  const expectedSocialImage = `${SITE_URL}/assets/social/${socialSlug}.png`;
-  const socialImagePath = path.join("dist", "assets", "social", `${socialSlug}.png`);
+  const expectedSocialImage = `${SITE_URL}/assets/social/${socialSlug}-${SOCIAL_CARD_VERSION}.png`;
+  const socialImagePath = path.join("dist", "assets", "social", `${socialSlug}-${SOCIAL_CARD_VERSION}.png`);
   for (const socialTag of [
     '<meta name="twitter:card" content="summary_large_image" />',
     '<meta name="twitter:title"',

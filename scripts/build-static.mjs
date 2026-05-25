@@ -13,6 +13,7 @@ const LEGACY_SITE_URL = "https://imagencoach.com";
 const BRAND_NAME = "Coach De Imagen";
 const ASSET_VERSION = "20260523-semantic-authority-v1";
 const SCRIPT_VERSION = "20260525-webmcp-registertool-v1";
+const SOCIAL_CARD_VERSION = "v2";
 const WHATSAPP = "https://wa.me/526646105348?text=Hola%20Sonia%2C%20me%20interesa%20agendar%20un%20diagn%C3%B3stico.";
 const CONTACT = {
   phone: "+52 664 610 5348",
@@ -1375,32 +1376,44 @@ function wrapSvgText(text = "", maxChars = 28, maxLines = 3) {
 }
 
 function socialCardSvg({ title, description, kicker, route, logoBase64, iconBase64 }) {
-  const titleLines = wrapSvgText(title, 23, 3);
-  const descriptionLines = wrapSvgText(description, 45, 2);
-  const titleTspans = titleLines.map((line, index) => `<tspan x="88" dy="${index === 0 ? 0 : 68}">${escapeHtml(line)}</tspan>`).join("");
+  const titleLines = wrapSvgText(title, 21, 4);
+  const titleFontSize = titleLines.length >= 4 ? 51 : titleLines.length === 3 ? 56 : 60;
+  const titleLineHeight = titleLines.length >= 4 ? 54 : 61;
+  const titleY = titleLines.length >= 4 ? 252 : 278;
+  const descriptionY = Math.min(506, titleY + (titleLines.length - 1) * titleLineHeight + 58);
+  const descriptionLines = wrapSvgText(description, 39, titleLines.length >= 4 ? 2 : 3);
+  const titleTspans = titleLines.map((line, index) => `<tspan x="88" dy="${index === 0 ? 0 : titleLineHeight}">${escapeHtml(line)}</tspan>`).join("");
   const descriptionTspans = descriptionLines.map((line, index) => `<tspan x="88" dy="${index === 0 ? 0 : 31}">${escapeHtml(line)}</tspan>`).join("");
   return `<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <clipPath id="socialTextSafeArea">
+      <rect x="88" y="174" width="706" height="364" rx="0"/>
+    </clipPath>
+  </defs>
   <rect width="1200" height="630" fill="#F6F3F7"/>
   <rect x="34" y="32" width="1132" height="566" rx="26" fill="#FBFAFB" stroke="#DAD5DD" stroke-width="2"/>
   <rect x="64" y="64" width="1072" height="502" rx="18" fill="#F8F9F7" stroke="#C9DACE" stroke-width="1.5"/>
   <rect x="64" y="64" width="10" height="502" rx="5" fill="#8D4A9A"/>
-  <rect x="838" y="64" width="298" height="502" rx="18" fill="#205C40"/>
-  <rect x="862" y="88" width="250" height="454" rx="14" fill="#276A4B" stroke="#86AF99" stroke-width="1"/>
-  <circle cx="987" cy="168" r="78" fill="#F8F9F7" stroke="#C9DACE" stroke-width="2"/>
-  <circle cx="987" cy="168" r="50" fill="#FBFAFB" stroke="#D8C5DE" stroke-width="2"/>
-  <image href="data:image/svg+xml;base64,${iconBase64}" x="948" y="129" width="78" height="78" preserveAspectRatio="xMidYMid meet"/>
+  <rect x="826" y="64" width="1.5" height="502" fill="#DAD5DD"/>
+  <rect x="856" y="64" width="280" height="502" rx="18" fill="#205C40"/>
+  <rect x="878" y="88" width="236" height="454" rx="14" fill="#276A4B" stroke="#86AF99" stroke-width="1"/>
+  <circle cx="996" cy="166" r="78" fill="#F8F9F7" stroke="#C9DACE" stroke-width="2"/>
+  <circle cx="996" cy="166" r="50" fill="#FBFAFB" stroke="#D8C5DE" stroke-width="2"/>
+  <image href="data:image/svg+xml;base64,${iconBase64}" x="957" y="127" width="78" height="78" preserveAspectRatio="xMidYMid meet"/>
   <image href="data:image/png;base64,${logoBase64}" x="88" y="82" width="330" height="78" preserveAspectRatio="xMinYMid meet"/>
   <text x="88" y="214" fill="#216448" font-family="Inter, Arial, sans-serif" font-size="21" font-weight="800" letter-spacing="5">${escapeHtml(kicker.toUpperCase())}</text>
-  <text x="88" y="294" fill="#2F3440" font-family="Cormorant Garamond, Georgia, serif" font-size="61" font-weight="600" letter-spacing="0">${titleTspans}</text>
-  <text x="88" y="492" fill="#67616B" font-family="Inter, Arial, sans-serif" font-size="23" font-weight="400">${descriptionTspans}</text>
+  <g clip-path="url(#socialTextSafeArea)">
+    <text x="88" y="${titleY}" fill="#2F3440" font-family="Cormorant Garamond, Georgia, serif" font-size="${titleFontSize}" font-weight="600" letter-spacing="0">${titleTspans}</text>
+    <text x="88" y="${descriptionY}" fill="#67616B" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="400">${descriptionTspans}</text>
+  </g>
   <text x="88" y="552" fill="#216448" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800" letter-spacing="3">COACHDEIMAGEN.COM</text>
-  <text x="987" y="294" text-anchor="middle" fill="#FBFAFB" font-family="Cormorant Garamond, Georgia, serif" font-size="34" font-weight="500">Sonia McRorey</text>
-  <text x="987" y="332" text-anchor="middle" fill="#D7C5DE" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="800" letter-spacing="3">COACH DE IMAGEN</text>
-  <line x1="902" y1="366" x2="1072" y2="366" stroke="#86AF99" stroke-width="1"/>
-  <text x="987" y="406" text-anchor="middle" fill="#FBFAFB" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="700">Imagen · Presencia</text>
-  <text x="987" y="438" text-anchor="middle" fill="#FBFAFB" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="700">Liderazgo profesional</text>
-  <rect x="900" y="478" width="174" height="42" rx="21" fill="#F8F9F7"/>
-  <text x="987" y="505" text-anchor="middle" fill="#205C40" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="800" letter-spacing="2">MÉXICO · LATAM</text>
+  <text x="996" y="294" text-anchor="middle" fill="#FBFAFB" font-family="Cormorant Garamond, Georgia, serif" font-size="31" font-weight="500">Sonia McRorey</text>
+  <text x="996" y="332" text-anchor="middle" fill="#D7C5DE" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="800" letter-spacing="3">COACH DE IMAGEN</text>
+  <line x1="914" y1="366" x2="1078" y2="366" stroke="#86AF99" stroke-width="1"/>
+  <text x="996" y="406" text-anchor="middle" fill="#FBFAFB" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="700">Imagen · Presencia</text>
+  <text x="996" y="438" text-anchor="middle" fill="#FBFAFB" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="700">Liderazgo profesional</text>
+  <rect x="912" y="478" width="168" height="42" rx="21" fill="#F8F9F7"/>
+  <text x="996" y="505" text-anchor="middle" fill="#205C40" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="800" letter-spacing="2">MÉXICO · LATAM</text>
 </svg>`;
 }
 
@@ -1890,7 +1903,7 @@ function routeSlug(route = "/") {
 }
 
 function socialCardPath(route = "/") {
-  return `/assets/social/${routeSlug(route)}.png`;
+  return `/assets/social/${routeSlug(route)}-${SOCIAL_CARD_VERSION}.png`;
 }
 
 function metaDescriptionForPage(page, fallback = "") {
