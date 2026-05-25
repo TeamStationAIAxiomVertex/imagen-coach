@@ -178,12 +178,35 @@ const PAGE_OVERRIDES = {
   },
 };
 const ROUTE_IMAGE_OVERRIDES = {
+  "/": "/assets/797aeda1281e5d5e.png",
+  "/servicios-asesoria-de-imagen-coaching": "/assets/a03a3c39b341463a.jpg",
+  "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen": "/assets/09987756d47df368.webp",
+  "/servicios-asesoria-de-imagen-coaching/talleres": "/assets/797aeda1281e5d5e.png",
+  "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia": "/assets/sonia-mcrorey-about-760.avif",
+  "/sobre-sonia-mcrorey-asesora-de-imagen": "/assets/sonia-mcrorey-about-760.avif",
+  "/imagen-profesional": "/assets/00510af3bb9f4e03.jpg",
+  "/presencia-ejecutiva": "/assets/797aeda1281e5d5e.png",
+  "/liderazgo": "/assets/205ebbd87f0d84e6.jpg",
+  "/comunicacion-no-verbal": "/assets/205ebbd87f0d84e6.jpg",
+  "/mentalidad": "/assets/sonia-mcrorey-about-760.avif",
+  "/empresarias": "/assets/197a202b3e5022be.jpg",
+  "/imagen-estrategica": "/assets/57f2c54cee517d06.jpg",
+  "/imagen-presencia": "/assets/797aeda1281e5d5e.png",
   "/imagen-presencia/beneficios-de-asesoria-de-imagen": "/assets/5ac09d77d814f447.jpg",
   "/imagen-presencia/la-importancia-de-tu-imagen-personal": "/assets/latina-profesional-espejo-coach-de-imagen.png",
   "/imagen-presencia/rebranding-imagen-mentalidad-abundancia": "/assets/sonia-mcrorey-about-760.avif",
+  "/imagen-presencia/tu-color-tu-poder-el-impacto-de-la-colorimetria": "/assets/7e91c2f7d6fb729a.jpg",
+  "/imagen-presencia/la-ciencia-del-color-en-tu-imagen": "/assets/7e91c2f7d6fb729a.jpg",
+  "/imagen-presencia/aprende-a-resaltar-tus-proporciones": "/assets/c1061137aa6130ed.jpg",
   "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen": "/assets/7ace6f0d3687c214.jpg",
   "/servicios-asesoria-de-imagen-coaching/preguntas-frequentes": "/assets/619a89970f5d1790.jpg",
 };
+const HERO_REJECTED_IMAGE_STEMS = new Set([
+  "a1659cc99df8e64c", // generic stock headshot, not Sonia's positioning.
+  "fa5935c4970dc82a", // video-call screenshot, weak as premium hero media.
+  "3d87f9c0beaeac46", // rotated body-care image, wrong category signal.
+  "sonia-twitter-card",
+]);
 const COMMERCIAL_PAGE_MODELS = {
   "/servicios-asesoria-de-imagen-coaching/talleres": {
     label: "Imagen empresarial",
@@ -454,7 +477,7 @@ const SEMANTIC_HUBS = [
     title: "Presencia Ejecutiva",
     description: "Guía editorial para desarrollar presencia ejecutiva, liderazgo visible, confianza profesional y autoridad desde una imagen coherente y estratégica.",
     cluster: "Imagen Profesional",
-    image: "/assets/197a202b3e5022be.jpg",
+    image: "/assets/797aeda1281e5d5e.png",
     terms: ["presencia ejecutiva", "presencia profesional", "liderazgo visible", "autoridad profesional", "confianza ejecutiva"],
     services: ["/servicios-asesoria-de-imagen-coaching/coaching-de-imagen", "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen"],
   },
@@ -472,7 +495,7 @@ const SEMANTIC_HUBS = [
     title: "Comunicación No Verbal",
     description: "Recursos sobre comunicación no verbal, lenguaje corporal ejecutivo, presencia al hablar y autoridad al comunicar para contextos profesionales.",
     cluster: "Comunicación",
-    image: "/assets/335a6b7f7fe1585b.jpg",
+    image: "/assets/205ebbd87f0d84e6.jpg",
     terms: ["comunicación no verbal", "lenguaje corporal ejecutivo", "presencia al hablar", "autoridad al comunicar"],
     services: ["/servicios-asesoria-de-imagen-coaching/talleres", "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen"],
   },
@@ -481,7 +504,7 @@ const SEMANTIC_HUBS = [
     title: "Mentalidad y Presencia",
     description: "Lecturas y procesos sobre identidad profesional, seguridad interna, sistema nervioso, confianza ejecutiva y presencia sostenible.",
     cluster: "Mentalidad y Presencia",
-    image: "/assets/3d87f9c0beaeac46.jpg",
+    image: "/assets/sonia-mcrorey-about-760.avif",
     terms: ["mentalidad", "identidad profesional", "seguridad interna", "sistema nervioso", "confianza ejecutiva"],
     services: ["/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia", "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen"],
   },
@@ -490,7 +513,7 @@ const SEMANTIC_HUBS = [
     title: "Mujeres Empresarias",
     description: "Contenido para mujeres empresarias, fundadoras, directoras y profesionales que quieren sostener autoridad, imagen estratégica y liderazgo visible.",
     cluster: "Liderazgo Empresarial",
-    image: "/assets/5212502709f47db5.jpg",
+    image: "/assets/197a202b3e5022be.jpg",
     terms: ["mujeres empresarias", "fundadoras", "directoras", "autoridad profesional", "liderazgo empresarial"],
     services: ["/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen", "/servicios-asesoria-de-imagen-coaching/talleres"],
   },
@@ -1950,18 +1973,16 @@ function isEditorialSourcePage(page) {
 }
 
 function pickImage(page) {
-  if (ROUTE_IMAGE_OVERRIDES[page.route]) return ROUTE_IMAGE_OVERRIDES[page.route];
-  if (page.route === "/" && existsSync(rootPath("assets/797aeda1281e5d5e.png"))) {
-    return "/assets/797aeda1281e5d5e.png";
-  }
-  if (page.route === "/sobre-sonia-mcrorey-asesora-de-imagen" && existsSync(rootPath("assets/sonia-mcrorey-about-760.avif"))) {
-    return "/assets/sonia-mcrorey-about-760.avif";
-  }
-  const candidates = usableImages(page);
+  const override = ROUTE_IMAGE_OVERRIDES[page.route];
+  if (override && existsSync(rootPath(override.slice(1)))) return override;
+  const candidates = heroSafeImages(page);
+  const fallback = contextualHeroFallback(page);
+  if (!isEditorialSourcePage(page) && fallback && existsSync(rootPath(fallback.slice(1)))) return fallback;
   const first =
     candidates.find((image) => /\.(jpe?g|webp)$/i.test(image.local_path) && Number(image.bytes || 0) > 50000) ||
     candidates.find((image) => /\.png$/i.test(image.local_path) && Number(image.bytes || 0) > 100000) ||
     candidates[0];
+  if (!first && fallback && existsSync(rootPath(fallback.slice(1)))) return fallback;
   if (!first) return "/assets/sonia-twitter-card.png";
   return `/assets/${path.basename(first.local_path)}`;
 }
@@ -1970,6 +1991,45 @@ function usableImages(page) {
   return (page.images || [])
     .filter((image) => image.local_path && /\.(jpe?g|png|webp)$/i.test(image.local_path))
     .filter((image) => Number(image.bytes || 0) >= 50000);
+}
+
+function publicAssetPathFromLocal(localPath) {
+  return `/assets/${path.basename(localPath)}`;
+}
+
+function imageStem(src) {
+  return path.basename(src, path.extname(src));
+}
+
+function isRejectedHeroImage(publicPath) {
+  const stem = imageStem(publicPath);
+  if (HERO_REJECTED_IMAGE_STEMS.has(stem)) return true;
+  const dimensions = IMAGE_DIMENSIONS.get(publicPath);
+  if (!dimensions) return false;
+  const ratio = dimensions.width / Math.max(dimensions.height, 1);
+  const isWideGraphic = ratio >= 1.62 && dimensions.width >= 900 && dimensions.height <= 760;
+  const isLargePngGraphic = /\.png$/i.test(publicPath) && dimensions.width >= 1000 && dimensions.height <= 760;
+  return isWideGraphic || isLargePngGraphic;
+}
+
+function heroSafeImages(page) {
+  const safe = usableImages(page).filter((image) => !isRejectedHeroImage(publicAssetPathFromLocal(image.local_path)));
+  return safe.length ? safe : usableImages(page).filter((image) => !HERO_REJECTED_IMAGE_STEMS.has(imageStem(image.local_path)));
+}
+
+function contextualHeroFallback(page) {
+  const route = page.route || "";
+  const text = `${route} ${page.heroTitle || page.title || ""} ${page.description || ""}`.toLowerCase();
+  if (route.startsWith("/servicios-asesoria-de-imagen-coaching/talleres") || /taller|equipo|empresa|colaborador|marca/.test(text)) {
+    return "/assets/797aeda1281e5d5e.png";
+  }
+  if (/color|colorimetr/.test(text)) return "/assets/7e91c2f7d6fb729a.jpg";
+  if (/proporci[oó]n|silueta|cuerpo|estilo personal/.test(text)) return "/assets/c1061137aa6130ed.jpg";
+  if (/asesor[ií]a|guardarropa|closet|cl[oó]set|imagen profesional/.test(text)) return "/assets/7ace6f0d3687c214.jpg";
+  if (/comunicaci[oó]n|lenguaje corporal|liderazgo|conferencia|presencia ejecutiva/.test(text)) return "/assets/205ebbd87f0d84e6.jpg";
+  if (/seguridad|mentalidad|sistema nervioso|posicionamiento|rebranding|identidad/.test(text)) return "/assets/sonia-mcrorey-about-760.avif";
+  if (route.startsWith("/imagen-presencia/")) return "/assets/09987756d47df368.webp";
+  return null;
 }
 
 function routeOutputPath(route) {

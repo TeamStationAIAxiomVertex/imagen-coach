@@ -47,6 +47,12 @@ const comparisonHeroAssets = [
   "dist/assets/generated/comparison-imagen-corporativa-presencia-humana.jpg",
   "dist/assets/generated/comparison-evolucion-coaching-imagen-latam.jpg",
 ];
+const rejectedHeroImageStems = [
+  "a1659cc99df8e64c",
+  "fa5935c4970dc82a",
+  "3d87f9c0beaeac46",
+  "sonia-twitter-card",
+];
 const requiredExecutiveTerms = [
   "coaching de imagen",
   "coaching de imagen con estructura interna",
@@ -248,6 +254,9 @@ for (const file of htmlFiles) {
     const heroSrc = heroImgAttrs.match(/\bsrc="([^"]+)"/)?.[1] || "";
     if (/\.(jpe?g|png|webp)$/i.test(heroSrc) && !heroSrc.startsWith("/assets/optimized/") && !heroSrc.includes("sonia-logo")) {
       failures.push(`Hero raster image is not using optimized delivery in ${file}: ${heroSrc}`);
+    }
+    for (const rejectedStem of rejectedHeroImageStems) {
+      if (heroSrc.includes(rejectedStem)) failures.push(`Rejected hero image leaked into ${file}: ${heroSrc}`);
     }
   }
   const structuredIntroCount = (html.match(/class="[^"]*\bstructured-intro\b/g) || []).length;
