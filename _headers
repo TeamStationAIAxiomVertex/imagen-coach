@@ -48,6 +48,12 @@
 /.well-known/oauth-protected-resource
   Content-Type: application/json; charset=utf-8
 
+/.well-known/oauth-not-enabled
+  Content-Type: application/json; charset=utf-8
+
+/.well-known/jwks.json
+  Content-Type: application/json; charset=utf-8
+
 /.well-known/agent-skills/index.json
   Content-Type: application/json; charset=utf-8
 

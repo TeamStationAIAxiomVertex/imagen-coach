@@ -364,6 +364,8 @@ const requiredAgentFiles = [
   "dist/.well-known/oauth-authorization-server",
   "dist/.well-known/openid-configuration",
   "dist/.well-known/oauth-protected-resource",
+  "dist/.well-known/oauth-not-enabled",
+  "dist/.well-known/jwks.json",
   "dist/agent/site-profile.json",
   "dist/agent/services.json",
   "dist/agent/contact.json",

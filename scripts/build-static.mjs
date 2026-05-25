@@ -5180,8 +5180,15 @@ function mcpServerCard() {
     homepage: SITE_URL,
     transport: {
       type: "static-resource-discovery",
+      endpoint: `${SITE_URL}/.well-known/mcp.json`,
       endpoints: [],
     },
+    transports: [
+      {
+        type: "static-resource-discovery",
+        endpoint: `${SITE_URL}/.well-known/mcp.json`,
+      },
+    ],
     capabilities: {
       tools: false,
       resources: true,
@@ -5222,6 +5229,7 @@ function httpMessageSignaturesDirectory() {
 function oauthAuthorizationServer() {
   return {
     issuer: SITE_URL,
+    jwks_uri: `${SITE_URL}/.well-known/jwks.json`,
     service_documentation: `${SITE_URL}/openapi.json`,
     scopes_supported: ["public:read", "contact:intake"],
     response_types_supported: [],
@@ -5236,6 +5244,16 @@ function oauthAuthorizationServer() {
   };
 }
 
+function oauthNotEnabled() {
+  return {
+    status: "oauth-not-enabled",
+    reason:
+      "Coach De Imagen exposes public static content and a validated contact intake endpoint. No protected OAuth resource is required for current public discovery.",
+    documentation: `${SITE_URL}/openapi.json`,
+    contact: `${SITE_URL}${CONTACT_ROUTE}`,
+  };
+}
+
 function oauthProtectedResource() {
   return {
     resource: SITE_URL,
@@ -5244,6 +5262,14 @@ function oauthProtectedResource() {
     resource_documentation: `${SITE_URL}/openapi.json`,
     bearer_methods_supported: [],
     status: "public-content-and-contact-intake-no-bearer-token-required",
+  };
+}
+
+function jwksDocument() {
+  return {
+    keys: [],
+    status: "no-public-signing-keys",
+    documentation: `${SITE_URL}/openapi.json`,
   };
 }
 
@@ -5279,6 +5305,8 @@ function openApiDoc(pages) {
     "/.well-known/oauth-authorization-server": "Get OAuth authorization server metadata.",
     "/.well-known/openid-configuration": "Get OIDC-compatible public discovery metadata.",
     "/.well-known/oauth-protected-resource": "Get OAuth protected resource metadata.",
+    "/.well-known/oauth-not-enabled": "Get current OAuth availability status.",
+    "/.well-known/jwks.json": "Get JSON Web Key Set metadata for discovery.",
     "/.well-known/a2a.json": "Get A2A availability status.",
     "/.well-known/webmcp.json": "Get WebMCP availability status.",
     "/entities.json": "Get root entity, buyer entities, GEO entities and semantic guardrails.",
@@ -5519,6 +5547,8 @@ async function writeAgentFiles(pages, clusters) {
   await writeJson(".well-known/oauth-authorization-server", oauthAuthorizationServer());
   await writeJson(".well-known/openid-configuration", oauthAuthorizationServer());
   await writeJson(".well-known/oauth-protected-resource", oauthProtectedResource());
+  await writeJson(".well-known/oauth-not-enabled", oauthNotEnabled());
+  await writeJson(".well-known/jwks.json", jwksDocument());
   await writeJson(".well-known/a2a.json", unavailableProtocol("A2A", "/.well-known/a2a.json"));
   await writeJson(".well-known/webmcp.json", unavailableProtocol("WebMCP", "/.well-known/webmcp.json"));
   await writeJson("agent/site-profile.json", siteProfileAgent(pages));
