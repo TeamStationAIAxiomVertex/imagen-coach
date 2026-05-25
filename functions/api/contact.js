@@ -5,6 +5,7 @@ const MIN_FORM_TIME_MS = 2500;
 const MAX_FORM_TIME_MS = 24 * 60 * 60 * 1000;
 const RATE_LIMIT_WINDOW_SECONDS = 15 * 60;
 const RATE_LIMIT_MAX = 6;
+const DEFAULT_LEAD_TO_EMAIL = "sonia@coachdeimagen.com";
 const DEFAULT_RESEND_FROM_EMAIL = "no-reply@send.coachdeimagen.com";
 const DISPOSABLE_EMAIL_DOMAINS = new Set([
   "10minutemail.com",
@@ -171,7 +172,7 @@ function emailHtml(lead, summary, leadId, timestamp) {
 }
 
 async function sendLeadEmail(env, lead, summary, leadId, timestamp) {
-  const to = env.LEAD_TO_EMAIL;
+  const to = env.LEAD_TO_EMAIL || DEFAULT_LEAD_TO_EMAIL;
   const from = env.RESEND_FROM_EMAIL || DEFAULT_RESEND_FROM_EMAIL;
   if (!env.RESEND_API_KEY || !to) throw new Error("email_configuration_missing");
   const resend = new Resend(env.RESEND_API_KEY);
@@ -232,7 +233,8 @@ export async function onRequestGet({ env }) {
   return json({
     ok: true,
     endpoint: "/api/contact",
-    email_configured: Boolean(env.RESEND_API_KEY && env.LEAD_TO_EMAIL),
+    email_configured: Boolean(env.RESEND_API_KEY),
+    lead_to_email: env.LEAD_TO_EMAIL || DEFAULT_LEAD_TO_EMAIL,
     ai_concierge_configured: Boolean(env.OPENAI_API_KEY && env.OPENAI_MODEL),
   });
 }

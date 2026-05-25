@@ -459,8 +459,42 @@ const MASTER_ONTOLOGY = {
       route: "/comunicacion-no-verbal",
       subentities: ["comunicación no verbal", "lenguaje corporal ejecutivo", "presencia al hablar", "autoridad al comunicar", "posicionamiento visible"],
     },
+    {
+      name: "GEO LATAM",
+      route: "/mexico",
+      subentities: ["coach de imagen México", "presencia ejecutiva LATAM", "imagen profesional Guadalajara", "imagen ejecutiva femenina", "mercados hispanohablantes"],
+    },
+    {
+      name: "Autoridad metodológica",
+      route: "/metodo-sonia-mcrorey",
+      subentities: ["Método Sonia McRorey", "Sistema de Presencia Profesional", "Framework de Liderazgo Visible", "Modelo de Imagen Estratégica"],
+    },
   ],
-  latamEntities: ["Guadalajara", "CDMX", "Monterrey", "Querétaro", "Tijuana", "Zapopan", "México", "LATAM", "Empresarios en México", "Liderazgo empresarial LATAM"],
+  latamEntities: [
+    "México",
+    "Guadalajara",
+    "CDMX",
+    "Monterrey",
+    "Querétaro",
+    "Zapopan",
+    "Colombia",
+    "Bogotá",
+    "Medellín",
+    "Argentina",
+    "Buenos Aires",
+    "Chile",
+    "Santiago",
+    "Perú",
+    "Lima",
+    "Ecuador",
+    "Uruguay",
+    "Costa Rica",
+    "Panamá",
+    "República Dominicana",
+    "Miami Hispanos",
+    "LATAM",
+    "Mercados hispanohablantes",
+  ],
   buyerEntities: ["empresarios", "directivos", "líderes", "profesionistas", "ejecutivos", "mujeres líderes", "dueños de negocio", "equipos corporativos", "mujeres ejecutivas en LATAM"],
 };
 const SEMANTIC_HUBS = [
@@ -699,6 +733,385 @@ const COMPARISON_DEFINITIONS = [
     definition: "La base desde la que una persona sostiene visibilidad, decisiones y liderazgo sin sobreactuar su imagen.",
   },
 ];
+const GEO_SERVICE_LINKS = [
+  "/servicios-asesoria-de-imagen-coaching",
+  "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen",
+  "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen",
+  "/servicios-asesoria-de-imagen-coaching/talleres",
+  "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia",
+];
+const GEO_HUB_LINKS = [
+  "/imagen-profesional",
+  "/presencia-ejecutiva",
+  "/imagen-estrategica",
+  "/liderazgo",
+  "/comunicacion-no-verbal",
+  "/empresarias",
+];
+const GEO_PUBLICATION_LINKS = [
+  "/imagen-presencia/presencia-profesional-estrategica",
+  "/imagen-presencia/imagen-profesional-segun-industria-y-personalidad",
+  "/imagen-presencia/imagen-identidad-liderazgo",
+  "/imagen-presencia/mas-dinero-capacidad-interna-liderazgo-presencia",
+];
+const GEO_COMPARISON_LINKS = [
+  "/comparaciones/evolucion-coaching-imagen-mexico-latam",
+  "/comparaciones/coaching-de-imagen-vs-consultoria-tradicional",
+  "/comparaciones/styling-vs-coaching-de-imagen",
+];
+const GEO_COUNTRY_MARKETS = [
+  {
+    route: "/mexico",
+    name: "México",
+    country: "México",
+    tier: "Tier 1",
+    languagePattern: "imagen profesional, presencia ejecutiva, empresarias, seguridad profesional y liderazgo visible",
+    context: "México concentra búsquedas de asesoría de imagen, presencia ejecutiva e imagen profesional con una intención cada vez más conectada a liderazgo, credibilidad, marca personal y crecimiento empresarial.",
+    buyer: "Empresarias, directoras, fundadoras, consultoras, profesionistas y equipos que necesitan proyectar autoridad sin perder cercanía ni criterio humano.",
+    tension: "La persona ya tiene experiencia, pero su imagen, comunicación o seguridad visible no siempre reflejan el nivel que sostiene.",
+    localSignal: "Desde su base en Guadalajara, Sonia trabaja con clientes en México de forma presencial, en línea y en proyectos corporativos.",
+    relatedMarkets: ["/guadalajara", "/cdmx", "/monterrey", "/queretaro", "/puebla", "/merida", "/tijuana", "/san-pedro-garza-garcia", "/zapopan", "/leon", "/aguascalientes"],
+  },
+  {
+    route: "/colombia",
+    name: "Colombia",
+    country: "Colombia",
+    tier: "Tier 1",
+    languagePattern: "proyección profesional, presencia corporativa, liderazgo femenino y posicionamiento profesional",
+    context: "Colombia tiene una conversación profesional fuerte alrededor de proyección, presencia corporativa, liderazgo femenino y posicionamiento en mercados de servicios, consultoría, empresa y marca personal.",
+    buyer: "Líderes, consultoras, empresarias y profesionales que quieren que su presencia comunique criterio, preparación, confianza y nivel.",
+    tension: "El reto suele aparecer cuando la visibilidad crece y la persona necesita comunicar más autoridad sin endurecer su forma de presentarse.",
+    localSignal: "Sonia acompaña procesos en línea para Colombia y puede adaptar el trabajo a contextos ejecutivos, empresariales y de marca personal hispanohablante.",
+    relatedMarkets: ["/bogota", "/medellin", "/cali", "/barranquilla", "/cartagena"],
+  },
+  {
+    route: "/argentina",
+    name: "Argentina",
+    country: "Argentina",
+    tier: "Tier 1",
+    languagePattern: "imagen ejecutiva, percepción profesional, comunicación personal y presencia laboral",
+    context: "Argentina requiere un lenguaje de imagen profesional conectado con percepción, comunicación personal, presencia laboral y criterio individual, no con fórmulas rígidas de protocolo.",
+    buyer: "Profesionales, consultoras, emprendedoras, ejecutivas y marcas personales que necesitan ordenar su presencia frente a clientes, equipos o audiencias.",
+    tension: "Muchas personas saben comunicar ideas, pero su presencia visual o corporal no siempre acompaña la autoridad que ya tienen.",
+    localSignal: "El proceso se puede trabajar en línea desde México para Argentina con foco en imagen ejecutiva, percepción profesional y posicionamiento.",
+    relatedMarkets: ["/buenos-aires", "/cordoba", "/rosario", "/mendoza", "/presencia-ejecutiva"],
+  },
+  {
+    route: "/chile",
+    name: "Chile",
+    country: "Chile",
+    tier: "Tier 1",
+    languagePattern: "presencia profesional, imagen corporativa y liderazgo ejecutivo",
+    context: "Chile concentra búsquedas de presencia profesional, imagen corporativa y liderazgo ejecutivo donde la sobriedad necesita convivir con claridad, humanidad y autoridad visible.",
+    buyer: "Ejecutivas, empresarias, líderes de equipo, consultoras y profesionales que necesitan comunicar confianza en entornos exigentes.",
+    tension: "El reto no es verse llamativa, sino transmitir solidez, criterio, preparación y presencia sin perder identidad.",
+    localSignal: "Sonia puede acompañar procesos en línea para Chile y conferencias o talleres para empresas según el alcance del proyecto.",
+    relatedMarkets: ["/santiago", "/vina-del-mar", "/las-condes", "/imagen-estrategica", "/liderazgo"],
+  },
+  {
+    route: "/peru",
+    name: "Perú",
+    country: "Perú",
+    tier: "Tier 1",
+    languagePattern: "imagen empresarial, comunicación ejecutiva y presencia profesional",
+    context: "Perú presenta una oportunidad clara para conectar imagen empresarial, comunicación ejecutiva y presencia profesional con mujeres líderes, empresarias y marcas personales.",
+    buyer: "Empresarias, directoras, profesionales independientes y equipos que necesitan elevar la percepción de confianza y coherencia.",
+    tension: "La imagen puede sentirse correcta, pero no necesariamente estratégica ni alineada con el nivel profesional que la persona busca ocupar.",
+    localSignal: "El acompañamiento se puede realizar en línea para Perú y adaptarse a retos de presencia, imagen ejecutiva y posicionamiento profesional.",
+    relatedMarkets: ["/lima", "/san-isidro", "/miraflores", "/imagen-profesional", "/comunicacion-no-verbal"],
+  },
+  {
+    route: "/ecuador",
+    name: "Ecuador",
+    country: "Ecuador",
+    tier: "Tier 2",
+    languagePattern: "imagen profesional, presencia corporativa y posicionamiento personal",
+    context: "Ecuador combina mercados empresariales en crecimiento con búsquedas de imagen profesional, presencia corporativa y posicionamiento personal para líderes y profesionistas.",
+    buyer: "Consultoras, ejecutivas, empresarias y profesionales que necesitan proyectar seguridad, criterio y claridad en contextos de crecimiento.",
+    tension: "Cuando la etapa profesional cambia, la imagen anterior puede quedarse corta frente al nivel de responsabilidad o exposición actual.",
+    localSignal: "Sonia trabaja en línea para Ecuador con procesos de coaching de imagen, presencia profesional y seguridad visible.",
+    relatedMarkets: ["/quito", "/guayaquil", "/imagen-profesional", "/presencia-ejecutiva", "/comparaciones"],
+  },
+  {
+    route: "/uruguay",
+    name: "Uruguay",
+    country: "Uruguay",
+    tier: "Tier 2",
+    languagePattern: "imagen ejecutiva, presencia laboral y comunicación profesional",
+    context: "Uruguay requiere una aproximación sobria y profesional a la imagen ejecutiva, la presencia laboral y la comunicación visible.",
+    buyer: "Profesionales, líderes, consultoras y empresarias que necesitan ordenar imagen y presencia sin perder naturalidad.",
+    tension: "La necesidad suele estar en comunicar más seguridad, dirección y nivel sin parecer rígida o sobreactuada.",
+    localSignal: "El proceso puede realizarse en línea para Uruguay y conectar imagen visible con presencia profesional y posicionamiento.",
+    relatedMarkets: ["/montevideo", "/imagen-estrategica", "/presencia-ejecutiva", "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen"],
+  },
+  {
+    route: "/costa-rica",
+    name: "Costa Rica",
+    country: "Costa Rica",
+    tier: "Tier 2",
+    languagePattern: "presencia ejecutiva, imagen profesional y liderazgo visible",
+    context: "Costa Rica tiene un entorno profesional donde la imagen necesita sostener confianza, presencia ejecutiva y liderazgo visible en servicios, empresa y marca personal.",
+    buyer: "Ejecutivas, empresarias, líderes y consultoras que buscan una presencia clara, humana y profesional.",
+    tension: "El crecimiento profesional exige una presencia más visible, pero esa visibilidad necesita sentirse coherente y sostenible.",
+    localSignal: "Sonia puede trabajar en línea para Costa Rica con procesos de imagen, presencia y posicionamiento profesional.",
+    relatedMarkets: ["/san-jose-costa-rica", "/presencia-ejecutiva", "/liderazgo", "/contacto"],
+  },
+  {
+    route: "/panama",
+    name: "Panamá",
+    country: "Panamá",
+    tier: "Tier 2",
+    languagePattern: "presencia ejecutiva, imagen empresarial y posicionamiento profesional",
+    context: "Panamá conecta muy bien con búsquedas de presencia ejecutiva, imagen empresarial y posicionamiento profesional para negocios, servicios y liderazgo regional.",
+    buyer: "Empresarias, ejecutivas, directivos y equipos que necesitan comunicar confianza en contextos multiculturales y comerciales.",
+    tension: "La imagen debe proyectar nivel, pero también debe sentirse humana, clara y congruente con la persona.",
+    localSignal: "El trabajo puede realizarse en línea para Panamá y adaptarse a proyectos empresariales o conferencias.",
+    relatedMarkets: ["/panama-city", "/imagen-estrategica", "/servicios-asesoria-de-imagen-coaching/talleres", "/contacto"],
+  },
+  {
+    route: "/republica-dominicana",
+    name: "República Dominicana",
+    country: "República Dominicana",
+    tier: "Tier 2",
+    languagePattern: "imagen profesional, liderazgo femenino y presencia ejecutiva",
+    context: "República Dominicana abre una oportunidad para trabajar imagen profesional, liderazgo femenino y presencia ejecutiva con mayor profundidad estratégica.",
+    buyer: "Empresarias, profesionales independientes, líderes y marcas personales que necesitan elevar percepción y confianza.",
+    tension: "El desafío está en que la imagen no se quede en apariencia, sino que acompañe autoridad, comunicación y posicionamiento.",
+    localSignal: "Sonia puede acompañar procesos en línea para República Dominicana y proyectos empresariales según alcance.",
+    relatedMarkets: ["/santo-domingo", "/empresarias", "/imagen-profesional", "/contacto"],
+  },
+];
+const GEO_CITY_MARKETS = [
+  ["Guadalajara", "/guadalajara", "México", "base presencial de Sonia, ecosistema empresarial y marca personal", "procesos presenciales, híbridos y conferencias para empresas", ["/zapopan", "/mexico", "/servicios-asesoria-de-imagen-coaching", "/sobre-sonia-mcrorey-asesora-de-imagen"]],
+  ["CDMX", "/cdmx", "México", "alta exposición profesional, dirección, consultoría, comunicación y negocios", "presencia ejecutiva para reuniones, marcas personales y dirección profesional", ["/mexico", "/monterrey", "/presencia-ejecutiva", "/imagen-estrategica"]],
+  ["Monterrey", "/monterrey", "México", "liderazgo empresarial, ventas premium, dirección y cultura de negocios", "imagen ejecutiva y posicionamiento para empresarias, directivos y equipos", ["/san-pedro-garza-garcia", "/mexico", "/empresarias", "/servicios-asesoria-de-imagen-coaching/talleres"]],
+  ["Querétaro", "/queretaro", "México", "crecimiento empresarial, profesionistas y marcas personales en transición", "imagen profesional para crecimiento, visibilidad y autoridad", ["/mexico", "/cdmx", "/imagen-profesional", "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen"]],
+  ["Puebla", "/puebla", "México", "profesionistas, empresarias y servicios profesionales que buscan más presencia", "asesoría y coaching de imagen para claridad visual y comunicación profesional", ["/mexico", "/cdmx", "/imagen-profesional", "/contacto"]],
+  ["Mérida", "/merida", "México", "servicios profesionales, comunidad empresarial y marca personal en expansión", "presencia profesional cálida, elegante y estratégica", ["/mexico", "/queretaro", "/presencia-ejecutiva", "/imagen-estrategica"]],
+  ["Tijuana", "/tijuana", "México", "mercado fronterizo, negocios binacionales y comunicación profesional", "imagen estratégica para profesionales que cruzan contextos y audiencias", ["/mexico", "/san-diego-hispanos", "/imagen-estrategica", "/contacto"]],
+  ["San Pedro Garza García", "/san-pedro-garza-garcia", "México", "alto nivel empresarial, liderazgo y percepción premium", "presencia ejecutiva para empresarias, directivos y marcas personales de alto valor", ["/monterrey", "/mexico", "/empresarias", "/presencia-ejecutiva"]],
+  ["Zapopan", "/zapopan", "México", "zona metropolitana de Guadalajara, emprendimiento, liderazgo y servicios profesionales", "procesos presenciales cercanos a la base de Sonia en Guadalajara", ["/guadalajara", "/mexico", "/sobre-sonia-mcrorey-asesora-de-imagen", "/contacto"]],
+  ["León", "/leon", "México", "industria, comercio, servicios profesionales y liderazgo empresarial", "imagen profesional para empresarias, vendedores consultivos y líderes visibles", ["/mexico", "/queretaro", "/imagen-profesional", "/liderazgo"]],
+  ["Aguascalientes", "/aguascalientes", "México", "crecimiento ejecutivo, profesionistas y equipos corporativos", "presencia profesional y comunicación ejecutiva para contextos empresariales", ["/mexico", "/guadalajara", "/comunicacion-no-verbal", "/contacto"]],
+  ["Bogotá", "/bogota", "Colombia", "presencia corporativa, liderazgo femenino, consultoría y empresa", "proyección profesional y posicionamiento para líderes y marcas personales", ["/colombia", "/medellin", "/presencia-ejecutiva", "/liderazgo"]],
+  ["Medellín", "/medellin", "Colombia", "emprendimiento, innovación, marca personal y liderazgo visible", "imagen profesional para empresarias, fundadoras y consultoras", ["/colombia", "/bogota", "/empresarias", "/imagen-estrategica"]],
+  ["Cali", "/cali", "Colombia", "servicios, liderazgo local y posicionamiento profesional", "presencia profesional para comunicar confianza y autoridad con naturalidad", ["/colombia", "/bogota", "/imagen-profesional", "/contacto"]],
+  ["Barranquilla", "/barranquilla", "Colombia", "negocios regionales, comunicación profesional y liderazgo empresarial", "proyección profesional y presencia ejecutiva para crecer con claridad", ["/colombia", "/cartagena", "/presencia-ejecutiva", "/contacto"]],
+  ["Cartagena", "/cartagena", "Colombia", "hospitalidad, eventos, servicios premium y liderazgo visible", "imagen estratégica para experiencias, marcas personales y dirección profesional", ["/colombia", "/barranquilla", "/imagen-estrategica", "/servicios-asesoria-de-imagen-coaching/talleres"]],
+  ["Buenos Aires", "/buenos-aires", "Argentina", "comunicación, percepción profesional, servicios y marca personal", "imagen ejecutiva con criterio, identidad y presencia laboral", ["/argentina", "/cordoba", "/imagen-profesional", "/comunicacion-no-verbal"]],
+  ["Córdoba", "/cordoba", "Argentina", "profesionistas, servicios, empresa y liderazgo regional", "presencia profesional para sostener confianza, comunicación y posicionamiento", ["/argentina", "/buenos-aires", "/presencia-ejecutiva", "/contacto"]],
+  ["Rosario", "/rosario", "Argentina", "negocios, consultoría y profesionales independientes", "imagen profesional y percepción para marcas personales", ["/argentina", "/buenos-aires", "/imagen-estrategica", "/contacto"]],
+  ["Mendoza", "/mendoza", "Argentina", "servicios profesionales, empresa y liderazgo visible", "presencia ejecutiva y comunicación profesional para crecimiento", ["/argentina", "/buenos-aires", "/liderazgo", "/contacto"]],
+  ["Santiago", "/santiago", "Chile", "presencia profesional, imagen corporativa y liderazgo ejecutivo", "imagen profesional sobria, clara y estratégica", ["/chile", "/las-condes", "/presencia-ejecutiva", "/imagen-profesional"]],
+  ["Viña del Mar", "/vina-del-mar", "Chile", "servicios profesionales, turismo, marca personal y empresa", "presencia profesional para comunicar criterio y confianza", ["/chile", "/santiago", "/imagen-estrategica", "/contacto"]],
+  ["Las Condes", "/las-condes", "Chile", "dirección, empresa, consultoría y servicios premium", "presencia ejecutiva para liderazgo y posicionamiento de alto nivel", ["/chile", "/santiago", "/presencia-ejecutiva", "/empresarias"]],
+  ["Lima", "/lima", "Perú", "imagen empresarial, comunicación ejecutiva y liderazgo profesional", "presencia profesional para empresarias, directoras y consultoras", ["/peru", "/san-isidro", "/miraflores", "/imagen-profesional"]],
+  ["San Isidro", "/san-isidro", "Perú", "servicios financieros, dirección, empresa y profesionalismo visible", "imagen ejecutiva, comunicación y posicionamiento profesional", ["/peru", "/lima", "/presencia-ejecutiva", "/imagen-estrategica"]],
+  ["Miraflores", "/miraflores", "Perú", "marca personal, servicios premium, consultoría y empresa", "imagen profesional para comunicar confianza y valor", ["/peru", "/lima", "/empresarias", "/contacto"]],
+  ["Quito", "/quito", "Ecuador", "liderazgo institucional, empresa y servicios profesionales", "presencia profesional y posicionamiento para líderes visibles", ["/ecuador", "/guayaquil", "/liderazgo", "/contacto"]],
+  ["Guayaquil", "/guayaquil", "Ecuador", "empresa, comercio, emprendimiento y marca personal", "imagen profesional para comunicar autoridad y confianza", ["/ecuador", "/quito", "/imagen-profesional", "/contacto"]],
+  ["Montevideo", "/montevideo", "Uruguay", "presencia laboral, servicios profesionales y comunicación personal", "imagen ejecutiva sobria, estratégica y humana", ["/uruguay", "/imagen-profesional", "/presencia-ejecutiva", "/contacto"]],
+  ["San José", "/san-jose-costa-rica", "Costa Rica", "negocios, servicios profesionales y liderazgo visible", "presencia ejecutiva y seguridad profesional para mujeres líderes", ["/costa-rica", "/presencia-ejecutiva", "/empresarias", "/contacto"]],
+  ["Panama City", "/panama-city", "Panamá", "negocios regionales, empresa multicultural y dirección profesional", "imagen empresarial y presencia ejecutiva para contextos comerciales", ["/panama", "/imagen-estrategica", "/servicios-asesoria-de-imagen-coaching/talleres", "/contacto"]],
+  ["Santo Domingo", "/santo-domingo", "República Dominicana", "marca personal, empresa, liderazgo femenino y presencia profesional", "imagen profesional y posicionamiento para empresarias y líderes", ["/republica-dominicana", "/empresarias", "/imagen-profesional", "/contacto"]],
+];
+const HISPANIC_US_MARKETS = [
+  ["Miami Hispanos", "/miami-hispanos", "Estados Unidos", "Latinas ejecutivas, empresarias hispanas, marcas personales y negocios multiculturales", "coach de imagen para mujeres latinas, presencia ejecutiva para hispanas, imagen profesional en Miami"],
+  ["Houston Hispanos", "/houston-hispanos", "Estados Unidos", "empresarias hispanas, profesionistas bilingües y liderazgo multicultural", "presencia ejecutiva para hispanas, imagen profesional mujeres latinas, liderazgo femenino hispano"],
+  ["Dallas Hispanos", "/dallas-hispanos", "Estados Unidos", "profesionales latinas, fundadoras y consultoras que comunican en dos culturas", "coach de imagen latina, imagen ejecutiva femenina, posicionamiento profesional hispano"],
+  ["Los Angeles Hispanos", "/los-angeles-hispanos", "Estados Unidos", "marcas personales, comunicación pública, negocios creativos y liderazgo latino", "imagen profesional mujeres latinas, presencia ejecutiva multicultural, liderazgo femenino hispano"],
+  ["San Diego Hispanos", "/san-diego-hispanos", "Estados Unidos", "mercado fronterizo, negocios binacionales y profesionales latinas", "coach de imagen latina, imagen profesional bilingüe, presencia ejecutiva hispana"],
+  ["New York Hispanos", "/new-york-hispanos", "Estados Unidos", "profesionistas hispanas, liderazgo corporativo y marca personal multicultural", "presencia ejecutiva para hispanas, imagen profesional para mujeres latinas, liderazgo visible"],
+];
+function cityGeoPage([name, route, country, context, serviceAngle, relatedMarkets]) {
+  const countryRoute = GEO_COUNTRY_MARKETS.find((market) => market.country === country)?.route;
+  const countrySiblings = GEO_CITY_MARKETS
+    .filter(([, siblingRoute, siblingCountry]) => siblingCountry === country && siblingRoute !== route)
+    .map(([, siblingRoute]) => siblingRoute);
+  const expandedRelatedMarkets = [...new Set([countryRoute, ...relatedMarkets, ...countrySiblings].filter(Boolean))];
+  return {
+    route,
+    name,
+    country,
+    tier: "Ciudad estratégica",
+    title: `Coach de Imagen en ${name}`,
+    description: `Coaching de imagen, presencia ejecutiva e imagen profesional para líderes, empresarias y profesionistas en ${name}.`,
+    languagePattern: country === "Colombia" ? "proyección profesional, presencia corporativa y liderazgo femenino" : country === "Argentina" ? "imagen ejecutiva, percepción profesional y presencia laboral" : country === "Chile" ? "presencia profesional, imagen corporativa y liderazgo ejecutivo" : country === "Perú" ? "imagen empresarial, comunicación ejecutiva y presencia profesional" : "imagen profesional, presencia ejecutiva y liderazgo visible",
+    context: `${name} requiere una imagen profesional que pueda sostener ${context}. La búsqueda no es solo verse bien: es comunicar nivel, criterio, seguridad y dirección en espacios donde la percepción influye en confianza, oportunidades y autoridad.`,
+    buyer: `Sonia acompaña a empresarias, directivas, profesionistas, consultoras, fundadoras y marcas personales de ${name} que quieren que su presencia refleje mejor la etapa profesional que ya sostienen.`,
+    tension: "El punto crítico aparece cuando la capacidad ya existe, pero la imagen, la comunicación corporal o la seguridad visible todavía no transmiten con la misma fuerza.",
+    localSignal: `Para ${name}, el trabajo se adapta a ${serviceAngle}. Puede realizarse en línea, presencial en Guadalajara o como proyecto corporativo cuando la empresa requiere conferencia, taller o experiencia interna.`,
+    relatedMarkets: expandedRelatedMarkets,
+  };
+}
+function countryGeoPage(page) {
+  return {
+    ...page,
+    title: `Coach de Imagen en ${page.name}`,
+    description: `Coaching de imagen, presencia ejecutiva e imagen profesional para líderes, empresarias y profesionistas en ${page.name}.`,
+  };
+}
+function hispanicGeoPage([name, route, country, context, queryFocus]) {
+  return {
+    route,
+    name,
+    country,
+    tier: "Hispanic US",
+    title: `Coach de Imagen para ${name}`,
+    description: `Presencia ejecutiva, imagen profesional y posicionamiento para mujeres latinas, empresarias y profesionistas hispanas en ${name}.`,
+    languagePattern: "coach de imagen latina, presencia ejecutiva para hispanas, imagen profesional para mujeres latinas y liderazgo femenino hispano",
+    context: `${name} concentra una intención multicultural: profesionales hispanas que necesitan proyectar autoridad en español, inglés o entornos híbridos sin perder identidad, cercanía ni sofisticación.`,
+    buyer: `El trabajo está dirigido a ${context}. La imagen profesional se vuelve una herramienta para moverse entre culturas, audiencias, clientes y escenarios de liderazgo.`,
+    tension: `Las búsquedas de ${queryFocus} suelen esconder una necesidad más profunda: comunicar valor, presencia y confianza sin sentir que la identidad latina se diluye.`,
+    localSignal: "Sonia trabaja en línea para mercados hispanohablantes de Estados Unidos y puede viajar para conferencias, equipos o experiencias corporativas seleccionadas.",
+    relatedMarkets: ["/mexico", "/guadalajara", "/presencia-ejecutiva", "/empresarias", "/contacto"],
+  };
+}
+const GEO_MARKETS = [
+  ...GEO_COUNTRY_MARKETS.map(countryGeoPage),
+  ...GEO_CITY_MARKETS.map(cityGeoPage),
+  ...HISPANIC_US_MARKETS.map(hispanicGeoPage),
+];
+const INTENT_PAGES = [
+  {
+    route: "/como-proyectar-autoridad",
+    title: "Cómo proyectar autoridad profesional",
+    description: "Guía para proyectar autoridad con imagen, presencia ejecutiva, seguridad visible y comunicación profesional sin sobreactuar.",
+    intent: "La persona quiere ser leída con más autoridad en reuniones, ventas, entrevistas o liderazgo.",
+    pain: "Tienes experiencia, pero tu presencia no siempre comunica el nivel de decisión, criterio o confianza que ya sostienes.",
+    outcome: "Una lectura externa más clara: imagen coherente, presencia firme, lenguaje corporal consciente y posicionamiento profesional.",
+    terms: ["autoridad profesional", "presencia ejecutiva", "imagen profesional", "liderazgo visible", "comunicación ejecutiva"],
+    service: "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen",
+  },
+  {
+    route: "/como-verme-mas-profesional",
+    title: "Cómo verme más profesional sin perder identidad",
+    description: "Claves para construir una imagen profesional más clara, elegante y coherente con tu etapa laboral o empresarial.",
+    intent: "La persona busca elevar imagen sin sentirse disfrazada, rígida o ajena a sí misma.",
+    pain: "La imagen actual ya no corresponde con la responsabilidad, exposición o nivel de clientes que estás sosteniendo.",
+    outcome: "Criterios de estilo, color, guardarropa y presencia que comunican mayor seguridad profesional.",
+    terms: ["imagen profesional", "asesoría de imagen", "guardarropa estratégico", "colorimetría ejecutiva", "presencia profesional"],
+    service: "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen",
+  },
+  {
+    route: "/como-mejorar-mi-presencia-profesional",
+    title: "Cómo mejorar mi presencia profesional",
+    description: "Presencia profesional para ocupar espacios con más claridad, seguridad visible y coherencia en México y LATAM.",
+    intent: "La persona siente que su capacidad no se percibe con la claridad o confianza que necesita.",
+    pain: "Puedes prepararte mucho, pero al entrar a una sala, hablar o exponerte, algo no comunica con suficiente presencia.",
+    outcome: "Más confianza visible, comunicación corporal coherente, mejor lectura de autoridad y presencia ejecutiva.",
+    terms: ["presencia profesional", "presencia ejecutiva", "seguridad visible", "percepción profesional", "liderazgo visible"],
+    service: "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen",
+  },
+  {
+    route: "/inseguridad-profesional",
+    title: "Inseguridad profesional y presencia visible",
+    description: "Trabajo de imagen y seguridad profesional para dejar de minimizarte y sostener visibilidad con más claridad.",
+    intent: "La persona busca entender por qué se siente insegura o pequeña aun teniendo capacidad.",
+    pain: "La inseguridad aparece justo cuando necesitas hablar, decidir, cobrar, dirigir o mostrarte con más fuerza.",
+    outcome: "Mayor seguridad interna, presencia más estable y decisiones profesionales menos condicionadas por miedo al juicio.",
+    terms: ["inseguridad profesional", "seguridad interna", "miedo a ser visible", "confianza ejecutiva", "sistema interno"],
+    service: "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia",
+  },
+  {
+    route: "/presencia-ejecutiva-femenina",
+    title: "Presencia ejecutiva femenina",
+    description: "Presencia ejecutiva femenina para mujeres líderes, empresarias y directivas que necesitan comunicar autoridad.",
+    intent: "La búsqueda quiere presencia, autoridad y liderazgo femenino sin perder elegancia ni humanidad.",
+    pain: "La mujer líder muchas veces recibe lecturas contradictorias: debe verse segura, pero no dura; elegante, pero no distante.",
+    outcome: "Una presencia femenina más clara, estratégica y sostenible en reuniones, dirección, venta consultiva y exposición pública.",
+    terms: ["presencia ejecutiva femenina", "mujeres líderes", "liderazgo femenino", "autoridad femenina profesional", "imagen ejecutiva femenina"],
+    service: "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen",
+  },
+  {
+    route: "/imagen-para-mujeres-lideres",
+    title: "Imagen para mujeres líderes",
+    description: "Imagen profesional para mujeres líderes que necesitan autoridad visual, presencia ejecutiva y posicionamiento.",
+    intent: "La persona busca una imagen que acompañe liderazgo, dirección, ventas, marca personal o empresa.",
+    pain: "La imagen puede verse correcta, pero no siempre comunica liderazgo, nivel, criterio o capacidad de decisión.",
+    outcome: "Una imagen más estratégica, clara y alineada con liderazgo visible, comunicación y posicionamiento.",
+    terms: ["imagen para mujeres líderes", "imagen ejecutiva femenina", "liderazgo femenino", "autoridad visual", "presencia ejecutiva"],
+    service: "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen",
+  },
+  {
+    route: "/comunicacion-no-verbal-ejecutiva",
+    title: "Comunicación no verbal ejecutiva",
+    description: "Comunicación no verbal ejecutiva para proyectar seguridad, presencia y autoridad en contextos profesionales.",
+    intent: "La persona quiere mejorar cómo se le percibe antes, durante y después de hablar.",
+    pain: "El mensaje puede ser sólido, pero el cuerpo, la postura, la mirada o el ritmo pueden transmitir inseguridad o desconexión.",
+    outcome: "Lenguaje corporal más consciente, presencia al hablar y comunicación ejecutiva con mayor credibilidad.",
+    terms: ["comunicación no verbal ejecutiva", "lenguaje corporal ejecutivo", "presencia al hablar", "autoridad al comunicar"],
+    service: "/servicios-asesoria-de-imagen-coaching/talleres",
+  },
+  {
+    route: "/imagen-ejecutiva-para-empresarias",
+    title: "Imagen ejecutiva para empresarias",
+    description: "Imagen ejecutiva para empresarias, fundadoras y consultoras que buscan presencia, autoridad y percepción premium.",
+    intent: "La empresaria necesita que su imagen acompañe el valor de su oferta, su marca y su nivel de clientes.",
+    pain: "El negocio crece, pero la imagen personal todavía puede comunicar una etapa anterior o menor nivel de autoridad.",
+    outcome: "Mayor coherencia entre negocio, presencia, imagen visible y posicionamiento profesional.",
+    terms: ["imagen ejecutiva para empresarias", "imagen estratégica", "presencia premium profesional", "mujeres empresarias", "marca personal"],
+    service: "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen",
+  },
+  {
+    route: "/liderazgo-visible",
+    title: "Liderazgo visible",
+    description: "Liderazgo visible con imagen profesional, presencia ejecutiva y seguridad interna para México y LATAM.",
+    intent: "La persona busca ocupar espacios con más visibilidad, autoridad y coherencia.",
+    pain: "El liderazgo existe, pero a veces no se ve, no se comunica o no se sostiene cuando aumenta la exposición.",
+    outcome: "Presencia visible, decisiones más claras y una imagen que acompaña responsabilidad, dirección y crecimiento.",
+    terms: ["liderazgo visible", "liderazgo femenino", "presencia ejecutiva", "seguridad profesional", "posicionamiento profesional"],
+    service: "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia",
+  },
+  {
+    route: "/seguridad-profesional-femenina",
+    title: "Seguridad profesional femenina",
+    description: "Seguridad profesional femenina para sostener visibilidad, autoridad, decisiones y crecimiento con presencia.",
+    intent: "La búsqueda nace del deseo de sentirse suficiente, segura y visible en espacios profesionales.",
+    pain: "La preparación no siempre elimina el miedo a destacar, cobrar, dirigir o mostrarse con más fuerza.",
+    outcome: "Mayor claridad interna, seguridad al decidir y presencia profesional más estable.",
+    terms: ["seguridad profesional femenina", "confianza profesional", "miedo a destacar", "miedo al juicio profesional", "seguridad interna"],
+    service: "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia",
+  },
+];
+const AUTHORITY_PAGES = [
+  {
+    route: "/metodo-sonia-mcrorey",
+    title: "Método Sonia McRorey",
+    description: "El método de Sonia McRorey integra imagen, presencia, seguridad interna, percepción y posicionamiento profesional.",
+    focus: "metodología",
+    pillars: ["Imagen visible", "Presencia profesional", "Percepción estratégica", "Seguridad interna", "Posicionamiento"],
+  },
+  {
+    route: "/sistema-presencia-profesional",
+    title: "Sistema de Presencia Profesional",
+    description: "Sistema para desarrollar presencia profesional desde imagen, comunicación, seguridad visible y liderazgo.",
+    focus: "presencia profesional",
+    pillars: ["Claridad corporal", "Comunicación", "Autoridad visible", "Confianza", "Coherencia"],
+  },
+  {
+    route: "/framework-liderazgo-visible",
+    title: "Framework de Liderazgo Visible",
+    description: "Modelo de liderazgo visible para alinear imagen profesional, decisiones, comunicación y posicionamiento.",
+    focus: "liderazgo visible",
+    pillars: ["Decisión", "Visibilidad", "Autoridad", "Criterio", "Sostenibilidad"],
+  },
+  {
+    route: "/modelo-imagen-estrategica",
+    title: "Modelo de Imagen Estratégica",
+    description: "Modelo de imagen estratégica para conectar identidad visual, percepción profesional y autoridad de marca personal.",
+    focus: "imagen estratégica",
+    pillars: ["Identidad", "Estilo", "Contexto", "Percepción", "Valor"],
+  },
+  {
+    route: "/glosario",
+    title: "Glosario de Coach de Imagen",
+    description: "Definiciones claras sobre coaching de imagen, presencia ejecutiva, imagen profesional y liderazgo visible.",
+    focus: "glosario",
+    pillars: ["Coaching de imagen", "Presencia ejecutiva", "Imagen profesional", "Seguridad profesional", "Liderazgo visible"],
+  },
+];
+const GENERATED_AUTHORITY_PAGES = [...GEO_MARKETS, ...INTENT_PAGES, ...AUTHORITY_PAGES];
 const HOST_REDIRECTS = [
   ["https://www.coachdeimagen.com/", `${SITE_URL}/`, 301],
   ["https://www.coachdeimagen.com/*", `${SITE_URL}/:splat`, 301],
@@ -1425,7 +1838,7 @@ function preparePageMetadata(page) {
   return page;
 }
 
-async function generateSocialCards(pages, hubs, comparisons) {
+async function generateSocialCards(pages, hubs, comparisons, generatedPages = []) {
   const socialDir = distPath("assets", "social");
   await mkdir(socialDir, { recursive: true });
   const logoPath = rootPath("assets", "sonia-logo-ai.png");
@@ -1435,6 +1848,7 @@ async function generateSocialCards(pages, hubs, comparisons) {
     ...pages.map((page) => preparePageMetadata(page)),
     ...hubs.map((hub) => ({ route: hub.route, title: hub.title, heroTitle: hub.title, description: hub.description, cluster: hub.cluster })),
     ...comparisons.map((page) => ({ route: page.route, title: page.title, heroTitle: page.title, description: page.description, focus: page.focus })),
+    ...generatedPages.map((page) => ({ route: page.route, title: page.title, heroTitle: page.title, description: page.description, focus: page.focus || page.country || page.intent })),
     {
       route: CONTACT_ROUTE,
       title: "Contacto privado para diagnóstico de Coach de Imagen",
@@ -1955,6 +2369,9 @@ function socialKickerForPage(page) {
   if (page.route.startsWith("/comparaciones")) return "Comparaciones";
   if (page.route.startsWith("/imagen-presencia/")) return "Publicación";
   if (page.route.startsWith("/servicios-asesoria-de-imagen-coaching")) return "Servicio";
+  if (GEO_MARKETS.some((item) => item.route === page.route)) return "GEO LATAM";
+  if (INTENT_PAGES.some((item) => item.route === page.route)) return "Intención Ejecutiva";
+  if (AUTHORITY_PAGES.some((item) => item.route === page.route)) return "Método";
   return semanticIdentity(page.route)?.entity || page.cluster || page.focus || "Coach De Imagen";
 }
 
@@ -2796,6 +3213,13 @@ function footer() {
     ["/imagen-presencia/imagen-identidad-liderazgo", "Imagen, identidad y liderazgo"],
     ["/imagen-presencia/tu-color-tu-poder-el-impacto-de-la-colorimetria", "Colorimetría e imagen profesional"],
     ["/imagen-presencia/mas-dinero-capacidad-interna-liderazgo-presencia", "Liderazgo, capacidad interna y presencia"],
+    ["/imagen-presencia/encuentra-tu-estilo", "Encuentra tu estilo"],
+    ["/imagen-presencia/la-ciencia-del-color-en-tu-imagen", "La ciencia del color en tu imagen"],
+    ["/imagen-presencia/los-secretos-de-una-asesora-de-imagen-exitosa", "Los secretos de una asesora de imagen"],
+    ["/imagen-presencia/y-si-tu-imagen-no-fuera-un-disfraz-sino-una-puerta-para-regresar-a-ti-article", "Imagen, presencia y regreso a ti"],
+    ["/imagen-presencia/descubre-el-poder-de-tu-rostro", "El poder de tu rostro"],
+    ["/imagen-presencia/rebranding-imagen-mentalidad-abundancia", "Rebranding de imagen y presencia"],
+    ["/imagen-presencia/transforma-tu-imagen-consciente", "Transforma tu imagen consciente"],
   ];
   const footerComparisons = [
     ["/comparaciones", "Comparaciones"],
@@ -2813,11 +3237,55 @@ function footer() {
     ["Equipos", "/servicios-asesoria-de-imagen-coaching/talleres"],
   ];
   const locationSignals = [
-    ["Guadalajara", CONTACT_ROUTE],
-    ["México", CONTACT_ROUTE],
-    ["LATAM", CONTACT_ROUTE],
-    ["Online", CONTACT_ROUTE],
-    ["Mercados hispanohablantes", CONTACT_ROUTE],
+    ["Guadalajara", "/guadalajara"],
+    ["México", "/mexico"],
+    ["LATAM", "/mexico"],
+    ["Miami hispanos", "/miami-hispanos"],
+    ["Mercados hispanohablantes", "/new-york-hispanos"],
+  ];
+  const footerMarkets = [
+    ["/mexico", "México"],
+    ["/guadalajara", "Guadalajara"],
+    ["/cdmx", "CDMX"],
+    ["/monterrey", "Monterrey"],
+    ["/colombia", "Colombia"],
+    ["/argentina", "Argentina"],
+    ["/chile", "Chile"],
+    ["/peru", "Perú"],
+    ["/ecuador", "Ecuador"],
+    ["/costa-rica", "Costa Rica"],
+    ["/panama", "Panamá"],
+    ["/uruguay", "Uruguay"],
+    ["/republica-dominicana", "República Dominicana"],
+    ["/montevideo", "Montevideo"],
+    ["/san-jose-costa-rica", "San José Costa Rica"],
+    ["/panama-city", "Panama City"],
+    ["/santo-domingo", "Santo Domingo"],
+    ["/miami-hispanos", "Miami hispanos"],
+    ["/houston-hispanos", "Houston hispanos"],
+    ["/dallas-hispanos", "Dallas hispanos"],
+    ["/los-angeles-hispanos", "Los Angeles hispanos"],
+    ["/san-diego-hispanos", "San Diego hispanos"],
+    ["/new-york-hispanos", "New York hispanos"],
+  ];
+  const footerIntents = [
+    ["/como-proyectar-autoridad", "Cómo proyectar autoridad"],
+    ["/como-verme-mas-profesional", "Cómo verme más profesional"],
+    ["/como-mejorar-mi-presencia-profesional", "Mejorar presencia profesional"],
+    ["/inseguridad-profesional", "Inseguridad profesional"],
+    ["/presencia-ejecutiva-femenina", "Presencia ejecutiva femenina"],
+    ["/imagen-para-mujeres-lideres", "Imagen para mujeres líderes"],
+    ["/comunicacion-no-verbal-ejecutiva", "Comunicación no verbal ejecutiva"],
+    ["/imagen-ejecutiva-para-empresarias", "Imagen ejecutiva para empresarias"],
+    ["/liderazgo-visible", "Liderazgo visible"],
+    ["/seguridad-profesional-femenina", "Seguridad profesional femenina"],
+  ];
+  const footerAuthority = [
+    ["/metodo-sonia-mcrorey", "Método Sonia McRorey"],
+    ["/sistema-presencia-profesional", "Sistema de presencia profesional"],
+    ["/framework-liderazgo-visible", "Framework de liderazgo visible"],
+    ["/modelo-imagen-estrategica", "Modelo de imagen estratégica"],
+    ["/glosario", "Glosario de Coach De Imagen"],
   ];
   const footerDirectoryGroups = [
     {
@@ -2843,6 +3311,24 @@ function footer() {
       heading: "Tomar decisión",
       text: "Revisar comparaciones, preguntas y diferencias entre enfoques.",
       links: [...footerComparisons, ["/servicios-asesoria-de-imagen-coaching/preguntas-frequentes", "Preguntas frecuentes"]],
+    },
+    {
+      icon: "ubicacion",
+      heading: "Mercados",
+      text: "Explorar presencia ejecutiva, imagen profesional y Coach De Imagen por ciudad y país.",
+      links: footerMarkets,
+    },
+    {
+      icon: "radar",
+      heading: "Búsquedas frecuentes",
+      text: "Entrar desde la pregunta real que suele aparecer antes de pedir acompañamiento.",
+      links: footerIntents,
+    },
+    {
+      icon: "identidad",
+      heading: "Método Sonia",
+      text: "Conocer los modelos que sostienen imagen, presencia, liderazgo y posicionamiento.",
+      links: footerAuthority,
     },
   ];
   return `<footer class="footer" id="contacto">
@@ -4262,6 +4748,543 @@ function renderComparisonPage(page) {
 </html>`;
 }
 
+function generatedPageMeta(page, type = "page") {
+  return {
+    route: page.route,
+    title: page.title,
+    heroTitle: page.title,
+    description: page.description,
+    type,
+    cluster: page.country || page.focus || "Coach De Imagen",
+  };
+}
+
+function generatedBreadcrumbs(page, parentLabel = "Autoridad", parentRoute = "/") {
+  return `<nav class="breadcrumbs section" aria-label="Breadcrumbs"><a href="/">Inicio</a><span>/</span>${parentRoute !== "/" ? `<a href="${parentRoute}">${escapeHtml(parentLabel)}</a><span>/</span>` : ""}<span aria-current="page">${escapeHtml(page.name || page.title)}</span></nav>`;
+}
+
+function generatedPageDiscoveryLinks(pageMeta, metaDescription, type = "website", image = "/assets/797aeda1281e5d5e.png") {
+  return `<title>${escapeHtml(seoTitleForPage(pageMeta))}</title>
+  <meta name="description" content="${escapeHtml(metaDescription)}" />
+  <link rel="canonical" href="${absoluteUrl(pageMeta.route)}" />
+  <link rel="alternate" hreflang="es-MX" href="${absoluteUrl(pageMeta.route)}" />
+  <link rel="alternate" hreflang="x-default" href="${absoluteUrl(pageMeta.route)}" />
+  <link rel="service-desc" type="application/openapi+json" href="${SITE_URL}/openapi.json" />
+  <link rel="alternate" type="text/plain" href="${SITE_URL}/llms.txt" title="Resumen para asistentes" />
+  <link rel="alternate" type="text/plain" href="${SITE_URL}/llms-full.txt" title="Contexto GEO completo para asistentes" />
+  <link rel="alternate" type="application/json" href="${SITE_URL}/agent/site-profile.json" title="Perfil estructurado para asistentes" />
+  <link rel="agent" type="application/json" href="${SITE_URL}/.well-known/agent.json" />
+  <link rel="api-catalog" type="application/linkset+json" href="${SITE_URL}/.well-known/api-catalog" />
+  ${socialMetaTags(pageMeta, metaDescription, type)}
+  <link rel="icon" href="/assets/sonia-icon.svg" />
+  ${preloadImageLink(image)}
+  ${stylesheetLinks()}`;
+}
+
+function geoFaqs(page) {
+  return [
+    {
+      question: `¿Sonia McRorey ofrece coaching de imagen para ${page.name}?`,
+      answer: `Sí. Sonia trabaja desde Guadalajara con procesos presenciales, online y corporativos para ${page.name}. El enfoque integra imagen profesional, presencia ejecutiva, comunicación, seguridad visible y posicionamiento profesional.`,
+    },
+    {
+      question: `¿Qué tipo de persona busca coach de imagen en ${page.name}?`,
+      answer: `Generalmente busca apoyo una empresaria, directiva, fundadora, consultora, profesionista o marca personal que ya tiene capacidad, pero necesita proyectar más autoridad, claridad y presencia profesional.`,
+    },
+    {
+      question: `¿El proceso para ${page.name} puede hacerse online?`,
+      answer: `Sí. Los procesos de presencia, seguridad profesional, imagen estratégica y posicionamiento pueden trabajarse online. La parte presencial se concentra en Guadalajara o en proyectos corporativos y conferencias seleccionadas.`,
+    },
+    {
+      question: `¿Qué diferencia este enfoque de una asesoría de imagen tradicional en ${page.name}?`,
+      answer: `La asesoría tradicional suele ordenar estilo, color o guardarropa. Sonia integra imagen visible con presencia profesional, percepción, liderazgo, seguridad interna y posicionamiento para que la imagen funcione como herramienta de autoridad.`,
+    },
+    {
+      question: `¿Qué servicio conviene elegir primero para ${page.name}?`,
+      answer: `Si el reto es visual, conviene Asesoría de Imagen Integral. Si el reto es presencia, comunicación o autoridad visible, conviene Coaching de Imagen. Si el reto es equipo o empresa, convienen talleres. Si el reto es seguridad interna y crecimiento, conviene Seguridad y Posicionamiento.`,
+    },
+  ];
+}
+
+function generatedPageSchema(page, kind, faqItems = [], aboutTerms = []) {
+  const webPage = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: page.title,
+    description: page.description,
+    url: absoluteUrl(page.route),
+    inLanguage: "es-MX",
+    about: [
+      ...aboutTerms.map((term) => ({ "@type": "Thing", name: term })),
+      { "@type": "Thing", name: "Coaching de Imagen" },
+      { "@type": "Thing", name: "Presencia Ejecutiva" },
+      { "@type": "Thing", name: "Imagen Profesional" },
+      { "@type": "Thing", name: "Liderazgo Visible" },
+    ],
+    isPartOf: { "@type": "WebSite", name: BRAND_NAME, url: SITE_URL },
+  };
+  const service = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: page.title,
+    serviceType: ["Coaching de Imagen", "Presencia Ejecutiva", "Imagen Profesional", "Posicionamiento Profesional"],
+    provider: { "@type": "Person", name: "Sonia McRorey", url: `${SITE_URL}/sobre-sonia-mcrorey-asesora-de-imagen` },
+    areaServed: [
+      page.name,
+      page.country,
+      "México",
+      "LATAM",
+      "Mercados hispanohablantes",
+    ].filter(Boolean),
+    url: absoluteUrl(page.route),
+  };
+  const breadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Inicio", item: `${SITE_URL}/` },
+      { "@type": "ListItem", position: 2, name: kind, item: absoluteUrl(page.route) },
+    ],
+  };
+  return `<script type="application/ld+json">${JSON.stringify(webPage)}</script>
+  <script type="application/ld+json">${JSON.stringify(service)}</script>
+  <script type="application/ld+json">${JSON.stringify(breadcrumb)}</script>
+  <script type="application/ld+json">${JSON.stringify(faqJsonLd(faqItems))}</script>
+  ${globalSchemaStack()}`;
+}
+
+function geoIntentCards(page) {
+  const cards = [
+    ["Imagen profesional", `Construir una lectura visible coherente con el nivel que sostienes en ${page.name}.`, "percepcion"],
+    ["Presencia ejecutiva", "Ocupar reuniones, conversaciones y escenarios con más seguridad visible.", "presencia"],
+    ["Liderazgo visible", "Hacer que capacidad, criterio y dirección se perciban con más claridad.", "liderazgo"],
+    ["Seguridad profesional", "Sostener exposición, decisiones y crecimiento sin actuar desde tensión.", "shield"],
+    ["Posicionamiento", "Alinear imagen, comunicación y valor profesional frente a clientes o equipos.", "decision"],
+    ["Comunicación no verbal", "Ordenar cuerpo, mirada, postura y presencia al hablar en contextos ejecutivos.", "radar"],
+  ];
+  return `<div class="geo-intent-grid">
+    ${cards.map(([title, text, icon]) => `<article class="geo-intent-card">
+      <span>${topicIcon(icon)}</span>
+      <h3>${escapeHtml(title)}</h3>
+      <p>${escapeHtml(text)}</p>
+    </article>`).join("")}
+  </div>`;
+}
+
+function internalAuthorityLinks(page, pages) {
+  const map = pageByRoute(pages);
+  const geoSiblingLinks = (page.relatedMarkets || []).map((route) => [route, GEO_MARKETS.find((item) => item.route === route)?.name || semanticMenuLabel(route, route.replace("/", ""))]);
+  const pageLinks = [
+    ...geoSiblingLinks,
+    ...GEO_SERVICE_LINKS.map((route) => [route, semanticMenuLabel(route, "Servicio")]),
+    ...GEO_HUB_LINKS.map((route) => [route, SEMANTIC_HUBS.find((hub) => hub.route === route)?.title || semanticMenuLabel(route, "Tema")]),
+    ...AUTHORITY_PAGES.slice(0, 5).map((item) => [item.route, item.title]),
+    ...GEO_PUBLICATION_LINKS.map((route) => [route, map.get(route)?.heroTitle || "Publicación"]),
+    ...GEO_COMPARISON_LINKS.map((route) => [route, COMPARISON_PAGES.find((item) => item.route === route)?.title || "Comparación"]),
+  ];
+  const unique = [];
+  const seen = new Set([page.route]);
+  for (const link of pageLinks) {
+    if (!link[0] || seen.has(link[0])) continue;
+    seen.add(link[0]);
+    unique.push(link);
+  }
+  return `<div class="authority-link-mesh">
+    ${unique.slice(0, 22).map(([href, label]) => `<a href="${href}"><span>${escapeHtml(label)}</span><small>Explorar</small></a>`).join("")}
+  </div>`;
+}
+
+function geoServiceCards(page) {
+  const cards = [
+    ["/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen", "Asesoría integral", "Cuando la necesidad principal es ordenar imagen visible, estilo, color, guardarropa y coherencia externa."],
+    ["/servicios-asesoria-de-imagen-coaching/coaching-de-imagen", "Coaching de presencia", "Cuando la capacidad existe, pero la presencia no comunica suficiente autoridad, confianza o dirección."],
+    ["/servicios-asesoria-de-imagen-coaching/talleres", "Talleres empresariales", "Cuando una empresa, marca o equipo necesita criterios compartidos de imagen, comunicación y percepción."],
+    ["/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia", "Seguridad y posicionamiento", "Cuando el reto está en sostener visibilidad, decisiones, crecimiento y posicionamiento desde mayor seguridad interna."],
+  ];
+  return `<div class="service-grid geo-service-grid">
+    ${cards.map(([href, title, text]) => `<a class="service-card" href="${href}">
+      <h3>${escapeHtml(title)}</h3>
+      <p>${escapeHtml(text)}</p>
+      <span>Ver ruta</span>
+    </a>`).join("")}
+  </div>`;
+}
+
+function renderGeoPage(page, pages) {
+  const heroImage = "/assets/generated/comparison-evolucion-coaching-imagen-latam.jpg";
+  const pageMeta = generatedPageMeta(page, "geo");
+  const metaDescription = metaDescriptionForPage(pageMeta, page.description);
+  const faqs = geoFaqs(page);
+  return `<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  ${generatedPageDiscoveryLinks(pageMeta, metaDescription, "website", heroImage)}
+  ${generatedPageSchema(page, "GEO", faqs, [page.name, page.country, "coach de imagen", "presencia ejecutiva", "imagen profesional"])}
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  ${header(page.route)}
+  <main id="contenido">
+    ${generatedBreadcrumbs(page, "GEO LATAM", "/mexico")}
+    <section class="section hero imagen-hero geo-hero">
+      <div class="hero-copy">
+        <p class="eyebrow">${escapeHtml(page.tier)} · ${escapeHtml(page.country)}</p>
+        <h1>${headlineHtml(page.title)}</h1>
+        <div class="hero-lede"><p>${escapeHtml(page.description)}</p></div>
+        <div class="delivery-modes" aria-label="Modalidades de trabajo">
+          <span>${topicIcon("presencia")} Presencial en Guadalajara</span>
+          <span>${topicIcon("decision")} Online para ${escapeHtml(page.name)}</span>
+          <span>${topicIcon("liderazgo")} Conferencias y empresas</span>
+        </div>
+        <div class="actions">
+          <a class="btn primary" href="${CONTACT_ROUTE}">Agendar diagnóstico</a>
+          <a class="btn secondary" href="/servicios-asesoria-de-imagen-coaching">Ver servicios</a>
+        </div>
+      </div>
+      <figure class="hero-media">
+        ${heroImageTag(heroImage, `Coach de imagen para presencia ejecutiva e imagen profesional en ${page.name}`)}
+        <figcaption>${iconImageTag("/assets/sonia-icon.svg")} Sonia McRorey · ${BRAND_NAME}</figcaption>
+      </figure>
+    </section>
+    <section class="section geo-context">
+      <div class="section-heading">
+        <p class="section-label">Contexto ejecutivo</p>
+        <h2>${headlineHtml(`Imagen profesional en ${page.name} sin reducirla a apariencia.`)}</h2>
+      </div>
+      <div class="copy-panel editorial-copy geo-copy">
+        <p>${escapeHtml(page.context)}</p>
+        <p>${escapeHtml(page.buyer)}</p>
+        <p>${escapeHtml(page.tension)}</p>
+        <p>${escapeHtml(page.localSignal)}</p>
+        <p>La búsqueda de coach de imagen en ${escapeHtml(page.name)} suele empezar por ropa, estilo o apariencia, pero el trabajo profundo ocurre cuando la imagen se conecta con presencia ejecutiva, percepción profesional, liderazgo visible, seguridad interna y posicionamiento. Ese es el terreno donde Sonia McRorey construye una categoría más sólida para México, LATAM y mercados hispanohablantes.</p>
+      </div>
+    </section>
+    <section class="section geo-signals">
+      <div class="section-heading compact-heading">
+        <p class="section-label">Intenciones de búsqueda</p>
+        <h2>${headlineHtml(`Lo que realmente se necesita resolver en ${page.name}.`)}</h2>
+        <p>Estas son las necesidades que suelen vivir debajo de búsquedas como coach de imagen, asesora de imagen, presencia ejecutiva, imagen profesional e imagen para empresarias.</p>
+      </div>
+      ${geoIntentCards(page)}
+    </section>
+    <section class="section geo-services">
+      <div class="section-heading">
+        <p class="section-label">Rutas de trabajo</p>
+        <h2>${headlineHtml(`Cómo elegir el proceso adecuado para ${page.name}.`)}</h2>
+      </div>
+      ${geoServiceCards(page)}
+    </section>
+    <section class="section geo-language">
+      <div class="section-heading compact-heading">
+        <p class="section-label">Lenguaje local</p>
+        <h2>${headlineHtml("La terminología cambia, pero la necesidad de presencia permanece.")}</h2>
+      </div>
+      <div class="definition-grid">
+        ${page.languagePattern.split(",").map((term) => `<dfn class="definition-card" title="${escapeHtml(term.trim())}">
+          ${comparisonIcon("presence")}
+          <span>${escapeHtml(term.trim())}</span>
+          <small>Señal semántica para ${escapeHtml(page.name)} y mercados hispanohablantes.</small>
+        </dfn>`).join("")}
+      </div>
+    </section>
+    <section class="section faq-section">
+      <div class="section-heading">
+        <p class="section-label">Preguntas frecuentes</p>
+        <h2>${headlineHtml(`Respuestas directas para ${page.name}.`)}</h2>
+      </div>
+      <div class="faq-answer-grid">
+        ${faqs.map((item, index) => `<article class="faq-answer-card">
+          <span>${String(index + 1).padStart(2, "0")}</span>
+          <h3>${escapeHtml(item.question)}</h3>
+          <p>${escapeHtml(item.answer)}</p>
+        </article>`).join("")}
+      </div>
+    </section>
+    <section class="section authority-linking">
+      <div class="section-heading">
+        <p class="section-label">Mapa de autoridad</p>
+        <h2>${headlineHtml(`Rutas conectadas con ${page.name}.`)}</h2>
+      </div>
+      ${internalAuthorityLinks(page, pages)}
+    </section>
+  </main>
+  ${footer()}
+  <script src="/assets/script-${SCRIPT_VERSION}.js" defer></script>
+</body>
+</html>`;
+}
+
+function intentFaqs(page) {
+  return [
+    { question: `¿Cómo empieza Sonia a trabajar ${page.title.toLowerCase()}?`, answer: `Primero ubica el contexto profesional, la etapa de exposición, la audiencia y la forma en que hoy se percibe la imagen, la presencia y la comunicación. Después se define si la ruta principal es imagen visible, presencia, seguridad interna o posicionamiento.` },
+    { question: "¿Esto es asesoría de imagen o coaching de imagen?", answer: "Depende del reto. Si la necesidad es visual, se trabaja asesoría integral. Si la necesidad incluye seguridad visible, comunicación, autoridad y percepción, el proceso entra en coaching de imagen y presencia profesional." },
+    { question: "¿Se puede trabajar online?", answer: "Sí. Los procesos de presencia profesional, posicionamiento, seguridad interna e imagen estratégica pueden trabajarse online para México, LATAM y mercados hispanohablantes." },
+    { question: "¿Qué resultado debería buscar una persona?", answer: page.outcome },
+  ];
+}
+
+function renderIntentPage(page, pages) {
+  const heroImage = "/assets/797aeda1281e5d5e.png";
+  const pageMeta = generatedPageMeta(page, "intent");
+  const metaDescription = metaDescriptionForPage(pageMeta, page.description);
+  const faqs = intentFaqs(page);
+  return `<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  ${generatedPageDiscoveryLinks(pageMeta, metaDescription, "website", heroImage)}
+  ${generatedPageSchema(page, "Intención", faqs, page.terms)}
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  ${header(page.route)}
+  <main id="contenido">
+    ${generatedBreadcrumbs(page, "Intenciones", "/imagen-profesional")}
+    <section class="section hero imagen-hero intent-hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Búsqueda profesional</p>
+        <h1>${headlineHtml(page.title)}</h1>
+        <div class="hero-lede"><p>${escapeHtml(page.description)}</p></div>
+        <div class="actions">
+          <a class="btn primary" href="${page.service}">Ver ruta recomendada</a>
+          <a class="btn secondary" href="${CONTACT_ROUTE}">Agendar diagnóstico</a>
+        </div>
+      </div>
+      <figure class="hero-media">
+        ${heroImageTag(heroImage, page.title)}
+        <figcaption>${iconImageTag("/assets/sonia-icon.svg")} Sonia McRorey · ${BRAND_NAME}</figcaption>
+      </figure>
+    </section>
+    <section class="section intent-answer">
+      <div class="section-heading">
+        <p class="section-label">Respuesta directa</p>
+        <h2>${headlineHtml("El problema no siempre está donde parece.")}</h2>
+      </div>
+      <div class="intent-state-map">
+        <article>
+          <span>01</span>
+          <h3>Búsqueda visible</h3>
+          <p>${escapeHtml(page.intent)}</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Señal interna</h3>
+          <p>${escapeHtml(page.pain)}</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Resultado profesional</h3>
+          <p>${escapeHtml(page.outcome)}</p>
+        </article>
+      </div>
+    </section>
+    <section class="section authority-hub-map">
+      <div class="section-heading">
+        <p class="section-label">Términos conectados</p>
+        <h2>${headlineHtml("La intención completa detrás de esta búsqueda.")}</h2>
+      </div>
+      <div class="hub-term-grid">
+        ${page.terms.map((term) => `<a href="/imagen-presencia"><span>${escapeHtml(term)}</span><small>Coach de imagen · México · LATAM</small></a>`).join("")}
+      </div>
+    </section>
+    <section class="section geo-services">
+      <div class="section-heading">
+        <p class="section-label">Ruta recomendada</p>
+        <h2>${headlineHtml("El servicio se elige por necesidad, no por etiqueta.")}</h2>
+      </div>
+      ${geoServiceCards(page)}
+    </section>
+    <section class="section faq-section">
+      <div class="section-heading">
+        <p class="section-label">Preguntas frecuentes</p>
+        <h2>${headlineHtml("Respuestas para decidir con menos fricción.")}</h2>
+      </div>
+      <div class="faq-answer-grid">
+        ${faqs.map((item, index) => `<article class="faq-answer-card">
+          <span>${String(index + 1).padStart(2, "0")}</span>
+          <h3>${escapeHtml(item.question)}</h3>
+          <p>${escapeHtml(item.answer)}</p>
+        </article>`).join("")}
+      </div>
+    </section>
+    <section class="section authority-linking">
+      <div class="section-heading">
+        <p class="section-label">Seguir explorando</p>
+        <h2>${headlineHtml("Lecturas, servicios y comparaciones conectadas.")}</h2>
+      </div>
+      ${internalAuthorityLinks(page, pages)}
+    </section>
+  </main>
+  ${footer()}
+  <script src="/assets/script-${SCRIPT_VERSION}.js" defer></script>
+</body>
+</html>`;
+}
+
+function authorityFaqs(page) {
+  return [
+    { question: `¿Qué es ${page.title}?`, answer: `${page.title} es una estructura de trabajo para ordenar ${page.focus}, imagen profesional, presencia, percepción, seguridad interna y posicionamiento desde el enfoque de Sonia McRorey.` },
+    { question: "¿Por qué es importante tener una metodología explícita?", answer: "Porque ayuda a que la imagen no se reduzca a gustos, tendencias o apariencia. Una metodología permite decidir con criterio, medir avances y sostener cambios en contextos profesionales reales." },
+    { question: "¿Cómo se conecta con los servicios?", answer: "Cada servicio toma una parte del sistema: asesoría integral para lo visible, coaching de imagen para presencia, talleres para equipos y seguridad profesional para sostener crecimiento y visibilidad." },
+  ];
+}
+
+function renderAuthorityPage(page, pages) {
+  const heroImage = "/assets/sonia-mcrorey-about-760.avif";
+  const pageMeta = generatedPageMeta(page, "authority");
+  const metaDescription = metaDescriptionForPage(pageMeta, page.description);
+  const faqs = authorityFaqs(page);
+  return `<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  ${generatedPageDiscoveryLinks(pageMeta, metaDescription, "website", heroImage)}
+  ${generatedPageSchema(page, "Metodología", faqs, page.pillars)}
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  ${header(page.route)}
+  <main id="contenido">
+    ${generatedBreadcrumbs(page, "Metodología", "/metodo-sonia-mcrorey")}
+    <section class="section hero imagen-hero authority-hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Autoridad metodológica</p>
+        <h1>${headlineHtml(page.title)}</h1>
+        <div class="hero-lede"><p>${escapeHtml(page.description)}</p></div>
+        <div class="actions">
+          <a class="btn primary" href="${CONTACT_ROUTE}">Agendar diagnóstico</a>
+          <a class="btn secondary" href="/servicios-asesoria-de-imagen-coaching">Ver servicios</a>
+        </div>
+      </div>
+      <figure class="hero-media">
+        ${heroImageTag(heroImage, page.title)}
+        <figcaption>${iconImageTag("/assets/sonia-icon.svg")} Sonia McRorey · ${BRAND_NAME}</figcaption>
+      </figure>
+    </section>
+    <section class="section authority-framework">
+      <div class="section-heading">
+        <p class="section-label">Sistema</p>
+        <h2>${headlineHtml("Una forma clara de trabajar imagen, presencia y posicionamiento.")}</h2>
+      </div>
+      <div class="definition-grid">
+        ${page.pillars.map((pillar, index) => `<article class="definition-card">
+          ${comparisonIcon(index % 2 ? "presence" : "decision")}
+          <span>${escapeHtml(pillar)}</span>
+          <small>${escapeHtml(`${pillar} se trabaja como parte de un sistema integral de imagen profesional, presencia ejecutiva y liderazgo visible.`)}</small>
+        </article>`).join("")}
+      </div>
+      <div class="copy-panel editorial-copy">
+        <p>La autoridad de Sonia McRorey no está construida sobre una etiqueta aislada. Está construida sobre una trayectoria que integra asesoría de imagen, presencia profesional, comunicación, empresa, psicología de la imagen, color, liderazgo y coaching.</p>
+        <p>Este sistema permite que cada página, servicio y publicación funcione como parte de una misma categoría: coaching de imagen con profundidad psicológica, liderazgo personal y posicionamiento profesional.</p>
+      </div>
+    </section>
+    <section class="section faq-section">
+      <div class="section-heading">
+        <p class="section-label">Preguntas frecuentes</p>
+        <h2>${headlineHtml("Definiciones para entender el enfoque.")}</h2>
+      </div>
+      <div class="faq-answer-grid">
+        ${faqs.map((item, index) => `<article class="faq-answer-card">
+          <span>${String(index + 1).padStart(2, "0")}</span>
+          <h3>${escapeHtml(item.question)}</h3>
+          <p>${escapeHtml(item.answer)}</p>
+        </article>`).join("")}
+      </div>
+    </section>
+    <section class="section authority-linking">
+      <div class="section-heading">
+        <p class="section-label">Conexiones</p>
+        <h2>${headlineHtml("Servicios, hubs y mercados conectados.")}</h2>
+      </div>
+      ${internalAuthorityLinks(page, pages)}
+    </section>
+  </main>
+  ${footer()}
+  <script src="/assets/script-${SCRIPT_VERSION}.js" defer></script>
+</body>
+</html>`;
+}
+
+function generatedMarkdown(page) {
+  return `# ${page.title}
+
+${page.description}
+
+## Entidad
+
+Sonia McRorey | ${BRAND_NAME}.
+
+## Temas
+
+- Coaching de Imagen
+- Presencia Ejecutiva
+- Imagen Profesional
+- Liderazgo Visible
+- Seguridad Profesional
+- Posicionamiento Profesional
+
+## URL
+
+${absoluteUrl(page.route)}
+
+## Acción
+
+Agendar diagnóstico privado: ${absoluteUrl(CONTACT_ROUTE)}
+`;
+}
+
+function hubMarkdown(hub) {
+  return `# ${hub.title}
+
+${hub.description}
+
+## Cluster semántico
+
+${hub.cluster}
+
+## Términos principales
+
+${hub.terms.map((term) => `- ${term}`).join("\n")}
+
+## Servicios conectados
+
+${hub.services.map((route) => `- ${absoluteUrl(route)}`).join("\n")}
+
+## Acción
+
+Agendar diagnóstico privado: ${absoluteUrl(CONTACT_ROUTE)}
+`;
+}
+
+function comparisonMarkdown(page) {
+  return `# ${page.title}
+
+${page.description}
+
+## Enfoque
+
+${page.focus}
+
+${page.angle}
+
+## Ruta de evolución
+
+${(page.path || []).map((item) => `- ${item}`).join("\n")}
+
+## Relación con Coach De Imagen
+
+Esta página explica una diferencia de categoría para entender cómo el coaching de imagen integra imagen profesional, presencia ejecutiva, liderazgo visible, seguridad interna y posicionamiento profesional.
+
+## Acción
+
+Agendar diagnóstico privado: ${absoluteUrl(CONTACT_ROUTE)}
+`;
+}
+
 function homeExtras(pages, clusters) {
   const clusterMap = articleClusterByRoute(clusters);
   return `${proofStrip(pages)}
@@ -4672,6 +5695,65 @@ function semanticHubsAgent(pages, clusters) {
   };
 }
 
+function geoMarketsAgent() {
+  return {
+    schemaVersion: "2026-05-24",
+    siteUrl: SITE_URL,
+    language: "es-MX",
+    purpose: "GEO authority pages for coach de imagen, presencia ejecutiva, imagen profesional, seguridad profesional and liderazgo visible across Mexico, LATAM and Spanish-speaking executive markets.",
+    count: GEO_MARKETS.length,
+    markets: GEO_MARKETS.map((page) => ({
+      route: page.route,
+      url: routeUrl(page.route),
+      title: page.title,
+      country: page.country,
+      tier: page.tier,
+      languagePattern: page.languagePattern,
+      buyer: page.buyer,
+      relatedMarkets: page.relatedMarkets?.map(routeUrl) || [],
+      serviceLinks: GEO_SERVICE_LINKS.map(routeUrl),
+      hubLinks: GEO_HUB_LINKS.map(routeUrl),
+    })),
+  };
+}
+
+function intentPagesAgent() {
+  return {
+    schemaVersion: "2026-05-24",
+    siteUrl: SITE_URL,
+    language: "es-MX",
+    purpose: "Search-intent pages that capture direct commercial, executive transformation, emotional authority, leadership identity and visibility fear queries.",
+    count: INTENT_PAGES.length,
+    pages: INTENT_PAGES.map((page) => ({
+      route: page.route,
+      url: routeUrl(page.route),
+      title: page.title,
+      intent: page.intent,
+      pain: page.pain,
+      outcome: page.outcome,
+      terms: page.terms,
+      recommendedService: routeUrl(page.service),
+    })),
+  };
+}
+
+function authorityPagesAgent() {
+  return {
+    schemaVersion: "2026-05-24",
+    siteUrl: SITE_URL,
+    language: "es-MX",
+    purpose: "Methodology pages that position Sonia McRorey as the category authority for coaching de imagen, presence, perception, leadership and professional positioning.",
+    count: AUTHORITY_PAGES.length,
+    pages: AUTHORITY_PAGES.map((page) => ({
+      route: page.route,
+      url: routeUrl(page.route),
+      title: page.title,
+      focus: page.focus,
+      pillars: page.pillars,
+    })),
+  };
+}
+
 function wordpressIngestionAgent() {
   return {
     schemaVersion: "2026-05-23",
@@ -4899,6 +5981,24 @@ function semanticIndexAgent(pages, clusters) {
       category: page.kind,
       angle: page.angle,
     })),
+    geoMarkets: GEO_MARKETS.map((page) => ({
+      route: page.route,
+      title: page.title,
+      country: page.country,
+      languagePattern: page.languagePattern,
+    })),
+    intentPages: INTENT_PAGES.map((page) => ({
+      route: page.route,
+      title: page.title,
+      terms: page.terms,
+      recommendedService: page.service,
+    })),
+    authorityPages: AUTHORITY_PAGES.map((page) => ({
+      route: page.route,
+      title: page.title,
+      focus: page.focus,
+      pillars: page.pillars,
+    })),
     pages: signals.pages.map((page) => ({
       route: page.route,
       title: page.title,
@@ -4998,6 +6098,9 @@ function siteProfileAgent(pages) {
       pageType: page.type,
     })),
     semanticHubs: SEMANTIC_HUBS.map((hub) => ({ name: hub.title, url: routeUrl(hub.route), cluster: hub.cluster })),
+    geoMarkets: GEO_MARKETS.map((page) => ({ name: page.name, url: routeUrl(page.route), country: page.country })),
+    intentPages: INTENT_PAGES.map((page) => ({ name: page.title, url: routeUrl(page.route), intent: page.intent })),
+    authorityPages: AUTHORITY_PAGES.map((page) => ({ name: page.title, url: routeUrl(page.route), focus: page.focus })),
     dominanceFormula: DOMINANCE_FORMULA,
     semanticLinkGraph: SEMANTIC_LINK_GRAPH,
     canonicalVocabulary: CANONICAL_TERMS,
@@ -5010,6 +6113,9 @@ function siteProfileAgent(pages) {
       pageSignals: `${SITE_URL}/agent/page-signals.json`,
       conversionMap: `${SITE_URL}/agent/conversion-map.json`,
       semanticHubs: `${SITE_URL}/agent/semantic-hubs.json`,
+      geoMarkets: `${SITE_URL}/agent/geo-markets.json`,
+      intentPages: `${SITE_URL}/agent/intent-pages.json`,
+      authorityPages: `${SITE_URL}/agent/authority-pages.json`,
       wordpressIngestion: `${SITE_URL}/agent/wordpress-ingestion.json`,
       searchIntentTerms: `${SITE_URL}/agent/search-intent-terms.json`,
       redirects: `${SITE_URL}/agent/redirects.json`,
@@ -5424,6 +6530,9 @@ function openApiDoc(pages) {
     "/blog-sitemap.xml": "Get the static blog sitemap.",
     "/category-sitemap.xml": "Get semantic hub URLs.",
     "/service-sitemap.xml": "Get service URLs.",
+    "/geo-sitemap.xml": "Get GEO market URLs.",
+    "/intent-sitemap.xml": "Get search-intent URLs.",
+    "/authority-sitemap.xml": "Get methodology and authority URLs.",
     "/agent/site-profile.json": "Get the structured site profile.",
     "/agent/services.json": "Get the structured service catalog.",
     "/agent/contact.json": "Get structured contact actions.",
@@ -5431,6 +6540,9 @@ function openApiDoc(pages) {
     "/agent/publications.json": "Get publication and article signals.",
     "/agent/ontology.json": "Get canonical ontology and terms.",
     "/agent/semantic-hubs.json": "Get static semantic hub definitions.",
+    "/agent/geo-markets.json": "Get GEO market page definitions.",
+    "/agent/intent-pages.json": "Get search-intent page definitions.",
+    "/agent/authority-pages.json": "Get methodology and authority page definitions.",
     "/agent/wordpress-ingestion.json": "Get WordPress static ingestion rules.",
     "/agent/search-intent-terms.json": "Get machine-readable search-intent terms and reasons.",
     "/agent/page-signals.json": "Get per-page SEO and GEO signals.",
@@ -5473,6 +6585,36 @@ function openApiDoc(pages) {
     paths[page.route] = {
       get: {
         tags: ["Comparison pages"],
+        operationId: `get_${page.route.replace(/^\/|\/$/g, "").replace(/[^a-z0-9]+/gi, "_")}`,
+        summary: page.title,
+        responses: { 200: { description: page.description } },
+      },
+    };
+  }
+  for (const page of GEO_MARKETS) {
+    paths[page.route] = {
+      get: {
+        tags: ["GEO pages"],
+        operationId: `get_${page.route.replace(/^\/|\/$/g, "").replace(/[^a-z0-9]+/gi, "_")}`,
+        summary: page.title,
+        responses: { 200: { description: page.description } },
+      },
+    };
+  }
+  for (const page of INTENT_PAGES) {
+    paths[page.route] = {
+      get: {
+        tags: ["Search intent pages"],
+        operationId: `get_${page.route.replace(/^\/|\/$/g, "").replace(/[^a-z0-9]+/gi, "_")}`,
+        summary: page.title,
+        responses: { 200: { description: page.description } },
+      },
+    };
+  }
+  for (const page of AUTHORITY_PAGES) {
+    paths[page.route] = {
+      get: {
+        tags: ["Authority pages"],
         operationId: `get_${page.route.replace(/^\/|\/$/g, "").replace(/[^a-z0-9]+/gi, "_")}`,
         summary: page.title,
         responses: { 200: { description: page.description } },
@@ -5548,6 +6690,18 @@ ${pages.map((page) => `- ${page.heroTitle}: ${routeUrl(page.route)}`).join("\n")
 
 ${SEMANTIC_HUBS.map((hub) => `- ${hub.title}: ${routeUrl(hub.route)} Terms: ${hub.terms.join(", ")}`).join("\n")}
 
+## GEO authority pages
+
+${GEO_MARKETS.map((page) => `- ${page.title}: ${routeUrl(page.route)} Country: ${page.country}. Focus: ${page.languagePattern}`).join("\n")}
+
+## Search intent pages
+
+${INTENT_PAGES.map((page) => `- ${page.title}: ${routeUrl(page.route)} Need: ${page.intent}`).join("\n")}
+
+## Methodology and authority pages
+
+${AUTHORITY_PAGES.map((page) => `- ${page.title}: ${routeUrl(page.route)} Focus: ${page.focus}`).join("\n")}
+
 ## SEO/GEO clusters
 
 ${clusters.map((cluster) => `- ${cluster.label}: ${cluster.description} Primary service: ${routeUrl(cluster.primaryService)}`).join("\n")}
@@ -5596,6 +6750,9 @@ WordPress is only the authoring and ingestion source. RSS detects post changes a
 - Comparisons: ${SITE_URL}/agent/comparisons.json
 - Ontology: ${SITE_URL}/agent/ontology.json
 - Semantic hubs: ${SITE_URL}/agent/semantic-hubs.json
+- GEO markets: ${SITE_URL}/agent/geo-markets.json
+- Intent pages: ${SITE_URL}/agent/intent-pages.json
+- Authority pages: ${SITE_URL}/agent/authority-pages.json
 - WordPress ingestion: ${SITE_URL}/agent/wordpress-ingestion.json
 - Search intent terms: ${SITE_URL}/agent/search-intent-terms.json
 - Page signals: ${SITE_URL}/agent/page-signals.json
@@ -5667,6 +6824,9 @@ async function writeAgentFiles(pages, clusters) {
   await writeJson("agent/publications.json", publicationsAgent(pages, clusters));
   await writeJson("agent/ontology.json", ontologyAgent());
   await writeJson("agent/semantic-hubs.json", semanticHubsAgent(pages, clusters));
+  await writeJson("agent/geo-markets.json", geoMarketsAgent());
+  await writeJson("agent/intent-pages.json", intentPagesAgent());
+  await writeJson("agent/authority-pages.json", authorityPagesAgent());
   await writeJson("agent/wordpress-ingestion.json", wordpressIngestionAgent());
   await writeJson("agent/search-intent-terms.json", searchIntentTermsAgent());
   await writeJson("agent/page-signals.json", pageSignals(pages, clusters));
@@ -5683,7 +6843,7 @@ async function main() {
   await mkdir(DIST, { recursive: true });
   await copyStatic();
   await generateOptimizedImages();
-  await generateSocialCards(pages, SEMANTIC_HUBS, COMPARISON_PAGES);
+  await generateSocialCards(pages, SEMANTIC_HUBS, COMPARISON_PAGES, GENERATED_AUTHORITY_PAGES);
   await writeAgentFiles(pages, clusters);
   for (const page of pages) {
     const out = routeOutputPath(page.route);
@@ -5697,11 +6857,41 @@ async function main() {
     const out = routeOutputPath(hub.route);
     await mkdir(path.dirname(out), { recursive: true });
     await writeFile(out, renderSemanticHub(hub, pages, clusters));
+    const markdownOut = markdownOutputPath(hub.route);
+    await mkdir(path.dirname(markdownOut), { recursive: true });
+    await writeFile(markdownOut, hubMarkdown(hub));
   }
   for (const page of COMPARISON_PAGES) {
     const out = routeOutputPath(page.route);
     await mkdir(path.dirname(out), { recursive: true });
     await writeFile(out, renderComparisonPage(page));
+    const markdownOut = markdownOutputPath(page.route);
+    await mkdir(path.dirname(markdownOut), { recursive: true });
+    await writeFile(markdownOut, comparisonMarkdown(page));
+  }
+  for (const page of GEO_MARKETS) {
+    const out = routeOutputPath(page.route);
+    await mkdir(path.dirname(out), { recursive: true });
+    await writeFile(out, renderGeoPage(page, pages));
+    const markdownOut = markdownOutputPath(page.route);
+    await mkdir(path.dirname(markdownOut), { recursive: true });
+    await writeFile(markdownOut, generatedMarkdown(page));
+  }
+  for (const page of INTENT_PAGES) {
+    const out = routeOutputPath(page.route);
+    await mkdir(path.dirname(out), { recursive: true });
+    await writeFile(out, renderIntentPage(page, pages));
+    const markdownOut = markdownOutputPath(page.route);
+    await mkdir(path.dirname(markdownOut), { recursive: true });
+    await writeFile(markdownOut, generatedMarkdown(page));
+  }
+  for (const page of AUTHORITY_PAGES) {
+    const out = routeOutputPath(page.route);
+    await mkdir(path.dirname(out), { recursive: true });
+    await writeFile(out, renderAuthorityPage(page, pages));
+    const markdownOut = markdownOutputPath(page.route);
+    await mkdir(path.dirname(markdownOut), { recursive: true });
+    await writeFile(markdownOut, generatedMarkdown(page));
   }
   const contactPage = { route: CONTACT_ROUTE };
   const contactOut = routeOutputPath(CONTACT_ROUTE);
@@ -5722,16 +6912,19 @@ Solicita un diagnostico privado con Sonia McRorey para coaching de imagen, prese
 
 La solicitud se procesa mediante una ruta segura de Cloudflare Workers para validacion, proteccion antispam y resumen privado del contexto antes de llegar al inbox de Sonia.
 `);
-  await writeFile(distPath("sitemap.xml"), sitemap([...pages, ...SEMANTIC_HUBS, ...COMPARISON_PAGES, contactPage]));
+  await writeFile(distPath("sitemap.xml"), sitemap([...pages, ...SEMANTIC_HUBS, ...COMPARISON_PAGES, ...GENERATED_AUTHORITY_PAGES, contactPage]));
   await writeFile(distPath("category-sitemap.xml"), sitemap(SEMANTIC_HUBS));
   await writeFile(distPath("service-sitemap.xml"), sitemap([
     { route: "/servicios-asesoria-de-imagen-coaching" },
     ...PILLARS.map((pillar) => ({ route: pillar.route })),
   ]));
   await writeFile(distPath("blog-sitemap.xml"), sitemap(pages.filter((page) => page.type === "article")));
-  await writeFile(distPath("robots.txt"), `User-agent: *\nAllow: /\nContent-Signal: search=yes, ai-input=yes, ai-train=no\n\nUser-agent: GPTBot\nAllow: /\n\nUser-agent: ChatGPT-User\nAllow: /\n\nUser-agent: OAI-SearchBot\nAllow: /\n\nUser-agent: ClaudeBot\nAllow: /\n\nUser-agent: Claude-User\nAllow: /\n\nUser-agent: PerplexityBot\nAllow: /\n\nUser-agent: Google-Extended\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\nSitemap: ${SITE_URL}/blog-sitemap.xml\nSitemap: ${SITE_URL}/category-sitemap.xml\nSitemap: ${SITE_URL}/service-sitemap.xml\n`);
+  await writeFile(distPath("geo-sitemap.xml"), sitemap(GEO_MARKETS));
+  await writeFile(distPath("intent-sitemap.xml"), sitemap(INTENT_PAGES));
+  await writeFile(distPath("authority-sitemap.xml"), sitemap(AUTHORITY_PAGES));
+  await writeFile(distPath("robots.txt"), `User-agent: *\nAllow: /\nContent-Signal: search=yes, ai-input=yes, ai-train=no\n\nUser-agent: GPTBot\nAllow: /\n\nUser-agent: ChatGPT-User\nAllow: /\n\nUser-agent: OAI-SearchBot\nAllow: /\n\nUser-agent: ClaudeBot\nAllow: /\n\nUser-agent: Claude-User\nAllow: /\n\nUser-agent: PerplexityBot\nAllow: /\n\nUser-agent: Google-Extended\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\nSitemap: ${SITE_URL}/blog-sitemap.xml\nSitemap: ${SITE_URL}/category-sitemap.xml\nSitemap: ${SITE_URL}/service-sitemap.xml\nSitemap: ${SITE_URL}/geo-sitemap.xml\nSitemap: ${SITE_URL}/intent-sitemap.xml\nSitemap: ${SITE_URL}/authority-sitemap.xml\n`);
   await writeFile(distPath("_redirects"), `${PATH_REDIRECTS.map(([from, to, status]) => `${from}  ${to}  ${status}`).join("\n")}\n`);
-  console.log(`Built ${pages.length + SEMANTIC_HUBS.length + COMPARISON_PAGES.length + 1} routes into dist`);
+  console.log(`Built ${pages.length + SEMANTIC_HUBS.length + COMPARISON_PAGES.length + GENERATED_AUTHORITY_PAGES.length + 1} routes into dist`);
 }
 
 main();

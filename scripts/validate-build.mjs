@@ -34,8 +34,77 @@ const comparisonRoutes = [
   "/comparaciones/imagen-corporativa-vs-presencia-humana",
   "/comparaciones/evolucion-coaching-imagen-mexico-latam",
 ];
+const geoRoutes = [
+  "/mexico",
+  "/colombia",
+  "/argentina",
+  "/chile",
+  "/peru",
+  "/ecuador",
+  "/uruguay",
+  "/costa-rica",
+  "/panama",
+  "/republica-dominicana",
+  "/guadalajara",
+  "/cdmx",
+  "/monterrey",
+  "/queretaro",
+  "/puebla",
+  "/merida",
+  "/tijuana",
+  "/san-pedro-garza-garcia",
+  "/zapopan",
+  "/leon",
+  "/aguascalientes",
+  "/bogota",
+  "/medellin",
+  "/cali",
+  "/barranquilla",
+  "/cartagena",
+  "/buenos-aires",
+  "/cordoba",
+  "/rosario",
+  "/mendoza",
+  "/santiago",
+  "/vina-del-mar",
+  "/las-condes",
+  "/lima",
+  "/san-isidro",
+  "/miraflores",
+  "/quito",
+  "/guayaquil",
+  "/montevideo",
+  "/san-jose-costa-rica",
+  "/panama-city",
+  "/santo-domingo",
+  "/miami-hispanos",
+  "/houston-hispanos",
+  "/dallas-hispanos",
+  "/los-angeles-hispanos",
+  "/san-diego-hispanos",
+  "/new-york-hispanos",
+];
+const intentRoutes = [
+  "/como-proyectar-autoridad",
+  "/como-verme-mas-profesional",
+  "/como-mejorar-mi-presencia-profesional",
+  "/inseguridad-profesional",
+  "/presencia-ejecutiva-femenina",
+  "/imagen-para-mujeres-lideres",
+  "/comunicacion-no-verbal-ejecutiva",
+  "/imagen-ejecutiva-para-empresarias",
+  "/liderazgo-visible",
+  "/seguridad-profesional-femenina",
+];
+const authorityRoutes = [
+  "/metodo-sonia-mcrorey",
+  "/sistema-presencia-profesional",
+  "/framework-liderazgo-visible",
+  "/modelo-imagen-estrategica",
+  "/glosario",
+];
 const contactRoutes = ["/contacto"];
-const expectedRoutes = new Set([...routeSet, ...semanticHubRoutes, ...comparisonRoutes, ...contactRoutes]);
+const expectedRoutes = new Set([...routeSet, ...semanticHubRoutes, ...comparisonRoutes, ...geoRoutes, ...intentRoutes, ...authorityRoutes, ...contactRoutes]);
 const deprecatedComparisonRoutes = [
   "/comparaciones/sonia-mcrorey-vs-gaby-vargas",
 ];
@@ -100,6 +169,21 @@ for (const route of comparisonRoutes) {
   if (!existsSync(htmlPath)) failures.push(`Missing comparison page output: ${route}`);
 }
 
+for (const route of geoRoutes) {
+  const htmlPath = path.join("dist", route, "index.html");
+  if (!existsSync(htmlPath)) failures.push(`Missing GEO page output: ${route}`);
+}
+
+for (const route of intentRoutes) {
+  const htmlPath = path.join("dist", route, "index.html");
+  if (!existsSync(htmlPath)) failures.push(`Missing intent page output: ${route}`);
+}
+
+for (const route of authorityRoutes) {
+  const htmlPath = path.join("dist", route, "index.html");
+  if (!existsSync(htmlPath)) failures.push(`Missing authority page output: ${route}`);
+}
+
 for (const route of contactRoutes) {
   const htmlPath = path.join("dist", route, "index.html");
   if (!existsSync(htmlPath)) failures.push(`Missing contact page output: ${route}`);
@@ -117,11 +201,11 @@ for (const asset of ["dist/assets/sonia-logo-ai.png", "dist/assets/sonia-logo-so
   if (!existsSync(asset)) failures.push(`Missing supplied Sonia brand asset: ${asset}`);
 }
 const runtimeScript = await readFile("script.js", "utf8");
-if (!runtimeScript.includes("navigator.modelContext") || !runtimeScript.includes("registerTool")) {
-  failures.push("Runtime script does not register WebMCP tools with navigator.modelContext.registerTool");
+if (!runtimeScript.includes("navigator.modelContext") || !runtimeScript.includes("provideContext")) {
+  failures.push("Runtime script does not expose WebMCP tools with navigator.modelContext.provideContext");
 }
-if (runtimeScript.includes("provideContext")) {
-  failures.push("Runtime script still uses deprecated WebMCP provideContext path");
+if (!runtimeScript.includes("registerTool")) {
+  failures.push("Runtime script does not retain WebMCP registerTool fallback");
 }
 
 for (const cluster of strategy.clusters) {
@@ -340,6 +424,15 @@ for (const route of semanticHubRoutes) {
 for (const route of comparisonRoutes) {
   if (!sitemap.includes(`${SITE_URL}${route}`)) failures.push(`Missing comparison page in sitemap: ${route}`);
 }
+for (const route of geoRoutes) {
+  if (!sitemap.includes(`${SITE_URL}${route}`)) failures.push(`Missing GEO page in sitemap: ${route}`);
+}
+for (const route of intentRoutes) {
+  if (!sitemap.includes(`${SITE_URL}${route}`)) failures.push(`Missing intent page in sitemap: ${route}`);
+}
+for (const route of authorityRoutes) {
+  if (!sitemap.includes(`${SITE_URL}${route}`)) failures.push(`Missing authority page in sitemap: ${route}`);
+}
 for (const route of contactRoutes) {
   if (!sitemap.includes(`${SITE_URL}${route}`)) failures.push(`Missing contact page in sitemap: ${route}`);
 }
@@ -348,7 +441,7 @@ for (const route of deprecatedComparisonRoutes) {
   if (sitemap.includes(`${SITE_URL}${route}`)) failures.push(`Deprecated comparison page in sitemap: ${route}`);
 }
 
-for (const sitemapFile of ["dist/blog-sitemap.xml", "dist/category-sitemap.xml", "dist/service-sitemap.xml"]) {
+for (const sitemapFile of ["dist/blog-sitemap.xml", "dist/category-sitemap.xml", "dist/service-sitemap.xml", "dist/geo-sitemap.xml", "dist/intent-sitemap.xml", "dist/authority-sitemap.xml"]) {
   if (!existsSync(sitemapFile)) failures.push(`Missing sitemap file: ${sitemapFile}`);
   else {
     const text = await readFile(sitemapFile, "utf8");
@@ -390,6 +483,9 @@ const requiredAgentFiles = [
   "dist/agent/publications.json",
   "dist/agent/ontology.json",
   "dist/agent/semantic-hubs.json",
+  "dist/agent/geo-markets.json",
+  "dist/agent/intent-pages.json",
+  "dist/agent/authority-pages.json",
   "dist/agent/wordpress-ingestion.json",
   "dist/agent/search-intent-terms.json",
   "dist/agent/page-signals.json",
@@ -454,6 +550,9 @@ for (const line of [
   `Sitemap: ${SITE_URL}/blog-sitemap.xml`,
   `Sitemap: ${SITE_URL}/category-sitemap.xml`,
   `Sitemap: ${SITE_URL}/service-sitemap.xml`,
+  `Sitemap: ${SITE_URL}/geo-sitemap.xml`,
+  `Sitemap: ${SITE_URL}/intent-sitemap.xml`,
+  `Sitemap: ${SITE_URL}/authority-sitemap.xml`,
   "Content-Signal: search=yes, ai-input=yes, ai-train=no",
 ]) {
   if (!robots.includes(line)) failures.push(`robots.txt missing ${line}`);

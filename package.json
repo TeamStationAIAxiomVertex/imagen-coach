@@ -1,6 +1,7 @@
 {
   "type": "module",
   "scripts": {
+    "audit:authority": "node scripts/generate-authority-audit.mjs",
     "audit:content": "node scripts/audit-content-density.mjs",
     "build": "node scripts/build-static.mjs",
     "dev": "python3 -m http.server 4173 --directory dist",

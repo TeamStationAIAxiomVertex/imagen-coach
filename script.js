@@ -167,7 +167,7 @@ contactForm?.addEventListener("submit", async (event) => {
 
 const registerAgentTools = () => {
   const modelContext = navigator.modelContext;
-  if (!modelContext || typeof modelContext.registerTool !== "function") return;
+  if (!modelContext || (typeof modelContext.provideContext !== "function" && typeof modelContext.registerTool !== "function")) return;
 
   const origin = window.location.origin;
   const serviceRoutes = {
@@ -213,7 +213,16 @@ const registerAgentTools = () => {
   const controller = new AbortController();
   window.addEventListener("pagehide", () => controller.abort(), { once: true });
   const toolOptions = { signal: controller.signal };
-  const register = (tool) => modelContext.registerTool(tool, toolOptions);
+  const shouldProvideContext = typeof modelContext.provideContext === "function";
+  const providedTools = [];
+  let contextHandle = null;
+  const register = (tool) => {
+    providedTools.push(tool);
+    if (!shouldProvideContext && typeof modelContext.registerTool === "function") {
+      return modelContext.registerTool(tool, toolOptions);
+    }
+    return undefined;
+  };
 
   try {
     register({
@@ -321,6 +330,23 @@ const registerAgentTools = () => {
       }),
       annotations: { readOnlyHint: true },
     });
+
+    if (shouldProvideContext) {
+      contextHandle = modelContext.provideContext({
+        name: "coachdeimagen.browser-context",
+        title: "Coach De Imagen Browser Tools",
+        description:
+          "Herramientas públicas de navegación, descubrimiento semántico y contacto para el sitio Coach De Imagen de Sonia McRorey.",
+        tools: providedTools,
+      });
+      window.addEventListener(
+        "pagehide",
+        () => {
+          if (contextHandle && typeof contextHandle.dispose === "function") contextHandle.dispose();
+        },
+        { once: true },
+      );
+    }
 
     window.__coachDeImagenWebMcpTools = [
       "coachdeimagen.choose_service_route",
