@@ -24,3 +24,16 @@ Hard constraints:
 ## Agent Operating Contract
 
 Agents must inspect rendered output before claiming SEO, GEO, schema, social, sitemap or deployment readiness. Do not expose SEO engineering language in public pages. Keep content Spanish, executive, human and category-clear.
+
+## Source Material Contract
+
+Sonia's domain knowledge sources are part of the operating contract:
+
+- `content/blog/soniamcrorey-blog.json`
+- `content/sonia-knowledge/quote-bank.json`
+- `content/sonia-knowledge/drive-source-inventory.json`
+- `content/sonia-knowledge/drive-quote-bank.json`
+- `docs/SONIA_KNOWLEDGEBASE_QUOTE_BANK.md`
+- `docs/SONIA_DRIVE_KNOWLEDGEBASE.md`
+
+Use these before writing source-grounded pages, methodology pages, FAQs, GEO pages, service descriptions or schema descriptions. Public copy must use sanitized, reviewed extracts only. Never publish raw Drive payment details, old contact data, banking details, dated prices or private program logistics.

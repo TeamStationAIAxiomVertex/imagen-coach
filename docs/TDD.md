@@ -24,6 +24,25 @@ Assert:
 - `docs/source-url-inventory.md` contains exactly the 35 canonical URLs from `archive/imagencoach/manifest.json`
 - every canonical URL has a clean content page
 - every clean page points back to source text and source HTML
+- `content/sonia-knowledge/drive-source-inventory.json` parses as valid JSON
+- `content/sonia-knowledge/drive-quote-bank.json` parses as valid JSON
+- `content/sonia-knowledge/drive-source-inventory.json` keeps `rawFilesCommitted` set to `false`
+- `docs/SONIA_DRIVE_KNOWLEDGEBASE.md` documents the Drive source usage and sensitivity rules
+
+### 1a. Sonia Source Hygiene Tests
+
+Assert rendered `dist/` output does not contain raw private or stale source details from Sonia's Drive documents:
+
+- bank account numbers
+- CLABE numbers
+- card numbers
+- private payment instructions
+- stale course-only prices
+- old emails that are not part of the current `coachdeimagen.com` contact strategy
+- old source domains such as `cursosdeimagen.com` in visible page copy
+- raw program logistics or dated cohort information unless explicitly approved for a current public offer
+
+Drive-derived content must be sanitized, page-specific and tied to a semantic cluster before public output.
 
 ### 2. Content Cleanup Tests
 

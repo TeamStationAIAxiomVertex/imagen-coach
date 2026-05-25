@@ -76,6 +76,25 @@ Execution standard:
 - pages must reduce uncertainty, not add copy volume
 - service pages must clarify fit and next step
 
+## Sonia Source-Material Skills
+
+Required skills:
+
+- source synthesis
+- editorial extraction
+- sensitive-content redaction
+- Spanish executive content strategy
+- Sonia voice preservation
+- service and methodology mapping
+
+Execution standard:
+
+- read `content/blog/soniamcrorey-blog.json`, `content/sonia-knowledge/quote-bank.json`, `content/sonia-knowledge/drive-source-inventory.json`, `content/sonia-knowledge/drive-quote-bank.json` and `docs/SONIA_DRIVE_KNOWLEDGEBASE.md` before writing source-grounded pages
+- use Sonia's actual language where it strengthens proof, clarity or authority
+- do not publish raw Drive documents, payment details, old contact data, bank data, stale prices or private logistics
+- do not use source material as generic quote stuffing
+- map every extract to page intent, semantic cluster and buyer decision stage
+
 ## AI Engineering Skills
 
 Required skills:

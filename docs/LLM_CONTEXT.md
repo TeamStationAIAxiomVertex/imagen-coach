@@ -24,6 +24,7 @@ Done:
 - clean content layer generated
 - static route generator implemented
 - agentic discovery layer added to build output
+- Sonia blog archive and Drive source material added as controlled domain knowledge sources
 
 Not done yet:
 
@@ -47,6 +48,22 @@ Not done yet:
 - `docs/GEO_OPERATING_SYSTEM.md`: agentic GEO strategy
 - `docs/PAGE_SIGNAL_MAP.md`: page-level signal map
 - `docs/REDIRECTS_AND_URL_RETENTION.md`: URL and redirect rules
+- `content/blog/soniamcrorey-blog.json`: Sonia blog archive knowledge source
+- `content/sonia-knowledge/quote-bank.json`: candidate Sonia-authored quote bank
+- `content/sonia-knowledge/drive-source-inventory.json`: Drive document and presentation inventory
+- `content/sonia-knowledge/drive-quote-bank.json`: Drive-derived candidate quote and teaching-signal bank
+- `docs/SONIA_KNOWLEDGEBASE_QUOTE_BANK.md`: blog quote guidance
+- `docs/SONIA_DRIVE_KNOWLEDGEBASE.md`: Drive source relevance and usage rules
+
+## Sonia Source Material
+
+Before writing or refactoring source-grounded content, use Sonia's own material:
+
+- blog archive for long-tail language and article authority
+- quote bank for candidate phrasing
+- Drive inventory for service architecture, biography, methodology, presentations and visual assets
+
+Do not publish raw Drive documents, private payment details, old contact details, old prices, bank information or dated program logistics. Use sanitized, page-specific extracts only.
 
 ## Agentic Files
 

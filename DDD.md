@@ -20,6 +20,16 @@ Hard constraints:
 - Internal link mesh across services, hubs, GEO, intent, comparisons and publications
 - Cloudflare Pages compatible output from `dist/`
 
+Domain knowledge sources:
+
+- Blog archive: `content/blog/soniamcrorey-blog.json`
+- Blog quote bank: `content/sonia-knowledge/quote-bank.json`
+- Drive source inventory: `content/sonia-knowledge/drive-source-inventory.json`
+- Drive quote bank: `content/sonia-knowledge/drive-quote-bank.json`
+- Drive source guide: `docs/SONIA_DRIVE_KNOWLEDGEBASE.md`
+
+These sources define Sonia's content language, proof, methodology and teaching context. They must be used as controlled source material, not raw public page dumps.
+
 
 ## Generated Artifacts
 

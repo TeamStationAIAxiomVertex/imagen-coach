@@ -1,0 +1,719 @@
+{
+  "source": {
+    "kind": "google_drive_folder",
+    "url": "https://drive.google.com/drive/folders/132lIVQigNgRpHfsSsuoZMewn8AwvgmhR",
+    "reviewedAt": "2026-05-25",
+    "visibleFileCount": 33,
+    "status": "reviewed_as_controlled_domain_knowledge_source",
+    "purpose": "Additional Sonia McRorey source-of-truth material for coachdeimagen.com content strategy, SEO, GEO, schema, methodology pages, service positioning and future page addendums."
+  },
+  "governance": {
+    "rawFilesCommitted": false,
+    "reasonRawFilesAreNotCommitted": "The folder contains current offer drafts, payment details, old contact details, dated program logistics and private operational material. Public pages and agent docs must use sanitized extracts only.",
+    "usageRule": "Use as expert source material before writing or refactoring content. Do not copy large blocks into public pages. Extract only short, relevant, Sonia-authored teaching language with editorial review.",
+    "publicSafetyRules": [
+      "Do not publish bank accounts, CLABE, card numbers, payment links, private logistics or old offer prices unless Sonia confirms they are current and public.",
+      "Do not publish old emails, old domains or obsolete contact instructions.",
+      "Do not let abundance, manifestation, energy or spiritual language dominate executive service pages.",
+      "Use coaching de abundancia and mindset material as supporting context for seguridad interna, visibility, decision-making and sustainable growth.",
+      "Preserve Sonia's phrasing, but compress it for commercial pages and reserve long-form depth for article, methodology and pillar pages."
+    ]
+  },
+  "sourceStack": [
+    {
+      "path": "content/blog/soniamcrorey-blog.json",
+      "role": "large blog archive and long-tail language source"
+    },
+    {
+      "path": "content/sonia-knowledge/quote-bank.json",
+      "role": "candidate quote bank extracted from blog archive"
+    },
+    {
+      "path": "content/sonia-knowledge/drive-source-inventory.json",
+      "role": "controlled inventory of Drive documents and presentations"
+    },
+    {
+      "path": "content/sonia-knowledge/drive-quote-bank.json",
+      "role": "candidate quote and signal bank extracted from reviewed Drive documents"
+    },
+    {
+      "path": "docs/SONIA_DRIVE_KNOWLEDGEBASE.md",
+      "role": "human-readable Drive knowledgebase and content usage guide"
+    }
+  ],
+  "semanticClusters": [
+    {
+      "id": "service_architecture",
+      "label": "Servicios y arquitectura comercial",
+      "primarySources": [
+        "Sonia_McRorey_Servicios_v7.docx",
+        "Definición Coaching de imagen y coaching de abundancia.pdf",
+        "3 Cambios de Mentalidad de Asesor a Coach de Imagen.docx"
+      ],
+      "pageUse": [
+        "homepage positioning",
+        "service pages",
+        "FAQ pages",
+        "contact intake copy",
+        "schema service descriptions"
+      ]
+    },
+    {
+      "id": "authority_bio_eat",
+      "label": "Trayectoria, autoridad y prueba profesional",
+      "primarySources": [
+        "Semblanza corregida.pdf",
+        "Sonia_McRorey_Servicios_v7.docx"
+      ],
+      "pageUse": [
+        "about page",
+        "Person schema",
+        "Organization and LocalBusiness schema",
+        "speaker and enterprise credibility sections"
+      ]
+    },
+    {
+      "id": "sustainable_growth",
+      "label": "Capacidad interna para sostener crecimiento",
+      "primarySources": [
+        "La capacidad de sostener.pdf",
+        "Creencias_SoniaMcrorey.docx",
+        "e-book hackea tu mente original.pdf"
+      ],
+      "pageUse": [
+        "seguridad profesional",
+        "inseguridad profesional",
+        "liderazgo visible",
+        "mujeres empresarias",
+        "hidden psychological search intent pages"
+      ]
+    },
+    {
+      "id": "identity_autoconcept",
+      "label": "Identidad, autoconcepto y presencia",
+      "primarySources": [
+        "Autoconcepto - Coaching de imagen SM.pptx",
+        "Autoconcepto - Profundizando - Coaching de imagen SM.pptx",
+        "Autoconcepto - Profundizando - Coaching de imagen SM.pdf",
+        "Entrevista a Sonia McRorey.docx"
+      ],
+      "pageUse": [
+        "metodo Sonia McRorey",
+        "sistema de presencia profesional",
+        "coaching de imagen pages",
+        "article addendums"
+      ]
+    },
+    {
+      "id": "nonverbal_presence",
+      "label": "Comunicación no verbal, proxemia y presencia profesional",
+      "primarySources": [
+        "COMUNICACIÓN NO VERBAL ENTREVISTA PROXEMIA.pdf",
+        "Manifiesta - Comunicacion no verbal - Tu voz.pptx",
+        "Claves de la vestimenta profesional femenina  Manifiesta.pptx"
+      ],
+      "pageUse": [
+        "comunicacion no verbal",
+        "presencia ejecutiva",
+        "interview and meeting presence",
+        "enterprise workshops"
+      ]
+    },
+    {
+      "id": "style_visual_identity",
+      "label": "Estilo, guardarropa, color y autoridad visual",
+      "primarySources": [
+        "Estilo para marca personal.pdf",
+        "Ebook - Closet o compras - SoniaMcRorey.pdf",
+        "BONUS - Closet o compras Soniamcrorey.pdf",
+        "Edición 6.6 - Closet o compras E-Book Soniamcrorey.pdf",
+        "7 estilos desde el coaching de imagen.pptx"
+      ],
+      "pageUse": [
+        "asesoria integral",
+        "imagen profesional",
+        "colorimetria",
+        "guardarropa",
+        "marca personal"
+      ]
+    },
+    {
+      "id": "methodology_axioms",
+      "label": "Axiomas, metodologia y doctrina de imagen",
+      "primarySources": [
+        "Axiomas de la imagen SoniaMcRorey Escuela.pdf",
+        "Coaching de imagen SM Escuela formacion Pro.pptx",
+        "Imagen Responsable - Terravita.pdf"
+      ],
+      "pageUse": [
+        "methodology pages",
+        "glossary pages",
+        "definition pages",
+        "comparison pages"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "id": "1YS65nN_-2Uh4-duRbAsE1sluMtb3m8vu",
+      "title": "Definición Coaching de imagen y coaching de abundancia.pdf",
+      "mimeType": "application/pdf",
+      "relevance": "primary",
+      "status": "sampled_and_relevant_now",
+      "useFor": [
+        "definition of coaching de imagen",
+        "definition of coaching de abundancia",
+        "service FAQ",
+        "category differentiation"
+      ],
+      "candidateSignals": [
+        "Coaching de imagen is not only styling; it asks why the person presents themselves that way.",
+        "Coaching de abundancia identifies internal brakes around money, deserving, pricing and growth."
+      ],
+      "sensitivity": [
+        "review for dated offer language before public use"
+      ]
+    },
+    {
+      "id": "1sqfTyIiOUn007d3ZLO5x1J-cqhXqJgqv",
+      "title": "Círculos de Dinero y Abundancia.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "relevance": "secondary",
+      "status": "metadata_reviewed_needs_full_extraction",
+      "useFor": [
+        "money beliefs",
+        "capacity to receive",
+        "business growth mindset"
+      ],
+      "sensitivity": [
+        "abundance language must stay supporting, not primary executive positioning",
+        "review for program logistics and pricing"
+      ]
+    },
+    {
+      "id": "1G6_eFpfSHvDusYsxn3iZd_ThEnlsfrHU",
+      "title": "Creencias_SoniaMcrorey.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "relevance": "primary",
+      "status": "sampled_and_relevant_now",
+      "useFor": [
+        "visibility fear",
+        "professional insecurity",
+        "pricing confidence",
+        "belief patterns",
+        "women leaders intent pages"
+      ],
+      "candidateSignals": [
+        "Visibility is not only a content or algorithm problem; it is also permission, security and internal identity.",
+        "Invisible beliefs can appear as postponement, minimization, fear of pricing and need for external validation."
+      ],
+      "sensitivity": [
+        "avoid turning executive pages into therapy or self-help pages"
+      ]
+    },
+    {
+      "id": "1x9ueSMAossP2mZUqyZWRU6SoFmrjqstq",
+      "title": "Sonia_McRorey_Servicios_v7.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "relevance": "primary",
+      "status": "sampled_and_relevant_now",
+      "useFor": [
+        "current service architecture",
+        "commercial positioning",
+        "buyer segmentation",
+        "service schema",
+        "contact intake alignment"
+      ],
+      "candidateSignals": [
+        "Imagen estrategica para sostener decisiones, visibilidad y dinero.",
+        "The work integrates external image, identity coaching and abundance coaching into one process."
+      ],
+      "sensitivity": [
+        "contains private payment or banking details",
+        "contains contact and offer details that may be outdated",
+        "do not commit raw content"
+      ]
+    },
+    {
+      "id": "1pfyZkBdnYrdagwEGRLsLyTsQftT8m08h",
+      "title": "Sonia McRorey imagen integral presencia identidad mentalidad.png",
+      "mimeType": "image/png",
+      "relevance": "visual",
+      "status": "metadata_reviewed_visual_asset",
+      "useFor": [
+        "methodology visual reference",
+        "brand-context imagery"
+      ],
+      "sensitivity": [
+        "inspect visually before public use",
+        "optimize and rename before production use"
+      ]
+    },
+    {
+      "id": "1x3k1o15fiiwAsEEiyEPKrkNLZxfmLdy7",
+      "title": "Sonia editado canva.png",
+      "mimeType": "image/png",
+      "relevance": "visual",
+      "status": "metadata_reviewed_visual_asset",
+      "useFor": [
+        "Sonia visual asset candidate"
+      ],
+      "sensitivity": [
+        "inspect crop and fidelity before public use"
+      ]
+    },
+    {
+      "id": "1NohKvNfCqkdknimxFHsFuJ1jAj4iCeXK",
+      "title": "Sonia imagen identidad mentalidad.png",
+      "mimeType": "image/png",
+      "relevance": "visual",
+      "status": "metadata_reviewed_visual_asset",
+      "useFor": [
+        "identity and mindset visual reference"
+      ],
+      "sensitivity": [
+        "inspect visual accuracy before public use"
+      ]
+    },
+    {
+      "id": "1ApFnxDemJPckH2r36uLjx6oldcW4OTNN",
+      "title": "Sonia_McRorey-24_websize.jpg",
+      "mimeType": "image/jpeg",
+      "relevance": "visual",
+      "status": "metadata_reviewed_visual_asset",
+      "useFor": [
+        "about page",
+        "speaker sections",
+        "Sonia authority visuals"
+      ],
+      "sensitivity": [
+        "optimize to AVIF or WebP before production use"
+      ]
+    },
+    {
+      "id": "18taeV6ALGMBsrjRzSH3iwiNaekdKQfJr",
+      "title": "Sonia_McRorey-20_websize.jpg",
+      "mimeType": "image/jpeg",
+      "relevance": "visual",
+      "status": "metadata_reviewed_visual_asset",
+      "useFor": [
+        "about page",
+        "service proof sections",
+        "author visuals"
+      ],
+      "sensitivity": [
+        "avoid repeated use across many pages"
+      ]
+    },
+    {
+      "id": "1FHf4iTyN5JkJqtzvjvELZ7APQclYzSZd",
+      "title": "Sonia_McRorey-18_websize.jpg",
+      "mimeType": "image/jpeg",
+      "relevance": "visual",
+      "status": "metadata_reviewed_visual_asset",
+      "useFor": [
+        "about page",
+        "authority sections",
+        "speaker visuals"
+      ],
+      "sensitivity": [
+        "optimize and verify crop before public use"
+      ]
+    },
+    {
+      "id": "19YuKqV_Ly4HbuBu97IT9qMACrHFnAkw_",
+      "title": "Semblanza corregida.pdf",
+      "mimeType": "application/pdf",
+      "relevance": "primary",
+      "status": "sampled_and_relevant_now",
+      "useFor": [
+        "about page",
+        "Person schema",
+        "E-E-A-T",
+        "speaker credibility",
+        "enterprise authority"
+      ],
+      "candidateSignals": [
+        "15 years of specialized trajectory at the intersection of image, identity and mindset in professional context.",
+        "AICI Guadalajara leadership role and international formation support Sonia's domain authority."
+      ],
+      "sensitivity": [
+        "review contact details before public use"
+      ]
+    },
+    {
+      "id": "18A88vkS7NxDYjzV8TCqWuEucRMj6tJga",
+      "title": "imagen mentalidad soniamcrorey.pdf",
+      "mimeType": "application/pdf",
+      "relevance": "secondary",
+      "status": "metadata_reviewed_needs_full_extraction",
+      "useFor": [
+        "image and mindset bridge",
+        "internal alignment",
+        "supporting methodology language"
+      ],
+      "sensitivity": [
+        "review for dated offer or event language"
+      ]
+    },
+    {
+      "id": "1jR_4I-NPgUSuooYYj6OFc4p2NPmAOlS8",
+      "title": "La capacidad de sostener.pdf",
+      "mimeType": "application/pdf",
+      "relevance": "primary",
+      "status": "sampled_and_relevant_now",
+      "useFor": [
+        "seguridad profesional",
+        "sustainable leadership",
+        "nervous system support",
+        "visibility and growth pages"
+      ],
+      "candidateSignals": [
+        "The real limit is often not strategy; it is internal capacity to sustain expansion.",
+        "Growth asks for visibility, income, responsibility and a system that can hold the next level."
+      ],
+      "sensitivity": [
+        "remove old program dates and investment details before public use"
+      ]
+    },
+    {
+      "id": "1dGHmNfsgzyU4Zn8mHpyP-gmQTtjaXXt8",
+      "title": "El negocio es un espejo de quién estoy siendo en la vida.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "relevance": "secondary",
+      "status": "metadata_reviewed_needs_full_extraction",
+      "useFor": [
+        "entrepreneurship positioning",
+        "business identity",
+        "women founders content"
+      ],
+      "sensitivity": [
+        "use selectively to keep executive commercial clarity"
+      ]
+    },
+    {
+      "id": "1Y2Q1lzrPRdijl_SVAdJ-_0RucVF_lTq4",
+      "title": "Claves de la vestimenta profesional femenina  Manifiesta.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "relevance": "secondary",
+      "status": "metadata_reviewed_needs_full_extraction",
+      "useFor": [
+        "professional wardrobe",
+        "women executives",
+        "visual authority",
+        "training pages"
+      ],
+      "sensitivity": [
+        "verify whether Manifiesta content is current public material"
+      ]
+    },
+    {
+      "id": "1jrYVpHPaTNUeoE7taYzBBjsyt1diMSLF",
+      "title": "e-book hackea tu mente original.pdf",
+      "mimeType": "application/pdf",
+      "relevance": "secondary",
+      "status": "metadata_reviewed_needs_full_extraction",
+      "useFor": [
+        "belief patterns",
+        "mindset support",
+        "security and visibility pages"
+      ],
+      "sensitivity": [
+        "avoid self-help overclassification on executive pages"
+      ]
+    },
+    {
+      "id": "1UAA0_JgpeS50gZZGbc-z51lEdNaywNqG",
+      "title": "Coaching de imagen SM Escuela formacion Pro.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "relevance": "primary",
+      "status": "metadata_reviewed_needs_full_extraction",
+      "useFor": [
+        "methodology",
+        "coach de imagen definitions",
+        "training authority",
+        "glossary"
+      ],
+      "sensitivity": [
+        "review for proprietary course structure before public use"
+      ]
+    },
+    {
+      "id": "1HthTuIDgNxVQ_Y1DCT3RJwzs2JUbd9Ey",
+      "title": "7 estilos desde el coaching de imagen.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "relevance": "secondary",
+      "status": "metadata_reviewed_needs_full_extraction",
+      "useFor": [
+        "style definitions",
+        "visual identity",
+        "asesoria integral"
+      ],
+      "sensitivity": [
+        "avoid fashion-only positioning"
+      ]
+    },
+    {
+      "id": "19OuEr_negtIhL0y5IC2h4iWv-pu91-hF",
+      "title": "Entrevista a Sonia McRorey.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "relevance": "primary",
+      "status": "sampled_and_relevant_now",
+      "useFor": [
+        "voice and idioms",
+        "about page tone",
+        "methodology language",
+        "founder narrative"
+      ],
+      "candidateSignals": [
+        "The business is a mirror of who the person is being.",
+        "What is not spoken is seen, felt and perceived."
+      ],
+      "sensitivity": [
+        "use spiritual language carefully and selectively"
+      ]
+    },
+    {
+      "id": "1VysJORybIbikJ3OqwrrGv3DAuJnNVAD9",
+      "title": "Edición 6.6 - Closet o compras E-Book Soniamcrorey.pdf",
+      "mimeType": "application/pdf",
+      "relevance": "secondary",
+      "status": "metadata_reviewed_needs_full_extraction",
+      "useFor": [
+        "closet decisions",
+        "shopping and wardrobe",
+        "style system"
+      ],
+      "sensitivity": [
+        "review for dated offer details"
+      ]
+    },
+    {
+      "id": "1jfnTDjVLOejVFl2qBsBtwoVBeHMNJaOL",
+      "title": "BONUS - Closet o compras Soniamcrorey.pdf",
+      "mimeType": "application/pdf",
+      "relevance": "secondary",
+      "status": "metadata_reviewed_needs_full_extraction",
+      "useFor": [
+        "wardrobe support",
+        "shopping checklist",
+        "closet content"
+      ],
+      "sensitivity": [
+        "review for course-only or bonus-only restrictions"
+      ]
+    },
+    {
+      "id": "1mjpSbhPyLB_j8zJ08sursat7VNsBg1pt",
+      "title": "Ebook - Closet o compras - SoniaMcRorey.pdf",
+      "mimeType": "application/pdf",
+      "relevance": "secondary",
+      "status": "metadata_reviewed_needs_full_extraction",
+      "useFor": [
+        "wardrobe",
+        "personal style",
+        "asesoria integral"
+      ],
+      "sensitivity": [
+        "review for dated offer details"
+      ]
+    },
+    {
+      "id": "1tD7Jqe0oF50bIAr5ugEDOLcgCV1U5DAT",
+      "title": "Estilo para marca personal.pdf",
+      "mimeType": "application/pdf",
+      "relevance": "primary",
+      "status": "sampled_and_relevant_now",
+      "useFor": [
+        "personal brand",
+        "style as communication",
+        "visual identity",
+        "asesoria integral"
+      ],
+      "candidateSignals": [
+        "A change of image is a process the person lives, not only a look or fashion styling.",
+        "Style is a bridge between internal identity and external perception."
+      ],
+      "sensitivity": [
+        "contains dated or private offer details",
+        "do not commit raw content"
+      ]
+    },
+    {
+      "id": "1aFcBrvuqgJEPJ_dGnklpoYFJaetQCbhL",
+      "title": "Autoconcepto - Profundizando - Coaching de imagen SM.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "relevance": "primary",
+      "status": "metadata_reviewed_needs_full_extraction",
+      "useFor": [
+        "autoconcepto",
+        "identity work",
+        "internal leadership",
+        "methodology"
+      ],
+      "sensitivity": [
+        "review for course-only framework before public extraction"
+      ]
+    },
+    {
+      "id": "120sSRiYt5BVEZGr3yKbidebXnBTfHM4o",
+      "title": "3 Cambios de Mentalidad de Asesor a Coach de Imagen.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "relevance": "primary",
+      "status": "sampled_and_relevant_now",
+      "useFor": [
+        "category differentiation",
+        "coach de imagen methodology",
+        "comparison pages",
+        "authority pages"
+      ],
+      "candidateSignals": [
+        "Presence is a message, not styling.",
+        "The work moves from rules of style into essence and meaning."
+      ],
+      "sensitivity": [
+        "normalize typography before public use"
+      ]
+    },
+    {
+      "id": "1AuxOKJdDLZbHHPHc2AWZRTEr07AbfT9y",
+      "title": "Manifiesta - Comunicacion no verbal - Tu voz.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "relevance": "secondary",
+      "status": "metadata_reviewed_needs_full_extraction",
+      "useFor": [
+        "voice",
+        "nonverbal communication",
+        "presence training"
+      ],
+      "sensitivity": [
+        "keep executive, not generic confidence coaching"
+      ]
+    },
+    {
+      "id": "1piRU4ensN5_f0foloCxXcSrB2xhhGw0s",
+      "title": "Imagen Responsable - Terravita.pdf",
+      "mimeType": "application/pdf",
+      "relevance": "secondary",
+      "status": "metadata_reviewed_needs_full_extraction",
+      "useFor": [
+        "corporate image",
+        "responsible image",
+        "enterprise workshops"
+      ],
+      "sensitivity": [
+        "verify client/brand permission before public client references"
+      ]
+    },
+    {
+      "id": "1x8oLlKe97s9ondtsKyGAvjkCXhO1soyY",
+      "title": "PNL herramienta adicional de Conecta con TU MERECIMIENTO.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "relevance": "tertiary",
+      "status": "metadata_reviewed_needs_full_extraction",
+      "useFor": [
+        "supporting mindset language only"
+      ],
+      "sensitivity": [
+        "avoid NLP-heavy or therapy-adjacent positioning in public copy"
+      ]
+    },
+    {
+      "id": "1dAsqKhDX9KSsU6nLOpBSOCi8eX3Pq81t",
+      "title": "Eneagrama de la personalidad - Coaching de imagen SM.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "relevance": "tertiary",
+      "status": "metadata_reviewed_needs_full_extraction",
+      "useFor": [
+        "internal coaching references",
+        "personality and style support"
+      ],
+      "sensitivity": [
+        "do not let enneagram define the public category"
+      ]
+    },
+    {
+      "id": "14lr7z_Rm4DrxqXt494rXY5_2GaAymvcU",
+      "title": "Axiomas de la imagen SoniaMcRorey Escuela.pdf",
+      "mimeType": "application/pdf",
+      "relevance": "primary",
+      "status": "sampled_and_relevant_now",
+      "useFor": [
+        "image methodology",
+        "glossary",
+        "definition pages",
+        "comparison pages"
+      ],
+      "candidateSignals": [
+        "Image is inevitable and dynamic.",
+        "Image creation requires method and should respect the sender's essence."
+      ],
+      "sensitivity": [
+        "remove old domains or course contact details before public use"
+      ]
+    },
+    {
+      "id": "1zsiIqr4Z4dxn4o1h1WC8xW5CN8VvoWFP",
+      "title": "Autoconcepto - Coaching de imagen SM.pptx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "relevance": "primary",
+      "status": "metadata_reviewed_needs_full_extraction",
+      "useFor": [
+        "autoconcepto",
+        "identity",
+        "methodology",
+        "security and presence pages"
+      ],
+      "sensitivity": [
+        "review for course-only structure before public use"
+      ]
+    },
+    {
+      "id": "1vOG_JiDhF_nkNA7AOKZAGijfKOQO3_aK",
+      "title": "Autoconcepto - Profundizando - Coaching de imagen SM.pdf",
+      "mimeType": "application/pdf",
+      "relevance": "primary",
+      "status": "metadata_reviewed_needs_full_extraction",
+      "useFor": [
+        "autoconcepto",
+        "identity and image",
+        "deep methodology pages"
+      ],
+      "sensitivity": [
+        "review for course-only framework"
+      ]
+    },
+    {
+      "id": "1lHSQWXdMuUoUmwlCsmKKY33XH6wFXENz",
+      "title": "COMUNICACIÓN NO VERBAL ENTREVISTA PROXEMIA.pdf",
+      "mimeType": "application/pdf",
+      "relevance": "primary",
+      "status": "sampled_and_relevant_now",
+      "useFor": [
+        "nonverbal communication",
+        "executive presence",
+        "interview presence",
+        "enterprise training"
+      ],
+      "candidateSignals": [
+        "Nonverbal communication includes gestures, expressions, movement, environment and spatial behavior.",
+        "Interview and advisory context depends on rapport, active listening, framing and environment."
+      ],
+      "sensitivity": [
+        "compress academic material into practical executive guidance"
+      ]
+    }
+  ],
+  "recommendedNextExtractionOrder": [
+    "Sonia_McRorey_Servicios_v7.docx",
+    "Semblanza corregida.pdf",
+    "Definición Coaching de imagen y coaching de abundancia.pdf",
+    "La capacidad de sostener.pdf",
+    "Creencias_SoniaMcrorey.docx",
+    "3 Cambios de Mentalidad de Asesor a Coach de Imagen.docx",
+    "Axiomas de la imagen SoniaMcRorey Escuela.pdf",
+    "COMUNICACIÓN NO VERBAL ENTREVISTA PROXEMIA.pdf",
+    "Estilo para marca personal.pdf",
+    "Autoconcepto - Coaching de imagen SM.pptx"
+  ]
+}

@@ -41,6 +41,40 @@ The site must evolve from blog-heavy, emotionally dense and paragraph-first into
 
 The problem to solve is not lack of content. The problem is semantic overload, weak information hierarchy, repeated emotional concepts, weak decision acceleration and too much reading before the buyer understands what Sonia does.
 
+## Sonia Source Of Truth Stack
+
+The site must use Sonia's actual domain material before any new source-grounded writing is created.
+
+Required content sources:
+
+- `content/clean/` for the rebuilt legacy site content
+- `content/blog/soniamcrorey-blog.json` for the scraped long-form blog archive
+- `content/sonia-knowledge/quote-bank.json` for candidate Sonia-authored quote material
+- `content/sonia-knowledge/drive-source-inventory.json` for the Google Drive document and presentation inventory
+- `content/sonia-knowledge/drive-quote-bank.json` for candidate Drive-derived quotes and teaching signals
+- `docs/SONIA_KNOWLEDGEBASE_QUOTE_BANK.md` for human-readable blog quote guidance
+- `docs/SONIA_DRIVE_KNOWLEDGEBASE.md` for Drive source relevance, sensitivity and usage rules
+
+The Drive folder is an expert source library, not a public content dump. It includes service drafts, biography material, training decks, image/coaching definitions, e-books, authority proof, presentation material and visual assets. Some files contain private or dated data. Therefore:
+
+- do not publish bank details, CLABE, card numbers, payment links, private logistics, old contact details or old prices
+- do not copy large blocks from Drive documents into public pages
+- do not let abundance, manifestation, PNL, eneagram or money language become the public root category
+- do use Sonia's language to strengthen executive clarity, methodology, proof, FAQs, schema and pillar addendums
+- do map every extract to a specific page intent and semantic cluster before use
+
+Primary source clusters:
+
+- `Sonia_McRorey_Servicios_v7.docx`: current service architecture and buyer segmentation
+- `Semblanza corregida.pdf`: biography, credentials, E-E-A-T and Person schema
+- `Definición Coaching de imagen y coaching de abundancia.pdf`: category definitions and service differentiation
+- `La capacidad de sostener.pdf`: seguridad profesional, sustainable growth and visibility
+- `Creencias_SoniaMcrorey.docx`: beliefs, visibility, pricing confidence and professional insecurity
+- `3 Cambios de Mentalidad de Asesor a Coach de Imagen.docx`: advisor-to-coach category shift
+- `Axiomas de la imagen SoniaMcRorey Escuela.pdf`: methodology, glossary and image doctrine
+- `COMUNICACIÓN NO VERBAL ENTREVISTA PROXEMIA.pdf`: nonverbal communication, proxemia and executive presence
+- `Estilo para marca personal.pdf`: personal brand, style and external perception
+
 ## Primary Brand Positioning
 
 Coach De Imagen is not:

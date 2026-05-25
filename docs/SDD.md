@@ -79,6 +79,8 @@ The implementation must:
 - map each page to its source URL and source archive file
 - preserve image intent by using the archived asset mapping
 - keep contact and CTA copy consistent across pages through shared components
+- use Sonia's blog archive, quote bank and Drive source inventory as controlled domain knowledge before adding or refactoring source-grounded content
+- sanitize any Drive-derived material before public use
 
 Content density requirements:
 
@@ -88,6 +90,21 @@ Content density requirements:
 - article pages may be long, but must remain readable through article navigation, H2/H3 hierarchy, service bridges and related reading
 
 Run `npm run audit:content` before large content refactors and use `docs/CONTENT_DENSITY_AUDIT.md` as the current baseline.
+
+## Sonia Knowledgebase Sources
+
+The design source-of-truth includes:
+
+- `content/blog/soniamcrorey-blog.json`
+- `content/sonia-knowledge/quote-bank.json`
+- `content/sonia-knowledge/drive-source-inventory.json`
+- `content/sonia-knowledge/drive-quote-bank.json`
+- `docs/SONIA_KNOWLEDGEBASE_QUOTE_BANK.md`
+- `docs/SONIA_DRIVE_KNOWLEDGEBASE.md`
+
+These sources are used to align public pages with Sonia's own language, credentials, teaching frameworks, methodology and service architecture. They are not raw page copy. Agents must extract, compress and map material to page intent.
+
+Drive material must never emit private banking/payment details, outdated contact details, old domains, program-only logistics or dated pricing into generated public HTML.
 
 ## SEO Requirements
 

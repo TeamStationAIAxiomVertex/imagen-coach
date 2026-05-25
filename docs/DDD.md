@@ -71,6 +71,21 @@ Editorial content under `/imagen-presencia`. Articles preserve Sonia's deeper th
 
 Articles carry long-form authority. They may preserve deeper psychological, stylistic and professional arguments, but they must render as editorial publications with article navigation, H2/H3 flow, related service bridge and related reading.
 
+### Sonia Knowledge Source
+
+A controlled source material record from Sonia's own writing, blog archive, documents, presentations, e-books, interviews or service drafts.
+
+Current source artifacts:
+
+- `content/blog/soniamcrorey-blog.json`
+- `content/sonia-knowledge/quote-bank.json`
+- `content/sonia-knowledge/drive-source-inventory.json`
+- `content/sonia-knowledge/drive-quote-bank.json`
+- `docs/SONIA_KNOWLEDGEBASE_QUOTE_BANK.md`
+- `docs/SONIA_DRIVE_KNOWLEDGEBASE.md`
+
+Sonia Knowledge Sources are not public page dumps. They provide expert language, proof, methodology and teaching context. Public pages must use sanitized, page-specific extracts and must not expose raw payment data, old contact details, bank data, dated pricing or private program logistics.
+
 ### Hub
 
 A category intelligence page that organizes one semantic territory such as imagen profesional, presencia ejecutiva, seguridad profesional, imagen empresarial or colorimetría.

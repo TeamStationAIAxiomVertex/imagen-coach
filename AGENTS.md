@@ -29,11 +29,20 @@ Use these sources in order:
 5. `archive/imagencoach/raw-html/` for original source proof.
 6. `archive/imagencoach/text/` for raw visible text and source links.
 7. `content/clean/` for rebuild-ready body content and deduplicated asset mapping.
-8. `docs/SDD.md`, `docs/DDD.md`, `docs/TDD.md`, and `docs/LLM_CONTEXT.md` for implementation decisions.
-9. `docs/UBIQUITOUS_LANGUAGE.md`, `docs/GEO_OPERATING_SYSTEM.md`, `docs/PAGE_SIGNAL_MAP.md`, `docs/ICONOGRAPHY_SYSTEM.md`, and `docs/REDIRECTS_AND_URL_RETENTION.md` for agentic GEO, ontology, redirect, iconography, and semantic governance.
-10. `TeamStationAIAxiomVertex/guadalajara` only as the UX/UI/theme reference, not as this site's content source.
+8. `content/blog/soniamcrorey-blog.json` for Sonia's long-form article archive, language patterns, teaching concepts and long-tail topical evidence.
+9. `content/sonia-knowledge/quote-bank.json` for candidate Sonia-authored quotes requiring editorial review before public injection.
+10. `content/sonia-knowledge/drive-source-inventory.json` for Sonia's Drive document and presentation inventory.
+11. `content/sonia-knowledge/drive-quote-bank.json` for candidate Drive-derived quotes and teaching signals requiring editorial review before public injection.
+12. `docs/SONIA_DRIVE_KNOWLEDGEBASE.md` for the Drive source usage rules, relevance tiers and source-to-page mapping.
+13. `docs/SDD.md`, `docs/DDD.md`, `docs/TDD.md`, and `docs/LLM_CONTEXT.md` for implementation decisions.
+14. `docs/UBIQUITOUS_LANGUAGE.md`, `docs/GEO_OPERATING_SYSTEM.md`, `docs/PAGE_SIGNAL_MAP.md`, `docs/ICONOGRAPHY_SYSTEM.md`, and `docs/REDIRECTS_AND_URL_RETENTION.md` for agentic GEO, ontology, redirect, iconography, and semantic governance.
+15. `TeamStationAIAxiomVertex/guadalajara` only as the UX/UI/theme reference, not as this site's content source.
 
 Do not invent pages, slugs, services, images, schemas, or positioning without evidence.
+
+## Sonia Drive Knowledgebase Rule
+
+Sonia's Drive folder is an expert source library, not a public asset dump. Use it to learn her domain expertise, service framing, biography, methodology, presentations, idioms and teaching language before writing. Do not commit or expose raw Drive files that contain payment data, old contact information, dated pricing, bank details, private logistics or course-only material. Any public use must be sanitized, short, page-specific and aligned to the executive Coach De Imagen category.
 
 ## Non-Negotiable URL Contract
 

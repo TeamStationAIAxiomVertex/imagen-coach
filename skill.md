@@ -24,3 +24,15 @@ Hard constraints:
 ## Skill Contract
 
 Use this project skill when building or reviewing Coach De Imagen pages. Required checks: unique H1, meta description <=145 chars, canonical, social card, JSON-LD, FAQ where relevant, internal links, no thin pages, no duplicate intent and no visible strategy leakage.
+
+## Source Material Contract
+
+Before source-grounded page writing, use:
+
+- `content/blog/soniamcrorey-blog.json`
+- `content/sonia-knowledge/quote-bank.json`
+- `content/sonia-knowledge/drive-source-inventory.json`
+- `content/sonia-knowledge/drive-quote-bank.json`
+- `docs/SONIA_DRIVE_KNOWLEDGEBASE.md`
+
+Extract Sonia's language carefully. Do not expose raw Drive files, bank/payment details, old contact data, dated pricing or private logistics.

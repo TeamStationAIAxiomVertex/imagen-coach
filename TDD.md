@@ -20,6 +20,14 @@ Hard constraints:
 - Internal link mesh across services, hubs, GEO, intent, comparisons and publications
 - Cloudflare Pages compatible output from `dist/`
 
+Source hygiene tests:
+
+- `content/sonia-knowledge/drive-source-inventory.json` must parse as JSON.
+- `content/sonia-knowledge/drive-quote-bank.json` must parse as JSON.
+- `content/sonia-knowledge/drive-source-inventory.json` must keep `rawFilesCommitted` false.
+- Public output must not contain raw bank details, CLABE numbers, card numbers, old contact data, old source domains, stale offer prices or private program logistics from Sonia's Drive documents.
+- Drive-derived content must be sanitized and mapped to page intent before publication.
+
 
 ## Generated Artifacts
 
