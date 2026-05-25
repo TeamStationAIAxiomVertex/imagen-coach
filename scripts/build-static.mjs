@@ -2171,6 +2171,24 @@ function sectionTopics(lines = [], page, clusterMap = new Map(), limit = 4) {
 }
 
 function topicIcon(topicId = "presencia") {
+  const aliases = {
+    eye: "percepcion",
+    radar: "percepcion",
+    flag: "decision",
+    shield: "mentalidad",
+    presence: "presencia",
+    id: "identidad",
+    layers: "identidad",
+    trend: "liderazgo",
+    workshop: "empresa",
+    users: "empresa",
+    map: "ubicacion",
+    lightbulb: "decision",
+    mirror: "presencia",
+    palette: "color",
+    closet: "guardarropa",
+  };
+  const key = aliases[topicId] || topicId;
   const paths = {
     identidad: '<rect x="4" y="5" width="16" height="14" rx="2.4"></rect><circle cx="9" cy="11" r="2"></circle><path d="M6.5 16c1.4-2 3.6-2 5 0"></path><path d="M14 10h3.5M14 14h3.5"></path>',
     presencia: '<path d="M12 4v16"></path><path d="M7.5 9.5h9"></path><path d="M8.5 20h7"></path><path d="M6 15c1.7-2.4 3.7-3.6 6-3.6s4.3 1.2 6 3.6"></path>',
@@ -2185,7 +2203,7 @@ function topicIcon(topicId = "presencia") {
     video: '<rect x="3.5" y="6" width="12" height="12" rx="2"></rect><path d="m15.5 10 5-3v10l-5-3"></path><path d="M7.5 10h4M7.5 14h2.5"></path>',
     viaje: '<path d="M3 11.5 21 5l-6.5 16-3.2-7.2L3 11.5Z"></path><path d="m11.3 13.8 4.4-4.4"></path>',
   };
-  return `<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">${paths[topicId] || paths.presencia}</svg>`;
+  return `<svg class="site-line-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">${paths[key] || paths.presencia}</svg>`;
 }
 
 function topicChips(topics = []) {
@@ -3289,46 +3307,33 @@ function footer() {
   ];
   const footerDirectoryGroups = [
     {
-      icon: "percepcion",
-      heading: "Explorar por tema",
-      text: "Entrar por intención: imagen, presencia, liderazgo o seguridad interna.",
-      links: footerHubs,
-    },
-    {
       icon: "decision",
-      heading: "Elegir servicio",
-      text: "Comparar las rutas de trabajo antes de agendar diagnóstico.",
+      heading: "Servicios",
+      text: "Elegir entre asesoría integral, presencia profesional, talleres o seguridad interna.",
       links: footerServices,
     },
     {
       icon: "presencia",
-      heading: "Leer contexto",
-      text: "Profundizar con publicaciones para entender el momento profesional.",
-      links: [...footerArticles, ["/imagen-presencia", "Todas las publicaciones"]],
-    },
-    {
-      icon: "liderazgo",
-      heading: "Tomar decisión",
-      text: "Revisar comparaciones, preguntas y diferencias entre enfoques.",
-      links: [...footerComparisons, ["/servicios-asesoria-de-imagen-coaching/preguntas-frequentes", "Preguntas frecuentes"]],
+      heading: "Temas clave",
+      text: "Entrar por imagen profesional, presencia ejecutiva, liderazgo visible o seguridad interna.",
+      links: [...footerHubs, ["/imagen-presencia", "Publicaciones"]],
     },
     {
       icon: "ubicacion",
       heading: "Mercados",
-      text: "Explorar presencia ejecutiva, imagen profesional y Coach De Imagen por ciudad y país.",
-      links: footerMarkets,
-    },
-    {
-      icon: "radar",
-      heading: "Búsquedas frecuentes",
-      text: "Entrar desde la pregunta real que suele aparecer antes de pedir acompañamiento.",
-      links: footerIntents,
+      text: "Presencia ejecutiva e imagen profesional para México, LATAM y mercados hispanos.",
+      links: footerMarkets.slice(0, 16),
     },
     {
       icon: "identidad",
-      heading: "Método Sonia",
-      text: "Conocer los modelos que sostienen imagen, presencia, liderazgo y posicionamiento.",
-      links: footerAuthority,
+      heading: "Decisión",
+      text: "Comparar enfoques, resolver preguntas frecuentes y revisar el método de Sonia.",
+      links: [
+        ...footerComparisons,
+        ...footerIntents.slice(0, 5),
+        ...footerAuthority.slice(0, 4),
+        ["/servicios-asesoria-de-imagen-coaching/preguntas-frequentes", "Preguntas frecuentes"],
+      ],
     },
   ];
   return `<footer class="footer" id="contacto">
@@ -3384,7 +3389,7 @@ function footer() {
             </div>
           </div>
           <div class="directory-links">
-            ${group.links.map(([href, label]) => `<a href="${href}"><span>${escapeHtml(label)}</span><small>Ver</small></a>`).join("")}
+            ${group.links.map(([href, label]) => `<a href="${href}"><span>${escapeHtml(label)}</span></a>`).join("")}
           </div>
         </nav>`).join("")}
       </div>
@@ -4858,17 +4863,38 @@ function geoIntentCards(page) {
     ["Imagen profesional", `Construir una lectura visible coherente con el nivel que sostienes en ${page.name}.`, "percepcion"],
     ["Presencia ejecutiva", "Ocupar reuniones, conversaciones y escenarios con más seguridad visible.", "presencia"],
     ["Liderazgo visible", "Hacer que capacidad, criterio y dirección se perciban con más claridad.", "liderazgo"],
-    ["Seguridad profesional", "Sostener exposición, decisiones y crecimiento sin actuar desde tensión.", "shield"],
+    ["Seguridad profesional", "Sostener exposición, decisiones y crecimiento sin actuar desde tensión.", "mentalidad"],
     ["Posicionamiento", "Alinear imagen, comunicación y valor profesional frente a clientes o equipos.", "decision"],
-    ["Comunicación no verbal", "Ordenar cuerpo, mirada, postura y presencia al hablar en contextos ejecutivos.", "radar"],
+    ["Comunicación no verbal", "Ordenar cuerpo, mirada, postura y presencia al hablar en contextos ejecutivos.", "percepcion"],
   ];
   return `<div class="geo-intent-grid">
     ${cards.map(([title, text, icon]) => `<article class="geo-intent-card">
-      <span>${topicIcon(icon)}</span>
+      <span class="generated-card-icon">${topicIcon(icon)}</span>
       <h3>${escapeHtml(title)}</h3>
       <p>${escapeHtml(text)}</p>
     </article>`).join("")}
   </div>`;
+}
+
+function splitSemanticTerms(value = "") {
+  return value
+    .replace(/\s+y\s+(?=(liderazgo|presencia|seguridad|posicionamiento|imagen|comunicación|comunicacion)\b)/gi, ", ")
+    .split(",")
+    .map((term) => term.trim())
+    .filter(Boolean);
+}
+
+function geoTermIcon(term = "") {
+  const normalized = term.toLowerCase().normalize("NFD").replace(/\p{Diacritic}/gu, "");
+  if (normalized.includes("comunicacion")) return "percepcion";
+  if (normalized.includes("liderazgo")) return "liderazgo";
+  if (normalized.includes("presencia")) return "presencia";
+  if (normalized.includes("seguridad")) return "mentalidad";
+  if (normalized.includes("posicion")) return "decision";
+  if (normalized.includes("empresa") || normalized.includes("corporativa") || normalized.includes("empresaria")) return "empresa";
+  if (normalized.includes("imagen")) return "percepcion";
+  if (normalized.includes("latina") || normalized.includes("hispana") || normalized.includes("coach")) return "identidad";
+  return "percepcion";
 }
 
 function internalAuthorityLinks(page, pages) {
@@ -4934,9 +4960,9 @@ function renderGeoPage(page, pages) {
         <h1>${headlineHtml(page.title)}</h1>
         <div class="hero-lede"><p>${escapeHtml(page.description)}</p></div>
         <div class="delivery-modes" aria-label="Modalidades de trabajo">
-          <span>${topicIcon("presencia")} Presencial en Guadalajara</span>
-          <span>${topicIcon("decision")} Online para ${escapeHtml(page.name)}</span>
-          <span>${topicIcon("liderazgo")} Conferencias y empresas</span>
+          <span>${topicIcon("ubicacion")} Presencial en Guadalajara</span>
+          <span>${topicIcon("video")} Online para ${escapeHtml(page.name)}</span>
+          <span>${topicIcon("viaje")} Conferencias y empresas</span>
         </div>
         <div class="actions">
           <a class="btn primary" href="${CONTACT_ROUTE}">Agendar diagnóstico</a>
@@ -4982,9 +5008,9 @@ function renderGeoPage(page, pages) {
         <h2>${headlineHtml("La terminología cambia, pero la necesidad de presencia permanece.")}</h2>
       </div>
       <div class="definition-grid">
-        ${page.languagePattern.split(",").map((term) => `<dfn class="definition-card" title="${escapeHtml(term.trim())}">
-          ${comparisonIcon("presence")}
-          <span>${escapeHtml(term.trim())}</span>
+        ${splitSemanticTerms(page.languagePattern).map((term) => `<dfn class="definition-card" title="${escapeHtml(term)}">
+          <span class="generated-card-icon">${topicIcon(geoTermIcon(term))}</span>
+          <span>${escapeHtml(term)}</span>
           <small>Señal semántica para ${escapeHtml(page.name)} y mercados hispanohablantes.</small>
         </dfn>`).join("")}
       </div>
@@ -5172,7 +5198,7 @@ function renderAuthorityPage(page, pages) {
       </div>
       <div class="definition-grid">
         ${page.pillars.map((pillar, index) => `<article class="definition-card">
-          ${comparisonIcon(index % 2 ? "presence" : "decision")}
+          <span class="generated-card-icon">${topicIcon(index % 2 ? "presencia" : "decision")}</span>
           <span>${escapeHtml(pillar)}</span>
           <small>${escapeHtml(`${pillar} se trabaja como parte de un sistema integral de imagen profesional, presencia ejecutiva y liderazgo visible.`)}</small>
         </article>`).join("")}

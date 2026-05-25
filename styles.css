@@ -3632,7 +3632,7 @@ details[open] summary::after {
   margin: 22px 0 0;
 }
 
-.delivery-modes span {
+.delivery-modes > span {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -3646,6 +3646,17 @@ details[open] summary::after {
   font-weight: 800;
   letter-spacing: .09em;
   text-transform: uppercase;
+}
+
+.delivery-modes > span > svg {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .geo-intent-grid,
@@ -5145,5 +5156,749 @@ details[open] summary::after {
 
   .footer-directory {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Generated GEO / intent / authority page repair.
+   Keeps new expansion pages aligned with the site's native line-icon language. */
+.geo-hero,
+.intent-hero,
+.authority-hero {
+  grid-template-columns: minmax(0, .98fr) minmax(360px, .82fr);
+  gap: clamp(28px, 4vw, 56px);
+  align-items: center;
+  padding-top: clamp(38px, 5vw, 64px);
+  padding-bottom: clamp(42px, 6vw, 72px);
+}
+
+.geo-hero {
+  align-items: start;
+}
+
+.geo-hero .hero-copy,
+.intent-hero .hero-copy,
+.authority-hero .hero-copy {
+  max-width: 720px;
+}
+
+.geo-hero h1,
+.intent-hero h1,
+.authority-hero h1 {
+  max-width: 720px;
+  font-size: clamp(44px, 5.2vw, 70px);
+  line-height: 1.02;
+  text-wrap: balance;
+}
+
+.geo-hero h1 .headline-accent,
+.intent-hero h1 .headline-accent,
+.authority-hero h1 .headline-accent {
+  display: block;
+  max-width: 100%;
+  font-size: .72em;
+  line-height: 1.04;
+}
+
+.geo-hero .hero-lede,
+.intent-hero .hero-lede,
+.authority-hero .hero-lede {
+  max-width: 58ch;
+  margin-top: 24px;
+}
+
+.geo-hero .hero-media,
+.intent-hero .hero-media,
+.authority-hero .hero-media {
+  min-width: 0;
+  max-height: 620px;
+}
+
+.generated-card-icon {
+  display: inline-grid;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 auto;
+  place-items: center;
+  color: var(--brand-green-deep);
+  border: 1px solid rgba(111, 162, 135, .28);
+  border-radius: 50%;
+  background: rgba(231, 240, 235, .68);
+}
+
+.site-line-icon,
+.generated-card-icon > svg,
+.geo-intent-card svg,
+.definition-card svg,
+.authority-framework svg,
+.delivery-modes svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.geo-intent-card > .generated-card-icon,
+.authority-framework .definition-card > .generated-card-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.geo-context,
+.geo-signals,
+.geo-services,
+.geo-language,
+.faq-section,
+.authority-linking,
+.intent-answer,
+.authority-hub-map,
+.authority-framework {
+  padding-top: clamp(58px, 7vw, 92px);
+  padding-bottom: clamp(58px, 7vw, 92px);
+}
+
+.geo-signals,
+.geo-services,
+.geo-language,
+.faq-section,
+.authority-linking,
+.intent-answer,
+.authority-hub-map,
+.authority-framework {
+  border-top: 1px solid rgba(53, 53, 53, .075);
+}
+
+.geo-context + .geo-signals,
+.geo-signals + .geo-services,
+.geo-services + .geo-language,
+.geo-language + .faq-section,
+.faq-section + .authority-linking,
+.intent-answer + .authority-linking,
+.authority-hub-map + .authority-framework {
+  margin-top: 0;
+}
+
+.geo-signals .section-heading,
+.geo-services .section-heading,
+.geo-language .section-heading,
+.geo-context .section-heading,
+.faq-section .section-heading,
+.authority-linking .section-heading,
+.intent-answer .section-heading,
+.authority-hub-map .section-heading,
+.authority-framework .section-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 860px);
+  gap: 12px;
+  justify-content: start;
+  align-items: start;
+  margin-bottom: clamp(22px, 3vw, 34px);
+}
+
+.geo-signals .section-heading.compact-heading,
+.geo-services .section-heading.compact-heading,
+.geo-language .section-heading.compact-heading,
+.geo-context .section-heading.compact-heading,
+.faq-section .section-heading.compact-heading,
+.authority-linking .section-heading.compact-heading,
+.intent-answer .section-heading.compact-heading,
+.authority-hub-map .section-heading.compact-heading,
+.authority-framework .section-heading.compact-heading {
+  justify-items: start;
+  max-width: none;
+  margin-right: 0;
+  margin-left: 0;
+  padding-inline: 0;
+  text-align: left;
+}
+
+.geo-signals .section-heading h2,
+.geo-services .section-heading h2,
+.geo-language .section-heading h2,
+.geo-context .section-heading h2,
+.faq-section .section-heading h2,
+.authority-linking .section-heading h2,
+.intent-answer .section-heading h2,
+.authority-hub-map .section-heading h2,
+.authority-framework .section-heading h2 {
+  max-width: 860px;
+  margin: 0;
+  text-align: left;
+  font-size: clamp(34px, 3.8vw, 54px);
+  line-height: 1.06;
+}
+
+.geo-signals .section-heading > p:not(.section-label),
+.geo-language .section-heading > p:not(.section-label),
+.geo-services .section-heading > p:not(.section-label),
+.geo-context .section-heading > p:not(.section-label),
+.faq-section .section-heading > p:not(.section-label),
+.authority-linking .section-heading > p:not(.section-label) {
+  grid-column: 1;
+  max-width: 66ch;
+  margin: 0;
+  color: var(--muted);
+  text-align: left;
+}
+
+.geo-signals .section-label,
+.geo-services .section-label,
+.geo-language .section-label,
+.geo-context .section-label,
+.faq-section .section-label,
+.authority-linking .section-label {
+  justify-self: start;
+  padding-top: 0;
+}
+
+.geo-signals .section-heading.compact-heading .section-label,
+.geo-services .section-heading.compact-heading .section-label,
+.geo-language .section-heading.compact-heading .section-label,
+.geo-context .section-heading.compact-heading .section-label,
+.faq-section .section-heading.compact-heading .section-label,
+.authority-linking .section-heading.compact-heading .section-label {
+  justify-self: start;
+}
+
+.geo-service-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.geo-language .definition-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.geo-language .definition-card {
+  align-content: start;
+  min-height: 170px;
+}
+
+.hub-term-grid {
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+}
+
+.hub-term-grid a {
+  min-width: 0;
+}
+
+.hub-term-grid span {
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+  font-size: clamp(22px, 1.55vw, 28px);
+}
+
+@media (max-width: 980px) {
+  .geo-hero,
+  .intent-hero,
+  .authority-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .geo-hero .hero-media,
+  .intent-hero .hero-media,
+  .authority-hero .hero-media {
+    max-height: 460px;
+  }
+
+  .geo-signals .section-heading,
+  .geo-services .section-heading,
+  .geo-language .section-heading,
+  .geo-context .section-heading,
+  .faq-section .section-heading,
+  .authority-linking .section-heading {
+    grid-template-columns: 1fr;
+  }
+
+  .geo-service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .geo-language + .faq-section,
+  .geo-services + .geo-language,
+  .faq-section + .authority-linking {
+    margin-top: clamp(28px, 7vw, 44px);
+  }
+
+  .geo-context,
+  .geo-signals,
+  .geo-services,
+  .geo-language,
+  .faq-section,
+  .authority-linking,
+  .intent-answer,
+  .authority-hub-map,
+  .authority-framework {
+    padding-top: clamp(68px, 11vw, 86px);
+    padding-bottom: clamp(68px, 11vw, 86px);
+  }
+
+  .geo-signals .section-heading > p:not(.section-label),
+  .geo-language .section-heading > p:not(.section-label),
+  .geo-services .section-heading > p:not(.section-label),
+  .geo-context .section-heading > p:not(.section-label),
+  .faq-section .section-heading > p:not(.section-label),
+  .authority-linking .section-heading > p:not(.section-label) {
+    grid-column: 1;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .geo-hero h1,
+  .intent-hero h1,
+  .authority-hero h1 {
+    font-size: clamp(38px, 10vw, 48px);
+  }
+
+  .delivery-modes {
+    gap: 8px;
+  }
+
+  .delivery-modes > span {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .geo-service-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Final footer contract: horizontal, compact, and useful without column dead space. */
+.footer {
+  background: #f6f4f7;
+  border-top: 1px solid rgba(53, 53, 53, .075);
+}
+
+.footer-intelligence {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 12px;
+  align-items: start;
+  padding-top: clamp(28px, 4vw, 46px);
+  padding-bottom: 18px;
+}
+
+.footer-identity,
+.footer-method,
+.footer-service-map,
+.footer-signal-panel,
+.footer-faq-panel,
+.footer-contact-panel {
+  min-width: 0;
+  border: 1px solid rgba(53, 53, 53, .075);
+  border-radius: 10px;
+  background: rgba(251, 250, 252, .62);
+  box-shadow: none;
+}
+
+.footer-identity {
+  order: 1;
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(210px, 260px) minmax(0, 1fr) minmax(180px, auto);
+  gap: clamp(18px, 3vw, 32px);
+  align-items: center;
+  padding: clamp(20px, 3vw, 28px);
+}
+
+.footer-identity .footer-mark {
+  grid-column: 1;
+  grid-row: 1 / span 3;
+  align-self: start;
+  width: min(250px, 100%);
+  margin: 0;
+}
+
+.footer-identity > .section-label {
+  grid-column: 2;
+  grid-row: 1;
+  margin: 0;
+}
+
+.footer-identity h2 {
+  grid-column: 2;
+  grid-row: 2;
+  max-width: 720px;
+  margin: 4px 0 0;
+  font-size: clamp(28px, 3vw, 42px);
+  line-height: 1.04;
+}
+
+.footer-identity > p:not(.section-label) {
+  grid-column: 2;
+  grid-row: 3;
+  max-width: 72ch;
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.footer-identity .actions {
+  grid-column: 3;
+  grid-row: 1 / span 3;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  margin: 0;
+}
+
+.footer-method {
+  order: 2;
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 16px;
+  align-items: center;
+  padding: 16px 18px;
+}
+
+.footer-method .section-label {
+  margin: 0;
+}
+
+.footer-method ol {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
+}
+
+.footer-method li {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  gap: 8px;
+  align-items: center;
+  min-height: 42px;
+  padding: 7px 9px;
+  border: 1px solid rgba(227, 223, 231, .78);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, .48);
+  color: var(--charcoal-soft);
+  font-size: 12px;
+  line-height: 1.22;
+}
+
+.footer-method li span {
+  color: var(--plum-accent);
+  font-family: var(--font);
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: .08em;
+}
+
+.footer-service-map {
+  order: 3;
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 150px repeat(5, minmax(0, 1fr));
+  gap: 0;
+  overflow: hidden;
+}
+
+.footer-service-map > .section-label {
+  display: flex;
+  align-items: center;
+  padding: 18px;
+  border-right: 1px solid rgba(53, 53, 53, .075);
+}
+
+.footer-service-map a {
+  min-height: 102px;
+  padding: 18px;
+  border-right: 1px solid rgba(53, 53, 53, .075);
+  background: transparent;
+}
+
+.footer-service-map a:last-child {
+  border-right: 0;
+}
+
+.footer-service-map span {
+  color: var(--brand-green-deep);
+  font-size: 11px;
+  letter-spacing: .12em;
+}
+
+.footer-service-map strong {
+  margin-top: 9px;
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.32;
+}
+
+.footer-service-map small {
+  display: none;
+}
+
+.footer-signal-panel {
+  order: 4;
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  overflow: hidden;
+}
+
+.footer-signal-panel > div {
+  padding: 18px;
+  border-right: 1px solid rgba(53, 53, 53, .075);
+}
+
+.footer-signal-panel > div:last-child {
+  border-right: 0;
+}
+
+.footer-signal-panel ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.footer-signal-panel li {
+  margin: 0;
+}
+
+.footer-signal-panel a {
+  display: inline-flex;
+  min-height: 32px;
+  align-items: center;
+  padding: 6px 11px;
+  border: 1px solid rgba(111, 162, 135, .26);
+  border-radius: 999px;
+  background: rgba(231, 240, 235, .45);
+  color: var(--brand-green-deep);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.footer-directory {
+  order: 5;
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.footer-directory .footer-directory-card,
+.footer-directory .footer-directory-card:nth-child(3),
+.footer-directory .footer-directory-card:nth-child(5),
+.footer-directory .footer-directory-card:nth-child(7) {
+  display: grid;
+  grid-template-columns: minmax(230px, 300px) minmax(0, 1fr);
+  grid-column: 1 / -1;
+  gap: clamp(14px, 2vw, 22px);
+  align-items: center;
+  min-height: 0;
+  padding: 14px 18px;
+  border: 1px solid rgba(53, 53, 53, .075);
+  border-radius: 10px;
+  background: rgba(251, 250, 252, .62);
+}
+
+.footer-directory .directory-head {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+}
+
+.footer-directory .directory-icon {
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(111, 162, 135, .28);
+  border-radius: 50%;
+  background: rgba(231, 240, 235, .58);
+}
+
+.footer-directory .directory-head h3 {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 17px;
+  font-weight: 850;
+  line-height: 1.16;
+}
+
+.footer-directory .directory-head p {
+  max-width: 34ch;
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.36;
+}
+
+.footer-directory .directory-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  align-content: center;
+  justify-content: flex-start;
+}
+
+.footer-directory .directory-links a {
+  display: inline-flex;
+  width: auto;
+  min-height: 31px;
+  max-width: 100%;
+  align-items: center;
+  padding: 6px 10px;
+  border: 1px solid rgba(227, 223, 231, .78);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .42);
+  color: var(--charcoal-soft);
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+.footer-directory .directory-links a span {
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.footer-directory .directory-links a small {
+  color: var(--brand-green-deep);
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: .12em;
+}
+
+.footer-faq-panel {
+  order: 6;
+  grid-column: span 5;
+  align-self: stretch;
+  padding: 22px;
+}
+
+.footer-contact-panel {
+  order: 7;
+  grid-column: span 7;
+  align-self: stretch;
+  padding: 22px;
+}
+
+.footer-faq-panel h3,
+.footer-contact-panel h3 {
+  margin: 0 0 12px;
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: clamp(24px, 2.2vw, 34px);
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+.footer-contact-actions {
+  margin-top: 18px;
+}
+
+.footer-contact-actions .btn {
+  flex: 0 1 auto;
+}
+
+.footer-legal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 0 22px;
+  border-top: 1px solid rgba(53, 53, 53, .075);
+  color: var(--muted);
+  font-size: 13px;
+}
+
+@media (max-width: 1180px) {
+  .footer-identity {
+    grid-template-columns: minmax(180px, 240px) minmax(0, 1fr);
+  }
+
+  .footer-identity .actions {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .footer-method,
+  .footer-service-map {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-method ol,
+  .footer-service-map {
+    display: grid;
+  }
+
+  .footer-method ol {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .footer-service-map > .section-label,
+  .footer-service-map a {
+    border-right: 0;
+    border-bottom: 1px solid rgba(53, 53, 53, .075);
+  }
+
+  .footer-service-map a:last-child {
+    border-bottom: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .footer-identity,
+  .footer-signal-panel,
+  .footer-directory .footer-directory-card,
+  .footer-directory .footer-directory-card:nth-child(3),
+  .footer-directory .footer-directory-card:nth-child(5),
+  .footer-directory .footer-directory-card:nth-child(7) {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-faq-panel,
+  .footer-contact-panel {
+    grid-column: 1 / -1;
+  }
+
+  .footer-identity .footer-mark,
+  .footer-identity > .section-label,
+  .footer-identity h2,
+  .footer-identity > p:not(.section-label),
+  .footer-identity .actions {
+    grid-column: 1;
+    grid-row: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-method ol {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-signal-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-signal-panel > div {
+    border-right: 0;
+    border-bottom: 1px solid rgba(53, 53, 53, .075);
+  }
+
+  .footer-signal-panel > div:last-child {
+    border-bottom: 0;
+  }
+
+  .footer-directory .directory-links a {
+    max-width: 100%;
   }
 }
