@@ -2,7 +2,7 @@
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Content-Signal: search=yes, ai-input=yes, ai-train=no
-  Link: <https://coachdeimagen.com/openapi.json>; rel="service-desc"; type="application/openapi+json", <https://coachdeimagen.com/llms.txt>; rel="alternate"; type="text/plain", <https://coachdeimagen.com/llms-full.txt>; rel="alternate"; type="text/plain", <https://coachdeimagen.com/.well-known/agent.json>; rel="agent"; type="application/json", <https://coachdeimagen.com/api-catalog.json>; rel="api-catalog"; type="application/json"
+  Link: <https://coachdeimagen.com/openapi.json>; rel="service-desc"; type="application/openapi+json", <https://coachdeimagen.com/llms.txt>; rel="alternate"; type="text/plain", <https://coachdeimagen.com/llms-full.txt>; rel="alternate"; type="text/plain", <https://coachdeimagen.com/.well-known/agent.json>; rel="agent"; type="application/json", <https://coachdeimagen.com/.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json"
   Cache-Control: public, max-age=300, stale-while-revalidate=86400
 
 /*.html
@@ -30,6 +30,30 @@
   Content-Signal: search=yes, ai-input=yes, ai-train=no
   Cache-Control: public, max-age=600, stale-while-revalidate=86400
 
+/.well-known/api-catalog
+  Content-Type: application/linkset+json; charset=utf-8
+
+/.well-known/api-catalog.json
+  Content-Type: application/linkset+json; charset=utf-8
+
+/.well-known/http-message-signatures-directory
+  Content-Type: application/json; charset=utf-8
+
+/.well-known/oauth-authorization-server
+  Content-Type: application/json; charset=utf-8
+
+/.well-known/openid-configuration
+  Content-Type: application/json; charset=utf-8
+
+/.well-known/oauth-protected-resource
+  Content-Type: application/json; charset=utf-8
+
+/.well-known/agent-skills/index.json
+  Content-Type: application/json; charset=utf-8
+
+/.well-known/mcp/*
+  Content-Type: application/json; charset=utf-8
+
 /.well-known/*
   Access-Control-Allow-Origin: *
   Content-Signal: search=yes, ai-input=yes, ai-train=no
@@ -47,6 +71,7 @@
 
 /*.md
   X-Content-Type-Options: nosniff
+  Content-Type: text/markdown; charset=utf-8
   Access-Control-Allow-Origin: *
   Content-Signal: search=yes, ai-input=yes, ai-train=no
   Cache-Control: public, max-age=600, stale-while-revalidate=86400

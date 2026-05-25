@@ -113,3 +113,78 @@ contactForm?.addEventListener("submit", async (event) => {
     submit.disabled = false;
   }
 });
+
+const registerAgentContext = () => {
+  const modelContext = navigator.modelContext;
+  if (!modelContext || typeof modelContext.provideContext !== "function") return;
+
+  const serviceRoutes = {
+    asesoria_integral: "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen/",
+    presencia_profesional: "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen/",
+    talleres_empresas: "/servicios-asesoria-de-imagen-coaching/talleres/",
+    seguridad_posicionamiento: "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia/",
+    contacto: "/contacto/",
+  };
+
+  const chooseRoute = ({ need = "" } = {}) => {
+    const normalized = String(need).toLowerCase();
+    if (/empresa|equipo|taller|marca/.test(normalized)) return serviceRoutes.talleres_empresas;
+    if (/seguridad|miedo|crecimiento|decisi|posicionamiento|sistema interno/.test(normalized)) return serviceRoutes.seguridad_posicionamiento;
+    if (/presencia|hablar|autoridad|liderazgo|visibilidad/.test(normalized)) return serviceRoutes.presencia_profesional;
+    if (/contact|diagn[oó]stico|agenda|whatsapp/.test(normalized)) return serviceRoutes.contacto;
+    return serviceRoutes.asesoria_integral;
+  };
+
+  try {
+    const result = modelContext.provideContext({
+      name: "coach-de-imagen-sonia-mcrorey",
+      description:
+        "Contexto público para agentes sobre Sonia McRorey, Coach De Imagen en Guadalajara, México y LATAM: servicios, publicaciones, preguntas frecuentes y diagnóstico privado.",
+      tools: [
+        {
+          name: "elegir_ruta_de_servicio",
+          description:
+            "Recomienda una ruta pública de Coach De Imagen según intención: imagen profesional, presencia ejecutiva, talleres, seguridad interna o contacto.",
+          inputSchema: {
+            type: "object",
+            properties: {
+              need: {
+                type: "string",
+                description: "Necesidad expresada por la persona: imagen, presencia, empresa, seguridad, liderazgo o diagnóstico.",
+              },
+            },
+            required: ["need"],
+          },
+          execute: async (input) => {
+            const path = chooseRoute(input);
+            return {
+              url: `${window.location.origin}${path}`,
+              route: path,
+              reason: "Ruta seleccionada con base en intención visible de coaching de imagen, presencia y posicionamiento profesional.",
+            };
+          },
+        },
+        {
+          name: "abrir_diagnostico_privado",
+          description: "Devuelve la URL del formulario privado de diagnóstico con Sonia McRorey.",
+          inputSchema: { type: "object", properties: {} },
+          execute: async () => ({
+            url: `${window.location.origin}${serviceRoutes.contacto}`,
+            route: serviceRoutes.contacto,
+            reason: "La conversación inicial permite elegir modalidad presencial en Guadalajara, online para México y LATAM, o talleres para empresas.",
+          }),
+        },
+      ],
+      resources: [
+        { name: "LLMs full", url: `${window.location.origin}/llms-full.txt`, type: "text/plain" },
+        { name: "OpenAPI", url: `${window.location.origin}/openapi.json`, type: "application/openapi+json" },
+        { name: "Semantic index", url: `${window.location.origin}/semantic-index.json`, type: "application/json" },
+      ],
+    });
+    if (result?.catch) result.catch(() => {});
+  } catch (error) {
+    // Browsers without WebMCP support should continue as a static, fast site.
+  }
+};
+
+registerAgentContext();

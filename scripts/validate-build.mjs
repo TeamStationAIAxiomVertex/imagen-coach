@@ -212,7 +212,7 @@ for (const file of htmlFiles) {
       return [];
     }
   });
-  for (const requiredType of ["Organization", "Person", "ProfessionalService", "WebSite", "BreadcrumbList"]) {
+  for (const requiredType of ["Organization", "Person", "ProfessionalService", "LocalBusiness", "WebSite", "BreadcrumbList"]) {
     if (!jsonLdTypes.includes(requiredType)) failures.push(`Missing ${requiredType} JSON-LD in ${file}`);
   }
   const routeForSchema = file === path.join("dist", "index.html") ? "/" : `/${path.dirname(path.relative("dist", file)).replaceAll(path.sep, "/")}`;
@@ -220,7 +220,7 @@ for (const file of htmlFiles) {
     failures.push(`Service page missing Service JSON-LD in ${file}`);
   }
   if (articleSet.has(routeForSchema) && !jsonLdTypes.includes("Article")) failures.push(`Article page missing Article JSON-LD in ${file}`);
-  if ((routeForSchema === "/contacto" || routeForSchema === "/servicios-asesoria-de-imagen-coaching/preguntas-frequentes" || routeForSchema.startsWith("/comparaciones")) && !jsonLdTypes.includes("FAQPage") && routeForSchema !== "/contacto") {
+  if ((routeForSchema === "/contacto" || routeForSchema === "/servicios-asesoria-de-imagen-coaching/preguntas-frequentes" || routeForSchema.startsWith("/comparaciones")) && !jsonLdTypes.includes("FAQPage")) {
     failures.push(`FAQ-intent page missing FAQPage JSON-LD in ${file}`);
   }
   const visibleWords = html
@@ -346,10 +346,24 @@ for (const route of articleSet) {
 
 const requiredAgentFiles = [
   "dist/openapi.json",
+  "dist/api-catalog.json",
+  "dist/content-signal.json",
   "dist/entities.json",
   "dist/semantic-index.json",
   "dist/llms.txt",
   "dist/llms-full.txt",
+  "dist/.well-known/api-catalog",
+  "dist/.well-known/api-catalog.json",
+  "dist/.well-known/agent.json",
+  "dist/.well-known/agent-skills.json",
+  "dist/.well-known/agent-skills/index.json",
+  "dist/.well-known/mcp.json",
+  "dist/.well-known/mcp/server-card.json",
+  "dist/.well-known/mcp/server-cards.json",
+  "dist/.well-known/http-message-signatures-directory",
+  "dist/.well-known/oauth-authorization-server",
+  "dist/.well-known/openid-configuration",
+  "dist/.well-known/oauth-protected-resource",
   "dist/agent/site-profile.json",
   "dist/agent/services.json",
   "dist/agent/contact.json",
@@ -368,7 +382,7 @@ for (const file of requiredAgentFiles) {
     failures.push(`Missing agentic file: ${file}`);
     continue;
   }
-  if (file.endsWith(".json")) {
+  if (file.endsWith(".json") || file.includes(".well-known/api-catalog") || file.includes(".well-known/http-message-signatures-directory") || file.includes(".well-known/oauth-") || file.includes(".well-known/openid-configuration")) {
     const jsonText = await readFile(file, "utf8");
     for (const forbiddenHost of ["localhost", "127.0.0.1", "weblium.site"]) {
       if (jsonText.includes(forbiddenHost)) failures.push(`Host leakage in ${file}: ${forbiddenHost}`);
@@ -421,10 +435,11 @@ for (const line of [
   `Sitemap: ${SITE_URL}/blog-sitemap.xml`,
   `Sitemap: ${SITE_URL}/category-sitemap.xml`,
   `Sitemap: ${SITE_URL}/service-sitemap.xml`,
+  "Content-Signal: search=yes, ai-input=yes, ai-train=no",
 ]) {
   if (!robots.includes(line)) failures.push(`robots.txt missing ${line}`);
 }
-for (const invalidDirective of ["OpenAPI:", "API-Catalog:", "LLMs:", "LLMs-Full:", "Agent-Profile:", "Agent-Card:", "Content-Signal:"]) {
+for (const invalidDirective of ["OpenAPI:", "API-Catalog:", "LLMs:", "LLMs-Full:", "Agent-Profile:", "Agent-Card:"]) {
   if (robots.includes(invalidDirective)) failures.push(`robots.txt contains non-standard directive ${invalidDirective}`);
 }
 
