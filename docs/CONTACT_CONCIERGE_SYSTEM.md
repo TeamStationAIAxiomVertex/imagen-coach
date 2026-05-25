@@ -8,12 +8,20 @@ The contact system is a static-first executive intake for Sonia McRorey. The vis
 
 Static contact form -> Cloudflare Pages Function -> validation and antispam -> optional AI summary -> Cloudflare Email Service or Resend -> Sonia lead inbox.
 
-The production function now supports two outbound channels:
+The production function supports two outbound channels:
 
-1. Cloudflare Email Service through the `SONIA_LEAD_EMAIL` `send_email` binding.
+1. Cloudflare Email Service through a runtime `SONIA_LEAD_EMAIL` binding, if the binding is added outside `wrangler.jsonc`.
 2. Resend through `RESEND_API_KEY`.
 
 Cloudflare Email Service is preferred when the binding exists. Resend remains as a fallback for transactional sending.
+
+Important Pages limitation verified on May 25, 2026: Cloudflare Pages configuration validation rejects `send_email` inside `wrangler.jsonc`:
+
+```txt
+Configuration file for Pages projects does not support "send_email"
+```
+
+Do not commit a `send_email` block to `wrangler.jsonc`; it breaks Pages deployment. If using native Cloudflare sending, configure it through a supported Pages dashboard binding if available, or move `/api/contact` to a separate Worker route that supports `send_email`.
 
 ## Required Secrets
 
@@ -36,7 +44,7 @@ npx wrangler pages secret put OPENAI_API_KEY --project-name imagen-coach
 npx wrangler pages secret put OPENAI_MODEL --project-name imagen-coach
 ```
 
-`RESEND_API_KEY`, `RESEND_FROM_EMAIL`, `OPENAI_API_KEY` and `OPENAI_MODEL` are optional when Cloudflare Email Service is active. If OpenAI is missing, the lead still sends and the email records that the AI concierge did not run.
+`RESEND_API_KEY`, `RESEND_FROM_EMAIL`, `OPENAI_API_KEY` and `OPENAI_MODEL` are optional only when a working Cloudflare Email Service binding is active. If OpenAI is missing, the lead still sends and the email records that the AI concierge did not run.
 
 Recommended Cloudflare Email Service values:
 
@@ -84,7 +92,7 @@ Use Resend domain verification for `send.coachdeimagen.com`. Add SPF, DKIM and D
 
 Cloudflare Email Routing is inbound forwarding. It does not automatically make a form send email. The Pages Function needs either:
 
-- the `SONIA_LEAD_EMAIL` `send_email` binding configured in `wrangler.jsonc` and active on the Pages deployment, or
+- a working `SONIA_LEAD_EMAIL` Email Service binding provided to the Pages Function runtime, or
 - a verified Resend sender and `RESEND_API_KEY`.
 
 Recommended Resend sender:
