@@ -1880,21 +1880,45 @@ function cleanExcerptText(value = "", maxLength = 190) {
   const usableSentence = sentences.map((item) => item.trim()).find((item) => item.length >= 42 && item.length <= maxLength);
   if (usableSentence) return usableSentence;
   if (text.length <= maxLength) return text;
-  const boundary = text.slice(0, maxLength).replace(/\s+\S*$/, "").trim();
+  const boundary = trimDanglingSpanishFragment(text.slice(0, maxLength).replace(/\s+\S*$/, "").trim());
   return /[.!?]$/.test(boundary) ? boundary : `${boundary}.`;
+}
+
+const DANGLING_SPANISH_FRAGMENT_PATTERN = /(?:^|\s)(?:y|e|o|u|de|del|la|el|los|las|un|una|con|para|por|sobre|que|en|a|al)$/i;
+
+function trimDanglingSpanishFragment(value = "") {
+  let text = cleanDisplayTitle(value)
+    .replace(/\s+/g, " ")
+    .replace(/[,:;]$/, "")
+    .trim();
+  while (DANGLING_SPANISH_FRAGMENT_PATTERN.test(text)) {
+    text = text.replace(/\s+\S+$/, "").replace(/[,:;]$/, "").trim();
+  }
+  return text;
 }
 
 function fitTitleLength(value = "", maxLength = 58) {
   const text = cleanDisplayTitle(value);
   if (text.length <= maxLength) return text;
-  const boundary = text.slice(0, maxLength).replace(/\s+\S*$/, "").trim();
+  let boundary = trimDanglingSpanishFragment(text.slice(0, maxLength).replace(/\s+\S*$/, "").trim());
+  if (boundary.includes(":") && !/[.!?]$/.test(boundary)) {
+    const beforeColon = boundary.split(":")[0].trim();
+    if (beforeColon.length >= 28) boundary = beforeColon;
+  }
   return boundary.length >= 32 ? boundary : text.slice(0, maxLength).trim();
 }
 
 function fitMetaDescription(value = "", maxLength = 145) {
   const text = cleanDisplayTitle(value).replace(/\s+/g, " ").trim();
   if (text.length <= maxLength) return text;
-  return text.slice(0, maxLength).replace(/\s+\S*$/, "").replace(/[,:;]$/, "").trim();
+  const sentences = text.match(/[^.!?]+[.!?]+(?:["”])?/g) || [];
+  const complete = sentences
+    .map((item) => item.trim())
+    .filter((item) => item.length >= 72)
+    .find((item) => item.length <= maxLength);
+  if (complete) return complete;
+  const boundary = trimDanglingSpanishFragment(text.slice(0, maxLength).replace(/\s+\S*$/, "").trim());
+  return /[.!?]$/.test(boundary) ? boundary : `${boundary}.`;
 }
 
 function routeSlug(route = "/") {
@@ -1961,7 +1985,13 @@ function titleFromLines(page, lines) {
 function descriptionFromLines(lines, page = null) {
   if (page && semanticIdentity(page.route)?.description) return semanticIdentity(page.route).description;
   if (page && PAGE_OVERRIDES[page.route]?.description) return PAGE_OVERRIDES[page.route].description;
-  const cleaned = lines.map(cleanDisplayTitle).filter(Boolean);
+  const sourceLines = page?.type === "article" && page?.sourceLines?.length
+    ? consolidateArticleFragments(coreBodyLines(page, page.sourceLines))
+    : lines;
+  const cleaned = sourceLines
+    .map((line) => cleanDisplayTitle(line))
+    .filter(Boolean)
+    .filter((line) => !isArticleHeadingCandidate(line));
   const line = cleaned.find((item) => item.length > 90) || cleaned.find((item) => item.length > 45) || "";
   const excerpt = cleanExcerptText(line, 145);
   if (page?.type === "article" && excerpt.length < 120) {
@@ -2136,7 +2166,7 @@ function semanticSupportHeading(page) {
 }
 
 function semanticSeoTitle(page) {
-  if (page.type === "article") return `${fitTitleLength(page.heroTitle || page.title, 44)} | Sonia McRorey`;
+  if (page.type === "article") return `${fitTitleLength(page.heroTitle || page.title, 58)} | Sonia McRorey`;
   return semanticIdentity(page.route)?.seoTitle || `${cleanDisplayTitle(page.heroTitle)} | Sonia McRorey`;
 }
 
@@ -2177,7 +2207,8 @@ function nonTitleLines(page, lines, start = 1) {
 }
 
 function coreBodyLines(page, lines) {
-  return nonTitleLines(page, lines, page.route === "/" ? 4 : 1)
+  const usesSourceLines = Array.isArray(page.sourceLines) && lines === page.sourceLines;
+  return nonTitleLines(page, lines, usesSourceLines ? 0 : page.route === "/" ? 4 : 1)
     .map((line) => repairSourceFragments(line.replace(/\s+/g, " ").trim()))
     .filter(Boolean)
     .filter((line) => !["sesión gratuita", "A DONDE estes", "A DONDE estés", "desde DONDE ESTÉS"].includes(line));
@@ -3127,7 +3158,7 @@ function breadcrumbs(page) {
 function contentHeading(page) {
   const identity = semanticIdentity(page.route);
   if (identity) return [identity.entity, identity.supportHeading];
-  if (page.type === "article") return ["Artículo", "Lectura completa"];
+  if (page.type === "article") return ["Artículo", "Punto de partida"];
   if (page.type === "pillar") return ["Pilar editorial", semanticSupportHeading(page)];
   return [BRAND_NAME, "Contenido principal"];
 }
@@ -3147,10 +3178,13 @@ function deliveryModeStrip(page) {
 function hero(page, lines) {
   const image = pickImage(page);
   const commercialModel = COMMERCIAL_PAGE_MODELS[page.route];
+  const pageContentLines = contentLinesForPage(page, lines);
   const lede = page.route === "/servicios-asesoria-de-imagen-coaching/preguntas-frequentes"
     ? [semanticDescription(page)]
     : page.type === "pillar" ? [semanticDescription(page), semanticIdentity(page.route)?.intent].filter(Boolean)
-    : commercialModel ? [commercialModel.intro] : nonTitleLines(page, lines, 1).slice(0, 2);
+    : commercialModel ? [commercialModel.intro]
+    : page.type === "article" ? coreBodyLines(page, pageContentLines).filter((line) => !isArticleHeadingCandidate(line)).slice(0, 2)
+    : nonTitleLines(page, lines, 1).slice(0, 2);
   const eyebrow = page.type === "article" ? "Imagen, presencia y mentalidad" : page.type === "pillar" ? "Imagen y presencia profesional" : page.type === "service" ? "Servicio" : page.type === "about" ? "Sobre Sonia" : BRAND_NAME;
   return `<section class="section hero imagen-hero ${page.type}-hero">
     <div class="hero-copy">
