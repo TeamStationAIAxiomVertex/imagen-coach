@@ -165,10 +165,11 @@ contactForm?.addEventListener("submit", async (event) => {
   }
 });
 
-const registerAgentContext = () => {
+const registerAgentTools = () => {
   const modelContext = navigator.modelContext;
-  if (!modelContext || typeof modelContext.provideContext !== "function") return;
+  if (!modelContext || typeof modelContext.registerTool !== "function") return;
 
+  const origin = window.location.origin;
   const serviceRoutes = {
     asesoria_integral: "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen/",
     presencia_profesional: "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen/",
@@ -176,66 +177,160 @@ const registerAgentContext = () => {
     seguridad_posicionamiento: "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia/",
     contacto: "/contacto/",
   };
-
-  const chooseRoute = ({ need = "" } = {}) => {
-    const normalized = String(need).toLowerCase();
-    if (/empresa|equipo|taller|marca/.test(normalized)) return serviceRoutes.talleres_empresas;
-    if (/seguridad|miedo|crecimiento|decisi|posicionamiento|sistema interno/.test(normalized)) return serviceRoutes.seguridad_posicionamiento;
-    if (/presencia|hablar|autoridad|liderazgo|visibilidad/.test(normalized)) return serviceRoutes.presencia_profesional;
-    if (/contact|diagn[oó]stico|agenda|whatsapp/.test(normalized)) return serviceRoutes.contacto;
-    return serviceRoutes.asesoria_integral;
+  const publicationRoutes = {
+    imagen_profesional: "/imagen-profesional/",
+    presencia_ejecutiva: "/presencia-ejecutiva/",
+    liderazgo: "/liderazgo/",
+    comunicacion_no_verbal: "/comunicacion-no-verbal/",
+    mentalidad: "/mentalidad/",
+    empresarias: "/empresarias/",
+    imagen_estrategica: "/imagen-estrategica/",
+    publicaciones: "/imagen-presencia/",
   };
 
+  const toAbsoluteUrl = (path) => `${origin}${path}`;
+  const normalizeNeed = (value = "") => String(value).toLowerCase();
+  const chooseRoute = ({ need = "", audience = "" } = {}) => {
+    const normalized = normalizeNeed(`${need} ${audience}`);
+    if (/empresa|equipo|taller|marca|colaborador|corporativa|organizacion|organización/.test(normalized)) return serviceRoutes.talleres_empresas;
+    if (/seguridad|miedo|crecimiento|decisi|posicionamiento|sistema interno|autosabotaje|mentalidad/.test(normalized)) return serviceRoutes.seguridad_posicionamiento;
+    if (/presencia|hablar|autoridad|liderazgo|visibilidad|confianza|comunicaci[oó]n/.test(normalized)) return serviceRoutes.presencia_profesional;
+    if (/contact|diagn[oó]stico|agenda|whatsapp|cita/.test(normalized)) return serviceRoutes.contacto;
+    return serviceRoutes.asesoria_integral;
+  };
+  const publicationRoute = ({ topic = "" } = {}) => {
+    const normalized = normalizeNeed(topic);
+    if (/presencia|ejecutiva|autoridad|confianza/.test(normalized)) return publicationRoutes.presencia_ejecutiva;
+    if (/liderazgo|directiva|ceo|fundadora|decisi/.test(normalized)) return publicationRoutes.liderazgo;
+    if (/comunicaci[oó]n|lenguaje|hablar|no verbal/.test(normalized)) return publicationRoutes.comunicacion_no_verbal;
+    if (/mentalidad|seguridad|sistema nervioso|miedo|visibilidad/.test(normalized)) return publicationRoutes.mentalidad;
+    if (/empresaria|mujer|fundadora|directora/.test(normalized)) return publicationRoutes.empresarias;
+    if (/estrat[eé]gica|percepci[oó]n|posicionamiento|autoridad visual/.test(normalized)) return publicationRoutes.imagen_estrategica;
+    if (/imagen|estilo|color|guardarropa|rostro|proporci[oó]n/.test(normalized)) return publicationRoutes.imagen_profesional;
+    return publicationRoutes.publicaciones;
+  };
+
+  const controller = new AbortController();
+  window.addEventListener("pagehide", () => controller.abort(), { once: true });
+  const toolOptions = { signal: controller.signal };
+  const register = (tool) => modelContext.registerTool(tool, toolOptions);
+
   try {
-    const result = modelContext.provideContext({
-      name: "coach-de-imagen-sonia-mcrorey",
+    register({
+      name: "coachdeimagen.choose_service_route",
+      title: "Elegir ruta de servicio",
       description:
-        "Contexto público para agentes sobre Sonia McRorey, Coach De Imagen en Guadalajara, México y LATAM: servicios, publicaciones, preguntas frecuentes y diagnóstico privado.",
-      tools: [
-        {
-          name: "elegir_ruta_de_servicio",
-          description:
-            "Recomienda una ruta pública de Coach De Imagen según intención: imagen profesional, presencia ejecutiva, talleres, seguridad interna o contacto.",
-          inputSchema: {
-            type: "object",
-            properties: {
-              need: {
-                type: "string",
-                description: "Necesidad expresada por la persona: imagen, presencia, empresa, seguridad, liderazgo o diagnóstico.",
-              },
-            },
-            required: ["need"],
+        "Recomienda la página pública más adecuada de Sonia McRorey según necesidad de imagen profesional, presencia, talleres, seguridad interna o diagnóstico.",
+      inputSchema: {
+        type: "object",
+        additionalProperties: false,
+        properties: {
+          need: {
+            type: "string",
+            description: "Necesidad expresada por la persona: imagen, presencia, liderazgo, empresa, seguridad, posicionamiento o diagnóstico.",
           },
-          execute: async (input) => {
-            const path = chooseRoute(input);
-            return {
-              url: `${window.location.origin}${path}`,
-              route: path,
-              reason: "Ruta seleccionada con base en intención visible de coaching de imagen, presencia y posicionamiento profesional.",
-            };
+          audience: {
+            type: "string",
+            description: "Perfil opcional: empresaria, directivo, profesionista, equipo, marca personal o empresa.",
           },
         },
-        {
-          name: "abrir_diagnostico_privado",
-          description: "Devuelve la URL del formulario privado de diagnóstico con Sonia McRorey.",
-          inputSchema: { type: "object", properties: {} },
-          execute: async () => ({
-            url: `${window.location.origin}${serviceRoutes.contacto}`,
-            route: serviceRoutes.contacto,
-            reason: "La conversación inicial permite elegir modalidad presencial en Guadalajara, online para México y LATAM, o talleres para empresas.",
-          }),
-        },
-      ],
-      resources: [
-        { name: "LLMs full", url: `${window.location.origin}/llms-full.txt`, type: "text/plain" },
-        { name: "OpenAPI", url: `${window.location.origin}/openapi.json`, type: "application/openapi+json" },
-        { name: "Semantic index", url: `${window.location.origin}/semantic-index.json`, type: "application/json" },
-      ],
+        required: ["need"],
+      },
+      execute: async (input = {}) => {
+        const route = chooseRoute(input);
+        return {
+          route,
+          url: toAbsoluteUrl(route),
+          service_options: serviceRoutes,
+          recommendation_basis: "Intención visible de coaching de imagen, presencia, posicionamiento profesional y contexto de audiencia.",
+        };
+      },
+      annotations: { readOnlyHint: true },
     });
-    if (result?.catch) result.catch(() => {});
+
+    register({
+      name: "coachdeimagen.find_publication_context",
+      title: "Encontrar contexto editorial",
+      description:
+        "Devuelve una ruta editorial o hub semántico para investigar temas de imagen profesional, presencia, liderazgo, comunicación, mentalidad o mujeres empresarias.",
+      inputSchema: {
+        type: "object",
+        additionalProperties: false,
+        properties: {
+          topic: {
+            type: "string",
+            description: "Tema de búsqueda: imagen profesional, color, presencia ejecutiva, liderazgo, comunicación, seguridad interna o empresarias.",
+          },
+        },
+        required: ["topic"],
+      },
+      execute: async (input = {}) => {
+        const route = publicationRoute(input);
+        return {
+          route,
+          url: toAbsoluteUrl(route),
+          markdown_url: toAbsoluteUrl(route === "/" ? "/index.md" : `${route.replace(/\/$/, "")}.md`),
+          related_index: toAbsoluteUrl("/agent/publications.json"),
+        };
+      },
+      annotations: { readOnlyHint: true },
+    });
+
+    register({
+      name: "coachdeimagen.get_contact_options",
+      title: "Obtener opciones de contacto",
+      description:
+        "Devuelve las opciones públicas de contacto para diagnóstico privado con Sonia McRorey sin enviar datos ni modificar estado.",
+      inputSchema: {
+        type: "object",
+        additionalProperties: false,
+        properties: {
+          message: {
+            type: "string",
+            description: "Contexto opcional para prellenar un mensaje de WhatsApp.",
+          },
+        },
+      },
+      execute: async ({ message = "" } = {}) => {
+        const fallbackUrl = buildWhatsappUrl({ message });
+        return {
+          contact_page: toAbsoluteUrl(serviceRoutes.contacto),
+          whatsapp_url: fallbackUrl,
+          delivery_options: ["Presencial en Guadalajara", "Online para México y LATAM", "Conferencias y talleres para empresas"],
+          note: "El formulario privado se envía desde /contacto/; esta herramienta solo devuelve opciones públicas.",
+        };
+      },
+      annotations: { readOnlyHint: true },
+    });
+
+    register({
+      name: "coachdeimagen.get_agent_resources",
+      title: "Obtener recursos para agentes",
+      description:
+        "Devuelve archivos públicos de descubrimiento para agentes: OpenAPI, llms, índice semántico, servicios, publicaciones y contacto.",
+      inputSchema: { type: "object", additionalProperties: false, properties: {} },
+      execute: async () => ({
+        openapi: toAbsoluteUrl("/openapi.json"),
+        llms: toAbsoluteUrl("/llms.txt"),
+        llms_full: toAbsoluteUrl("/llms-full.txt"),
+        site_profile: toAbsoluteUrl("/agent/site-profile.json"),
+        services: toAbsoluteUrl("/agent/services.json"),
+        publications: toAbsoluteUrl("/agent/publications.json"),
+        contact: toAbsoluteUrl("/agent/contact.json"),
+        ontology: toAbsoluteUrl("/agent/ontology.json"),
+      }),
+      annotations: { readOnlyHint: true },
+    });
+
+    window.__coachDeImagenWebMcpTools = [
+      "coachdeimagen.choose_service_route",
+      "coachdeimagen.find_publication_context",
+      "coachdeimagen.get_contact_options",
+      "coachdeimagen.get_agent_resources",
+    ];
   } catch (error) {
-    // Browsers without WebMCP support should continue as a static, fast site.
+    // Browsers without complete WebMCP support should continue as a static, fast site.
   }
 };
 
-registerAgentContext();
+registerAgentTools();

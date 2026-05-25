@@ -115,6 +115,13 @@ for (const asset of comparisonHeroAssets) {
 for (const asset of ["dist/assets/sonia-logo-ai.png", "dist/assets/sonia-logo-source.png", "dist/assets/sonia-mcrorey-about-760.avif"]) {
   if (!existsSync(asset)) failures.push(`Missing supplied Sonia brand asset: ${asset}`);
 }
+const runtimeScript = await readFile("script.js", "utf8");
+if (!runtimeScript.includes("navigator.modelContext") || !runtimeScript.includes("registerTool")) {
+  failures.push("Runtime script does not register WebMCP tools with navigator.modelContext.registerTool");
+}
+if (runtimeScript.includes("provideContext")) {
+  failures.push("Runtime script still uses deprecated WebMCP provideContext path");
+}
 
 for (const cluster of strategy.clusters) {
   if (!routeSet.has(cluster.primaryService)) failures.push(`Cluster ${cluster.id} has missing primary service: ${cluster.primaryService}`);

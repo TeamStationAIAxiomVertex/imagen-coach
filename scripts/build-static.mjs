@@ -12,7 +12,7 @@ const SITE_URL = "https://coachdeimagen.com";
 const LEGACY_SITE_URL = "https://imagencoach.com";
 const BRAND_NAME = "Coach De Imagen";
 const ASSET_VERSION = "20260523-semantic-authority-v1";
-const SCRIPT_VERSION = "20260525-contact-runtime-v1";
+const SCRIPT_VERSION = "20260525-webmcp-registertool-v1";
 const WHATSAPP = "https://wa.me/526646105348?text=Hola%20Sonia%2C%20me%20interesa%20agendar%20un%20diagn%C3%B3stico.";
 const CONTACT = {
   phone: "+52 664 610 5348",
