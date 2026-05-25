@@ -447,6 +447,7 @@ for (const invalidDirective of ["OpenAPI:", "API-Catalog:", "LLMs:", "LLMs-Full:
 
 const homepage = await readFile("dist/index.html", "utf8");
 if (!homepage.includes('src="/assets/sonia-logo-ai.png"')) failures.push("Homepage is not using the supplied Sonia logo asset");
+if (!homepage.includes('src="/assets/script-')) failures.push("Homepage is not using a versioned runtime script asset");
 if (homepage.includes("<small>ImagenCoach</small>")) failures.push("Legacy ImagenCoach subtitle still appears on homepage");
 const aboutPage = await readFile("dist/sobre-sonia-mcrorey-asesora-de-imagen/index.html", "utf8");
 if (!aboutPage.includes('src="/assets/sonia-mcrorey-about-760.avif"')) failures.push("About page is not using the supplied Sonia headshot");
