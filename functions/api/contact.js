@@ -1,4 +1,5 @@
 import { Resend } from "resend";
+import { EmailMessage } from "cloudflare:email";
 
 const MAX_BODY_BYTES = 12000;
 const MIN_FORM_TIME_MS = 2500;
@@ -7,6 +8,7 @@ const RATE_LIMIT_WINDOW_SECONDS = 15 * 60;
 const RATE_LIMIT_MAX = 6;
 const DEFAULT_LEAD_TO_EMAIL = "sonia@coachdeimagen.com";
 const DEFAULT_RESEND_FROM_EMAIL = "no-reply@send.coachdeimagen.com";
+const DEFAULT_CLOUDFLARE_FROM_EMAIL = "no-reply@coachdeimagen.com";
 const DISPOSABLE_EMAIL_DOMAINS = new Set([
   "10minutemail.com",
   "guerrillamail.com",
@@ -171,9 +173,85 @@ function emailHtml(lead, summary, leadId, timestamp) {
   </div>`;
 }
 
+function headerSafe(value = "") {
+  return cleanText(value, 120)
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^\x20-\x7e]/g, "")
+    .replace(/[\r\n:<>]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function buildMimeMessage({ from, to, replyTo, subject, html, text }) {
+  const boundary = `coachdeimagen-${crypto.randomUUID()}`;
+  const safeSubject = headerSafe(subject) || "Nuevo lead Coach de Imagen";
+  const safeFrom = headerSafe(from);
+  const safeTo = headerSafe(to);
+  const safeReplyTo = isValidEmail(replyTo) ? replyTo : "";
+  const headers = [
+    `From: Coach de Imagen <${safeFrom}>`,
+    `To: ${safeTo}`,
+    safeReplyTo ? `Reply-To: ${safeReplyTo}` : "",
+    `Subject: ${safeSubject}`,
+    "MIME-Version: 1.0",
+    `Content-Type: multipart/alternative; boundary="${boundary}"`,
+  ].filter(Boolean);
+
+  return [
+    headers.join("\r\n"),
+    "",
+    `--${boundary}`,
+    "Content-Type: text/plain; charset=UTF-8",
+    "Content-Transfer-Encoding: 8bit",
+    "",
+    text,
+    "",
+    `--${boundary}`,
+    "Content-Type: text/html; charset=UTF-8",
+    "Content-Transfer-Encoding: 8bit",
+    "",
+    html,
+    "",
+    `--${boundary}--`,
+    "",
+  ].join("\r\n");
+}
+
+async function sendLeadEmailWithCloudflare(env, lead, summary, leadId, timestamp) {
+  const to = env.LEAD_TO_EMAIL || DEFAULT_LEAD_TO_EMAIL;
+  const from = env.CLOUDFLARE_FROM_EMAIL || DEFAULT_CLOUDFLARE_FROM_EMAIL;
+  const subject = `Nuevo lead Coach de Imagen: ${lead.service_interest}`;
+  const text = [
+    `Lead ID: ${leadId}`,
+    `Timestamp: ${timestamp}`,
+    "",
+    "Resumen concierge:",
+    summary,
+    "",
+    `Nombre: ${lead.name}`,
+    `Email: ${lead.email}`,
+    `Teléfono: ${lead.phone}`,
+    `Ciudad: ${lead.city}`,
+    `País: ${lead.country}`,
+    `LinkedIn: ${lead.linkedin}`,
+    `Interés: ${lead.service_interest}`,
+    `Fuente: ${lead.source_page}`,
+    `Mensaje: ${lead.message}`,
+  ].join("\n");
+  const html = emailHtml(lead, summary, leadId, timestamp);
+  const message = new EmailMessage(from, to, buildMimeMessage({ from, to, replyTo: lead.email, subject, html, text }));
+  await env.SONIA_LEAD_EMAIL.send(message);
+}
+
 async function sendLeadEmail(env, lead, summary, leadId, timestamp) {
   const to = env.LEAD_TO_EMAIL || DEFAULT_LEAD_TO_EMAIL;
   const from = env.RESEND_FROM_EMAIL || DEFAULT_RESEND_FROM_EMAIL;
+  if (env.SONIA_LEAD_EMAIL) {
+    await sendLeadEmailWithCloudflare(env, lead, summary, leadId, timestamp);
+    return;
+  }
+
   if (!env.RESEND_API_KEY || !to) throw new Error("email_configuration_missing");
   const resend = new Resend(env.RESEND_API_KEY);
   const { error } = await resend.emails.send({
@@ -230,10 +308,13 @@ export async function onRequestOptions() {
 }
 
 export async function onRequestGet({ env }) {
+  const cloudflareEmailConfigured = Boolean(env.SONIA_LEAD_EMAIL);
+  const resendConfigured = Boolean(env.RESEND_API_KEY);
   return json({
     ok: true,
     endpoint: "/api/contact",
-    email_configured: Boolean(env.RESEND_API_KEY),
+    email_configured: cloudflareEmailConfigured || resendConfigured,
+    email_channel: cloudflareEmailConfigured ? "cloudflare_email_service" : resendConfigured ? "resend" : "not_configured",
     lead_to_email: env.LEAD_TO_EMAIL || DEFAULT_LEAD_TO_EMAIL,
     ai_concierge_configured: Boolean(env.OPENAI_API_KEY && env.OPENAI_MODEL),
   });
