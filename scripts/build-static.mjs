@@ -3257,35 +3257,24 @@ function footer() {
   const locationSignals = [
     ["Guadalajara", "/guadalajara"],
     ["México", "/mexico"],
-    ["LATAM", "/mexico"],
+    ["LATAM", "/colombia"],
     ["Miami hispanos", "/miami-hispanos"],
     ["Mercados hispanohablantes", "/new-york-hispanos"],
   ];
-  const footerMarkets = [
-    ["/mexico", "México"],
-    ["/guadalajara", "Guadalajara"],
-    ["/cdmx", "CDMX"],
-    ["/monterrey", "Monterrey"],
-    ["/colombia", "Colombia"],
-    ["/argentina", "Argentina"],
-    ["/chile", "Chile"],
-    ["/peru", "Perú"],
-    ["/ecuador", "Ecuador"],
-    ["/costa-rica", "Costa Rica"],
-    ["/panama", "Panamá"],
-    ["/uruguay", "Uruguay"],
-    ["/republica-dominicana", "República Dominicana"],
-    ["/montevideo", "Montevideo"],
-    ["/san-jose-costa-rica", "San José Costa Rica"],
-    ["/panama-city", "Panama City"],
-    ["/santo-domingo", "Santo Domingo"],
-    ["/miami-hispanos", "Miami hispanos"],
-    ["/houston-hispanos", "Houston hispanos"],
-    ["/dallas-hispanos", "Dallas hispanos"],
-    ["/los-angeles-hispanos", "Los Angeles hispanos"],
-    ["/san-diego-hispanos", "San Diego hispanos"],
-    ["/new-york-hispanos", "New York hispanos"],
+  const marketLinksForCountry = (country) => [
+    ...GEO_COUNTRY_MARKETS.filter((market) => market.country === country).map((market) => [market.route, market.name]),
+    ...GEO_CITY_MARKETS
+      .filter(([, , cityCountry]) => cityCountry === country)
+      .map(([name, route]) => [route, name]),
   ];
+  const footerMexicoMarkets = marketLinksForCountry("México");
+  const footerLatamMarkets = [
+    ...GEO_COUNTRY_MARKETS.filter((market) => market.country !== "México").map((market) => [market.route, market.name]),
+    ...GEO_CITY_MARKETS
+      .filter(([, , country]) => country !== "México")
+      .map(([name, route, country]) => [route, country === "Costa Rica" ? `${name}, Costa Rica` : name]),
+  ];
+  const footerHispanicMarkets = HISPANIC_US_MARKETS.map(([name, route]) => [route, name]);
   const footerIntents = [
     ["/como-proyectar-autoridad", "Cómo proyectar autoridad"],
     ["/como-verme-mas-profesional", "Cómo verme más profesional"],
@@ -3320,9 +3309,21 @@ function footer() {
     },
     {
       icon: "ubicacion",
-      heading: "Mercados",
-      text: "Presencia ejecutiva e imagen profesional para México, LATAM y mercados hispanos.",
-      links: footerMarkets.slice(0, 16),
+      heading: "México",
+      text: "Base presencial en Guadalajara y rutas para ciudades empresariales de México.",
+      links: footerMexicoMarkets,
+    },
+    {
+      icon: "viaje",
+      heading: "LATAM",
+      text: "Presencia ejecutiva e imagen profesional para países y ciudades de Latinoamérica.",
+      links: footerLatamMarkets,
+    },
+    {
+      icon: "video",
+      heading: "Hispanos EE.UU.",
+      text: "Acompañamiento online para profesionales latinas y mercados hispanohablantes.",
+      links: footerHispanicMarkets,
     },
     {
       icon: "identidad",
