@@ -10,17 +10,42 @@ Static contact form -> Cloudflare Pages Function -> validation and antispam -> o
 
 ## Required Secrets
 
-Set these in Cloudflare, never in client code:
+Set these in the Cloudflare Pages project, never in client code.
+
+Production project:
+
+```txt
+imagen-coach
+```
+
+Use Pages-specific secrets, not Worker-only `wrangler secret put` commands:
 
 ```bash
-wrangler secret put RESEND_API_KEY
-wrangler secret put LEAD_TO_EMAIL
-wrangler secret put RESEND_FROM_EMAIL
-wrangler secret put OPENAI_API_KEY
-wrangler secret put OPENAI_MODEL
+npx wrangler pages secret put RESEND_API_KEY --project-name imagen-coach
+npx wrangler pages secret put LEAD_TO_EMAIL --project-name imagen-coach
+npx wrangler pages secret put RESEND_FROM_EMAIL --project-name imagen-coach
+npx wrangler pages secret put OPENAI_API_KEY --project-name imagen-coach
+npx wrangler pages secret put OPENAI_MODEL --project-name imagen-coach
 ```
 
 `OPENAI_API_KEY` and `OPENAI_MODEL` are optional. If either is missing, the lead still sends and the email records that the AI concierge did not run.
+
+The contact endpoint exposes a safe readiness check:
+
+```bash
+curl https://coachdeimagen.com/api/contact
+```
+
+Expected production state after secrets are installed:
+
+```json
+{
+  "ok": true,
+  "endpoint": "/api/contact",
+  "email_configured": true,
+  "ai_concierge_configured": false
+}
+```
 
 ## Cloudflare KV
 
@@ -35,20 +60,22 @@ wrangler kv namespace create CONTACT_RATE_LIMIT --preview
 
 ## Resend DNS
 
-Use Resend domain verification for `send.imagencoach.com` or the final production sending subdomain. Add SPF, DKIM and DMARC records in Cloudflare DNS as provided by Resend.
+Use Resend domain verification for `send.coachdeimagen.com`. Add SPF, DKIM and DMARC records in Cloudflare DNS exactly as provided by Resend.
 
 Recommended sender:
 
 ```txt
-no-reply@send.imagencoach.com
+no-reply@send.coachdeimagen.com
 ```
 
 Recommended inbox secrets:
 
 ```txt
-LEAD_TO_EMAIL=sonia@imagencoach.com
-RESEND_FROM_EMAIL=no-reply@send.imagencoach.com
+LEAD_TO_EMAIL=sonia@coachdeimagen.com
+RESEND_FROM_EMAIL=no-reply@send.coachdeimagen.com
 ```
+
+If Sonia uses a different receiving inbox, set `LEAD_TO_EMAIL` to that inbox. The sender must remain a Resend-verified address.
 
 ## Security Controls
 

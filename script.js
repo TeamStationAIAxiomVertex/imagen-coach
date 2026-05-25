@@ -4,6 +4,34 @@ const form = document.querySelector("[data-form]");
 const contactForm = document.querySelector("[data-contact-form]");
 const whatsappNumber = "526646105348";
 
+const setFormStatus = (status, message, fallbackUrl = "") => {
+  if (!status) return;
+  status.textContent = message;
+  if (!fallbackUrl) return;
+  status.appendChild(document.createTextNode(" "));
+  const link = document.createElement("a");
+  link.href = fallbackUrl;
+  link.target = "_blank";
+  link.rel = "noopener";
+  link.textContent = "Abrir WhatsApp";
+  status.appendChild(link);
+};
+
+const buildWhatsappUrl = (payload = {}) => {
+  const message = [
+    "Hola Sonia, me interesa agendar un diagnóstico privado.",
+    "",
+    `Nombre: ${payload.name || ""}`,
+    `Email: ${payload.email || ""}`,
+    `Teléfono / WhatsApp: ${payload.phone || ""}`,
+    `Ciudad: ${payload.city || ""}`,
+    `País: ${payload.country || ""}`,
+    `Interés: ${payload.service_interest || payload.service || ""}`,
+    `Mensaje: ${payload.message || ""}`,
+  ].join("\n");
+  return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+};
+
 document.documentElement.classList.add("js-ready");
 
 const syncHeaderState = () => {
@@ -72,7 +100,7 @@ form?.addEventListener("submit", (event) => {
   ].join("\n");
   const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
-  status.textContent = "Abriendo WhatsApp con tu diagnóstico listo para Sonia.";
+  setFormStatus(status, "Abriendo WhatsApp con tu diagnóstico listo para Sonia.");
   window.open(url, "_blank", "noopener");
 });
 
@@ -93,8 +121,9 @@ contactForm?.addEventListener("submit", async (event) => {
   const payload = Object.fromEntries(new FormData(contactForm).entries());
   payload.concierge_mode = Boolean(payload.concierge_mode);
   payload.source_page = window.location.pathname;
+  const whatsappFallbackUrl = buildWhatsappUrl(payload);
 
-  status.textContent = "Enviando solicitud privada...";
+  setFormStatus(status, "Enviando solicitud privada...");
   submit.disabled = true;
 
   try {
@@ -104,11 +133,33 @@ contactForm?.addEventListener("submit", async (event) => {
       body: JSON.stringify(payload),
     });
     const result = await response.json().catch(() => ({}));
-    if (!response.ok) throw new Error(result.error || "No se pudo enviar la solicitud.");
+    if (!response.ok) {
+      if (result.error === "contact_email_not_configured") {
+        setFormStatus(
+          status,
+          "El envío privado está en configuración. Puedes enviar el mismo contexto por WhatsApp ahora.",
+          whatsappFallbackUrl,
+        );
+        return;
+      }
+      if (result.error === "rate_limited") {
+        setFormStatus(
+          status,
+          "Recibimos varias solicitudes en poco tiempo. Espera unos minutos o escribe por WhatsApp para contactar a Sonia.",
+          whatsappFallbackUrl,
+        );
+        return;
+      }
+      throw new Error(result.error || "No se pudo enviar la solicitud.");
+    }
     contactForm.reset();
-    status.textContent = "Solicitud enviada. Sonia recibirá tu contexto para responder con mayor precisión.";
+    setFormStatus(status, "Solicitud enviada. Sonia recibirá tu contexto para responder con mayor precisión.");
   } catch (error) {
-    status.textContent = "No pudimos enviar el formulario en este momento. Puedes usar WhatsApp para contactar a Sonia directamente.";
+    setFormStatus(
+      status,
+      "No pudimos enviar el formulario en este momento. Puedes usar WhatsApp para contactar a Sonia directamente.",
+      whatsappFallbackUrl,
+    );
   } finally {
     submit.disabled = false;
   }

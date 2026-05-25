@@ -5,6 +5,7 @@ const MIN_FORM_TIME_MS = 2500;
 const MAX_FORM_TIME_MS = 24 * 60 * 60 * 1000;
 const RATE_LIMIT_WINDOW_SECONDS = 15 * 60;
 const RATE_LIMIT_MAX = 6;
+const DEFAULT_RESEND_FROM_EMAIL = "no-reply@send.coachdeimagen.com";
 const DISPOSABLE_EMAIL_DOMAINS = new Set([
   "10minutemail.com",
   "guerrillamail.com",
@@ -171,8 +172,8 @@ function emailHtml(lead, summary, leadId, timestamp) {
 
 async function sendLeadEmail(env, lead, summary, leadId, timestamp) {
   const to = env.LEAD_TO_EMAIL;
-  const from = env.RESEND_FROM_EMAIL || "no-reply@send.imagencoach.com";
-  if (!env.RESEND_API_KEY || !to) throw new Error("missing_email_configuration");
+  const from = env.RESEND_FROM_EMAIL || DEFAULT_RESEND_FROM_EMAIL;
+  if (!env.RESEND_API_KEY || !to) throw new Error("email_configuration_missing");
   const resend = new Resend(env.RESEND_API_KEY);
   const { error } = await resend.emails.send({
     from,
@@ -216,6 +217,9 @@ export async function onRequestPost(context) {
     return json({ ok: true, lead_id: leadId });
   } catch (error) {
     console.error(JSON.stringify({ event: "contact_submit_failed", ip, error: error.message }));
+    if (error.message === "email_configuration_missing") {
+      return json({ ok: false, error: "contact_email_not_configured", fallback: "whatsapp" }, 503);
+    }
     return json({ ok: false, error: "contact_unavailable" }, 500);
   }
 }
@@ -224,6 +228,11 @@ export async function onRequestOptions() {
   return json({ ok: true });
 }
 
-export async function onRequestGet() {
-  return json({ ok: false, error: "method_not_allowed" }, 405);
+export async function onRequestGet({ env }) {
+  return json({
+    ok: true,
+    endpoint: "/api/contact",
+    email_configured: Boolean(env.RESEND_API_KEY && env.LEAD_TO_EMAIL),
+    ai_concierge_configured: Boolean(env.OPENAI_API_KEY && env.OPENAI_MODEL),
+  });
 }
