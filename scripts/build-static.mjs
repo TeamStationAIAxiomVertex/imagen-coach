@@ -381,7 +381,7 @@ const COMMERCIAL_PAGE_MODELS = {
       "Presencia alineada con crecimiento, dinero y posicionamiento.",
     ],
     faq: [
-      ["¿Es coaching de abundancia?", "El nombre histórico queda en la URL, pero la ruta pública se enfoca en seguridad profesional, decisiones, visibilidad, liderazgo y posicionamiento."],
+      ["¿Qué significa trabajar seguridad y posicionamiento?", "Significa ordenar la forma en que sostienes crecimiento, visibilidad, dinero, decisiones, liderazgo y presencia profesional sin forzarte a actuar un personaje."],
       ["¿Qué se trabaja internamente?", "Autoconcepto, permiso, miedo a la exposición, relación con dinero, sistema interno, decisiones y capacidad de sostener nuevos niveles."],
       ["¿Para quién es?", "Para personas con capacidad y experiencia que sienten que algo interno interfiere con su crecimiento, autoridad o presencia profesional."],
       ["¿Qué cambia cuando la seguridad interna se ordena?", "La visibilidad pesa menos, las decisiones se vuelven más claras y el crecimiento puede sostenerse con más presencia y menos desgaste."],
