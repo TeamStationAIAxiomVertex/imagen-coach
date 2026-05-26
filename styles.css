@@ -6106,3 +6106,92 @@ details[open] summary::after {
     padding: 0 18px 20px;
   }
 }
+
+/* Service-page FAQ accordions need their own rhythm; the generic FAQ cards
+   are used by GEO and hub pages and create oversized orphan rows here. */
+.commercial-faq .compact-faq {
+  width: min(900px, 100%);
+  margin-inline: auto;
+  padding: clamp(18px, 2.6vw, 30px) 0 0;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+}
+
+.commercial-faq .compact-faq .faq-answer-card {
+  display: grid;
+  align-self: start;
+  min-height: 0;
+  padding: 0;
+  border-radius: 10px;
+  background: var(--surface-white);
+  overflow: hidden;
+}
+
+.commercial-faq .compact-faq .faq-answer-card[open] {
+  background: var(--surface-sage);
+}
+
+.commercial-faq .compact-faq .faq-answer-card summary {
+  grid-template-columns: 42px minmax(0, 1fr) 32px;
+  gap: 16px;
+  align-items: center;
+  min-height: 86px;
+  padding: 20px 24px;
+  font-size: clamp(19px, 1.25vw, 21px);
+  line-height: 1.18;
+}
+
+.commercial-faq .compact-faq .faq-answer-card summary span {
+  width: 38px;
+  height: 38px;
+}
+
+.commercial-faq .compact-faq .faq-answer-card summary::after {
+  width: 32px;
+  height: 32px;
+  align-self: center;
+}
+
+.commercial-faq .compact-faq .faq-answer-card > div {
+  padding: 0 24px 24px 82px;
+}
+
+.commercial-faq .compact-faq .faq-answer-card p {
+  max-width: 58ch;
+  font-size: 15px;
+  line-height: 1.56;
+}
+
+@media (max-width: 900px) {
+  .commercial-faq .compact-faq {
+    width: min(720px, 100%);
+  }
+
+  .commercial-faq .compact-faq .faq-answer-card summary {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .commercial-faq .compact-faq {
+    padding-top: 14px;
+    gap: 12px;
+  }
+
+  .commercial-faq .compact-faq .faq-answer-card summary {
+    grid-template-columns: 34px minmax(0, 1fr) 30px;
+    gap: 10px;
+    padding: 16px;
+    font-size: clamp(17px, 4.8vw, 20px);
+  }
+
+  .commercial-faq .compact-faq .faq-answer-card summary span {
+    width: 34px;
+    height: 34px;
+  }
+
+  .commercial-faq .compact-faq .faq-answer-card > div {
+    padding: 0 16px 18px 60px;
+  }
+}
