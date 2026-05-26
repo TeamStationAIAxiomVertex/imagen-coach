@@ -5902,3 +5902,207 @@ details[open] summary::after {
     max-width: 100%;
   }
 }
+
+/* Mobile dropdown QA repairs: keep navigation and accordions compact, aligned and readable. */
+@media (max-width: 980px) {
+  .site-header {
+    isolation: isolate;
+  }
+
+  .site-nav {
+    right: 16px;
+    left: 16px;
+    max-height: min(74vh, 620px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 10px;
+    border-radius: 12px;
+    background: var(--header-bg);
+  }
+
+  .site-nav > a,
+  .nav-mega summary {
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+    padding: 12px 14px;
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    color: var(--header-nav);
+    line-height: 1.2;
+  }
+
+  .site-nav > a:last-child {
+    border-bottom: 0;
+  }
+
+  .nav-mega {
+    width: 100%;
+  }
+
+  .nav-mega summary {
+    justify-content: space-between;
+  }
+
+  .nav-mega summary::after {
+    content: "+";
+    display: grid;
+    flex: 0 0 auto;
+    width: 28px;
+    height: 28px;
+    margin-left: 14px;
+    place-items: center;
+    color: var(--brand-green-deep);
+    border: 1px solid rgba(111, 162, 135, .28);
+    border-radius: 50%;
+    background: rgba(231, 240, 235, .46);
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  .nav-mega[open] summary {
+    margin-bottom: 8px;
+    color: var(--plum-accent);
+    border: 1px solid rgba(111, 162, 135, .22);
+    border-radius: 8px;
+    background: rgba(231, 240, 235, .42);
+  }
+
+  .nav-mega[open] summary::after {
+    content: "−";
+  }
+
+  .mega-panel {
+    position: static;
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    min-width: 0;
+    margin: 0 0 10px;
+    padding: 0 0 0 10px;
+    transform: none;
+    border: 0;
+    border-left: 1px solid rgba(111, 162, 135, .22);
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .mega-panel::before {
+    display: none;
+  }
+
+  .comparison-menu {
+    grid-template-columns: 1fr;
+    min-width: 0;
+  }
+
+  .mega-link {
+    display: grid;
+    min-height: auto;
+    padding: 11px 10px;
+    border-top: 1px solid rgba(227, 223, 231, .86);
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .mega-link:first-child {
+    border-top: 0;
+  }
+
+  .mega-link + .mega-link {
+    border-top: 1px solid rgba(227, 223, 231, .86);
+  }
+
+  .mega-link:hover {
+    background: rgba(231, 240, 235, .32);
+  }
+
+  .mega-link span {
+    font-size: 14px;
+    line-height: 1.28;
+  }
+
+  .mega-link small {
+    margin-top: 4px;
+    font-size: 12px;
+    line-height: 1.35;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-nav {
+    top: calc(100% + 8px);
+    right: 10px;
+    left: 10px;
+    max-height: calc(100vh - 126px);
+  }
+
+  .site-nav > a,
+  .nav-mega summary {
+    min-height: 46px;
+    padding: 12px;
+  }
+
+  .mega-panel {
+    padding-left: 8px;
+  }
+
+  .mega-link {
+    padding: 10px 8px;
+  }
+
+  details.faq-answer-card summary {
+    grid-template-columns: 34px minmax(0, 1fr) 30px;
+    gap: 10px;
+    align-items: center;
+    min-height: auto;
+    padding: 16px;
+  }
+
+  details.faq-answer-card summary span {
+    display: grid;
+    width: 34px;
+    height: 34px;
+    place-items: center;
+    padding: 0;
+    border: 1px solid var(--outline-lilac);
+    border-radius: 50%;
+    background: var(--surface-white);
+    font-size: 11px;
+  }
+
+  details.faq-answer-card summary::after {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+  }
+
+  details.faq-answer-card > div {
+    padding: 0 16px 18px 60px;
+  }
+
+  .semantic-card summary {
+    grid-template-columns: 38px minmax(0, 1fr);
+    gap: 12px;
+    padding: 20px 54px 20px 18px;
+  }
+
+  .semantic-card summary::after {
+    top: 18px;
+    right: 16px;
+    width: 30px;
+    height: 30px;
+    font-size: 19px;
+  }
+
+  .semantic-card h2 {
+    font-size: clamp(28px, 9vw, 38px);
+    line-height: 1.08;
+  }
+
+  .semantic-card .semantic-copy {
+    padding: 0 18px 20px;
+  }
+}
