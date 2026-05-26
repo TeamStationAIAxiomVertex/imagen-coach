@@ -65,7 +65,7 @@ const SEMANTIC_TITLES = {
     supportHeading: "Imagen, presencia y posicionamiento profesional",
     entity: "Coach de Imagen",
     intent: "Alinear imagen, presencia y liderazgo con el nivel profesional actual.",
-    description: "Acompaño a líderes, empresarios y profesionistas a alinear imagen, percepción y seguridad interna para sostener mayor autoridad y claridad profesional.",
+    description: "Coach de Imagen en Guadalajara para México y LATAM: imagen, presencia, seguridad interna y posicionamiento profesional con Sonia McRorey.",
   },
   "/servicios-asesoria-de-imagen-coaching": {
     h1: "Servicios de Coaching de Imagen y Presencia Profesional",
@@ -76,7 +76,7 @@ const SEMANTIC_TITLES = {
     supportHeading: "Rutas de trabajo para imagen, presencia y empresa",
     entity: "Servicios de Coach de Imagen",
     intent: "Elegir el proceso adecuado segun etapa, contexto y necesidad profesional.",
-    description: "Rutas de asesoría, coaching y talleres para alinear imagen profesional, presencia, percepción y posicionamiento en México y LATAM.",
+    description: "Procesos de asesoría, coaching y talleres para imagen profesional, presencia ejecutiva, seguridad interna y empresa en México y LATAM.",
   },
   "/imagen-presencia/rebranding-imagen-mentalidad-abundancia": {
     h1: "Imagen, mentalidad y claridad profesional",
@@ -98,7 +98,7 @@ const SEMANTIC_TITLES = {
     supportHeading: "Identidad visual, estilo y coherencia externa",
     entity: "Imagen profesional",
     intent: "Ordenar estilo, color, guardarropa, rostro e identidad visual personal.",
-    description: "Proceso de asesoría de imagen integral para ordenar estilo, color, guardarropa, rostro e identidad visual con coherencia profesional.",
+    description: "Asesoría de imagen integral para ordenar estilo, color, rostro, guardarropa e identidad visual con criterio profesional y esencia propia.",
   },
   "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen": {
     h1: "Coaching de Imagen y Presencia Profesional",
@@ -131,7 +131,7 @@ const SEMANTIC_TITLES = {
     supportHeading: "Estructura interna para sostener crecimiento",
     entity: "Seguridad interna",
     intent: "Trabajar patrones internos, decisiones, visibilidad y capacidad de sostener crecimiento profesional.",
-    description: "Coaching de imagen con estructura interna para sostener liderazgo, decisiones, visibilidad y crecimiento profesional con mayor seguridad.",
+    description: "Coaching de seguridad profesional para sostener decisiones, visibilidad, liderazgo y crecimiento sin depender solo del esfuerzo.",
   },
   "/servicios-asesoria-de-imagen-coaching/preguntas-frequentes": {
     h1: "Preguntas Frecuentes sobre Coaching de Imagen",
@@ -164,7 +164,7 @@ const SEMANTIC_TITLES = {
     supportHeading: "Trayectoria, enfoque y forma de trabajo",
     entity: "Sonia McRorey",
     intent: "Presentar autoridad, trayectoria, metodologia y confianza profesional.",
-    description: "Conoce a Sonia McRorey, coach de imagen especializada en presencia, percepción, liderazgo personal y posicionamiento profesional.",
+    description: "Sonia McRorey, Coach de Imagen en Guadalajara, integra imagen profesional, presencia, liderazgo y posicionamiento para México y LATAM.",
   },
 };
 const PAGE_OVERRIDES = {
@@ -243,30 +243,30 @@ const COMMERCIAL_PAGE_MODELS = {
     cta: "Diseñar un taller para mi equipo",
   },
   "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen": {
-    label: "Asesoría integral",
-    heading: "Ordenar imagen, estilo, color y presencia para que lo visible acompañe tu etapa actual.",
-    intro: "La asesoría de imagen integral trabaja la parte externa de la imagen sin separarla de tu realidad, tu estilo de vida y el nivel profesional o personal que hoy sostienes.",
+    label: "Imagen profesional integral",
+    heading: "Ordenar estilo, color y guardarropa para que la imagen exprese tu etapa real.",
+    intro: "Un cambio de imagen no es un cambio de look ni un estilismo de moda. Es un proceso para ordenar señales visibles, respetar tu esencia y construir criterios que puedas sostener en tu vida real.",
     decision: [
-      ["Problema", "Tu imagen, guardarropa o estilo ya no corresponden con tu etapa, responsabilidad o forma de presentarte."],
-      ["Solución", "Diagnóstico de color, estilo, rostro, proporciones, clóset y decisiones visuales con criterio profesional."],
-      ["Resultado", "Una imagen coherente, funcional y sostenible que puedes habitar sin sentirla impuesta o artificial."],
+      ["Problema", "Tu ropa, color o estilo dicen cosas que ya no representan la etapa, responsabilidad o presencia que hoy sostienes."],
+      ["Solución", "Lectura de color, rostro, proporciones, estilo, clóset y contexto para decidir desde criterio, no desde impulso."],
+      ["Resultado", "Una imagen coherente, funcional y fácil de habitar porque nace de tu esencia, tu realidad y tu objetivo profesional."],
     ],
     fit: [
-      ["Profesionales", "Personas que necesitan verse y sentirse alineadas en reuniones, escenarios digitales y espacios de decisión."],
-      ["Marcas personales", "Emprendedoras, consultoras y líderes que requieren coherencia entre imagen, mensaje y posicionamiento."],
-      ["Vida diaria", "Quienes quieren dejar de improvisar con ropa, color y estilo para construir un sistema práctico."],
+      ["Profesionistas", "Personas que quieren que su imagen comunique credibilidad sin perder naturalidad, comodidad ni identidad propia."],
+      ["Marcas personales", "Emprendedoras, consultoras, directivos y líderes que necesitan coherencia entre imagen, mensaje y posicionamiento."],
+      ["Etapas de cambio", "Quienes ya no se reconocen en su guardarropa y necesitan ordenar lo visible antes de seguir comprando o improvisando."],
     ],
     outcomes: [
-      "Paleta de color y lectura de rostro.",
-      "Estilo personal conectado con identidad.",
-      "Guardarropa más funcional y consciente.",
-      "Criterios de compra y vestimenta más claros.",
+      "Color, rostro y proporciones leídos con intención.",
+      "Estilo personal conectado con esencia y contexto.",
+      "Guardarropa funcional para tu vida profesional y personal.",
+      "Criterios claros para comprar, combinar y presentarte.",
     ],
     faq: [
-      ["¿La asesoría de imagen es solo ropa?", "No. Incluye ropa, color, rostro, proporciones, clóset y estilo, pero siempre conectados con presencia, percepción y contexto."],
-      ["¿Necesito cambiar todo mi guardarropa?", "No necesariamente. El proceso ordena primero criterio, uso, coherencia y funcionalidad antes de comprar más."],
-      ["¿Sirve para imagen ejecutiva?", "Sí. La asesoría ayuda a que la imagen profesional comunique credibilidad, claridad y congruencia con el nivel que ocupas."],
-      ["¿Qué obtengo al final del proceso?", "Obtienes criterios claros para elegir color, prendas, combinaciones, proporciones y estilo con más intención, menos improvisación y mayor coherencia profesional."],
+      ["¿La asesoría de imagen es solo ropa?", "No. La ropa es una parte visible. También se trabaja color, rostro, proporciones, estilo, contexto, percepción y forma de habitar tu imagen."],
+      ["¿Necesito cambiar todo mi guardarropa?", "No necesariamente. Primero se ordena criterio, uso, coherencia y funcionalidad. Comprar más no resuelve una imagen sin dirección."],
+      ["¿Sirve para mujeres y hombres?", "Sí. El proceso se adapta a profesión, estilo de vida, exposición, contexto y objetivo. No parte de una fórmula rígida ni de una sola estética."],
+      ["¿Qué obtengo al final del proceso?", "Obtienes criterios para elegir color, prendas, combinaciones, proporciones y estilo con más intención, menos improvisación y mayor coherencia profesional."],
     ],
     articles: [
       "/imagen-presencia/beneficios-de-asesoria-de-imagen",
@@ -309,30 +309,30 @@ const COMMERCIAL_PAGE_MODELS = {
     cta: "Explorar coaching de presencia",
   },
   "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia": {
-    label: "Seguridad profesional",
-    heading: "Entrenamiento interno para sostener decisiones, visibilidad y crecimiento profesional.",
-    intro: "Este proceso trabaja los patrones internos que interfieren con claridad, liderazgo y capacidad de sostener nuevos niveles de responsabilidad.",
+    label: "Seguridad y posicionamiento",
+    heading: "Sostener visibilidad, decisiones y crecimiento desde una base interna más segura.",
+    intro: "El verdadero límite muchas veces no está en la estrategia. Está en la capacidad interna de sostener expansión, visibilidad, dinero, liderazgo y nuevas responsabilidades sin vivirlas como amenaza.",
     decision: [
-      ["Problema", "Haces mucho hacia afuera, pero algo interno frena decisiones, visibilidad o crecimiento."],
-      ["Solución", "Coaching de imagen con estructura interna, seguridad profesional, sistema nervioso y posicionamiento."],
-      ["Resultado", "Decisiones más limpias, mayor presencia y crecimiento sostenido desde claridad interna."],
+      ["Problema", "Hay capacidad, preparación y estrategia, pero aparecen miedo, sobreexigencia o bloqueo justo cuando toca crecer."],
+      ["Solución", "Trabajo de autoconcepto, sistema interno, presencia, lenguaje corporal, decisiones y posicionamiento aplicado a tu contexto."],
+      ["Resultado", "Mayor capacidad para sostener exposición, autoridad, dinero, crecimiento y presencia sin depender solo del empuje."],
     ],
     fit: [
-      ["Empresarias", "Cuando el siguiente nivel exige más visibilidad, decisión y seguridad profesional."],
-      ["Líderes", "Cuando la responsabilidad crece y necesitas sostener presencia sin sobreexigirte."],
-      ["Profesionistas", "Cuando el bloqueo no es falta de capacidad, sino un patrón interno que limita avanzar."],
+      ["Empresarias", "Cuando el siguiente nivel exige más visibilidad, mejores decisiones, autoridad y capacidad de sostener crecimiento."],
+      ["Líderes", "Cuando la responsabilidad aumenta y necesitas presencia profesional sin entrar en control, rigidez o sobreexigencia."],
+      ["Profesionistas", "Cuando el problema no es falta de talento, sino un patrón interno que limita exposición, decisión o posicionamiento."],
     ],
     outcomes: [
-      "Patrones internos más claros.",
-      "Decisiones profesionales más sostenibles.",
-      "Mayor seguridad para ocupar visibilidad.",
-      "Presencia alineada con crecimiento y posicionamiento.",
+      "Patrones internos vistos con más claridad.",
+      "Decisiones profesionales más limpias y sostenibles.",
+      "Mayor permiso interno para ocupar visibilidad.",
+      "Presencia alineada con crecimiento, dinero y posicionamiento.",
     ],
     faq: [
-      ["¿Es coaching de abundancia?", "La ruta conserva el URL histórico, pero el enfoque visible es seguridad interna, decisiones, presencia y posicionamiento profesional."],
-      ["¿Qué se trabaja internamente?", "Patrones de decisión, miedo a la visibilidad, regulación, autoconcepto y capacidad de sostener crecimiento."],
-      ["¿Para quién es?", "Para personas con capacidad y experiencia que necesitan ordenar lo interno para sostener más liderazgo, presencia y resultados."],
-      ["¿Qué cambia cuando la seguridad interna se ordena?", "Las decisiones se vuelven más claras, la visibilidad pesa menos y la presencia profesional puede sostener crecimiento sin depender solo del esfuerzo."],
+      ["¿Es coaching de abundancia?", "El nombre histórico queda en la URL, pero la ruta pública se enfoca en seguridad profesional, decisiones, visibilidad, liderazgo y posicionamiento."],
+      ["¿Qué se trabaja internamente?", "Autoconcepto, permiso, miedo a la exposición, relación con dinero, sistema interno, decisiones y capacidad de sostener nuevos niveles."],
+      ["¿Para quién es?", "Para personas con capacidad y experiencia que sienten que algo interno interfiere con su crecimiento, autoridad o presencia profesional."],
+      ["¿Qué cambia cuando la seguridad interna se ordena?", "La visibilidad pesa menos, las decisiones se vuelven más claras y el crecimiento puede sostenerse con más presencia y menos desgaste."],
     ],
     articles: [
       "/imagen-presencia/mas-dinero-capacidad-interna-liderazgo-presencia",
@@ -345,13 +345,13 @@ const COMMERCIAL_PAGE_MODELS = {
 const PILLARS = [
   {
     label: SEMANTIC_TITLES["/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen"].menuLabel,
-    audience: "Profesionales, empresarias y mujeres que quieren ordenar estilo, guardarropa, color y presencia diaria.",
+    audience: "Profesionistas, empresarias, directivos y marcas personales que quieren ordenar estilo, color, guardarropa y presencia diaria.",
     route: "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen",
     keywords: "asesoría de imagen personal, colorimetría, estilo profesional",
   },
   {
     label: SEMANTIC_TITLES["/servicios-asesoria-de-imagen-coaching/coaching-de-imagen"].menuLabel,
-    audience: "Líderes y emprendedoras que necesitan sostener seguridad, identidad y autoridad visible.",
+    audience: "Líderes, ejecutivos y emprendedores que necesitan comunicar seguridad, identidad y autoridad visible.",
     route: "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen",
     keywords: "coaching de imagen, presencia profesional, liderazgo",
   },
@@ -363,21 +363,21 @@ const PILLARS = [
   },
   {
     label: SEMANTIC_TITLES["/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia"].menuLabel,
-    audience: "Entrenamiento interno para sostener liderazgo, presencia, claridad profesional y decisiones alineadas con posicionamiento.",
+    audience: "Trabajo interno para sostener liderazgo, visibilidad, decisiones, dinero y posicionamiento profesional.",
     route: "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia",
     keywords: "coaching de imagen, seguridad interna, posicionamiento profesional",
   },
 ];
 const BUYER_GUIDES = {
   "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen": {
-    pain: "Tu imagen no refleja el nivel profesional que sostienes.",
-    solution: "Diagnóstico integral de estilo, color, rostro, guardarropa y presencia.",
-    outcome: "Una imagen coherente, funcional y fácil de sostener.",
+    pain: "Tu imagen anterior ya no representa tu etapa actual.",
+    solution: "Lectura integral de estilo, color, rostro, guardarropa y contexto.",
+    outcome: "Criterios visuales claros, propios y fáciles de sostener.",
   },
   "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen": {
-    pain: "Hay capacidad, pero falta seguridad visible o dirección interna.",
-    solution: "Coaching de identidad, autoconcepto, presencia y percepción externa.",
-    outcome: "Presencia profesional con claridad, confianza y autoridad.",
+    pain: "Tu capacidad existe, pero tu presencia todavía no la comunica.",
+    solution: "Coaching de identidad, presencia, comunicación y percepción externa.",
+    outcome: "Presencia profesional con confianza, claridad y autoridad.",
   },
   "/servicios-asesoria-de-imagen-coaching/talleres": {
     pain: "El equipo comunica distinto y la experiencia visual pierde coherencia.",
@@ -385,9 +385,9 @@ const BUYER_GUIDES = {
     outcome: "Criterios compartidos para proyectar confianza y consistencia.",
   },
   "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia": {
-    pain: "Tu capacidad ya existe, pero patrones internos interfieren con claridad, liderazgo y crecimiento.",
-    solution: "Coaching de imagen con estructura interna y posicionamiento profesional.",
-    outcome: "Mayor claridad, presencia, autoridad, coherencia y seguridad profesional.",
+    pain: "Tu estrategia avanza, pero tu sistema interno todavía resiste expansión.",
+    solution: "Coaching de seguridad interna, presencia y posicionamiento profesional.",
+    outcome: "Más claridad para sostener visibilidad, liderazgo y crecimiento.",
   },
 };
 const FAQ_PAGE_QUESTIONS = [
@@ -1193,6 +1193,19 @@ const BODY_JUNK_LINES = new Set([
   CONTACT.address,
   CONTACT.hours,
 ]);
+
+function isLegacySourceJunkLine(line = "") {
+  const text = line.trim();
+  return BODY_JUNK_LINES.has(text) ||
+    /soniamcrorey@gmail\.com/i.test(text) ||
+    /View this post on Instagram/i.test(text) ||
+    /A post shared by/i.test(text) ||
+    /\b(Método de Pago|Metodo de Pago|Depósito|Deposito|Giro Tigo|Reserva de cupo|RESERVA de CUPO|Consultas? a|Escribime a)\b/i.test(text) ||
+    /\b0971[-\s]/.test(text) ||
+    /dbattilana@/i.test(text) ||
+    /^(Facebook|Mail|contacto):/i.test(text);
+}
+
 const SERVICE_PROCESS_STEPS = {
   "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen": [
     "Diagnóstico profundo",
@@ -1962,7 +1975,7 @@ function normalizeContentLines(lines) {
     .map((item) => item.trim())
     .map(repairSourceFragments)
     .map(stripSourceMarkers)
-    .filter((item) => item && !BODY_JUNK_LINES.has(item));
+    .filter((item) => item && !isLegacySourceJunkLine(item));
   const normalized = [];
 
   for (let index = 0; index < filtered.length; index += 1) {
@@ -2646,6 +2659,7 @@ function coreBodyLines(page, lines) {
   return nonTitleLines(page, lines, usesSourceLines ? 0 : page.route === "/" ? 4 : 1)
     .map((line) => repairSourceFragments(line.replace(/\s+/g, " ").trim()))
     .filter(Boolean)
+    .filter((line) => !isLegacySourceJunkLine(line))
     .filter((line) => !["sesión gratuita", "A DONDE estes", "A DONDE estés", "desde DONDE ESTÉS"].includes(line));
 }
 
@@ -2961,17 +2975,17 @@ function serviceHubContent(page, pages, clusters) {
     lines: [item.guide.pain, item.guide.solution, item.guide.outcome],
   }));
   const decisionSteps = [
-    ["Identifica el punto de fricción", "Visual, presencia, equipo o estructura interna. El servicio correcto depende de dónde se rompe la coherencia."],
-    ["Elige la ruta de trabajo", "Cada proceso tiene un foco distinto para evitar mezclar guardarropa, coaching, empresa y seguridad profesional en una sola conversación."],
-    ["Conecta con artículos guía", "Las publicaciones profundizan el contexto sin sobrecargar las páginas comerciales."],
-    ["Agenda diagnóstico", "La decisión final se ajusta a etapa, objetivo, disponibilidad y tipo de acompañamiento."],
+    ["Identifica el punto de fricción", "La imagen es inevitable: algo comunica antes de que expliques tu experiencia. El primer paso es ubicar qué señal necesita orden."],
+    ["Elige la ruta de trabajo", "Cada proceso tiene un foco distinto para no mezclar guardarropa, presencia, empresa y seguridad profesional en una sola conversación."],
+    ["Conecta con artículos guía", "Las publicaciones amplían la reflexión de Sonia sin convertir las páginas comerciales en ensayos largos."],
+    ["Agenda diagnóstico", "La decisión final se ajusta a etapa, objetivo, ciudad, modalidad y tipo de acompañamiento."],
   ];
   return `${serviceSystemVisual(page, hubVisualSections, articleClusterByRoute(clusters))}
   <section class="section commercial-intent-map service-hub-router" aria-label="Mapa de servicios">
     <div class="section-heading compact-heading">
       <p class="section-label">Elegir ruta</p>
-      <h2>${headlineHtml("Cuatro formas de trabajar imagen, presencia y posicionamiento profesional.")}</h2>
-      <p>Elige por necesidad principal: imagen visible, presencia profesional, equipo o seguridad interna. Cada ruta conserva su intención para que la decisión sea más clara.</p>
+      <h2>${headlineHtml("Cuatro rutas para trabajar imagen, presencia, empresa y seguridad profesional.")}</h2>
+      <p>No todas las necesidades se resuelven con ropa, coaching o talleres. Elige según lo que hoy necesitas ordenar: lo visible, la presencia, el equipo o la base interna que sostiene tu crecimiento.</p>
     </div>
     <div class="intent-card-grid service-route-grid">
       ${paths.map((item, index) => `<a class="intent-card service-route-card" href="${item.route}">
@@ -4057,9 +4071,9 @@ function commercialMethodNotes(page, model) {
       ["Criterio compartido", "El cierre no es inspiración. Es una base común para decidir imagen, color, presencia y comunicación."],
     ],
     "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen": [
-      ["Lectura integral", "La imagen se revisa desde estilo, color, rostro, proporciones, clóset y contexto de vida real."],
-      ["Sistema práctico", "El objetivo no es verse bien una vez, sino construir criterios para decidir con menos desgaste."],
-      ["Coherencia externa", "Lo visible acompaña identidad, responsabilidad, entorno y nivel de exposición profesional."],
+      ["Lectura integral", "La imagen se revisa desde estilo, color, rostro, proporciones, clóset, contexto y forma real de habitar tu día."],
+      ["Sistema práctico", "El objetivo no es verse bien una vez, sino construir criterios para decidir con menos desgaste y más intención."],
+      ["Coherencia externa", "Tu estilo va más allá de la ropa: es energía, lenguaje, intención y una forma visible de comunicar etapa."],
     ],
     "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen": [
       ["Presencia visible", "La imagen se trabaja desde seguridad, comunicación, autoconcepto y forma de ocupar espacios."],
@@ -4067,9 +4081,9 @@ function commercialMethodNotes(page, model) {
       ["Autoridad natural", "No se busca actuar una imagen rígida. Se fortalece una presencia clara, creíble y propia."],
     ],
     "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia": [
-      ["Estructura interna", "La ruta observa patrones que aparecen justo cuando toca decidir, crecer, exponerse o sostener más."],
-      ["Cuerpo y decisión", "La seguridad profesional también necesita un sistema interno capaz de sostener visibilidad y presión."],
-      ["Crecimiento sostenible", "El objetivo es que el avance no dependa de empuje, sino de claridad, presencia y coherencia interna."],
+      ["Estructura interna", "La ruta observa patrones que aparecen justo cuando toca decidir, crecer, exponerse, cobrar más o sostener más."],
+      ["Cuerpo y decisión", "Tu cuerpo determina si el crecimiento se percibe como seguro o como amenaza. Por eso la presencia también necesita regulación."],
+      ["Crecimiento sostenible", "El objetivo es que el avance no dependa solo de empuje, sino de claridad, presencia y coherencia interna."],
     ],
   }[page.route] || [];
   if (!notes.length) return "";
@@ -4239,12 +4253,12 @@ function aboutAuthorityContent() {
     <div class="section-heading compact-heading">
       <p class="section-label">Sobre Sonia</p>
       <h2>${headlineHtml("Imagen y presencia para tu siguiente nivel profesional.")}</h2>
-      <p>Trabajo en la intersección entre imagen, identidad y mentalidad aplicada al contexto profesional para personas, marcas y equipos en Guadalajara, México y LATAM.</p>
+      <p>Sonia trabaja desde una premisa clara: la imagen es inevitable y dinámica. Su enfoque ordena lo visible, lo interno y lo profesional para que la presencia tenga dirección, no solo estética.</p>
     </div>
     <div class="intent-card-grid">
-      <article class="intent-card"><span>01</span><h3>Para quién</h3><p>Líderes, profesionistas, ejecutivos, empresas y marcas personales que necesitan alinear presencia con responsabilidad, decisiones y crecimiento.</p></article>
-      <article class="intent-card"><span>02</span><h3>Qué hago</h3><p>Diseño procesos estratégicos donde imagen, presencia y mentalidad se trabajan de forma integrada y aplicada a tu contexto profesional.</p></article>
-      <article class="intent-card"><span>03</span><h3>Cómo se sostiene</h3><p>La imagen no se trabaja para impresionar, sino para que lo que piensas, decides y proyectas esté alineado.</p></article>
+      <article class="intent-card"><span>01</span><h3>Para quién</h3><p>Líderes, profesionistas, ejecutivos, empresarias, empresas y marcas personales que necesitan alinear presencia con responsabilidad, decisiones y crecimiento.</p></article>
+      <article class="intent-card"><span>02</span><h3>Qué hace</h3><p>Diseña procesos estratégicos donde imagen, presencia, identidad y mentalidad se trabajan desde lo que cada persona o equipo vive realmente.</p></article>
+      <article class="intent-card"><span>03</span><h3>Cómo se sostiene</h3><p>No corrige la imagen desde afuera: ordena la base desde la cual la imagen se expresa con claridad, coherencia y criterio profesional.</p></article>
     </div>
   </section>
   <section class="section commercial-method-notes" aria-label="Enfoque de Sonia">
@@ -4253,16 +4267,16 @@ function aboutAuthorityContent() {
       <h2>${headlineHtml("Lo interno y lo externo como un sistema.")}</h2>
     </div>
     <div class="method-note-grid">
-      <article><span>${topicIcon("identidad")}</span><h3>Identidad</h3><p>Cómo te percibes, valoras y decides influye en la forma en que tu imagen comunica.</p></article>
-      <article><span>${topicIcon("presencia")}</span><h3>Presencia</h3><p>La presencia se vuelve coherente cuando acompaña el rol, la responsabilidad y el nivel de confianza que necesitas generar.</p></article>
-      <article><span>${topicIcon("liderazgo")}</span><h3>Posicionamiento</h3><p>El objetivo es que lo que proyectas sea coherente con tu nivel profesional y con el lugar que estás sosteniendo.</p></article>
+      <article><span>${topicIcon("identidad")}</span><h3>Identidad</h3><p>La creación de una imagen debe respetar la esencia del emisor: tu historia, tu cuerpo, tu contexto y la etapa que estás habitando.</p></article>
+      <article><span>${topicIcon("presencia")}</span><h3>Presencia</h3><p>Tu presencia es un mensaje, no un estilismo. Se construye desde seguridad visible, comunicación y forma de ocupar espacios.</p></article>
+      <article><span>${topicIcon("liderazgo")}</span><h3>Posicionamiento</h3><p>El objetivo es que lo que proyectas sea coherente con tu nivel profesional, tu mercado y el lugar que necesitas sostener.</p></article>
     </div>
   </section>
   <section class="section outcome-state-map" aria-label="Formación y credenciales">
     <div class="section-heading compact-heading">
       <p class="section-label">Formación</p>
       <h2>${headlineHtml("Criterio profesional construido en imagen, empresa, comunicación y psicología de la imagen.")}</h2>
-      <p>Estas credenciales sostienen el nivel de autoridad de Sonia como Coach de Imagen con formación internacional, liderazgo profesional y experiencia aplicada en México y LATAM.</p>
+      <p>Estas credenciales sostienen el nivel de autoridad de Sonia como Coach de Imagen con formación internacional, liderazgo profesional y experiencia aplicada en Guadalajara, México y LATAM.</p>
     </div>
     <div class="credential-grid">
       ${credentials.map((item, index) => `<article class="credential-card ${index < 2 ? "is-featured" : ""}">
@@ -4345,7 +4359,7 @@ function servicePathSection(pages) {
   return `<section class="section pillar-paths">
     <div class="section-heading">
       <p class="section-label">Servicios</p>
-      <h2>${headlineHtml("Rutas claras para elegir el proceso que acompaña tu momento.")}</h2>
+      <h2>${headlineHtml("Rutas claras para elegir qué necesita sostener tu imagen ahora.")}</h2>
     </div>
     <div class="pillar-grid">${pillarCards(pages)}</div>
   </section>`;
@@ -5319,7 +5333,7 @@ function homeExtras(pages, clusters) {
   <section class="section journal">
     <div class="section-heading">
       <p class="section-label">Publicaciones</p>
-      <h2>${headlineHtml("Lecturas para entender imagen, presencia y liderazgo.")}</h2>
+      <h2>${headlineHtml("Lecturas para entender imagen, presencia y percepción profesional.")}</h2>
     </div>
     <div class="publication-grid">${articleCards(pages, { limit: 6, clusterMap })}</div>
   </section>`;
