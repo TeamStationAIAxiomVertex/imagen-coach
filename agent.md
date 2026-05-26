@@ -33,7 +33,15 @@ Sonia's domain knowledge sources are part of the operating contract:
 - `content/sonia-knowledge/quote-bank.json`
 - `content/sonia-knowledge/drive-source-inventory.json`
 - `content/sonia-knowledge/drive-quote-bank.json`
+- `content/sonia-knowledge/teaching-route-map.json`
 - `docs/SONIA_KNOWLEDGEBASE_QUOTE_BANK.md`
 - `docs/SONIA_DRIVE_KNOWLEDGEBASE.md`
+- `docs/SONIA_TEACHING_ROUTE_MAP.md`
 
 Use these before writing source-grounded pages, methodology pages, FAQs, GEO pages, service descriptions or schema descriptions. Public copy must use sanitized, reviewed extracts only. Never publish raw Drive payment details, old contact data, banking details, dated prices or private program logistics.
+
+## Teaching Module Contract
+
+Sonia-authored quote addendums must be routed through `content/sonia-knowledge/teaching-route-map.json`. The static build validates each mapped teaching against the reviewed quote banks through `sourceSnippet`.
+
+Use the modules to add proof, practical coaching criteria and decision clarity. Do not use them to pad copy. One compact module per route is the default.

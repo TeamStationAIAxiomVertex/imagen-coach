@@ -26,8 +26,10 @@ Assert:
 - every clean page points back to source text and source HTML
 - `content/sonia-knowledge/drive-source-inventory.json` parses as valid JSON
 - `content/sonia-knowledge/drive-quote-bank.json` parses as valid JSON
+- `content/sonia-knowledge/teaching-route-map.json` parses as valid JSON
 - `content/sonia-knowledge/drive-source-inventory.json` keeps `rawFilesCommitted` set to `false`
 - `docs/SONIA_DRIVE_KNOWLEDGEBASE.md` documents the Drive source usage and sensitivity rules
+- `docs/SONIA_TEACHING_ROUTE_MAP.md` documents the public teaching-module governance rules
 
 ### 1a. Sonia Source Hygiene Tests
 
@@ -43,6 +45,13 @@ Assert rendered `dist/` output does not contain raw private or stale source deta
 - raw program logistics or dated cohort information unless explicitly approved for a current public offer
 
 Drive-derived content must be sanitized, page-specific and tied to a semantic cluster before public output.
+
+Teaching-route tests:
+
+- every teaching module has a `sourceSnippet`
+- every `sourceSnippet` validates against a reviewed quote bank during `npm run build`
+- public HTML does not expose raw source filenames or Drive document names
+- a route should not render duplicate teaching modules unless explicitly approved for long-form material
 
 ### 2. Content Cleanup Tests
 

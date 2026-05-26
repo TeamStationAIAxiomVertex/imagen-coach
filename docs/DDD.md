@@ -81,10 +81,25 @@ Current source artifacts:
 - `content/sonia-knowledge/quote-bank.json`
 - `content/sonia-knowledge/drive-source-inventory.json`
 - `content/sonia-knowledge/drive-quote-bank.json`
+- `content/sonia-knowledge/teaching-route-map.json`
 - `docs/SONIA_KNOWLEDGEBASE_QUOTE_BANK.md`
 - `docs/SONIA_DRIVE_KNOWLEDGEBASE.md`
+- `docs/SONIA_TEACHING_ROUTE_MAP.md`
 
 Sonia Knowledge Sources are not public page dumps. They provide expert language, proof, methodology and teaching context. Public pages must use sanitized, page-specific extracts and must not expose raw payment data, old contact details, bank data, dated pricing or private program logistics.
+
+### Sonia Teaching Module
+
+A compact, source-validated public addendum generated from `content/sonia-knowledge/teaching-route-map.json`.
+
+Each module contains:
+
+- one short Sonia quote
+- one application title
+- one short page-specific explanation
+- up to three practical coaching tips
+
+Teaching modules support authority and decision clarity. They are not generic quote blocks, SEO filler or a substitute for proper article and pillar content.
 
 ### Hub
 

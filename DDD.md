@@ -26,9 +26,18 @@ Domain knowledge sources:
 - Blog quote bank: `content/sonia-knowledge/quote-bank.json`
 - Drive source inventory: `content/sonia-knowledge/drive-source-inventory.json`
 - Drive quote bank: `content/sonia-knowledge/drive-quote-bank.json`
+- Teaching route map: `content/sonia-knowledge/teaching-route-map.json`
 - Drive source guide: `docs/SONIA_DRIVE_KNOWLEDGEBASE.md`
+- Teaching route guide: `docs/SONIA_TEACHING_ROUTE_MAP.md`
 
 These sources define Sonia's content language, proof, methodology and teaching context. They must be used as controlled source material, not raw public page dumps.
+
+Domain rule for public teachings:
+
+- A teaching is valid only when it has a reviewed quote-bank source.
+- The page mapping must respect the route's semantic territory.
+- Abundance, manifestation, PNL and money language may support internal capacity pages, but must not become the domain's root category.
+- Sonia's language should clarify professional image, presence, perception, leadership and positioning for both women and men.
 
 
 ## Generated Artifacts

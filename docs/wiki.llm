@@ -52,8 +52,10 @@ Required content sources:
 - `content/sonia-knowledge/quote-bank.json` for candidate Sonia-authored quote material
 - `content/sonia-knowledge/drive-source-inventory.json` for the Google Drive document and presentation inventory
 - `content/sonia-knowledge/drive-quote-bank.json` for candidate Drive-derived quotes and teaching signals
+- `content/sonia-knowledge/teaching-route-map.json` for controlled public quote modules and page-specific teaching addendums
 - `docs/SONIA_KNOWLEDGEBASE_QUOTE_BANK.md` for human-readable blog quote guidance
 - `docs/SONIA_DRIVE_KNOWLEDGEBASE.md` for Drive source relevance, sensitivity and usage rules
+- `docs/SONIA_TEACHING_ROUTE_MAP.md` for public teaching-module governance
 
 The Drive folder is an expert source library, not a public content dump. It includes service drafts, biography material, training decks, image/coaching definitions, e-books, authority proof, presentation material and visual assets. Some files contain private or dated data. Therefore:
 
@@ -62,6 +64,18 @@ The Drive folder is an expert source library, not a public content dump. It incl
 - do not let abundance, manifestation, PNL, eneagram or money language become the public root category
 - do use Sonia's language to strengthen executive clarity, methodology, proof, FAQs, schema and pillar addendums
 - do map every extract to a specific page intent and semantic cluster before use
+
+## Sonia Teaching Modules
+
+The static build uses `content/sonia-knowledge/teaching-route-map.json` to place short, source-validated Sonia teachings into pages. This layer is for authority and decision clarity, not for text volume.
+
+Rules:
+
+- every public teaching must include a `sourceSnippet` traceable to a reviewed quote bank
+- modules must not expose raw Drive filenames, payment data, old contact data, dated logistics or SEO strategy
+- use one compact module per route by default
+- preserve the route's unique buyer intent and semantic territory
+- put deeper teaching into articles, methodology pages, glossary pages, FAQs or audience pages
 
 Primary source clusters:
 

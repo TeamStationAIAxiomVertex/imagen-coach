@@ -4028,6 +4028,118 @@ details[open] summary::after {
   color: var(--green);
 }
 
+.sonia-teaching {
+  padding-block: clamp(48px, 6vw, 80px);
+}
+
+.sonia-teaching-card {
+  display: grid;
+  grid-template-columns: minmax(280px, .82fr) minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 48px);
+  align-items: stretch;
+  padding: clamp(22px, 4vw, 42px);
+  border: 1px solid var(--outline-soft);
+  border-radius: var(--radius-card);
+  background: var(--surface-white);
+}
+
+.sonia-teaching-quote,
+.sonia-teaching-application {
+  min-width: 0;
+}
+
+.sonia-teaching-quote {
+  display: grid;
+  align-content: start;
+  gap: 16px;
+  padding-right: clamp(0px, 3vw, 28px);
+  border-right: 1px solid var(--outline-soft);
+}
+
+.teaching-icon {
+  display: inline-grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  color: var(--brand-green-deep);
+  border: 1px solid var(--outline-sage);
+  border-radius: 50%;
+  background: var(--surface-sage);
+}
+
+.teaching-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.sonia-teaching blockquote {
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.sonia-teaching blockquote p {
+  max-width: 520px;
+  color: var(--charcoal-soft);
+  font-size: clamp(26px, 2.8vw, 40px);
+  line-height: 1.04;
+}
+
+.sonia-teaching blockquote cite {
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.sonia-teaching-application {
+  display: grid;
+  align-content: center;
+  gap: 18px;
+}
+
+.sonia-teaching-application h2 {
+  max-width: 760px;
+  margin: 0;
+  color: var(--charcoal-soft);
+  font-family: var(--display);
+  font-size: clamp(32px, 3.5vw, 52px);
+  line-height: 1.04;
+  text-wrap: balance;
+}
+
+.sonia-teaching-application > p {
+  max-width: 720px;
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(16px, 1.4vw, 18px);
+  line-height: 1.65;
+}
+
+.teaching-tip-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.teaching-tip-list li {
+  min-width: 0;
+  padding: 14px;
+  color: var(--charcoal-soft);
+  border: 1px solid var(--outline-soft);
+  border-radius: 8px;
+  background: var(--surface-mist);
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.35;
+}
+
 @media (max-width: 900px) {
   .footer-intelligence {
     grid-template-columns: 1fr;
@@ -4045,6 +4157,21 @@ details[open] summary::after {
   }
 
   .footer-directory {
+    grid-template-columns: 1fr;
+  }
+
+  .sonia-teaching-card {
+    grid-template-columns: 1fr;
+  }
+
+  .sonia-teaching-quote {
+    padding-right: 0;
+    padding-bottom: 22px;
+    border-right: 0;
+    border-bottom: 1px solid var(--outline-soft);
+  }
+
+  .teaching-tip-list {
     grid-template-columns: 1fr;
   }
 }

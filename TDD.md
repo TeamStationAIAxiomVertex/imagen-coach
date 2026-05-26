@@ -25,8 +25,12 @@ Source hygiene tests:
 - `content/sonia-knowledge/drive-source-inventory.json` must parse as JSON.
 - `content/sonia-knowledge/drive-quote-bank.json` must parse as JSON.
 - `content/sonia-knowledge/drive-source-inventory.json` must keep `rawFilesCommitted` false.
+- `content/sonia-knowledge/teaching-route-map.json` must parse as JSON.
+- Every teaching in `teaching-route-map.json` must validate against a reviewed quote-bank `sourceSnippet` during `npm run build`.
 - Public output must not contain raw bank details, CLABE numbers, card numbers, old contact data, old source domains, stale offer prices or private program logistics from Sonia's Drive documents.
 - Drive-derived content must be sanitized and mapped to page intent before publication.
+- Public output must not expose raw source filenames from Sonia's Drive folder.
+- Teaching modules must remain compact and must not duplicate more than once on the same generated route unless explicitly approved for a long-form article or methodology page.
 
 
 ## Generated Artifacts

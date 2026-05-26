@@ -23,6 +23,11 @@ The machine-readable inventory lives at:
 
 - `content/sonia-knowledge/drive-source-inventory.json`
 - `content/sonia-knowledge/drive-quote-bank.json`
+- `content/sonia-knowledge/teaching-route-map.json`
+
+The public teaching-module contract lives at:
+
+- `docs/SONIA_TEACHING_ROUTE_MAP.md`
 
 ## Highest-Value Sources
 
@@ -224,7 +229,9 @@ Before writing or modifying source-grounded page content, agents must read:
 2. `content/sonia-knowledge/quote-bank.json`
 3. `content/sonia-knowledge/drive-source-inventory.json`
 4. `content/sonia-knowledge/drive-quote-bank.json`
-5. `docs/SONIA_DRIVE_KNOWLEDGEBASE.md`
+5. `content/sonia-knowledge/teaching-route-map.json`
+6. `docs/SONIA_DRIVE_KNOWLEDGEBASE.md`
+7. `docs/SONIA_TEACHING_ROUTE_MAP.md`
 
 Then:
 
@@ -234,6 +241,7 @@ Then:
 - compress commercial pages into clear decision modules
 - reserve long explanations for article, methodology and pillar pages
 - attribute source internally through docs and inventory, not visible public citations unless editorially appropriate
+- add public quote modules through the teaching route map so the build can validate the source snippet
 
 ## Page And Content Opportunities
 

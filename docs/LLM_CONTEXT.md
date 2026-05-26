@@ -52,8 +52,10 @@ Not done yet:
 - `content/sonia-knowledge/quote-bank.json`: candidate Sonia-authored quote bank
 - `content/sonia-knowledge/drive-source-inventory.json`: Drive document and presentation inventory
 - `content/sonia-knowledge/drive-quote-bank.json`: Drive-derived candidate quote and teaching-signal bank
+- `content/sonia-knowledge/teaching-route-map.json`: source-validated public teaching module map
 - `docs/SONIA_KNOWLEDGEBASE_QUOTE_BANK.md`: blog quote guidance
 - `docs/SONIA_DRIVE_KNOWLEDGEBASE.md`: Drive source relevance and usage rules
+- `docs/SONIA_TEACHING_ROUTE_MAP.md`: public teaching-module governance
 
 ## Sonia Source Material
 
@@ -64,6 +66,10 @@ Before writing or refactoring source-grounded content, use Sonia's own material:
 - Drive inventory for service architecture, biography, methodology, presentations and visual assets
 
 Do not publish raw Drive documents, private payment details, old contact details, old prices, bank information or dated program logistics. Use sanitized, page-specific extracts only.
+
+## Public Teaching Layer
+
+Sonia quote addendums are generated from `content/sonia-knowledge/teaching-route-map.json`. The build validates each `sourceSnippet` against reviewed quote banks. Add or revise public teaching modules there, not directly in page templates.
 
 ## Agentic Files
 

@@ -26,9 +26,18 @@ Source material contract:
 - `content/sonia-knowledge/quote-bank.json` is the candidate quote bank.
 - `content/sonia-knowledge/drive-source-inventory.json` is the controlled Drive document inventory.
 - `content/sonia-knowledge/drive-quote-bank.json` is the candidate Drive quote and teaching-signal bank.
+- `content/sonia-knowledge/teaching-route-map.json` is the controlled public quote and teaching addendum map.
 - `docs/SONIA_DRIVE_KNOWLEDGEBASE.md` is the editorial usage guide for Sonia's documents and presentations.
+- `docs/SONIA_TEACHING_ROUTE_MAP.md` is the implementation contract for page-specific teaching modules.
 
 Do not emit raw Drive payment details, old contact details, bank data, dated pricing or private logistics into public pages.
+
+Teaching addendum design:
+
+- `scripts/build-static.mjs` loads and validates `teaching-route-map.json` before rendering.
+- Each public teaching requires a `sourceSnippet` traceable to the reviewed quote banks.
+- Public modules render as compact authority panels: quote, application title, short note and practical tips.
+- Commercial pages should use these as decision support, not long-form content expansion.
 
 
 ## Generated Artifacts

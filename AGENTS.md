@@ -33,16 +33,27 @@ Use these sources in order:
 9. `content/sonia-knowledge/quote-bank.json` for candidate Sonia-authored quotes requiring editorial review before public injection.
 10. `content/sonia-knowledge/drive-source-inventory.json` for Sonia's Drive document and presentation inventory.
 11. `content/sonia-knowledge/drive-quote-bank.json` for candidate Drive-derived quotes and teaching signals requiring editorial review before public injection.
-12. `docs/SONIA_DRIVE_KNOWLEDGEBASE.md` for the Drive source usage rules, relevance tiers and source-to-page mapping.
-13. `docs/SDD.md`, `docs/DDD.md`, `docs/TDD.md`, and `docs/LLM_CONTEXT.md` for implementation decisions.
-14. `docs/UBIQUITOUS_LANGUAGE.md`, `docs/GEO_OPERATING_SYSTEM.md`, `docs/PAGE_SIGNAL_MAP.md`, `docs/ICONOGRAPHY_SYSTEM.md`, and `docs/REDIRECTS_AND_URL_RETENTION.md` for agentic GEO, ontology, redirect, iconography, and semantic governance.
-15. `TeamStationAIAxiomVertex/guadalajara` only as the UX/UI/theme reference, not as this site's content source.
+12. `content/sonia-knowledge/teaching-route-map.json` for the controlled public quote/addendum mapping used by the static build.
+13. `docs/SONIA_DRIVE_KNOWLEDGEBASE.md` and `docs/SONIA_TEACHING_ROUTE_MAP.md` for Drive usage rules, source-to-page mapping and public teaching-module governance.
+14. `docs/SDD.md`, `docs/DDD.md`, `docs/TDD.md`, and `docs/LLM_CONTEXT.md` for implementation decisions.
+15. `docs/UBIQUITOUS_LANGUAGE.md`, `docs/GEO_OPERATING_SYSTEM.md`, `docs/PAGE_SIGNAL_MAP.md`, `docs/ICONOGRAPHY_SYSTEM.md`, and `docs/REDIRECTS_AND_URL_RETENTION.md` for agentic GEO, ontology, redirect, iconography, and semantic governance.
+16. `TeamStationAIAxiomVertex/guadalajara` only as the UX/UI/theme reference, not as this site's content source.
 
 Do not invent pages, slugs, services, images, schemas, or positioning without evidence.
 
 ## Sonia Drive Knowledgebase Rule
 
 Sonia's Drive folder is an expert source library, not a public asset dump. Use it to learn her domain expertise, service framing, biography, methodology, presentations, idioms and teaching language before writing. Do not commit or expose raw Drive files that contain payment data, old contact information, dated pricing, bank details, private logistics or course-only material. Any public use must be sanitized, short, page-specific and aligned to the executive Coach De Imagen category.
+
+## Sonia Teaching Route Map Rule
+
+Public quote and teaching modules must come through `content/sonia-knowledge/teaching-route-map.json`. Do not hard-code Sonia quotes directly into templates unless the route map and docs are updated in the same change.
+
+Every teaching entry must include a `sourceSnippet` that can be traced to `content/sonia-knowledge/drive-quote-bank.json` or `content/sonia-knowledge/quote-bank.json`. The static build validates this relationship and must fail if a public teaching cannot be traced.
+
+The public module must stay compact: one short quote, one application title, one short explanatory note and up to three practical tips. Use one module per route by default. If a page needs deeper teaching, improve an article, methodology page, FAQ, glossary or audience page instead of overloading the commercial page.
+
+Never expose source filenames, Drive document names, bank/payment data, old contact data, old prices, private logistics, raw internal notes or SEO/GEO strategy in public copy.
 
 ## Non-Negotiable URL Contract
 

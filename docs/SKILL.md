@@ -89,11 +89,12 @@ Required skills:
 
 Execution standard:
 
-- read `content/blog/soniamcrorey-blog.json`, `content/sonia-knowledge/quote-bank.json`, `content/sonia-knowledge/drive-source-inventory.json`, `content/sonia-knowledge/drive-quote-bank.json` and `docs/SONIA_DRIVE_KNOWLEDGEBASE.md` before writing source-grounded pages
+- read `content/blog/soniamcrorey-blog.json`, `content/sonia-knowledge/quote-bank.json`, `content/sonia-knowledge/drive-source-inventory.json`, `content/sonia-knowledge/drive-quote-bank.json`, `content/sonia-knowledge/teaching-route-map.json`, `docs/SONIA_DRIVE_KNOWLEDGEBASE.md` and `docs/SONIA_TEACHING_ROUTE_MAP.md` before writing source-grounded pages
 - use Sonia's actual language where it strengthens proof, clarity or authority
 - do not publish raw Drive documents, payment details, old contact data, bank data, stale prices or private logistics
 - do not use source material as generic quote stuffing
 - map every extract to page intent, semantic cluster and buyer decision stage
+- add public Sonia quote modules only through the teaching route map so build-time source validation can catch invented or untraceable language
 
 ## AI Engineering Skills
 

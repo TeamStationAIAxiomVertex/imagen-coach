@@ -55,17 +55,19 @@ Always:
 9. `content/sonia-knowledge/quote-bank.json`
 10. `content/sonia-knowledge/drive-source-inventory.json`
 11. `content/sonia-knowledge/drive-quote-bank.json`
-12. `docs/SONIA_KNOWLEDGEBASE_QUOTE_BANK.md`
-13. `docs/SONIA_DRIVE_KNOWLEDGEBASE.md`
-14. `docs/SDD.md`
-15. `docs/DDD.md`
-16. `docs/TDD.md`
-17. `docs/GEO_OPERATING_SYSTEM.md`
-18. `docs/PAGE_SIGNAL_MAP.md`
-19. `docs/REDIRECTS_AND_URL_RETENTION.md`
-20. `content/clean/manifest.json`
-21. `scripts/build-static.mjs`
-22. `scripts/validate-build.mjs`
+12. `content/sonia-knowledge/teaching-route-map.json`
+13. `docs/SONIA_KNOWLEDGEBASE_QUOTE_BANK.md`
+14. `docs/SONIA_DRIVE_KNOWLEDGEBASE.md`
+15. `docs/SONIA_TEACHING_ROUTE_MAP.md`
+16. `docs/SDD.md`
+17. `docs/DDD.md`
+18. `docs/TDD.md`
+19. `docs/GEO_OPERATING_SYSTEM.md`
+20. `docs/PAGE_SIGNAL_MAP.md`
+21. `docs/REDIRECTS_AND_URL_RETENTION.md`
+22. `content/clean/manifest.json`
+23. `scripts/build-static.mjs`
+24. `scripts/validate-build.mjs`
 
 ## Sonia Domain Knowledge Source Stack
 
@@ -76,9 +78,13 @@ Sonia's expert source material now includes:
 - the candidate quote bank in `content/sonia-knowledge/quote-bank.json`
 - the Drive source inventory in `content/sonia-knowledge/drive-source-inventory.json`
 - the Drive candidate quote bank in `content/sonia-knowledge/drive-quote-bank.json`
+- the teaching route map in `content/sonia-knowledge/teaching-route-map.json`
 - the human-readable Drive usage guide in `docs/SONIA_DRIVE_KNOWLEDGEBASE.md`
+- the teaching-module governance guide in `docs/SONIA_TEACHING_ROUTE_MAP.md`
 
 Use these sources to strengthen pages with Sonia's real domain language, proof, methodology, idioms and teaching concepts. Do not dump raw source text into pages. Extract, sanitize, compress and map each source to the correct page intent.
+
+Teaching modules must be added through the route map, not by hard-coding quotes into templates. Every public teaching requires source validation against the reviewed quote banks during `npm run build`.
 
 ## Deployment Gate
 

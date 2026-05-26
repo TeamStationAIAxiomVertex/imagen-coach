@@ -8,6 +8,13 @@ Status: candidate material requiring editorial review before public injection.
 
 Purpose: controlled extraction of Sonia McRorey's own language for SEO, GEO, service proof, and editorial authority. These quotes should be used selectively, with source attribution and without turning pages into duplicated quote blocks.
 
+Public quote implementation now runs through:
+
+- `content/sonia-knowledge/teaching-route-map.json`
+- `docs/SONIA_TEACHING_ROUTE_MAP.md`
+
+Do not copy candidate quotes directly into templates. Promote a quote into the teaching route map only after it has a page intent, a compact public note, practical tips and a `sourceSnippet` that the build can validate against this bank or the Drive quote bank.
+
 ## imagen presencia
 
 > En mis procesos de trabajo observamos cómo identidad, sistema nervioso y presencia influyen en la forma en que lideras, decides y te posicionas.

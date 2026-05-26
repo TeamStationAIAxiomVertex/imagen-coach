@@ -1,0 +1,373 @@
+{
+  "status": "public-sanitized",
+  "generatedFor": "coachdeimagen.com",
+  "purpose": "Map reviewed Sonia McRorey teachings from the blog and Drive quote banks into public page modules without exposing raw source files or private document details.",
+  "sourceBanks": [
+    "content/sonia-knowledge/drive-quote-bank.json",
+    "content/sonia-knowledge/quote-bank.json",
+    "content/blog/soniamcrorey-blog.json"
+  ],
+  "publicRules": [
+    "Use short quote modules only where they clarify the user's decision.",
+    "Use Sonia's language as teaching, not as decorative filler.",
+    "Do not expose source filenames, old offers, payment data, dated logistics, private notes or SEO strategy.",
+    "Prefer one teaching module per page family; long-form depth belongs in article and pillar pages.",
+    "Keep quotes compact, source-faithful and relevant to the page intent."
+  ],
+  "teachings": [
+    {
+      "id": "base-image-expression",
+      "quote": "No corrijo la imagen desde afuera. Ordeno la base desde la cual la imagen se expresa.",
+      "sourceSnippet": "No corrijo la imagen desde afuera. Ordeno la base desde la cual la imagen se expresa.",
+      "sourceBank": "drive",
+      "topics": ["metodo_sonia", "coaching_de_imagen", "identidad"],
+      "moduleTitle": "La imagen se trabaja desde la base, no desde la corrección.",
+      "publicNote": "Este criterio evita que el proceso se vuelva una lista de reglas externas. Primero se entiende desde dónde se expresa la persona; después se ordena lo visible.",
+      "tips": [
+        "Antes de cambiar prendas, revisa qué etapa profesional quieres comunicar.",
+        "Distingue entre corregir apariencia y construir una presencia coherente.",
+        "Usa la imagen como expresión de identidad, no como disfraz."
+      ]
+    },
+    {
+      "id": "strategic-image-visibility",
+      "quote": "Imagen estratégica para sostener decisiones, visibilidad y dinero.",
+      "sourceSnippet": "Imagen estrategica para sostener decisiones, visibilidad y dinero.",
+      "sourceBank": "drive",
+      "topics": ["imagen_estrategica", "visibilidad", "crecimiento"],
+      "moduleTitle": "La imagen también sostiene decisiones de crecimiento.",
+      "publicNote": "Cuando la imagen se conecta con negocio, liderazgo y percepción, deja de ser solo estética y empieza a funcionar como una estructura de posicionamiento.",
+      "tips": [
+        "Observa si tu imagen acompaña el nivel de decisión que hoy necesitas.",
+        "Revisa si tu presencia sostiene visibilidad o si todavía la evita.",
+        "Conecta estilo, autoridad y contexto antes de tomar decisiones públicas."
+      ]
+    },
+    {
+      "id": "professional-growth-point",
+      "quote": "Hay un punto en el crecimiento profesional donde hacer bien tu trabajo ya no es suficiente.",
+      "sourceSnippet": "Hay un punto en el crecimiento profesional donde hacer bien tu trabajo ya no es suficiente.",
+      "sourceBank": "drive",
+      "topics": ["liderazgo_visible", "presencia_ejecutiva", "percepcion_profesional"],
+      "moduleTitle": "El crecimiento también exige presencia visible.",
+      "publicNote": "A partir de cierto nivel, la capacidad técnica necesita ser leída con claridad. La imagen, la comunicación y la presencia empiezan a influir en confianza, autoridad y oportunidades.",
+      "tips": [
+        "Si ya tienes experiencia, revisa cómo estás siendo leída en espacios clave.",
+        "Trabaja presencia antes de que una promoción, venta o reunión importante lo exija.",
+        "No esperes que tu trabajo explique todo por sí solo."
+      ]
+    },
+    {
+      "id": "presentation-weight",
+      "quote": "La forma en que te presentas, comunicas y eres percibido empieza a tener más peso que antes.",
+      "sourceSnippet": "La forma en que te presentas, comunicas y eres percibido empieza a tener mas peso que antes.",
+      "sourceBank": "drive",
+      "topics": ["presencia_profesional", "comunicacion", "percepcion"],
+      "moduleTitle": "La percepción se construye antes de explicar tus credenciales.",
+      "publicNote": "En contextos de mayor exposición, los demás leen seguridad, claridad y criterio a través de señales visibles y no verbales.",
+      "tips": [
+        "Cuida cómo entras, miras, saludas, escuchas y ocupas espacio.",
+        "Alinea tu lenguaje verbal y no verbal antes de reuniones importantes.",
+        "Haz que tu presencia acompañe tu nivel de responsabilidad."
+      ]
+    },
+    {
+      "id": "image-signals-unprocessed",
+      "quote": "A veces la ropa que elegimos, cómo nos peinamos o cómo entramos a un cuarto dice cosas que ni nosotros mismos hemos procesado.",
+      "sourceSnippet": "A veces la ropa que elegimos, como nos peinamos o como entramos a un cuarto dice cosas que ni nosotros mismos hemos procesado.",
+      "sourceBank": "drive",
+      "topics": ["coaching_de_imagen", "presencia", "identidad"],
+      "moduleTitle": "Lo visible revela información antes de que la persona la nombre.",
+      "publicNote": "El coaching de imagen observa esas señales para traducirlas en identidad, presencia y decisiones más conscientes.",
+      "tips": [
+        "Pregúntate qué comunica tu imagen cuando no estás explicando nada.",
+        "Detecta si tu estilo actual pertenece a tu etapa presente o a una versión anterior.",
+        "Usa la ropa como lectura, no como juicio."
+      ]
+    },
+    {
+      "id": "no-theory-lived-context",
+      "quote": "No desde la teoría, sino desde lo que tú específicamente estás viviendo.",
+      "sourceSnippet": "No desde la teoria, sino desde lo que tu especificamente estas viviendo.",
+      "sourceBank": "drive",
+      "topics": ["diagnostico", "proceso_personalizado", "metodo_sonia"],
+      "moduleTitle": "El diagnóstico parte de tu contexto real.",
+      "publicNote": "El proceso no se define por una fórmula estándar. Se define por etapa, exposición, objetivo, industria, cuerpo, agenda y momento profesional.",
+      "tips": [
+        "Define qué necesitas sostener hoy, no qué debería funcionar en teoría.",
+        "Lleva ejemplos reales de reuniones, fotos, eventos o decisiones próximas.",
+        "Elige el proceso por necesidad actual, no por etiqueta."
+      ]
+    },
+    {
+      "id": "internal-capacity",
+      "quote": "El verdadero límite muchas veces no está en la estrategia. Está en la capacidad interna de sostener expansión.",
+      "sourceSnippet": "El verdadero limite muchas veces no esta en la estrategia. Esta en la capacidad interna de sostener expansion.",
+      "sourceBank": "drive",
+      "topics": ["seguridad_profesional", "sistema_interno", "crecimiento"],
+      "moduleTitle": "No todo bloqueo profesional se resuelve con más estrategia.",
+      "publicNote": "Cuando la persona ya tiene capacidad, el trabajo puede estar en sostener visibilidad, responsabilidad, dinero, exposición y liderazgo sin entrar en tensión o sabotaje.",
+      "tips": [
+        "Observa qué pasa internamente justo antes de crecer o exponerte.",
+        "Revisa si estás usando más esfuerzo para evitar una decisión clara.",
+        "Trabaja seguridad interna como parte de tu presencia profesional."
+      ]
+    },
+    {
+      "id": "autoconcepto",
+      "quote": "Tu autoconcepto define lo que crees posible para ti.",
+      "sourceSnippet": "Tu autoconcepto define lo que crees posible para ti.",
+      "sourceBank": "drive",
+      "topics": ["autoconcepto", "identidad", "seguridad_interna"],
+      "moduleTitle": "La imagen empieza en la forma en que te autorizas.",
+      "publicNote": "Una presencia más sólida requiere revisar qué nivel de visibilidad, valor y responsabilidad la persona se permite ocupar.",
+      "tips": [
+        "Identifica qué oportunidades rechazas antes de intentarlas.",
+        "Observa si tu imagen está pidiendo permiso o comunicando dirección.",
+        "Alinea autoconcepto, cuerpo, presencia y decisión."
+      ]
+    },
+    {
+      "id": "body-growth-safety",
+      "quote": "Tu cuerpo determina si el crecimiento se percibe como seguro o como una amenaza.",
+      "sourceSnippet": "Tu cuerpo determina si el crecimiento se percibe como seguro o como una amenaza.",
+      "sourceBank": "drive",
+      "topics": ["sistema_nervioso", "visibilidad", "crecimiento"],
+      "moduleTitle": "La presencia también se sostiene en el cuerpo.",
+      "publicNote": "Por eso la imagen profesional no se trabaja únicamente con ropa. También se revisa cómo el cuerpo sostiene exposición, conversaciones y responsabilidad.",
+      "tips": [
+        "Nota dónde aparece tensión cuando necesitas ser más visible.",
+        "Practica presencia corporal antes de conversaciones de alto valor.",
+        "No confundas incomodidad con falta de capacidad."
+      ]
+    },
+    {
+      "id": "body-language-positioning",
+      "quote": "Tu lenguaje corporal, tu energía y tu comunicación influyen en cómo te posicionas frente a otras personas.",
+      "sourceSnippet": "Tu lenguaje corporal, tu energia y tu comunicacion influyen en como te posicionas frente a otras personas.",
+      "sourceBank": "drive",
+      "topics": ["comunicacion_no_verbal", "presencia", "posicionamiento"],
+      "moduleTitle": "Tu posicionamiento también se comunica sin palabras.",
+      "publicNote": "La comunicación no verbal se vuelve estratégica cuando acompaña el mensaje, el rol, la autoridad y la experiencia que la persona representa.",
+      "tips": [
+        "Revisa postura, ritmo, mirada y respiración antes de hablar.",
+        "Haz que tu cuerpo comunique presencia antes de buscar persuasión.",
+        "Alinea lenguaje corporal con el nivel profesional que sostienes."
+      ]
+    },
+    {
+      "id": "visibility-permission",
+      "quote": "La visibilidad no es un problema de contenido ni de algoritmos. Es un problema de permiso.",
+      "sourceSnippet": "La visibilidad no es un problema de contenido ni de algoritmos. Es un problema de permiso.",
+      "sourceBank": "drive",
+      "topics": ["visibilidad", "creencias", "seguridad_profesional"],
+      "moduleTitle": "La visibilidad empieza antes del contenido.",
+      "publicNote": "Para muchas líderes y empresarias, el reto no es saber qué publicar o decir. Es sostener la exposición sin reducirse, justificarse o esconder autoridad.",
+      "tips": [
+        "Detecta qué parte de ti todavía negocia permiso para mostrarse.",
+        "No confundas estrategia de contenido con seguridad para ser visible.",
+        "Trabaja presencia y autoconcepto antes de aumentar exposición."
+      ]
+    },
+    {
+      "id": "presence-message",
+      "quote": "Tu presencia es un mensaje, no un estilismo.",
+      "sourceSnippet": "Tu presencia es un mensaje, no un estilismo.",
+      "sourceBank": "drive",
+      "topics": ["presencia", "category_differentiation", "coaching_de_imagen"],
+      "moduleTitle": "La presencia no se maquilla; se construye.",
+      "publicNote": "El estilo importa, pero el mensaje completo aparece en cómo habitas tu imagen, cómo decides y cómo comunicas seguridad.",
+      "tips": [
+        "Antes de elegir un look, define qué mensaje profesional debe sostener.",
+        "Revisa si tu presencia se siente propia o actuada.",
+        "Usa estilo como apoyo, no como sustituto de seguridad."
+      ]
+    },
+    {
+      "id": "image-change-process",
+      "quote": "Un cambio de imagen es un proceso que vives tú. No es un cambio de look o un estilismo de moda.",
+      "sourceSnippet": "Un cambio de imagen es un proceso que vives tu. No es un cambio de look o un estilismo de moda.",
+      "sourceBank": "drive",
+      "topics": ["estilo", "imagen_profesional", "marca_personal"],
+      "moduleTitle": "Cambiar imagen no significa cambiar de personaje.",
+      "publicNote": "La asesoría integral ayuda a ordenar lo visible sin imponer una estética ajena. El cambio debe poder vivirse, repetirse y sostenerse.",
+      "tips": [
+        "Evita comprar ropa para una vida que no tienes.",
+        "Construye criterios que puedas repetir en tu agenda real.",
+        "Busca coherencia antes que impacto momentáneo."
+      ]
+    },
+    {
+      "id": "style-beyond-clothes",
+      "quote": "Tu estilo va más allá de la ropa. Es energía, lenguaje, intención.",
+      "sourceSnippet": "Tu estilo va mas alla de la ropa. Es energia, lenguaje, intencion.",
+      "sourceBank": "drive",
+      "topics": ["estilo", "lenguaje_visual", "identidad"],
+      "moduleTitle": "El estilo comunica más que prendas.",
+      "publicNote": "Cuando estilo, lenguaje y energía se alinean, la imagen deja de sentirse decorativa y empieza a expresar dirección.",
+      "tips": [
+        "Observa qué energía comunica tu estilo antes de hablar.",
+        "No copies una estética si no sostiene tu lenguaje personal.",
+        "Haz que cada decisión visual tenga intención."
+      ]
+    },
+    {
+      "id": "what-not-spoken",
+      "quote": "Lo que no se habla se ve, se siente, se percibe.",
+      "sourceSnippet": "Lo que no se habla se ve, se siente, se percibe.",
+      "sourceBank": "drive",
+      "topics": ["percepcion", "presencia", "identidad"],
+      "moduleTitle": "La percepción también lee lo no dicho.",
+      "publicNote": "Este enfoque permite trabajar imagen y presencia sin quedarse en la superficie: lo que la persona evita, duda o sostiene también aparece en su comunicación.",
+      "tips": [
+        "Revisa qué señales aparecen cuando intentas verte segura.",
+        "Escucha lo que tu cuerpo comunica antes de corregir la ropa.",
+        "Trabaja coherencia para que la presencia no dependa de control."
+      ]
+    },
+    {
+      "id": "image-inevitable",
+      "quote": "La imagen es inevitable.",
+      "sourceSnippet": "La imagen es inevitable.",
+      "sourceBank": "drive",
+      "topics": ["axiomas", "imagen", "metodologia"],
+      "moduleTitle": "Siempre estás comunicando algo.",
+      "publicNote": "La decisión no es si tendrás imagen, sino si esa imagen comunicará con intención, coherencia y lectura profesional.",
+      "tips": [
+        "Haz consciente la primera lectura que generas.",
+        "No dejes tu imagen profesional en automático.",
+        "Define qué debe entender tu audiencia sin que tengas que explicarlo todo."
+      ]
+    },
+    {
+      "id": "dynamic-image",
+      "quote": "La imagen es dinámica.",
+      "sourceSnippet": "La imagen es dinamica.",
+      "sourceBank": "drive",
+      "topics": ["axiomas", "imagen", "evolucion"],
+      "moduleTitle": "La imagen cambia cuando cambia la etapa.",
+      "publicNote": "Lo que funcionaba antes puede quedarse corto cuando cambia el nivel de exposición, responsabilidad, liderazgo o mercado.",
+      "tips": [
+        "Revisa tu imagen cada vez que cambia tu rol.",
+        "No sostengas una versión visual que ya no responde a tu etapa.",
+        "Actualiza presencia sin perder identidad."
+      ]
+    },
+    {
+      "id": "essence-respect",
+      "quote": "La creación de una imagen debe respetar la esencia del emisor.",
+      "sourceSnippet": "La creacion de una imagen debe respetar la esencia del emisor.",
+      "sourceBank": "drive",
+      "topics": ["imagen", "esencia", "metodologia"],
+      "moduleTitle": "La coherencia no se impone desde afuera.",
+      "publicNote": "Una imagen profesional sólida no borra la esencia de la persona. La traduce con mayor claridad para su contexto.",
+      "tips": [
+        "Usa referencias como guía, no como molde.",
+        "Evalúa si tu imagen te representa o solo cumple expectativas externas.",
+        "Construye autoridad sin perder naturalidad."
+      ]
+    },
+    {
+      "id": "strategic-image-context",
+      "quote": "La imagen profesional estratégica no se basa en copiar modelos rígidos, sino en comprender el contexto, el nivel de responsabilidad, el estilo personal y la identidad que deseas posicionar.",
+      "sourceSnippet": "La imagen profesional estratégica no se basa en copiar modelos rígidos, sino en comprender el contexto, el nivel de responsabilidad, el estilo personal y la identidad que deseas posicionar.",
+      "sourceBank": "blog",
+      "topics": ["imagen_presencia", "liderazgo_negocio", "metodo_sonia"],
+      "moduleTitle": "La autoridad no siempre se ve igual.",
+      "publicNote": "Una imagen estratégica se adapta a industria, personalidad, audiencia y nivel de responsabilidad. No copia una fórmula universal.",
+      "tips": [
+        "Define primero contexto, industria y rol.",
+        "Evita rigidez si tu liderazgo necesita cercanía o creatividad.",
+        "Elige señales visuales que sostengan tu autoridad real."
+      ]
+    },
+    {
+      "id": "siguiente-nivel",
+      "quote": "Sostener el siguiente nivel profesional significa tener la estructura interna necesaria para habitar un nuevo nivel de responsabilidad, visibilidad o ingresos de forma estable.",
+      "sourceSnippet": "Sostener el siguiente nivel profesional significa tener la estructura interna necesaria para habitar un nuevo nivel de responsabilidad, visibilidad o ingresos de forma estable.",
+      "sourceBank": "blog",
+      "topics": ["liderazgo_negocio", "seguridad_interna"],
+      "moduleTitle": "El siguiente nivel no solo se alcanza; se sostiene.",
+      "publicNote": "El trabajo de imagen y presencia acompaña a la persona para que su crecimiento no dependa solo de impulso, esfuerzo o presión.",
+      "tips": [
+        "Identifica qué parte del siguiente nivel todavía se siente inestable.",
+        "Ordena imagen y presencia antes de aumentar exposición.",
+        "Construye estructura interna para que el avance sea sostenible."
+      ]
+    },
+    {
+      "id": "color-confidence",
+      "quote": "Aprende a usar el color como herramienta de estilo y comunicación para proyectar confianza y autenticidad desde tu clóset.",
+      "sourceSnippet": "Aprende a usar el color como herramienta de estilo y comunicación para proyectar confianza y autenticidad desde tu closet",
+      "sourceBank": "blog",
+      "topics": ["imagen_presencia", "autoridad_percepcion", "metodo_sonia"],
+      "moduleTitle": "El color también comunica intención.",
+      "publicNote": "La colorimetría no se limita a favorecer el rostro. También ayuda a construir seguridad, presencia y coherencia visual en la vida diaria.",
+      "tips": [
+        "Usa el color para apoyar energía, claridad y confianza.",
+        "Construye combinaciones que puedas sostener en tu agenda real.",
+        "Evita decidir color solo por tendencia."
+      ]
+    }
+  ],
+  "routeMap": {
+    "/": "professional-growth-point",
+    "/servicios-asesoria-de-imagen-coaching": "no-theory-lived-context",
+    "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen": "image-change-process",
+    "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen": "presence-message",
+    "/servicios-asesoria-de-imagen-coaching/talleres": "body-language-positioning",
+    "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia": "internal-capacity",
+    "/servicios-asesoria-de-imagen-coaching/preguntas-frequentes": "no-theory-lived-context",
+    "/sobre-sonia-mcrorey-asesora-de-imagen": "base-image-expression",
+    "/imagen-presencia": "image-inevitable",
+    "/imagen-presencia/rebranding-imagen-mentalidad-abundancia": "what-not-spoken",
+    "/imagen-profesional": "strategic-image-context",
+    "/presencia-ejecutiva": "presentation-weight",
+    "/liderazgo": "professional-growth-point",
+    "/comunicacion-no-verbal": "body-language-positioning",
+    "/mentalidad": "autoconcepto",
+    "/empresarias": "visibility-permission",
+    "/imagen-estrategica": "strategic-image-context",
+    "/comparaciones": "dynamic-image",
+    "/comparaciones/coaching-de-imagen-vs-consultoria-tradicional": "base-image-expression",
+    "/comparaciones/imagen-superficial-vs-presencia-profesional": "presence-message",
+    "/comparaciones/coaching-motivacional-vs-posicionamiento-profesional": "internal-capacity",
+    "/comparaciones/styling-vs-coaching-de-imagen": "style-beyond-clothes",
+    "/comparaciones/imagen-corporativa-vs-presencia-humana": "body-language-positioning",
+    "/comparaciones/evolucion-coaching-imagen-mexico-latam": "professional-growth-point",
+    "/metodo-sonia-mcrorey": "base-image-expression",
+    "/sistema-de-presencia-profesional": "presentation-weight",
+    "/framework-liderazgo-visible": "professional-growth-point",
+    "/modelo-imagen-estrategica": "strategic-image-context"
+  },
+  "fallbacks": {
+    "geo": ["professional-growth-point", "presentation-weight", "strategic-image-context", "siguiente-nivel"],
+    "intent": {
+      "autoridad": "professional-growth-point",
+      "profesional": "strategic-image-context",
+      "presencia": "presence-message",
+      "inseguridad": "internal-capacity",
+      "mujeres": "visibility-permission",
+      "empresarias": "visibility-permission",
+      "comunicacion": "body-language-positioning",
+      "comunicación": "body-language-positioning",
+      "liderazgo": "professional-growth-point",
+      "imagen": "image-inevitable",
+      "color": "color-confidence"
+    },
+    "article": {
+      "color": "color-confidence",
+      "guardarropa": "image-change-process",
+      "presencia": "presence-message",
+      "liderazgo": "professional-growth-point",
+      "seguridad": "internal-capacity",
+      "abundancia": "siguiente-nivel",
+      "negocio": "strategic-image-visibility",
+      "comunicacion": "body-language-positioning",
+      "comunicación": "body-language-positioning",
+      "estilo": "style-beyond-clothes",
+      "imagen": "image-inevitable"
+    },
+    "default": "essence-respect"
+  }
+}

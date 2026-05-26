@@ -1,6 +1,7 @@
 import { readdir, readFile, stat } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import path from "node:path";
+import { imageSize } from "image-size";
 
 const manifest = JSON.parse(await readFile("content/clean/manifest.json", "utf8"));
 const strategy = JSON.parse(await readFile("content/strategy/article-clusters.json", "utf8"));
@@ -118,11 +119,43 @@ const comparisonHeroAssets = [
   "dist/assets/generated/comparison-evolucion-coaching-imagen-latam.jpg",
 ];
 const rejectedHeroImageStems = [
+  "08416820f1c2a36a",
   "a1659cc99df8e64c",
+  "b0cabd99bfcc02e3",
+  "d5658689edd2758d",
+  "d69631736fc08fd2",
+  "e2e41f3a39a81c55",
+  "e5f3ba95f4dd0528",
   "fa5935c4970dc82a",
   "3d87f9c0beaeac46",
+  "97131efa6c1681ea",
   "sonia-twitter-card",
 ];
+const allowedWideHeroStems = new Set(comparisonHeroAssets.map((asset) => path.basename(asset, path.extname(asset))));
+function imageStem(src) {
+  return path.basename(src.split("?")[0] || "", path.extname(src.split("?")[0] || ""));
+}
+async function distImageDimensions(src) {
+  const cleanSrc = src.split("?")[0] || "";
+  if (!cleanSrc.startsWith("/")) return null;
+  const filePath = path.join("dist", cleanSrc);
+  if (!existsSync(filePath)) return null;
+  try {
+    const dimensions = imageSize(await readFile(filePath));
+    if (!dimensions?.width || !dimensions?.height) return null;
+    return { width: dimensions.width, height: dimensions.height };
+  } catch {
+    return null;
+  }
+}
+function isRejectedHeroByDimensions(src, dimensions) {
+  if (!dimensions) return false;
+  const stem = imageStem(src);
+  if (allowedWideHeroStems.has(stem)) return false;
+  if (!/^[a-f0-9]{16}$/i.test(stem)) return false;
+  const ratio = dimensions.width / Math.max(dimensions.height, 1);
+  return ratio >= 1.62 && dimensions.width >= 900 && dimensions.height <= 760;
+}
 const requiredExecutiveTerms = [
   "coaching de imagen",
   "coaching de imagen con estructura interna",
@@ -349,6 +382,10 @@ for (const file of htmlFiles) {
     }
     for (const rejectedStem of rejectedHeroImageStems) {
       if (heroSrc.includes(rejectedStem)) failures.push(`Rejected hero image leaked into ${file}: ${heroSrc}`);
+    }
+    const heroDimensions = await distImageDimensions(heroSrc);
+    if (isRejectedHeroByDimensions(heroSrc, heroDimensions)) {
+      failures.push(`Wide blog-style graphic leaked into hero image in ${file}: ${heroSrc}`);
     }
   }
   const structuredIntroCount = (html.match(/class="[^"]*\bstructured-intro\b/g) || []).length;

@@ -99,12 +99,16 @@ The design source-of-truth includes:
 - `content/sonia-knowledge/quote-bank.json`
 - `content/sonia-knowledge/drive-source-inventory.json`
 - `content/sonia-knowledge/drive-quote-bank.json`
+- `content/sonia-knowledge/teaching-route-map.json`
 - `docs/SONIA_KNOWLEDGEBASE_QUOTE_BANK.md`
 - `docs/SONIA_DRIVE_KNOWLEDGEBASE.md`
+- `docs/SONIA_TEACHING_ROUTE_MAP.md`
 
 These sources are used to align public pages with Sonia's own language, credentials, teaching frameworks, methodology and service architecture. They are not raw page copy. Agents must extract, compress and map material to page intent.
 
 Drive material must never emit private banking/payment details, outdated contact details, old domains, program-only logistics or dated pricing into generated public HTML.
+
+The teaching route map is the only approved path for public Sonia quote addendums. It must stay source-validated, compact and tied to the page's buyer intent.
 
 ## SEO Requirements
 

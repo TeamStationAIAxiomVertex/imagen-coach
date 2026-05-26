@@ -36,6 +36,8 @@ const DEFAULT_IMAGE_DIMENSIONS = { width: 1200, height: 1500 };
 let IMAGE_DIMENSIONS = new Map();
 let OPTIMIZED_IMAGE_SOURCES = new Map();
 let INLINE_CSS = "";
+let SONIA_TEACHING_CONFIG = { teachings: [], routeMap: {}, fallbacks: {} };
+let SONIA_TEACHINGS_BY_ID = new Map();
 const OWNED_CATEGORY = "Coaching de Imagen con profundidad psicológica y posicionamiento profesional";
 const DOMINANCE_FORMULA = "Semantic precision + emotional sophistication + executive positioning + AI readability";
 const SEMANTIC_AUTHORITY_LADDER = [
@@ -154,6 +156,56 @@ const SEMANTIC_TITLES = {
     entity: "Publicaciones de imagen profesional",
     intent: "Organizar articulos por imagen, presencia, liderazgo, empresa y seguridad interna.",
     description: "Archivo editorial de Sonia McRorey sobre imagen profesional, presencia, liderazgo, seguridad interna y posicionamiento profesional.",
+  },
+  "/imagen-presencia/presencia-profesional-estrategica": {
+    h1: "Presencia profesional estratégica",
+    shortLabel: "Presencia estratégica",
+    menuLabel: "Presencia estratégica",
+    cardTitle: "Presencia Profesional Estratégica",
+    seoTitle: "Presencia Profesional Estratégica | Sonia McRorey",
+    supportHeading: "Coherencia, autoridad y resultados",
+    entity: "Presencia profesional",
+    intent: "Entender cómo la presencia profesional sostiene autoridad, coherencia y resultados.",
+  },
+  "/imagen-presencia/mas-dinero-capacidad-interna-liderazgo-presencia": {
+    h1: "Capacidad interna para sostener crecimiento",
+    shortLabel: "Capacidad interna",
+    menuLabel: "Capacidad interna",
+    cardTitle: "Capacidad Interna",
+    seoTitle: "Capacidad Interna y Crecimiento | Sonia McRorey",
+    supportHeading: "Liderazgo, presencia y sistema interno",
+    entity: "Seguridad profesional",
+    intent: "Comprender la capacidad interna necesaria para sostener crecimiento, liderazgo y presencia.",
+  },
+  "/imagen-presencia/new-tu-guardarropa-te-refleja-o-te-limita": {
+    h1: "Tu guardarropa como espejo de tu etapa",
+    shortLabel: "Guardarropa y etapa",
+    menuLabel: "Guardarropa y etapa",
+    cardTitle: "Guardarropa y Etapa Profesional",
+    seoTitle: "Guardarropa y Etapa Profesional | Sonia McRorey",
+    supportHeading: "Imagen externa, identidad y decisión personal",
+    entity: "Imagen profesional",
+    intent: "Revisar si el guardarropa refleja o limita la etapa profesional actual.",
+  },
+  "/imagen-presencia/sostener-tu-siguiente-nivel-profesional": {
+    h1: "Sostener tu siguiente nivel profesional",
+    shortLabel: "Siguiente nivel",
+    menuLabel: "Siguiente nivel",
+    cardTitle: "Siguiente Nivel Profesional",
+    seoTitle: "Sostener tu Siguiente Nivel Profesional | Sonia McRorey",
+    supportHeading: "Crecimiento, identidad y seguridad profesional",
+    entity: "Seguridad profesional",
+    intent: "Entender por qué sostener un nuevo nivel profesional requiere presencia, identidad y seguridad interna.",
+  },
+  "/imagen-presencia/amor-propio-estructura-interna-presencia-profesional": {
+    h1: "Amor propio y presencia profesional",
+    shortLabel: "Amor propio profesional",
+    menuLabel: "Amor propio profesional",
+    cardTitle: "Amor Propio Profesional",
+    seoTitle: "Amor Propio y Presencia Profesional | Sonia McRorey",
+    supportHeading: "Estructura interna para sostener presencia",
+    entity: "Presencia profesional",
+    intent: "Relacionar amor propio, estructura interna y presencia profesional en decisiones visibles.",
   },
   "/sobre-sonia-mcrorey-asesora-de-imagen": {
     h1: "Sonia McRorey",
@@ -2219,6 +2271,85 @@ function topicIcon(topicId = "presencia") {
   return `<svg class="site-line-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">${paths[key] || paths.presencia}</svg>`;
 }
 
+function teachingIconId(teaching = {}) {
+  const haystack = `${(teaching.topics || []).join(" ")} ${teaching.moduleTitle || ""} ${teaching.quote || ""}`.toLowerCase();
+  if (/color|colorimetr/.test(haystack)) return "color";
+  if (/ropa|estilo|guardarropa|closet|clóset|look/.test(haystack)) return "guardarropa";
+  if (/cuerpo|lenguaje corporal|comunicacion|comunicación/.test(haystack)) return "presencia";
+  if (/empresa|negocio|dinero|crecimiento|liderazgo|autoridad/.test(haystack)) return "liderazgo";
+  if (/visibilidad|seguridad|sistema|autoconcepto|intern/.test(haystack)) return "mentalidad";
+  if (/percepcion|percepción|posicion/.test(haystack)) return "percepcion";
+  if (/decision|decisión|criterio|diagnostico|diagnóstico/.test(haystack)) return "decision";
+  return "identidad";
+}
+
+function stableIndex(value = "", length = 1) {
+  if (length <= 1) return 0;
+  let hash = 0;
+  for (const char of String(value)) hash = (hash + char.charCodeAt(0)) % 9973;
+  return hash % length;
+}
+
+function mappedTeachingIdFromText(text = "", map = {}) {
+  const lower = text.toLowerCase();
+  for (const [needle, teachingId] of Object.entries(map)) {
+    if (lower.includes(needle.toLowerCase())) return teachingId;
+  }
+  return "";
+}
+
+function teachingForPage(page = {}) {
+  const route = page.route || "";
+  const fallbacks = SONIA_TEACHING_CONFIG.fallbacks || {};
+  const directId = SONIA_TEACHING_CONFIG.routeMap?.[route];
+  let teachingId = directId;
+
+  if (!teachingId && page.country) {
+    const geoFallbacks = fallbacks.geo || [];
+    teachingId = geoFallbacks[stableIndex(route || page.name, geoFallbacks.length)];
+  }
+
+  if (!teachingId && Array.isArray(page.terms)) {
+    teachingId = mappedTeachingIdFromText(page.terms.join(" "), fallbacks.intent || {});
+  }
+
+  if (!teachingId && (page.type === "article" || route.includes("/imagen-presencia/"))) {
+    teachingId = mappedTeachingIdFromText(`${page.heroTitle || page.title || ""} ${page.description || ""}`, fallbacks.article || {});
+  }
+
+  if (!teachingId) {
+    teachingId = mappedTeachingIdFromText(`${page.title || ""} ${page.description || ""} ${route}`, fallbacks.intent || {});
+  }
+
+  return SONIA_TEACHINGS_BY_ID.get(teachingId) || SONIA_TEACHINGS_BY_ID.get(fallbacks.default);
+}
+
+function sourceTeachingPanel(page = {}, options = {}) {
+  const teaching = teachingForPage(page);
+  if (!teaching) return "";
+  const label = options.label || "Criterio de Sonia";
+  const title = options.title || teaching.moduleTitle;
+  const icon = teachingIconId(teaching);
+  const tips = Array.isArray(teaching.tips) ? teaching.tips.slice(0, 3) : [];
+  return `<section class="section sonia-teaching" aria-label="Criterio de Sonia McRorey">
+    <div class="sonia-teaching-card">
+      <div class="sonia-teaching-quote">
+        <span class="teaching-icon">${topicIcon(icon)}</span>
+        <p class="section-label">${escapeHtml(label)}</p>
+        <blockquote>
+          <p>“${escapeHtml(teaching.quote)}”</p>
+          <cite>Sonia McRorey</cite>
+        </blockquote>
+      </div>
+      <div class="sonia-teaching-application">
+        <h2>${headlineHtml(title)}</h2>
+        <p>${escapeHtml(teaching.publicNote)}</p>
+        ${tips.length ? `<ul class="teaching-tip-list">${tips.map((tip) => `<li>${escapeHtml(tip)}</li>`).join("")}</ul>` : ""}
+      </div>
+    </div>
+  </section>`;
+}
+
 function topicChips(topics = []) {
   if (!topics.length) return "";
   return `<div class="ontology-chips">${topics.map((topic) => `<span class="ontology-chip">${topicIcon(topic.id)}${escapeHtml(topic.label)}</span>`).join("")}</div>`;
@@ -2505,7 +2636,7 @@ function isRejectedHeroImage(publicPath) {
 
 function heroSafeImages(page) {
   const safe = usableImages(page).filter((image) => !isRejectedHeroImage(publicAssetPathFromLocal(image.local_path)));
-  return safe.length ? safe : usableImages(page).filter((image) => !HERO_REJECTED_IMAGE_STEMS.has(imageStem(image.local_path)));
+  return safe;
 }
 
 function contextualHeroFallback(page) {
@@ -2517,7 +2648,7 @@ function contextualHeroFallback(page) {
   if (/color|colorimetr/.test(text)) return "/assets/7e91c2f7d6fb729a.jpg";
   if (/proporci[oó]n|silueta|cuerpo|estilo personal/.test(text)) return "/assets/c1061137aa6130ed.jpg";
   if (/asesor[ií]a|guardarropa|closet|cl[oó]set|imagen profesional/.test(text)) return "/assets/7ace6f0d3687c214.jpg";
-  if (/comunicaci[oó]n|lenguaje corporal|liderazgo|conferencia|presencia ejecutiva/.test(text)) return "/assets/205ebbd87f0d84e6.jpg";
+  if (/comunicaci[oó]n|lenguaje corporal|liderazgo|conferencia|presencia ejecutiva|presencia profesional/.test(text)) return "/assets/205ebbd87f0d84e6.jpg";
   if (/seguridad|mentalidad|sistema nervioso|posicionamiento|rebranding|identidad/.test(text)) return "/assets/sonia-mcrorey-about-760.avif";
   if (route.startsWith("/imagen-presencia/")) return "/assets/09987756d47df368.webp";
   return null;
@@ -2614,7 +2745,7 @@ function semanticSupportHeading(page) {
 }
 
 function semanticSeoTitle(page) {
-  if (page.type === "article") return `${fitTitleLength(page.heroTitle || page.title, 58)} | Sonia McRorey`;
+  if (page.type === "article") return semanticIdentity(page.route)?.seoTitle || `${fitTitleLength(page.heroTitle || page.title, 58)} | Sonia McRorey`;
   return semanticIdentity(page.route)?.seoTitle || `${cleanDisplayTitle(page.heroTitle)} | Sonia McRorey`;
 }
 
@@ -2955,6 +3086,7 @@ function faqStructuredContent(page, lines, pages, clusters) {
       </details>`;
     }).join("")}
   </section>
+  ${sourceTeachingPanel(page, { label: "Criterio para elegir" })}
   ${ctaBridge(page, "Resolver mi duda con Sonia")}
   ${internalLinkAtlas(page, pages, clusters)}`;
 }
@@ -2997,6 +3129,7 @@ function serviceHubContent(page, pages, clusters) {
       </a>`).join("")}
     </div>
   </section>
+  ${sourceTeachingPanel(page)}
   <section class="section commercial-fit service-fit-map" aria-label="Qué servicio necesito">
     <div class="section-heading compact-heading">
       <p class="section-label">Por necesidad</p>
@@ -4167,6 +4300,7 @@ function commercialPageContent(page, pages, clusters) {
   return `${commercialIntentMap(page, model)}
   ${commercialFitGrid(model)}
   ${commercialMethodNotes(page, model)}
+  ${sourceTeachingPanel(page)}
   ${commercialWorkflow(page)}
   ${commercialOutcomes(model)}
   ${commercialRelatedArticles(page, model, pages, clusters)}
@@ -4261,6 +4395,7 @@ function aboutAuthorityContent() {
       <article class="intent-card"><span>03</span><h3>Cómo se sostiene</h3><p>No corrige la imagen desde afuera: ordena la base desde la cual la imagen se expresa con claridad, coherencia y criterio profesional.</p></article>
     </div>
   </section>
+  ${sourceTeachingPanel({ route: "/sobre-sonia-mcrorey-asesora-de-imagen" }, { label: "Voz de Sonia" })}
   <section class="section commercial-method-notes" aria-label="Enfoque de Sonia">
     <div class="section-heading compact-heading">
       <p class="section-label">Enfoque</p>
@@ -4464,6 +4599,7 @@ function renderSemanticHub(hub, pages, clusters) {
         <figcaption>${iconImageTag("/assets/sonia-icon.svg")} Sonia McRorey · ${BRAND_NAME}</figcaption>
       </figure>
     </section>
+    ${sourceTeachingPanel(pageMeta)}
     <section class="section authority-hub-map">
       <div class="section-heading">
         <p class="section-label">Temas principales</p>
@@ -4735,6 +4871,7 @@ function renderComparisonPage(page) {
       ${comparisonIntro(page)}
       ${comparisonIndicators(page)}
     </section>
+    ${sourceTeachingPanel(pageMeta, { label: "Criterio de categoría" })}
     <section class="section comparison-ladder">
       <div class="section-heading">
         <p class="section-label">Diferenciador</p>
@@ -5002,6 +5139,7 @@ function renderGeoPage(page, pages) {
         <p>La búsqueda de coach de imagen en ${escapeHtml(page.name)} suele empezar por ropa, estilo o apariencia, pero el trabajo profundo ocurre cuando la imagen se conecta con presencia ejecutiva, percepción profesional, liderazgo visible, seguridad interna y posicionamiento. Ese es el terreno donde Sonia McRorey construye una categoría más sólida para México, LATAM y mercados hispanohablantes.</p>
       </div>
     </section>
+    ${sourceTeachingPanel(page, { label: "Lectura de Sonia" })}
     <section class="section geo-signals">
       <div class="section-heading compact-heading">
         <p class="section-label">Intenciones de búsqueda</p>
@@ -5122,6 +5260,7 @@ function renderIntentPage(page, pages) {
         </article>
       </div>
     </section>
+    ${sourceTeachingPanel(page, { label: "Consejo de Sonia" })}
     <section class="section authority-hub-map">
       <div class="section-heading">
         <p class="section-label">Términos conectados</p>
@@ -5329,6 +5468,7 @@ Agendar diagnóstico privado: ${absoluteUrl(CONTACT_ROUTE)}
 function homeExtras(pages, clusters) {
   const clusterMap = articleClusterByRoute(clusters);
   return `${proofStrip(pages)}
+  ${sourceTeachingPanel({ route: "/" })}
   ${servicePathSection(pages)}
   <section class="section journal">
     <div class="section-heading">
@@ -5354,6 +5494,7 @@ function indexExtras(pages, clusters) {
       </a>`).join("")}
     </div>
   </section>
+  ${sourceTeachingPanel({ route: "/imagen-presencia", title: "Publicaciones sobre imagen y presencia" }, { label: "Guía editorial de Sonia" })}
   ${servicePathSection(pages)}
   ${clusters.map((cluster) => {
     const shown = cluster.articles.map((route) => map.get(route)).filter(Boolean).slice(0, 3);
@@ -5399,7 +5540,8 @@ function articleExtras(page, pages, clusters) {
     .map((route) => map.get(route))
     .filter(Boolean)
     .slice(0, 3);
-  return `<section class="section article-context">
+  return `${sourceTeachingPanel(page, { label: "Nota de Sonia" })}
+  <section class="section article-context">
     <div class="cluster-header">
       <div>
         <p class="section-label">${escapeHtml(cluster.label)}</p>
@@ -5671,6 +5813,45 @@ async function loadPages() {
 async function loadClusters() {
   const strategy = JSON.parse(await readFile(rootPath("content/strategy/article-clusters.json"), "utf8"));
   return strategy.clusters;
+}
+
+function normalizeTeachingSourceText(text = "") {
+  return String(text)
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function quoteTextsFromKnowledgeBank(bank) {
+  if (!bank || !Array.isArray(bank.quotes)) return [];
+  return bank.quotes
+    .map((item) => item?.quote)
+    .filter(Boolean)
+    .map(normalizeTeachingSourceText);
+}
+
+async function loadSoniaTeachingLayer() {
+  const config = JSON.parse(await readFile(rootPath("content/sonia-knowledge/teaching-route-map.json"), "utf8"));
+  const driveBank = JSON.parse(await readFile(rootPath("content/sonia-knowledge/drive-quote-bank.json"), "utf8"));
+  const blogBank = JSON.parse(await readFile(rootPath("content/sonia-knowledge/quote-bank.json"), "utf8"));
+  const sourceTexts = [...quoteTextsFromKnowledgeBank(driveBank), ...quoteTextsFromKnowledgeBank(blogBank)];
+  const missing = [];
+
+  for (const teaching of config.teachings || []) {
+    const sourceSnippet = normalizeTeachingSourceText(teaching.sourceSnippet || teaching.quote);
+    if (!sourceTexts.some((source) => source.includes(sourceSnippet))) {
+      missing.push(teaching.id || teaching.quote);
+    }
+  }
+
+  if (missing.length) {
+    throw new Error(`Sonia teaching source validation failed for: ${missing.join(", ")}`);
+  }
+
+  SONIA_TEACHING_CONFIG = config;
+  SONIA_TEACHINGS_BY_ID = new Map((config.teachings || []).map((teaching) => [teaching.id, teaching]));
 }
 
 async function copyStatic() {
@@ -6878,6 +7059,7 @@ async function writeAgentFiles(pages, clusters) {
 async function main() {
   const pages = await loadPages();
   const clusters = await loadClusters();
+  await loadSoniaTeachingLayer();
   IMAGE_DIMENSIONS = await loadImageDimensions();
   INLINE_CSS = minifyCss(await readFile(rootPath("styles.css"), "utf8"));
   await rm(DIST, { recursive: true, force: true });
