@@ -407,6 +407,16 @@ h2 .headline-accent {
   object-position: center center;
 }
 
+.service-hero .hero-media.portrait-media {
+  aspect-ratio: 4 / 5;
+  background: #f2f0f2;
+}
+
+.service-hero .hero-media.portrait-media img {
+  object-fit: contain;
+  object-position: center bottom;
+}
+
 .hero-media figcaption {
   position: absolute;
   right: 28px;

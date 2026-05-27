@@ -235,7 +235,7 @@ const ROUTE_IMAGE_OVERRIDES = {
   "/servicios-asesoria-de-imagen-coaching": "/assets/a03a3c39b341463a.jpg",
   "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen": "/assets/09987756d47df368.webp",
   "/servicios-asesoria-de-imagen-coaching/talleres": "/assets/797aeda1281e5d5e.png",
-  "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia": "/assets/sonia-mcrorey-about-760.avif",
+  "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia": "/assets/sonia-mcrorey-full-body-bw.avif",
   "/sobre-sonia-mcrorey-asesora-de-imagen": "/assets/sonia-mcrorey-about-760.avif",
   "/imagen-profesional": "/assets/00510af3bb9f4e03.jpg",
   "/presencia-ejecutiva": "/assets/797aeda1281e5d5e.png",
@@ -3836,7 +3836,7 @@ function hero(page, lines) {
         <a class="btn secondary" href="${page.type === "article" || page.type === "pillar" ? "/imagen-presencia" : "/servicios-asesoria-de-imagen-coaching"}">${page.type === "article" || page.type === "pillar" ? "Ver publicaciones" : "Ver servicios"}</a>
       </div>
     </div>
-    <figure class="hero-media">
+    <figure class="hero-media${image.includes("full-body") ? " portrait-media" : ""}">
       ${heroImageTag(image, page.heroTitle)}
       <figcaption>${iconImageTag("/assets/sonia-icon.svg")} Sonia McRorey · ${BRAND_NAME}</figcaption>
     </figure>
