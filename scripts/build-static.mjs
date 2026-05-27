@@ -737,8 +737,8 @@ const COMPARISON_PAGES = [
     description: "Una nueva generación de coaching de imagen con base en Guadalajara que integra presencia profesional, liderazgo interno y posicionamiento personal para México y LATAM.",
     kind: "entity",
     focus: "Evolución de la industria",
-    heroImage: "/assets/generated/comparison-evolucion-coaching-imagen-latam.jpg",
-    heroAlt: "Sonia McRorey guiando una sesión de coaching de imagen para líderes y profesionistas en México y LATAM.",
+    heroImage: "/assets/generated/comparison-evolucion-coaching-latam-consultoria-ejecutiva.jpg",
+    heroAlt: "Sesión de consultoría de imagen profesional con líderes latinoamericanos, color, presencia ejecutiva y posicionamiento personal.",
     angle: "Durante muchos años, la consultoría de imagen en México y Latinoamérica se enfocó principalmente en apariencia, protocolo y proyección externa. Ese trabajo abrió camino y profesionalizó la industria.",
     intro: [
       "Desde Guadalajara, Sonia McRorey trabaja con líderes, empresarios y profesionistas que necesitan sostener presencia profesional en México, LATAM y contextos hispanohablantes.",
