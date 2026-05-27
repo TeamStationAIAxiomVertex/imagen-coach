@@ -230,7 +230,13 @@ for (const route of deprecatedComparisonRoutes) {
 for (const asset of comparisonHeroAssets) {
   if (!existsSync(asset)) failures.push(`Missing generated comparison hero asset: ${asset}`);
 }
-for (const asset of ["dist/assets/sonia-logo-ai.png", "dist/assets/sonia-logo-source.png", "dist/assets/sonia-mcrorey-about-760.avif"]) {
+for (const asset of [
+  "dist/assets/sonia-logo-ai.png",
+  "dist/assets/sonia-logo-source.png",
+  "dist/assets/sonia-mcrorey-about-760.avif",
+  "dist/assets/sonia-mcrorey-green-blazer-full-body.avif",
+  "dist/assets/sonia-mcrorey-green-blazer-full-body.jpg",
+]) {
   if (!existsSync(asset)) failures.push(`Missing supplied Sonia brand asset: ${asset}`);
 }
 const runtimeScript = await readFile("script.js", "utf8");
@@ -608,7 +614,7 @@ if (!homepage.includes('src="/assets/sonia-logo-ai.png"')) failures.push("Homepa
 if (!homepage.includes('src="/assets/script-')) failures.push("Homepage is not using a versioned runtime script asset");
 if (homepage.includes("<small>ImagenCoach</small>")) failures.push("Legacy ImagenCoach subtitle still appears on homepage");
 const aboutPage = await readFile("dist/sobre-sonia-mcrorey-asesora-de-imagen/index.html", "utf8");
-if (!aboutPage.includes('src="/assets/sonia-mcrorey-about-760.avif"')) failures.push("About page is not using the supplied Sonia headshot");
+if (!aboutPage.includes('src="/assets/sonia-mcrorey-green-blazer-full-body.avif"')) failures.push("About page is not using the supplied Sonia full-body portrait");
 
 const redirects = await readFile("dist/_redirects", "utf8");
 const headers = await readFile("dist/_headers", "utf8");

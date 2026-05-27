@@ -236,7 +236,7 @@ const ROUTE_IMAGE_OVERRIDES = {
   "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen": "/assets/09987756d47df368.webp",
   "/servicios-asesoria-de-imagen-coaching/talleres": "/assets/797aeda1281e5d5e.png",
   "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia": "/assets/sonia-mcrorey-full-body-bw.avif",
-  "/sobre-sonia-mcrorey-asesora-de-imagen": "/assets/sonia-mcrorey-about-760.avif",
+  "/sobre-sonia-mcrorey-asesora-de-imagen": "/assets/sonia-mcrorey-green-blazer-full-body.avif",
   "/imagen-profesional": "/assets/00510af3bb9f4e03.jpg",
   "/presencia-ejecutiva": "/assets/797aeda1281e5d5e.png",
   "/liderazgo": "/assets/205ebbd87f0d84e6.jpg",
@@ -3583,7 +3583,7 @@ function globalSchemaStack() {
     name: "Sonia McRorey",
     jobTitle: "Coach de Imagen, Presencia y Posicionamiento Profesional",
     url: `${SITE_URL}/sobre-sonia-mcrorey-asesora-de-imagen`,
-    image: `${SITE_URL}/assets/sonia-mcrorey-about-760.avif`,
+    image: `${SITE_URL}/assets/sonia-mcrorey-green-blazer-full-body.avif`,
     worksFor: { "@type": "Organization", name: BRAND_NAME, url: SITE_URL },
     areaServed: ["Guadalajara", "México", "LATAM"],
   };
