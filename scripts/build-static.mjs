@@ -657,8 +657,8 @@ const COMPARISON_PAGES = [
     description: "Una reflexión sobre la diferencia entre verse bien y sostener una presencia profesional coherente, clara y estratégica.",
     kind: "category",
     focus: "Imagen basada solo en apariencia",
-    heroImage: "/assets/generated/comparison-imagen-superficial-presencia-profesional.jpg",
-    heroAlt: "Mujer profesional latina frente a una pieza editorial de asesoría de imagen y presencia profesional.",
+    heroImage: "/assets/sonia-mcrorey-green-blazer-full-body.avif",
+    heroAlt: "Sonia McRorey proyectando presencia profesional, imagen estratégica y autoridad visible.",
     angle: "La imagen deja de ser superficial cuando se convierte en una herramienta de liderazgo, percepción y posicionamiento profesional.",
     intro: [
       "Verse bien puede abrir una primera lectura. Sostener presencia profesional requiere que esa lectura sea coherente con la manera en que decides, comunicas y ocupas espacios.",
@@ -5354,7 +5354,7 @@ function renderComparisonPage(page, pages = [], clusters = []) {
           <a class="btn secondary" href="/servicios-asesoria-de-imagen-coaching">Ver servicios</a>
         </div>
       </div>
-      <figure class="hero-media">
+      <figure class="hero-media${heroImage.includes("full-body") ? " portrait-media" : ""}">
         ${heroImageTag(heroImage, heroAlt)}
         <figcaption>${iconImageTag("/assets/sonia-icon.svg")} Sonia McRorey · ${BRAND_NAME}</figcaption>
       </figure>

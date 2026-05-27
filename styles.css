@@ -426,6 +426,15 @@ h2 .headline-accent {
   object-position: center bottom;
 }
 
+.imagen-hero .hero-media.portrait-media {
+  background: #f2f0f2;
+}
+
+.imagen-hero .hero-media.portrait-media img {
+  object-fit: contain;
+  object-position: center bottom;
+}
+
 .hero-media figcaption {
   position: absolute;
   right: 28px;
