@@ -2659,6 +2659,53 @@ details[open] summary::after {
 .atlas-panel a { display: block; padding: 16px 0; border-top: 1px solid var(--line); color: var(--ink); font-weight: 600; line-height: 1.35; }
 .atlas-panel a:hover { color: var(--plum-accent); }
 .atlas-panel a span { display: block; margin-bottom: 5px; color: var(--plum-accent); font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.keyword-link-mesh {
+  padding: clamp(56px, 7vw, 88px) 0;
+  border-top: 1px solid rgba(227, 223, 231, .74);
+}
+.keyword-link-mesh .section-heading {
+  margin-bottom: 22px;
+}
+.keyword-mesh-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(224px, 1fr));
+  gap: 12px;
+  align-items: stretch;
+}
+.keyword-mesh-link {
+  display: grid;
+  min-height: 124px;
+  align-content: space-between;
+  gap: 12px;
+  padding: 18px;
+  color: var(--ink);
+  border: 1px solid rgba(111, 162, 135, .26);
+  border-radius: 10px;
+  background: rgba(251, 250, 252, .78);
+}
+.keyword-mesh-link:hover {
+  border-color: rgba(111, 162, 135, .48);
+  background: rgba(242, 247, 244, .78);
+}
+.keyword-mesh-link span {
+  color: var(--ink);
+  font-weight: 800;
+  line-height: 1.22;
+  overflow-wrap: anywhere;
+}
+.keyword-mesh-link small {
+  max-width: 34ch;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.42;
+}
+.keyword-mesh-link b {
+  color: var(--brand-green-deep);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
 .comparison-menu { min-width: min(760px, calc(100vw - 48px)); grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .comparison-positioning,
 .comparison-ladder,
@@ -3282,7 +3329,7 @@ details[open] summary::after {
 @media (max-width: 900px) {
   .hero, .split-section, .split-section.reverse, .contact-grid, .service-system-visual, .article-reading-map, .article-layout, .concierge-hero, .form-row.two, .form-row.three { grid-template-columns: 1fr; }
   .split-section.reverse .copy-panel { order: 0; }
-  .service-grid, .publication-grid, .proof-strip, .pillar-grid, .cluster-header, .semantic-sections, .atlas-grid, .comparison-grid, .comparison-switchboard, .comparison-indicators, .definition-grid, .comparison-path, .signal-list, .process-heading, .service-context-panel, .faq-answer-grid, .article-copy, .dense-reading .semantic-card, .intent-card-grid, .fit-grid, .method-note-grid, .workflow-track, .outcome-grid, .cta-bridge, .article-cluster-nav, .credential-grid, .reading-path-grid { grid-template-columns: 1fr; }
+  .service-grid, .publication-grid, .proof-strip, .pillar-grid, .cluster-header, .semantic-sections, .atlas-grid, .keyword-mesh-grid, .comparison-grid, .comparison-switchboard, .comparison-indicators, .definition-grid, .comparison-path, .signal-list, .process-heading, .service-context-panel, .faq-answer-grid, .article-copy, .dense-reading .semantic-card, .intent-card-grid, .fit-grid, .method-note-grid, .workflow-track, .outcome-grid, .cta-bridge, .article-cluster-nav, .credential-grid, .reading-path-grid { grid-template-columns: 1fr; }
   .commercial-article-bridge .cluster-header { align-items: start; }
   .commercial-article-bridge .cluster-header .btn { justify-self: start; }
   .reading-path-card { min-height: auto; }
@@ -3753,6 +3800,23 @@ details[open] summary::after {
   font-weight: 800;
   letter-spacing: .12em;
   text-transform: uppercase;
+}
+
+.authority-link-mesh.keyword-mesh-grid {
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+}
+
+.authority-link-mesh .keyword-mesh-link {
+  min-height: 124px;
+  background: rgba(251, 250, 252, .78);
+}
+
+.authority-link-mesh .keyword-mesh-link small {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .geo-service-grid .service-card {

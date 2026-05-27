@@ -1213,6 +1213,351 @@ const CANONICAL_TERMS = [
   "seguridad interna",
   "liderazgo personal",
 ];
+const KEYWORD_MESH_LIBRARY = [
+  {
+    route: "/servicios-asesoria-de-imagen-coaching",
+    anchor: "servicios de Coach de Imagen",
+    context: "Mapa para elegir entre asesoría, presencia, talleres y seguridad profesional.",
+    bucket: "servicio",
+    terms: ["servicios", "ruta", "diagnóstico", "coach de imagen", "asesoría", "coaching"],
+  },
+  {
+    route: "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen",
+    anchor: "asesoría de imagen profesional",
+    context: "Trabajo visual de estilo, color, guardarropa, rostro e identidad externa.",
+    bucket: "servicio",
+    terms: ["asesoría", "imagen profesional", "estilo", "color", "guardarropa", "imagen visible"],
+  },
+  {
+    route: "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen",
+    anchor: "coaching de imagen y presencia profesional",
+    context: "Proceso para ocupar espacios con seguridad, autoridad y comunicación visible.",
+    bucket: "servicio",
+    terms: ["coaching de imagen", "presencia", "autoridad", "confianza", "visibilidad", "comunicación"],
+  },
+  {
+    route: "/servicios-asesoria-de-imagen-coaching/talleres",
+    anchor: "talleres de imagen empresarial",
+    context: "Criterios de imagen, percepción y comunicación para marcas, equipos y empresas.",
+    bucket: "servicio",
+    terms: ["talleres", "empresa", "equipo", "marca", "imagen corporativa", "comunicación"],
+  },
+  {
+    route: "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia",
+    anchor: "seguridad profesional y posicionamiento",
+    context: "Ruta para sostener visibilidad, decisiones, liderazgo y crecimiento sin vivirlo como amenaza.",
+    bucket: "servicio",
+    terms: ["seguridad", "posicionamiento", "sistema interno", "decisiones", "liderazgo", "crecimiento"],
+  },
+  {
+    route: "/servicios-asesoria-de-imagen-coaching/preguntas-frequentes",
+    anchor: "preguntas frecuentes sobre coaching de imagen",
+    context: "Respuestas directas para elegir proceso, modalidad y alcance con menos fricción.",
+    bucket: "servicio",
+    terms: ["preguntas", "faq", "dudas", "elegir", "proceso", "modalidad"],
+  },
+  {
+    route: "/imagen-profesional",
+    anchor: "imagen profesional",
+    context: "Pilar para ordenar identidad visual, percepción y coherencia en contexto profesional.",
+    bucket: "tema",
+    terms: ["imagen profesional", "identidad", "percepción", "coherencia", "estilo"],
+  },
+  {
+    route: "/presencia-ejecutiva",
+    anchor: "presencia ejecutiva",
+    context: "Pilar para autoridad visible, comunicación, liderazgo y lectura profesional.",
+    bucket: "tema",
+    terms: ["presencia ejecutiva", "presencia profesional", "autoridad", "liderazgo", "comunicación"],
+  },
+  {
+    route: "/imagen-estrategica",
+    anchor: "imagen estratégica",
+    context: "Pilar para conectar percepción profesional, posicionamiento y decisiones de marca personal.",
+    bucket: "tema",
+    terms: ["imagen estratégica", "percepción", "posicionamiento", "marca personal", "autoridad"],
+  },
+  {
+    route: "/comunicacion-no-verbal",
+    anchor: "comunicación no verbal ejecutiva",
+    context: "Lectura de lenguaje corporal, presencia, postura, mirada y señales de autoridad.",
+    bucket: "tema",
+    terms: ["comunicación no verbal", "lenguaje corporal", "presencia", "autoridad", "postura"],
+  },
+  {
+    route: "/mentalidad",
+    anchor: "seguridad interna profesional",
+    context: "Trabajo de sistema interno, creencias, visibilidad y capacidad de sostener crecimiento.",
+    bucket: "tema",
+    terms: ["seguridad interna", "mentalidad", "creencias", "sistema nervioso", "visibilidad"],
+  },
+  {
+    route: "/liderazgo",
+    anchor: "liderazgo visible",
+    context: "Pilar para comunicar dirección, criterio, autoridad y presencia en espacios profesionales.",
+    bucket: "tema",
+    terms: ["liderazgo", "liderazgo visible", "autoridad", "dirección", "presencia"],
+  },
+  {
+    route: "/empresarias",
+    anchor: "imagen para mujeres empresarias",
+    context: "Ruta para empresarias, fundadoras y líderes que necesitan presencia y posicionamiento.",
+    bucket: "tema",
+    terms: ["empresarias", "mujeres líderes", "fundadoras", "negocio", "posicionamiento"],
+  },
+  {
+    route: "/como-proyectar-autoridad",
+    anchor: "cómo proyectar autoridad profesional",
+    context: "Búsqueda de alta intención para presencia, voz, imagen y percepción de liderazgo.",
+    bucket: "intencion",
+    terms: ["autoridad", "proyectar autoridad", "liderazgo", "reuniones", "presencia"],
+  },
+  {
+    route: "/como-verme-mas-profesional",
+    anchor: "cómo verme más profesional",
+    context: "Intención directa para elevar imagen, estilo, coherencia y lectura ejecutiva.",
+    bucket: "intencion",
+    terms: ["verme profesional", "imagen profesional", "estilo", "coherencia", "premium"],
+  },
+  {
+    route: "/como-mejorar-mi-presencia-profesional",
+    anchor: "cómo mejorar mi presencia profesional",
+    context: "Ruta para fortalecer seguridad visible, claridad, comunicación y autoridad.",
+    bucket: "intencion",
+    terms: ["mejorar presencia", "presencia profesional", "seguridad", "comunicación", "autoridad"],
+  },
+  {
+    route: "/inseguridad-profesional",
+    anchor: "inseguridad profesional",
+    context: "Página para entender miedo al juicio, exposición, visibilidad y autoconcepto profesional.",
+    bucket: "intencion",
+    terms: ["inseguridad", "miedo", "juicio", "seguridad profesional", "visibilidad"],
+  },
+  {
+    route: "/presencia-ejecutiva-femenina",
+    anchor: "presencia ejecutiva femenina",
+    context: "Enfoque para mujeres líderes que necesitan autoridad sin perder identidad propia.",
+    bucket: "intencion",
+    terms: ["presencia ejecutiva femenina", "mujeres líderes", "directoras", "autoridad femenina"],
+  },
+  {
+    route: "/imagen-para-mujeres-lideres",
+    anchor: "imagen para mujeres líderes",
+    context: "Señales de imagen, presencia y posicionamiento para mujeres con responsabilidad visible.",
+    bucket: "intencion",
+    terms: ["mujeres líderes", "liderazgo femenino", "imagen ejecutiva", "autoridad"],
+  },
+  {
+    route: "/comunicacion-no-verbal-ejecutiva",
+    anchor: "comunicación no verbal ejecutiva",
+    context: "Intención para mejorar señales corporales, presencia en reuniones y percepción profesional.",
+    bucket: "intencion",
+    terms: ["comunicación no verbal", "reuniones", "postura", "lenguaje corporal", "autoridad"],
+  },
+  {
+    route: "/imagen-ejecutiva-para-empresarias",
+    anchor: "imagen ejecutiva para empresarias",
+    context: "Ruta para empresarias que necesitan imagen premium, confianza y posicionamiento comercial.",
+    bucket: "intencion",
+    terms: ["imagen ejecutiva", "empresarias", "ventas premium", "negocio", "marca personal"],
+  },
+  {
+    route: "/liderazgo-visible",
+    anchor: "liderazgo visible",
+    context: "Intención para sostener exposición, dirección y autoridad en espacios profesionales.",
+    bucket: "intencion",
+    terms: ["liderazgo visible", "liderar", "dirección", "presencia", "autoridad"],
+  },
+  {
+    route: "/seguridad-profesional-femenina",
+    anchor: "seguridad profesional femenina",
+    context: "Búsqueda para trabajar autoconcepto, visibilidad, decisiones y crecimiento profesional.",
+    bucket: "intencion",
+    terms: ["seguridad profesional", "mujeres", "autoconcepto", "visibilidad", "decisiones"],
+  },
+  {
+    route: "/guadalajara",
+    anchor: "coach de imagen en Guadalajara",
+    context: "Base presencial de Sonia para diagnóstico, procesos privados y empresas.",
+    bucket: "geo",
+    terms: ["guadalajara", "presencial", "jalisco", "coach de imagen"],
+  },
+  {
+    route: "/mexico",
+    anchor: "coach de imagen en México",
+    context: "Alcance nacional para imagen profesional, presencia ejecutiva y liderazgo visible.",
+    bucket: "geo",
+    terms: ["méxico", "mexico", "coach de imagen", "asesora de imagen", "presencia ejecutiva"],
+  },
+  {
+    route: "/cdmx",
+    anchor: "imagen ejecutiva en CDMX",
+    context: "Mercado ejecutivo para liderazgo, percepción profesional y posicionamiento.",
+    bucket: "geo",
+    terms: ["cdmx", "ciudad de méxico", "imagen ejecutiva", "directivas"],
+  },
+  {
+    route: "/monterrey",
+    anchor: "presencia ejecutiva en Monterrey",
+    context: "Contexto empresarial para imagen profesional, autoridad y comunicación ejecutiva.",
+    bucket: "geo",
+    terms: ["monterrey", "presencia ejecutiva", "empresarias", "directivos"],
+  },
+  {
+    route: "/colombia",
+    anchor: "coach de imagen en Colombia",
+    context: "Ruta LATAM para proyección profesional, presencia corporativa y liderazgo femenino.",
+    bucket: "geo",
+    terms: ["colombia", "proyección profesional", "presencia corporativa", "liderazgo femenino"],
+  },
+  {
+    route: "/bogota",
+    anchor: "presencia ejecutiva en Bogotá",
+    context: "Mercado colombiano para liderazgo femenino, percepción y posicionamiento profesional.",
+    bucket: "geo",
+    terms: ["bogotá", "bogota", "presencia ejecutiva", "liderazgo femenino"],
+  },
+  {
+    route: "/miami-hispanos",
+    anchor: "coach de imagen para hispanas en Miami",
+    context: "Mercado hispano para ejecutivas, empresarias latinas y liderazgo multicultural.",
+    bucket: "geo",
+    terms: ["miami", "hispanas", "latinas", "multicultural", "coach de imagen"],
+  },
+  {
+    route: "/houston-hispanos",
+    anchor: "presencia ejecutiva para hispanas en Houston",
+    context: "Ruta para profesionales latinas, empresarias y líderes hispanohablantes.",
+    bucket: "geo",
+    terms: ["houston", "hispanas", "latinas", "presencia ejecutiva", "liderazgo"],
+  },
+  {
+    route: "/new-york-hispanos",
+    anchor: "imagen profesional para latinas en New York",
+    context: "Mercado hispano de alta exposición para presencia, posicionamiento y liderazgo visible.",
+    bucket: "geo",
+    terms: ["new york", "hispanas", "latinas", "imagen profesional", "posicionamiento"],
+  },
+  {
+    route: "/costa-rica",
+    anchor: "coach de imagen en Costa Rica",
+    context: "Ruta LATAM para empresarias, profesionistas y presencia profesional online.",
+    bucket: "geo",
+    terms: ["costa rica", "coach de imagen", "presencia ejecutiva", "imagen profesional"],
+  },
+  {
+    route: "/comparaciones",
+    anchor: "evolución del coaching de imagen",
+    context: "Comparaciones editoriales para entender la categoría sin ataques ni ruido SEO.",
+    bucket: "comparacion",
+    terms: ["comparaciones", "evolución", "coaching de imagen", "categoría"],
+  },
+  {
+    route: "/comparaciones/coaching-de-imagen-vs-consultoria-tradicional",
+    anchor: "coaching de imagen vs consultoría tradicional",
+    context: "Diferencia entre imagen externa, presencia, sistema interno y posicionamiento.",
+    bucket: "comparacion",
+    terms: ["consultoría tradicional", "coaching de imagen", "diferencia", "evolución"],
+  },
+  {
+    route: "/comparaciones/imagen-superficial-vs-presencia-profesional",
+    anchor: "imagen superficial vs presencia profesional",
+    context: "Lectura de cómo la imagen se vuelve presencia, autoridad y percepción estratégica.",
+    bucket: "comparacion",
+    terms: ["imagen superficial", "presencia profesional", "autoridad", "percepción"],
+  },
+  {
+    route: "/comparaciones/styling-vs-coaching-de-imagen",
+    anchor: "styling vs coaching de imagen",
+    context: "Comparación entre estilo visual y un proceso profundo de presencia profesional.",
+    bucket: "comparacion",
+    terms: ["styling", "coaching de imagen", "estilo", "presencia"],
+  },
+  {
+    route: "/metodo-sonia-mcrorey",
+    anchor: "Método Sonia McRorey",
+    context: "Marco metodológico para imagen, presencia, liderazgo y posicionamiento profesional.",
+    bucket: "metodo",
+    terms: ["método", "metodo", "sonia", "sistema", "metodología"],
+  },
+  {
+    route: "/sistema-presencia-profesional",
+    anchor: "sistema de presencia profesional",
+    context: "Modelo para ordenar presencia, comunicación, percepción y seguridad visible.",
+    bucket: "metodo",
+    terms: ["sistema", "presencia profesional", "comunicación", "percepción", "seguridad"],
+  },
+  {
+    route: "/framework-liderazgo-visible",
+    anchor: "framework de liderazgo visible",
+    context: "Estructura para sostener autoridad, exposición y dirección profesional.",
+    bucket: "metodo",
+    terms: ["framework", "liderazgo visible", "autoridad", "dirección", "exposición"],
+  },
+  {
+    route: "/modelo-imagen-estrategica",
+    anchor: "modelo de imagen estratégica",
+    context: "Modelo para conectar imagen, percepción, posicionamiento y resultados profesionales.",
+    bucket: "metodo",
+    terms: ["modelo", "imagen estratégica", "posicionamiento", "resultados", "percepción"],
+  },
+  {
+    route: "/glosario",
+    anchor: "glosario de Coach de Imagen",
+    context: "Definiciones claras para entender imagen, presencia, liderazgo y seguridad profesional.",
+    bucket: "metodo",
+    terms: ["glosario", "definición", "coach de imagen", "presencia", "imagen profesional"],
+  },
+  {
+    route: "/imagen-presencia/presencia-profesional-estrategica",
+    anchor: "presencia profesional estratégica",
+    context: "Lectura sobre coherencia, autoridad, identidad y resultados profesionales.",
+    bucket: "publicacion",
+    terms: ["presencia profesional estratégica", "coherencia", "autoridad", "resultados"],
+  },
+  {
+    route: "/imagen-presencia/imagen-profesional-segun-industria-y-personalidad",
+    anchor: "imagen profesional según industria",
+    context: "Criterios para adaptar imagen profesional por contexto, giro y personalidad.",
+    bucket: "publicacion",
+    terms: ["industria", "personalidad", "imagen profesional", "contexto"],
+  },
+  {
+    route: "/imagen-presencia/imagen-identidad-liderazgo",
+    anchor: "imagen, identidad y liderazgo",
+    context: "Lectura sobre cómo la identidad personal sostiene presencia y liderazgo visible.",
+    bucket: "publicacion",
+    terms: ["imagen", "identidad", "liderazgo", "presencia"],
+  },
+  {
+    route: "/imagen-presencia/mas-dinero-capacidad-interna-liderazgo-presencia",
+    anchor: "capacidad interna para sostener crecimiento",
+    context: "Artículo sobre liderazgo, presencia, sistema nervioso y expansión profesional.",
+    bucket: "publicacion",
+    terms: ["capacidad interna", "crecimiento", "dinero", "liderazgo", "sistema nervioso"],
+  },
+  {
+    route: "/imagen-presencia/tu-color-tu-poder-el-impacto-de-la-colorimetria",
+    anchor: "colorimetría e imagen profesional",
+    context: "Lectura para conectar color, percepción, estilo y presencia visible.",
+    bucket: "publicacion",
+    terms: ["colorimetría", "color", "imagen profesional", "estilo"],
+  },
+  {
+    route: "/imagen-presencia/aprende-a-resaltar-tus-proporciones",
+    anchor: "resaltar proporciones con asesoría de imagen",
+    context: "Guía práctica sobre cuerpo, proporciones, lectura visual y estilo personal.",
+    bucket: "publicacion",
+    terms: ["proporciones", "asesoría de imagen", "cuerpo", "estilo"],
+  },
+  {
+    route: "/imagen-presencia/beneficios-de-asesoria-de-imagen",
+    anchor: "beneficios de asesoría de imagen",
+    context: "Lectura para entender valor, claridad, estilo y confianza en la imagen visible.",
+    bucket: "publicacion",
+    terms: ["beneficios", "asesoría de imagen", "confianza", "imagen visible"],
+  },
+];
 const AVOID_TERMS = [
   "fashion influencer",
   "lifestyle blogger",
@@ -2972,32 +3317,180 @@ function serviceSystemVisual(page, sections, clusterMap) {
   </section>`;
 }
 
-function internalLinkAtlas(page, pages, clusters) {
+function normalizeMeshText(value = "") {
+  return String(value)
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/\p{Diacritic}/gu, "")
+    .replace(/[^a-z0-9ñ\s/-]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function routeBucket(route) {
+  if (route === "/") return "home";
+  if (route === CONTACT_ROUTE) return "contacto";
+  if (route.startsWith("/servicios-asesoria-de-imagen-coaching")) return "servicio";
+  if (route.startsWith("/imagen-presencia/")) return "publicacion";
+  if (route === "/imagen-presencia") return "publicacion";
+  if (route.startsWith("/comparaciones")) return "comparacion";
+  if (SEMANTIC_HUBS.some((hub) => hub.route === route)) return "tema";
+  if (GEO_MARKETS.some((market) => market.route === route)) return "geo";
+  if (INTENT_PAGES.some((intent) => intent.route === route)) return "intencion";
+  if (AUTHORITY_PAGES.some((authority) => authority.route === route)) return "metodo";
+  return "pagina";
+}
+
+function generatedRouteRecordMap(pages = []) {
+  const records = new Map();
+  const add = (route, data = {}) => {
+    if (!route || records.has(route)) return;
+    records.set(route, {
+      route,
+      bucket: routeBucket(route),
+      title: data.title || data.heroTitle || data.name || semanticMenuLabel(route, route.replace(/\//g, " ").trim() || BRAND_NAME),
+      heroTitle: data.heroTitle || data.title || data.name || semanticMenuLabel(route, route),
+      description: data.description || data.context || "",
+      terms: data.terms || data.pillars || [],
+      ...data,
+    });
+  };
+  add("/", { title: "Coach de Imagen", heroTitle: "Coach de Imagen", description: "Coaching de imagen, presencia profesional y liderazgo visible para México, LATAM y mercados hispanohablantes." });
+  add(CONTACT_ROUTE, { title: "Contacto privado", heroTitle: "Contacto privado", description: "Diagnóstico privado para elegir una ruta de imagen, presencia, posicionamiento o seguridad profesional." });
+  for (const page of pages) add(page.route, page);
+  for (const pillar of PILLARS) add(pillar.route, { ...pillar, bucket: "servicio", heroTitle: pillar.title });
+  for (const hub of SEMANTIC_HUBS) add(hub.route, { ...hub, bucket: "tema", heroTitle: hub.title });
+  for (const page of COMPARISON_PAGES) add(page.route, { ...page, bucket: "comparacion", heroTitle: page.title });
+  for (const page of GEO_MARKETS) add(page.route, { ...page, bucket: "geo", heroTitle: page.title });
+  for (const page of INTENT_PAGES) add(page.route, { ...page, bucket: "intencion", heroTitle: page.title });
+  for (const page of AUTHORITY_PAGES) add(page.route, { ...page, bucket: "metodo", heroTitle: page.title });
+  return records;
+}
+
+function currentMeshContext(page = {}, clusters = []) {
   const clusterMap = articleClusterByRoute(clusters);
-  const currentCluster = clusterMap.get(page.route);
-  const serviceRoutes = PILLARS.map((pillar) => pillar.route).filter((route) => route !== page.route);
-  const map = pageByRoute(pages);
-  const serviceLinks = serviceRoutes
-    .map((route) => map.get(route))
-    .filter(Boolean)
-    .slice(0, 4);
-  const relatedArticles = currentCluster
-    ? currentCluster.articles.map((route) => map.get(route)).filter(Boolean).filter((item) => item.route !== page.route).slice(0, 4)
-    : pages.filter((item) => item.type === "article").slice(0, 4);
-  return `<section class="section link-atlas" aria-label="Rutas internas relacionadas">
-    <div class="section-heading">
-      <p class="section-label">Contenido relacionado</p>
-      <h2>${headlineHtml("Servicios y publicaciones para seguir profundizando.")}</h2>
+  const cluster = clusterMap.get(page.route);
+  const geo = GEO_MARKETS.find((item) => item.route === page.route);
+  const intent = INTENT_PAGES.find((item) => item.route === page.route);
+  const hub = SEMANTIC_HUBS.find((item) => item.route === page.route);
+  const authority = AUTHORITY_PAGES.find((item) => item.route === page.route);
+  return {
+    cluster,
+    geo,
+    intent,
+    hub,
+    authority,
+    text: normalizeMeshText([
+      page.route,
+      page.type,
+      page.title,
+      page.heroTitle,
+      page.description,
+      page.summary,
+      page.cluster,
+      page.focus,
+      page.intent,
+      page.pain,
+      page.outcome,
+      page.country,
+      page.name,
+      page.languagePattern,
+      cluster?.label,
+      cluster?.description,
+      hub?.title,
+      hub?.cluster,
+      hub?.terms?.join(" "),
+      intent?.terms?.join(" "),
+      authority?.pillars?.join(" "),
+    ].filter(Boolean).join(" ")),
+  };
+}
+
+function keywordMeshForPage(page = {}, pages = [], clusters = [], limit = 8) {
+  const currentRoute = page.route || "/";
+  const records = generatedRouteRecordMap(pages);
+  const context = currentMeshContext(page, clusters);
+  const seen = new Set([currentRoute]);
+  const seenAnchors = new Set();
+  const candidates = KEYWORD_MESH_LIBRARY
+    .map((entry, index) => ({ ...entry, index, record: records.get(entry.route) }))
+    .filter((entry) => entry.record && !seen.has(entry.route))
+    .map((entry) => {
+      let score = Math.max(0, 50 - entry.index) * 0.04;
+      for (const term of entry.terms || []) {
+        if (context.text.includes(normalizeMeshText(term))) score += 8;
+      }
+      if (context.cluster?.primaryService === entry.route) score += 36;
+      if (context.cluster?.articles?.includes(entry.route)) score += 28;
+      if (context.intent?.service === entry.route) score += 40;
+      if (context.geo?.relatedMarkets?.includes(entry.route)) score += 34;
+      if (context.geo && entry.bucket === "geo") {
+        const targetGeo = GEO_MARKETS.find((market) => market.route === entry.route);
+        score += targetGeo?.country === context.geo.country ? 24 : 8;
+      }
+      if (routeBucket(currentRoute) === "servicio" && ["tema", "intencion", "publicacion", "comparacion", "geo"].includes(entry.bucket)) score += 12;
+      if (routeBucket(currentRoute) === "publicacion" && ["servicio", "tema", "intencion"].includes(entry.bucket)) score += 16;
+      if (routeBucket(currentRoute) === "tema" && ["servicio", "publicacion", "intencion", "geo"].includes(entry.bucket)) score += 13;
+      if (routeBucket(currentRoute) === "comparacion" && ["servicio", "tema", "comparacion", "metodo"].includes(entry.bucket)) score += 14;
+      if (routeBucket(currentRoute) === "geo" && ["servicio", "tema", "intencion", "metodo"].includes(entry.bucket)) score += 12;
+      if (routeBucket(currentRoute) === "intencion" && ["servicio", "tema", "publicacion", "geo"].includes(entry.bucket)) score += 15;
+      if (routeBucket(currentRoute) === "metodo" && ["servicio", "tema", "intencion", "publicacion"].includes(entry.bucket)) score += 13;
+      if (entry.route === "/guadalajara" && !currentRoute.includes("guadalajara")) score += 6;
+      if (entry.route === "/servicios-asesoria-de-imagen-coaching" && routeBucket(currentRoute) !== "servicio") score += 5;
+      return { ...entry, score };
+    })
+    .sort((a, b) => b.score - a.score || a.index - b.index);
+
+  const selected = [];
+  const bucketCounts = new Map();
+  for (const candidate of candidates) {
+    if (seen.has(candidate.route)) continue;
+    const count = bucketCounts.get(candidate.bucket) || 0;
+    if (selected.length >= 5 && count >= 3) continue;
+    const anchorKey = normalizeMeshText(candidate.anchor);
+    if (seenAnchors.has(anchorKey)) continue;
+    selected.push(candidate);
+    seen.add(candidate.route);
+    seenAnchors.add(anchorKey);
+    bucketCounts.set(candidate.bucket, count + 1);
+    if (selected.length >= limit) break;
+  }
+  if (selected.length < 5) {
+    for (const candidate of candidates) {
+      if (seen.has(candidate.route)) continue;
+      const anchorKey = normalizeMeshText(candidate.anchor);
+      if (seenAnchors.has(anchorKey)) continue;
+      selected.push(candidate);
+      seen.add(candidate.route);
+      seenAnchors.add(anchorKey);
+      if (selected.length >= 5) break;
+    }
+  }
+  return selected.slice(0, limit).map(({ route, anchor, context, bucket, score }) => ({ route, anchor, context, bucket, score: Number(score.toFixed(2)) }));
+}
+
+function keywordMeshLinks(links) {
+  return links.map((link) => `<a class="keyword-mesh-link" href="${link.route}">
+    <span>${escapeHtml(link.anchor)}</span>
+    <small>${escapeHtml(link.context)}</small>
+    <b>Ver ruta</b>
+  </a>`).join("");
+}
+
+function internalLinkAtlas(page, pages, clusters) {
+  const links = keywordMeshForPage(page, pages, clusters, 8);
+  if (!links.length) return "";
+  const label = routeBucket(page.route || "/") === "geo" ? "Rutas para este mercado" : "Rutas relacionadas";
+  const heading = routeBucket(page.route || "/") === "publicacion"
+    ? "Servicios, temas y lecturas conectadas."
+    : "Enlaces clave para seguir con claridad.";
+  return `<section class="section link-atlas keyword-link-mesh" aria-label="Malla interna de enlaces relevantes">
+    <div class="section-heading compact-heading">
+      <p class="section-label">${escapeHtml(label)}</p>
+      <h2>${headlineHtml(heading)}</h2>
     </div>
-    <div class="atlas-grid">
-      <div class="atlas-panel">
-        <h3>Servicios conectados</h3>
-        ${serviceLinks.map((item) => `<a href="${item.route}"><span>${escapeHtml(semanticIdentity(item.route)?.entity || "Servicio")}</span>${escapeHtml(semanticShortLabel(item.route, item.heroTitle))}</a>`).join("")}
-      </div>
-      <div class="atlas-panel">
-        <h3>Contenido de apoyo</h3>
-        ${relatedArticles.map((item) => `<a href="${item.route}"><span>${escapeHtml(clusterMap.get(item.route)?.label || "publicación")}</span>${escapeHtml(item.heroTitle)}</a>`).join("")}
-      </div>
+    <div class="keyword-mesh-grid">
+      ${keywordMeshLinks(links)}
     </div>
   </section>`;
 }
@@ -3176,7 +3669,7 @@ function structuredContentSections(page, lines, pages, clusters) {
   if (page.route === "/imagen-presencia/rebranding-imagen-mentalidad-abundancia") return rebrandPillarContent(page, lines, pages, clusters);
   if (page.type === "article") return articleStructuredContent(page, lines, pages, clusters);
   if (page.type === "home") return "";
-  if (page.route === "/sobre-sonia-mcrorey-asesora-de-imagen") return aboutAuthorityContent();
+  if (page.route === "/sobre-sonia-mcrorey-asesora-de-imagen") return aboutAuthorityContent(pages, clusters);
   if (page.route === "/servicios-asesoria-de-imagen-coaching") return serviceHubContent(page, pages, clusters);
   if (COMMERCIAL_PAGE_MODELS[page.route]) return commercialPageContent(page, pages, clusters);
   if (page.route === "/servicios-asesoria-de-imagen-coaching/preguntas-frequentes") return faqStructuredContent(page, lines, pages, clusters);
@@ -3769,6 +4262,7 @@ function renderContactPage() {
       </div>
       ${contactIntakeForm()}
     </section>
+    ${internalLinkAtlas(page, [], [])}
   </main>
   ${footer()}
   <script src="/assets/script-${SCRIPT_VERSION}.js" defer></script>
@@ -4305,10 +4799,11 @@ function commercialPageContent(page, pages, clusters) {
   ${commercialOutcomes(model)}
   ${commercialRelatedArticles(page, model, pages, clusters)}
   ${commercialFaq(model)}
+  ${internalLinkAtlas(page, pages, clusters)}
   ${ctaBridge(page, model.cta)}`;
 }
 
-function aboutAuthorityContent() {
+function aboutAuthorityContent(pages = [], clusters = []) {
   const credentials = [
     {
       icon: "liderazgo",
@@ -4429,6 +4924,7 @@ function aboutAuthorityContent() {
       </article>`).join("")}
     </div>
   </section>
+  ${internalLinkAtlas({ route: "/sobre-sonia-mcrorey-asesora-de-imagen", title: "Sobre Sonia McRorey", heroTitle: "Sobre Sonia McRorey", description: "Trayectoria, formación y enfoque profesional de Sonia McRorey como Coach de Imagen.", type: "about" }, pages, clusters)}
   ${ctaBridge({ route: "/sobre-sonia-mcrorey-asesora-de-imagen" }, "Agendar diagnóstico con Sonia")}`;
 }
 
@@ -4626,8 +5122,9 @@ function renderSemanticHub(hub, pages, clusters) {
         <p class="section-label">Publicaciones relacionadas</p>
         <h2>${headlineHtml(`Lecturas para profundizar en ${hub.title.toLowerCase()}.`)}</h2>
       </div>
-      <div class="publication-grid">${articleCards(relatedArticles, { clusterMap: articleClusterByRoute(clusters) })}</div>
+    <div class="publication-grid">${articleCards(relatedArticles, { clusterMap: articleClusterByRoute(clusters) })}</div>
     </section>
+    ${internalLinkAtlas(pageMeta, pages, clusters)}
   </main>
   ${footer()}
   <script src="/assets/script-${SCRIPT_VERSION}.js" defer></script>
@@ -4814,7 +5311,7 @@ function comparisonCards(currentRoute = "/comparaciones") {
     .join("");
 }
 
-function renderComparisonPage(page) {
+function renderComparisonPage(page, pages = [], clusters = []) {
   const isHub = page.route === "/comparaciones";
   const heroImage = page.heroImage || "/assets/797aeda1281e5d5e.png";
   const heroAlt = page.heroAlt || page.title;
@@ -4898,6 +5395,7 @@ function renderComparisonPage(page) {
       </div>
       <div class="comparison-grid">${comparisonCards(page.route)}</div>
     </section>
+    ${internalLinkAtlas(pageMeta, pages, clusters)}
   </main>
   ${footer()}
   <script src="/assets/script-${SCRIPT_VERSION}.js" defer></script>
@@ -5049,26 +5547,10 @@ function geoTermIcon(term = "") {
   return "percepcion";
 }
 
-function internalAuthorityLinks(page, pages) {
-  const map = pageByRoute(pages);
-  const geoSiblingLinks = (page.relatedMarkets || []).map((route) => [route, GEO_MARKETS.find((item) => item.route === route)?.name || semanticMenuLabel(route, route.replace("/", ""))]);
-  const pageLinks = [
-    ...geoSiblingLinks,
-    ...GEO_SERVICE_LINKS.map((route) => [route, semanticMenuLabel(route, "Servicio")]),
-    ...GEO_HUB_LINKS.map((route) => [route, SEMANTIC_HUBS.find((hub) => hub.route === route)?.title || semanticMenuLabel(route, "Tema")]),
-    ...AUTHORITY_PAGES.slice(0, 5).map((item) => [item.route, item.title]),
-    ...GEO_PUBLICATION_LINKS.map((route) => [route, map.get(route)?.heroTitle || "Publicación"]),
-    ...GEO_COMPARISON_LINKS.map((route) => [route, COMPARISON_PAGES.find((item) => item.route === route)?.title || "Comparación"]),
-  ];
-  const unique = [];
-  const seen = new Set([page.route]);
-  for (const link of pageLinks) {
-    if (!link[0] || seen.has(link[0])) continue;
-    seen.add(link[0]);
-    unique.push(link);
-  }
-  return `<div class="authority-link-mesh">
-    ${unique.slice(0, 22).map(([href, label]) => `<a href="${href}"><span>${escapeHtml(label)}</span><small>Explorar</small></a>`).join("")}
+function internalAuthorityLinks(page, pages, clusters = []) {
+  const links = keywordMeshForPage(page, pages, clusters, 8);
+  return `<div class="authority-link-mesh keyword-mesh-grid">
+    ${keywordMeshLinks(links)}
   </div>`;
 }
 
@@ -5088,7 +5570,7 @@ function geoServiceCards(page) {
   </div>`;
 }
 
-function renderGeoPage(page, pages) {
+function renderGeoPage(page, pages, clusters = []) {
   const heroImage = "/assets/generated/comparison-evolucion-coaching-imagen-latam.jpg";
   const pageMeta = generatedPageMeta(page, "geo");
   const metaDescription = metaDescriptionForPage(pageMeta, page.description);
@@ -5186,7 +5668,7 @@ function renderGeoPage(page, pages) {
         <p class="section-label">Mapa de autoridad</p>
         <h2>${headlineHtml(`Rutas conectadas con ${page.name}.`)}</h2>
       </div>
-      ${internalAuthorityLinks(page, pages)}
+      ${internalAuthorityLinks(page, pages, clusters)}
     </section>
   </main>
   ${footer()}
@@ -5204,7 +5686,7 @@ function intentFaqs(page) {
   ];
 }
 
-function renderIntentPage(page, pages) {
+function renderIntentPage(page, pages, clusters = []) {
   const heroImage = "/assets/797aeda1281e5d5e.png";
   const pageMeta = generatedPageMeta(page, "intent");
   const metaDescription = metaDescriptionForPage(pageMeta, page.description);
@@ -5295,7 +5777,7 @@ function renderIntentPage(page, pages) {
         <p class="section-label">Seguir explorando</p>
         <h2>${headlineHtml("Lecturas, servicios y comparaciones conectadas.")}</h2>
       </div>
-      ${internalAuthorityLinks(page, pages)}
+      ${internalAuthorityLinks(page, pages, clusters)}
     </section>
   </main>
   ${footer()}
@@ -5312,7 +5794,7 @@ function authorityFaqs(page) {
   ];
 }
 
-function renderAuthorityPage(page, pages) {
+function renderAuthorityPage(page, pages, clusters = []) {
   const heroImage = "/assets/sonia-mcrorey-about-760.avif";
   const pageMeta = generatedPageMeta(page, "authority");
   const metaDescription = metaDescriptionForPage(pageMeta, page.description);
@@ -5380,7 +5862,7 @@ function renderAuthorityPage(page, pages) {
         <p class="section-label">Conexiones</p>
         <h2>${headlineHtml("Servicios, hubs y mercados conectados.")}</h2>
       </div>
-      ${internalAuthorityLinks(page, pages)}
+      ${internalAuthorityLinks(page, pages, clusters)}
     </section>
   </main>
   ${footer()}
@@ -5467,9 +5949,11 @@ Agendar diagnóstico privado: ${absoluteUrl(CONTACT_ROUTE)}
 
 function homeExtras(pages, clusters) {
   const clusterMap = articleClusterByRoute(clusters);
+  const page = { route: "/", title: "Coach de Imagen", heroTitle: "Coach de Imagen", description: "Coaching de imagen, presencia profesional y liderazgo visible para México, LATAM y mercados hispanohablantes.", type: "home" };
   return `${proofStrip(pages)}
   ${sourceTeachingPanel({ route: "/" })}
   ${servicePathSection(pages)}
+  ${internalLinkAtlas(page, pages, clusters)}
   <section class="section journal">
     <div class="section-heading">
       <p class="section-label">Publicaciones</p>
@@ -5510,6 +5994,7 @@ function indexExtras(pages, clusters) {
       <div class="publication-grid compact-publications">${articleCards(shown, { clusterMap: articleClusterByRoute(clusters) })}</div>
     </section>`;
   }).join("")}
+  ${internalLinkAtlas({ route: "/imagen-presencia", title: "Publicaciones de imagen y presencia", heroTitle: "Publicaciones de imagen y presencia", description: "Archivo editorial de Sonia McRorey sobre imagen profesional, presencia, liderazgo y posicionamiento.", type: "article-index" }, pages, clusters)}
   ${ctaBridge({ route: "/imagen-presencia" }, "Agendar diagnóstico")}`;
 }
 
@@ -5551,7 +6036,8 @@ function articleExtras(page, pages, clusters) {
       <a class="btn primary" href="${cluster.primaryService}">${escapeHtml(serviceLabel(cluster.primaryService, pages))}</a>
     </div>
     <div class="publication-grid">${articleCards(related, { clusterMap })}</div>
-  </section>`;
+  </section>
+  ${internalLinkAtlas(page, pages, clusters)}`;
 }
 
 function faqJsonLd(items) {
@@ -6338,6 +6824,7 @@ function siteProfileAgent(pages) {
       geoMarkets: `${SITE_URL}/agent/geo-markets.json`,
       intentPages: `${SITE_URL}/agent/intent-pages.json`,
       authorityPages: `${SITE_URL}/agent/authority-pages.json`,
+      internalLinkMesh: `${SITE_URL}/agent/internal-link-keyword-mesh.json`,
       wordpressIngestion: `${SITE_URL}/agent/wordpress-ingestion.json`,
       searchIntentTerms: `${SITE_URL}/agent/search-intent-terms.json`,
       redirects: `${SITE_URL}/agent/redirects.json`,
@@ -6347,6 +6834,31 @@ function siteProfileAgent(pages) {
       entities: `${SITE_URL}/entities.json`,
       semanticIndex: `${SITE_URL}/semantic-index.json`,
     },
+  };
+}
+
+function internalLinkMeshAgent(pages, clusters) {
+  const records = Array.from(generatedRouteRecordMap(pages).values())
+    .filter((record) => record.route && record.route !== "/404")
+    .sort((a, b) => a.route.localeCompare(b.route));
+  return {
+    schemaVersion: "2026-05-26",
+    siteUrl: SITE_URL,
+    purpose: "Contextual in-page keyword phrase interlinking mesh for Coach De Imagen authority, GEO, service, publication and comparison pages.",
+    rule: "Each crawlable page should expose 5-8 visible Spanish anchor keyword phrases to relevant service, hub, GEO, intent, comparison, publication or methodology routes.",
+    pages: records.map((record) => ({
+      route: record.route,
+      url: routeUrl(record.route),
+      pageType: record.bucket || routeBucket(record.route),
+      title: record.heroTitle || record.title,
+      links: keywordMeshForPage(record, pages, clusters, 8).map((link) => ({
+        anchor: link.anchor,
+        targetRoute: link.route,
+        targetUrl: routeUrl(link.route),
+        targetType: link.bucket,
+        context: link.context,
+      })),
+    })),
   };
 }
 
@@ -7049,6 +7561,7 @@ async function writeAgentFiles(pages, clusters) {
   await writeJson("agent/geo-markets.json", geoMarketsAgent());
   await writeJson("agent/intent-pages.json", intentPagesAgent());
   await writeJson("agent/authority-pages.json", authorityPagesAgent());
+  await writeJson("agent/internal-link-keyword-mesh.json", internalLinkMeshAgent(pages, clusters));
   await writeJson("agent/wordpress-ingestion.json", wordpressIngestionAgent());
   await writeJson("agent/search-intent-terms.json", searchIntentTermsAgent());
   await writeJson("agent/page-signals.json", pageSignals(pages, clusters));
@@ -7087,7 +7600,7 @@ async function main() {
   for (const page of COMPARISON_PAGES) {
     const out = routeOutputPath(page.route);
     await mkdir(path.dirname(out), { recursive: true });
-    await writeFile(out, renderComparisonPage(page));
+    await writeFile(out, renderComparisonPage(page, pages, clusters));
     const markdownOut = markdownOutputPath(page.route);
     await mkdir(path.dirname(markdownOut), { recursive: true });
     await writeFile(markdownOut, comparisonMarkdown(page));
@@ -7095,7 +7608,7 @@ async function main() {
   for (const page of GEO_MARKETS) {
     const out = routeOutputPath(page.route);
     await mkdir(path.dirname(out), { recursive: true });
-    await writeFile(out, renderGeoPage(page, pages));
+    await writeFile(out, renderGeoPage(page, pages, clusters));
     const markdownOut = markdownOutputPath(page.route);
     await mkdir(path.dirname(markdownOut), { recursive: true });
     await writeFile(markdownOut, generatedMarkdown(page));
@@ -7103,7 +7616,7 @@ async function main() {
   for (const page of INTENT_PAGES) {
     const out = routeOutputPath(page.route);
     await mkdir(path.dirname(out), { recursive: true });
-    await writeFile(out, renderIntentPage(page, pages));
+    await writeFile(out, renderIntentPage(page, pages, clusters));
     const markdownOut = markdownOutputPath(page.route);
     await mkdir(path.dirname(markdownOut), { recursive: true });
     await writeFile(markdownOut, generatedMarkdown(page));
@@ -7111,7 +7624,7 @@ async function main() {
   for (const page of AUTHORITY_PAGES) {
     const out = routeOutputPath(page.route);
     await mkdir(path.dirname(out), { recursive: true });
-    await writeFile(out, renderAuthorityPage(page, pages));
+    await writeFile(out, renderAuthorityPage(page, pages, clusters));
     const markdownOut = markdownOutputPath(page.route);
     await mkdir(path.dirname(markdownOut), { recursive: true });
     await writeFile(markdownOut, generatedMarkdown(page));
