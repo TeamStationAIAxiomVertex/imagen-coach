@@ -300,6 +300,11 @@ for (const file of htmlFiles) {
     "intención de búsqueda",
     "Coaching de Imagen, Seguridad Interna y Posicionamiento Profesional",
     "Mentalidad, abundancia y poder personal",
+    "¿Es coaching de abundancia?",
+    "El nombre histórico queda en la URL",
+    "Coaching de Abundancia",
+    "Coach De Imagen y Abundancia",
+    "Coach de Imagen y Abundancia",
   ]) {
     if (html.includes(visibleLeak)) failures.push(`Public semantic hierarchy leak in ${file}: ${visibleLeak}`);
   }

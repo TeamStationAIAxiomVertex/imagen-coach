@@ -228,7 +228,7 @@ Visual modules:
 - FAQ accordion
 - related articles from empresas-marcas-equipos
 
-### Coaching de Abundancia `/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia`
+### Seguridad y Posicionamiento `/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia`
 
 Primary intent:
 supporting pillar for mentalidad, poder personal and decision blocks.

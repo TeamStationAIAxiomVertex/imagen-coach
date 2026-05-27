@@ -81,7 +81,7 @@ Primary source clusters:
 
 - `Sonia_McRorey_Servicios_v7.docx`: current service architecture and buyer segmentation
 - `Semblanza corregida.pdf`: biography, credentials, E-E-A-T and Person schema
-- `Definición Coaching de imagen y coaching de abundancia.pdf`: category definitions and service differentiation
+- `Definición Coaching de imagen.pdf`: category definitions, internal capacity and service differentiation
 - `La capacidad de sostener.pdf`: seguridad profesional, sustainable growth and visibility
 - `Creencias_SoniaMcrorey.docx`: beliefs, visibility, pricing confidence and professional insecurity
 - `3 Cambios de Mentalidad de Asesor a Coach de Imagen.docx`: advisor-to-coach category shift
@@ -481,7 +481,7 @@ Mayor coherencia
 Mayor seguridad profesional
 ```
 
-## Coaching De Abundancia Page Rebuild
+## Seguridad Interna Route Rebuild
 
 Do not remove:
 
@@ -495,13 +495,7 @@ Instead:
 - compress language
 - strengthen executive framing
 
-Replace old page title:
-
-```text
-Coaching de Abundancia
-```
-
-with one of:
+Replace the legacy page title with one of:
 
 ```text
 Coaching de Presencia, Seguridad y Poder Personal

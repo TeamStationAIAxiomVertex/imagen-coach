@@ -3347,7 +3347,7 @@ function nav(currentRoute) {
 function header(currentRoute) {
   return `<header class="site-header" data-header>
     <a class="brand" href="/" aria-label="Sonia McRorey ${BRAND_NAME}">
-      ${imageTag("/assets/sonia-logo-ai.png", "Sonia McRorey - Coach De Imagen y Abundancia")}
+      ${imageTag("/assets/sonia-logo-ai.png", "Sonia McRorey - Coach De Imagen")}
     </a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Abrir navegación"><span></span><span></span></button>
     <nav class="site-nav" aria-label="Navegación principal">${nav(currentRoute)}</nav>
@@ -3488,7 +3488,7 @@ function footer() {
     <section class="section footer-intelligence" aria-label="Pie de sitio Coach De Imagen">
       <div class="footer-identity">
         <a class="footer-mark" href="/" aria-label="Inicio ${BRAND_NAME}">
-          ${lazyImageTag("/assets/sonia-logo-ai.png", "Sonia McRorey - Coach De Imagen y Abundancia")}
+          ${lazyImageTag("/assets/sonia-logo-ai.png", "Sonia McRorey - Coach De Imagen")}
         </a>
         <p class="section-label">${BRAND_NAME}</p>
         <h2>Coach de Imagen en Guadalajara y LATAM.</h2>
