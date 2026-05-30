@@ -657,7 +657,7 @@ const COMPARISON_PAGES = [
     description: "Una reflexión sobre la diferencia entre verse bien y sostener una presencia profesional coherente, clara y estratégica.",
     kind: "category",
     focus: "Imagen basada solo en apariencia",
-    heroImage: "/assets/sonia-mcrorey-green-blazer-full-body.avif",
+    heroImage: "/assets/sonia-mcrorey-green-blazer-full-body.jpg",
     heroAlt: "Sonia McRorey proyectando presencia profesional, imagen estratégica y autoridad visible.",
     angle: "La imagen deja de ser superficial cuando se convierte en una herramienta de liderazgo, percepción y posicionamiento profesional.",
     intro: [
