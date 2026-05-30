@@ -975,6 +975,8 @@ const HISPANIC_US_MARKETS = [
   ["San Diego Hispanos", "/san-diego-hispanos", "Estados Unidos", "mercado fronterizo, negocios binacionales y profesionales latinas", "coach de imagen latina, imagen profesional bilingüe, presencia ejecutiva hispana"],
   ["New York Hispanos", "/new-york-hispanos", "Estados Unidos", "profesionistas hispanas, liderazgo corporativo y marca personal multicultural", "presencia ejecutiva para hispanas, imagen profesional para mujeres latinas, liderazgo visible"],
 ];
+const GEO_DEFAULT_HERO_IMAGE = "/assets/generated/comparison-evolucion-coaching-imagen-latam.jpg";
+const HISPANIC_US_HERO_IMAGE = "/assets/sonia-mcrorey-latina-leadership-portrait.jpg";
 function cityGeoPage([name, route, country, context, serviceAngle, relatedMarkets]) {
   const countryRoute = GEO_COUNTRY_MARKETS.find((market) => market.country === country)?.route;
   const countrySiblings = GEO_CITY_MARKETS
@@ -1017,6 +1019,8 @@ function hispanicGeoPage([name, route, country, context, queryFocus]) {
     tension: `Las búsquedas de ${queryFocus} suelen esconder una necesidad más profunda: comunicar valor, presencia y confianza sin sentir que la identidad latina se diluye.`,
     localSignal: "Sonia trabaja en línea para mercados hispanohablantes de Estados Unidos y puede viajar para conferencias, equipos o experiencias corporativas seleccionadas.",
     relatedMarkets: ["/mexico", "/guadalajara", "/presencia-ejecutiva", "/empresarias", "/contacto"],
+    heroImage: HISPANIC_US_HERO_IMAGE,
+    heroAlt: `Sonia McRorey como coach de imagen para mujeres latinas, empresarias hispanas y liderazgo profesional en ${name}.`,
   };
 }
 const GEO_MARKETS = [
@@ -5571,7 +5575,8 @@ function geoServiceCards(page) {
 }
 
 function renderGeoPage(page, pages, clusters = []) {
-  const heroImage = "/assets/generated/comparison-evolucion-coaching-imagen-latam.jpg";
+  const heroImage = page.heroImage || GEO_DEFAULT_HERO_IMAGE;
+  const heroAlt = page.heroAlt || `Coach de imagen para presencia ejecutiva e imagen profesional en ${page.name}`;
   const pageMeta = generatedPageMeta(page, "geo");
   const metaDescription = metaDescriptionForPage(pageMeta, page.description);
   const faqs = geoFaqs(page);
@@ -5604,7 +5609,7 @@ function renderGeoPage(page, pages, clusters = []) {
         </div>
       </div>
       <figure class="hero-media">
-        ${heroImageTag(heroImage, `Coach de imagen para presencia ejecutiva e imagen profesional en ${page.name}`)}
+        ${heroImageTag(heroImage, heroAlt)}
         <figcaption>${iconImageTag("/assets/sonia-icon.svg")} Sonia McRorey · ${BRAND_NAME}</figcaption>
       </figure>
     </section>
