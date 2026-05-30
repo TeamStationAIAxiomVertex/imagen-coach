@@ -976,7 +976,7 @@ const HISPANIC_US_MARKETS = [
   ["New York Hispanos", "/new-york-hispanos", "Estados Unidos", "profesionistas hispanas, liderazgo corporativo y marca personal multicultural", "presencia ejecutiva para hispanas, imagen profesional para mujeres latinas, liderazgo visible"],
 ];
 const GEO_DEFAULT_HERO_IMAGE = "/assets/generated/comparison-evolucion-coaching-imagen-latam.jpg";
-const HISPANIC_US_HERO_IMAGE = "/assets/sonia-mcrorey-latina-leadership-portrait.jpg";
+const HISPANIC_US_HERO_IMAGE = "/assets/sonia-mcrorey-latina-leadership-color.jpg";
 function cityGeoPage([name, route, country, context, serviceAngle, relatedMarkets]) {
   const countryRoute = GEO_COUNTRY_MARKETS.find((market) => market.country === country)?.route;
   const countrySiblings = GEO_CITY_MARKETS
