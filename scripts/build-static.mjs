@@ -32,6 +32,19 @@ const CONTACT_SERVICE_OPTIONS = [
   "Coaching de Mentalidad",
 ];
 const CONTACT_COUNTRIES = ["México", "Estados Unidos", "Colombia", "Chile", "Perú", "Argentina", "España", "Otro país"];
+const IMAGE_ASSETS = {
+  soniaBWSecurity: "/assets/sonia-mcrorey-full-body-bw.avif",
+  soniaGreenFullBody: "/assets/sonia-mcrorey-green-blazer-full-body.jpg",
+  soniaGreenFullBodyAvif: "/assets/sonia-mcrorey-green-blazer-full-body.avif",
+  soniaPresencePortrait: "/assets/sonia-mcrorey-latina-leadership-portrait.jpg",
+  soniaLatinaLeadership: "/assets/sonia-mcrorey-latina-leadership-color.jpg",
+  soniaAbout: "/assets/sonia-mcrorey-about-760.avif",
+  workshopPanorama: "/assets/generated/comparison-panorama-imagen-profesional.jpg",
+  latamEvolution: "/assets/generated/comparison-evolucion-coaching-imagen-latam.jpg",
+  colorConsulting: "/assets/generated/comparison-coaching-imagen-consultoria-tradicional.jpg",
+  corporatePresence: "/assets/generated/comparison-imagen-corporativa-presencia-humana.jpg",
+  mirrorStyle: "/assets/latina-profesional-espejo-coach-de-imagen.png",
+};
 const DEFAULT_IMAGE_DIMENSIONS = { width: 1200, height: 1500 };
 let IMAGE_DIMENSIONS = new Map();
 let OPTIMIZED_IMAGE_SOURCES = new Map();
@@ -231,28 +244,36 @@ const PAGE_OVERRIDES = {
   },
 };
 const ROUTE_IMAGE_OVERRIDES = {
-  "/": "/assets/797aeda1281e5d5e.png",
-  "/servicios-asesoria-de-imagen-coaching": "/assets/a03a3c39b341463a.jpg",
-  "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen": "/assets/09987756d47df368.webp",
-  "/servicios-asesoria-de-imagen-coaching/talleres": "/assets/797aeda1281e5d5e.png",
-  "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia": "/assets/sonia-mcrorey-full-body-bw.avif",
-  "/sobre-sonia-mcrorey-asesora-de-imagen": "/assets/sonia-mcrorey-green-blazer-full-body.avif",
-  "/imagen-profesional": "/assets/00510af3bb9f4e03.jpg",
-  "/presencia-ejecutiva": "/assets/797aeda1281e5d5e.png",
-  "/liderazgo": "/assets/205ebbd87f0d84e6.jpg",
-  "/comunicacion-no-verbal": "/assets/205ebbd87f0d84e6.jpg",
-  "/mentalidad": "/assets/sonia-mcrorey-about-760.avif",
-  "/empresarias": "/assets/197a202b3e5022be.jpg",
-  "/imagen-estrategica": "/assets/57f2c54cee517d06.jpg",
-  "/imagen-presencia": "/assets/797aeda1281e5d5e.png",
-  "/imagen-presencia/beneficios-de-asesoria-de-imagen": "/assets/5ac09d77d814f447.jpg",
-  "/imagen-presencia/la-importancia-de-tu-imagen-personal": "/assets/latina-profesional-espejo-coach-de-imagen.png",
-  "/imagen-presencia/rebranding-imagen-mentalidad-abundancia": "/assets/sonia-mcrorey-about-760.avif",
-  "/imagen-presencia/tu-color-tu-poder-el-impacto-de-la-colorimetria": "/assets/7e91c2f7d6fb729a.jpg",
-  "/imagen-presencia/la-ciencia-del-color-en-tu-imagen": "/assets/7e91c2f7d6fb729a.jpg",
-  "/imagen-presencia/aprende-a-resaltar-tus-proporciones": "/assets/c1061137aa6130ed.jpg",
-  "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen": "/assets/7ace6f0d3687c214.jpg",
-  "/servicios-asesoria-de-imagen-coaching/preguntas-frequentes": "/assets/619a89970f5d1790.jpg",
+  "/": IMAGE_ASSETS.workshopPanorama,
+  "/servicios-asesoria-de-imagen-coaching": IMAGE_ASSETS.latamEvolution,
+  "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen": IMAGE_ASSETS.colorConsulting,
+  "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen": IMAGE_ASSETS.soniaPresencePortrait,
+  "/servicios-asesoria-de-imagen-coaching/talleres": IMAGE_ASSETS.workshopPanorama,
+  "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia": IMAGE_ASSETS.soniaBWSecurity,
+  "/servicios-asesoria-de-imagen-coaching/preguntas-frequentes": IMAGE_ASSETS.soniaPresencePortrait,
+  "/sobre-sonia-mcrorey-asesora-de-imagen": IMAGE_ASSETS.soniaGreenFullBodyAvif,
+  "/imagen-profesional": IMAGE_ASSETS.colorConsulting,
+  "/presencia-ejecutiva": IMAGE_ASSETS.soniaPresencePortrait,
+  "/liderazgo": IMAGE_ASSETS.soniaLatinaLeadership,
+  "/comunicacion-no-verbal": IMAGE_ASSETS.soniaPresencePortrait,
+  "/mentalidad": IMAGE_ASSETS.soniaAbout,
+  "/empresarias": IMAGE_ASSETS.soniaLatinaLeadership,
+  "/imagen-estrategica": IMAGE_ASSETS.soniaGreenFullBody,
+  "/imagen-presencia": IMAGE_ASSETS.workshopPanorama,
+  "/imagen-presencia/beneficios-de-asesoria-de-imagen": IMAGE_ASSETS.colorConsulting,
+  "/imagen-presencia/la-importancia-de-tu-imagen-personal": IMAGE_ASSETS.mirrorStyle,
+  "/imagen-presencia/presencia-profesional-estrategica": IMAGE_ASSETS.soniaPresencePortrait,
+  "/imagen-presencia/imagen-profesional-segun-industria-y-personalidad": IMAGE_ASSETS.colorConsulting,
+  "/imagen-presencia/rebranding-imagen-mentalidad-abundancia": IMAGE_ASSETS.soniaGreenFullBody,
+  "/imagen-presencia/tu-color-tu-poder-el-impacto-de-la-colorimetria": IMAGE_ASSETS.colorConsulting,
+  "/imagen-presencia/la-ciencia-del-color-en-tu-imagen": IMAGE_ASSETS.colorConsulting,
+  "/imagen-presencia/aprende-a-resaltar-tus-proporciones": IMAGE_ASSETS.mirrorStyle,
+  "/comparaciones/imagen-superficial-vs-presencia-profesional": IMAGE_ASSETS.soniaPresencePortrait,
+  "/comparaciones/coaching-motivacional-vs-posicionamiento-profesional": IMAGE_ASSETS.soniaLatinaLeadership,
+  "/comparaciones/evolucion-coaching-imagen-mexico-latam": IMAGE_ASSETS.latamEvolution,
+  "/comparaciones/coaching-de-imagen-vs-consultoria-tradicional": IMAGE_ASSETS.colorConsulting,
+  "/comparaciones/styling-vs-coaching-de-imagen": IMAGE_ASSETS.mirrorStyle,
+  "/comparaciones/imagen-corporativa-vs-presencia-humana": IMAGE_ASSETS.corporatePresence,
 };
 const HERO_REJECTED_IMAGE_STEMS = new Set([
   "a1659cc99df8e64c", // generic stock headshot, not Sonia's positioning.
@@ -555,7 +576,7 @@ const SEMANTIC_HUBS = [
     title: "Imagen Profesional",
     description: "Recursos, servicios y publicaciones sobre imagen profesional, imagen ejecutiva, autoridad visual y posicionamiento profesional para líderes, empresarias y profesionales en México y LATAM.",
     cluster: "Imagen Profesional",
-    image: "/assets/00510af3bb9f4e03.jpg",
+    image: IMAGE_ASSETS.colorConsulting,
     terms: ["imagen profesional", "imagen ejecutiva", "imagen estratégica", "autoridad visual", "posicionamiento profesional"],
     services: ["/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen", "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen"],
   },
@@ -564,7 +585,7 @@ const SEMANTIC_HUBS = [
     title: "Presencia Ejecutiva",
     description: "Guía editorial para desarrollar presencia ejecutiva, liderazgo visible, confianza profesional y autoridad desde una imagen coherente y estratégica.",
     cluster: "Imagen Profesional",
-    image: "/assets/797aeda1281e5d5e.png",
+    image: IMAGE_ASSETS.soniaPresencePortrait,
     terms: ["presencia ejecutiva", "presencia profesional", "liderazgo visible", "autoridad profesional", "confianza ejecutiva"],
     services: ["/servicios-asesoria-de-imagen-coaching/coaching-de-imagen", "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen"],
   },
@@ -573,7 +594,7 @@ const SEMANTIC_HUBS = [
     title: "Liderazgo",
     description: "Contenido para fortalecer liderazgo femenino, comunicación profesional, toma de decisiones, expansión profesional y crecimiento empresarial con presencia visible.",
     cluster: "Liderazgo Empresarial",
-    image: "/assets/205ebbd87f0d84e6.jpg",
+    image: IMAGE_ASSETS.soniaLatinaLeadership,
     terms: ["liderazgo femenino", "liderazgo visible", "toma de decisiones", "expansión profesional", "crecimiento empresarial"],
     services: ["/servicios-asesoria-de-imagen-coaching/coaching-de-imagen", "/servicios-asesoria-de-imagen-coaching/talleres"],
   },
@@ -582,7 +603,7 @@ const SEMANTIC_HUBS = [
     title: "Comunicación No Verbal",
     description: "Recursos sobre comunicación no verbal, lenguaje corporal ejecutivo, presencia al hablar y autoridad al comunicar para contextos profesionales.",
     cluster: "Comunicación",
-    image: "/assets/205ebbd87f0d84e6.jpg",
+    image: IMAGE_ASSETS.soniaPresencePortrait,
     terms: ["comunicación no verbal", "lenguaje corporal ejecutivo", "presencia al hablar", "autoridad al comunicar"],
     services: ["/servicios-asesoria-de-imagen-coaching/talleres", "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen"],
   },
@@ -591,7 +612,7 @@ const SEMANTIC_HUBS = [
     title: "Mentalidad y Presencia",
     description: "Lecturas y procesos sobre identidad profesional, seguridad interna, sistema nervioso, confianza ejecutiva y presencia sostenible.",
     cluster: "Mentalidad y Presencia",
-    image: "/assets/sonia-mcrorey-about-760.avif",
+    image: IMAGE_ASSETS.soniaAbout,
     terms: ["mentalidad", "identidad profesional", "seguridad interna", "sistema nervioso", "confianza ejecutiva"],
     services: ["/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia", "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen"],
   },
@@ -600,7 +621,7 @@ const SEMANTIC_HUBS = [
     title: "Mujeres Empresarias",
     description: "Contenido para mujeres empresarias, fundadoras, directoras y profesionales que quieren sostener autoridad, imagen estratégica y liderazgo visible.",
     cluster: "Liderazgo Empresarial",
-    image: "/assets/197a202b3e5022be.jpg",
+    image: IMAGE_ASSETS.soniaLatinaLeadership,
     terms: ["mujeres empresarias", "fundadoras", "directoras", "autoridad profesional", "liderazgo empresarial"],
     services: ["/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen", "/servicios-asesoria-de-imagen-coaching/talleres"],
   },
@@ -609,7 +630,7 @@ const SEMANTIC_HUBS = [
     title: "Imagen Estratégica",
     description: "Centro de recursos para entender la imagen estratégica como una herramienta de percepción, presencia, liderazgo y posicionamiento profesional.",
     cluster: "Imagen Profesional",
-    image: "/assets/57f2c54cee517d06.jpg",
+    image: IMAGE_ASSETS.soniaGreenFullBody,
     terms: ["imagen estratégica", "percepción profesional", "presencia ejecutiva", "posicionamiento profesional", "autoridad visual"],
     services: ["/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen", "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen"],
   },
@@ -621,7 +642,7 @@ const COMPARISON_PAGES = [
     description: "Una mirada clara y elegante sobre cómo la imagen profesional está evolucionando desde Guadalajara hacia México y LATAM con presencia, liderazgo, seguridad interna y posicionamiento profesional.",
     kind: "hub",
     focus: "Panorama de enfoques",
-    heroImage: "/assets/generated/comparison-panorama-imagen-profesional.jpg",
+    heroImage: IMAGE_ASSETS.workshopPanorama,
     heroAlt: "Sesión editorial de coaching de imagen profesional para líderes hispanohablantes en un entorno empresarial latino.",
     angle: "Durante muchos años, la consultoría de imagen en México y Latinoamérica se enfocó principalmente en apariencia, protocolo y proyección externa. Ese trabajo abrió camino y profesionalizó la industria.",
     indicators: [
@@ -637,7 +658,7 @@ const COMPARISON_PAGES = [
     description: "Cómo la imagen profesional puede pasar de proyección externa a un proceso más profundo de presencia, liderazgo y posicionamiento personal.",
     kind: "category",
     focus: "Consultoría tradicional de imagen",
-    heroImage: "/assets/generated/comparison-coaching-imagen-consultoria-tradicional.jpg",
+    heroImage: IMAGE_ASSETS.colorConsulting,
     heroAlt: "Asesoría de imagen profesional con Sonia McRorey trabajando identidad visual y presencia ejecutiva.",
     angle: "Tradicionalmente, la consultoría de imagen ha ayudado a ordenar apariencia, estilo, color, guardarropa y protocolo. Hoy muchas personas necesitan que esa proyección también dialogue con su liderazgo, sus decisiones y la forma en que se posicionan profesionalmente.",
     intro: [
@@ -657,7 +678,7 @@ const COMPARISON_PAGES = [
     description: "Una reflexión sobre la diferencia entre verse bien y sostener una presencia profesional coherente, clara y estratégica.",
     kind: "category",
     focus: "Imagen basada solo en apariencia",
-    heroImage: "/assets/sonia-mcrorey-green-blazer-full-body.jpg",
+    heroImage: IMAGE_ASSETS.soniaPresencePortrait,
     heroAlt: "Sonia McRorey proyectando presencia profesional, imagen estratégica y autoridad visible.",
     angle: "La imagen deja de ser superficial cuando se convierte en una herramienta de liderazgo, percepción y posicionamiento profesional.",
     intro: [
@@ -677,7 +698,7 @@ const COMPARISON_PAGES = [
     description: "Cómo la claridad interna puede traducirse en presencia, decisiones y una forma más sólida de ocupar espacios profesionales.",
     kind: "category",
     focus: "Coaching motivacional",
-    heroImage: "/assets/generated/comparison-motivacion-posicionamiento-profesional.jpg",
+    heroImage: IMAGE_ASSETS.soniaLatinaLeadership,
     heroAlt: "Conversación de liderazgo y posicionamiento profesional en escenario universitario latinoamericano.",
     angle: "En muchos enfoques, la motivación ayuda a recuperar impulso. En un proceso de imagen y presencia profesional, ese impulso necesita convertirse en claridad, criterio, decisiones y posicionamiento sostenido.",
     intro: [
@@ -697,7 +718,7 @@ const COMPARISON_PAGES = [
     description: "Cómo el estilo puede convertirse en una expresión más amplia de identidad, presencia, percepción y liderazgo profesional.",
     kind: "category",
     focus: "Styling tradicional",
-    heroImage: "/assets/generated/comparison-styling-coaching-imagen.jpg",
+    heroImage: IMAGE_ASSETS.mirrorStyle,
     heroAlt: "Profesional latina frente a espejo de imagen personal, estilo e identidad visual.",
     angle: "Históricamente, el styling ha resuelto necesidades visibles: prendas, combinaciones, proporciones y ocasión. El coaching de imagen amplía esa conversación hacia identidad, coherencia, presencia y responsabilidad profesional.",
     intro: [
@@ -717,7 +738,7 @@ const COMPARISON_PAGES = [
     description: "Una mirada sobre cómo la imagen empresarial puede sostener profesionalismo sin perder humanidad, criterio y presencia real.",
     kind: "category",
     focus: "Imagen corporativa",
-    heroImage: "/assets/generated/comparison-imagen-corporativa-presencia-humana.jpg",
+    heroImage: IMAGE_ASSETS.corporatePresence,
     heroAlt: "Grupo de profesionistas latinoamericanos en sesión de imagen corporativa, presencia humana y comunicación profesional.",
     angle: "En muchas organizaciones, la imagen corporativa se ha trabajado desde lineamientos, códigos y protocolos. Cuando se integra presencia humana, comunicación y liderazgo, la imagen se vuelve más clara, confiable y sostenible.",
     intro: [
@@ -737,7 +758,7 @@ const COMPARISON_PAGES = [
     description: "Una nueva generación de coaching de imagen con base en Guadalajara que integra presencia profesional, liderazgo interno y posicionamiento personal para México y LATAM.",
     kind: "entity",
     focus: "Evolución de la industria",
-    heroImage: "/assets/generated/comparison-evolucion-coaching-imagen-latam.jpg",
+    heroImage: IMAGE_ASSETS.latamEvolution,
     heroAlt: "Sonia McRorey guiando una sesión de coaching de imagen para líderes y profesionistas en México y LATAM.",
     angle: "Durante muchos años, la consultoría de imagen en México y Latinoamérica se enfocó principalmente en apariencia, protocolo y proyección externa. Ese trabajo abrió camino y profesionalizó la industria.",
     intro: [
@@ -975,8 +996,8 @@ const HISPANIC_US_MARKETS = [
   ["San Diego Hispanos", "/san-diego-hispanos", "Estados Unidos", "mercado fronterizo, negocios binacionales y profesionales latinas", "coach de imagen latina, imagen profesional bilingüe, presencia ejecutiva hispana"],
   ["New York Hispanos", "/new-york-hispanos", "Estados Unidos", "profesionistas hispanas, liderazgo corporativo y marca personal multicultural", "presencia ejecutiva para hispanas, imagen profesional para mujeres latinas, liderazgo visible"],
 ];
-const GEO_DEFAULT_HERO_IMAGE = "/assets/generated/comparison-evolucion-coaching-imagen-latam.jpg";
-const HISPANIC_US_HERO_IMAGE = "/assets/sonia-mcrorey-latina-leadership-color.jpg";
+const GEO_DEFAULT_HERO_IMAGE = IMAGE_ASSETS.latamEvolution;
+const HISPANIC_US_HERO_IMAGE = IMAGE_ASSETS.soniaLatinaLeadership;
 function cityGeoPage([name, route, country, context, serviceAngle, relatedMarkets]) {
   const countryRoute = GEO_COUNTRY_MARKETS.find((market) => market.country === country)?.route;
   const countrySiblings = GEO_CITY_MARKETS

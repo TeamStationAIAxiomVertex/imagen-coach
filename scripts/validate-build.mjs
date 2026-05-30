@@ -132,6 +132,13 @@ const rejectedHeroImageStems = [
   "sonia-twitter-card",
 ];
 const allowedWideHeroStems = new Set(comparisonHeroAssets.map((asset) => path.basename(asset, path.extname(asset))));
+const soniaAuthorityImageStems = [
+  "sonia-mcrorey-about-760",
+  "sonia-mcrorey-full-body-bw",
+  "sonia-mcrorey-green-blazer-full-body",
+  "sonia-mcrorey-latina-leadership-color",
+  "sonia-mcrorey-latina-leadership-portrait",
+];
 function imageStem(src) {
   return path.basename(src.split("?")[0] || "", path.extname(src.split("?")[0] || ""));
 }
@@ -413,7 +420,7 @@ for (const file of htmlFiles) {
   if (pillarRoutes.has(routeForDensity)) {
     if (!/class="[^"]*\brebrand-framework\b/.test(html)) failures.push(`Pillar page missing rebrand framework: ${file}`);
     if (!/class="[^"]*\bcredential-timeline\b/.test(html)) failures.push(`Pillar page missing credential timeline: ${file}`);
-    if (!html.includes("/assets/sonia-mcrorey-about-760.avif")) failures.push(`Pillar page missing Sonia authority image: ${file}`);
+    if (!soniaAuthorityImageStems.some((stem) => html.includes(stem))) failures.push(`Pillar page missing Sonia authority image: ${file}`);
     if (jsonLdTypes.includes("Article")) failures.push(`Pillar page should not render Article JSON-LD: ${file}`);
   }
   if (articleSet.has(routeForDensity)) {
