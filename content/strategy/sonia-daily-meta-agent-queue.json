@@ -94,7 +94,8 @@
     {
       "id": "media-relevance-cleanup",
       "priority": 4,
-      "status": "ready",
+      "status": "completed",
+      "completedAt": "2026-06-11",
       "title": "Replace off-brand or broken legacy media with Sonia-approved imagery",
       "objective": "Ensure hero and supporting imagery match the page category and buyer context instead of using old blog-header graphics.",
       "targetRoutes": [
@@ -121,7 +122,7 @@
     {
       "id": "definition-methodology-cluster",
       "priority": 5,
-      "status": "ready",
+      "status": "next",
       "title": "Add Sonia-native definition and methodology authority pages",
       "objective": "Strengthen citable definitions and methodology for AI retrieval using Sonia's real doctrine and category language.",
       "targetRoutes": [

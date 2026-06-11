@@ -262,18 +262,21 @@ const ROUTE_IMAGE_OVERRIDES = {
   "/imagen-presencia": IMAGE_ASSETS.workshopPanorama,
   "/imagen-presencia/beneficios-de-asesoria-de-imagen": IMAGE_ASSETS.colorConsulting,
   "/imagen-presencia/la-importancia-de-tu-imagen-personal": IMAGE_ASSETS.mirrorStyle,
-  "/imagen-presencia/presencia-profesional-estrategica": IMAGE_ASSETS.soniaPresencePortrait,
+  "/imagen-presencia/presencia-profesional-estrategica": IMAGE_ASSETS.soniaLatinaLeadership,
   "/imagen-presencia/imagen-profesional-segun-industria-y-personalidad": IMAGE_ASSETS.colorConsulting,
   "/imagen-presencia/rebranding-imagen-mentalidad-abundancia": IMAGE_ASSETS.soniaGreenFullBody,
   "/imagen-presencia/tu-color-tu-poder-el-impacto-de-la-colorimetria": IMAGE_ASSETS.colorConsulting,
   "/imagen-presencia/la-ciencia-del-color-en-tu-imagen": IMAGE_ASSETS.colorConsulting,
   "/imagen-presencia/aprende-a-resaltar-tus-proporciones": IMAGE_ASSETS.mirrorStyle,
-  "/comparaciones/imagen-superficial-vs-presencia-profesional": IMAGE_ASSETS.soniaPresencePortrait,
+  "/comparaciones/imagen-superficial-vs-presencia-profesional": IMAGE_ASSETS.soniaGreenFullBody,
   "/comparaciones/coaching-motivacional-vs-posicionamiento-profesional": IMAGE_ASSETS.soniaLatinaLeadership,
   "/comparaciones/evolucion-coaching-imagen-mexico-latam": IMAGE_ASSETS.latamEvolution,
   "/comparaciones/coaching-de-imagen-vs-consultoria-tradicional": IMAGE_ASSETS.colorConsulting,
   "/comparaciones/styling-vs-coaching-de-imagen": IMAGE_ASSETS.mirrorStyle,
   "/comparaciones/imagen-corporativa-vs-presencia-humana": IMAGE_ASSETS.corporatePresence,
+};
+const ROUTE_HERO_ALT_OVERRIDES = {
+  "/imagen-presencia/presencia-profesional-estrategica": "Sonia McRorey en un retrato editorial sobre presencia profesional estratégica, coherencia y autoridad visible.",
 };
 const HERO_REJECTED_IMAGE_STEMS = new Set([
   "a1659cc99df8e64c", // generic stock headshot, not Sonia's positioning.
@@ -678,8 +681,8 @@ const COMPARISON_PAGES = [
     description: "Una reflexión sobre la diferencia entre verse bien y sostener una presencia profesional coherente, clara y estratégica.",
     kind: "category",
     focus: "Imagen basada solo en apariencia",
-    heroImage: IMAGE_ASSETS.soniaPresencePortrait,
-    heroAlt: "Sonia McRorey proyectando presencia profesional, imagen estratégica y autoridad visible.",
+    heroImage: IMAGE_ASSETS.soniaGreenFullBody,
+    heroAlt: "Sonia McRorey proyectando presencia profesional, imagen estratégica y autoridad visible en un retrato editorial de cuerpo completo.",
     angle: "La imagen deja de ser superficial cuando se convierte en una herramienta de liderazgo, percepción y posicionamiento profesional.",
     intro: [
       "Verse bien puede abrir una primera lectura. Sostener presencia profesional requiere que esa lectura sea coherente con la manera en que decides, comunicas y ocupas espacios.",
@@ -699,7 +702,7 @@ const COMPARISON_PAGES = [
     kind: "category",
     focus: "Coaching motivacional",
     heroImage: IMAGE_ASSETS.soniaLatinaLeadership,
-    heroAlt: "Conversación de liderazgo y posicionamiento profesional en escenario universitario latinoamericano.",
+    heroAlt: "Sonia McRorey en un retrato editorial sobre liderazgo, claridad interna y posicionamiento profesional.",
     angle: "En muchos enfoques, la motivación ayuda a recuperar impulso. En un proceso de imagen y presencia profesional, ese impulso necesita convertirse en claridad, criterio, decisiones y posicionamiento sostenido.",
     intro: [
       "La motivación puede encender una decisión. El posicionamiento profesional necesita estructura para que esa decisión se vea, se comunique y se sostenga en la vida real.",
@@ -4421,6 +4424,7 @@ function deliveryModeStrip(page) {
 
 function hero(page, lines) {
   const image = pickImage(page);
+  const heroAlt = ROUTE_HERO_ALT_OVERRIDES[page.route] || page.heroAlt || page.heroTitle;
   const commercialModel = COMMERCIAL_PAGE_MODELS[page.route];
   const pageContentLines = contentLinesForPage(page, lines);
   const lede = page.route === "/servicios-asesoria-de-imagen-coaching/preguntas-frequentes"
@@ -4442,7 +4446,7 @@ function hero(page, lines) {
       </div>
     </div>
     <figure class="hero-media${image.includes("full-body") ? " portrait-media" : ""}">
-      ${heroImageTag(image, page.heroTitle)}
+      ${heroImageTag(image, heroAlt)}
       <figcaption>${iconImageTag("/assets/sonia-icon.svg")} Sonia McRorey · ${BRAND_NAME}</figcaption>
     </figure>
   </section>`;

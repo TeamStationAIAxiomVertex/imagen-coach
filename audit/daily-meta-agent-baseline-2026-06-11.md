@@ -161,3 +161,26 @@ What stayed intentionally unchanged:
 Next recommended slice:
 
 `media-relevance-cleanup`
+
+## Execution Update 4
+
+Completed fourth slice:
+
+`media-relevance-cleanup`
+
+What changed:
+
+- `presencia-profesional-estrategica` now uses a stronger Sonia leadership portrait instead of the flatter neutral portrait, which better matches the page's authority-and-coherence theme.
+- `imagen-superficial-vs-presencia-profesional` now uses Sonia's green blazer full-body photo, which reads more like presence and executive image than a recycled legacy blog graphic.
+- `coaching-motivacional-vs-posicionamiento-profesional` kept its stronger Sonia portrait, but the hero alt text was corrected so it finally matches the actual image being rendered.
+- `evolucion-coaching-imagen-mexico-latam` stayed on the existing event photo because it already matched the route's category and regional context well.
+
+What stayed intentionally unchanged:
+
+- no page layout changes
+- no new image assets added to the repo
+- no arbitrary media swaps on routes that were already semantically aligned
+
+Next recommended slice:
+
+`definition-methodology-cluster`
