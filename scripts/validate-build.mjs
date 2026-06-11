@@ -98,6 +98,8 @@ const intentRoutes = [
   "/seguridad-profesional-femenina",
 ];
 const authorityRoutes = [
+  "/coach-de-imagen",
+  "/seguridad-profesional",
   "/metodo-sonia-mcrorey",
   "/sistema-presencia-profesional",
   "/framework-liderazgo-visible",
@@ -241,8 +243,10 @@ for (const asset of [
   "dist/assets/sonia-logo-ai.png",
   "dist/assets/sonia-logo-source.png",
   "dist/assets/sonia-mcrorey-about-760.avif",
+  "dist/assets/sonia-mcrorey-full-body-bw.avif",
   "dist/assets/sonia-mcrorey-green-blazer-full-body.avif",
   "dist/assets/sonia-mcrorey-green-blazer-full-body.jpg",
+  "dist/assets/sonia-mcrorey-latina-leadership-portrait.jpg",
 ]) {
   if (!existsSync(asset)) failures.push(`Missing supplied Sonia brand asset: ${asset}`);
 }

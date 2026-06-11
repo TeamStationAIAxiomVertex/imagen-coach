@@ -122,7 +122,8 @@
     {
       "id": "definition-methodology-cluster",
       "priority": 5,
-      "status": "next",
+      "status": "completed",
+      "completedAt": "2026-06-11",
       "title": "Add Sonia-native definition and methodology authority pages",
       "objective": "Strengthen citable definitions and methodology for AI retrieval using Sonia's real doctrine and category language.",
       "targetRoutes": [
@@ -140,6 +141,35 @@
         "Must remain Sonia-specific and evidence-backed",
         "No generic coaching abstractions",
         "No thin pages"
+      ],
+      "validation": [
+        "npm run build",
+        "npm run validate"
+      ]
+    },
+    {
+      "id": "authority-artifact-expansion",
+      "priority": 6,
+      "status": "next",
+      "title": "Expand Sonia agentic retrieval artifacts for the authority cluster",
+      "objective": "Project the new definition and methodology pages into Sonia's llms, agent, glossary and route-manifest surfaces so AI systems can retrieve the authority cluster more clearly.",
+      "targetRoutes": [
+        "/coach-de-imagen/",
+        "/seguridad-profesional/",
+        "/metodo-sonia-mcrorey/",
+        "/glosario/"
+      ],
+      "sources": [
+        "wiki.llm",
+        "agent.md",
+        "docs/LLM_CONTEXT.md",
+        "audit/semantic-topology.md",
+        "content/sonia-knowledge/teaching-route-map.json"
+      ],
+      "constraints": [
+        "No TeamStation terminology or buyer language",
+        "Static-first, crawl-visible outputs only",
+        "No hidden JS-only agent surfaces"
       ],
       "validation": [
         "npm run build",

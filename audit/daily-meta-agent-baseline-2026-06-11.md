@@ -184,3 +184,29 @@ What stayed intentionally unchanged:
 Next recommended slice:
 
 `definition-methodology-cluster`
+
+## Execution Update 5
+
+Completed fifth slice:
+
+`definition-methodology-cluster`
+
+What changed:
+
+- Added two Sonia-native authority pages: `/coach-de-imagen` and `/seguridad-profesional`.
+- Strengthened `/metodo-sonia-mcrorey` with route-specific doctrine cards, clearer FAQ answers and Sonia-grounded teaching instead of flatter generic methodology copy.
+- Bound the new definition pages to Sonia-reviewed teaching modules so `coach de imagen` now carries a visible-signals definition layer and `seguridad profesional` now carries the internal-capacity layer.
+- Fixed the route-map mismatch for `/sistema-presencia-profesional`, so the presence-system page now resolves to its intended Sonia teaching instead of missing the direct route mapping.
+- Fixed breadcrumb behavior on the authority cluster so `/metodo-sonia-mcrorey` no longer renders itself as its own parent.
+- Updated the validator route registry so the build and validation layers now agree on the expanded authority cluster.
+
+What stayed intentionally unchanged:
+
+- no new frontend framework or template system
+- no layout redesign
+- no footer/nav expansion
+- no broad copy rewrite on unrelated pages
+
+Next recommended slice:
+
+`authority-artifact-expansion`

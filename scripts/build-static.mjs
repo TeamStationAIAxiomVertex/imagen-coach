@@ -1156,11 +1156,198 @@ const INTENT_PAGES = [
 ];
 const AUTHORITY_PAGES = [
   {
+    route: "/coach-de-imagen",
+    title: "Coach de Imagen",
+    description: "Definición clara de coach de imagen: un proceso para alinear imagen visible, presencia, comunicación y posicionamiento profesional desde el contexto real de la persona.",
+    focus: "coach de imagen",
+    pillars: ["Imagen visible", "Presencia", "Comunicación", "Identidad", "Posicionamiento"],
+    eyebrow: "Definición de categoría",
+    heroImage: "/assets/sonia-mcrorey-latina-leadership-portrait.jpg",
+    heroAlt: "Sonia McRorey como referente en coaching de imagen, presencia e identidad profesional.",
+    teachingLabel: "Definición de Sonia",
+    frameworkLabel: "Definición",
+    frameworkHeading: "Qué se trabaja realmente cuando hablamos de coaching de imagen.",
+    definitionCards: [
+      {
+        title: "No se reduce a estilo",
+        text: "No se limita a ropa, color o apariencia. Observa qué está comunicando la imagen y por qué esa lectura importa en contexto profesional.",
+        icon: "identidad",
+      },
+      {
+        title: "Lee señales visibles",
+        text: "Ropa, peinado, postura, forma de entrar a un cuarto y energía visible se interpretan como información, no como juicio.",
+        icon: "percepcion",
+      },
+      {
+        title: "Parte del contexto real",
+        text: "Se trabaja desde etapa profesional, audiencia, exposición, industria y objetivo actual, no desde teoría abstracta.",
+        icon: "decision",
+      },
+      {
+        title: "Alinea identidad y presencia",
+        text: "Busca que lo visible acompañe seguridad, comunicación y manera de ocupar espacios con más coherencia.",
+        icon: "presencia",
+      },
+      {
+        title: "Se conecta con posicionamiento",
+        text: "La imagen deja de ser apariencia cuando empieza a sostener autoridad, confianza, valor y lectura profesional.",
+        icon: "liderazgo",
+      },
+    ],
+    copy: [
+      "En el enfoque de Sonia McRorey, un coach de imagen no corrige desde afuera ni impone una estética ajena. Traduce señales visibles en decisiones más conscientes sobre identidad, presencia y autoridad.",
+      "Por eso el proceso puede incluir imagen profesional, lenguaje no verbal, seguridad visible, autoconcepto y posicionamiento. La pregunta no es solo cómo verte mejor, sino qué necesitas comunicar y sostener en tu contexto real.",
+    ],
+    faq: [
+      {
+        question: "¿Qué hace un coach de imagen?",
+        answer: "Acompaña a una persona a alinear imagen visible, presencia, comunicación, seguridad interna y posicionamiento para que lo que proyecta tenga relación con su nivel, su contexto y su liderazgo real.",
+      },
+      {
+        question: "¿En qué se diferencia de una asesoría de imagen tradicional?",
+        answer: "La asesoría tradicional suele ordenar estilo, color o guardarropa. El coaching de imagen además observa presencia, percepción, identidad, comunicación y la forma en que la persona ocupa espacios profesionales.",
+      },
+      {
+        question: "¿Para quién conviene este proceso?",
+        answer: "Conviene para líderes, empresarias, directivos, profesionistas y marcas personales que necesitan que su imagen y presencia comuniquen con más claridad, autoridad y coherencia.",
+      },
+      {
+        question: "¿Se puede trabajar online?",
+        answer: "Sí. Sonia trabaja procesos online para México, LATAM y mercados hispanohablantes, además de procesos presenciales en Guadalajara y proyectos corporativos seleccionados.",
+      },
+    ],
+    parentRoute: "/",
+    parentLabel: "Autoridad",
+    schemaKind: "Definición",
+  },
+  {
+    route: "/seguridad-profesional",
+    title: "Seguridad Profesional",
+    description: "Definición de seguridad profesional: la capacidad interna para sostener visibilidad, decisiones, liderazgo y crecimiento sin vivirlos como amenaza.",
+    focus: "seguridad profesional",
+    pillars: ["Visibilidad", "Decisión", "Cuerpo", "Autoconcepto", "Sostenimiento"],
+    eyebrow: "Definición profesional",
+    heroImage: "/assets/sonia-mcrorey-full-body-bw.avif",
+    heroAlt: "Sonia McRorey representando seguridad profesional, presencia y posicionamiento con autoridad serena.",
+    teachingLabel: "Criterio de seguridad profesional",
+    frameworkLabel: "Definición",
+    frameworkHeading: "Seguridad profesional no significa actuar sin miedo.",
+    definitionCards: [
+      {
+        title: "No es solo confianza",
+        text: "No depende de sentirse perfecta. Depende de poder sostener exposición, responsabilidad y lectura profesional con más estabilidad.",
+        icon: "mentalidad",
+      },
+      {
+        title: "Aparece al crecer",
+        text: "Se vuelve visible cuando una promoción, venta, liderazgo o mayor exposición empieza a exigir más presencia.",
+        icon: "liderazgo",
+      },
+      {
+        title: "Se expresa en el cuerpo",
+        text: "Respiración, postura, tensión, voz y forma de entrar a una conversación también comunican seguridad o amenaza.",
+        icon: "presencia",
+      },
+      {
+        title: "Impacta decisiones",
+        text: "Si la capacidad existe pero la seguridad no acompaña, la persona posterga, minimiza o se esconde justo antes de avanzar.",
+        icon: "decision",
+      },
+      {
+        title: "Sostiene posicionamiento",
+        text: "Cuando la seguridad interna se ordena, la imagen, la voz y la presencia dejan de pelear con el crecimiento.",
+        icon: "percepcion",
+      },
+    ],
+    copy: [
+      "Sonia usa seguridad profesional para nombrar algo que muchas personas viven antes de pedir ayuda: saben hacer su trabajo, pero algo se tensiona cuando toca cobrar más, mostrarse más, dirigir, vender o crecer.",
+      "Ese límite no siempre se resuelve con más estrategia. A veces requiere trabajar la capacidad interna de sostener visibilidad, decisión, autoridad y expansión para que la presencia profesional no se vuelva una actuación o un esfuerzo de control.",
+    ],
+    faq: [
+      {
+        question: "¿Qué es seguridad profesional?",
+        answer: "Es la capacidad interna de sostener visibilidad, decisiones, liderazgo, dinero y crecimiento sin vivirlos como amenaza o sabotearlos justo antes de que ocurran.",
+      },
+      {
+        question: "¿Cómo se nota cuando falta seguridad profesional?",
+        answer: "Suele aparecer como postergación, exceso de preparación, miedo al juicio, dificultad para cobrar, minimizar logros o tensión al ocupar espacios de mayor responsabilidad.",
+      },
+      {
+        question: "¿Esto sustituye estrategia o posicionamiento?",
+        answer: "No. Lo complementa. Cuando la estrategia existe, la seguridad profesional ayuda a sostenerla con cuerpo, presencia, decisión y exposición real.",
+      },
+      {
+        question: "¿Con qué servicio se trabaja este tema?",
+        answer: "Se trabaja sobre todo en la ruta de seguridad y posicionamiento profesional, aunque también puede aparecer dentro de coaching de imagen y presencia cuando el bloqueo principal está en sostener autoridad visible.",
+      },
+    ],
+    parentRoute: "/",
+    parentLabel: "Autoridad",
+    schemaKind: "Definición",
+  },
+  {
     route: "/metodo-sonia-mcrorey",
     title: "Método Sonia McRorey",
     description: "El método de Sonia McRorey integra imagen, presencia, seguridad interna, percepción y posicionamiento profesional.",
     focus: "metodología",
     pillars: ["Imagen visible", "Presencia profesional", "Percepción estratégica", "Seguridad interna", "Posicionamiento"],
+    eyebrow: "Doctrina de Sonia",
+    heroImage: "/assets/sonia-mcrorey-green-blazer-full-body.avif",
+    heroAlt: "Sonia McRorey presentando su método de imagen, presencia y posicionamiento profesional.",
+    teachingLabel: "Doctrina del método",
+    frameworkLabel: "Método",
+    frameworkHeading: "Los principios que sostienen el enfoque de Sonia.",
+    definitionCards: [
+      {
+        title: "Base antes que corrección",
+        text: "No corrige la imagen desde afuera. Ordena la base desde la cual la persona se expresa y es percibida.",
+        icon: "identidad",
+      },
+      {
+        title: "Contexto antes que fórmula",
+        text: "Cada proceso se define por etapa, exposición, industria, cuerpo, agenda y objetivo real, no por reglas universales.",
+        icon: "decision",
+      },
+      {
+        title: "Sistema visible e interno",
+        text: "Integra imagen visible, presencia, comunicación, seguridad interna y posicionamiento como partes del mismo proceso.",
+        icon: "mentalidad",
+      },
+      {
+        title: "Aplicación profesional",
+        text: "Se usa para reuniones, ventas, liderazgo, marca personal, empresa y crecimiento profesional sostenible.",
+        icon: "empresa",
+      },
+      {
+        title: "Sostenibilidad",
+        text: "El cambio debe poder vivirse, repetirse y sostenerse; no quedarse como un look prestado o una actuación temporal.",
+        icon: "liderazgo",
+      },
+    ],
+    copy: [
+      "El método de Sonia McRorey nace de la intersección entre asesoría de imagen, presencia profesional, comunicación, psicología de la imagen, empresa y coaching. No separa lo visible de la forma en que la persona decide, se percibe y ocupa espacios.",
+      "Por eso la metodología no funciona como una lista de reglas universales. Funciona como un sistema que traduce contexto, identidad, percepción y necesidad profesional en decisiones concretas que sí pueden sostenerse.",
+    ],
+    faq: [
+      {
+        question: "¿Qué integra el Método Sonia McRorey?",
+        answer: "Integra imagen visible, presencia profesional, percepción, comunicación, seguridad interna y posicionamiento para que la imagen funcione como herramienta de autoridad y no solo de apariencia.",
+      },
+      {
+        question: "¿Por qué el método no se reduce a reglas de estilo?",
+        answer: "Porque Sonia trabaja desde el contexto real de la persona. El método parte de etapa, objetivo, visibilidad, cuerpo, industria y forma de sostener decisiones, no de una fórmula estética aislada.",
+      },
+      {
+        question: "¿Cómo se conecta con los servicios?",
+        answer: "La asesoría integral toma la parte visible; el coaching de imagen trabaja presencia y comunicación; los talleres llevan criterios a empresas; y seguridad profesional ayuda a sostener crecimiento, liderazgo y exposición.",
+      },
+      {
+        question: "¿Quién suele necesitar este enfoque?",
+        answer: "Líderes, empresarias, directivos, profesionistas, marcas personales y equipos que necesitan más coherencia entre lo que son, lo que hacen y lo que hoy proyectan.",
+      },
+    ],
+    parentRoute: "/",
+    parentLabel: "Autoridad",
   },
   {
     route: "/sistema-presencia-profesional",
@@ -1290,6 +1477,13 @@ const KEYWORD_MESH_LIBRARY = [
     context: "Canal directo para compartir contexto, ciudad, objetivo y siguiente paso con Sonia.",
     bucket: "servicio",
     terms: ["contacto", "diagnóstico", "diagnostico", "privado", "siguiente paso", "whatsapp"],
+  },
+  {
+    route: "/coach-de-imagen",
+    anchor: "qué es un coach de imagen",
+    context: "Definición clara de la categoría y de cómo Sonia la conecta con presencia, comunicación y posicionamiento profesional.",
+    bucket: "metodo",
+    terms: ["coach de imagen", "definición", "presencia", "imagen profesional", "posicionamiento"],
   },
   {
     route: "/imagen-profesional",
@@ -1521,6 +1715,13 @@ const KEYWORD_MESH_LIBRARY = [
     context: "Marco metodológico para imagen, presencia, liderazgo y posicionamiento profesional.",
     bucket: "metodo",
     terms: ["método", "metodo", "sonia", "sistema", "metodología"],
+  },
+  {
+    route: "/seguridad-profesional",
+    anchor: "seguridad profesional",
+    context: "Definición de la capacidad interna para sostener visibilidad, decisiones, liderazgo y crecimiento con más estabilidad.",
+    bucket: "metodo",
+    terms: ["seguridad profesional", "visibilidad", "liderazgo", "decisiones", "crecimiento"],
   },
   {
     route: "/sobre-sonia-mcrorey-asesora-de-imagen",
@@ -5551,7 +5752,8 @@ function generatedPageMeta(page, type = "page") {
 }
 
 function generatedBreadcrumbs(page, parentLabel = "Autoridad", parentRoute = "/") {
-  return `<nav class="breadcrumbs section" aria-label="Breadcrumbs"><a href="/">Inicio</a><span>/</span>${parentRoute !== "/" ? `<a href="${parentRoute}">${escapeHtml(parentLabel)}</a><span>/</span>` : ""}<span aria-current="page">${escapeHtml(page.name || page.title)}</span></nav>`;
+  const showParent = parentRoute && parentRoute !== "/" && parentRoute !== page.route;
+  return `<nav class="breadcrumbs section" aria-label="Breadcrumbs"><a href="/">Inicio</a><span>/</span>${showParent ? `<a href="${parentRoute}">${escapeHtml(parentLabel)}</a><span>/</span>` : ""}<span aria-current="page">${escapeHtml(page.name || page.title)}</span></nav>`;
 }
 
 function generatedPageDiscoveryLinks(pageMeta, metaDescription, type = "website", image = "/assets/797aeda1281e5d5e.png") {
@@ -5932,26 +6134,43 @@ function authorityFaqs(page) {
 }
 
 function renderAuthorityPage(page, pages, clusters = []) {
-  const heroImage = "/assets/sonia-mcrorey-about-760.avif";
+  const heroImage = page.heroImage || "/assets/sonia-mcrorey-about-760.avif";
+  const heroAlt = page.heroAlt || page.title;
   const pageMeta = generatedPageMeta(page, "authority");
   const metaDescription = metaDescriptionForPage(pageMeta, page.description);
-  const faqs = authorityFaqs(page);
+  const faqs = page.faq?.length ? page.faq : authorityFaqs(page);
+  const frameworkCards = page.definitionCards?.length
+    ? page.definitionCards
+    : page.pillars.map((pillar, index) => ({
+        title: pillar,
+        text: `${pillar} se trabaja como parte de un sistema integral de imagen profesional, presencia ejecutiva y liderazgo visible.`,
+        icon: index % 2 ? "presencia" : "decision",
+      }));
+  const authorityCopy = page.copy?.length
+    ? page.copy
+    : [
+        "La autoridad de Sonia McRorey no está construida sobre una etiqueta aislada. Está construida sobre una trayectoria que integra asesoría de imagen, presencia profesional, comunicación, empresa, psicología de la imagen, color, liderazgo y coaching.",
+        "Este sistema permite que cada página, servicio y publicación funcione como parte de una misma categoría: coaching de imagen con profundidad psicológica, liderazgo personal y posicionamiento profesional.",
+      ];
+  const teachingPanel = page.teachingLabel || page.teachingTitle
+    ? sourceTeachingPanel(page, { label: page.teachingLabel || "Criterio de Sonia", title: page.teachingTitle })
+    : "";
   return `<!doctype html>
 <html lang="es-MX">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   ${generatedPageDiscoveryLinks(pageMeta, metaDescription, "website", heroImage)}
-  ${generatedPageSchema(page, "Metodología", faqs, page.pillars)}
+  ${generatedPageSchema(page, page.schemaKind || "Metodología", faqs, page.pillars)}
 </head>
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
   ${header(page.route)}
   <main id="contenido">
-    ${generatedBreadcrumbs(page, "Metodología", "/metodo-sonia-mcrorey")}
+    ${generatedBreadcrumbs(page, page.parentLabel || "Metodología", page.parentRoute ?? "/metodo-sonia-mcrorey")}
     <section class="section hero imagen-hero authority-hero">
       <div class="hero-copy">
-        <p class="eyebrow">Autoridad metodológica</p>
+        <p class="eyebrow">${escapeHtml(page.eyebrow || "Autoridad metodológica")}</p>
         <h1>${headlineHtml(page.title)}</h1>
         <div class="hero-lede"><p>${escapeHtml(page.description)}</p></div>
         <div class="actions">
@@ -5960,25 +6179,25 @@ function renderAuthorityPage(page, pages, clusters = []) {
         </div>
       </div>
       <figure class="hero-media">
-        ${heroImageTag(heroImage, page.title)}
+        ${heroImageTag(heroImage, heroAlt)}
         <figcaption>${iconImageTag("/assets/sonia-icon.svg")} Sonia McRorey · ${BRAND_NAME}</figcaption>
       </figure>
     </section>
+    ${teachingPanel}
     <section class="section authority-framework">
       <div class="section-heading">
-        <p class="section-label">Sistema</p>
-        <h2>${headlineHtml("Una forma clara de trabajar imagen, presencia y posicionamiento.")}</h2>
+        <p class="section-label">${escapeHtml(page.frameworkLabel || "Sistema")}</p>
+        <h2>${headlineHtml(page.frameworkHeading || "Una forma clara de trabajar imagen, presencia y posicionamiento.")}</h2>
       </div>
       <div class="definition-grid">
-        ${page.pillars.map((pillar, index) => `<article class="definition-card">
-          <span class="generated-card-icon">${topicIcon(index % 2 ? "presencia" : "decision")}</span>
-          <span>${escapeHtml(pillar)}</span>
-          <small>${escapeHtml(`${pillar} se trabaja como parte de un sistema integral de imagen profesional, presencia ejecutiva y liderazgo visible.`)}</small>
+        ${frameworkCards.map((card) => `<article class="definition-card">
+          <span class="generated-card-icon">${topicIcon(card.icon || "decision")}</span>
+          <span>${escapeHtml(card.title)}</span>
+          <small>${escapeHtml(card.text)}</small>
         </article>`).join("")}
       </div>
       <div class="copy-panel editorial-copy">
-        <p>La autoridad de Sonia McRorey no está construida sobre una etiqueta aislada. Está construida sobre una trayectoria que integra asesoría de imagen, presencia profesional, comunicación, empresa, psicología de la imagen, color, liderazgo y coaching.</p>
-        <p>Este sistema permite que cada página, servicio y publicación funcione como parte de una misma categoría: coaching de imagen con profundidad psicológica, liderazgo personal y posicionamiento profesional.</p>
+        ${authorityCopy.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("")}
       </div>
     </section>
     <section class="section faq-section">
