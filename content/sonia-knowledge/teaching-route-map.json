@@ -282,6 +282,48 @@
       ]
     },
     {
+      "id": "image-next-level",
+      "quote": "Si estás en un punto donde tu imagen ya no refleja tu liderazgo, tu claridad o tu crecimiento, puedo acompañarte a crear la estructura interna y externa que necesitas para tu siguiente nivel.",
+      "sourceSnippet": "Si estás en un punto donde tu imagen ya no refleja tu liderazgo, tu claridad o tu crecimiento, puedo acompañarte a crear la estructura interna y externa que necesitas para tu siguiente nivel.",
+      "sourceBank": "blog",
+      "topics": ["imagen_profesional", "siguiente_nivel", "liderazgo_visible"],
+      "moduleTitle": "La imagen debe crecer al mismo ritmo que tu liderazgo.",
+      "publicNote": "Cuando la etapa profesional cambia, la imagen necesita acompañar ese nuevo nivel con más claridad, criterio y coherencia. No se trata de verse distinta por moda, sino de sostener mejor lo que ya estás ocupando.",
+      "tips": [
+        "Detecta si tu imagen actual pertenece a una etapa profesional anterior.",
+        "Revisa qué señales visibles ya no están acompañando tu liderazgo.",
+        "Ordena estructura interna y externa antes de exigir más presencia."
+      ]
+    },
+    {
+      "id": "presence-next-level",
+      "quote": "Si tu meta es ocupar un lugar más visible, liderar con mayor influencia o consolidar tu posicionamiento en tu industria, tu presencia no puede quedarse en el nivel anterior.",
+      "sourceSnippet": "Si tu meta es ocupar un lugar más visible, liderar con mayor influencia o consolidar tu posicionamiento en tu industria, tu presencia no puede quedarse en el nivel anterior.",
+      "sourceBank": "blog",
+      "topics": ["presencia_ejecutiva", "liderazgo_visible", "posicionamiento_profesional"],
+      "moduleTitle": "La presencia ejecutiva no se sostiene desde una versión anterior de ti.",
+      "publicNote": "La autoridad visible requiere que presencia, comunicación y percepción acompañen el nivel de influencia que hoy necesitas ocupar. La experiencia sola no siempre alcanza si la lectura externa se quedó atrás.",
+      "tips": [
+        "Observa si tu presencia actual acompaña el nivel de influencia que buscas.",
+        "Haz que tu comunicación visible respalde tu criterio antes de explicarlo.",
+        "No esperes una promoción o exposición mayor para actualizar presencia."
+      ]
+    },
+    {
+      "id": "strategic-business-image",
+      "quote": "Trabajemos una estrategia de vestimenta profesional que respalde tu imagen estratégica de negocio, alineada a tu identidad, tu contexto y el nivel de facturación que deseas alcanzar.",
+      "sourceSnippet": "Trabajemos una estrategia de vestimenta profesional que respalde tu imagen estratégica de negocio, alineada a tu identidad, tu contexto y el nivel de facturación que deseas alcanzar.",
+      "sourceBank": "blog",
+      "topics": ["imagen_estrategica", "negocio", "posicionamiento_profesional"],
+      "moduleTitle": "La imagen estratégica también respalda negocio, percepción y valor.",
+      "publicNote": "La imagen estratégica no responde solo a estilo o estética. Ordena señales visuales para que identidad, contexto profesional y posicionamiento acompañen el nivel de negocio que quieres sostener.",
+      "tips": [
+        "Haz que tu vestimenta profesional acompañe el tipo de clientes que quieres atraer.",
+        "Alinea imagen, contexto y valor antes de aumentar exposición o precio.",
+        "Construye percepción estratégica sin copiar fórmulas ajenas."
+      ]
+    },
+    {
       "id": "siguiente-nivel",
       "quote": "Sostener el siguiente nivel profesional significa tener la estructura interna necesaria para habitar un nuevo nivel de responsabilidad, visibilidad o ingresos de forma estable.",
       "sourceSnippet": "Sostener el siguiente nivel profesional significa tener la estructura interna necesaria para habitar un nuevo nivel de responsabilidad, visibilidad o ingresos de forma estable.",
@@ -321,13 +363,13 @@
     "/sobre-sonia-mcrorey-asesora-de-imagen": "base-image-expression",
     "/imagen-presencia": "image-inevitable",
     "/imagen-presencia/rebranding-imagen-mentalidad-abundancia": "what-not-spoken",
-    "/imagen-profesional": "strategic-image-context",
-    "/presencia-ejecutiva": "presentation-weight",
+    "/imagen-profesional": "image-next-level",
+    "/presencia-ejecutiva": "presence-next-level",
     "/liderazgo": "professional-growth-point",
     "/comunicacion-no-verbal": "body-language-positioning",
     "/mentalidad": "autoconcepto",
     "/empresarias": "visibility-permission",
-    "/imagen-estrategica": "strategic-image-context",
+    "/imagen-estrategica": "strategic-business-image",
     "/comparaciones": "dynamic-image",
     "/comparaciones/coaching-de-imagen-vs-consultoria-tradicional": "base-image-expression",
     "/comparaciones/imagen-superficial-vs-presencia-profesional": "presence-message",

@@ -1,0 +1,149 @@
+{
+  "version": 1,
+  "lastReviewed": "2026-06-11",
+  "queue": [
+    {
+      "id": "teaching-addendums-authority-routes",
+      "priority": 1,
+      "status": "completed",
+      "completedAt": "2026-06-11",
+      "title": "Expand Sonia teaching addendums on authority routes",
+      "objective": "Use Sonia-reviewed quote banks and Drive-derived teaching signals to strengthen high-value pages without bloating the UI.",
+      "targetRoutes": [
+        "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen/",
+        "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia/",
+        "/imagen-profesional/",
+        "/imagen-estrategica/",
+        "/presencia-ejecutiva/"
+      ],
+      "sources": [
+        "content/sonia-knowledge/teaching-route-map.json",
+        "content/sonia-knowledge/quote-bank.json",
+        "content/sonia-knowledge/drive-quote-bank.json",
+        "docs/SONIA_TEACHING_ROUTE_MAP.md"
+      ],
+      "constraints": [
+        "One compact module per route by default",
+        "No long quote dumps",
+        "No private or dated source material"
+      ],
+      "validation": [
+        "npm run build",
+        "npm run validate"
+      ]
+    },
+    {
+      "id": "faq-schema-expansion-commercial-cluster",
+      "priority": 2,
+      "status": "completed",
+      "completedAt": "2026-06-11",
+      "title": "Strengthen FAQ and schema coverage on commercial routes",
+      "objective": "Tighten Sonia's commercial answer layer for AI retrieval and buyer clarity using supported FAQPage and Service schema.",
+      "targetRoutes": [
+        "/",
+        "/servicios-asesoria-de-imagen-coaching/",
+        "/contacto/",
+        "/servicios-asesoria-de-imagen-coaching/preguntas-frequentes/"
+      ],
+      "sources": [
+        "docs/PAGE_SIGNAL_MAP.md",
+        "audit/schema-audit.md",
+        "content/blog/soniamcrorey-blog.json",
+        "content/sonia-knowledge/drive-quote-bank.json"
+      ],
+      "constraints": [
+        "Visible FAQ text must support schema",
+        "Keep answers concise and executive",
+        "No duplicated FAQ payload across unrelated pages"
+      ],
+      "validation": [
+        "npm run build",
+        "npm run validate"
+      ]
+    },
+    {
+      "id": "interlink-mesh-latam-buyer-intent",
+      "priority": 3,
+      "status": "completed",
+      "completedAt": "2026-06-11",
+      "title": "Deepen contextual interlink mesh for LATAM buyer intent",
+      "objective": "Add 5-8 route-relevant anchor phrase links across authority pages, services, comparisons, and GEO pages with clean ontology alignment.",
+      "targetRoutes": [
+        "/imagen-profesional/",
+        "/imagen-estrategica/",
+        "/presencia-ejecutiva/",
+        "/guadalajara/",
+        "/miami-hispanos/"
+      ],
+      "sources": [
+        "ontology/query-intent-matrix.md",
+        "audit/internal-link-map.md",
+        "docs/GEO_OPERATING_SYSTEM.md",
+        "content/strategy/article-clusters.json"
+      ],
+      "constraints": [
+        "Anchor text must reflect actual page intent",
+        "No sitewide repeated exact-match stuffing",
+        "Preserve natural Spanish prose"
+      ],
+      "validation": [
+        "npm run build",
+        "npm run validate"
+      ]
+    },
+    {
+      "id": "media-relevance-cleanup",
+      "priority": 4,
+      "status": "ready",
+      "title": "Replace off-brand or broken legacy media with Sonia-approved imagery",
+      "objective": "Ensure hero and supporting imagery match the page category and buyer context instead of using old blog-header graphics.",
+      "targetRoutes": [
+        "/comparaciones/imagen-superficial-vs-presencia-profesional/",
+        "/comparaciones/coaching-motivacional-vs-posicionamiento-profesional/",
+        "/comparaciones/evolucion-coaching-imagen-mexico-latam/",
+        "/imagen-presencia/presencia-profesional-estrategica/"
+      ],
+      "sources": [
+        "archive/imagencoach/images/",
+        "assets/",
+        "content/clean/manifest.json"
+      ],
+      "constraints": [
+        "Only use approved repo assets",
+        "No arbitrary blog graphic screenshots",
+        "Preserve LCP and image dimensions"
+      ],
+      "validation": [
+        "npm run build",
+        "npm run validate"
+      ]
+    },
+    {
+      "id": "definition-methodology-cluster",
+      "priority": 5,
+      "status": "ready",
+      "title": "Add Sonia-native definition and methodology authority pages",
+      "objective": "Strengthen citable definitions and methodology for AI retrieval using Sonia's real doctrine and category language.",
+      "targetRoutes": [
+        "/coach-de-imagen/",
+        "/seguridad-profesional/",
+        "/metodo-sonia-mcrorey/"
+      ],
+      "sources": [
+        "content/sonia-knowledge/drive-source-inventory.json",
+        "content/sonia-knowledge/drive-quote-bank.json",
+        "docs/SONIA_DRIVE_KNOWLEDGEBASE.md",
+        "wiki.llm"
+      ],
+      "constraints": [
+        "Must remain Sonia-specific and evidence-backed",
+        "No generic coaching abstractions",
+        "No thin pages"
+      ],
+      "validation": [
+        "npm run build",
+        "npm run validate"
+      ]
+    }
+  ]
+}

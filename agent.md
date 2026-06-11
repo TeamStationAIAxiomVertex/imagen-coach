@@ -45,3 +45,13 @@ Use these before writing source-grounded pages, methodology pages, FAQs, GEO pag
 Sonia-authored quote addendums must be routed through `content/sonia-knowledge/teaching-route-map.json`. The static build validates each mapped teaching against the reviewed quote banks through `sourceSnippet`.
 
 Use the modules to add proof, practical coaching criteria and decision clarity. Do not use them to pad copy. One compact module per route is the default.
+
+## Daily Improvement Contract
+
+The recurring Sonia improvement loop is governed by:
+
+- `docs/SONIA_DAILY_ENGINEERING_META_AGENT.md`
+- `content/strategy/sonia-daily-meta-agent-queue.json`
+- `audit/daily-meta-agent-baseline-2026-06-11.md`
+
+That loop may reuse operating discipline learned elsewhere, but it must only use Sonia-owned ontology, routes, knowledge sources and buyer language when working in this repository.

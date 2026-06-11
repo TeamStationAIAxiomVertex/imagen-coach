@@ -1282,6 +1282,13 @@ const KEYWORD_MESH_LIBRARY = [
     terms: ["preguntas", "faq", "dudas", "elegir", "proceso", "modalidad"],
   },
   {
+    route: "/contacto",
+    anchor: "diagnóstico privado con Sonia",
+    context: "Canal directo para compartir contexto, ciudad, objetivo y siguiente paso con Sonia.",
+    bucket: "servicio",
+    terms: ["contacto", "diagnóstico", "diagnostico", "privado", "siguiente paso", "whatsapp"],
+  },
+  {
     route: "/imagen-profesional",
     anchor: "imagen profesional",
     context: "Pilar para ordenar identidad visual, percepción y coherencia en contexto profesional.",
@@ -1429,6 +1436,13 @@ const KEYWORD_MESH_LIBRARY = [
     terms: ["monterrey", "presencia ejecutiva", "empresarias", "directivos"],
   },
   {
+    route: "/zapopan",
+    anchor: "coach de imagen en Zapopan",
+    context: "Mercado cercano a Guadalajara para procesos presenciales, empresarias y liderazgo visible.",
+    bucket: "geo",
+    terms: ["zapopan", "guadalajara", "jalisco", "coach de imagen", "presencial"],
+  },
+  {
     route: "/colombia",
     anchor: "coach de imagen en Colombia",
     context: "Ruta LATAM para proyección profesional, presencia corporativa y liderazgo femenino.",
@@ -1504,6 +1518,13 @@ const KEYWORD_MESH_LIBRARY = [
     context: "Marco metodológico para imagen, presencia, liderazgo y posicionamiento profesional.",
     bucket: "metodo",
     terms: ["método", "metodo", "sonia", "sistema", "metodología"],
+  },
+  {
+    route: "/sobre-sonia-mcrorey-asesora-de-imagen",
+    anchor: "trayectoria de Sonia McRorey",
+    context: "Trayectoria, formación internacional y enfoque profesional de Sonia como Coach de Imagen.",
+    bucket: "metodo",
+    terms: ["sonia mcrorey", "trayectoria", "AICI", "formación", "coach de imagen"],
   },
   {
     route: "/sistema-presencia-profesional",
@@ -1583,6 +1604,58 @@ const KEYWORD_MESH_LIBRARY = [
     terms: ["beneficios", "asesoría de imagen", "confianza", "imagen visible"],
   },
 ];
+const ROUTE_LINK_MESH_PRIORITIES = {
+  "/imagen-profesional": [
+    "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen",
+    "/como-verme-mas-profesional",
+    "/imagen-presencia/imagen-profesional-segun-industria-y-personalidad",
+    "/imagen-ejecutiva-para-empresarias",
+    "/imagen-estrategica",
+    "/modelo-imagen-estrategica",
+    "/guadalajara",
+    "/mexico",
+  ],
+  "/presencia-ejecutiva": [
+    "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen",
+    "/como-proyectar-autoridad",
+    "/como-mejorar-mi-presencia-profesional",
+    "/liderazgo-visible",
+    "/presencia-ejecutiva-femenina",
+    "/sistema-presencia-profesional",
+    "/imagen-presencia/presencia-profesional-estrategica",
+    "/guadalajara",
+  ],
+  "/imagen-estrategica": [
+    "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen",
+    "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia",
+    "/imagen-ejecutiva-para-empresarias",
+    "/modelo-imagen-estrategica",
+    "/como-proyectar-autoridad",
+    "/imagen-profesional",
+    "/imagen-presencia/imagen-identidad-liderazgo",
+    "/mexico",
+  ],
+  "/guadalajara": [
+    "/servicios-asesoria-de-imagen-coaching",
+    "/contacto",
+    "/sobre-sonia-mcrorey-asesora-de-imagen",
+    "/presencia-ejecutiva",
+    "/servicios-asesoria-de-imagen-coaching/talleres",
+    "/zapopan",
+    "/mexico",
+    "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen",
+  ],
+  "/miami-hispanos": [
+    "/presencia-ejecutiva-femenina",
+    "/imagen-ejecutiva-para-empresarias",
+    "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen",
+    "/como-proyectar-autoridad",
+    "/imagen-profesional",
+    "/contacto",
+    "/guadalajara",
+    "/mexico",
+  ],
+};
 const AVOID_TERMS = [
   "fashion influencer",
   "lifestyle blogger",
@@ -3435,6 +3508,7 @@ function keywordMeshForPage(page = {}, pages = [], clusters = [], limit = 8) {
   const currentRoute = page.route || "/";
   const records = generatedRouteRecordMap(pages);
   const context = currentMeshContext(page, clusters);
+  const routePriorities = ROUTE_LINK_MESH_PRIORITIES[currentRoute] || [];
   const seen = new Set([currentRoute]);
   const seenAnchors = new Set();
   const candidates = KEYWORD_MESH_LIBRARY
@@ -3442,6 +3516,8 @@ function keywordMeshForPage(page = {}, pages = [], clusters = [], limit = 8) {
     .filter((entry) => entry.record && !seen.has(entry.route))
     .map((entry) => {
       let score = Math.max(0, 50 - entry.index) * 0.04;
+      const priorityIndex = routePriorities.indexOf(entry.route);
+      if (priorityIndex !== -1) score += 96 - (priorityIndex * 6);
       for (const term of entry.terms || []) {
         if (context.text.includes(normalizeMeshText(term))) score += 8;
       }
@@ -3676,6 +3752,11 @@ function serviceHubContent(page, pages, clusters) {
       </li>`).join("")}
     </ol>
   </section>
+  ${contextualFaqSection(page, {
+    label: "Preguntas frecuentes",
+    title: "Dudas clave antes de elegir una ruta de trabajo.",
+    intro: "Estas respuestas ayudan a separar intención, modalidad y alcance antes de pasar al diagnóstico privado.",
+  })}
   <section class="section commercial-article-bridge compact-publications" aria-label="Lecturas para elegir servicio">
     <div class="section-heading compact-heading">
       <p class="section-label">Lecturas guía</p>
@@ -4287,6 +4368,11 @@ function renderContactPage() {
       </div>
       ${contactIntakeForm()}
     </section>
+    ${contextualFaqSection(page, {
+      label: "Preguntas frecuentes",
+      title: "Qué enviar y cómo funciona el primer contacto.",
+      intro: "La intención del formulario es ubicar contexto, reto y siguiente paso con claridad antes de abrir una conversación más profunda.",
+    })}
     ${internalLinkAtlas(page, [], [])}
   </main>
   ${footer()}
@@ -4797,6 +4883,27 @@ function commercialFaq(model) {
       ${model.faq.map(([question, answer], index) => `<details class="faq-answer-card"${index === 0 ? " open" : ""}>
         <summary><span>${String(index + 1).padStart(2, "0")}</span>${escapeHtml(question)}</summary>
         <div><p>${escapeHtml(answer)}</p></div>
+      </details>`).join("")}
+    </div>
+  </section>`;
+}
+
+function contextualFaqSection(page, options = {}) {
+  const items = faqItemsForPage(page).slice(0, options.limit || 4);
+  if (!items.length) return "";
+  const label = options.label || "Preguntas frecuentes";
+  const title = options.title || "Respuestas claras para avanzar con más criterio.";
+  const intro = options.intro || "";
+  return `<section class="section commercial-faq" aria-label="${escapeHtml(label)}">
+    <div class="section-heading compact-heading">
+      <p class="section-label">${escapeHtml(label)}</p>
+      <h2>${headlineHtml(title)}</h2>
+      ${intro ? `<p>${escapeHtml(intro)}</p>` : ""}
+    </div>
+    <div class="faq-answer-grid compact-faq">
+      ${items.map((item, index) => `<details class="faq-answer-card"${index === 0 ? " open" : ""}>
+        <summary><span>${String(index + 1).padStart(2, "0")}</span>${escapeHtml(item.question)}</summary>
+        <div><p>${escapeHtml(item.answer)}</p></div>
       </details>`).join("")}
     </div>
   </section>`;
@@ -5979,6 +6086,11 @@ function homeExtras(pages, clusters) {
   return `${proofStrip(pages)}
   ${sourceTeachingPanel({ route: "/" })}
   ${servicePathSection(pages)}
+  ${contextualFaqSection(page, {
+    label: "Preguntas frecuentes",
+    title: "Lo que conviene entender antes de elegir un proceso con Sonia.",
+    intro: "Esta capa responde las dudas que suelen aparecer antes de pasar de interés general a una decisión concreta.",
+  })}
   ${internalLinkAtlas(page, pages, clusters)}
   <section class="section journal">
     <div class="section-heading">
@@ -6092,7 +6204,7 @@ function faqItemsForPage(page) {
       {
         question: "¿Qué es un coach de imagen?",
         answer:
-          "Un coach de imagen acompaña a una persona a alinear imagen visible, presencia, comunicación, seguridad interna y posicionamiento profesional para comunicar con mayor autoridad y coherencia.",
+          "Un coach de imagen acompaña a una persona a alinear imagen visible, presencia, comunicación, seguridad interna y posicionamiento profesional para que lo que proyecta tenga relación con su nivel, su contexto y su liderazgo real.",
       },
       {
         question: "¿Sonia McRorey trabaja presencial y online?",
@@ -6107,14 +6219,14 @@ function faqItemsForPage(page) {
       {
         question: "¿Qué diferencia este enfoque de una asesoría de estilo?",
         answer:
-          "La asesoría de estilo ordena lo visible. El coaching de imagen integra imagen, presencia, percepción, liderazgo personal, seguridad interna y posicionamiento profesional.",
+          "La asesoría de estilo ordena lo visible. El enfoque de Sonia integra además presencia, percepción, liderazgo personal, seguridad interna y posicionamiento profesional para que la imagen no se quede en estética o look.",
       },
     ],
     "/servicios-asesoria-de-imagen-coaching": [
       {
         question: "¿Qué servicio de imagen conviene elegir primero?",
         answer:
-          "Depende del momento. La asesoría integral ordena imagen visible; el coaching de presencia trabaja seguridad y comunicación; los talleres alinean equipos; seguridad y posicionamiento trabaja patrones internos y crecimiento profesional.",
+          "Depende del momento y del tipo de fricción. La asesoría integral ordena imagen visible; el coaching de imagen trabaja presencia, seguridad y comunicación; los talleres alinean equipos; y seguridad y posicionamiento ayuda a sostener crecimiento, liderazgo y visibilidad sin vivirlos como amenaza.",
       },
       {
         question: "¿Los servicios son para personas o empresas?",
@@ -6122,9 +6234,14 @@ function faqItemsForPage(page) {
           "Sonia trabaja con personas, empresarias, directivos, marcas personales, equipos y empresas que buscan proyectar coherencia, confianza y autoridad profesional.",
       },
       {
+        question: "¿Los procesos pueden hacerse online?",
+        answer:
+          "Sí. Sonia trabaja presencialmente en Guadalajara y también puede acompañar procesos online para México, LATAM y otros mercados hispanohablantes. En empresas, talleres y conferencias también puede viajar cuando el proyecto lo requiere.",
+      },
+      {
         question: "¿Se puede iniciar con un diagnóstico?",
         answer:
-          "Sí. El diagnóstico estratégico permite ubicar objetivo, contexto, etapa profesional, modalidad y ruta de acompañamiento antes de elegir un proceso completo.",
+          "Sí. El diagnóstico estratégico permite ubicar objetivo, contexto, etapa profesional, modalidad y ruta de acompañamiento antes de elegir un proceso completo. La intención es no mezclar necesidades visuales, de presencia, de equipo o de seguridad profesional en una sola conversación difusa.",
       },
     ],
     "/imagen-presencia": [
@@ -6160,7 +6277,12 @@ function faqItemsForPage(page) {
       {
         question: "¿Qué información conviene enviar?",
         answer:
-          "Conviene explicar tu etapa profesional, reto de imagen o presencia, ciudad, tipo de servicio de interés, urgencia y resultado que quieres sostener.",
+          "Conviene explicar tu etapa profesional, reto de imagen o presencia, ciudad, tipo de servicio de interés, urgencia y resultado que quieres sostener. Mientras más claro sea el contexto, más precisa puede ser la orientación inicial.",
+      },
+      {
+        question: "¿La información se trata de forma privada?",
+        answer:
+          "Sí. El formulario está pensado como una entrada privada para comprender contexto, necesidad y siguiente paso antes de abrir una conversación más profunda con Sonia.",
       },
       {
         question: "¿La consulta inicial puede ser online?",

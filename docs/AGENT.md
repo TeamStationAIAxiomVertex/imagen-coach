@@ -65,9 +65,11 @@ Always:
 19. `docs/GEO_OPERATING_SYSTEM.md`
 20. `docs/PAGE_SIGNAL_MAP.md`
 21. `docs/REDIRECTS_AND_URL_RETENTION.md`
-22. `content/clean/manifest.json`
-23. `scripts/build-static.mjs`
-24. `scripts/validate-build.mjs`
+22. `docs/SONIA_DAILY_ENGINEERING_META_AGENT.md`
+23. `content/strategy/sonia-daily-meta-agent-queue.json`
+24. `content/clean/manifest.json`
+25. `scripts/build-static.mjs`
+26. `scripts/validate-build.mjs`
 
 ## Sonia Domain Knowledge Source Stack
 
@@ -85,6 +87,10 @@ Sonia's expert source material now includes:
 Use these sources to strengthen pages with Sonia's real domain language, proof, methodology, idioms and teaching concepts. Do not dump raw source text into pages. Extract, sanitize, compress and map each source to the correct page intent.
 
 Teaching modules must be added through the route map, not by hard-coding quotes into templates. Every public teaching requires source validation against the reviewed quote banks during `npm run build`.
+
+## Daily Loop Rule
+
+The recurring Sonia improvement loop must follow `docs/SONIA_DAILY_ENGINEERING_META_AGENT.md` and use `content/strategy/sonia-daily-meta-agent-queue.json` as the bounded-priority queue. The loop may reuse process discipline from other repos, but it may not import non-Sonia content, terminology, routes, or artifacts.
 
 ## Deployment Gate
 

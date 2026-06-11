@@ -56,6 +56,9 @@ Not done yet:
 - `docs/SONIA_KNOWLEDGEBASE_QUOTE_BANK.md`: blog quote guidance
 - `docs/SONIA_DRIVE_KNOWLEDGEBASE.md`: Drive source relevance and usage rules
 - `docs/SONIA_TEACHING_ROUTE_MAP.md`: public teaching-module governance
+- `docs/SONIA_DAILY_ENGINEERING_META_AGENT.md`: recurring Sonia-only improvement loop contract
+- `content/strategy/sonia-daily-meta-agent-queue.json`: bounded daily improvement queue
+- `audit/daily-meta-agent-baseline-2026-06-11.md`: baseline loop priorities and guardrails
 
 ## Sonia Source Material
 
