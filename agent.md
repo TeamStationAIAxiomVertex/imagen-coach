@@ -4,7 +4,7 @@ Project: coachdeimagen.com
 
 Owner: Sonia McRorey
 
-Rendered route count: 113
+Rendered route count: 115
 
 Core category: Coaching de Imagen, Presencia y Posicionamiento Profesional.
 
@@ -55,3 +55,27 @@ The recurring Sonia improvement loop is governed by:
 - `audit/daily-meta-agent-baseline-2026-06-11.md`
 
 That loop may reuse operating discipline learned elsewhere, but it must only use Sonia-owned ontology, routes, knowledge sources and buyer language when working in this repository.
+
+## Authority Artifact Contract
+
+The authority definition cluster now includes:
+
+- `/coach-de-imagen`
+- `/seguridad-profesional`
+- `/metodo-sonia-mcrorey`
+- `/sistema-presencia-profesional`
+- `/framework-liderazgo-visible`
+- `/modelo-imagen-estrategica`
+- `/glosario`
+
+Agents must project that cluster consistently into:
+
+- `llms.txt`
+- `llms-full.txt`
+- `agent/site-profile.json`
+- `agent/authority-pages.json`
+- `agent/authority-cluster.json`
+- `agent/glossary.json`
+- `semantic-index.json`
+
+These files are part of the retrieval contract for Cloudflare and AI systems. Do not let the authority pages exist only as HTML routes without matching machine-readable discovery surfaces.

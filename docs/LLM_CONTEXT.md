@@ -6,7 +6,7 @@ Use this file to orient future agents quickly.
 
 `TeamStationAIAxiomVertex/imagen-coach`
 
-Purpose: rebuild the larger/general `imagencoach.com` site.
+Purpose: maintain and expand the larger/general `coachdeimagen.com` authority site.
 
 ## Do Not Confuse
 
@@ -29,7 +29,7 @@ Done:
 Not done yet:
 
 - run browser visual QA
-- configure Cloudflare Pages for `imagencoach.com`
+- keep authority artifacts, schema and retrieval files aligned with new Sonia authority routes
 
 ## Critical Files
 
@@ -78,17 +78,34 @@ Sonia quote addendums are generated from `content/sonia-knowledge/teaching-route
 
 The Cloudflare build publishes:
 
-- `https://imagencoach.com/openapi.json`
-- `https://imagencoach.com/llms.txt`
-- `https://imagencoach.com/llms-full.txt`
-- `https://imagencoach.com/agent/site-profile.json`
-- `https://imagencoach.com/agent/services.json`
-- `https://imagencoach.com/agent/contact.json`
-- `https://imagencoach.com/agent/publications.json`
-- `https://imagencoach.com/agent/ontology.json`
-- `https://imagencoach.com/agent/page-signals.json`
-- `https://imagencoach.com/agent/redirects.json`
-- `https://imagencoach.com/agent/conversion-map.json`
+- `https://coachdeimagen.com/openapi.json`
+- `https://coachdeimagen.com/llms.txt`
+- `https://coachdeimagen.com/llms-full.txt`
+- `https://coachdeimagen.com/agent/site-profile.json`
+- `https://coachdeimagen.com/agent/services.json`
+- `https://coachdeimagen.com/agent/contact.json`
+- `https://coachdeimagen.com/agent/publications.json`
+- `https://coachdeimagen.com/agent/ontology.json`
+- `https://coachdeimagen.com/agent/page-signals.json`
+- `https://coachdeimagen.com/agent/redirects.json`
+- `https://coachdeimagen.com/agent/conversion-map.json`
+- `https://coachdeimagen.com/agent/authority-pages.json`
+- `https://coachdeimagen.com/agent/authority-cluster.json`
+- `https://coachdeimagen.com/agent/glossary.json`
+
+## Authority Cluster
+
+The strongest Sonia-native definition and methodology entry points are:
+
+- `/coach-de-imagen`
+- `/seguridad-profesional`
+- `/metodo-sonia-mcrorey`
+- `/sistema-presencia-profesional`
+- `/framework-liderazgo-visible`
+- `/modelo-imagen-estrategica`
+- `/glosario`
+
+These routes must be reflected not only in HTML, but also in the llms and agent discovery surfaces so Cloudflare and AI retrieval systems can understand the owned category with less ambiguity.
 
 ## Route Contract
 

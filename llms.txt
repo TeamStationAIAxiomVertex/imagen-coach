@@ -14,6 +14,9 @@ Purpose: rebuild Sonia McRorey's larger/general Coach De Imagen site from Webliu
 - Services: https://coachdeimagen.com/agent/services.json
 - Ontology: https://coachdeimagen.com/agent/ontology.json
 - Semantic hubs: https://coachdeimagen.com/agent/semantic-hubs.json
+- Authority pages: https://coachdeimagen.com/agent/authority-pages.json
+- Authority cluster: https://coachdeimagen.com/agent/authority-cluster.json
+- Glossary: https://coachdeimagen.com/agent/glossary.json
 - WordPress ingestion: https://coachdeimagen.com/agent/wordpress-ingestion.json
 - Search intent terms: https://coachdeimagen.com/agent/search-intent-terms.json
 - Page signals: https://coachdeimagen.com/agent/page-signals.json
@@ -41,6 +44,16 @@ Future WordPress-authored articles must be ingested and rendered as static HTML 
 https://coachdeimagen.com/blog/
 
 WordPress is not the production rendering layer.
+
+## Authority definition cluster
+
+Key definition and methodology entry points:
+
+- Coach de Imagen: https://coachdeimagen.com/coach-de-imagen
+- Seguridad Profesional: https://coachdeimagen.com/seguridad-profesional
+- Método Sonia McRorey: https://coachdeimagen.com/metodo-sonia-mcrorey
+- Sistema de Presencia Profesional: https://coachdeimagen.com/sistema-presencia-profesional
+- Glosario de Coach De Imagen: https://coachdeimagen.com/glosario
 
 ## Voice
 

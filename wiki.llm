@@ -989,6 +989,16 @@ The tone must be elegant editorial reflection, not direct comparison warfare.
 
 ## Generated route inventory
 
-Rendered static routes: 113
+Rendered static routes: 115
 
 GEO pages, intent pages, authority pages, service pages, article pages, comparison pages and agent discovery files are generated through `scripts/build-static.mjs`.
+
+The authority definition cluster must remain visible in machine-readable outputs, not only in HTML:
+
+- `/coach-de-imagen`
+- `/seguridad-profesional`
+- `/metodo-sonia-mcrorey`
+- `/sistema-presencia-profesional`
+- `/framework-liderazgo-visible`
+- `/modelo-imagen-estrategica`
+- `/glosario`

@@ -210,3 +210,27 @@ What stayed intentionally unchanged:
 Next recommended slice:
 
 `authority-artifact-expansion`
+
+## Execution Update 6
+
+Completed sixth slice:
+
+`authority-artifact-expansion`
+
+What changed:
+
+- Expanded Sonia's machine-readable authority surfaces so the new definition cluster now appears not only as HTML pages, but also inside `llms.txt`, `llms-full.txt`, `agent/site-profile.json`, `agent/authority-pages.json`, `agent/authority-cluster.json`, `agent/glossary.json` and `semantic-index.json`.
+- Added a dedicated `authority-cluster` artifact that explains Sonia's owned category, methodology routes, route-specific summaries, glossary terms, related routes and Sonia teaching context in one retrieval-friendly JSON surface.
+- Added a dedicated `glossary` artifact so AI systems can resolve key terms like `coach de imagen` and `seguridad profesional` from Sonia's actual site architecture instead of inferring them from scattered page copy.
+- Updated the local agent docs and LLM context files so they now reference `coachdeimagen.com`, reflect the expanded authority cluster and stop carrying stale route-count or legacy-domain drift.
+
+What stayed intentionally unchanged:
+
+- no UI layout changes
+- no new frontend components
+- no changes to visible page hierarchy
+- no new dependency or runtime service
+
+Next recommended slice:
+
+`geo-faq-authority-bridges`

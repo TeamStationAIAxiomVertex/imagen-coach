@@ -150,7 +150,8 @@
     {
       "id": "authority-artifact-expansion",
       "priority": 6,
-      "status": "next",
+      "status": "completed",
+      "completedAt": "2026-06-13",
       "title": "Expand Sonia agentic retrieval artifacts for the authority cluster",
       "objective": "Project the new definition and methodology pages into Sonia's llms, agent, glossary and route-manifest surfaces so AI systems can retrieve the authority cluster more clearly.",
       "targetRoutes": [
@@ -170,6 +171,35 @@
         "No TeamStation terminology or buyer language",
         "Static-first, crawl-visible outputs only",
         "No hidden JS-only agent surfaces"
+      ],
+      "validation": [
+        "npm run build",
+        "npm run validate"
+      ]
+    },
+    {
+      "id": "geo-faq-authority-bridges",
+      "priority": 7,
+      "status": "next",
+      "title": "Bridge authority definitions into GEO and buyer-intent FAQs",
+      "objective": "Use the new coach de imagen and seguridad profesional definitions to sharpen FAQ answers and internal bridges on Sonia's GEO and intent pages without changing layout.",
+      "targetRoutes": [
+        "/guadalajara/",
+        "/mexico/",
+        "/miami-hispanos/",
+        "/como-proyectar-autoridad/",
+        "/inseguridad-profesional/"
+      ],
+      "sources": [
+        "content/sonia-knowledge/teaching-route-map.json",
+        "agent/authority-cluster.json",
+        "agent/glossary.json",
+        "docs/SONIA_DRIVE_KNOWLEDGEBASE.md"
+      ],
+      "constraints": [
+        "Keep FAQ answers concise and buyer-relevant",
+        "No new visual modules",
+        "No repeated exact wording across all GEO pages"
       ],
       "validation": [
         "npm run build",
