@@ -5774,11 +5774,87 @@ function generatedPageDiscoveryLinks(pageMeta, metaDescription, type = "website"
   ${stylesheetLinks()}`;
 }
 
+const SONIA_AUTHORITY_BRIDGES = {
+  coachDeImagen:
+    "Para Sonia, un coach de imagen no corrige desde afuera ni impone una estética ajena. Trabaja imagen visible, presencia, comunicación y posicionamiento desde el contexto real de la persona.",
+  seguridadProfesional:
+    "Sonia usa seguridad profesional para nombrar la capacidad interna de sostener visibilidad, decisiones, liderazgo y crecimiento sin vivirlos como amenaza.",
+};
+
 function geoFaqs(page) {
+  const customGeoFaqs = {
+    "/guadalajara": [
+      {
+        question: "¿Qué significa trabajar coach de imagen en Guadalajara con Sonia?",
+        answer: `Significa trabajar con la base presencial de Sonia en su propia ciudad. ${SONIA_AUTHORITY_BRIDGES.coachDeImagen} En Guadalajara eso puede traducirse en diagnóstico presencial, acompañamiento privado y trabajo con empresarias, directivos y equipos.`,
+      },
+      {
+        question: "¿Cuándo conviene seguridad profesional en Guadalajara?",
+        answer: `${SONIA_AUTHORITY_BRIDGES.seguridadProfesional} Conviene cuando la persona ya tiene capacidad, pero algo se tensa al cobrar más, dirigir, exponerse o sostener una etapa de mayor responsabilidad.`,
+      },
+      {
+        question: "¿Todo el proceso se hace presencial en Guadalajara?",
+        answer: "No necesariamente. Sonia puede trabajar sesiones presenciales en Guadalajara y combinar el proceso con seguimiento online cuando la agenda, el tipo de cliente o la continuidad del acompañamiento lo requieren.",
+      },
+      {
+        question: "¿Qué diferencia este enfoque de una asesoría de imagen local tradicional?",
+        answer: "La asesoría tradicional suele quedarse en estilo, color o guardarropa. Sonia conecta lo visible con presencia profesional, percepción, seguridad interna y posicionamiento para que la imagen responda al contexto real de liderazgo o negocio.",
+      },
+      {
+        question: "¿Qué ruta suele ser la primera en Guadalajara?",
+        answer: "Si la fricción es visual, conviene asesoría integral. Si el reto es autoridad visible, comunicación o seguridad para sostener crecimiento, suele convenir coaching de imagen o seguridad y posicionamiento.",
+      },
+    ],
+    "/mexico": [
+      {
+        question: "¿Qué busca realmente alguien que busca coach de imagen en México?",
+        answer: `Muchas veces no busca ropa ni tendencias, sino una lectura profesional más clara. ${SONIA_AUTHORITY_BRIDGES.coachDeImagen} En México eso suele aparecer en empresarias, directivos y profesionistas que necesitan autoridad visible y posicionamiento.`,
+      },
+      {
+        question: "¿Cómo se relaciona seguridad profesional con crecer en México?",
+        answer: `${SONIA_AUTHORITY_BRIDGES.seguridadProfesional} En mercados de mayor exposición eso impacta ventas, dirección, reuniones, entrevistas, liderazgo y capacidad de sostener una nueva etapa profesional.`,
+      },
+      {
+        question: "¿El proceso para clientes en México puede hacerse online?",
+        answer: "Sí. Sonia trabaja desde Guadalajara y puede acompañar procesos online en todo México. La parte presencial se concentra en Guadalajara y en proyectos corporativos, talleres o conferencias seleccionadas.",
+      },
+      {
+        question: "¿Esto es solo para mujeres?",
+        answer: "No. Sonia trabaja con mujeres líderes, empresarias, directivos, profesionistas, marcas personales y equipos. El criterio cambia según la persona, la industria, la exposición y el objetivo profesional.",
+      },
+      {
+        question: "¿Qué servicio conviene primero en México?",
+        answer: "Depende de la fricción principal. Imagen visible y guardarropa apuntan a asesoría integral. Presencia, percepción y autoridad apuntan a coaching de imagen. Seguridad interna y capacidad de sostener crecimiento apuntan a seguridad y posicionamiento.",
+      },
+    ],
+    "/miami-hispanos": [
+      {
+        question: "¿Qué sentido tiene coach de imagen para hispanos en Miami?",
+        answer: `Tiene sentido cuando una ejecutiva, empresaria o profesional latina necesita que su presencia responda a un entorno multicultural y de alta exposición. ${SONIA_AUTHORITY_BRIDGES.coachDeImagen}`,
+      },
+      {
+        question: "¿Cómo aparece la seguridad profesional en Miami Hispanos?",
+        answer: `${SONIA_AUTHORITY_BRIDGES.seguridadProfesional} En Miami muchas veces se activa frente a visibilidad, networking, liderazgo multicultural, ventas consultivas y necesidad de proyectar claridad en español e inglés aunque el proceso de Sonia se sostenga desde su enfoque en español.`,
+      },
+      {
+        question: "¿Sonia atiende este mercado solo online?",
+        answer: "Sí, la ruta principal para Miami Hispanos es online. Sonia trabaja desde Guadalajara y organiza el proceso para acompañar a clientas y clientes hispanohablantes en Estados Unidos sin depender de presencia local permanente.",
+      },
+      {
+        question: "¿Esto se parece a una asesoría de estilo para latinas?",
+        answer: "No. El punto no es adaptar un look genérico para Miami. El trabajo está en alinear imagen, presencia, comunicación y posicionamiento con el nivel profesional, la audiencia y la etapa de negocio de la persona.",
+      },
+      {
+        question: "¿Qué ruta suele elegirse primero en Miami Hispanos?",
+        answer: "Cuando la necesidad es autoridad visible y percepción profesional, suele iniciar coaching de imagen. Cuando además hay tensión para sostener visibilidad, crecimiento o liderazgo, seguridad y posicionamiento se vuelve la ruta más precisa.",
+      },
+    ],
+  };
+  if (customGeoFaqs[page.route]) return customGeoFaqs[page.route];
   return [
     {
       question: `¿Sonia McRorey ofrece coaching de imagen para ${page.name}?`,
-      answer: `Sí. Sonia trabaja desde Guadalajara con procesos presenciales, online y corporativos para ${page.name}. El enfoque integra imagen profesional, presencia ejecutiva, comunicación, seguridad visible y posicionamiento profesional.`,
+      answer: `Sí. Sonia trabaja desde Guadalajara con procesos presenciales, online y corporativos para ${page.name}. ${SONIA_AUTHORITY_BRIDGES.coachDeImagen}`,
     },
     {
       question: `¿Qué tipo de persona busca coach de imagen en ${page.name}?`,
@@ -6017,6 +6093,45 @@ function renderGeoPage(page, pages, clusters = []) {
 }
 
 function intentFaqs(page) {
+  const customIntentFaqs = {
+    "/como-proyectar-autoridad": [
+      {
+        question: "¿Proyectar autoridad se resuelve solo con imagen?",
+        answer: `No. ${SONIA_AUTHORITY_BRIDGES.coachDeImagen} Proyectar autoridad pide coherencia entre imagen visible, presencia, lenguaje no verbal, criterio y forma de ocupar espacios.`,
+      },
+      {
+        question: "¿Qué relación tiene seguridad profesional con la autoridad?",
+        answer: `${SONIA_AUTHORITY_BRIDGES.seguridadProfesional} Si internamente la persona se minimiza o entra en tensión al mostrarse, la autoridad visible pierde fuerza aunque tenga capacidad real.`,
+      },
+      {
+        question: "¿Esto es asesoría de imagen o coaching de imagen?",
+        answer: "Si el problema es solo visual, puede resolverse desde asesoría integral. Si la fricción está en presencia, percepción, seguridad visible o autoridad al comunicar, entra en coaching de imagen y presencia profesional.",
+      },
+      {
+        question: "¿Se puede trabajar online?",
+        answer: "Sí. Sonia puede trabajar autoridad visible, presencia ejecutiva y posicionamiento profesional online para México, LATAM y mercados hispanohablantes.",
+      },
+    ],
+    "/inseguridad-profesional": [
+      {
+        question: "¿Qué llama Sonia inseguridad profesional?",
+        answer: `${SONIA_AUTHORITY_BRIDGES.seguridadProfesional} La inseguridad profesional aparece cuando la persona sabe hacer su trabajo, pero se contrae al mostrarse, decidir, cobrar, dirigir o sostener más exposición.`,
+      },
+      {
+        question: "¿Esto se resuelve solo con autoestima o motivación?",
+        answer: "No necesariamente. Sonia lo trabaja como una combinación de sistema interno, presencia visible, comunicación, percepción y decisiones profesionales, no como una frase de motivación aislada.",
+      },
+      {
+        question: "¿Qué papel tiene el coaching de imagen aquí?",
+        answer: `${SONIA_AUTHORITY_BRIDGES.coachDeImagen} En estos casos la imagen no se usa como maquillaje emocional, sino como parte de un proceso para ordenar lo visible y sostener una lectura más clara de autoridad.`,
+      },
+      {
+        question: "¿Cuándo conviene seguridad y posicionamiento profesional?",
+        answer: "Conviene cuando el problema ya no es solo cómo verte, sino cómo sostener crecimiento, liderazgo, visibilidad y decisiones sin entrar en sabotaje, miedo o sobreesfuerzo.",
+      },
+    ],
+  };
+  if (customIntentFaqs[page.route]) return customIntentFaqs[page.route];
   return [
     { question: `¿Cómo empieza Sonia a trabajar ${page.title.toLowerCase()}?`, answer: `Primero ubica el contexto profesional, la etapa de exposición, la audiencia y la forma en que hoy se percibe la imagen, la presencia y la comunicación. Después se define si la ruta principal es imagen visible, presencia, seguridad interna o posicionamiento.` },
     { question: "¿Esto es asesoría de imagen o coaching de imagen?", answer: "Depende del reto. Si la necesidad es visual, se trabaja asesoría integral. Si la necesidad incluye seguridad visible, comunicación, autoridad y percepción, el proceso entra en coaching de imagen y presencia profesional." },

@@ -180,7 +180,8 @@
     {
       "id": "geo-faq-authority-bridges",
       "priority": 7,
-      "status": "next",
+      "status": "completed",
+      "completedAt": "2026-06-13",
       "title": "Bridge authority definitions into GEO and buyer-intent FAQs",
       "objective": "Use the new coach de imagen and seguridad profesional definitions to sharpen FAQ answers and internal bridges on Sonia's GEO and intent pages without changing layout.",
       "targetRoutes": [
@@ -200,6 +201,37 @@
         "Keep FAQ answers concise and buyer-relevant",
         "No new visual modules",
         "No repeated exact wording across all GEO pages"
+      ],
+      "validation": [
+        "npm run build",
+        "npm run validate"
+      ]
+    },
+    {
+      "id": "geo-proof-quote-distribution",
+      "priority": 8,
+      "status": "next",
+      "title": "Distribute Sonia proof and quote signals across GEO and intent routes",
+      "objective": "Use Sonia-reviewed teaching language and proof sources to deepen the strongest GEO and buyer-intent pages without changing page layout or turning them into long articles.",
+      "targetRoutes": [
+        "/guadalajara/",
+        "/mexico/",
+        "/miami-hispanos/",
+        "/como-proyectar-autoridad/",
+        "/inseguridad-profesional/",
+        "/presencia-ejecutiva-femenina/",
+        "/imagen-ejecutiva-para-empresarias/"
+      ],
+      "sources": [
+        "content/sonia-knowledge/drive-quote-bank.json",
+        "content/sonia-knowledge/quote-bank.json",
+        "content/sonia-knowledge/teaching-route-map.json",
+        "docs/SONIA_DRIVE_KNOWLEDGEBASE.md"
+      ],
+      "constraints": [
+        "Use Sonia language only",
+        "No long quote dumps",
+        "No layout changes or new visual modules"
       ],
       "validation": [
         "npm run build",

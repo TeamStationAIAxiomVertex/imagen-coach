@@ -234,3 +234,27 @@ What stayed intentionally unchanged:
 Next recommended slice:
 
 `geo-faq-authority-bridges`
+
+## Execution Update 7
+
+Completed seventh slice:
+
+`geo-faq-authority-bridges`
+
+What changed:
+
+- Strengthened the FAQ layer on `/guadalajara`, `/mexico` and `/miami-hispanos` so those pages now explain Sonia's category definitions more directly instead of relying only on the generic GEO FAQ template.
+- Strengthened the buyer-intent pages `/como-proyectar-autoridad` and `/inseguridad-profesional` so their FAQ answers now explicitly bridge to Sonia's `coach de imagen` and `seguridad profesional` definitions.
+- Kept the change at the answer layer only: no new components, no new layout blocks and no visual rework.
+- Improved AI-retrieval clarity by repeating Sonia's real category language in the exact places where commercial and GEO users are already asking direct questions.
+
+What stayed intentionally unchanged:
+
+- no layout or spacing changes
+- no footer or navigation changes
+- no new schema type or runtime dependency
+- no broad rewrite of GEO page body copy
+
+Next recommended slice:
+
+`geo-proof-quote-distribution`
