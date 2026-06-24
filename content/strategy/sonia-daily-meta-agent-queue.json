@@ -242,7 +242,8 @@
     {
       "id": "service-proof-distribution",
       "priority": 9,
-      "status": "next",
+      "status": "completed",
+      "completedAt": "2026-06-24",
       "title": "Tighten Sonia proof distribution on commercial service routes",
       "objective": "Use Sonia-native teaching signals to sharpen the highest-value service routes with route-specific authority language while keeping each page commercially compressed.",
       "targetRoutes": [
@@ -262,6 +263,35 @@
         "Keep commercial pages concise",
         "No new sections beyond the existing Sonia teaching pattern",
         "No generic SEO filler"
+      ],
+      "validation": [
+        "npm run build",
+        "npm run validate"
+      ]
+    },
+    {
+      "id": "service-faq-answer-tightening",
+      "priority": 10,
+      "status": "next",
+      "title": "Tighten service-route FAQ answers for buyer intent and retrieval clarity",
+      "objective": "Use Sonia-native category language to sharpen the commercial FAQ layer on service routes without increasing page length or changing the UI system.",
+      "targetRoutes": [
+        "/servicios-asesoria-de-imagen-coaching/",
+        "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen/",
+        "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen/",
+        "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia/",
+        "/servicios-asesoria-de-imagen-coaching/preguntas-frequentes/"
+      ],
+      "sources": [
+        "content/sonia-knowledge/drive-quote-bank.json",
+        "content/sonia-knowledge/quote-bank.json",
+        "docs/SONIA_DRIVE_KNOWLEDGEBASE.md",
+        "content/blog/soniamcrorey-blog.json"
+      ],
+      "constraints": [
+        "Keep answers concise and commercial",
+        "No new visual sections",
+        "No generic coaching language"
       ],
       "validation": [
         "npm run build",

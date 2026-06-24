@@ -4572,6 +4572,7 @@ function renderContactPage() {
       </div>
       ${contactIntakeForm()}
     </section>
+    ${sourceTeachingPanel(page, { label: "Criterio para el diagnóstico" })}
     ${contextualFaqSection(page, {
       label: "Preguntas frecuentes",
       title: "Qué enviar y cómo funciona el primer contacto.",

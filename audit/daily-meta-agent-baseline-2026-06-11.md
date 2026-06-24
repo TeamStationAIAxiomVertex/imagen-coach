@@ -282,3 +282,26 @@ What stayed intentionally unchanged:
 Next recommended slice:
 
 `service-proof-distribution`
+
+## Execution Update 9
+
+Completed ninth slice:
+
+`service-proof-distribution`
+
+What changed:
+
+- Bound `/contacto` directly to Sonia's reviewed `no-theory-lived-context` teaching instead of leaving the route dependent on fallback matching.
+- Added the existing Sonia teaching module to the contact page with a diagnosis-specific label, so the commercial intake route now carries the same proof pattern already used on the highest-value service pages.
+- Kept the change inside the existing `sourceTeachingPanel` system and the existing route map, which means no new layout pattern, spacing system or quote surface was introduced.
+
+What stayed intentionally unchanged:
+
+- no CSS or spacing changes
+- no new component type
+- no commercial body-copy expansion on service pages that were already correctly mapped
+- no broader FAQ rewrite in this slice
+
+Next recommended slice:
+
+`service-faq-answer-tightening`
