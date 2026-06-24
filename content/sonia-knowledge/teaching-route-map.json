@@ -382,7 +382,14 @@
     "/metodo-sonia-mcrorey": "base-image-expression",
     "/sistema-presencia-profesional": "presentation-weight",
     "/framework-liderazgo-visible": "professional-growth-point",
-    "/modelo-imagen-estrategica": "strategic-image-context"
+    "/modelo-imagen-estrategica": "strategic-image-context",
+    "/guadalajara": "professional-growth-point",
+    "/mexico": "strategic-image-context",
+    "/miami-hispanos": "visibility-permission",
+    "/como-proyectar-autoridad": "presentation-weight",
+    "/inseguridad-profesional": "internal-capacity",
+    "/presencia-ejecutiva-femenina": "presence-next-level",
+    "/imagen-ejecutiva-para-empresarias": "strategic-business-image"
   },
   "fallbacks": {
     "geo": ["professional-growth-point", "presentation-weight", "strategic-image-context", "siguiente-nivel"],

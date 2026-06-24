@@ -258,3 +258,27 @@ What stayed intentionally unchanged:
 Next recommended slice:
 
 `geo-proof-quote-distribution`
+
+## Execution Update 8
+
+Completed eighth slice:
+
+`geo-proof-quote-distribution`
+
+What changed:
+
+- Bound Sonia-reviewed teaching modules directly to the GEO routes `/guadalajara`, `/mexico` and `/miami-hispanos` instead of leaving those pages on rotating fallback selection.
+- Bound Sonia-reviewed teaching modules directly to the buyer-intent routes `/como-proyectar-autoridad`, `/inseguridad-profesional`, `/presencia-ejecutiva-femenina` and `/imagen-ejecutiva-para-empresarias` so each page now carries a more precise proof signal tied to its actual user intent.
+- Kept the implementation inside the existing `sourceTeachingPanel` system, which means the pages gain stronger Sonia language without adding a new module, changing spacing, or altering page hierarchy.
+- Preserved Sonia-specific doctrine by selecting only reviewed teaching records from the existing quote banks and route map.
+
+What stayed intentionally unchanged:
+
+- no layout or CSS changes
+- no new component system
+- no added dependency
+- no broad rewrite of GEO or intent body copy
+
+Next recommended slice:
+
+`service-proof-distribution`
