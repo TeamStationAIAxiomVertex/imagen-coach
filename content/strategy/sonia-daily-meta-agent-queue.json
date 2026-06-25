@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastReviewed": "2026-06-11",
+  "lastReviewed": "2026-06-25",
   "queue": [
     {
       "id": "teaching-addendums-authority-routes",
@@ -272,7 +272,8 @@
     {
       "id": "service-faq-answer-tightening",
       "priority": 10,
-      "status": "next",
+      "status": "completed",
+      "completedAt": "2026-06-25",
       "title": "Tighten service-route FAQ answers for buyer intent and retrieval clarity",
       "objective": "Use Sonia-native category language to sharpen the commercial FAQ layer on service routes without increasing page length or changing the UI system.",
       "targetRoutes": [

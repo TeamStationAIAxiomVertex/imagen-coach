@@ -339,10 +339,10 @@ const COMMERCIAL_PAGE_MODELS = {
       "Criterios claros para comprar, combinar y presentarte.",
     ],
     faq: [
-      ["¿La asesoría de imagen es solo ropa?", "No. La ropa es una parte visible. También se trabaja color, rostro, proporciones, estilo, contexto, percepción y forma de habitar tu imagen."],
-      ["¿Necesito cambiar todo mi guardarropa?", "No necesariamente. Primero se ordena criterio, uso, coherencia y funcionalidad. Comprar más no resuelve una imagen sin dirección."],
-      ["¿Sirve para mujeres y hombres?", "Sí. El proceso se adapta a profesión, estilo de vida, exposición, contexto y objetivo. No parte de una fórmula rígida ni de una sola estética."],
-      ["¿Qué obtengo al final del proceso?", "Obtienes criterios para elegir color, prendas, combinaciones, proporciones y estilo con más intención, menos improvisación y mayor coherencia profesional."],
+      ["¿La asesoría de imagen es solo ropa?", "No. La ropa es solo una señal. La asesoría lee color, rostro, proporciones, estilo, contexto y percepción para que la imagen deje de ser improvisación y exprese tu etapa real."],
+      ["¿Necesito cambiar todo mi guardarropa?", "No. Primero se ordena criterio. Muchas veces el ajuste está en combinar mejor, depurar y elegir con intención; comprar más no corrige una imagen sin dirección."],
+      ["¿Sirve para mujeres y hombres?", "Sí. Sonia trabaja con mujeres y hombres. El proceso se adapta a profesión, exposición, estilo de vida y objetivo, no a una estética rígida."],
+      ["¿Qué obtengo al final del proceso?", "Obtienes criterio profesional para elegir color, prendas, combinaciones y proporciones con más claridad, menos gasto impulsivo y una imagen que sí puedes sostener."],
     ],
     articles: [
       "/imagen-presencia/beneficios-de-asesoria-de-imagen",
@@ -372,10 +372,10 @@ const COMMERCIAL_PAGE_MODELS = {
       "Imagen alineada con identidad y valor profesional.",
     ],
     faq: [
-      ["¿En qué se diferencia de asesoría de imagen?", "La asesoría ordena la parte visual; el coaching trabaja también seguridad, presencia, percepción e identidad profesional."],
-      ["¿Es para hablar mejor en público?", "Puede ayudar, pero el foco es más amplio: cómo ocupas espacios, comunicas valor y sostienes presencia profesional."],
-      ["¿Se trabaja online?", "Sí. Puede trabajarse de forma digital cuando el objetivo es presencia, comunicación, percepción y posicionamiento."],
-      ["¿Cómo sé si necesito coaching de imagen?", "Cuando ya tienes capacidad, experiencia o preparación, pero tu presencia no comunica con la claridad, seguridad o autoridad que necesitas sostener."],
+      ["¿En qué se diferencia de asesoría de imagen?", "La asesoría ordena lo visible. El coaching de imagen trabaja además la base desde la cual te presentas: identidad, presencia, percepción, seguridad y comunicación profesional."],
+      ["¿Es para hablar mejor en público?", "Puede fortalecerlo, pero no se limita a hablar mejor. Se enfoca en cómo ocupas espacios, comunicas valor y haces creíble tu presencia profesional."],
+      ["¿Se trabaja online?", "Sí. Funciona muy bien online cuando el objetivo es presencia, percepción, comunicación y posicionamiento aplicados a tu contexto real."],
+      ["¿Cómo sé si necesito coaching de imagen?", "Cuando ya tienes experiencia o preparación, pero algo en tu presencia, seguridad visible o comunicación sigue restando autoridad, claridad o impacto."],
     ],
     articles: [
       "/imagen-presencia/como-puedo-ayudarte-hoy",
@@ -405,10 +405,10 @@ const COMMERCIAL_PAGE_MODELS = {
       "Presencia alineada con crecimiento, dinero y posicionamiento.",
     ],
     faq: [
-      ["¿Qué significa trabajar seguridad y posicionamiento?", "Significa ordenar la forma en que sostienes crecimiento, visibilidad, dinero, decisiones, liderazgo y presencia profesional sin forzarte a actuar un personaje."],
-      ["¿Qué se trabaja internamente?", "Autoconcepto, permiso, miedo a la exposición, relación con dinero, sistema interno, decisiones y capacidad de sostener nuevos niveles."],
-      ["¿Para quién es?", "Para personas con capacidad y experiencia que sienten que algo interno interfiere con su crecimiento, autoridad o presencia profesional."],
-      ["¿Qué cambia cuando la seguridad interna se ordena?", "La visibilidad pesa menos, las decisiones se vuelven más claras y el crecimiento puede sostenerse con más presencia y menos desgaste."],
+      ["¿Qué significa trabajar seguridad y posicionamiento?", "Significa trabajar la base interna desde la que sostienes visibilidad, decisiones, dinero, liderazgo y posicionamiento. No se trata de promesas abstractas, sino de capacidad real para ocupar tu siguiente nivel profesional."],
+      ["¿Qué se trabaja internamente?", "Autoconcepto, merecimiento, miedo a la exposición, relación con dinero, sistema interno, decisiones y la forma en que tu presencia responde cuando el nivel de responsabilidad sube."],
+      ["¿Para quién es?", "Para personas con capacidad, experiencia o estrategia que detectan un freno interno justo cuando toca crecer, cobrar, exponerse o liderar."],
+      ["¿Qué cambia cuando la seguridad interna se ordena?", "Disminuye la fricción con la visibilidad, las decisiones se limpian y el crecimiento deja de sentirse amenaza. La presencia se vuelve más estable, más clara y menos costosa de sostener."],
     ],
     articles: [
       "/imagen-presencia/mas-dinero-capacidad-interna-liderazgo-presencia",
@@ -469,15 +469,15 @@ const BUYER_GUIDES = {
 const FAQ_PAGE_QUESTIONS = [
   {
     question: "¿Cómo sé si la asesoría de imagen es adecuada para mi momento profesional o personal?",
-    answer: "La asesoría de imagen es valiosa cuando tu forma de presentarte ya no acompaña la responsabilidad, visibilidad o etapa que hoy sostienes. No se trata de verte mejor de forma superficial, sino de alinear imagen, presencia y percepción con tu realidad profesional y personal.",
+    answer: "La asesoría de imagen es adecuada cuando tu forma de presentarte ya no acompaña la responsabilidad, visibilidad o etapa que hoy sostienes. No busca verte mejor solo por fuera, sino alinear imagen, presencia y percepción con la realidad que necesitas comunicar.",
   },
   {
     question: "¿Qué diferencia hay entre asesoría de imagen y coaching de imagen?",
-    answer: "La asesoría de imagen ordena elementos visibles como estilo, color, rostro, proporciones, guardarropa y criterios de vestimenta. El coaching de imagen integra también seguridad interna, presencia profesional, percepción, comunicación y posicionamiento.",
+    answer: "La asesoría de imagen ordena estilo, color, rostro, proporciones, guardarropa y criterio visual. El coaching de imagen trabaja además identidad, presencia, percepción, comunicación y seguridad profesional.",
   },
   {
     question: "¿Cómo se define el alcance y la duración de un proceso?",
-    answer: "El alcance se define a partir de tus objetivos, contexto profesional, nivel de exposición y lo que necesitas sostener. No parte de un paquete rígido, sino de la ruta que tenga sentido para construir una imagen coherente y sostenible.",
+    answer: "El alcance se define desde tu objetivo, contexto, exposición y la fricción real que hoy necesitas resolver. No parte de paquetes rígidos, sino de la ruta necesaria para construir una imagen creíble y sostenible.",
   },
   {
     question: "¿Sonia trabaja con empresas, marcas y equipos?",
@@ -485,15 +485,15 @@ const FAQ_PAGE_QUESTIONS = [
   },
   {
     question: "¿Cuál es el impacto real de la imagen en la proyección profesional?",
-    answer: "La imagen influye en cómo se recibe un mensaje, la credibilidad que generas y la claridad con la que otros leen tu posición. Cuando está alineada con lo que comunicas, reduce fricción y fortalece liderazgo, negociación y toma de decisiones.",
+    answer: "La imagen cambia cómo se recibe tu mensaje, cuánto valor se te atribuye y qué tan clara se vuelve tu posición. Cuando está alineada, facilita liderazgo, negociación y toma de decisiones.",
   },
   {
     question: "¿Qué resultados puedo esperar después de trabajar con Sonia?",
-    answer: "Puedes esperar mayor claridad sobre cómo eres percibida, decisiones visuales más conscientes, presencia más coherente y una imagen que acompaña tu nivel profesional sin sentirse actuada, rígida o impuesta.",
+    answer: "Puedes esperar mayor claridad sobre cómo te leen, decisiones visuales más limpias, presencia más coherente y una imagen que acompaña tu nivel sin sentirse actuada ni impuesta.",
   },
   {
     question: "¿La asesoría de imagen es solo para momentos de cambio?",
-    answer: "No. También funciona para consolidar posicionamiento, ordenar una presencia ya establecida o afinar la imagen cuando cambia tu contexto profesional, tu nivel de exposición o la responsabilidad que sostienes.",
+    answer: "No. También sirve para consolidar posicionamiento, afinar una presencia ya visible o reordenar la imagen cuando cambia tu responsabilidad, exposición o mercado.",
   },
   {
     question: "¿Qué papel juega el cuerpo y la comodidad en una imagen profesional sólida?",
@@ -501,7 +501,7 @@ const FAQ_PAGE_QUESTIONS = [
   },
   {
     question: "¿La imagen influye en la percepción de valor profesional?",
-    answer: "Sí. La imagen está vinculada con percepción de valor, autoridad, merecimiento y posicionamiento. La forma en que te presentas impacta en cómo te leen, qué oportunidades se abren y qué nivel de intercambio se genera.",
+    answer: "Sí. La imagen participa en percepción de valor, autoridad y posicionamiento. Cómo te presentas influye en qué oportunidades se abren, qué confianza generas y qué nivel de intercambio se sostiene.",
   },
   {
     question: "¿El proceso puede hacerse desde fuera de Guadalajara?",
@@ -6565,22 +6565,22 @@ function faqItemsForPage(page) {
       {
         question: "¿Qué servicio de imagen conviene elegir primero?",
         answer:
-          "Depende del momento y del tipo de fricción. La asesoría integral ordena imagen visible; el coaching de imagen trabaja presencia, seguridad y comunicación; los talleres alinean equipos; y seguridad y posicionamiento ayuda a sostener crecimiento, liderazgo y visibilidad sin vivirlos como amenaza.",
+          "Depende de dónde está la fricción. La asesoría integral ordena señales visibles; el coaching de imagen trabaja identidad, presencia y percepción; los talleres alinean equipos; y seguridad y posicionamiento fortalece la capacidad interna para sostener crecimiento, liderazgo y visibilidad.",
       },
       {
         question: "¿Los servicios son para personas o empresas?",
         answer:
-          "Sonia trabaja con personas, empresarias, directivos, marcas personales, equipos y empresas que buscan proyectar coherencia, confianza y autoridad profesional.",
+          "Sonia trabaja con profesionistas, empresarias, directivos, marcas personales, equipos y empresas. El criterio cambia según responsabilidad, exposición y contexto, no según una fórmula única.",
       },
       {
         question: "¿Los procesos pueden hacerse online?",
         answer:
-          "Sí. Sonia trabaja presencialmente en Guadalajara y también puede acompañar procesos online para México, LATAM y otros mercados hispanohablantes. En empresas, talleres y conferencias también puede viajar cuando el proyecto lo requiere.",
+          "Sí. Sonia atiende presencialmente en Guadalajara, acompaña procesos online en México, LATAM y mercados hispanohablantes, y puede viajar para talleres, empresas y conferencias.",
       },
       {
         question: "¿Se puede iniciar con un diagnóstico?",
         answer:
-          "Sí. El diagnóstico estratégico permite ubicar objetivo, contexto, etapa profesional, modalidad y ruta de acompañamiento antes de elegir un proceso completo. La intención es no mezclar necesidades visuales, de presencia, de equipo o de seguridad profesional en una sola conversación difusa.",
+          "Sí. El diagnóstico estratégico ordena objetivo, contexto, nivel de exposición y necesidad principal para definir si la ruta correcta es imagen visible, presencia profesional, trabajo con equipos o seguridad profesional.",
       },
     ],
     "/imagen-presencia": [
