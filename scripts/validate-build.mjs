@@ -525,6 +525,7 @@ const requiredAgentFiles = [
   "dist/.well-known/api-catalog",
   "dist/.well-known/api-catalog.json",
   "dist/.well-known/agent.json",
+  "dist/.well-known/agent-card.json",
   "dist/.well-known/agent-skills.json",
   "dist/.well-known/agent-skills/index.json",
   "dist/.well-known/mcp.json",

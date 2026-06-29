@@ -7716,6 +7716,63 @@ function agentCard(pages) {
   };
 }
 
+function a2aAgentCard() {
+  return {
+    name: `${BRAND_NAME} | Sonia McRorey`,
+    description:
+      "Agente público de descubrimiento para coaching de imagen, presencia profesional, liderazgo visible y posicionamiento profesional en Guadalajara, México y LATAM.",
+    url: SITE_URL,
+    provider: {
+      organization: `${BRAND_NAME} | Sonia McRorey`,
+      url: SITE_URL,
+    },
+    version: "2026.06.29",
+    documentationUrl: `${SITE_URL}/auth.md`,
+    capabilities: {
+      streaming: false,
+      pushNotifications: false,
+      stateTransitionHistory: false,
+    },
+    authentication: {
+      schemes: ["None"],
+    },
+    defaultInputModes: ["text/plain", "application/json"],
+    defaultOutputModes: ["text/plain", "application/json"],
+    skills: [
+      {
+        id: "choose-service-route",
+        name: "Elegir ruta de servicio",
+        description:
+          "Recomienda la ruta pública más adecuada entre asesoría integral, presencia profesional, talleres o seguridad y posicionamiento según el contexto del usuario.",
+        tags: ["coach-de-imagen", "servicios", "presencia-profesional", "diagnostico"],
+        examples: ["Necesito saber qué servicio me corresponde si mi imagen ya no refleja mi etapa profesional."],
+        inputModes: ["text/plain", "application/json"],
+        outputModes: ["text/plain", "application/json"],
+      },
+      {
+        id: "find-editorial-context",
+        name: "Encontrar contexto editorial",
+        description:
+          "Devuelve publicaciones, comparaciones y hubs semánticos para responder preguntas sobre imagen profesional, liderazgo, identidad, percepción y posicionamiento.",
+        tags: ["publicaciones", "comparaciones", "imagen-profesional", "liderazgo-visible"],
+        examples: ["Muéstrame contenido para entender la diferencia entre imagen superficial y presencia profesional."],
+        inputModes: ["text/plain", "application/json"],
+        outputModes: ["text/plain", "application/json"],
+      },
+      {
+        id: "get-contact-options",
+        name: "Obtener opciones de contacto",
+        description:
+          "Expone la ruta pública de contacto, el endpoint de intake y la alternativa por WhatsApp para agendar con Sonia McRorey.",
+        tags: ["contacto", "intake", "whatsapp", "diagnostico"],
+        examples: ["Quiero agendar una conversación privada con Sonia."],
+        inputModes: ["text/plain", "application/json"],
+        outputModes: ["text/plain", "application/json"],
+      },
+    ],
+  };
+}
+
 function agentSkillsAgent() {
   return {
     schemaVersion: "2026-05-24",
@@ -8002,7 +8059,7 @@ function oauthProtectedResource() {
     authorization_servers: [SITE_URL],
     scopes_supported: ["public:read", "contact:intake"],
     resource_documentation: `${SITE_URL}/openapi.json`,
-    bearer_methods_supported: [],
+    bearer_methods_supported: ["header"],
     status: "public-content-and-contact-intake-no-bearer-token-required",
   };
 }
@@ -8370,6 +8427,7 @@ async function writeAgentFiles(pages, clusters) {
   await writeJson("entities.json", entitiesAgent());
   await writeJson("semantic-index.json", semanticIndexAgent(pages, clusters));
   await writeJson(".well-known/agent.json", agentCard(pages));
+  await writeJson(".well-known/agent-card.json", a2aAgentCard());
   await writeJson(".well-known/ai-plugin.json", {
     schema_version: "v1",
     name_for_human: `${BRAND_NAME} | Sonia McRorey`,
