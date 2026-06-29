@@ -58,18 +58,20 @@ Always:
 12. `content/sonia-knowledge/teaching-route-map.json`
 13. `docs/SONIA_KNOWLEDGEBASE_QUOTE_BANK.md`
 14. `docs/SONIA_DRIVE_KNOWLEDGEBASE.md`
-15. `docs/SONIA_TEACHING_ROUTE_MAP.md`
-16. `docs/SDD.md`
-17. `docs/DDD.md`
-18. `docs/TDD.md`
-19. `docs/GEO_OPERATING_SYSTEM.md`
-20. `docs/PAGE_SIGNAL_MAP.md`
-21. `docs/REDIRECTS_AND_URL_RETENTION.md`
-22. `docs/SONIA_DAILY_ENGINEERING_META_AGENT.md`
-23. `content/strategy/sonia-daily-meta-agent-queue.json`
-24. `content/clean/manifest.json`
-25. `scripts/build-static.mjs`
-26. `scripts/validate-build.mjs`
+15. `docs/SONIA_CLOUDFLARE_MCP_ARCHITECTURE.md`
+16. `docs/SONIA_CLOUDFLARE_CORPUS_GOVERNANCE.md`
+17. `docs/SONIA_TEACHING_ROUTE_MAP.md`
+18. `docs/SDD.md`
+19. `docs/DDD.md`
+20. `docs/TDD.md`
+21. `docs/GEO_OPERATING_SYSTEM.md`
+22. `docs/PAGE_SIGNAL_MAP.md`
+23. `docs/REDIRECTS_AND_URL_RETENTION.md`
+24. `docs/SONIA_DAILY_ENGINEERING_META_AGENT.md`
+25. `content/strategy/sonia-daily-meta-agent-queue.json`
+26. `content/clean/manifest.json`
+27. `scripts/build-static.mjs`
+28. `scripts/validate-build.mjs`
 
 ## Sonia Domain Knowledge Source Stack
 
@@ -82,9 +84,14 @@ Sonia's expert source material now includes:
 - the Drive candidate quote bank in `content/sonia-knowledge/drive-quote-bank.json`
 - the teaching route map in `content/sonia-knowledge/teaching-route-map.json`
 - the human-readable Drive usage guide in `docs/SONIA_DRIVE_KNOWLEDGEBASE.md`
+- the Cloudflare grounding and MCP design in `docs/SONIA_CLOUDFLARE_MCP_ARCHITECTURE.md`
+- the Sonia-only corpus governance rules in `docs/SONIA_CLOUDFLARE_CORPUS_GOVERNANCE.md`
 - the teaching-module governance guide in `docs/SONIA_TEACHING_ROUTE_MAP.md`
 
 Use these sources to strengthen pages with Sonia's real domain language, proof, methodology, idioms and teaching concepts. Do not dump raw source text into pages. Extract, sanitize, compress and map each source to the correct page intent.
+
+The active shared Drive corpus is the Cloudflare grounding root.
+The supporting reviewed Drive library remains in the source contract for foundational authority files not yet mirrored into the active corpus.
 
 Teaching modules must be added through the route map, not by hard-coding quotes into templates. Every public teaching requires source validation against the reviewed quote banks during `npm run build`.
 

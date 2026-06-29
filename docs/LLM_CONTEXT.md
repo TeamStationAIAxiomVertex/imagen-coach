@@ -55,6 +55,8 @@ Not done yet:
 - `content/sonia-knowledge/teaching-route-map.json`: source-validated public teaching module map
 - `docs/SONIA_KNOWLEDGEBASE_QUOTE_BANK.md`: blog quote guidance
 - `docs/SONIA_DRIVE_KNOWLEDGEBASE.md`: Drive source relevance and usage rules
+- `docs/SONIA_CLOUDFLARE_MCP_ARCHITECTURE.md`: Sonia-only Cloudflare Worker and MCP grounding design
+- `docs/SONIA_CLOUDFLARE_CORPUS_GOVERNANCE.md`: Sonia-only corpus governance and anti-bleed rules
 - `docs/SONIA_TEACHING_ROUTE_MAP.md`: public teaching-module governance
 - `docs/SONIA_DAILY_ENGINEERING_META_AGENT.md`: recurring Sonia-only improvement loop contract
 - `content/strategy/sonia-daily-meta-agent-queue.json`: bounded daily improvement queue
@@ -65,10 +67,16 @@ Not done yet:
 Before writing or refactoring source-grounded content, use Sonia's own material:
 
 - blog archive for long-tail language and article authority
-- quote bank for candidate phrasing
-- Drive inventory for service architecture, biography, methodology, presentations and visual assets
+- quote bank for reviewed candidate phrasing
+- Drive inventory for the active shared Cloudflare grounding corpus plus the supporting reviewed foundational library
 
 Do not publish raw Drive documents, private payment details, old contact details, old prices, bank information or dated program logistics. Use sanitized, page-specific extracts only.
+
+Important:
+
+The Cloudflare setup here is a runtime grounding system, not model-weight training.
+Drive files are source material for retrieval, normalization, quote extraction and route evidence.
+They are not public page dumps.
 
 ## Public Teaching Layer
 
@@ -106,6 +114,11 @@ The strongest Sonia-native definition and methodology entry points are:
 - `/glosario`
 
 These routes must be reflected not only in HTML, but also in the llms and agent discovery surfaces so Cloudflare and AI retrieval systems can understand the owned category with less ambiguity.
+
+## Sonia Boundary
+
+This repo may reuse engineering method from other projects.
+It may not reuse non-Sonia content, ontology, route ideas, prompts or company entities as Sonia truth.
 
 ## Route Contract
 

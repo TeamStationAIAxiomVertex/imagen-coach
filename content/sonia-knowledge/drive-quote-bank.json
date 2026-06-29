@@ -1,7 +1,9 @@
 {
-  "source": "Google Drive folder 132lIVQigNgRpHfsSsuoZMewn8AwvgmhR",
+  "source": "Legacy reviewed Google Drive folder 132lIVQigNgRpHfsSsuoZMewn8AwvgmhR",
+  "activeCloudflareCorpus": "Google Drive folder 1ysBIHhmGONy8-vECe7AKk18JQVE2lxlW",
   "generatedAt": "2026-05-25",
   "status": "candidate_drive_quote_bank_requires_editorial_review_before_public_injection",
+  "scopeNote": "This quote bank is still the reviewed public extraction layer. The active Cloudflare grounding corpus has been inventoried separately and requires its own dedicated quote-extraction pass before public teaching modules can cite it.",
   "selectionRule": "Short Sonia-authored concepts and phrasing only; excludes payment details, old contact lines, dated logistics, course-only instructions and sensitive operational material.",
   "quotes": [
     {

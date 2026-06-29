@@ -36,9 +36,19 @@ Sonia's domain knowledge sources are part of the operating contract:
 - `content/sonia-knowledge/teaching-route-map.json`
 - `docs/SONIA_KNOWLEDGEBASE_QUOTE_BANK.md`
 - `docs/SONIA_DRIVE_KNOWLEDGEBASE.md`
+- `docs/SONIA_CLOUDFLARE_MCP_ARCHITECTURE.md`
+- `docs/SONIA_CLOUDFLARE_CORPUS_GOVERNANCE.md`
 - `docs/SONIA_TEACHING_ROUTE_MAP.md`
 
 Use these before writing source-grounded pages, methodology pages, FAQs, GEO pages, service descriptions or schema descriptions. Public copy must use sanitized, reviewed extracts only. Never publish raw Drive payment details, old contact data, banking details, dated prices or private program logistics.
+
+The source contract now has two Sonia-only Drive layers:
+
+- the active shared Cloudflare grounding corpus
+- the supporting reviewed foundational library
+
+The active corpus is for ongoing retrieval and inventorying.
+The reviewed quote bank remains the public teaching-validation layer until a dedicated extraction pass is completed from the active corpus.
 
 ## Teaching Module Contract
 
@@ -51,6 +61,8 @@ Use the modules to add proof, practical coaching criteria and decision clarity. 
 The recurring Sonia improvement loop is governed by:
 
 - `docs/SONIA_DAILY_ENGINEERING_META_AGENT.md`
+- `docs/SONIA_CLOUDFLARE_MCP_ARCHITECTURE.md`
+- `docs/SONIA_CLOUDFLARE_CORPUS_GOVERNANCE.md`
 - `content/strategy/sonia-daily-meta-agent-queue.json`
 - `audit/daily-meta-agent-baseline-2026-06-11.md`
 

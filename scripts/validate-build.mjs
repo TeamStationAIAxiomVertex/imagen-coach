@@ -519,6 +519,7 @@ const requiredAgentFiles = [
   "dist/content-signal.json",
   "dist/entities.json",
   "dist/semantic-index.json",
+  "dist/auth.md",
   "dist/llms.txt",
   "dist/llms-full.txt",
   "dist/.well-known/api-catalog",
@@ -535,6 +536,10 @@ const requiredAgentFiles = [
   "dist/.well-known/oauth-protected-resource",
   "dist/.well-known/oauth-not-enabled",
   "dist/.well-known/jwks.json",
+  "dist/.well-known/agent-registration.json",
+  "dist/.well-known/agent-claim.json",
+  "dist/.well-known/agent-revoke.json",
+  "dist/.well-known/agent-index.json",
   "dist/agent/site-profile.json",
   "dist/agent/services.json",
   "dist/agent/contact.json",
@@ -565,6 +570,23 @@ for (const file of requiredAgentFiles) {
       JSON.parse(jsonText);
     } catch (error) {
       failures.push(`Invalid JSON in ${file}: ${error.message}`);
+    }
+  }
+}
+
+if (existsSync("dist/auth.md")) {
+  const authMd = await readFile("dist/auth.md", "utf8");
+  for (const term of ["Registro requerido: no", "/.well-known/oauth-protected-resource", "/.well-known/oauth-authorization-server", "POST https://coachdeimagen.com/api/contact"]) {
+    if (!authMd.includes(term)) failures.push(`auth.md missing ${term}`);
+  }
+}
+
+if (existsSync("dist/.well-known/oauth-authorization-server")) {
+  const oauth = JSON.parse(await readFile("dist/.well-known/oauth-authorization-server", "utf8"));
+  if (!oauth.agent_auth) failures.push("OAuth authorization server metadata missing agent_auth block");
+  else {
+    for (const key of ["skill", "register_uri", "claim_uri", "supported_identity_types", "supported_credential_types"]) {
+      if (!(key in oauth.agent_auth)) failures.push(`agent_auth missing ${key}`);
     }
   }
 }

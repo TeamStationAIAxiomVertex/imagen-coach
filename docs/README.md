@@ -13,6 +13,9 @@ This folder is the project wiki for rebuilding `imagencoach.com`.
 - `TDD.md`: test-driven development and QA strategy.
 - `LLM_CONTEXT.md`: compact context for future LLM/agent sessions.
 - `wiki.llm`: canonical ontology and agent-readable semantic governance.
+- `SONIA_CLOUDFLARE_MCP_ARCHITECTURE.md`: Sonia-only Cloudflare retrieval and MCP architecture.
+- `SONIA_CLOUDFLARE_CORPUS_GOVERNANCE.md`: Sonia-only corpus governance and anti-bleed rules.
+- `DNS_AID_CLOUDFLARE_DEPLOYMENT.md`: Cloudflare DNS-AID record plan and DNSSEC deployment notes for `coachdeimagen.com`.
 - `UBIQUITOUS_LANGUAGE.md`: approved terminology and forbidden drift rules.
 - `GEO_OPERATING_SYSTEM.md`: agentic GEO operating strategy.
 - `PAGE_SIGNAL_MAP.md`: page-level SEO, GEO and conversion signal map.

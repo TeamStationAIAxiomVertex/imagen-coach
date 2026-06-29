@@ -35,8 +35,13 @@ Before source-grounded page writing, use:
 - `content/sonia-knowledge/drive-quote-bank.json`
 - `content/sonia-knowledge/teaching-route-map.json`
 - `docs/SONIA_DRIVE_KNOWLEDGEBASE.md`
+- `docs/SONIA_CLOUDFLARE_MCP_ARCHITECTURE.md`
+- `docs/SONIA_CLOUDFLARE_CORPUS_GOVERNANCE.md`
 - `docs/SONIA_TEACHING_ROUTE_MAP.md`
 
 Extract Sonia's language carefully. Do not expose raw Drive files, bank/payment details, old contact data, dated pricing or private logistics.
+
+The active shared Drive corpus is the Cloudflare grounding root.
+The reviewed Drive quote bank remains the public teaching-validation layer until the active corpus gets its own approved extraction pass.
 
 When adding Sonia-authored quote modules, update the teaching route map instead of hard-coding page copy. Validate with `npm run build` so untraceable quotes fail before deployment.

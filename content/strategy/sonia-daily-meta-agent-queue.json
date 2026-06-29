@@ -1,7 +1,39 @@
 {
   "version": 1,
-  "lastReviewed": "2026-06-25",
+  "lastReviewed": "2026-06-29",
   "queue": [
+    {
+      "id": "active-cloudflare-corpus-extraction-prep",
+      "priority": 1,
+      "status": "pending",
+      "title": "Prepare Sonia-only extraction pass from the active Cloudflare corpus",
+      "objective": "Classify the new shared Drive corpus into Sonia route clusters, draft reviewed quote candidates and identify which snippets are safe to promote into the public teaching layer without changing route UI yet.",
+      "targetRoutes": [
+        "/seguridad-profesional/",
+        "/metodo-sonia-mcrorey/",
+        "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia/",
+        "/presencia-ejecutiva/",
+        "/guadalajara/"
+      ],
+      "sources": [
+        "content/sonia-knowledge/drive-source-inventory.json",
+        "content/sonia-knowledge/drive-quote-bank.json",
+        "content/sonia-knowledge/quote-bank.json",
+        "docs/SONIA_DRIVE_KNOWLEDGEBASE.md",
+        "docs/SONIA_CLOUDFLARE_MCP_ARCHITECTURE.md",
+        "docs/SONIA_CLOUDFLARE_CORPUS_GOVERNANCE.md"
+      ],
+      "constraints": [
+        "No TeamStation terminology or artifacts",
+        "No raw transcript dumps",
+        "No public page changes until snippets are reviewed and mapped"
+      ],
+      "validation": [
+        "node -e \"JSON.parse(require('fs').readFileSync('content/sonia-knowledge/drive-source-inventory.json','utf8'))\"",
+        "npm run build",
+        "npm run validate"
+      ]
+    },
     {
       "id": "teaching-addendums-authority-routes",
       "priority": 1,

@@ -35,14 +35,16 @@ Required source stack:
 4. `docs/IMPLEMENTATION_ROADMAP.md`
 5. `docs/PAGE_SIGNAL_MAP.md`
 6. `docs/SONIA_DRIVE_KNOWLEDGEBASE.md`
-7. `docs/SONIA_TEACHING_ROUTE_MAP.md`
-8. `content/blog/soniamcrorey-blog.json`
-9. `content/sonia-knowledge/quote-bank.json`
-10. `content/sonia-knowledge/drive-source-inventory.json`
-11. `content/sonia-knowledge/drive-quote-bank.json`
-12. `content/sonia-knowledge/teaching-route-map.json`
-13. `content/strategy/sonia-daily-meta-agent-queue.json`
-14. `audit/*.md`
+7. `docs/SONIA_CLOUDFLARE_MCP_ARCHITECTURE.md`
+8. `docs/SONIA_CLOUDFLARE_CORPUS_GOVERNANCE.md`
+9. `docs/SONIA_TEACHING_ROUTE_MAP.md`
+10. `content/blog/soniamcrorey-blog.json`
+11. `content/sonia-knowledge/quote-bank.json`
+12. `content/sonia-knowledge/drive-source-inventory.json`
+13. `content/sonia-knowledge/drive-quote-bank.json`
+14. `content/sonia-knowledge/teaching-route-map.json`
+15. `content/strategy/sonia-daily-meta-agent-queue.json`
+16. `audit/*.md`
 
 Hard rule:
 
@@ -59,6 +61,7 @@ Each run must follow this order.
 - Check `git status --short`.
 - If the repo is dirty, preserve unrelated changes and work only in clearly bounded files, or stop and report if the slice would collide.
 - Inspect the current queue file and pick the highest-priority unblocked slice.
+- If the slice touches Sonia corpus or Cloudflare retrieval surfaces, confirm whether the active shared Drive corpus or the supporting reviewed library is the correct source.
 
 ### 2. Evidence Review
 
@@ -71,6 +74,7 @@ Inspect only the sources relevant to the chosen slice:
 - current internal links
 - Sonia quote banks
 - Sonia Drive source inventory
+- Sonia Cloudflare MCP architecture and governance docs
 - page signal maps
 - audit documents
 
@@ -106,6 +110,8 @@ Allowed:
 - image swaps using approved repo assets
 - FAQ improvements
 - ontology-aligned audience clarification
+- Sonia corpus inventory and governance refreshes
+- Cloudflare retrieval and MCP contract docs
 
 Not allowed:
 
@@ -180,3 +186,7 @@ The goal is not "more pages" by default.
 The goal is:
 
 `better Sonia-specific authority per page, per audience, per route cluster, and per machine-readable artifact.`
+
+For corpus-specific runs, that also means:
+
+`better Sonia-only grounding, better provenance, and zero cross-project contamination.`

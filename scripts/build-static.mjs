@@ -7602,6 +7602,18 @@ function apiCatalogAgent() {
         url: `${SITE_URL}/agent/contact.json`,
         description: "Private diagnostic contact action and intake fields.",
       },
+      {
+        name: "Agent auth instructions",
+        type: "auth-md",
+        url: `${SITE_URL}/auth.md`,
+        description: "Public agent registration and access instructions for anonymous read surfaces and validated contact intake.",
+      },
+      {
+        name: "Organization agent index",
+        type: "dns-aid-index",
+        url: `${SITE_URL}/.well-known/agent-index.json`,
+        description: "Organization-level discovery index to pair with DNS-AID SVCB/HTTPS records.",
+      },
     ],
   };
 }
@@ -7615,6 +7627,7 @@ function apiCatalogLinkset() {
           { href: `${SITE_URL}/openapi.json`, type: "application/openapi+json" },
         ],
         "service-doc": [
+          { href: `${SITE_URL}/auth.md`, type: "text/markdown" },
           { href: `${SITE_URL}/llms-full.txt`, type: "text/plain" },
           { href: `${SITE_URL}/agent/site-profile.json`, type: "application/json" },
           { href: `${SITE_URL}/agent/authority-cluster.json`, type: "application/json" },
@@ -7693,6 +7706,8 @@ function agentCard(pages) {
       sitemap: `${SITE_URL}/sitemap.xml`,
       semanticIndex: `${SITE_URL}/semantic-index.json`,
       contentSignal: `${SITE_URL}/content-signal.json`,
+      authMd: `${SITE_URL}/auth.md`,
+      oauthProtectedResource: `${SITE_URL}/.well-known/oauth-protected-resource`,
       authorityCluster: `${SITE_URL}/agent/authority-cluster.json`,
       glossary: `${SITE_URL}/agent/glossary.json`,
     },
@@ -7825,6 +7840,117 @@ function httpMessageSignaturesDirectory() {
   };
 }
 
+function authMd() {
+  return `# auth.md
+
+## Resumen
+
+Coach De Imagen publica contenido estático, archivos de descubrimiento y metadatos agentic de forma pública. No se requiere registro, token OAuth ni ceremonia de claim para leer el contenido público del sitio.
+
+## Modelo de acceso
+
+- Registro requerido: no
+- Identidad de usuario requerida: no
+- Token OAuth requerido para lectura pública: no
+- Claim ceremony requerida: no
+- Revocación de credenciales: no aplica
+- Escritura disponible: sólo \`POST ${SITE_URL}/api/contact\`
+
+## Recursos públicos para agentes
+
+- Sitio raíz: ${SITE_URL}/
+- OpenAPI: ${SITE_URL}/openapi.json
+- API catalog: ${SITE_URL}/.well-known/api-catalog
+- Agent card: ${SITE_URL}/.well-known/agent.json
+- MCP server card: ${SITE_URL}/.well-known/mcp/server-card.json
+- OAuth protected resource metadata: ${SITE_URL}/.well-known/oauth-protected-resource
+- OAuth authorization server metadata: ${SITE_URL}/.well-known/oauth-authorization-server
+- Agent registration metadata: ${SITE_URL}/.well-known/agent-registration.json
+- Agent claim metadata: ${SITE_URL}/.well-known/agent-claim.json
+- Agent revocation metadata: ${SITE_URL}/.well-known/agent-revoke.json
+- Organizational agent index: ${SITE_URL}/.well-known/agent-index.json
+
+## Escritura permitida
+
+El único endpoint de escritura pública es \`POST ${SITE_URL}/api/contact\`.
+
+Requisitos:
+
+- payload JSON válido
+- campos requeridos del formulario de contacto
+- controles antispam y rate limiting
+- uso orientado a mensajes reales para Sonia McRorey
+
+## Reglas prácticas para agentes
+
+1. Para leer páginas, FAQs, hubs, comparaciones, glosario y metadatos, usa acceso anónimo.
+2. Para enviar contexto privado a Sonia, usa \`POST ${SITE_URL}/api/contact\`.
+3. No intentes intercambio de tokens ni device flow en este dominio: actualmente no existen.
+4. Si en el futuro se habilita OAuth real, este archivo y los metadatos \`/.well-known/\` serán la fuente canónica del cambio.
+
+## Contacto
+
+- Contacto humano: sonia@coachdeimagen.com
+- Ruta pública de contacto: ${SITE_URL}${CONTACT_ROUTE}
+`;
+}
+
+function agentRegistrationMetadata() {
+  return {
+    schemaVersion: "2026-06-29",
+    issuer: SITE_URL,
+    register_uri: `${SITE_URL}/.well-known/agent-registration.json`,
+    registration_required: false,
+    anonymous_access: true,
+    supported_identity_types: ["anonymous"],
+    identity_types_supported: ["anonymous"],
+    supported_credential_types: ["none"],
+    credential_types_supported: ["none"],
+    public_resources: [
+      SITE_URL,
+      `${SITE_URL}/openapi.json`,
+      `${SITE_URL}/.well-known/api-catalog`,
+      `${SITE_URL}/.well-known/agent.json`,
+      `${SITE_URL}/.well-known/mcp/server-card.json`,
+      `${SITE_URL}/llms.txt`,
+      `${SITE_URL}/llms-full.txt`,
+    ],
+    write_actions: [
+      {
+        name: "contact-intake",
+        endpoint: `${SITE_URL}/api/contact`,
+        auth: "none",
+        antiSpam: true,
+      },
+    ],
+    status: "public-anonymous-read-no-agent-registration-required",
+  };
+}
+
+function agentClaimMetadata() {
+  return {
+    schemaVersion: "2026-06-29",
+    issuer: SITE_URL,
+    claim_uri: `${SITE_URL}/.well-known/agent-claim.json`,
+    claim_supported: false,
+    reason:
+      "Coach De Imagen does not require a claim ceremony for public content access or validated contact intake.",
+    status: "claim-not-required",
+  };
+}
+
+function agentRevokeMetadata() {
+  return {
+    schemaVersion: "2026-06-29",
+    issuer: SITE_URL,
+    revoke_uri: `${SITE_URL}/.well-known/agent-revoke.json`,
+    revocation_supported: false,
+    reason:
+      "No issued bearer credentials or agent-specific tokens exist on this public static site, so revocation is not currently applicable.",
+    status: "revocation-not-applicable",
+  };
+}
+
 function oauthAuthorizationServer() {
   return {
     issuer: SITE_URL,
@@ -7835,10 +7961,25 @@ function oauthAuthorizationServer() {
     grant_types_supported: [],
     token_endpoint_auth_methods_supported: [],
     code_challenge_methods_supported: [],
-    authorization_endpoint: `${SITE_URL}${CONTACT_ROUTE}`,
+    authorization_endpoint: `${SITE_URL}/.well-known/oauth-not-enabled`,
     token_endpoint: `${SITE_URL}/.well-known/oauth-not-enabled`,
-    registration_endpoint: `${SITE_URL}${CONTACT_ROUTE}`,
+    registration_endpoint: `${SITE_URL}/.well-known/agent-registration.json`,
+    revocation_endpoint: `${SITE_URL}/.well-known/agent-revoke.json`,
     authorization_response_iss_parameter_supported: false,
+    agent_auth: {
+      skill: `${SITE_URL}/auth.md`,
+      register_uri: `${SITE_URL}/.well-known/agent-registration.json`,
+      identity_endpoint: `${SITE_URL}/.well-known/agent-registration.json`,
+      claim_uri: `${SITE_URL}/.well-known/agent-claim.json`,
+      claim_endpoint: `${SITE_URL}/.well-known/agent-claim.json`,
+      revoke_uri: `${SITE_URL}/.well-known/agent-revoke.json`,
+      events_endpoint: `${SITE_URL}/.well-known/agent-revoke.json`,
+      supported_identity_types: ["anonymous"],
+      identity_types_supported: ["anonymous"],
+      supported_credential_types: ["none"],
+      credential_types_supported: ["none"],
+      registration_required: false,
+    },
     status: "public-site-no-oauth-required",
   };
 }
@@ -7856,11 +7997,47 @@ function oauthNotEnabled() {
 function oauthProtectedResource() {
   return {
     resource: SITE_URL,
+    resource_name: `${BRAND_NAME} | Sonia McRorey`,
+    resource_logo_uri: `${SITE_URL}/assets/sonia-logo-ai.png`,
     authorization_servers: [SITE_URL],
     scopes_supported: ["public:read", "contact:intake"],
     resource_documentation: `${SITE_URL}/openapi.json`,
     bearer_methods_supported: [],
     status: "public-content-and-contact-intake-no-bearer-token-required",
+  };
+}
+
+function organizationAgentIndex() {
+  return {
+    schemaVersion: "2026-06-29",
+    organization: `${BRAND_NAME} | Sonia McRorey`,
+    domain: SITE_URL,
+    discovery_dns_label: `_index._agents.${new URL(SITE_URL).hostname}`,
+    description:
+      "Organization-level agent discovery index for Sonia McRorey's Coach De Imagen authority platform.",
+    agents: [
+      {
+        id: "coach-de-imagen-static-discovery",
+        name: `${BRAND_NAME} static discovery`,
+        endpoint: SITE_URL,
+        discovery: {
+          agentCard: `${SITE_URL}/.well-known/agent.json`,
+          mcpServerCard: `${SITE_URL}/.well-known/mcp/server-card.json`,
+          apiCatalog: `${SITE_URL}/.well-known/api-catalog`,
+          authMd: `${SITE_URL}/auth.md`,
+          oauthProtectedResource: `${SITE_URL}/.well-known/oauth-protected-resource`,
+          oauthAuthorizationServer: `${SITE_URL}/.well-known/oauth-authorization-server`,
+        },
+        protocols: ["https", "static-discovery", "mcp-metadata"],
+        capabilities: [
+          "public-site-reading",
+          "semantic-discovery",
+          "service-recommendation",
+          "faq-resolution",
+          "contact-intake-metadata",
+        ],
+      },
+    ],
   };
 }
 
@@ -7906,8 +8083,13 @@ function openApiDoc(pages) {
     "/.well-known/oauth-protected-resource": "Get OAuth protected resource metadata.",
     "/.well-known/oauth-not-enabled": "Get current OAuth availability status.",
     "/.well-known/jwks.json": "Get JSON Web Key Set metadata for discovery.",
+    "/.well-known/agent-registration.json": "Get agent registration metadata for public anonymous access.",
+    "/.well-known/agent-claim.json": "Get agent claim metadata for the public static site.",
+    "/.well-known/agent-revoke.json": "Get agent revocation metadata for the public static site.",
+    "/.well-known/agent-index.json": "Get the organization-level agent discovery index used with DNS-AID.",
     "/.well-known/a2a.json": "Get A2A availability status.",
     "/.well-known/webmcp.json": "Get WebMCP availability status.",
+    "/auth.md": "Get agent authentication and registration instructions.",
     "/entities.json": "Get root entity, buyer entities, GEO entities and semantic guardrails.",
     "/semantic-index.json": "Get the AI retrieval semantic index.",
     "/sitemap.xml": "Get the complete sitemap.",
@@ -8135,9 +8317,11 @@ WordPress is only the authoring and ingestion source. RSS detects post changes a
 ## Machine-readable files
 
 - OpenAPI: ${SITE_URL}/openapi.json
+- Agent auth instructions: ${SITE_URL}/auth.md
 - Compact LLM context: ${SITE_URL}/llms.txt
 - Entities: ${SITE_URL}/entities.json
 - Semantic index: ${SITE_URL}/semantic-index.json
+- Organization agent index: ${SITE_URL}/.well-known/agent-index.json
 - Site profile: ${SITE_URL}/agent/site-profile.json
 - Services: ${SITE_URL}/agent/services.json
 - Comparisons: ${SITE_URL}/agent/comparisons.json
@@ -8210,8 +8394,13 @@ async function writeAgentFiles(pages, clusters) {
   await writeJson(".well-known/oauth-protected-resource", oauthProtectedResource());
   await writeJson(".well-known/oauth-not-enabled", oauthNotEnabled());
   await writeJson(".well-known/jwks.json", jwksDocument());
+  await writeJson(".well-known/agent-registration.json", agentRegistrationMetadata());
+  await writeJson(".well-known/agent-claim.json", agentClaimMetadata());
+  await writeJson(".well-known/agent-revoke.json", agentRevokeMetadata());
+  await writeJson(".well-known/agent-index.json", organizationAgentIndex());
   await writeJson(".well-known/a2a.json", unavailableProtocol("A2A", "/.well-known/a2a.json"));
   await writeJson(".well-known/webmcp.json", unavailableProtocol("WebMCP", "/.well-known/webmcp.json"));
+  await writeFile(distPath("auth.md"), authMd());
   await writeJson("agent/site-profile.json", siteProfileAgent(pages));
   await writeJson("agent/services.json", servicesAgent(pages));
   await writeJson("agent/contact.json", contactAgent());

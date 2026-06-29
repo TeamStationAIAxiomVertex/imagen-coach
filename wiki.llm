@@ -55,15 +55,24 @@ Required content sources:
 - `content/sonia-knowledge/teaching-route-map.json` for controlled public quote modules and page-specific teaching addendums
 - `docs/SONIA_KNOWLEDGEBASE_QUOTE_BANK.md` for human-readable blog quote guidance
 - `docs/SONIA_DRIVE_KNOWLEDGEBASE.md` for Drive source relevance, sensitivity and usage rules
+- `docs/SONIA_CLOUDFLARE_MCP_ARCHITECTURE.md` for Sonia-only Cloudflare retrieval and MCP design
+- `docs/SONIA_CLOUDFLARE_CORPUS_GOVERNANCE.md` for Sonia-only corpus governance and anti-bleed rules
 - `docs/SONIA_TEACHING_ROUTE_MAP.md` for the public teaching-module contract
 
-The Drive folder is an expert source library, not a public content dump. It includes service drafts, biography material, training decks, image/coaching definitions, e-books, authority proof, presentation material and visual assets. Some files contain private or dated data. Therefore:
+Sonia now operates with two Drive libraries:
+
+- an active shared Cloudflare grounding corpus used for ongoing retrieval and inventory work
+- a supporting reviewed foundational library that still holds some biography, service architecture and doctrine files not yet mirrored in the active shared corpus
+
+The Drive corpus is an expert source library, not a public content dump. It includes service drafts, transcripts, training decks, image/coaching definitions, e-books, authority proof, presentation material and visual assets. Some files contain private or dated data. Therefore:
 
 - do not publish bank details, CLABE, card numbers, payment links, private logistics, old contact details or old prices
 - do not copy large blocks from Drive documents into public pages
 - do not let abundance, manifestation, PNL, eneagram or money language become the public root category
 - do use Sonia's language to strengthen executive clarity, methodology, proof, FAQs, schema and pillar addendums
 - do map every extract to a specific page intent and semantic cluster before use
+- do treat this as runtime grounding and retrieval for Cloudflare, not foundation-model weight training
+- do keep TeamStation and all non-Sonia company data outside Sonia corpus artifacts
 
 ## Sonia Teaching Modules
 

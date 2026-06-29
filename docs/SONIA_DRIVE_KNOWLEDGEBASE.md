@@ -1,29 +1,62 @@
 # Sonia Drive Knowledgebase
 
-Source folder: `https://drive.google.com/drive/folders/132lIVQigNgRpHfsSsuoZMewn8AwvgmhR`
+Status: Sonia-only controlled source-of-truth guide for Drive documents, transcripts, presentations, e-books and supporting visual assets used by `coachdeimagen.com`.
 
-Status: controlled source-of-truth inventory for Sonia McRorey's domain expertise documents, presentations, e-books, service drafts and visual assets.
+## Active Sonia Corpus Model
 
-This folder is now part of the content source stack for `coachdeimagen.com`, but the raw files are not committed into the repo because several documents contain private operational details, old contact details, payment information, dated program logistics and offer-specific pricing. Public pages must use sanitized, reviewed extracts only.
+Sonia now has two Drive libraries in the operating contract:
 
-## What Was Found
+### 1. Active shared Cloudflare grounding corpus
 
-The Drive connector returned 33 visible files:
+- folder: `https://drive.google.com/drive/folders/1ysBIHhmGONy8-vECe7AKk18JQVE2lxlW`
+- role: active shared source root for ongoing Cloudflare Worker and MCP grounding
+- current visible files: 28
+- emphasis: transcripts, internal-capacity material, autoconcepto, guardarropa, color and Mexico-context professional teaching
 
-- service and offer architecture documents
-- biography and authority proof
-- coaching de imagen definitions
-- coaching de abundancia and internal growth material
-- autoconcepto and identity training decks
-- communication, voice and proxemia training material
-- style, color, closet and personal-brand e-books
-- Sonia visual assets and headshots
+### 2. Supporting reviewed foundational library
 
-The machine-readable inventory lives at:
+- folder: `https://drive.google.com/drive/folders/132lIVQigNgRpHfsSsuoZMewn8AwvgmhR`
+- role: previously reviewed Sonia authority library that still carries biography, service architecture, definitions, axioms and nonverbal communication source files not yet mirrored in the active shared corpus
+
+The machine-readable inventory for both libraries now lives in:
+
+- `content/sonia-knowledge/drive-source-inventory.json`
+
+The reviewed public extraction layer still lives in:
+
+- `content/sonia-knowledge/drive-quote-bank.json`
+- `content/sonia-knowledge/teaching-route-map.json`
+
+Important:
+
+The active shared corpus is the live grounding root.
+The legacy reviewed quote bank is still the validated public teaching source until a dedicated extraction pass is completed from the active corpus.
+
+## Why Raw Files Are Not Committed
+
+Several Sonia documents contain private operational details, old contact details, payment information, dated logistics, offer-specific pricing or material that should remain supporting rather than public-root positioning.
+
+Public pages and agent surfaces must use sanitized, reviewed extracts only.
+
+## Active Corpus Snapshot
+
+The active shared corpus currently concentrates on:
+
+- seguridad profesional, dinero y capacidad interna
+- identidad, autoconcepto y presencia
+- color, guardarropa, accesorios y decisiones visuales
+- contexto profesional en Guadalajara, México y LATAM
+- conference and workshop support material
+
+The active corpus does **not** fully replace the earlier reviewed library yet. Sonia's biography, service architecture, category-definition and doctrine files still depend on the foundational library unless those source documents are moved into the active shared folder and re-reviewed.
+
+## Machine-Readable Artifacts
 
 - `content/sonia-knowledge/drive-source-inventory.json`
 - `content/sonia-knowledge/drive-quote-bank.json`
 - `content/sonia-knowledge/teaching-route-map.json`
+- `docs/SONIA_CLOUDFLARE_MCP_ARCHITECTURE.md`
+- `docs/SONIA_CLOUDFLARE_CORPUS_GOVERNANCE.md`
 
 The public teaching-module contract lives at:
 
