@@ -7728,6 +7728,18 @@ function a2aAgentCard() {
     },
     version: "2026.06.29",
     documentationUrl: `${SITE_URL}/auth.md`,
+    supportedInterfaces: [
+      {
+        url: `${SITE_URL}/openapi.json`,
+        protocolBinding: `${SITE_URL}/protocols/static-discovery-openapi`,
+        protocolVersion: "2026.06.29",
+      },
+      {
+        url: `${SITE_URL}/.well-known/agent.json`,
+        protocolBinding: `${SITE_URL}/protocols/static-discovery-agent-card`,
+        protocolVersion: "2026.06.29",
+      },
+    ],
     capabilities: {
       streaming: false,
       pushNotifications: false,
@@ -8035,6 +8047,9 @@ function oauthAuthorizationServer() {
       identity_types_supported: ["anonymous"],
       supported_credential_types: ["none"],
       credential_types_supported: ["none"],
+      anonymous: {
+        credential_types_supported: ["none"],
+      },
       registration_required: false,
     },
     status: "public-site-no-oauth-required",
