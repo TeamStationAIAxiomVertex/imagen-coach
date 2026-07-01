@@ -23,19 +23,21 @@
     "title": "Documentos mios para la web nueva",
     "status": "active_grounding_corpus_for_cloudflare_worker_and_mcp_surfaces",
     "role": "Primary shared corpus for ongoing Sonia-only retrieval, inventorying, quote extraction, glossary support and route evidence.",
-    "reviewedAt": "2026-06-29",
+    "reviewedAt": "2026-07-01",
     "folderModifiedAt": "2026-06-29T17:55:49.144Z",
-    "visibleFileCount": 28,
+    "latestObservedAt": "2026-07-01",
+    "visibleFileCount": 38,
     "fileTypeSummary": {
-      "pdf": 18,
-      "docx": 4,
-      "pptx": 2,
-      "txt": 4
+      "pdf": 24,
+      "docx": 5,
+      "pptx": 3,
+      "txt": 6
     },
     "notes": [
       "This folder is the active shared corpus root for Cloudflare grounding work.",
       "It does not fully replace Sonia's previously reviewed Drive library because some foundational authority files still live only in the older reviewed set.",
-      "The current public teaching layer remains tied to reviewed quote banks until a dedicated extraction pass is completed from this active corpus."
+      "The current public teaching layer remains tied to reviewed quote banks until a dedicated extraction pass is completed from this active corpus.",
+      "July 2026 inventory confirms the active corpus now includes biography, testimonials, marca personal, extra transcripts and additional business/money capacity materials."
     ],
     "semanticClusters": [
       {
@@ -44,9 +46,16 @@
         "description": "Files about internal brakes, worthiness, money, visibility and the capacity to sustain growth.",
         "primaryFiles": [
           "Creencias_SoniaMcrorey.docx",
+          "Testimonios - La Raiz del Dinero.pdf",
+          "captions video 2.txt",
+          "Video 1.txt",
+          "Imagen Dinero neurociencia Sonia McRorey — Repetición.pdf",
           "Despierta tu abundancia 3.txt",
           "Despiertac tu abundancia 2.txt",
           "transcript despierta abundancia 1.txt",
+          "Workbook_Despierta_tu_Abundancia_v2.docx",
+          "Despierta tu Abundancia.pdf",
+          "La Raíz del Dinero — Programa.pdf",
           "dar recibir imagen negocios resultados mentalidad MX.pdf",
           "Carrusel · 5 señales de una herida con el dinero.pdf",
           "no es que no puedas sostener mas dinero.pdf",
@@ -70,6 +79,7 @@
           "Ejercicios taller Autoconcepto -Tu punto de Partida.pdf",
           "Tu punto de Partida- Tu imagen autentica - SM.pdf",
           "Sonia McRorey — Ocupar tu lugar.pdf",
+          "Servicio Marca Personal.pdf",
           "tu imagen es lo que encarnas.pdf"
         ],
         "pageUse": [
@@ -108,7 +118,8 @@
           "Imagen interna y externa guadalajara méxico.pdf",
           "Imagen e identidad para sostener liderazgo y dinero Guadalajara México.pdf",
           "facturación  imagen mexico.pdf",
-          "Conferencia Nutriimagen 2026 — Desarrollo de Imagen, Estilo y Autoestima en la Vejez (1).pdf"
+          "Conferencia Nutriimagen 2026 — Desarrollo de Imagen, Estilo y Autoestima en la Vejez (1).pdf",
+          "Semblanza corregida.pdf"
         ],
         "pageUse": [
           "Mexico",
@@ -125,7 +136,8 @@
         "primaryFiles": [
           "Chakras_Sonia_Mcrorey .docx",
           "Post Vertical para Instagram  Frases Motivadoras Minimalista Negro.pdf",
-          "Carrusel Despierta tu Abundancia (8 láminas).pdf"
+          "Carrusel Despierta tu Abundancia (8 láminas).pdf",
+          "Clase cuatro Eneagrama 2021.pptx"
         ],
         "pageUse": [
           "private extraction review only",
@@ -134,12 +146,83 @@
       }
     ],
     "gapsRelativeToAuthorityStack": [
-      "The active shared corpus does not currently contain Sonia's biography and E-E-A-T anchor file equivalent to Semblanza corregida.pdf.",
       "The active shared corpus does not currently contain the earlier reviewed service architecture file equivalent to Sonia_McRorey_Servicios_v7.docx.",
       "The active shared corpus does not currently contain the earlier reviewed category-definition and axioms files that support glossary and comparison doctrine.",
       "Because of those gaps, the older reviewed Drive library remains part of Sonia's source contract until those files are added or re-reviewed in the active corpus."
     ],
     "files": [
+      {
+        "id": "1W_9ZflHLSa-JD4cVCpdxJbl7uPlnZNor",
+        "title": "Testimonios - La Raiz del Dinero.pdf",
+        "mimeType": "application/pdf",
+        "clusters": [
+          "seguridad_dinero_capacidad"
+        ],
+        "relevance": "supporting",
+        "useFor": [
+          "testimonial signals",
+          "outcome language review",
+          "social proof themes"
+        ],
+        "sensitivity": [
+          "review names and private details before public use",
+          "do not publish raw testimonials without permission check"
+        ]
+      },
+      {
+        "id": "1YEnkR2JMVzTiEBbmahNOSLUckuUTfIHa",
+        "title": "captions video 2.txt",
+        "mimeType": "text/plain",
+        "clusters": [
+          "seguridad_dinero_capacidad"
+        ],
+        "relevance": "supporting",
+        "useFor": [
+          "spoken-language patterns",
+          "short quote extraction",
+          "capacity and business language"
+        ],
+        "sensitivity": [
+          "transcript needs editorial cleanup",
+          "supporting only"
+        ]
+      },
+      {
+        "id": "1VCMrPmu22QG8ufFyolq-Iwcq_tDk_A4M",
+        "title": "Video 1.txt",
+        "mimeType": "text/plain",
+        "clusters": [
+          "seguridad_dinero_capacidad"
+        ],
+        "relevance": "supporting",
+        "useFor": [
+          "spoken-language patterns",
+          "short quote extraction",
+          "abundance-to-security translation"
+        ],
+        "sensitivity": [
+          "transcript needs editorial cleanup",
+          "do not make abundance the root public category"
+        ]
+      },
+      {
+        "id": "1qa0ZZ0qfKJ0LA3HnH5DeGtZlLXCsc7gW",
+        "title": "Imagen Dinero neurociencia Sonia McRorey — Repetición.pdf",
+        "mimeType": "application/pdf",
+        "clusters": [
+          "seguridad_dinero_capacidad"
+        ],
+        "relevance": "primary",
+        "useFor": [
+          "money and image relationship",
+          "growth capacity",
+          "visibility and decision patterns"
+        ],
+        "sensitivity": [
+          "frame as professional capacity, not wealth guarantee",
+          "avoid medical neuroscience claims unless directly reviewed"
+        ]
+      },
       {
         "id": "1a2UWBsbFz7nD4BLtLxC6SyMgr5hqgo11",
         "title": "Creencias_SoniaMcrorey.docx",
@@ -211,6 +294,60 @@
         "sensitivity": [
           "supporting only",
           "must be sanitized before public use"
+        ]
+      },
+      {
+        "id": "18_OlxyQfYChi3RyLvewFysH79YdEWm6H",
+        "title": "Workbook_Despierta_tu_Abundancia_v2.docx",
+        "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        "clusters": [
+          "seguridad_dinero_capacidad"
+        ],
+        "relevance": "supporting",
+        "useFor": [
+          "exercise themes",
+          "self-reflection question patterns",
+          "internal capacity language"
+        ],
+        "sensitivity": [
+          "course/workbook material",
+          "do not publish exercises wholesale"
+        ]
+      },
+      {
+        "id": "1Bt13NiJsWPRiuSWT7J0jEU1BgfqGKsu-",
+        "title": "Despierta tu Abundancia.pdf",
+        "mimeType": "application/pdf",
+        "clusters": [
+          "seguridad_dinero_capacidad"
+        ],
+        "relevance": "supporting",
+        "useFor": [
+          "abundance language translation",
+          "worthiness and capacity themes",
+          "private corpus grounding"
+        ],
+        "sensitivity": [
+          "supporting only",
+          "do not publish as public service category"
+        ]
+      },
+      {
+        "id": "1pbPEu0trryJLo8SrXiEANk3TPglrmN1c",
+        "title": "La Raíz del Dinero — Programa.pdf",
+        "mimeType": "application/pdf",
+        "clusters": [
+          "seguridad_dinero_capacidad"
+        ],
+        "relevance": "supporting",
+        "useFor": [
+          "program concept review",
+          "money belief language",
+          "growth-capacity answer cards"
+        ],
+        "sensitivity": [
+          "program material",
+          "do not expose pricing, private logistics or course structure without review"
         ]
       },
       {
@@ -367,6 +504,24 @@
         "sensitivity": [
           "use Sonia phrasing carefully",
           "avoid overstating claims"
+        ]
+      },
+      {
+        "id": "1uMrlJlUDGuPRjUTEMqEEnqJ8SM_L_sJk",
+        "title": "Servicio Marca Personal.pdf",
+        "mimeType": "application/pdf",
+        "clusters": [
+          "identidad_autoconcepto_presencia"
+        ],
+        "relevance": "primary",
+        "useFor": [
+          "personal brand",
+          "positioning",
+          "authority and market clarity"
+        ],
+        "sensitivity": [
+          "review for dated offers before public use",
+          "do not expose private commercial details"
         ]
       },
       {
@@ -557,6 +712,25 @@
         ]
       },
       {
+        "id": "1FfZIeEI9daqqgiEzfMmYg9hzQA2JFlOr",
+        "title": "Semblanza corregida.pdf",
+        "mimeType": "application/pdf",
+        "clusters": [
+          "mexico_contexto_ejecutivo"
+        ],
+        "relevance": "primary",
+        "useFor": [
+          "biography",
+          "E-E-A-T",
+          "authority proof",
+          "schema and about-page facts"
+        ],
+        "sensitivity": [
+          "verify contact details before publication",
+          "use facts conservatively"
+        ]
+      },
+      {
         "id": "1nez8f_tSVseDkjKwiv-V09E96OIFFgls",
         "title": "No todos los profesionales necesitan verse igual.docx",
         "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
@@ -620,6 +794,22 @@
         "sensitivity": [
           "supporting only",
           "avoid social-post phrasing in public SEO routes"
+        ]
+      },
+      {
+        "id": "1yv0jMOophKL77LzmnsM5rM72n7eZS8Qb",
+        "title": "Clase cuatro Eneagrama 2021.pptx",
+        "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+        "clusters": [
+          "experimental_or_secondary"
+        ],
+        "relevance": "restricted",
+        "useFor": [
+          "private signal review only"
+        ],
+        "sensitivity": [
+          "do not use as public root copy for executive pages",
+          "requires explicit editorial decision before any public extraction"
         ]
       }
     ]

@@ -91,7 +91,7 @@ Sonia's expert source material now includes:
 Use these sources to strengthen pages with Sonia's real domain language, proof, methodology, idioms and teaching concepts. Do not dump raw source text into pages. Extract, sanitize, compress and map each source to the correct page intent.
 
 The active shared Drive corpus is the Cloudflare grounding root.
-The supporting reviewed Drive library remains in the source contract for foundational authority files not yet mirrored into the active corpus.
+The supporting reviewed Drive library remains in the source contract for foundational service architecture, category-definition and doctrine files not yet mirrored into the active corpus.
 
 Teaching modules must be added through the route map, not by hard-coding quotes into templates. Every public teaching requires source validation against the reviewed quote banks during `npm run build`.
 

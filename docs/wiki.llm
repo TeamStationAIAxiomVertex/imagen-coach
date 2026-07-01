@@ -62,7 +62,7 @@ Required content sources:
 Sonia now operates with two Drive libraries:
 
 - an active shared Cloudflare grounding corpus used for ongoing retrieval and inventory work
-- a supporting reviewed foundational library that still holds some biography, service architecture and doctrine files not yet mirrored in the active shared corpus
+- a supporting reviewed foundational library that still holds some service architecture and doctrine files not yet mirrored in the active shared corpus
 
 The Drive corpus is an expert source library, not a public content dump. It includes service drafts, transcripts, training decks, image/coaching definitions, e-books, authority proof, presentation material and visual assets. Some files contain private or dated data. Therefore:
 
