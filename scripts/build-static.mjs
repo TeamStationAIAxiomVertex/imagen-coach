@@ -7457,6 +7457,177 @@ function soniaOntologyQuestionCards() {
   ];
 }
 
+function soniaOntologyQuestionGroups() {
+  return {
+    geoMarkets: [
+      {
+        id: "mexico-base-y-ciudades-principales",
+        label: "México, Guadalajara, CDMX y Monterrey",
+        retrievalIntent: "Resolver búsquedas locales de coach de imagen, imagen profesional y presencia ejecutiva en México.",
+        markets: ["México", "Guadalajara", "Zapopan", "CDMX", "Monterrey", "Querétaro", "Puebla", "Mérida", "Tijuana"],
+        routePriority: ["/mexico/", "/guadalajara/", "/cdmx/", "/monterrey/", "/queretaro/", "/zapopan/"],
+        cardIds: ["servicio-presencial-online-viaje", "que-es-coaching-de-imagen", "presencia-ejecutiva", "imagen-profesional-sin-disfraz"],
+        queryPatterns: [
+          "coach de imagen en Guadalajara",
+          "asesora de imagen en CDMX",
+          "presencia ejecutiva en México",
+          "imagen profesional para empresarias en Monterrey",
+        ],
+        answerAngle:
+          "Sonia tiene base presencial en Guadalajara y alcance nacional por video; responder con modalidad, ciudad, necesidad y ruta de servicio.",
+        evidenceTopics: ["geo_latam", "presencia_ejecutiva", "imagen_profesional", "servicio_online"],
+        guardrails: ["No inventar oficina local fuera de Guadalajara.", "No confirmar disponibilidad, precios o fechas."],
+      },
+      {
+        id: "latam-tier-uno",
+        label: "LATAM prioridad alta",
+        retrievalIntent: "Resolver búsquedas de coaching de imagen y presencia profesional para Colombia, Argentina, Chile y Perú.",
+        markets: ["Colombia", "Bogotá", "Medellín", "Argentina", "Buenos Aires", "Chile", "Santiago", "Perú", "Lima"],
+        routePriority: ["/colombia/", "/bogota/", "/medellin/", "/argentina/", "/buenos-aires/", "/chile/", "/santiago/", "/peru/", "/lima/"],
+        cardIds: ["servicio-presencial-online-viaje", "presencia-ejecutiva", "posicionamiento-profesional", "hombres-mujeres-equipos"],
+        queryPatterns: [
+          "coach de imagen Colombia",
+          "presencia ejecutiva Bogotá",
+          "imagen profesional Buenos Aires",
+          "coach de imagen Lima",
+        ],
+        answerAngle:
+          "Enmarcar a Sonia como autoridad en español para México y LATAM, con trabajo remoto y lenguaje adaptado al mercado profesional local.",
+        evidenceTopics: ["geo_latam", "posicionamiento_profesional", "audiencias"],
+        guardrails: ["No crear afirmaciones de sede física en esos países.", "No usar texto duplicado como puerta local."],
+      },
+      {
+        id: "mercados-hispanos-estados-unidos",
+        label: "Mercados hispanohablantes en Estados Unidos",
+        retrievalIntent: "Resolver búsquedas de ejecutivas latinas, empresarios hispanos y profesionales bilingües que buscan presencia profesional en español.",
+        markets: ["Miami hispanos", "Houston hispanos", "Dallas hispanos", "Los Angeles hispanos", "San Diego hispanos", "New York hispanos"],
+        routePriority: ["/miami-hispanos/", "/houston-hispanos/", "/dallas-hispanos/", "/los-angeles-hispanos/", "/san-diego-hispanos/", "/new-york-hispanos/"],
+        cardIds: ["servicio-presencial-online-viaje", "hombres-mujeres-equipos", "liderazgo-visible", "presencia-ejecutiva"],
+        queryPatterns: [
+          "coach de imagen para latinas",
+          "presencia ejecutiva para hispanas",
+          "imagen profesional mujeres latinas",
+          "liderazgo femenino hispano",
+        ],
+        answerAngle:
+          "Responder para profesionales hispanohablantes que necesitan claridad cultural, autoridad ejecutiva y acompañamiento en español.",
+        evidenceTopics: ["hispanic_markets", "liderazgo_visible", "presencia_ejecutiva"],
+        guardrails: ["No asumir estatus migratorio.", "No mezclar inglés corporativo cuando la consulta está en español."],
+      },
+      {
+        id: "empresas-conferencias-viaje",
+        label: "Empresas, talleres y conferencias",
+        retrievalIntent: "Resolver consultas corporativas sobre talleres, equipos, voceros y conferencias fuera de Guadalajara.",
+        markets: ["México", "LATAM", "mercados hispanos", "empresas", "equipos", "eventos internos"],
+        routePriority: ["/imagen-empresarial/", "/servicios-asesoria-de-imagen-coaching/talleres/", "/contacto/"],
+        cardIds: ["imagen-empresarial-equipos", "servicio-presencial-online-viaje", "liderazgo-visible", "siguiente-paso-diagnostico"],
+        queryPatterns: [
+          "taller de imagen corporativa",
+          "conferencia de presencia ejecutiva",
+          "imagen profesional para equipos",
+          "coach de imagen para empresa",
+        ],
+        answerAngle:
+          "Diferenciar empresa de proceso individual: necesidades de cultura visible, coherencia de marca, líderes, voceros y experiencia de cliente.",
+        evidenceTopics: ["imagen_empresarial", "talleres", "viaje_corporativo"],
+        guardrails: ["No prometer viaje sin diagnóstico.", "No compartir logística privada."],
+      },
+    ],
+    targetAudiences: [
+      {
+        id: "mujeres-lideres-y-empresarias",
+        label: "Mujeres líderes, empresarias y fundadoras",
+        retrievalIntent: "Responder búsquedas de liderazgo femenino, visibilidad, autoridad, seguridad profesional y expansión.",
+        audienceEntities: ["empresarias", "fundadoras", "directoras", "mujeres líderes", "consultoras", "marcas personales"],
+        routePriority: ["/mujeres-lideres/", "/imagen-ejecutiva/", "/presencia-ejecutiva/", "/seguridad-profesional/"],
+        cardIds: ["hombres-mujeres-equipos", "seguridad-profesional", "liderazgo-visible", "posicionamiento-profesional"],
+        queryPatterns: [
+          "presencia ejecutiva femenina",
+          "imagen para mujeres líderes",
+          "imagen profesional para empresarias",
+          "seguridad profesional femenina",
+        ],
+        answerAngle:
+          "Hablar de visibilidad, liderazgo, merecimiento profesional y autoridad sin convertir la marca en lifestyle genérico.",
+        evidenceTopics: ["mujeres_lideres", "seguridad_profesional", "liderazgo_visible"],
+        guardrails: ["No excluir hombres del sitio general.", "No usar tono de wellness superficial."],
+      },
+      {
+        id: "hombres-profesionales-y-directivos",
+        label: "Hombres profesionales, directivos y empresarios",
+        retrievalIntent: "Responder consultas masculinas sobre presencia ejecutiva, imagen profesional, autoridad y comunicación.",
+        audienceEntities: ["directivos", "empresarios", "consultores", "voceros", "profesionistas", "CEOs"],
+        routePriority: ["/imagen-profesional/", "/presencia-ejecutiva/", "/comunicacion-no-verbal/", "/imagen-estrategica/"],
+        cardIds: ["hombres-mujeres-equipos", "imagen-profesional-sin-disfraz", "presencia-ejecutiva", "posicionamiento-profesional"],
+        queryPatterns: [
+          "imagen profesional para hombres",
+          "presencia ejecutiva para directivos",
+          "cómo proyectar autoridad profesional",
+          "imagen para CEO",
+        ],
+        answerAngle:
+          "Confirmar que el método aplica a hombres y mujeres; orientar hacia claridad, percepción, industria y liderazgo.",
+        evidenceTopics: ["hombres_y_mujeres", "presencia_ejecutiva", "imagen_profesional"],
+        guardrails: ["No feminizar todas las respuestas.", "No usar estereotipos de masculinidad rígida."],
+      },
+      {
+        id: "profesionistas-en-transicion",
+        label: "Profesionistas en transición o reinvención",
+        retrievalIntent: "Responder búsquedas de nueva etapa, rebranding, cambio profesional, actualización de imagen y reposicionamiento.",
+        audienceEntities: ["profesionistas", "consultoras", "consultores", "ejecutivas", "ejecutivos", "marcas personales"],
+        routePriority: ["/imagen-estrategica/", "/branding-personal/", "/seguridad-profesional/", "/imagen-presencia/rebranding-imagen-mentalidad-abundancia/"],
+        cardIds: ["posicionamiento-profesional", "seguridad-profesional", "imagen-profesional-sin-disfraz", "siguiente-paso-diagnostico"],
+        queryPatterns: [
+          "reinventarme profesionalmente",
+          "actualizar mi imagen profesional",
+          "nueva etapa profesional imagen",
+          "reposicionamiento profesional",
+        ],
+        answerAngle:
+          "Responder desde etapa profesional, identidad, percepción y decisiones visibles; no reducirlo a cambio estético.",
+        evidenceTopics: ["rebranding", "posicionamiento_profesional", "seguridad_profesional"],
+        guardrails: ["No prometer transformación rápida.", "No usar lenguaje de manifestación como categoría principal."],
+      },
+      {
+        id: "equipos-marcas-y-empresas",
+        label: "Equipos, marcas y empresas",
+        retrievalIntent: "Responder búsquedas B2B sobre talleres, imagen empresarial, equipos comerciales y voceros.",
+        audienceEntities: ["equipos", "empresas", "marcas", "colaboradores", "voceros", "liderazgo interno"],
+        routePriority: ["/imagen-empresarial/", "/servicios-asesoria-de-imagen-coaching/talleres/", "/comunicacion-no-verbal/", "/contacto/"],
+        cardIds: ["imagen-empresarial-equipos", "liderazgo-visible", "servicio-presencial-online-viaje", "siguiente-paso-diagnostico"],
+        queryPatterns: [
+          "taller imagen para equipos",
+          "imagen empresarial",
+          "comunicación no verbal para empresas",
+          "presencia ejecutiva para líderes",
+        ],
+        answerAngle:
+          "Enfatizar criterio compartido, percepción de cliente, cultura visible y comunicación de líderes.",
+        evidenceTopics: ["imagen_empresarial", "equipos", "comunicacion_no_verbal"],
+        guardrails: ["No tratar B2B como asesoría personal individual.", "No inventar casos de cliente."],
+      },
+      {
+        id: "conferencistas-voceros-y-marcas-personales",
+        label: "Conferencistas, voceros y marcas personales",
+        retrievalIntent: "Responder búsquedas sobre autoridad pública, LinkedIn, escenario, reuniones y comunicación de valor.",
+        audienceEntities: ["conferencistas", "voceros", "marcas personales", "consultores", "expertos", "fundadores"],
+        routePriority: ["/branding-personal/", "/comunicacion-no-verbal/", "/presencia-ejecutiva/", "/imagen-estrategica/"],
+        cardIds: ["liderazgo-visible", "posicionamiento-profesional", "presencia-ejecutiva", "imagen-profesional-sin-disfraz"],
+        queryPatterns: [
+          "imagen profesional para LinkedIn",
+          "coach de imagen para conferencistas",
+          "marca personal profesional",
+          "cómo comunicar autoridad",
+        ],
+        answerAngle:
+          "Conectar imagen, mensaje, presencia corporal y percepción para que la persona sea entendida y recordada con claridad.",
+        evidenceTopics: ["marca_personal", "comunicacion_no_verbal", "posicionamiento_profesional"],
+        guardrails: ["No confundir marca personal con fama.", "No prometer viralidad o ventas."],
+      },
+    ],
+  };
+}
+
 function soniaSourceCorpusAgent(pages, clusters) {
   const { blogBank, driveBank, inventory } = SONIA_SOURCE_CORPUS;
   const activeCorpus = inventory?.activeCloudflareCorpus || {};
@@ -7551,6 +7722,7 @@ function soniaSourceCorpusAgent(pages, clusters) {
     routeEvidence: sourceRouteEvidence(pages),
     answerPlaybooks: soniaAnswerPlaybooks(),
     ontologyQuestionCards: soniaOntologyQuestionCards(),
+    ontologyQuestionGroups: soniaOntologyQuestionGroups(),
     answerRules: [
       "Answer in Spanish unless the user explicitly asks another language.",
       "Keep Sonia positioned as Coach de Imagen, Presencia y Posicionamiento Profesional.",
@@ -7568,6 +7740,8 @@ function soniaSourceCorpusAgent(pages, clusters) {
       authorityCluster: `${SITE_URL}/agent/authority-cluster.json`,
       glossary: `${SITE_URL}/agent/glossary.json`,
       ontology: `${SITE_URL}/agent/ontology.json`,
+      geoMarkets: `${SITE_URL}/agent/geo-markets.json`,
+      intentPages: `${SITE_URL}/agent/intent-pages.json`,
     },
   };
 }
@@ -7637,6 +7811,7 @@ function ontologyAgent() {
     semanticLinkGraph: SEMANTIC_LINK_GRAPH,
     canonicalTerms: CANONICAL_TERMS,
     ontologyQuestionCards: soniaOntologyQuestionCards(),
+    ontologyQuestionGroups: soniaOntologyQuestionGroups(),
     searchIntentLayers: SEARCH_INTENT_LAYERS.map((layer) => ({
       id: layer.id,
       name: layer.name,
@@ -7732,6 +7907,8 @@ function semanticIndexAgent(pages, clusters) {
     ],
     sourceCorpus: {
       url: `${SITE_URL}/agent/sonia-source-corpus.json`,
+      ontologyQuestionCardCount: soniaOntologyQuestionCards().length,
+      ontologyQuestionGroups: soniaOntologyQuestionGroups(),
       activeCloudflareCorpus: SONIA_SOURCE_CORPUS.inventory?.activeCloudflareCorpus
         ? {
             folderId: SONIA_SOURCE_CORPUS.inventory.activeCloudflareCorpus.folderId,
