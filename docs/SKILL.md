@@ -1,4 +1,4 @@
-# Imagen Coach Required Skill Stack
+# Coach De Imagen Required Skill Stack
 
 ## GEO Engineering
 

@@ -1,6 +1,6 @@
-# ImagenCoach Rebuild Wiki
+# Coach De Imagen Rebuild Wiki
 
-This folder is the project wiki for rebuilding `imagencoach.com`.
+This folder is the project wiki for rebuilding and governing `coachdeimagen.com`.
 
 ## Core Docs
 
@@ -31,4 +31,4 @@ This folder is the project wiki for rebuilding `imagencoach.com`.
 
 ## Product Intent
 
-`imagencoach.com` is Sonia McRorey's larger/general site. It must use the same UX/UI quality as `imagengdl.com`, but it remains a separate site with its own full content architecture, article archive, canonical URLs, SEO, and deployment.
+`coachdeimagen.com` is Sonia McRorey's larger/general authority site. `imagencoach.com` is a legacy source and redirect domain only. The canonical production site must preserve its own full content architecture, article archive, canonical URLs, SEO, GEO, AI discovery surfaces and deployment.

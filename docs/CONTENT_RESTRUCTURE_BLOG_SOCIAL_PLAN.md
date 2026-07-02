@@ -1,4 +1,4 @@
-# Imagen Coach Content Restructure, Blog Import And Social Authority Plan
+# Coach De Imagen Content Restructure, Blog Import And Social Authority Plan
 
 ## Objective
 
@@ -102,7 +102,7 @@ The generator should stop chunking content by arbitrary line counts. It should c
 ### Homepage `/`
 
 Primary intent:
-entity hub and conversion path for Imagen Coach.
+entity hub and conversion path for Coach De Imagen.
 
 Recommended H structure:
 

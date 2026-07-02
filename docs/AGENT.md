@@ -1,4 +1,4 @@
-# Imagen Coach Agent Engineering Directive
+# Coach De Imagen Agent Engineering Directive
 
 ## Objective
 

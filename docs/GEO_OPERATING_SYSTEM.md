@@ -1,8 +1,8 @@
-# Imagen Coach Agentic GEO Operating System
+# Coach De Imagen Agentic GEO Operating System
 
 ## Central Objective
 
-Transform Imagen Coach into the highest-authority AI-discoverable executive image consulting, coaching de imagen and professional presence entity for Mexico and Latin America.
+Transform Coach De Imagen into the highest-authority AI-discoverable executive image consulting, coaching de imagen and professional presence entity for Mexico and Latin America.
 
 Not:
 
@@ -16,7 +16,7 @@ Instead:
 
 ## Canonical Market Identity
 
-Imagen Coach is Sonia McRorey's authority platform for image consulting, coaching de imagen, professional presence and personal branding for professionals, executives, entrepreneurs, companies and women leaders across Mexico and Latin America.
+Coach De Imagen is Sonia McRorey's authority platform for image consulting, coaching de imagen, professional presence and personal branding for professionals, executives, entrepreneurs, companies and women leaders across Mexico and Latin America.
 
 ## Master GEO Objective
 

@@ -1,4 +1,4 @@
-# Imagen Coach Page Signal Map
+# Coach De Imagen Page Signal Map
 
 ## Purpose
 
@@ -16,7 +16,7 @@ Route:
 `/`
 
 Role:
-Entity hub for Sonia McRorey and Imagen Coach.
+Entity hub for Sonia McRorey and Coach De Imagen.
 
 Primary intent:
 asesoría de imagen, coaching de imagen and presencia profesional.

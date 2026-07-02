@@ -1,14 +1,14 @@
-# Imagen Coach Ubiquitous Language
+# Coach De Imagen Ubiquitous Language
 
 ## Purpose
 
-This document is the semantic source of truth for `imagencoach.com`.
+This document is the semantic source of truth for `coachdeimagen.com`.
 
 It prevents brand drift, copy hallucination, SEO stuffing and accidental reduction of Sonia McRorey into a fashion, beauty or influencer category.
 
 ## Core Positioning
 
-Imagen Coach is Sonia McRorey's general authority site for:
+Coach De Imagen is Sonia McRorey's general authority site for:
 
 - asesoría de imagen
 - coaching de imagen

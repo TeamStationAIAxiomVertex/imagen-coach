@@ -2,7 +2,7 @@
 
 ## Objective
 
-Make every Imagen Coach page easier to understand without omitting, truncating, paraphrasing, or changing Sonia McRorey's source wording.
+Make every Coach De Imagen page easier to understand without omitting, truncating, paraphrasing, or changing Sonia McRorey's source wording.
 
 The next UI pass should preserve the full crawlable text while changing how the reader experiences it:
 
