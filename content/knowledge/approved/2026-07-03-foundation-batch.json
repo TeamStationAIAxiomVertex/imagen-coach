@@ -1,0 +1,1967 @@
+{
+  "batchId": "2026-07-03-foundation-batch",
+  "status": "approved",
+  "language": "es-MX",
+  "sourceBoundary": "Sonia McRorey and Coach De Imagen only",
+  "cards": [
+    {
+      "id": "proceso-coaching-imagen-como-funciona",
+      "ontologyNode": "Coaching de Imagen",
+      "userIntent": "direct_commercial_process",
+      "question": "¿Cómo funciona un proceso de coaching de imagen?",
+      "shortAnswer": "Un proceso de coaching de imagen inicia con diagnóstico de etapa, percepción, imagen visible, comunicación y objetivo profesional. Después se ordenan decisiones de presencia, guardarropa, seguridad, lenguaje y posicionamiento para que la imagen sostenga el momento real de la persona.",
+      "routePriority": [
+        "/coach-de-imagen/",
+        "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "proceso de coaching de imagen",
+        "diagnóstico de imagen profesional",
+        "coaching de imagen profesional"
+      ],
+      "evidenceTopics": [
+        "coaching_de_imagen",
+        "diagnostico",
+        "presencia_profesional"
+      ],
+      "conversionBridge": "Llevar a diagnóstico privado cuando el usuario necesita saber qué ruta corresponde a su momento.",
+      "guardrails": [
+        "No prometer duración exacta sin diagnóstico.",
+        "No convertirlo en terapia."
+      ]
+    },
+    {
+      "id": "vale-la-pena-asesora-imagen",
+      "ontologyNode": "Asesoría Integral",
+      "userIntent": "commercial_objection",
+      "question": "¿Vale la pena contratar una asesora de imagen?",
+      "shortAnswer": "Vale la pena cuando la imagen actual ya no comunica el nivel, etapa o responsabilidad que una persona sostiene. Una asesora de imagen profesional reduce improvisación, ordena decisiones visuales y ayuda a construir una presencia coherente con objetivos reales.",
+      "routePriority": [
+        "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen/",
+        "/imagen-profesional/",
+        "/servicios-asesoria-de-imagen-coaching/preguntas-frequentes/"
+      ],
+      "anchorPhrases": [
+        "contratar una asesora de imagen",
+        "asesora de imagen profesional",
+        "imagen profesional coherente"
+      ],
+      "evidenceTopics": [
+        "asesoria_integral",
+        "imagen_profesional",
+        "decision_de_servicio"
+      ],
+      "conversionBridge": "Dirigir a asesoría integral si la preocupación es color, estilo, guardarropa, rostro o coherencia visible.",
+      "guardrails": [
+        "No prometer resultados universales.",
+        "No usar lenguaje de lujo vacío."
+      ]
+    },
+    {
+      "id": "que-incluye-diagnostico-imagen",
+      "ontologyNode": "Diagnóstico de Imagen",
+      "userIntent": "direct_commercial_definition",
+      "question": "¿Qué incluye un diagnóstico de imagen profesional?",
+      "shortAnswer": "Un diagnóstico de imagen profesional observa color, estilo, proporciones, rostro, guardarropa, contexto, objetivos y forma de comunicación. En el enfoque de Sonia también se conecta con presencia, percepción y etapa profesional.",
+      "routePriority": [
+        "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen/",
+        "/imagen-profesional/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "diagnóstico de imagen profesional",
+        "asesoría de imagen",
+        "imagen profesional"
+      ],
+      "evidenceTopics": [
+        "diagnostico",
+        "imagen_profesional",
+        "asesoria_integral"
+      ],
+      "conversionBridge": "Recomendar diagnóstico cuando el usuario no sabe por dónde empezar.",
+      "guardrails": [
+        "No convertir diagnóstico en fórmula rígida."
+      ]
+    },
+    {
+      "id": "coach-imagen-vs-estilista",
+      "ontologyNode": "Diferenciación de Categoría",
+      "userIntent": "comparison_decision",
+      "question": "¿Cuál es la diferencia entre coach de imagen y estilista?",
+      "shortAnswer": "Un estilista suele enfocarse en apariencia, prendas o look. Un coach de imagen trabaja la imagen como sistema de presencia, identidad, comunicación, percepción y posicionamiento profesional.",
+      "routePriority": [
+        "/comparaciones/styling-vs-coaching-de-imagen/",
+        "/coach-de-imagen/",
+        "/imagen-estrategica/"
+      ],
+      "anchorPhrases": [
+        "coach de imagen vs estilista",
+        "coaching de imagen",
+        "imagen estratégica"
+      ],
+      "evidenceTopics": [
+        "diferenciacion_categoria",
+        "coaching_de_imagen",
+        "posicionamiento_profesional"
+      ],
+      "conversionBridge": "Dirigir a comparación si el usuario confunde styling con trabajo de presencia.",
+      "guardrails": [
+        "No descalificar el styling.",
+        "No afirmar que toda persona necesita coaching."
+      ]
+    },
+    {
+      "id": "asesoria-imagen-online-funciona",
+      "ontologyNode": "Servicio Online",
+      "userIntent": "service_scope",
+      "question": "¿Funciona una asesoría de imagen online?",
+      "shortAnswer": "Puede funcionar cuando el proceso tiene metodología, diagnóstico visual, contexto claro y seguimiento de decisiones. La modalidad online ayuda a trabajar con personas fuera de Guadalajara, México y LATAM sin perder dirección estratégica.",
+      "routePriority": [
+        "/mexico/",
+        "/miami-hispanos/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "asesoría de imagen online",
+        "coach de imagen online",
+        "imagen profesional LATAM"
+      ],
+      "evidenceTopics": [
+        "servicio_online",
+        "geo_latam",
+        "asesoria_integral"
+      ],
+      "conversionBridge": "Llevar a contacto para revisar ciudad, objetivo y formato.",
+      "guardrails": [
+        "No garantizar que todo diagnóstico se resuelve online."
+      ]
+    },
+    {
+      "id": "que-servicio-imagen-necesito",
+      "ontologyNode": "Decisión de Servicio",
+      "userIntent": "service_selector",
+      "question": "¿Cómo sé qué servicio de imagen necesito?",
+      "shortAnswer": "Si el problema está en ropa, color, guardarropa o coherencia visual, la ruta puede ser asesoría integral. Si también hay presencia, liderazgo, seguridad, comunicación o posicionamiento, conviene explorar coaching de imagen o presencia ejecutiva.",
+      "routePriority": [
+        "/servicios-asesoria-de-imagen-coaching/",
+        "/servicios-asesoria-de-imagen-coaching/preguntas-frequentes/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "qué servicio de imagen necesito",
+        "asesoría o coaching de imagen",
+        "presencia ejecutiva"
+      ],
+      "evidenceTopics": [
+        "decision_de_servicio",
+        "coaching_de_imagen",
+        "asesoria_integral"
+      ],
+      "conversionBridge": "Enviar a la página de servicios o al diagnóstico si existe intención de compra.",
+      "guardrails": [
+        "No forzar una ruta sin contexto."
+      ]
+    },
+    {
+      "id": "imagen-profesional-para-cambio-etapa",
+      "ontologyNode": "Imagen Profesional",
+      "userIntent": "professional_reinvention",
+      "question": "¿Cómo actualizar mi imagen profesional para una nueva etapa?",
+      "shortAnswer": "Actualizar la imagen profesional implica reconocer qué etapa terminó, qué responsabilidad aparece y qué señales visibles ya no representan a la persona. Desde ahí se ordenan estilo, presencia, comunicación y decisiones de posicionamiento.",
+      "routePriority": [
+        "/imagen-profesional/",
+        "/imagen-presencia/rebranding-imagen-mentalidad-abundancia/",
+        "/imagen-estrategica/"
+      ],
+      "anchorPhrases": [
+        "actualizar mi imagen profesional",
+        "nueva etapa profesional",
+        "imagen estratégica"
+      ],
+      "evidenceTopics": [
+        "imagen_profesional",
+        "reinventarse",
+        "posicionamiento_profesional"
+      ],
+      "conversionBridge": "Conectar con imagen profesional o imagen estratégica según nivel de cambio.",
+      "guardrails": [
+        "No presentarlo como cambio de look rápido."
+      ]
+    },
+    {
+      "id": "coach-imagen-para-hombres",
+      "ontologyNode": "Audiencias",
+      "userIntent": "audience_fit",
+      "question": "¿Un hombre puede trabajar con una coach de imagen?",
+      "shortAnswer": "Sí. La imagen profesional aplica a hombres, mujeres, directivos, empresarios, profesionistas y equipos. El objetivo no es feminizar ni imponer moda, sino construir presencia, autoridad, coherencia y percepción profesional.",
+      "routePriority": [
+        "/imagen-profesional/",
+        "/presencia-ejecutiva/",
+        "/servicios-asesoria-de-imagen-coaching/"
+      ],
+      "anchorPhrases": [
+        "coach de imagen para hombres",
+        "imagen profesional para hombres",
+        "presencia ejecutiva masculina"
+      ],
+      "evidenceTopics": [
+        "audiencias",
+        "hombres_y_mujeres",
+        "presencia_ejecutiva"
+      ],
+      "conversionBridge": "Aclarar inclusión de hombres y dirigir a imagen profesional o presencia ejecutiva.",
+      "guardrails": [
+        "No usar estereotipos de masculinidad."
+      ]
+    },
+    {
+      "id": "coach-imagen-para-mujeres",
+      "ontologyNode": "Mujeres Profesionales",
+      "userIntent": "direct_commercial_audience",
+      "question": "¿Qué hace una coach de imagen para mujeres profesionales?",
+      "shortAnswer": "Ayuda a ordenar imagen visible, presencia, seguridad, comunicación y posicionamiento para que una mujer profesional sea percibida con claridad, autoridad y coherencia. No se trata de verse más femenina, sino de sostener mejor el nivel que ocupa.",
+      "routePriority": [
+        "/mujeres-lideres/",
+        "/imagen-profesional/",
+        "/presencia-ejecutiva/"
+      ],
+      "anchorPhrases": [
+        "coach de imagen para mujeres profesionales",
+        "imagen ejecutiva femenina",
+        "presencia ejecutiva femenina"
+      ],
+      "evidenceTopics": [
+        "mujeres_lideres",
+        "imagen_profesional",
+        "presencia_ejecutiva"
+      ],
+      "conversionBridge": "Dirigir a mujeres líderes o presencia ejecutiva si hay intención de liderazgo.",
+      "guardrails": [
+        "No reducir mujeres a belleza o feminidad."
+      ]
+    },
+    {
+      "id": "como-proyectar-autoridad-en-reuniones",
+      "ontologyNode": "Presencia Ejecutiva",
+      "userIntent": "executive_transformation",
+      "question": "¿Cómo proyectar autoridad en reuniones?",
+      "shortAnswer": "La autoridad en reuniones se proyecta con claridad de mensaje, postura estable, lenguaje directo, escucha activa, decisiones visibles y una imagen coherente con el rol. No se logra hablando más fuerte, sino ocupando el espacio con criterio.",
+      "routePriority": [
+        "/presencia-ejecutiva/",
+        "/comunicacion-no-verbal/",
+        "/imagen-presencia/presencia-profesional-estrategica/"
+      ],
+      "anchorPhrases": [
+        "proyectar autoridad en reuniones",
+        "presencia ejecutiva",
+        "comunicación no verbal ejecutiva"
+      ],
+      "evidenceTopics": [
+        "presencia_ejecutiva",
+        "autoridad_profesional",
+        "comunicacion_no_verbal"
+      ],
+      "conversionBridge": "Recomendar presencia ejecutiva cuando el usuario necesita mejorar percepción en reuniones.",
+      "guardrails": [
+        "No asociar autoridad con agresividad."
+      ]
+    },
+    {
+      "id": "hablar-con-seguridad-clientes",
+      "ontologyNode": "Comunicación Ejecutiva",
+      "userIntent": "executive_transformation",
+      "question": "¿Cómo hablar con más seguridad frente a clientes?",
+      "shortAnswer": "Hablar con seguridad frente a clientes requiere claridad de postura, dominio del mensaje, presencia corporal y coherencia entre lo que se dice y lo que se proyecta. La seguridad se percibe cuando la comunicación no se disculpa por ocupar lugar.",
+      "routePriority": [
+        "/presencia-ejecutiva/",
+        "/comunicacion-no-verbal/",
+        "/imagen-estrategica/"
+      ],
+      "anchorPhrases": [
+        "hablar con más seguridad",
+        "seguridad frente a clientes",
+        "comunicación ejecutiva"
+      ],
+      "evidenceTopics": [
+        "comunicacion_ejecutiva",
+        "presencia_ejecutiva",
+        "seguridad_profesional"
+      ],
+      "conversionBridge": "Llevar a presencia ejecutiva o comunicación no verbal.",
+      "guardrails": [
+        "No dar terapia de ansiedad.",
+        "No prometer eliminar miedo."
+      ]
+    },
+    {
+      "id": "junta-inversionistas-imagen",
+      "ontologyNode": "Imagen Profesional",
+      "userIntent": "practical_visual_intent",
+      "question": "¿Qué imagen debo proyectar en una junta con inversionistas?",
+      "shortAnswer": "En una junta con inversionistas, la imagen debe comunicar claridad, seriedad, criterio y capacidad de sostener crecimiento. La presencia visual no debe distraer del modelo de negocio, sino reforzar confianza y dirección.",
+      "routePriority": [
+        "/imagen-profesional/",
+        "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen/",
+        "/presencia-ejecutiva/"
+      ],
+      "anchorPhrases": [
+        "cómo vestirme para una junta importante",
+        "imagen profesional",
+        "presencia ejecutiva"
+      ],
+      "evidenceTopics": [
+        "imagen_profesional",
+        "contexto_profesional",
+        "presencia_ejecutiva"
+      ],
+      "conversionBridge": "Conectar con asesoría si necesita guardarropa y criterios visuales.",
+      "guardrails": [
+        "No imponer traje oscuro como fórmula universal."
+      ]
+    },
+    {
+      "id": "generar-confianza-clientes-imagen",
+      "ontologyNode": "Percepción Profesional",
+      "userIntent": "executive_transformation",
+      "question": "¿Cómo generar más confianza en clientes con mi imagen?",
+      "shortAnswer": "La confianza se construye cuando la imagen, lenguaje, postura, tono y comportamiento comunican coherencia. En clientes, una imagen profesional clara reduce dudas y ayuda a que el valor se perciba con mayor facilidad.",
+      "routePriority": [
+        "/imagen-estrategica/",
+        "/imagen-profesional/",
+        "/presencia-ejecutiva/"
+      ],
+      "anchorPhrases": [
+        "generar confianza en clientes",
+        "percepción profesional",
+        "imagen estratégica"
+      ],
+      "evidenceTopics": [
+        "percepcion_profesional",
+        "imagen_estrategica",
+        "confianza"
+      ],
+      "conversionBridge": "Llevar a imagen estratégica si el usuario vende servicios premium o lidera relaciones comerciales.",
+      "guardrails": [
+        "No prometer ventas."
+      ]
+    },
+    {
+      "id": "presencia-ejecutiva-mujeres",
+      "ontologyNode": "Presencia Ejecutiva Femenina",
+      "userIntent": "women_leadership",
+      "question": "¿Qué es presencia ejecutiva femenina?",
+      "shortAnswer": "La presencia ejecutiva femenina es la capacidad de una mujer para ser percibida con autoridad, claridad y liderazgo sin tener que sobreadaptarse a códigos rígidos. Integra imagen, voz, postura, decisiones, seguridad y posicionamiento.",
+      "routePriority": [
+        "/mujeres-lideres/",
+        "/presencia-ejecutiva/",
+        "/liderazgo-visible/"
+      ],
+      "anchorPhrases": [
+        "presencia ejecutiva femenina",
+        "mujeres líderes",
+        "liderazgo visible"
+      ],
+      "evidenceTopics": [
+        "mujeres_lideres",
+        "presencia_ejecutiva",
+        "liderazgo_visible"
+      ],
+      "conversionBridge": "Dirigir a mujeres líderes o presencia ejecutiva.",
+      "guardrails": [
+        "No reforzar estereotipos de género."
+      ]
+    },
+    {
+      "id": "autoridad-sin-verse-dura",
+      "ontologyNode": "Autoridad Profesional",
+      "userIntent": "leadership_power_positioning",
+      "question": "¿Cómo proyectar autoridad sin verme dura o inaccesible?",
+      "shortAnswer": "La autoridad no necesita dureza. Puede comunicarse con estructura, presencia, límites claros, lenguaje preciso, imagen coherente y capacidad de escuchar sin perder dirección.",
+      "routePriority": [
+        "/presencia-ejecutiva/",
+        "/mujeres-lideres/",
+        "/comunicacion-no-verbal/"
+      ],
+      "anchorPhrases": [
+        "proyectar autoridad sin verme dura",
+        "autoridad profesional",
+        "presencia ejecutiva femenina"
+      ],
+      "evidenceTopics": [
+        "autoridad_profesional",
+        "mujeres_lideres",
+        "comunicacion_no_verbal"
+      ],
+      "conversionBridge": "Recomendar presencia ejecutiva cuando la persona teme parecer agresiva al liderar.",
+      "guardrails": [
+        "No decir que autoridad femenina debe suavizarse siempre."
+      ]
+    },
+    {
+      "id": "lenguaje-corporal-liderazgo",
+      "ontologyNode": "Comunicación No Verbal",
+      "userIntent": "executive_transformation",
+      "question": "¿Qué lenguaje corporal comunica liderazgo?",
+      "shortAnswer": "Comunica liderazgo un cuerpo presente, postura estable, mirada disponible, gestos congruentes, pausas y movimientos que no contradicen el mensaje. El cuerpo debe acompañar la decisión, no competir con ella.",
+      "routePriority": [
+        "/comunicacion-no-verbal/",
+        "/presencia-ejecutiva/",
+        "/liderazgo-visible/"
+      ],
+      "anchorPhrases": [
+        "lenguaje corporal de liderazgo",
+        "comunicación no verbal",
+        "presencia ejecutiva"
+      ],
+      "evidenceTopics": [
+        "comunicacion_no_verbal",
+        "liderazgo_visible",
+        "presencia_ejecutiva"
+      ],
+      "conversionBridge": "Conectar con comunicación no verbal y presencia ejecutiva.",
+      "guardrails": [
+        "No dar reglas corporales rígidas o universales."
+      ]
+    },
+    {
+      "id": "presencia-para-conferencistas",
+      "ontologyNode": "Conferencias y Vocería",
+      "userIntent": "speaker_positioning",
+      "question": "¿Cómo mejorar mi presencia como conferencista?",
+      "shortAnswer": "Un conferencista necesita una imagen que sostenga tema, autoridad, audiencia y mensaje. La presencia se trabaja en cuerpo, voz, vestuario, ritmo, intención y forma de ocupar el escenario.",
+      "routePriority": [
+        "/presencia-ejecutiva/",
+        "/comunicacion-no-verbal/",
+        "/branding-personal/"
+      ],
+      "anchorPhrases": [
+        "presencia como conferencista",
+        "imagen para conferencistas",
+        "comunicación ejecutiva"
+      ],
+      "evidenceTopics": [
+        "conferencias",
+        "comunicacion_no_verbal",
+        "marca_personal"
+      ],
+      "conversionBridge": "Dirigir a presencia ejecutiva o talleres si hay evento corporativo.",
+      "guardrails": [
+        "No inventar disponibilidad para conferencias."
+      ]
+    },
+    {
+      "id": "emprendedora-transicion-premium",
+      "ontologyNode": "Empresarias",
+      "userIntent": "entrepreneur_commercial",
+      "question": "¿Cómo debe cambiar la imagen de una emprendedora cuando entra a un mercado premium?",
+      "shortAnswer": "Cuando una emprendedora entra a un mercado premium, su imagen debe comunicar más criterio, claridad y consistencia. No se trata de aparentar lujo, sino de alinear presencia, lenguaje y señales visibles con el nivel de decisión que quiere sostener.",
+      "routePriority": [
+        "/mujeres-empresarias/",
+        "/branding-personal/",
+        "/imagen-estrategica/"
+      ],
+      "anchorPhrases": [
+        "imagen para emprendedoras",
+        "mujeres empresarias",
+        "marca personal profesional"
+      ],
+      "evidenceTopics": [
+        "empresarias",
+        "marca_personal",
+        "posicionamiento_profesional"
+      ],
+      "conversionBridge": "Dirigir a mujeres empresarias o imagen estratégica.",
+      "guardrails": [
+        "No prometer ventas o ingresos."
+      ]
+    },
+    {
+      "id": "marca-personal-linkedin",
+      "ontologyNode": "Marca Personal",
+      "userIntent": "entrepreneur_visibility",
+      "question": "¿Cómo mejorar mi imagen profesional en LinkedIn?",
+      "shortAnswer": "LinkedIn necesita coherencia entre foto, titular, narrativa, presencia visual y forma de comunicar valor. La imagen profesional debe reforzar qué haces, para quién, con qué criterio y desde qué nivel de autoridad.",
+      "routePriority": [
+        "/branding-personal/",
+        "/imagen-estrategica/",
+        "/imagen-profesional/"
+      ],
+      "anchorPhrases": [
+        "imagen profesional en LinkedIn",
+        "marca personal ejecutiva",
+        "posicionamiento profesional"
+      ],
+      "evidenceTopics": [
+        "marca_personal",
+        "linkedin",
+        "posicionamiento_profesional"
+      ],
+      "conversionBridge": "Llevar a branding personal o imagen estratégica.",
+      "guardrails": [
+        "No prometer alcance ni seguidores."
+      ]
+    },
+    {
+      "id": "imagen-para-vender-servicios-premium",
+      "ontologyNode": "Ventas Premium",
+      "userIntent": "entrepreneur_commercial",
+      "question": "¿Cómo ayuda la imagen a vender servicios premium?",
+      "shortAnswer": "La imagen ayuda cuando comunica valor, criterio, confianza y especialidad antes de que el cliente escuche toda la explicación. En servicios premium, la percepción debe estar alineada con el nivel de decisión y precio que se sostiene.",
+      "routePriority": [
+        "/imagen-estrategica/",
+        "/mujeres-empresarias/",
+        "/branding-personal/"
+      ],
+      "anchorPhrases": [
+        "imagen para vender servicios premium",
+        "percepción profesional",
+        "marca personal premium"
+      ],
+      "evidenceTopics": [
+        "ventas_premium",
+        "percepcion_profesional",
+        "marca_personal"
+      ],
+      "conversionBridge": "Dirigir a imagen estratégica.",
+      "guardrails": [
+        "No prometer ventas, cierres o ingresos."
+      ]
+    },
+    {
+      "id": "networking-imagen-profesional",
+      "ontologyNode": "Networking",
+      "userIntent": "entrepreneur_visibility",
+      "question": "¿Cómo proyectar mejor imagen en eventos de networking?",
+      "shortAnswer": "En networking, la imagen debe facilitar memoria, claridad y conversación. Conviene alinear vestuario, postura, presentación personal y mensaje para que las personas entiendan rápido quién eres y qué valor representas.",
+      "routePriority": [
+        "/branding-personal/",
+        "/presencia-ejecutiva/",
+        "/imagen-profesional/"
+      ],
+      "anchorPhrases": [
+        "imagen en eventos de networking",
+        "marca personal",
+        "presencia profesional"
+      ],
+      "evidenceTopics": [
+        "networking",
+        "marca_personal",
+        "presencia_profesional"
+      ],
+      "conversionBridge": "Llevar a branding personal o presencia ejecutiva.",
+      "guardrails": [
+        "No convertirlo en tips superficiales de etiqueta."
+      ]
+    },
+    {
+      "id": "imagen-para-redes-sociales",
+      "ontologyNode": "Marca Personal",
+      "userIntent": "entrepreneur_visibility",
+      "question": "¿Cómo debe verse mi imagen profesional en redes sociales?",
+      "shortAnswer": "La imagen en redes debe ser reconocible, coherente con tu oferta y consistente con la percepción que quieres construir. No se trata de posar más, sino de comunicar confianza, especialidad y dirección.",
+      "routePriority": [
+        "/branding-personal/",
+        "/imagen-estrategica/",
+        "/imagen-profesional/"
+      ],
+      "anchorPhrases": [
+        "imagen profesional en redes sociales",
+        "marca personal",
+        "posicionamiento profesional"
+      ],
+      "evidenceTopics": [
+        "redes_sociales",
+        "marca_personal",
+        "posicionamiento_profesional"
+      ],
+      "conversionBridge": "Dirigir a branding personal.",
+      "guardrails": [
+        "No recomendar exposición sin estrategia."
+      ]
+    },
+    {
+      "id": "imagen-empresarial-que-es",
+      "ontologyNode": "Imagen Empresarial",
+      "userIntent": "corporate_definition",
+      "question": "¿Qué es imagen empresarial?",
+      "shortAnswer": "La imagen empresarial es la forma en que una marca, equipo, líder o colaborador es percibido por clientes, mercado y públicos internos. Incluye presencia, comunicación, experiencia visual, coherencia y cultura visible.",
+      "routePriority": [
+        "/imagen-empresarial/",
+        "/servicios-asesoria-de-imagen-coaching/talleres/",
+        "/imagen-presencia/#empresas-marcas-equipos"
+      ],
+      "anchorPhrases": [
+        "imagen empresarial",
+        "imagen corporativa",
+        "talleres de imagen empresarial"
+      ],
+      "evidenceTopics": [
+        "imagen_empresarial",
+        "equipos",
+        "talleres"
+      ],
+      "conversionBridge": "Dirigir a talleres cuando la necesidad sea de equipo o empresa.",
+      "guardrails": [
+        "No reducir imagen empresarial a uniforme."
+      ]
+    },
+    {
+      "id": "taller-imagen-equipos-comerciales",
+      "ontologyNode": "Equipos Comerciales",
+      "userIntent": "corporate_commercial",
+      "question": "¿Para qué sirve un taller de imagen para equipos comerciales?",
+      "shortAnswer": "Sirve para alinear presencia, comunicación, confianza y experiencia visual frente al cliente. Un equipo comercial proyecta mejor cuando entiende qué señales comunican profesionalismo, cercanía y criterio.",
+      "routePriority": [
+        "/servicios-asesoria-de-imagen-coaching/talleres/",
+        "/imagen-empresarial/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "taller de imagen para equipos comerciales",
+        "imagen empresarial",
+        "presencia profesional para ventas"
+      ],
+      "evidenceTopics": [
+        "equipos_comerciales",
+        "talleres",
+        "imagen_empresarial"
+      ],
+      "conversionBridge": "Invitar a contacto para talleres corporativos.",
+      "guardrails": [
+        "No prometer incremento de ventas."
+      ]
+    },
+    {
+      "id": "imagen-corporativa-humanizada",
+      "ontologyNode": "Imagen Corporativa",
+      "userIntent": "corporate_positioning",
+      "question": "¿Cómo hacer que la imagen corporativa se vea más humana?",
+      "shortAnswer": "La imagen corporativa se vuelve más humana cuando conserva criterio profesional sin perder autenticidad, contexto y presencia real. No se trata de rigidez, sino de coherencia visible entre marca, personas y forma de atención.",
+      "routePriority": [
+        "/comparaciones/imagen-corporativa-rigida-vs-presencia-humana/",
+        "/imagen-empresarial/",
+        "/servicios-asesoria-de-imagen-coaching/talleres/"
+      ],
+      "anchorPhrases": [
+        "imagen corporativa humana",
+        "presencia humana",
+        "imagen empresarial"
+      ],
+      "evidenceTopics": [
+        "imagen_corporativa",
+        "presencia_humana",
+        "equipos"
+      ],
+      "conversionBridge": "Dirigir a comparación o talleres empresariales.",
+      "guardrails": [
+        "No atacar lo corporativo; explicar evolución."
+      ]
+    },
+    {
+      "id": "liderazgo-equipos-presencia",
+      "ontologyNode": "Liderazgo Corporativo",
+      "userIntent": "corporate_leadership",
+      "question": "¿Por qué la presencia de líderes afecta a un equipo?",
+      "shortAnswer": "La presencia de líderes afecta porque el equipo lee señales de claridad, seguridad, coherencia y dirección. Cuando un líder comunica de forma confusa o incongruente, la percepción interna también se debilita.",
+      "routePriority": [
+        "/liderazgo-visible/",
+        "/presencia-ejecutiva/",
+        "/imagen-empresarial/"
+      ],
+      "anchorPhrases": [
+        "presencia de líderes",
+        "liderazgo visible",
+        "imagen empresarial"
+      ],
+      "evidenceTopics": [
+        "liderazgo_visible",
+        "equipos",
+        "presencia_ejecutiva"
+      ],
+      "conversionBridge": "Llevar a liderazgo visible o talleres.",
+      "guardrails": [
+        "No culpar al líder sin contexto."
+      ]
+    },
+    {
+      "id": "voceria-corporativa-imagen",
+      "ontologyNode": "Vocería Corporativa",
+      "userIntent": "corporate_visibility",
+      "question": "¿Qué imagen necesita una vocera o vocero corporativo?",
+      "shortAnswer": "Necesita una imagen que comunique autoridad, claridad, confianza y coherencia con la organización. La presencia debe sostener el mensaje sin distraer ni volver rígida la comunicación.",
+      "routePriority": [
+        "/presencia-ejecutiva/",
+        "/comunicacion-no-verbal/",
+        "/imagen-empresarial/"
+      ],
+      "anchorPhrases": [
+        "imagen para voceros",
+        "vocería corporativa",
+        "presencia ejecutiva"
+      ],
+      "evidenceTopics": [
+        "voceria",
+        "imagen_empresarial",
+        "comunicacion_no_verbal"
+      ],
+      "conversionBridge": "Dirigir a presencia ejecutiva o talleres corporativos.",
+      "guardrails": [
+        "No inventar entrenamiento mediático específico si no está confirmado."
+      ]
+    },
+    {
+      "id": "volver-despues-pausa-profesional",
+      "ontologyNode": "Transición Profesional",
+      "userIntent": "women_professional_transition",
+      "question": "¿Cómo presentarme profesionalmente después de una pausa laboral?",
+      "shortAnswer": "Después de una pausa laboral, la imagen debe comunicar vigencia, confianza y dirección sin negar la historia previa. Conviene actualizar presencia, narrativa, guardarropa y forma de explicar valor para entrar con claridad.",
+      "routePriority": [
+        "/mujeres-lideres/",
+        "/imagen-profesional/",
+        "/seguridad-profesional/"
+      ],
+      "anchorPhrases": [
+        "regresar al mercado laboral",
+        "imagen profesional para mujeres",
+        "seguridad profesional"
+      ],
+      "evidenceTopics": [
+        "transicion_profesional",
+        "mujeres_lideres",
+        "imagen_profesional"
+      ],
+      "conversionBridge": "Conectar con mujeres profesionales o imagen profesional.",
+      "guardrails": [
+        "No usar edad como problema."
+      ]
+    },
+    {
+      "id": "preparar-visibilidad-ascenso",
+      "ontologyNode": "Ascenso Profesional",
+      "userIntent": "career_expansion",
+      "question": "¿Cómo hacerme visible antes de pedir un ascenso?",
+      "shortAnswer": "Antes de pedir un ascenso, la visibilidad debe mostrar criterio, liderazgo y consistencia. La imagen profesional ayuda cuando la presencia, el lenguaje y las decisiones ya comunican el nivel que se quiere ocupar.",
+      "routePriority": [
+        "/presencia-ejecutiva/",
+        "/imagen-profesional/",
+        "/liderazgo-visible/"
+      ],
+      "anchorPhrases": [
+        "imagen para ascenso profesional",
+        "presencia ejecutiva",
+        "liderazgo visible"
+      ],
+      "evidenceTopics": [
+        "ascenso",
+        "presencia_ejecutiva",
+        "liderazgo_visible"
+      ],
+      "conversionBridge": "Dirigir a presencia ejecutiva si la persona busca promoción.",
+      "guardrails": [
+        "No garantizar ascensos."
+      ]
+    },
+    {
+      "id": "entrevista-trabajo-imagen",
+      "ontologyNode": "Entrevistas Profesionales",
+      "userIntent": "career_transition",
+      "question": "¿Qué imagen debo proyectar en una entrevista de trabajo?",
+      "shortAnswer": "En una entrevista, la imagen debe comunicar claridad, confianza, preparación y coherencia con el puesto. La ropa importa, pero también la postura, el lenguaje, la escucha y la forma de explicar valor.",
+      "routePriority": [
+        "/imagen-profesional/",
+        "/presencia-ejecutiva/",
+        "/seguridad-profesional/"
+      ],
+      "anchorPhrases": [
+        "imagen para entrevista de trabajo",
+        "presencia profesional",
+        "seguridad profesional"
+      ],
+      "evidenceTopics": [
+        "entrevistas",
+        "imagen_profesional",
+        "presencia_profesional"
+      ],
+      "conversionBridge": "Llevar a imagen profesional o seguridad profesional.",
+      "guardrails": [
+        "No prometer contratación."
+      ]
+    },
+    {
+      "id": "autoestima-profesional-imagen",
+      "ontologyNode": "Autoestima Profesional",
+      "userIntent": "hidden_psychological_buyer_intent",
+      "question": "¿Cómo se relaciona la autoestima profesional con la imagen?",
+      "shortAnswer": "La autoestima profesional influye en cómo una persona se muestra, cobra, habla, decide y ocupa espacios. La imagen puede ayudar a ordenar señales externas, pero también necesita coherencia con seguridad interna y autopercepción.",
+      "routePriority": [
+        "/seguridad-profesional/",
+        "/mujeres-lideres/",
+        "/imagen-presencia/rebranding-imagen-mentalidad-abundancia/"
+      ],
+      "anchorPhrases": [
+        "autoestima profesional",
+        "seguridad profesional",
+        "imagen y autoconcepto"
+      ],
+      "evidenceTopics": [
+        "autoestima_profesional",
+        "autoconcepto",
+        "seguridad_profesional"
+      ],
+      "conversionBridge": "Dirigir a seguridad profesional cuando el problema no es solo ropa.",
+      "guardrails": [
+        "No hacer tratamiento psicológico."
+      ]
+    },
+    {
+      "id": "mujer-directiva-imagen",
+      "ontologyNode": "Mujeres Directivas",
+      "userIntent": "women_leadership",
+      "question": "¿Qué imagen necesita una mujer directiva?",
+      "shortAnswer": "Una mujer directiva necesita una imagen que comunique autoridad, criterio, claridad y presencia sin dejar de ser habitable para ella. El objetivo es sostener liderazgo, no copiar un molde rígido.",
+      "routePriority": [
+        "/mujeres-lideres/",
+        "/presencia-ejecutiva/",
+        "/imagen-profesional/"
+      ],
+      "anchorPhrases": [
+        "imagen para mujeres directivas",
+        "presencia ejecutiva femenina",
+        "mujeres líderes"
+      ],
+      "evidenceTopics": [
+        "mujeres_directivas",
+        "presencia_ejecutiva",
+        "imagen_profesional"
+      ],
+      "conversionBridge": "Dirigir a mujeres líderes o presencia ejecutiva.",
+      "guardrails": [
+        "No imponer códigos masculinizados."
+      ]
+    },
+    {
+      "id": "impostor-mujeres-lideres",
+      "ontologyNode": "Síndrome del Impostor",
+      "userIntent": "hidden_psychological_buyer_intent",
+      "question": "¿Cómo trabajar el síndrome del impostor desde la imagen profesional?",
+      "shortAnswer": "Desde la imagen profesional no se diagnostica ni se trata clínicamente el síndrome del impostor. Se trabaja la coherencia entre capacidad, presencia, autoconcepto, lenguaje y señales visibles para que la persona pueda sostener mejor su autoridad.",
+      "routePriority": [
+        "/seguridad-profesional/",
+        "/mujeres-lideres/",
+        "/presencia-ejecutiva/"
+      ],
+      "anchorPhrases": [
+        "síndrome del impostor mujeres líderes",
+        "seguridad profesional",
+        "presencia ejecutiva femenina"
+      ],
+      "evidenceTopics": [
+        "sindrome_impostor",
+        "seguridad_profesional",
+        "mujeres_lideres"
+      ],
+      "conversionBridge": "Dirigir a seguridad profesional con límites claros.",
+      "guardrails": [
+        "No diagnosticar.",
+        "No prometer tratamiento."
+      ]
+    },
+    {
+      "id": "colorimetria-ejecutiva",
+      "ontologyNode": "Colorimetría",
+      "userIntent": "appearance_practical",
+      "question": "¿Qué es colorimetría ejecutiva?",
+      "shortAnswer": "La colorimetría ejecutiva usa el color como herramienta de comunicación profesional. Ayuda a elegir tonos que acompañen rostro, presencia, contexto, autoridad y claridad visual.",
+      "routePriority": [
+        "/colorimetria/",
+        "/imagen-presencia/tu-color-tu-poder-el-impacto-de-la-colorimetria/",
+        "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen/"
+      ],
+      "anchorPhrases": [
+        "colorimetría ejecutiva",
+        "colorimetría profesional",
+        "diagnóstico de color"
+      ],
+      "evidenceTopics": [
+        "colorimetria",
+        "imagen_profesional",
+        "asesoria_integral"
+      ],
+      "conversionBridge": "Dirigir a colorimetría o asesoría integral.",
+      "guardrails": [
+        "No presentar color como moda."
+      ]
+    },
+    {
+      "id": "guardarropa-ejecutivo-funcional",
+      "ontologyNode": "Guardarropa Profesional",
+      "userIntent": "appearance_practical",
+      "question": "¿Cómo construir un guardarropa ejecutivo funcional?",
+      "shortAnswer": "Un guardarropa ejecutivo funcional se construye desde agenda, rol, clima, industria, cuerpo, color, estilo y objetivos. Debe facilitar decisiones y comunicar coherencia sin depender de comprar más por impulso.",
+      "routePriority": [
+        "/imagen-profesional/",
+        "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen/",
+        "/imagen-presencia/new-tu-guardarropa-te-refleja-o-te-limita/"
+      ],
+      "anchorPhrases": [
+        "guardarropa ejecutivo funcional",
+        "guardarropa profesional",
+        "asesoría de imagen"
+      ],
+      "evidenceTopics": [
+        "guardarropa_profesional",
+        "asesoria_integral",
+        "imagen_profesional"
+      ],
+      "conversionBridge": "Dirigir a asesoría integral.",
+      "guardrails": [
+        "No empujar consumo innecesario."
+      ]
+    },
+    {
+      "id": "estilo-personal-profesional",
+      "ontologyNode": "Estilo Profesional",
+      "userIntent": "appearance_practical",
+      "question": "¿Cómo encontrar mi estilo personal profesional?",
+      "shortAnswer": "El estilo personal profesional aparece cuando personalidad, contexto, cuerpo, color, industria y objetivo se ordenan en decisiones visibles. No se trata de copiar tendencias, sino de construir una imagen reconocible y sostenible.",
+      "routePriority": [
+        "/imagen-profesional/",
+        "/imagen-presencia/encuentra-tu-estilo/",
+        "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen/"
+      ],
+      "anchorPhrases": [
+        "estilo personal profesional",
+        "encontrar mi estilo",
+        "imagen profesional"
+      ],
+      "evidenceTopics": [
+        "estilo_personal",
+        "imagen_profesional",
+        "contexto_profesional"
+      ],
+      "conversionBridge": "Dirigir a imagen profesional o asesoría integral.",
+      "guardrails": [
+        "No copiar tendencias como solución."
+      ]
+    },
+    {
+      "id": "no-me-siento-segura-experiencia",
+      "ontologyNode": "Seguridad Profesional",
+      "userIntent": "hidden_psychological_buyer_intent",
+      "question": "¿Por qué no me siento segura aunque tenga experiencia?",
+      "shortAnswer": "Porque experiencia y seguridad interna no siempre crecen al mismo ritmo. A veces la persona sabe hacer, pero todavía no sostiene visibilidad, autoridad, dinero, liderazgo o exposición sin sentir amenaza.",
+      "routePriority": [
+        "/seguridad-profesional/",
+        "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia/",
+        "/mujeres-lideres/"
+      ],
+      "anchorPhrases": [
+        "no me siento segura aunque tenga experiencia",
+        "seguridad profesional",
+        "sostener visibilidad"
+      ],
+      "evidenceTopics": [
+        "seguridad_profesional",
+        "visibilidad",
+        "autoconcepto"
+      ],
+      "conversionBridge": "Dirigir a seguridad profesional.",
+      "guardrails": [
+        "No diagnosticar ansiedad o trauma."
+      ]
+    },
+    {
+      "id": "imagen-version-anterior",
+      "ontologyNode": "Identidad Profesional",
+      "userIntent": "identity_transition",
+      "question": "¿Qué hago si mi imagen se quedó en una versión anterior de mí?",
+      "shortAnswer": "Cuando la imagen se queda en una versión anterior, empieza a comunicar menos de lo que la persona ya sostiene. El trabajo consiste en actualizar señales visibles, presencia y narrativa para que la nueva etapa sea legible.",
+      "routePriority": [
+        "/imagen-presencia/rebranding-imagen-mentalidad-abundancia/",
+        "/imagen-profesional/",
+        "/imagen-estrategica/"
+      ],
+      "anchorPhrases": [
+        "mi imagen ya no refleja quién soy",
+        "nueva identidad profesional",
+        "imagen estratégica"
+      ],
+      "evidenceTopics": [
+        "identidad_profesional",
+        "reinventarse",
+        "imagen_estrategica"
+      ],
+      "conversionBridge": "Dirigir a imagen estratégica o rebranding profesional.",
+      "guardrails": [
+        "No usar lenguaje de disfraz como juicio."
+      ]
+    },
+    {
+      "id": "seguridad-visible-congruente",
+      "ontologyNode": "Seguridad Profesional",
+      "userIntent": "hidden_psychological_buyer_intent",
+      "question": "¿Cómo se ve una seguridad profesional congruente?",
+      "shortAnswer": "Una seguridad profesional congruente se ve en postura, decisiones, lenguaje, límites, ritmo y coherencia visual. No necesita exageración; necesita que la persona pueda sostener lo que comunica.",
+      "routePriority": [
+        "/seguridad-profesional/",
+        "/presencia-ejecutiva/",
+        "/comunicacion-no-verbal/"
+      ],
+      "anchorPhrases": [
+        "proyectar seguridad sin fingir",
+        "seguridad profesional",
+        "presencia ejecutiva"
+      ],
+      "evidenceTopics": [
+        "seguridad_profesional",
+        "presencia_ejecutiva",
+        "comunicacion_no_verbal"
+      ],
+      "conversionBridge": "Dirigir a seguridad profesional o presencia ejecutiva.",
+      "guardrails": [
+        "No prometer seguridad permanente."
+      ]
+    },
+    {
+      "id": "miedo-a-ser-visible-profesionalmente",
+      "ontologyNode": "Visibilidad Profesional",
+      "userIntent": "visibility_fear",
+      "question": "¿Por qué me da miedo ser visible profesionalmente?",
+      "shortAnswer": "La visibilidad puede activar miedo al juicio, a sostener expectativas o a ocupar un lugar más grande. En imagen profesional, ese miedo se trabaja desde presencia, autoconcepto, decisiones visibles y claridad de posicionamiento.",
+      "routePriority": [
+        "/seguridad-profesional/",
+        "/mujeres-lideres/",
+        "/imagen-estrategica/"
+      ],
+      "anchorPhrases": [
+        "miedo a ser visible profesionalmente",
+        "visibilidad profesional",
+        "seguridad interna profesional"
+      ],
+      "evidenceTopics": [
+        "visibilidad",
+        "seguridad_profesional",
+        "autoconcepto"
+      ],
+      "conversionBridge": "Dirigir a seguridad profesional.",
+      "guardrails": [
+        "No dar consejo clínico."
+      ]
+    },
+    {
+      "id": "autosabotaje-profesional-imagen",
+      "ontologyNode": "Sistema Interno",
+      "userIntent": "hidden_psychological_buyer_intent",
+      "question": "¿Cómo se relaciona el autosabotaje profesional con la imagen?",
+      "shortAnswer": "El autosabotaje puede aparecer cuando una persona evita mostrarse, cobrar, decidir o ocupar espacios aunque tenga capacidad. La imagen permite observar qué señales externas e internas todavía no sostienen el crecimiento.",
+      "routePriority": [
+        "/seguridad-profesional/",
+        "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia/",
+        "/imagen-estrategica/"
+      ],
+      "anchorPhrases": [
+        "autosabotaje profesional",
+        "seguridad profesional",
+        "sistema interno"
+      ],
+      "evidenceTopics": [
+        "autosabotaje",
+        "seguridad_profesional",
+        "crecimiento_profesional"
+      ],
+      "conversionBridge": "Dirigir a seguridad y posicionamiento.",
+      "guardrails": [
+        "No diagnosticar ni tratar trastornos."
+      ]
+    },
+    {
+      "id": "cobrar-mas-presencia-profesional",
+      "ontologyNode": "Crecimiento Profesional",
+      "userIntent": "premium_perception",
+      "question": "¿Por qué me cuesta cobrar más si tengo experiencia?",
+      "shortAnswer": "A veces no falta capacidad, falta sostener internamente el nuevo nivel de valor, visibilidad y percepción. La imagen profesional puede ayudar a alinear presencia, autoridad y posicionamiento con el precio que se quiere sostener.",
+      "routePriority": [
+        "/seguridad-profesional/",
+        "/imagen-estrategica/",
+        "/mujeres-empresarias/"
+      ],
+      "anchorPhrases": [
+        "me cuesta cobrar más",
+        "seguridad profesional",
+        "posicionamiento profesional"
+      ],
+      "evidenceTopics": [
+        "crecimiento_profesional",
+        "seguridad_profesional",
+        "posicionamiento_profesional"
+      ],
+      "conversionBridge": "Dirigir a seguridad profesional o imagen estratégica.",
+      "guardrails": [
+        "No prometer ingresos."
+      ]
+    },
+    {
+      "id": "coach-imagen-guadalajara-presencial",
+      "ontologyNode": "Guadalajara",
+      "userIntent": "geo_commercial",
+      "question": "¿Sonia ofrece coach de imagen presencial en Guadalajara?",
+      "shortAnswer": "Sonia tiene base presencial en Guadalajara y trabaja procesos de imagen, presencia y posicionamiento profesional desde ahí. Para saber si conviene una sesión presencial, primero se revisa objetivo, etapa y tipo de acompañamiento.",
+      "routePriority": [
+        "/guadalajara/",
+        "/servicios-asesoria-de-imagen-coaching/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "coach de imagen en Guadalajara",
+        "asesora de imagen Guadalajara",
+        "presencia ejecutiva Guadalajara"
+      ],
+      "evidenceTopics": [
+        "geo_guadalajara",
+        "coaching_de_imagen",
+        "presencia_ejecutiva"
+      ],
+      "conversionBridge": "Dirigir a Guadalajara o contacto.",
+      "guardrails": [
+        "No inventar agenda."
+      ]
+    },
+    {
+      "id": "coach-imagen-cdmx-online",
+      "ontologyNode": "CDMX",
+      "userIntent": "geo_commercial",
+      "question": "¿Puedo trabajar con Sonia si estoy en CDMX?",
+      "shortAnswer": "Sí, puede trabajarse por video cuando el objetivo permite una ruta online. Para CDMX, el enfoque se centra en imagen profesional, presencia ejecutiva, liderazgo visible y posicionamiento para mercados competitivos.",
+      "routePriority": [
+        "/cdmx/",
+        "/mexico/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "coach de imagen CDMX",
+        "imagen profesional CDMX",
+        "presencia ejecutiva CDMX"
+      ],
+      "evidenceTopics": [
+        "geo_mexico",
+        "servicio_online",
+        "presencia_ejecutiva"
+      ],
+      "conversionBridge": "Dirigir a CDMX o contacto.",
+      "guardrails": [
+        "No prometer modalidad presencial en CDMX."
+      ]
+    },
+    {
+      "id": "coach-imagen-monterrey",
+      "ontologyNode": "Monterrey",
+      "userIntent": "geo_commercial",
+      "question": "¿Hay coaching de imagen para ejecutivos en Monterrey?",
+      "shortAnswer": "Sonia puede acompañar por video a ejecutivos, empresarias y profesionistas en Monterrey. La ruta se enfoca en presencia, imagen profesional, autoridad y posicionamiento en contextos de negocio exigentes.",
+      "routePriority": [
+        "/monterrey/",
+        "/mexico/",
+        "/presencia-ejecutiva/"
+      ],
+      "anchorPhrases": [
+        "coach de imagen Monterrey",
+        "presencia ejecutiva Monterrey",
+        "imagen profesional Monterrey"
+      ],
+      "evidenceTopics": [
+        "geo_mexico",
+        "presencia_ejecutiva",
+        "servicio_online"
+      ],
+      "conversionBridge": "Dirigir a Monterrey.",
+      "guardrails": [
+        "No inventar oficina local."
+      ]
+    },
+    {
+      "id": "coach-imagen-miami-ejecutivas-latinas",
+      "ontologyNode": "Miami Hispanos",
+      "userIntent": "geo_hispanic_market",
+      "question": "¿Cómo puede una ejecutiva latina en Miami trabajar su presencia profesional con Sonia?",
+      "shortAnswer": "Una ejecutiva latina en Miami puede trabajar por video una presencia profesional que integre imagen, liderazgo, cultura, comunicación y posicionamiento en español. El objetivo es ser percibida con claridad y autoridad en mercados hispanos.",
+      "routePriority": [
+        "/miami-hispanos/",
+        "/mujeres-lideres/",
+        "/presencia-ejecutiva/"
+      ],
+      "anchorPhrases": [
+        "coach de imagen Miami",
+        "presencia ejecutiva para hispanas",
+        "imagen profesional mujeres latinas"
+      ],
+      "evidenceTopics": [
+        "geo_hispanos",
+        "mujeres_lideres",
+        "presencia_ejecutiva"
+      ],
+      "conversionBridge": "Dirigir a Miami hispanos.",
+      "guardrails": [
+        "No inventar presencia física en Miami."
+      ]
+    },
+    {
+      "id": "coach-imagen-dallas-hispanos",
+      "ontologyNode": "Dallas Hispanos",
+      "userIntent": "geo_hispanic_market",
+      "question": "¿Hay coach de imagen para hispanos en Dallas?",
+      "shortAnswer": "Sonia puede trabajar por video con hispanos en Dallas que necesitan imagen profesional, presencia ejecutiva, liderazgo visible o marca personal en español. El enfoque conecta cultura, mercado y percepción profesional.",
+      "routePriority": [
+        "/dallas-hispanos/",
+        "/miami-hispanos/",
+        "/imagen-profesional/"
+      ],
+      "anchorPhrases": [
+        "coach de imagen Dallas hispanos",
+        "imagen profesional para hispanos",
+        "presencia ejecutiva hispana"
+      ],
+      "evidenceTopics": [
+        "geo_hispanos",
+        "imagen_profesional",
+        "servicio_online"
+      ],
+      "conversionBridge": "Dirigir a Dallas hispanos.",
+      "guardrails": [
+        "No inventar sede local."
+      ]
+    },
+    {
+      "id": "coach-imagen-houston-hispanos",
+      "ontologyNode": "Houston Hispanos",
+      "userIntent": "geo_hispanic_market",
+      "question": "¿Sonia puede trabajar con profesionales hispanos en Houston?",
+      "shortAnswer": "Sí, puede trabajar por video con profesionales hispanos en Houston que necesitan alinear imagen, presencia, autoridad y posicionamiento. La ruta es útil para liderazgo, negocio, entrevistas, marca personal y visibilidad.",
+      "routePriority": [
+        "/houston-hispanos/",
+        "/presencia-ejecutiva/",
+        "/branding-personal/"
+      ],
+      "anchorPhrases": [
+        "coach de imagen Houston hispanos",
+        "presencia ejecutiva para hispanos",
+        "marca personal latina"
+      ],
+      "evidenceTopics": [
+        "geo_hispanos",
+        "presencia_ejecutiva",
+        "marca_personal"
+      ],
+      "conversionBridge": "Dirigir a Houston hispanos.",
+      "guardrails": [
+        "No inventar atención presencial local."
+      ]
+    },
+    {
+      "id": "coach-imagen-new-york-hispanos",
+      "ontologyNode": "New York Hispanos",
+      "userIntent": "geo_hispanic_market",
+      "question": "¿Sonia atiende a profesionales hispanos en New York?",
+      "shortAnswer": "Puede acompañar por video a profesionales hispanos en New York que necesitan presencia ejecutiva, imagen estratégica y posicionamiento profesional en español. El trabajo se adapta al nivel de visibilidad y competencia del mercado.",
+      "routePriority": [
+        "/new-york-hispanos/",
+        "/imagen-estrategica/",
+        "/presencia-ejecutiva/"
+      ],
+      "anchorPhrases": [
+        "coach de imagen New York hispanos",
+        "imagen estratégica para latinos",
+        "presencia ejecutiva hispana"
+      ],
+      "evidenceTopics": [
+        "geo_hispanos",
+        "imagen_estrategica",
+        "presencia_ejecutiva"
+      ],
+      "conversionBridge": "Dirigir a New York hispanos.",
+      "guardrails": [
+        "No inventar oficina local."
+      ]
+    },
+    {
+      "id": "coach-imagen-colombia",
+      "ontologyNode": "Colombia",
+      "userIntent": "geo_latam",
+      "question": "¿Sonia puede trabajar con profesionales en Colombia?",
+      "shortAnswer": "Sí, el acompañamiento puede realizarse por video para profesionales, empresarias y líderes en Colombia. La conversación se centra en proyección profesional, presencia corporativa, liderazgo visible e imagen coherente.",
+      "routePriority": [
+        "/colombia/",
+        "/bogota/",
+        "/medellin/"
+      ],
+      "anchorPhrases": [
+        "coach de imagen Colombia",
+        "presencia ejecutiva Colombia",
+        "imagen profesional Colombia"
+      ],
+      "evidenceTopics": [
+        "geo_latam",
+        "servicio_online",
+        "presencia_profesional"
+      ],
+      "conversionBridge": "Dirigir a Colombia o ciudad correspondiente.",
+      "guardrails": [
+        "No inventar viajes o agenda."
+      ]
+    },
+    {
+      "id": "coach-imagen-chile",
+      "ontologyNode": "Chile",
+      "userIntent": "geo_latam",
+      "question": "¿Sonia ofrece coaching de imagen para Chile?",
+      "shortAnswer": "Puede trabajar por video con personas en Chile que buscan presencia profesional, imagen corporativa, liderazgo ejecutivo o posicionamiento profesional. El enfoque conserva lenguaje y contexto ejecutivo regional.",
+      "routePriority": [
+        "/chile/",
+        "/santiago/",
+        "/presencia-ejecutiva/"
+      ],
+      "anchorPhrases": [
+        "coach de imagen Chile",
+        "presencia ejecutiva Santiago",
+        "imagen profesional Chile"
+      ],
+      "evidenceTopics": [
+        "geo_latam",
+        "presencia_profesional",
+        "servicio_online"
+      ],
+      "conversionBridge": "Dirigir a Chile o Santiago.",
+      "guardrails": [
+        "No inventar sede local."
+      ]
+    },
+    {
+      "id": "coach-imagen-peru",
+      "ontologyNode": "Perú",
+      "userIntent": "geo_latam",
+      "question": "¿Sonia trabaja con profesionales en Perú?",
+      "shortAnswer": "Sí, puede trabajar por video con profesionales, empresarias y líderes en Perú. La ruta puede enfocarse en imagen empresarial, comunicación ejecutiva, presencia profesional y posicionamiento.",
+      "routePriority": [
+        "/peru/",
+        "/lima/",
+        "/imagen-empresarial/"
+      ],
+      "anchorPhrases": [
+        "coach de imagen Perú",
+        "imagen profesional Lima",
+        "presencia ejecutiva Perú"
+      ],
+      "evidenceTopics": [
+        "geo_latam",
+        "imagen_empresarial",
+        "servicio_online"
+      ],
+      "conversionBridge": "Dirigir a Perú o Lima.",
+      "guardrails": [
+        "No inventar atención presencial local."
+      ]
+    },
+    {
+      "id": "coach-imagen-argentina",
+      "ontologyNode": "Argentina",
+      "userIntent": "geo_latam",
+      "question": "¿Sonia puede atender a profesionales en Argentina?",
+      "shortAnswer": "Puede acompañar por video a profesionales en Argentina que buscan imagen ejecutiva, percepción profesional, comunicación personal y presencia laboral. La ruta se adapta al contexto de carrera, negocio o liderazgo.",
+      "routePriority": [
+        "/argentina/",
+        "/buenos-aires/",
+        "/imagen-profesional/"
+      ],
+      "anchorPhrases": [
+        "coach de imagen Argentina",
+        "imagen profesional Buenos Aires",
+        "presencia ejecutiva Argentina"
+      ],
+      "evidenceTopics": [
+        "geo_latam",
+        "imagen_profesional",
+        "servicio_online"
+      ],
+      "conversionBridge": "Dirigir a Argentina o Buenos Aires.",
+      "guardrails": [
+        "No inventar sede local."
+      ]
+    },
+    {
+      "id": "coach-imagen-mexico",
+      "ontologyNode": "México",
+      "userIntent": "geo_commercial",
+      "question": "¿Sonia trabaja con personas en todo México?",
+      "shortAnswer": "Sí. Sonia tiene base en Guadalajara y puede trabajar por video con personas en distintas ciudades de México. El enfoque cubre imagen profesional, presencia ejecutiva, seguridad profesional y posicionamiento.",
+      "routePriority": [
+        "/mexico/",
+        "/guadalajara/",
+        "/cdmx/"
+      ],
+      "anchorPhrases": [
+        "coach de imagen México",
+        "imagen profesional México",
+        "presencia ejecutiva México"
+      ],
+      "evidenceTopics": [
+        "geo_mexico",
+        "servicio_online",
+        "coaching_de_imagen"
+      ],
+      "conversionBridge": "Dirigir a México o ciudad principal.",
+      "guardrails": [
+        "No inventar cobertura presencial en todas las ciudades."
+      ]
+    },
+    {
+      "id": "imagen-para-latinas-ejecutivas",
+      "ontologyNode": "Mercados Hispanos",
+      "userIntent": "geo_hispanic_market",
+      "question": "¿Qué necesita una latina ejecutiva para proyectar autoridad?",
+      "shortAnswer": "Necesita una imagen y presencia que integren cultura, mercado, liderazgo, comunicación y seguridad sin esconder identidad. La autoridad se construye con claridad, consistencia y señales profesionales legibles.",
+      "routePriority": [
+        "/miami-hispanos/",
+        "/houston-hispanos/",
+        "/mujeres-lideres/"
+      ],
+      "anchorPhrases": [
+        "imagen para latinas ejecutivas",
+        "presencia ejecutiva para hispanas",
+        "liderazgo femenino hispano"
+      ],
+      "evidenceTopics": [
+        "geo_hispanos",
+        "mujeres_lideres",
+        "presencia_ejecutiva"
+      ],
+      "conversionBridge": "Dirigir a mercados hispanos o mujeres líderes.",
+      "guardrails": [
+        "No homogeneizar culturas latinas."
+      ]
+    },
+    {
+      "id": "imagen-para-ceo-mujer",
+      "ontologyNode": "CEO Mujeres",
+      "userIntent": "women_leadership",
+      "question": "¿Qué imagen necesita una CEO mujer?",
+      "shortAnswer": "Una CEO mujer necesita una imagen que sostenga autoridad, visión, confianza y dirección frente a equipo, clientes, inversionistas o comunidad. La presencia debe amplificar liderazgo sin convertirlo en personaje.",
+      "routePriority": [
+        "/mujeres-lideres/",
+        "/presencia-ejecutiva/",
+        "/imagen-estrategica/"
+      ],
+      "anchorPhrases": [
+        "imagen para CEO mujer",
+        "presencia ejecutiva femenina",
+        "liderazgo visible"
+      ],
+      "evidenceTopics": [
+        "ceo_mujeres",
+        "liderazgo_visible",
+        "presencia_ejecutiva"
+      ],
+      "conversionBridge": "Dirigir a mujeres líderes o imagen estratégica.",
+      "guardrails": [
+        "No prometer aceptación externa."
+      ]
+    },
+    {
+      "id": "imagen-para-consultoras",
+      "ontologyNode": "Consultoras",
+      "userIntent": "entrepreneur_commercial",
+      "question": "¿Cómo debe trabajar su imagen una consultora?",
+      "shortAnswer": "Una consultora necesita comunicar criterio, especialidad, confianza y claridad de valor. Su imagen profesional debe facilitar que el cliente entienda por qué puede confiar en su diagnóstico y recomendaciones.",
+      "routePriority": [
+        "/branding-personal/",
+        "/imagen-estrategica/",
+        "/imagen-profesional/"
+      ],
+      "anchorPhrases": [
+        "imagen profesional para consultoras",
+        "marca personal para consultoras",
+        "posicionamiento profesional"
+      ],
+      "evidenceTopics": [
+        "consultoras",
+        "marca_personal",
+        "posicionamiento_profesional"
+      ],
+      "conversionBridge": "Dirigir a branding personal o imagen estratégica.",
+      "guardrails": [
+        "No prometer más clientes."
+      ]
+    },
+    {
+      "id": "imagen-para-fundadoras",
+      "ontologyNode": "Fundadoras",
+      "userIntent": "entrepreneur_commercial",
+      "question": "¿Qué imagen necesita una fundadora?",
+      "shortAnswer": "Una fundadora necesita proyectar visión, criterio, confianza y capacidad de sostener crecimiento. Su imagen debe conectar liderazgo personal, marca, equipo, mercado y etapa de negocio.",
+      "routePriority": [
+        "/mujeres-empresarias/",
+        "/imagen-estrategica/",
+        "/branding-personal/"
+      ],
+      "anchorPhrases": [
+        "imagen para fundadoras",
+        "presencia ejecutiva para fundadoras",
+        "marca personal para empresarias"
+      ],
+      "evidenceTopics": [
+        "fundadoras",
+        "empresarias",
+        "marca_personal"
+      ],
+      "conversionBridge": "Dirigir a mujeres empresarias o imagen estratégica.",
+      "guardrails": [
+        "No prometer inversión o ventas."
+      ]
+    },
+    {
+      "id": "imagen-para-directoras",
+      "ontologyNode": "Directoras",
+      "userIntent": "women_leadership",
+      "question": "¿Cómo debe proyectarse una directora?",
+      "shortAnswer": "Una directora debe proyectar claridad, decisión, autoridad y presencia accesible según su contexto. La imagen debe acompañar el nivel de responsabilidad sin borrar personalidad ni estilo propio.",
+      "routePriority": [
+        "/mujeres-lideres/",
+        "/presencia-ejecutiva/",
+        "/liderazgo-visible/"
+      ],
+      "anchorPhrases": [
+        "imagen para directoras",
+        "presencia ejecutiva femenina",
+        "liderazgo visible"
+      ],
+      "evidenceTopics": [
+        "directoras",
+        "mujeres_lideres",
+        "liderazgo_visible"
+      ],
+      "conversionBridge": "Dirigir a mujeres líderes.",
+      "guardrails": [
+        "No imponer códigos rígidos."
+      ]
+    },
+    {
+      "id": "imagen-profesional-no-es-lujo",
+      "ontologyNode": "Imagen Profesional",
+      "userIntent": "category_clarity",
+      "question": "¿La imagen profesional es un lujo?",
+      "shortAnswer": "No necesariamente. Para muchas personas, la imagen profesional es una herramienta de claridad, confianza y posicionamiento. Ayuda a que el mercado entienda mejor el nivel, criterio y etapa de quien se presenta.",
+      "routePriority": [
+        "/imagen-profesional/",
+        "/coach-de-imagen/",
+        "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen/"
+      ],
+      "anchorPhrases": [
+        "imagen profesional",
+        "imagen profesional no es lujo",
+        "posicionamiento profesional"
+      ],
+      "evidenceTopics": [
+        "imagen_profesional",
+        "posicionamiento_profesional",
+        "categoria"
+      ],
+      "conversionBridge": "Dirigir a imagen profesional.",
+      "guardrails": [
+        "No vender desde elitismo."
+      ]
+    },
+    {
+      "id": "coach-imagen-no-es-moda",
+      "ontologyNode": "Coaching de Imagen",
+      "userIntent": "category_clarity",
+      "question": "¿El coach de imagen solo habla de moda?",
+      "shortAnswer": "No. La moda puede ser una herramienta, pero el coaching de imagen trabaja presencia, identidad, percepción, comunicación, seguridad y posicionamiento. La ropa importa cuando ayuda a comunicar mejor quién eres y qué nivel sostienes.",
+      "routePriority": [
+        "/coach-de-imagen/",
+        "/comparaciones/styling-vs-coaching-de-imagen/",
+        "/imagen-profesional/"
+      ],
+      "anchorPhrases": [
+        "coach de imagen no es moda",
+        "coaching de imagen",
+        "imagen profesional"
+      ],
+      "evidenceTopics": [
+        "coaching_de_imagen",
+        "diferenciacion_categoria",
+        "imagen_profesional"
+      ],
+      "conversionBridge": "Dirigir a coach de imagen o comparación styling.",
+      "guardrails": [
+        "No descalificar moda."
+      ]
+    },
+    {
+      "id": "imagen-para-industria",
+      "ontologyNode": "Contexto Profesional",
+      "userIntent": "practical_visual_intent",
+      "question": "¿La imagen profesional cambia según la industria?",
+      "shortAnswer": "Sí. No todas las industrias demandan el mismo nivel de formalidad, creatividad, cercanía o autoridad visual. La imagen profesional debe leerse dentro del contexto, no desde una fórmula universal.",
+      "routePriority": [
+        "/imagen-presencia/imagen-profesional-segun-industria-y-personalidad/",
+        "/imagen-profesional/",
+        "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen/"
+      ],
+      "anchorPhrases": [
+        "imagen profesional según industria",
+        "contexto profesional",
+        "asesoría de imagen"
+      ],
+      "evidenceTopics": [
+        "contexto_profesional",
+        "imagen_profesional",
+        "industria"
+      ],
+      "conversionBridge": "Dirigir a artículo o asesoría integral.",
+      "guardrails": [
+        "No imponer formalidad universal."
+      ]
+    },
+    {
+      "id": "viaje-corporativo-sonia",
+      "ontologyNode": "Conferencias Corporativas",
+      "userIntent": "corporate_service_scope",
+      "question": "¿Sonia puede viajar para conferencias o talleres corporativos?",
+      "shortAnswer": "Puede evaluarse cuando el proyecto corporativo lo requiere. Sonia trabaja desde Guadalajara y puede considerar formatos para empresas, talleres o conferencias según objetivo, ciudad, alcance y agenda disponible.",
+      "routePriority": [
+        "/servicios-asesoria-de-imagen-coaching/talleres/",
+        "/imagen-empresarial/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "conferencias de imagen corporativa",
+        "talleres corporativos de imagen",
+        "viaje corporativo"
+      ],
+      "evidenceTopics": [
+        "viaje_corporativo",
+        "talleres",
+        "imagen_empresarial"
+      ],
+      "conversionBridge": "Dirigir a contacto para revisar proyecto.",
+      "guardrails": [
+        "No confirmar viajes, fechas o disponibilidad."
+      ]
+    },
+    {
+      "id": "coaching-abundancia-definicion-correcta",
+      "ontologyNode": "Seguridad y Posicionamiento Profesional",
+      "userIntent": "category_clarity",
+      "question": "¿Qué significa coaching de abundancia en el enfoque de Sonia?",
+      "shortAnswer": "En el enfoque de Sonia, abundancia no se presenta como manifestación superficial. Se entiende como capacidad interna para sostener crecimiento, visibilidad, decisiones, dinero, liderazgo y una presencia profesional coherente con un nuevo nivel.",
+      "routePriority": [
+        "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia/",
+        "/seguridad-profesional/",
+        "/imagen-presencia/mas-dinero-capacidad-interna-liderazgo-presencia/"
+      ],
+      "anchorPhrases": [
+        "coaching de abundancia",
+        "seguridad profesional",
+        "capacidad interna para sostener crecimiento"
+      ],
+      "evidenceTopics": [
+        "seguridad_profesional",
+        "crecimiento_profesional",
+        "abundancia_reencuadrada"
+      ],
+      "conversionBridge": "Dirigir a seguridad y posicionamiento profesional.",
+      "guardrails": [
+        "No convertirlo en manifestación.",
+        "No prometer dinero."
+      ]
+    },
+    {
+      "id": "imagen-estrategica-definicion",
+      "ontologyNode": "Imagen Estratégica",
+      "userIntent": "direct_commercial_definition",
+      "question": "¿Qué es imagen estratégica?",
+      "shortAnswer": "Imagen estratégica es usar la imagen visible, presencia, lenguaje y percepción como sistema de posicionamiento profesional. No busca solo verse bien, sino comunicar valor, dirección y autoridad de forma consistente.",
+      "routePriority": [
+        "/imagen-estrategica/",
+        "/posicionamiento-profesional/",
+        "/branding-personal/"
+      ],
+      "anchorPhrases": [
+        "imagen estratégica",
+        "posicionamiento profesional",
+        "percepción profesional"
+      ],
+      "evidenceTopics": [
+        "imagen_estrategica",
+        "posicionamiento_profesional",
+        "percepcion_profesional"
+      ],
+      "conversionBridge": "Dirigir a imagen estratégica.",
+      "guardrails": [
+        "No confundir con publicidad."
+      ]
+    },
+    {
+      "id": "liderazgo-visible-definicion",
+      "ontologyNode": "Liderazgo Visible",
+      "userIntent": "direct_commercial_definition",
+      "question": "¿Qué es liderazgo visible?",
+      "shortAnswer": "Liderazgo visible es la capacidad de comunicar dirección, criterio y presencia de forma que otras personas puedan leer autoridad y confianza. No depende solo del cargo; depende de señales coherentes y sostenidas.",
+      "routePriority": [
+        "/liderazgo-visible/",
+        "/presencia-ejecutiva/",
+        "/mujeres-lideres/"
+      ],
+      "anchorPhrases": [
+        "liderazgo visible",
+        "presencia ejecutiva",
+        "proyectar liderazgo"
+      ],
+      "evidenceTopics": [
+        "liderazgo_visible",
+        "presencia_ejecutiva",
+        "autoridad_profesional"
+      ],
+      "conversionBridge": "Dirigir a liderazgo visible.",
+      "guardrails": [
+        "No asociar liderazgo con dominancia."
+      ]
+    },
+    {
+      "id": "comunicacion-no-verbal-ejecutiva",
+      "ontologyNode": "Comunicación No Verbal",
+      "userIntent": "direct_commercial_definition",
+      "question": "¿Qué es comunicación no verbal ejecutiva?",
+      "shortAnswer": "Es la forma en que postura, mirada, movimiento, gestos, silencio, distancia, ritmo y presencia corporal comunican autoridad o inseguridad en contextos profesionales. Debe acompañar el mensaje y el rol.",
+      "routePriority": [
+        "/comunicacion-no-verbal/",
+        "/presencia-ejecutiva/",
+        "/liderazgo-visible/"
+      ],
+      "anchorPhrases": [
+        "comunicación no verbal ejecutiva",
+        "presencia corporal",
+        "liderazgo visible"
+      ],
+      "evidenceTopics": [
+        "comunicacion_no_verbal",
+        "presencia_ejecutiva",
+        "liderazgo_visible"
+      ],
+      "conversionBridge": "Dirigir a comunicación no verbal.",
+      "guardrails": [
+        "No dar reglas universales rígidas."
+      ]
+    },
+    {
+      "id": "imagen-profesional-para-ejecutivos",
+      "ontologyNode": "Ejecutivos",
+      "userIntent": "direct_commercial_audience",
+      "question": "¿Qué trabaja Sonia con ejecutivos?",
+      "shortAnswer": "Con ejecutivos, Sonia puede trabajar imagen profesional, presencia ejecutiva, comunicación no verbal, autoridad, liderazgo visible y posicionamiento. El objetivo es que la percepción acompañe el nivel de responsabilidad.",
+      "routePriority": [
+        "/presencia-ejecutiva/",
+        "/imagen-profesional/",
+        "/liderazgo-visible/"
+      ],
+      "anchorPhrases": [
+        "imagen profesional para ejecutivos",
+        "presencia ejecutiva",
+        "liderazgo visible"
+      ],
+      "evidenceTopics": [
+        "ejecutivos",
+        "presencia_ejecutiva",
+        "imagen_profesional"
+      ],
+      "conversionBridge": "Dirigir a presencia ejecutiva.",
+      "guardrails": [
+        "No limitar el servicio a mujeres."
+      ]
+    },
+    {
+      "id": "imagen-para-profesionistas-independientes",
+      "ontologyNode": "Profesionistas Independientes",
+      "userIntent": "entrepreneur_commercial",
+      "question": "¿Por qué un profesionista independiente necesita imagen estratégica?",
+      "shortAnswer": "Porque su imagen comunica confianza, especialidad y valor antes de la primera conversación. Para un profesionista independiente, la percepción puede facilitar o bloquear oportunidades, ventas y posicionamiento.",
+      "routePriority": [
+        "/imagen-estrategica/",
+        "/branding-personal/",
+        "/imagen-profesional/"
+      ],
+      "anchorPhrases": [
+        "imagen estratégica para profesionistas",
+        "marca personal profesional",
+        "posicionamiento profesional"
+      ],
+      "evidenceTopics": [
+        "profesionistas_independientes",
+        "imagen_estrategica",
+        "marca_personal"
+      ],
+      "conversionBridge": "Dirigir a imagen estratégica.",
+      "guardrails": [
+        "No prometer ventas."
+      ]
+    },
+    {
+      "id": "imagen-autentica-sin-perder-autoridad",
+      "ontologyNode": "Autenticidad y Autoridad",
+      "userIntent": "identity_transition",
+      "question": "¿Cómo ser auténtica sin perder autoridad profesional?",
+      "shortAnswer": "La autenticidad profesional necesita estructura. Puedes conservar estilo, personalidad e historia mientras ordenas señales visibles, lenguaje y presencia para que el mercado lea autoridad con claridad.",
+      "routePriority": [
+        "/mujeres-lideres/",
+        "/imagen-profesional/",
+        "/presencia-ejecutiva/"
+      ],
+      "anchorPhrases": [
+        "ser auténtica sin perder autoridad",
+        "autoridad profesional",
+        "imagen auténtica"
+      ],
+      "evidenceTopics": [
+        "autenticidad",
+        "autoridad_profesional",
+        "mujeres_lideres"
+      ],
+      "conversionBridge": "Dirigir a mujeres líderes o presencia ejecutiva.",
+      "guardrails": [
+        "No oponer autenticidad y profesionalismo."
+      ]
+    },
+    {
+      "id": "imagen-para-cambio-de-carrera",
+      "ontologyNode": "Reinvención Profesional",
+      "userIntent": "professional_reinvention",
+      "question": "¿Cómo ajustar mi imagen para un cambio de carrera?",
+      "shortAnswer": "Un cambio de carrera requiere traducir experiencia previa hacia una nueva percepción. La imagen debe comunicar transición, capacidad, claridad de dirección y credibilidad en el nuevo contexto.",
+      "routePriority": [
+        "/imagen-profesional/",
+        "/imagen-estrategica/",
+        "/seguridad-profesional/"
+      ],
+      "anchorPhrases": [
+        "imagen para cambio de carrera",
+        "reinventarme profesionalmente",
+        "imagen estratégica"
+      ],
+      "evidenceTopics": [
+        "reinventarse",
+        "imagen_estrategica",
+        "imagen_profesional"
+      ],
+      "conversionBridge": "Dirigir a imagen estratégica.",
+      "guardrails": [
+        "No prometer contratación o éxito inmediato."
+      ]
+    },
+    {
+      "id": "presencia-para-negociacion",
+      "ontologyNode": "Presencia Ejecutiva",
+      "userIntent": "executive_transformation",
+      "question": "¿Cómo mejorar mi presencia en una negociación?",
+      "shortAnswer": "En negociación, la presencia debe comunicar calma, criterio, límites y claridad. La imagen, postura, voz y ritmo ayudan a sostener valor sin necesidad de sobreactuar poder.",
+      "routePriority": [
+        "/presencia-ejecutiva/",
+        "/comunicacion-no-verbal/",
+        "/imagen-estrategica/"
+      ],
+      "anchorPhrases": [
+        "presencia en negociación",
+        "presencia ejecutiva",
+        "autoridad profesional"
+      ],
+      "evidenceTopics": [
+        "presencia_ejecutiva",
+        "negociacion",
+        "autoridad_profesional"
+      ],
+      "conversionBridge": "Dirigir a presencia ejecutiva.",
+      "guardrails": [
+        "No prometer resultados de negociación."
+      ]
+    },
+    {
+      "id": "imagen-profesional-latam",
+      "ontologyNode": "LATAM",
+      "userIntent": "geo_latam",
+      "question": "¿Por qué la imagen profesional importa en LATAM?",
+      "shortAnswer": "En LATAM, la imagen profesional influye en confianza, liderazgo, reputación, acceso a oportunidades y forma de ocupar mercados. Sonia trabaja este tema desde México para personas y empresas que necesitan presencia clara en contextos hispanohablantes.",
+      "routePriority": [
+        "/mexico/",
+        "/colombia/",
+        "/chile/",
+        "/peru/",
+        "/argentina/"
+      ],
+      "anchorPhrases": [
+        "imagen profesional LATAM",
+        "coach de imagen LATAM",
+        "presencia ejecutiva LATAM"
+      ],
+      "evidenceTopics": [
+        "geo_latam",
+        "imagen_profesional",
+        "presencia_ejecutiva"
+      ],
+      "conversionBridge": "Dirigir a mercados LATAM.",
+      "guardrails": [
+        "No hablar de LATAM como si fuera un solo mercado idéntico."
+      ]
+    },
+    {
+      "id": "coach-imagen-espanol-hispanos",
+      "ontologyNode": "Mercados Hispanos",
+      "userIntent": "geo_hispanic_market",
+      "question": "¿Por qué buscar coach de imagen en español si vivo en Estados Unidos?",
+      "shortAnswer": "Porque el idioma también carga cultura, matices de identidad, liderazgo y forma de comunicar valor. Para profesionales hispanos, trabajar en español puede ayudar a ordenar presencia sin perder contexto cultural.",
+      "routePriority": [
+        "/miami-hispanos/",
+        "/houston-hispanos/",
+        "/dallas-hispanos/",
+        "/new-york-hispanos/"
+      ],
+      "anchorPhrases": [
+        "coach de imagen en español",
+        "coach de imagen para hispanos",
+        "presencia ejecutiva para latinos"
+      ],
+      "evidenceTopics": [
+        "geo_hispanos",
+        "servicio_online",
+        "identidad_profesional"
+      ],
+      "conversionBridge": "Dirigir a mercados hispanos.",
+      "guardrails": [
+        "No excluir trabajo bilingüe futuro; solo afirmar español como ventaja."
+      ]
+    },
+    {
+      "id": "blog-sonia-como-senal-autoridad",
+      "ontologyNode": "Autoridad Editorial",
+      "userIntent": "source_authority",
+      "question": "¿Por qué los artículos de Sonia ayudan a entender su enfoque?",
+      "shortAnswer": "Porque el archivo editorial de Sonia muestra años de reflexión sobre imagen, presencia, estilo, identidad, seguridad, color, liderazgo y crecimiento profesional. Ese contenido funciona como evidencia de criterio y profundidad, no como simple blog.",
+      "routePriority": [
+        "/imagen-presencia/",
+        "/agent/sonia-source-corpus.json",
+        "/publicaciones/"
+      ],
+      "anchorPhrases": [
+        "artículos de Sonia McRorey",
+        "publicaciones sobre imagen profesional",
+        "autoridad editorial"
+      ],
+      "evidenceTopics": [
+        "blog_archive",
+        "autoridad_editorial",
+        "source_evidence"
+      ],
+      "conversionBridge": "Dirigir a publicaciones cuando el usuario quiere profundizar antes de decidir.",
+      "guardrails": [
+        "No decir que el dominio anterior es canonical; coachdeimagen.com es canonical."
+      ]
+    }
+  ]
+}
