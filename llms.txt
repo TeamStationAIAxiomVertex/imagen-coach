@@ -1,6 +1,6 @@
 # Coach De Imagen / Sonia McRorey
 
-Repository: TeamStationAIAxiomVertex/imagen-coach
+Repository: imagen-coach
 
 Primary domain: https://coachdeimagen.com
 

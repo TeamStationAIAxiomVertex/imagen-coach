@@ -72,7 +72,7 @@ The Drive corpus is an expert source library, not a public content dump. It incl
 - do use Sonia's language to strengthen executive clarity, methodology, proof, FAQs, schema and pillar addendums
 - do map every extract to a specific page intent and semantic cluster before use
 - do treat this as runtime grounding and retrieval for Cloudflare, not foundation-model weight training
-- do keep TeamStation and all non-Sonia company data outside Sonia corpus artifacts
+- do keep all non-Sonia company data outside Sonia corpus artifacts
 
 ## Sonia Teaching Modules
 

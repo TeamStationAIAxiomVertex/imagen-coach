@@ -4,7 +4,7 @@
   "governance": {
     "rawFilesCommitted": false,
     "runtimeModel": "Runtime grounding and retrieval for Cloudflare Worker and MCP surfaces. This corpus is not a foundation-model weight-training dataset.",
-    "teamstationBoundary": "TeamStation methods may inform process design only. No TeamStation content, ontology, prompts, routes, examples, buyer language, schemas or artifacts may be merged into Sonia files.",
+    "externalProjectBoundary": "Process methods from unrelated projects may inform workflow design only. No external company content, ontology, prompts, routes, examples, buyer language, schemas or artifacts may be merged into Sonia files.",
     "usageRule": "Use as expert source material before writing, revising or answering on Sonia surfaces. Extract only short, route-relevant, sanitized evidence with provenance.",
     "publicSafetyRules": [
       "Do not publish bank accounts, CLABE, card numbers, payment links, private logistics or obsolete offer pricing.",
@@ -12,7 +12,7 @@
       "Do not let abundance, manifestation, chakra or spiritual language replace Sonia's public root category of coaching de imagen, presencia y posicionamiento profesional.",
       "Use internal-growth material only when mapped to seguridad profesional, visibilidad, liderazgo, crecimiento sostenible, autoconcepto or decision capacity.",
       "Do not copy large text blocks from Drive files into public pages or agent outputs.",
-      "Keep Sonia as the only company entity in this corpus. Do not mix TeamStation, Nebula, Axiom, DEOS or any other project identifiers into Sonia artifacts."
+      "Keep Sonia as the only company entity in this corpus. Do not mix external company or unrelated project identifiers into Sonia artifacts."
     ]
   },
   "activeCloudflareCorpus": {
@@ -26,20 +26,40 @@
     "reviewedAt": "2026-07-01",
     "folderModifiedAt": "2026-06-29T17:55:49.144Z",
     "latestObservedAt": "2026-07-01",
-    "visibleFileCount": 38,
+    "visibleFileCount": 42,
     "fileTypeSummary": {
       "pdf": 24,
       "docx": 5,
       "pptx": 3,
-      "txt": 6
+      "txt": 6,
+      "markdown": 4
     },
     "notes": [
       "This folder is the active shared corpus root for Cloudflare grounding work.",
       "It does not fully replace Sonia's previously reviewed Drive library because some foundational authority files still live only in the older reviewed set.",
       "The current public teaching layer remains tied to reviewed quote banks until a dedicated extraction pass is completed from this active corpus.",
-      "July 2026 inventory confirms the active corpus now includes biography, testimonials, marca personal, extra transcripts and additional business/money capacity materials."
+      "July 2026 inventory confirms the active corpus now includes biography, testimonials, marca personal, extra transcripts and additional business/money capacity materials.",
+      "Four Cloudflare corpus addenda were added on 2026-07-03 to make service architecture, coaching definition, image axioms and nonverbal communication doctrine active in the shared corpus."
     ],
     "semanticClusters": [
+      {
+        "id": "foundational_doctrine_addenda",
+        "label": "Arquitectura, definición, axiomas y comunicación no verbal",
+        "description": "Cloudflare corpus addenda that activate Sonia's reviewed service architecture, category definition, image axioms and nonverbal communication doctrine for agent retrieval.",
+        "primaryFiles": [
+          "cloudflare-corpus-servicios-arquitectura-sonia-mcrorey.md",
+          "cloudflare-corpus-definicion-coaching-imagen-y-abundancia.md",
+          "cloudflare-corpus-axiomas-imagen-sonia-mcrorey.md",
+          "cloudflare-corpus-comunicacion-no-verbal-presencia.md"
+        ],
+        "pageUse": [
+          "service routing",
+          "coach de imagen definitions",
+          "glossary and comparison doctrine",
+          "nonverbal communication and executive presence answers",
+          "coaching de abundancia explanation as seguridad profesional"
+        ]
+      },
       {
         "id": "seguridad_dinero_capacidad",
         "label": "Seguridad profesional, dinero y capacidad interna",
@@ -145,12 +165,110 @@
         ]
       }
     ],
+    "foundationalAddenda": [
+      {
+        "id": "11Pm-7C5vmS9NeLD6IHry1qtWm1QVqQvt",
+        "title": "cloudflare-corpus-servicios-arquitectura-sonia-mcrorey.md",
+        "sourceBasis": "Sonia_McRorey_Servicios_v7.docx and reviewed commercial positioning materials",
+        "role": "Service routing and commercial answer grounding"
+      },
+      {
+        "id": "1BeJmuyDcdxRLUQULjiEZkXxtuDba0Kcj",
+        "title": "cloudflare-corpus-definicion-coaching-imagen-y-abundancia.md",
+        "sourceBasis": "Definición Coaching de imagen y coaching de abundancia.pdf and seguridad profesional materials",
+        "role": "Category definition and coaching de abundancia public-positioning grounding"
+      },
+      {
+        "id": "1H_xQAA5hSq_nzSobd8DsQj-3FUikzZ_v",
+        "title": "cloudflare-corpus-axiomas-imagen-sonia-mcrorey.md",
+        "sourceBasis": "Axiomas de la imagen SoniaMcRorey Escuela.pdf and reviewed image doctrine",
+        "role": "Glossary, comparisons, methodology and image doctrine grounding"
+      },
+      {
+        "id": "1KScDmo9JF_e0RI3GKoJ2aiH8Ux-Mj5fN",
+        "title": "cloudflare-corpus-comunicacion-no-verbal-presencia.md",
+        "sourceBasis": "COMUNICACIÓN NO VERBAL ENTREVISTA PROXEMIA.pdf and presence materials",
+        "role": "Nonverbal communication, proxemia and executive presence grounding"
+      }
+    ],
     "gapsRelativeToAuthorityStack": [
-      "The active shared corpus does not currently contain the earlier reviewed service architecture file equivalent to Sonia_McRorey_Servicios_v7.docx.",
-      "The active shared corpus does not currently contain the earlier reviewed category-definition and axioms files that support glossary and comparison doctrine.",
-      "Because of those gaps, the older reviewed Drive library remains part of Sonia's source contract until those files are added or re-reviewed in the active corpus."
+      "Resolved for active Cloudflare retrieval on 2026-07-03 through four controlled addenda. Raw legacy source files remain in the supporting reviewed library unless separately moved into this folder."
     ],
     "files": [
+      {
+        "id": "11Pm-7C5vmS9NeLD6IHry1qtWm1QVqQvt",
+        "title": "cloudflare-corpus-servicios-arquitectura-sonia-mcrorey.md",
+        "mimeType": "text/markdown",
+        "clusters": [
+          "foundational_doctrine_addenda"
+        ],
+        "relevance": "primary",
+        "useFor": [
+          "service architecture",
+          "commercial route selection",
+          "agent answer routing"
+        ],
+        "sensitivity": [
+          "derived addendum",
+          "do not treat as raw source transcript"
+        ]
+      },
+      {
+        "id": "1BeJmuyDcdxRLUQULjiEZkXxtuDba0Kcj",
+        "title": "cloudflare-corpus-definicion-coaching-imagen-y-abundancia.md",
+        "mimeType": "text/markdown",
+        "clusters": [
+          "foundational_doctrine_addenda",
+          "seguridad_dinero_capacidad"
+        ],
+        "relevance": "primary",
+        "useFor": [
+          "coach de imagen definition",
+          "coaching de abundancia explanation",
+          "seguridad profesional framing"
+        ],
+        "sensitivity": [
+          "derived addendum",
+          "avoid spiritual or income-guarantee framing"
+        ]
+      },
+      {
+        "id": "1H_xQAA5hSq_nzSobd8DsQj-3FUikzZ_v",
+        "title": "cloudflare-corpus-axiomas-imagen-sonia-mcrorey.md",
+        "mimeType": "text/markdown",
+        "clusters": [
+          "foundational_doctrine_addenda",
+          "identidad_autoconcepto_presencia"
+        ],
+        "relevance": "primary",
+        "useFor": [
+          "image axioms",
+          "glossary",
+          "comparison doctrine"
+        ],
+        "sensitivity": [
+          "derived addendum",
+          "do not reduce to fashion tips"
+        ]
+      },
+      {
+        "id": "1KScDmo9JF_e0RI3GKoJ2aiH8Ux-Mj5fN",
+        "title": "cloudflare-corpus-comunicacion-no-verbal-presencia.md",
+        "mimeType": "text/markdown",
+        "clusters": [
+          "foundational_doctrine_addenda"
+        ],
+        "relevance": "primary",
+        "useFor": [
+          "nonverbal communication",
+          "proxemia",
+          "executive presence"
+        ],
+        "sensitivity": [
+          "derived addendum",
+          "avoid pseudoscientific body-language claims"
+        ]
+      },
       {
         "id": "1W_9ZflHLSa-JD4cVCpdxJbl7uPlnZNor",
         "title": "Testimonios - La Raiz del Dinero.pdf",

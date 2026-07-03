@@ -57,12 +57,12 @@ Required content sources:
 - `docs/SONIA_DRIVE_KNOWLEDGEBASE.md` for Drive source relevance, sensitivity and usage rules
 - `docs/SONIA_CLOUDFLARE_MCP_ARCHITECTURE.md` for Sonia-only Cloudflare retrieval and MCP design
 - `docs/SONIA_CLOUDFLARE_CORPUS_GOVERNANCE.md` for Sonia-only corpus governance and anti-bleed rules
-- `docs/SONIA_TEACHING_ROUTE_MAP.md` for the public teaching-module contract
+- `docs/SONIA_TEACHING_ROUTE_MAP.md` for public teaching-module governance
 
 Sonia now operates with two Drive libraries:
 
 - an active shared Cloudflare grounding corpus used for ongoing retrieval and inventory work
-- a supporting reviewed foundational library that still holds some biography, service architecture and doctrine files not yet mirrored in the active shared corpus
+- a supporting reviewed foundational library that still holds some service architecture and doctrine files not yet mirrored in the active shared corpus
 
 The Drive corpus is an expert source library, not a public content dump. It includes service drafts, transcripts, training decks, image/coaching definitions, e-books, authority proof, presentation material and visual assets. Some files contain private or dated data. Therefore:
 
@@ -72,27 +72,19 @@ The Drive corpus is an expert source library, not a public content dump. It incl
 - do use Sonia's language to strengthen executive clarity, methodology, proof, FAQs, schema and pillar addendums
 - do map every extract to a specific page intent and semantic cluster before use
 - do treat this as runtime grounding and retrieval for Cloudflare, not foundation-model weight training
-- do keep TeamStation and all non-Sonia company data outside Sonia corpus artifacts
+- do keep all non-Sonia company data outside Sonia corpus artifacts
 
 ## Sonia Teaching Modules
 
-The static build includes a controlled teaching layer that maps Sonia's reviewed language into short public modules. This exists to add evidence, depth and coaching usefulness without rebuilding pages into long essays.
+The static build uses `content/sonia-knowledge/teaching-route-map.json` to place short, source-validated Sonia teachings into pages. This layer is for authority and decision clarity, not for text volume.
 
-Implementation source:
+Rules:
 
-- `content/sonia-knowledge/teaching-route-map.json`
-
-Public constraints:
-
-- use short, source-faithful quotes only
-- keep one teaching module per route unless a long-form article or methodology page explicitly needs more
-- never expose private source metadata, raw Drive filenames, payment information, old logistics or SEO strategy
-- preserve the page's unique intent instead of repeating the same quote across many pages
-- keep the module as coaching criterion plus practical application, not decorative copy
-
-Build constraint:
-
-- each teaching entry must include a `sourceSnippet` traceable to the reviewed quote banks; untraceable teachings must fail the static build
+- every public teaching must include a `sourceSnippet` traceable to a reviewed quote bank
+- modules must not expose raw Drive filenames, payment data, old contact data, dated logistics or SEO strategy
+- use one compact module per route by default
+- preserve the route's unique buyer intent and semantic territory
+- put deeper teaching into articles, methodology pages, glossary pages, FAQs or audience pages
 
 Primary source clusters:
 
