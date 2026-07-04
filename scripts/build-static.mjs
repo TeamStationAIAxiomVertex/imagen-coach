@@ -122,7 +122,7 @@ const SEMANTIC_TITLES = {
     shortLabel: "Presencia Profesional",
     menuLabel: "Coaching de Imagen",
     cardTitle: "Coaching de Presencia",
-    seoTitle: "Coaching de Imagen y Presencia Profesional | Sonia McRorey",
+    seoTitle: "Coaching de Imagen Estratégica | Sonia McRorey",
     supportHeading: "Confianza visible, comunicación y presencia",
     entity: "Presencia ejecutiva",
     intent: "Fortalecer presencia, seguridad visible, comunicación profesional y autoridad al ocupar espacios.",
@@ -596,7 +596,7 @@ const SEMANTIC_HUBS = [
   },
   {
     route: "/liderazgo",
-    title: "Liderazgo",
+    title: "Liderazgo Visible",
     description: "Contenido para fortalecer liderazgo femenino, comunicación profesional, toma de decisiones, expansión profesional y crecimiento empresarial con presencia visible.",
     cluster: "Liderazgo Empresarial",
     image: IMAGE_ASSETS.soniaLatinaLeadership,
@@ -3156,11 +3156,18 @@ function socialCardPath(route = "/") {
 }
 
 function metaDescriptionForPage(page, fallback = "") {
-  const description = semanticDescription(page, fallback || page.description);
+  const description = semanticDescription(page, fallback || page.description).replace(/\s+/g, " ").trim();
+  const headline = cleanDisplayTitle(semanticH1(page) || page.title || page.heroTitle || page.cardTitle || BRAND_NAME);
+  const isGenericArticleDescription = /^Lectura sobre imagen profesional/i.test(description);
+  const base = isGenericArticleDescription ? headline : (description || headline);
   const routeContext = page.route === "/"
-    ? "Coach de Imagen en Guadalajara, México y LATAM para presencia, liderazgo y posicionamiento profesional."
-    : "Coach de Imagen en México y LATAM para imagen profesional, presencia, liderazgo y posicionamiento.";
-  const merged = description && description.length >= 90 ? description : `${description || cleanDisplayTitle(page.title || page.heroTitle)}. ${routeContext}`;
+    ? "para presencia, liderazgo y posicionamiento profesional en Guadalajara, México y LATAM."
+    : page.route.startsWith("/imagen-presencia/")
+      ? "guía de Sonia McRorey sobre imagen profesional, presencia y posicionamiento."
+      : "para imagen profesional, presencia, liderazgo y posicionamiento en México y LATAM.";
+  const merged = base.length >= 115 && !isGenericArticleDescription
+    ? base
+    : `${base.replace(/[.!?\s]+$/, "")}, ${routeContext}`;
   return fitMetaDescription(merged, 145);
 }
 
