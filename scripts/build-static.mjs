@@ -7357,7 +7357,7 @@ function soniaOntologyQuestionCards() {
       question: "¿Qué es coaching de imagen?",
       shortAnswer:
         "El coaching de imagen es un proceso para alinear imagen visible, presencia, percepción, identidad profesional y decisiones de posicionamiento. No se limita a ropa: ordena cómo una persona se muestra, comunica autoridad y sostiene su etapa profesional.",
-      routePriority: ["/coach-de-imagen/", "/servicios-asesoria-de-imagen-coaching/", "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen/"],
+      routePriority: ["/", "/coach-de-imagen/", "/servicios-asesoria-de-imagen-coaching/", "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen/"],
       anchorPhrases: ["coaching de imagen", "coach de imagen", "imagen visible y presencia profesional"],
       evidenceTopics: ["coaching_de_imagen", "identidad_profesional", "presencia_profesional"],
       conversionBridge: "Invita a elegir un diagnóstico estratégico si la persona necesita ordenar imagen, presencia y posicionamiento con criterio profesional.",
@@ -7409,7 +7409,7 @@ function soniaOntologyQuestionCards() {
       question: "¿Por qué me cuesta sentirme seguro o segura profesionalmente aunque tenga capacidad?",
       shortAnswer:
         "A veces la capacidad ya existe, pero la persona no ha construido la seguridad interna para sostener visibilidad, crecimiento, dinero, liderazgo o nuevas responsabilidades. Sonia trabaja esa tensión como parte de la presencia profesional, sin separar imagen externa de identidad y autopercepción.",
-      routePriority: ["/seguridad-profesional/", "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia/", "/imagen-presencia/rebranding-imagen-mentalidad-abundancia/"],
+      routePriority: ["/seguridad-profesional/", "/mentalidad/", "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia/", "/imagen-presencia/rebranding-imagen-mentalidad-abundancia/"],
       anchorPhrases: ["seguridad profesional", "seguridad interna profesional", "sostener visibilidad"],
       evidenceTopics: ["seguridad_profesional", "visibilidad", "crecimiento_profesional"],
       conversionBridge: "Recomendar seguridad y posicionamiento cuando la persona sabe qué hacer, pero siente fricción interna para mostrarse, cobrar, liderar o crecer.",
@@ -7500,7 +7500,13 @@ function soniaOntologyQuestionCards() {
       question: "¿Qué hace una asesora de imagen profesional?",
       shortAnswer:
         "Una asesora de imagen profesional diagnostica color, estilo, proporciones, guardarropa, rostro, comunicación visual y contexto para que la imagen sea coherente con la etapa, industria y responsabilidad de la persona. En el enfoque de Sonia, ese trabajo se conecta con presencia, percepción y posicionamiento.",
-      routePriority: ["/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen/", "/imagen-profesional/", "/coach-de-imagen/"],
+      routePriority: [
+        "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen/",
+        "/imagen-profesional/",
+        "/coach-de-imagen/",
+        "/imagen-presencia/beneficios-de-asesoria-de-imagen/",
+        "/imagen-presencia/los-secretos-de-una-asesora-de-imagen-exitosa/",
+      ],
       anchorPhrases: ["asesora de imagen profesional", "consultora de imagen profesional", "diagnóstico de imagen"],
       evidenceTopics: ["asesoria_integral", "imagen_profesional", "contexto_profesional"],
       sourceSignals: ["No todos los profesionales necesitan verse igual.docx", "La Ciencia del Color en Tu Imagen.docx", "Imagen interna y externa guadalajara méxico.pdf"],

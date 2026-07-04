@@ -3,6 +3,7 @@
   "scripts": {
     "audit:authority": "node scripts/generate-authority-audit.mjs",
     "audit:content": "node scripts/audit-content-density.mjs",
+    "audit:intelligence": "node scripts/full-seo-geo-crawl-audit.mjs && node scripts/generate-site-intelligence.mjs",
     "build": "node scripts/build-static.mjs",
     "dev": "python3 -m http.server 4173 --directory dist",
     "pages:dev": "npm run build && wrangler pages dev dist",
