@@ -3885,7 +3885,7 @@ function faqStructuredContent(page, lines, pages, clusters) {
       </nav>
     </div>
   </section>
-  <section class="section faq-answer-grid" aria-label="Preguntas frecuentes de imagen y presencia">
+  <section class="section faq-answer-grid faq-page-grid" aria-label="Preguntas frecuentes de imagen y presencia">
     ${FAQ_PAGE_QUESTIONS.map((item, index) => {
       return `<details class="faq-answer-card" id="pregunta-${String(index + 1).padStart(2, "0")}"${index === 0 ? " open" : ""}>
         <summary><span>${String(index + 1).padStart(2, "0")}</span>${escapeHtml(item.question)}</summary>
@@ -4656,7 +4656,7 @@ function hero(page, lines) {
         <a class="btn secondary" href="${page.type === "article" || page.type === "pillar" ? "/imagen-presencia" : "/servicios-asesoria-de-imagen-coaching"}">${page.type === "article" || page.type === "pillar" ? "Ver publicaciones" : "Ver servicios"}</a>
       </div>
     </div>
-    <figure class="hero-media${image.includes("full-body") ? " portrait-media" : ""}">
+    <figure class="hero-media${image.includes("full-body") ? " portrait-media" : ""}${page.route === "/servicios-asesoria-de-imagen-coaching/preguntas-frequentes" ? " faq-hero-media" : ""}">
       ${heroImageTag(image, heroAlt)}
       <figcaption>${iconImageTag("/assets/sonia-icon.svg")} Sonia McRorey · ${BRAND_NAME}</figcaption>
     </figure>
