@@ -1,0 +1,1805 @@
+{
+  "batchId": "2026-07-09-service-decision-evidence-batch",
+  "status": "candidate",
+  "language": "es-MX",
+  "sourceBoundary": "Sonia/Coach De Imagen only; generated from repository knowledge pipeline, clean content, Sonia quote banks, blog archive signals, Drive teaching signals and static route taxonomy.",
+  "generatedAt": "2026-07-09T00:00:00-06:00",
+  "cards": [
+    {
+      "id": "diagnostico-antes-servicio-20260709",
+      "ontologyNode": "Diagnóstico de imagen",
+      "userIntent": "service_selection",
+      "question": "¿Por qué conviene hacer diagnóstico antes de elegir asesoría o coaching de imagen?",
+      "shortAnswer": "Porque la necesidad real puede estar en guardarropa, presencia, comunicación, posicionamiento o seguridad interna. El diagnóstico evita comprar una solución estética cuando el problema es de percepción, etapa profesional o liderazgo visible.",
+      "routePriority": [
+        "/servicios-asesoria-de-imagen-coaching",
+        "/servicios-asesoria-de-imagen-coaching/preguntas-frequentes",
+        "/contacto"
+      ],
+      "anchorPhrases": [
+        "diagnóstico de imagen",
+        "elegir servicio"
+      ],
+      "evidenceTopics": [
+        "diagnostico",
+        "decision_de_servicio"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "asesoria-ruta-correcta-20260709",
+      "ontologyNode": "Asesoría de imagen integral",
+      "userIntent": "service_fit",
+      "question": "¿Cuándo la asesoría de imagen es la ruta correcta?",
+      "shortAnswer": "Cuando la prioridad es ordenar imagen visible: estilo, color, guardarropa, proporciones, compras, coherencia externa y lectura profesional. Si el conflicto principal es visibilidad o posicionamiento, puede requerir coaching.",
+      "routePriority": [
+        "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen",
+        "/imagen-profesional"
+      ],
+      "anchorPhrases": [
+        "asesoría de imagen",
+        "guardarropa profesional"
+      ],
+      "evidenceTopics": [
+        "asesoria_integral",
+        "guardarropa_profesional"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "coaching-ruta-correcta-20260709",
+      "ontologyNode": "Coaching de imagen",
+      "userIntent": "service_fit",
+      "question": "¿Cuándo necesito coaching de imagen y no solo asesoría?",
+      "shortAnswer": "Cuando la imagen externa ya no alcanza para sostener liderazgo, visibilidad, comunicación o una nueva etapa profesional. El coaching trabaja la base interna y la presencia desde la que la imagen se expresa.",
+      "routePriority": [
+        "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen",
+        "/coach-de-imagen",
+        "/metodo-sonia-mcrorey"
+      ],
+      "anchorPhrases": [
+        "coaching de imagen",
+        "presencia profesional"
+      ],
+      "evidenceTopics": [
+        "coaching_de_imagen",
+        "identidad_profesional"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "taller-empresa-fit-20260709",
+      "ontologyNode": "Talleres de imagen empresarial",
+      "userIntent": "corporate_service_fit",
+      "question": "¿Cuándo conviene un taller de imagen para empresa?",
+      "shortAnswer": "Cuando equipos comerciales, líderes, voceros o colaboradores necesitan criterios comunes de presencia, comunicación, imagen profesional y coherencia ante clientes o audiencias internas.",
+      "routePriority": [
+        "/servicios-asesoria-de-imagen-coaching/talleres",
+        "/servicios-asesoria-de-imagen-coaching",
+        "/contacto"
+      ],
+      "anchorPhrases": [
+        "taller de imagen empresarial",
+        "imagen para equipos"
+      ],
+      "evidenceTopics": [
+        "imagen_empresarial",
+        "talleres"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "individual-vs-equipo-20260709",
+      "ontologyNode": "Decisión individual o empresa",
+      "userIntent": "service_selection",
+      "question": "¿Cómo sé si necesito proceso individual o taller para mi equipo?",
+      "shortAnswer": "Si el objetivo es transición personal, liderazgo visible o posicionamiento individual, conviene un proceso personal. Si la necesidad afecta estándares compartidos de cliente, vocería o equipo, suele convenir taller.",
+      "routePriority": [
+        "/servicios-asesoria-de-imagen-coaching",
+        "/servicios-asesoria-de-imagen-coaching/talleres",
+        "/contacto"
+      ],
+      "anchorPhrases": [
+        "proceso individual",
+        "taller para equipo"
+      ],
+      "evidenceTopics": [
+        "decision_de_servicio",
+        "imagen_empresarial"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "contacto-contexto-util-20260709",
+      "ontologyNode": "Contacto y diagnóstico",
+      "userIntent": "next_step",
+      "question": "¿Qué debo explicar al contactar a Sonia?",
+      "shortAnswer": "Conviene explicar ciudad, rol, etapa profesional, objetivo visible y principal tensión: guardarropa, presencia, seguridad, liderazgo, empresa o conferencia. Ese contexto ayuda a orientar la ruta correcta.",
+      "routePriority": [
+        "/contacto",
+        "/servicios-asesoria-de-imagen-coaching/preguntas-frequentes",
+        "/servicios-asesoria-de-imagen-coaching"
+      ],
+      "anchorPhrases": [
+        "contactar a Sonia",
+        "diagnóstico"
+      ],
+      "evidenceTopics": [
+        "contacto",
+        "faq"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "personalidad-profesional-20260709",
+      "ontologyNode": "Imagen profesional contextual",
+      "userIntent": "image_strategy",
+      "question": "¿Verme profesional significa borrar mi personalidad?",
+      "shortAnswer": "No. La imagen profesional traduce personalidad con criterio de contexto, industria, rol y objetivo. Sonia no plantea uniformar, sino hacer visible una versión clara, coherente y legible.",
+      "routePriority": [
+        "/imagen-profesional",
+        "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen"
+      ],
+      "anchorPhrases": [
+        "imagen con personalidad",
+        "industria y personalidad"
+      ],
+      "evidenceTopics": [
+        "industria_personalidad",
+        "imagen_profesional"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "comprar-con-criterio-20260709",
+      "ontologyNode": "Guardarropa profesional",
+      "userIntent": "appearance_practical",
+      "question": "¿Necesito comprar todo nuevo para mejorar mi imagen profesional?",
+      "shortAnswer": "No necesariamente. Primero se revisa qué comunica tu guardarropa, qué piezas sostienen tu etapa actual y qué ajustes faltan. El criterio evita compras impulsivas y convierte la ropa en herramienta de presencia.",
+      "routePriority": [
+        "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen",
+        "/imagen-profesional"
+      ],
+      "anchorPhrases": [
+        "guardarropa profesional",
+        "comprar con criterio"
+      ],
+      "evidenceTopics": [
+        "guardarropa_profesional",
+        "asesoria_integral"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "closet-etapa-20260709",
+      "ontologyNode": "Guardarropa y etapa",
+      "userIntent": "appearance_practical",
+      "question": "¿Por qué el clóset revela mi etapa profesional?",
+      "shortAnswer": "Porque muestra hábitos, límites, aspiraciones y formas de ocupar espacio. Revisarlo ayuda a decidir qué imagen acompaña tu responsabilidad actual y qué prendas pertenecen a una versión anterior.",
+      "routePriority": [
+        "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen",
+        "/imagen-profesional"
+      ],
+      "anchorPhrases": [
+        "clóset profesional",
+        "etapa profesional"
+      ],
+      "evidenceTopics": [
+        "guardarropa_profesional",
+        "etapa_profesional"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "color-lenguaje-20260709",
+      "ontologyNode": "Colorimetría profesional",
+      "userIntent": "appearance_practical",
+      "question": "¿La colorimetría es solo una regla de belleza?",
+      "shortAnswer": "No. En contexto profesional, el color funciona como lenguaje: puede aportar cercanía, autoridad, energía, serenidad o claridad visual. La clave es usarlo con intención, no como fórmula rígida.",
+      "routePriority": [
+        "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen",
+        "/imagen-profesional"
+      ],
+      "anchorPhrases": [
+        "colorimetría profesional",
+        "color como comunicación"
+      ],
+      "evidenceTopics": [
+        "colorimetria",
+        "comunicacion_visual"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "color-autoridad-20260709",
+      "ontologyNode": "Color y autoridad",
+      "userIntent": "appearance_practical",
+      "question": "¿Puedo usar color y mantener autoridad profesional?",
+      "shortAnswer": "Sí. La autoridad no depende de vestirse siempre neutra o rígida. El color puede expresar claridad, liderazgo o cercanía si se elige según industria, intención y situación profesional.",
+      "routePriority": [
+        "/imagen-profesional",
+        "/como-proyectar-autoridad"
+      ],
+      "anchorPhrases": [
+        "color y autoridad",
+        "color ejecutivo"
+      ],
+      "evidenceTopics": [
+        "colorimetria",
+        "autoridad_profesional"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "proporciones-armonia-20260709",
+      "ontologyNode": "Proporciones e imagen",
+      "userIntent": "appearance_practical",
+      "question": "¿Trabajar proporciones significa corregir mi cuerpo?",
+      "shortAnswer": "No. El trabajo de proporciones busca armonía visual, comodidad y lectura profesional. La ropa debe acompañar presencia, movimiento y seguridad sin imponer una forma ideal.",
+      "routePriority": [
+        "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen",
+        "/imagen-profesional"
+      ],
+      "anchorPhrases": [
+        "proporciones",
+        "armonía visual"
+      ],
+      "evidenceTopics": [
+        "proporciones",
+        "seguridad_profesional"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "rostro-presencia-20260709",
+      "ontologyNode": "Rostro y presencia",
+      "userIntent": "appearance_practical",
+      "question": "¿Por qué el rostro importa en presencia profesional?",
+      "shortAnswer": "El rostro concentra atención, expresión, energía y lectura de confianza. Trabajarlo significa cuidar encuadre, color, cabello, accesorios y comunicación para que la presencia sea legible.",
+      "routePriority": [
+        "/comunicacion-no-verbal",
+        "/imagen-profesional"
+      ],
+      "anchorPhrases": [
+        "rostro y presencia",
+        "expresión profesional"
+      ],
+      "evidenceTopics": [
+        "rostro",
+        "comunicacion_no_verbal"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "maquillaje-criterio-20260709",
+      "ontologyNode": "Maquillaje profesional",
+      "userIntent": "appearance_practical",
+      "question": "¿El maquillaje ejecutivo debe cambiar mi cara?",
+      "shortAnswer": "No. En una imagen profesional estratégica, el maquillaje acompaña expresión, color, contexto y presencia. Debe aportar pulcritud o intención sin convertir a la persona en una versión ajena.",
+      "routePriority": [
+        "/imagen-profesional",
+        "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen"
+      ],
+      "anchorPhrases": [
+        "maquillaje ejecutivo",
+        "imagen sin disfraz"
+      ],
+      "evidenceTopics": [
+        "rostro",
+        "imagen_profesional"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "accesorios-escala-20260709",
+      "ontologyNode": "Accesorios ejecutivos",
+      "userIntent": "appearance_practical",
+      "question": "¿Los accesorios importan en la imagen profesional?",
+      "shortAnswer": "Sí. Afinan escala, intención y nivel de cuidado. Un accesorio puede reforzar autoridad, cercanía o creatividad; también puede distraer si no conversa con rol, contexto y mensaje.",
+      "routePriority": [
+        "/imagen-profesional",
+        "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen"
+      ],
+      "anchorPhrases": [
+        "accesorios profesionales",
+        "criterio visual"
+      ],
+      "evidenceTopics": [
+        "accesorios",
+        "imagen_profesional"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "cabello-mensaje-20260709",
+      "ontologyNode": "Cabello y presencia",
+      "userIntent": "appearance_practical",
+      "question": "¿El cabello comunica algo en mi presencia profesional?",
+      "shortAnswer": "Sí. Enmarca el rostro y participa en la lectura de cuidado, estilo, energía y coherencia. No se trata de imponer un look, sino de acompañar el mensaje profesional.",
+      "routePriority": [
+        "/imagen-profesional",
+        "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen"
+      ],
+      "anchorPhrases": [
+        "cabello profesional",
+        "rostro e imagen"
+      ],
+      "evidenceTopics": [
+        "rostro",
+        "coherencia_visual"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "videollamada-lectura-20260709",
+      "ontologyNode": "Presencia en videollamada",
+      "userIntent": "executive_presence",
+      "question": "¿Cómo cuidar mi presencia profesional en videollamadas?",
+      "shortAnswer": "La videollamada reduce la lectura a encuadre, rostro, voz, postura, luz, ritmo y claridad de mensaje. Sonia lo abordaría como presencia estratégica: ser entendida con autoridad y cercanía.",
+      "routePriority": [
+        "/comunicacion-no-verbal-ejecutiva",
+        "/presencia-ejecutiva",
+        "/imagen-profesional"
+      ],
+      "anchorPhrases": [
+        "presencia en videollamada",
+        "imagen online"
+      ],
+      "evidenceTopics": [
+        "comunicacion_no_verbal",
+        "servicio_online"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "silencio-reunion-20260709",
+      "ontologyNode": "Comunicación no verbal",
+      "userIntent": "executive_presence",
+      "question": "¿El silencio comunica en una reunión ejecutiva?",
+      "shortAnswer": "Sí. El silencio puede proyectar escucha, seguridad, duda o retirada según postura, mirada, respiración y timing. En presencia ejecutiva también importa cómo sostienes el espacio.",
+      "routePriority": [
+        "/comunicacion-no-verbal-ejecutiva",
+        "/presencia-ejecutiva",
+        "/liderazgo-visible"
+      ],
+      "anchorPhrases": [
+        "silencio ejecutivo",
+        "presencia en reuniones"
+      ],
+      "evidenceTopics": [
+        "comunicacion_no_verbal",
+        "presencia_ejecutiva"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "voz-presencia-20260709",
+      "ontologyNode": "Voz y presencia",
+      "userIntent": "executive_presence",
+      "question": "¿La voz forma parte de mi imagen profesional?",
+      "shortAnswer": "Sí. Voz, ritmo, pausas y claridad influyen en cómo se perciben seguridad, liderazgo y dominio del tema. La imagen profesional también se expresa en la forma de comunicar.",
+      "routePriority": [
+        "/comunicacion-no-verbal-ejecutiva",
+        "/presencia-ejecutiva",
+        "/como-proyectar-autoridad"
+      ],
+      "anchorPhrases": [
+        "voz ejecutiva",
+        "ritmo al hablar"
+      ],
+      "evidenceTopics": [
+        "comunicacion_no_verbal",
+        "autoridad_profesional"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "espacio-profesional-20260709",
+      "ontologyNode": "Espacio y presencia",
+      "userIntent": "executive_presence",
+      "question": "¿La distancia física o el uso del espacio influye en mi presencia?",
+      "shortAnswer": "Sí. La forma de entrar, sentarte, ocupar una mesa o acercarte a un cliente comunica seguridad, respeto y liderazgo. La presencia profesional se lee en el cuerpo.",
+      "routePriority": [
+        "/comunicacion-no-verbal",
+        "/comunicacion-no-verbal-ejecutiva",
+        "/presencia-ejecutiva"
+      ],
+      "anchorPhrases": [
+        "proxemia profesional",
+        "ocupar espacio"
+      ],
+      "evidenceTopics": [
+        "comunicacion_no_verbal",
+        "presencia_profesional"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "entrada-reunion-20260709",
+      "ontologyNode": "Presencia en reuniones",
+      "userIntent": "executive_presence",
+      "question": "¿Mi forma de entrar a una reunión comunica algo?",
+      "shortAnswer": "Sí. Entrar con prisa, esconderse, disculparse o ocupar el lugar con claridad produce lecturas distintas. La presencia empieza antes de presentar argumentos.",
+      "routePriority": [
+        "/presencia-ejecutiva",
+        "/comunicacion-no-verbal-ejecutiva",
+        "/como-proyectar-autoridad"
+      ],
+      "anchorPhrases": [
+        "entrada a reunión",
+        "autoridad ejecutiva"
+      ],
+      "evidenceTopics": [
+        "presencia_ejecutiva",
+        "autoridad_profesional"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "entrevista-alto-nivel-20260709",
+      "ontologyNode": "Entrevista ejecutiva",
+      "userIntent": "career_transition",
+      "question": "¿Cómo preparar mi imagen para una entrevista de alto nivel?",
+      "shortAnswer": "La preparación debe alinear rol, industria, autoridad, claridad verbal, postura y guardarropa. No se trata de verse impecable en abstracto, sino de comunicar capacidad para el nivel buscado.",
+      "routePriority": [
+        "/imagen-profesional",
+        "/presencia-ejecutiva",
+        "/como-proyectar-autoridad"
+      ],
+      "anchorPhrases": [
+        "entrevista ejecutiva",
+        "alto nivel"
+      ],
+      "evidenceTopics": [
+        "imagen_profesional",
+        "cambio_profesional"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "ascenso-imagen-20260709",
+      "ontologyNode": "Ascenso y presencia",
+      "userIntent": "career_expansion",
+      "question": "¿Por qué un ascenso puede requerir revisar mi imagen?",
+      "shortAnswer": "Porque cambia la lectura esperada: más responsabilidad, reuniones, visibilidad, decisiones y representación. La imagen debe acompañar ese estándar sin perder autenticidad.",
+      "routePriority": [
+        "/presencia-ejecutiva",
+        "/imagen-profesional"
+      ],
+      "anchorPhrases": [
+        "imagen para ascenso",
+        "siguiente nivel"
+      ],
+      "evidenceTopics": [
+        "crecimiento_profesional",
+        "presencia_ejecutiva"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "negociacion-presencia-20260709",
+      "ontologyNode": "Presencia en negociación",
+      "userIntent": "executive_presence",
+      "question": "¿Cómo influye mi presencia en una negociación?",
+      "shortAnswer": "Influye en confianza, claridad, límites y percepción de valor. Una presencia sostenida permite comunicar firmeza sin presión, escuchar sin borrarse y mostrar criterio.",
+      "routePriority": [
+        "/presencia-ejecutiva",
+        "/comunicacion-no-verbal-ejecutiva",
+        "/liderazgo-visible"
+      ],
+      "anchorPhrases": [
+        "presencia en negociación",
+        "confianza profesional"
+      ],
+      "evidenceTopics": [
+        "presencia_ejecutiva",
+        "liderazgo_visible"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "conversacion-dificil-20260709",
+      "ontologyNode": "Presencia en conversación difícil",
+      "userIntent": "executive_presence",
+      "question": "¿Qué trabaja la imagen en conversaciones difíciles?",
+      "shortAnswer": "Trabaja cómo sostener postura, voz, límites, escucha y claridad sin endurecerse ni desaparecer. La presencia profesional ayuda a comunicar decisiones con coherencia.",
+      "routePriority": [
+        "/presencia-ejecutiva",
+        "/seguridad-profesional",
+        "/comunicacion-no-verbal-ejecutiva"
+      ],
+      "anchorPhrases": [
+        "conversación difícil",
+        "límites con seguridad"
+      ],
+      "evidenceTopics": [
+        "presencia_ejecutiva",
+        "seguridad_profesional"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "networking-recordable-20260709",
+      "ontologyNode": "Networking y marca personal",
+      "userIntent": "business_positioning",
+      "question": "¿Cómo ayuda la imagen profesional en networking?",
+      "shortAnswer": "Ayuda a que tu presencia sea clara, recordable y coherente con lo que ofreces. No busca llamar la atención por exceso, sino facilitar confianza, conversación y memoria profesional.",
+      "routePriority": [
+        "/imagen-estrategica",
+        "/presencia-ejecutiva",
+        "/imagen-profesional"
+      ],
+      "anchorPhrases": [
+        "networking profesional",
+        "presencia recordable"
+      ],
+      "evidenceTopics": [
+        "marca_personal",
+        "posicionamiento_profesional"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "linkedin-foto-20260709",
+      "ontologyNode": "LinkedIn e imagen",
+      "userIntent": "business_positioning",
+      "question": "¿La foto de LinkedIn es solo una foto bonita?",
+      "shortAnswer": "No. Es una señal de posicionamiento: encuadre, expresión, color, contexto y coherencia con la oferta profesional. Debe respaldar confianza, no esconder identidad.",
+      "routePriority": [
+        "/imagen-estrategica",
+        "/imagen-profesional",
+        "/presencia-ejecutiva"
+      ],
+      "anchorPhrases": [
+        "foto profesional LinkedIn",
+        "imagen para LinkedIn"
+      ],
+      "evidenceTopics": [
+        "marca_personal",
+        "imagen_profesional"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "marca-personal-ruido-20260709",
+      "ontologyNode": "Marca personal ejecutiva",
+      "userIntent": "business_positioning",
+      "question": "¿Marca personal significa exponerme más en redes?",
+      "shortAnswer": "No necesariamente. Marca personal ejecutiva significa que imagen, mensaje, presencia y decisiones públicas comuniquen una posición clara. La visibilidad debe servir al posicionamiento.",
+      "routePriority": [
+        "/imagen-estrategica",
+        "/liderazgo-visible",
+        "/presencia-ejecutiva"
+      ],
+      "anchorPhrases": [
+        "marca personal ejecutiva",
+        "visibilidad profesional"
+      ],
+      "evidenceTopics": [
+        "marca_personal",
+        "visibilidad"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "consultora-credibilidad-20260709",
+      "ontologyNode": "Consultoras independientes",
+      "userIntent": "business_positioning",
+      "question": "¿Por qué una consultora independiente necesita trabajar su imagen?",
+      "shortAnswer": "Porque su presencia suele ser parte directa de la confianza comercial. Imagen, comunicación y posicionamiento ayudan a que la experiencia sea visible antes, durante y después de hablar con clientes.",
+      "routePriority": [
+        "/empresarias",
+        "/imagen-estrategica",
+        "/imagen-profesional"
+      ],
+      "anchorPhrases": [
+        "imagen para consultoras",
+        "credibilidad profesional"
+      ],
+      "evidenceTopics": [
+        "marca_personal",
+        "credibilidad"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "fundadora-representa-20260709",
+      "ontologyNode": "Fundadoras y CEO",
+      "userIntent": "business_positioning",
+      "question": "¿Qué cambia en la imagen de una fundadora cuando pasa a representar una empresa?",
+      "shortAnswer": "Cambia la responsabilidad visible. La imagen deja de hablar solo de gusto personal y empieza a sostener confianza, liderazgo, cultura, negociación y dirección. Debe ser más intencional.",
+      "routePriority": [
+        "/empresarias",
+        "/liderazgo-visible"
+      ],
+      "anchorPhrases": [
+        "imagen para fundadoras",
+        "presencia de CEO"
+      ],
+      "evidenceTopics": [
+        "mujeres_lideres",
+        "liderazgo_visible"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "directiva-visibilidad-20260709",
+      "ontologyNode": "Mujeres directivas",
+      "userIntent": "women_leadership",
+      "question": "¿Qué trabaja Sonia con una mujer directiva que entra a mayor visibilidad?",
+      "shortAnswer": "Trabaja presencia, seguridad, comunicación, guardarropa, autoridad y lectura de contexto para que el nuevo nivel se sostenga sin dureza artificial ni sobreesfuerzo constante.",
+      "routePriority": [
+        "/presencia-ejecutiva",
+        "/imagen-para-mujeres-lideres",
+        "/seguridad-profesional-femenina"
+      ],
+      "anchorPhrases": [
+        "mujer directiva",
+        "presencia ejecutiva femenina"
+      ],
+      "evidenceTopics": [
+        "mujeres_lideres",
+        "seguridad_profesional"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "miedo-ambiciosa-20260709",
+      "ontologyNode": "Seguridad profesional femenina",
+      "userIntent": "hidden_buyer_intent",
+      "question": "¿Qué pasa si me da miedo verme demasiado ambiciosa?",
+      "shortAnswer": "Ese miedo puede aparecer cuando la imagen empieza a ocupar más espacio que la versión anterior permitía. El trabajo no es exagerar autoridad, sino sostener visibilidad con claridad.",
+      "routePriority": [
+        "/seguridad-profesional-femenina",
+        "/imagen-para-mujeres-lideres",
+        "/presencia-ejecutiva"
+      ],
+      "anchorPhrases": [
+        "miedo a verme ambiciosa",
+        "visibilidad femenina"
+      ],
+      "evidenceTopics": [
+        "seguridad_profesional",
+        "visibilidad"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "sobreesfuerzo-presencia-20260709",
+      "ontologyNode": "Presencia y sobreesfuerzo",
+      "userIntent": "hidden_buyer_intent",
+      "question": "¿Trabajar mi presencia significa esforzarme más?",
+      "shortAnswer": "No. Muchas veces significa dejar de compensar con sobrepreparación, tensión o control excesivo. La presencia se vuelve más sólida cuando imagen, cuerpo, comunicación y decisión están alineados.",
+      "routePriority": [
+        "/seguridad-profesional",
+        "/presencia-ejecutiva"
+      ],
+      "anchorPhrases": [
+        "sobreesfuerzo profesional",
+        "presencia sin tensión"
+      ],
+      "evidenceTopics": [
+        "seguridad_profesional",
+        "sistema_interno"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "impostor-capacidad-20260709",
+      "ontologyNode": "Impostor y presencia",
+      "userIntent": "hidden_buyer_intent",
+      "question": "¿Sentirme impostora significa que no estoy preparada?",
+      "shortAnswer": "No necesariamente. Puede indicar que tu autoconcepto, cuerpo o presencia todavía no integran el nivel que ya estás ocupando. Sonia lo aborda desde seguridad profesional y visibilidad.",
+      "routePriority": [
+        "/seguridad-profesional",
+        "/seguridad-profesional-femenina"
+      ],
+      "anchorPhrases": [
+        "impostor profesional",
+        "autoconcepto"
+      ],
+      "evidenceTopics": [
+        "seguridad_profesional",
+        "autoconcepto"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "suficiencia-imagen-20260709",
+      "ontologyNode": "Autoimagen profesional",
+      "userIntent": "hidden_buyer_intent",
+      "question": "¿Qué relación tiene no sentirme suficiente con mi imagen?",
+      "shortAnswer": "La imagen puede revelar cómo te autorizas o te reduces frente a otros. Esa tensión puede verse en ropa, postura, voz, decisiones y límites; por eso el trabajo integra presencia externa e interna.",
+      "routePriority": [
+        "/seguridad-profesional",
+        "/imagen-profesional"
+      ],
+      "anchorPhrases": [
+        "autoimagen profesional",
+        "seguridad interna"
+      ],
+      "evidenceTopics": [
+        "autoimagen",
+        "identidad_profesional"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "valor-presencia-20260709",
+      "ontologyNode": "Valor y presencia",
+      "userIntent": "business_positioning",
+      "question": "¿Mejorar mi presencia me ayuda a comunicar mejor mi valor?",
+      "shortAnswer": "Puede ayudar a comunicar valor con más claridad, pero no es promesa económica. En el enfoque de Sonia, la presencia acompaña seguridad, posicionamiento, percepción y decisiones comerciales.",
+      "routePriority": [
+        "/empresarias",
+        "/imagen-estrategica"
+      ],
+      "anchorPhrases": [
+        "comunicar valor",
+        "posicionamiento"
+      ],
+      "evidenceTopics": [
+        "posicionamiento_profesional",
+        "crecimiento_profesional"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "abundancia-criterio-20260709",
+      "ontologyNode": "Coaching de abundancia",
+      "userIntent": "service_definition",
+      "question": "¿Cómo se debe entender el coaching de abundancia en este sitio?",
+      "shortAnswer": "Debe entenderse como trabajo sobre decisiones, merecimiento profesional, seguridad, autoconcepto y capacidad de sostener crecimiento. No como riqueza rápida ni resultado financiero asegurado.",
+      "routePriority": [
+        "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia",
+        "/seguridad-profesional"
+      ],
+      "anchorPhrases": [
+        "coaching de abundancia",
+        "merecimiento profesional"
+      ],
+      "evidenceTopics": [
+        "coaching_abundancia",
+        "seguridad_profesional"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "amor-propio-estructura-20260709",
+      "ontologyNode": "Amor propio profesional",
+      "userIntent": "psychology_boundary",
+      "question": "¿Por qué Sonia dice que el amor propio puede ser estructura profesional?",
+      "shortAnswer": "Porque se expresa en límites, decisiones, coherencia, autocuidado visible y capacidad de sostener una etapa. No se usa como frase motivacional, sino como base interna que ordena presencia.",
+      "routePriority": [
+        "/seguridad-profesional",
+        "/metodo-sonia-mcrorey"
+      ],
+      "anchorPhrases": [
+        "amor propio profesional",
+        "estructura interna"
+      ],
+      "evidenceTopics": [
+        "amor_propio",
+        "metodo_sonia"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "sistema-interno-20260709",
+      "ontologyNode": "Sistema interno y visibilidad",
+      "userIntent": "psychology_boundary",
+      "question": "¿Cómo hablar del sistema nervioso sin convertirlo en servicio clínico?",
+      "shortAnswer": "Se debe usar como lenguaje de capacidad, seguridad percibida y respuesta ante visibilidad, sin diagnosticar condiciones. En Coach De Imagen funciona como marco de presencia.",
+      "routePriority": [
+        "/seguridad-profesional",
+        "/metodo-sonia-mcrorey"
+      ],
+      "anchorPhrases": [
+        "sistema interno",
+        "capacidad interna"
+      ],
+      "evidenceTopics": [
+        "sistema_interno",
+        "guardrail_medical"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "visibilidad-no-exhibicion-20260709",
+      "ontologyNode": "Visibilidad profesional",
+      "userIntent": "hidden_buyer_intent",
+      "question": "¿Ser más visible significa exhibirme?",
+      "shortAnswer": "No. Visibilidad profesional significa permitir que tu trabajo, criterio y liderazgo sean percibidos con claridad. No exige exposición vacía; exige presencia coherente con la etapa y el objetivo.",
+      "routePriority": [
+        "/liderazgo-visible",
+        "/presencia-ejecutiva",
+        "/seguridad-profesional"
+      ],
+      "anchorPhrases": [
+        "visibilidad profesional",
+        "presencia sin exhibición"
+      ],
+      "evidenceTopics": [
+        "visibilidad",
+        "liderazgo_visible"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "liderazgo-visible-20260709",
+      "ontologyNode": "Liderazgo visible",
+      "userIntent": "executive_presence",
+      "question": "¿Liderazgo visible significa hablar más fuerte o imponerse?",
+      "shortAnswer": "No. Liderazgo visible significa que tu presencia, decisiones y comunicación pueden ser leídas con claridad. Puede ser firme, sereno, creativo o cercano si sostiene autoridad.",
+      "routePriority": [
+        "/liderazgo-visible",
+        "/presencia-ejecutiva"
+      ],
+      "anchorPhrases": [
+        "liderazgo visible",
+        "autoridad sin sobreactuar"
+      ],
+      "evidenceTopics": [
+        "liderazgo_visible",
+        "autoridad_profesional"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "autoridad-cercana-20260709",
+      "ontologyNode": "Autoridad y cercanía",
+      "userIntent": "executive_presence",
+      "question": "¿Puedo proyectar autoridad y seguir siendo cercana?",
+      "shortAnswer": "Sí. Autoridad y cercanía no se excluyen cuando la imagen está contextualizada. La clave está en comunicar criterio, límites y claridad sin perder calidez.",
+      "routePriority": [
+        "/como-proyectar-autoridad",
+        "/presencia-ejecutiva"
+      ],
+      "anchorPhrases": [
+        "autoridad cercana",
+        "presencia humana"
+      ],
+      "evidenceTopics": [
+        "autoridad_profesional",
+        "identidad_profesional"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "empresa-no-uniformidad-20260709",
+      "ontologyNode": "Imagen empresarial",
+      "userIntent": "corporate_strategy",
+      "question": "¿Imagen corporativa significa que todo el equipo se vea igual?",
+      "shortAnswer": "No. Una imagen empresarial sólida crea criterios compartidos sin borrar diferencias. Busca coherencia con marca, cliente, rol y cultura, no uniformidad rígida.",
+      "routePriority": [
+        "/servicios-asesoria-de-imagen-coaching/talleres",
+        "/servicios-asesoria-de-imagen-coaching"
+      ],
+      "anchorPhrases": [
+        "imagen corporativa humana",
+        "coherencia de equipo"
+      ],
+      "evidenceTopics": [
+        "imagen_empresarial",
+        "equipos"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "equipo-comercial-confianza-20260709",
+      "ontologyNode": "Equipos comerciales",
+      "userIntent": "corporate_strategy",
+      "question": "¿Por qué la imagen de un equipo comercial importa?",
+      "shortAnswer": "Porque representa confianza antes de que se cierre una conversación. Presencia, lenguaje corporal, vestimenta y coherencia ayudan a que el cliente perciba profesionalismo y claridad.",
+      "routePriority": [
+        "/servicios-asesoria-de-imagen-coaching/talleres",
+        "/servicios-asesoria-de-imagen-coaching"
+      ],
+      "anchorPhrases": [
+        "equipo comercial",
+        "confianza del cliente"
+      ],
+      "evidenceTopics": [
+        "imagen_empresarial",
+        "cliente_confianza"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "lideres-cultura-20260709",
+      "ontologyNode": "Liderazgo e imagen empresarial",
+      "userIntent": "corporate_strategy",
+      "question": "¿Por qué los líderes influyen en la imagen de una empresa?",
+      "shortAnswer": "Porque modelan estándares visibles: cómo se comunica autoridad, cómo se atiende al cliente, cómo se representa la marca y cómo se sostiene presencia en momentos clave.",
+      "routePriority": [
+        "/servicios-asesoria-de-imagen-coaching/talleres",
+        "/liderazgo-visible",
+        "/servicios-asesoria-de-imagen-coaching"
+      ],
+      "anchorPhrases": [
+        "líderes e imagen",
+        "cultura visible"
+      ],
+      "evidenceTopics": [
+        "imagen_empresarial",
+        "liderazgo_visible"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "voceria-presencia-20260709",
+      "ontologyNode": "Vocería y presencia",
+      "userIntent": "corporate_strategy",
+      "question": "¿Qué aporta la presencia profesional a una vocería?",
+      "shortAnswer": "Aporta claridad, control corporal, coherencia verbal y lectura de confianza. En vocería, la imagen no es decoración: sostiene el mensaje cuando la audiencia evalúa credibilidad.",
+      "routePriority": [
+        "/comunicacion-no-verbal-ejecutiva",
+        "/servicios-asesoria-de-imagen-coaching/talleres",
+        "/presencia-ejecutiva"
+      ],
+      "anchorPhrases": [
+        "vocería profesional",
+        "credibilidad ejecutiva"
+      ],
+      "evidenceTopics": [
+        "voceria",
+        "credibilidad"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "evento-corporativo-20260709",
+      "ontologyNode": "Eventos corporativos",
+      "userIntent": "corporate_strategy",
+      "question": "¿Cómo preparar imagen para representantes en un evento corporativo?",
+      "shortAnswer": "Se prepara desde rol, audiencia, marca, nivel de formalidad, movilidad, clima y mensaje. La meta no es uniformar, sino que cada representante comunique confianza y pertenencia.",
+      "routePriority": [
+        "/servicios-asesoria-de-imagen-coaching/talleres",
+        "/servicios-asesoria-de-imagen-coaching",
+        "/contacto"
+      ],
+      "anchorPhrases": [
+        "evento corporativo",
+        "representantes de marca"
+      ],
+      "evidenceTopics": [
+        "imagen_empresarial",
+        "eventos"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "equipo-remoto-20260709",
+      "ontologyNode": "Equipos remotos",
+      "userIntent": "corporate_strategy",
+      "question": "¿Un equipo remoto también necesita criterios de presencia?",
+      "shortAnswer": "Sí. En video, la presencia se concentra en encuadre, voz, luz, ritmo, fondo, vestimenta visible y claridad. Los criterios compartidos ayudan a sostener confianza sin rigidez.",
+      "routePriority": [
+        "/servicios-asesoria-de-imagen-coaching/talleres",
+        "/comunicacion-no-verbal-ejecutiva",
+        "/servicios-asesoria-de-imagen-coaching"
+      ],
+      "anchorPhrases": [
+        "equipos remotos",
+        "presencia en video"
+      ],
+      "evidenceTopics": [
+        "imagen_empresarial",
+        "servicio_online"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "styling-limite-20260709",
+      "ontologyNode": "Styling y coaching",
+      "userIntent": "category_comparison",
+      "question": "¿El styling es útil dentro de un proceso de imagen?",
+      "shortAnswer": "Sí, puede resolver combinación, estética u ocasiones específicas. El límite aparece cuando la necesidad real es presencia, posicionamiento, seguridad o liderazgo, donde se requiere un proceso más profundo.",
+      "routePriority": [
+        "/coach-de-imagen",
+        "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen"
+      ],
+      "anchorPhrases": [
+        "styling vs coaching",
+        "coaching de imagen"
+      ],
+      "evidenceTopics": [
+        "diferenciacion_categoria",
+        "styling"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "consultoria-parte-20260709",
+      "ontologyNode": "Consultoría y coaching",
+      "userIntent": "category_comparison",
+      "question": "¿La consultoría tradicional de imagen sigue siendo útil?",
+      "shortAnswer": "Sí, cuando el reto es técnico o visual: color, formas, guardarropa o protocolo. Si la persona necesita sostener visibilidad, decisiones y presencia, Sonia diferencia esa ruta del coaching.",
+      "routePriority": [
+        "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen",
+        "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen"
+      ],
+      "anchorPhrases": [
+        "consultoría de imagen",
+        "asesoría visual"
+      ],
+      "evidenceTopics": [
+        "diferenciacion_categoria",
+        "consultoria_imagen"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "motivacion-posicionamiento-20260709",
+      "ontologyNode": "Motivación y posicionamiento",
+      "userIntent": "category_comparison",
+      "question": "¿Por qué la motivación no basta para posicionarme profesionalmente?",
+      "shortAnswer": "Porque el posicionamiento exige decisiones visibles, coherencia, repetición, lenguaje, presencia y lectura de mercado. La motivación puede iniciar movimiento, pero no sustituye estructura profesional.",
+      "routePriority": [
+        "/imagen-estrategica"
+      ],
+      "anchorPhrases": [
+        "motivación vs posicionamiento",
+        "estructura profesional"
+      ],
+      "evidenceTopics": [
+        "diferenciacion_categoria",
+        "posicionamiento_profesional"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "presencia-real-20260709",
+      "ontologyNode": "Presencia real",
+      "userIntent": "category_comparison",
+      "question": "¿Qué diferencia una presencia real de una imagen perfecta?",
+      "shortAnswer": "La imagen perfecta puede verse pulida pero sentirse distante o ajena. La presencia real integra cuerpo, comunicación, contexto, seguridad y personalidad para que la persona sea creíble.",
+      "routePriority": [
+        "/presencia-ejecutiva",
+        "/coach-de-imagen"
+      ],
+      "anchorPhrases": [
+        "presencia real",
+        "imagen perfecta"
+      ],
+      "evidenceTopics": [
+        "presencia_profesional",
+        "autenticidad"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "evolucion-latam-20260709",
+      "ontologyNode": "Evolución de categoría",
+      "userIntent": "category_education",
+      "question": "¿Cómo ha evolucionado el coaching de imagen en México y LATAM?",
+      "shortAnswer": "Ha pasado de enfocarse solo en apariencia, protocolo o moda a integrar presencia, liderazgo, percepción, identidad y posicionamiento profesional. La categoría madura cuando la imagen se entiende como sistema.",
+      "routePriority": [
+        "/coach-de-imagen",
+        "/mexico"
+      ],
+      "anchorPhrases": [
+        "coaching de imagen LATAM",
+        "imagen como sistema"
+      ],
+      "evidenceTopics": [
+        "coaching_de_imagen",
+        "latam"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "mexico-online-20260709",
+      "ontologyNode": "GEO México",
+      "userIntent": "local_commercial_intent",
+      "question": "¿Sonia puede acompañar procesos de imagen en México fuera de Guadalajara?",
+      "shortAnswer": "Sí, puede orientar procesos por video y revisar casos corporativos o de viaje según alcance. La comunicación debe ser conservadora: base presencial en Guadalajara y cobertura por formato definido.",
+      "routePriority": [
+        "/mexico",
+        "/guadalajara",
+        "/contacto"
+      ],
+      "anchorPhrases": [
+        "coach de imagen México",
+        "base Guadalajara"
+      ],
+      "evidenceTopics": [
+        "geo_mexico",
+        "servicio_online"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "cdmx-presencia-20260709",
+      "ontologyNode": "GEO CDMX",
+      "userIntent": "local_commercial_intent",
+      "question": "¿Qué enfoque tiene la imagen profesional para CDMX?",
+      "shortAnswer": "En un mercado de alta competencia, la imagen necesita comunicar claridad, autoridad, especialidad y confianza sin sonar genérica. Sonia puede trabajar por video cuando el reto es presencia o posicionamiento.",
+      "routePriority": [
+        "/cdmx",
+        "/presencia-ejecutiva",
+        "/contacto"
+      ],
+      "anchorPhrases": [
+        "coach de imagen CDMX",
+        "presencia ejecutiva CDMX"
+      ],
+      "evidenceTopics": [
+        "geo_mexico",
+        "presencia_ejecutiva"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "monterrey-empresaria-20260709",
+      "ontologyNode": "GEO Monterrey",
+      "userIntent": "local_commercial_intent",
+      "question": "¿Qué puede trabajar una empresaria de Monterrey con Sonia?",
+      "shortAnswer": "Puede trabajar presencia ejecutiva, imagen profesional, liderazgo visible y posicionamiento de negocio por video o mediante alcance definido, con enfoque en autoridad y claridad comercial.",
+      "routePriority": [
+        "/monterrey",
+        "/empresarias",
+        "/presencia-ejecutiva"
+      ],
+      "anchorPhrases": [
+        "coach de imagen Monterrey",
+        "empresarias Monterrey"
+      ],
+      "evidenceTopics": [
+        "geo_mexico",
+        "mujeres_lideres"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "bogota-voceria-20260709",
+      "ontologyNode": "GEO Bogotá",
+      "userIntent": "latam_commercial_intent",
+      "question": "¿Qué responder a una consulta de presencia ejecutiva en Bogotá?",
+      "shortAnswer": "Responder desde liderazgo visible, vocería, confianza y comunicación ejecutiva en español. El enfoque debe cuidar modalidad, ciudad, necesidad y alcance antes de orientar a contacto.",
+      "routePriority": [
+        "/bogota",
+        "/colombia",
+        "/comunicacion-no-verbal-ejecutiva"
+      ],
+      "anchorPhrases": [
+        "presencia ejecutiva Bogotá",
+        "coach de imagen Colombia"
+      ],
+      "evidenceTopics": [
+        "geo_latam",
+        "voceria"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "miami-bicultural-20260709",
+      "ontologyNode": "Mercados hispanos Miami",
+      "userIntent": "hispanic_market_intent",
+      "question": "¿Qué cuida Sonia al trabajar con profesionales hispanas en Miami?",
+      "shortAnswer": "Cuida presencia en español, claridad cultural, autoridad profesional y posicionamiento para contextos biculturales. La respuesta debe evitar lifestyle genérico y mantenerse en presencia profesional.",
+      "routePriority": [
+        "/miami-hispanos",
+        "/presencia-ejecutiva",
+        "/contacto"
+      ],
+      "anchorPhrases": [
+        "coach de imagen Miami",
+        "imagen bicultural"
+      ],
+      "evidenceTopics": [
+        "hispanic_markets",
+        "presencia_ejecutiva"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "drive-gobernado-20260709",
+      "ontologyNode": "Gobernanza de corpus",
+      "userIntent": "source_governance",
+      "question": "¿Se pueden publicar archivos de Drive como contenido del sitio?",
+      "shortAnswer": "No como descarga o volcado. El Drive funciona como biblioteca experta para grounding y extracción revisada. Cualquier uso público debe ser corto, sanitizado, trazable y alineado al mapa de enseñanza.",
+      "routePriority": [
+        "/agent/sonia-source-corpus.json",
+        "/api/knowledge/questions.json",
+        "/metodo-sonia-mcrorey"
+      ],
+      "anchorPhrases": [
+        "corpus Sonia",
+        "Drive como fuente"
+      ],
+      "evidenceTopics": [
+        "source_governance",
+        "drive_privacy"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "api-contacto-20260709",
+      "ontologyNode": "Knowledge API",
+      "userIntent": "source_governance",
+      "question": "¿La Knowledge API debe confirmar disponibilidad o agenda?",
+      "shortAnswer": "No. La API debe responder conceptos y orientar a contacto cuando hay intención comercial. No debe confirmar horarios, fechas, disponibilidad ni estado de email.",
+      "routePriority": [
+        "/api/knowledge/questions.json",
+        "/contacto",
+        "/servicios-asesoria-de-imagen-coaching/preguntas-frequentes"
+      ],
+      "anchorPhrases": [
+        "Knowledge API Sonia",
+        "contacto gobernado"
+      ],
+      "evidenceTopics": [
+        "source_governance",
+        "contacto"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "geo-no-doorway-20260709",
+      "ontologyNode": "Gobernanza GEO",
+      "userIntent": "source_governance",
+      "question": "¿Cómo evitar que las respuestas GEO parezcan páginas doorway?",
+      "shortAnswer": "Cada respuesta local debe aportar contexto real de mercado, modalidad y necesidad; no solo cambiar el nombre de ciudad. También debe evitar sedes inventadas y texto repetitivo.",
+      "routePriority": [
+        "/mexico",
+        "/colombia",
+        "/miami-hispanos"
+      ],
+      "anchorPhrases": [
+        "GEO sin doorway",
+        "respuestas locales"
+      ],
+      "evidenceTopics": [
+        "guardrail_geo",
+        "geo_latam"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "corpus-solo-sonia-20260709",
+      "ontologyNode": "Límite de corpus",
+      "userIntent": "source_governance",
+      "question": "¿Se puede mezclar contenido de otros proyectos con Coach De Imagen?",
+      "shortAnswer": "No. Coach De Imagen debe usar solo fuentes de Sonia y del repositorio imagen-coach. Otros corpus no deben aparecer en respuestas, esquemas, prompts ni tarjetas de conocimiento.",
+      "routePriority": [
+        "/agent/sonia-source-corpus.json",
+        "/api/knowledge/questions.json"
+      ],
+      "anchorPhrases": [
+        "Sonia-only corpus",
+        "sin bleed externo"
+      ],
+      "evidenceTopics": [
+        "source_boundaries",
+        "brand_governance"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    },
+    {
+      "id": "respuesta-sin-datos-20260709",
+      "ontologyNode": "Respuesta segura",
+      "userIntent": "source_governance",
+      "question": "¿Qué debe responder la IA si no tiene datos comerciales específicos?",
+      "shortAnswer": "Debe decir que no cuenta con ese dato en el corpus público y orientar a contacto. No debe inferir disponibilidad, duración exacta, paquetes, garantías ni canales no confirmados.",
+      "routePriority": [
+        "/contacto",
+        "/api/knowledge/questions.json",
+        "/servicios-asesoria-de-imagen-coaching/preguntas-frequentes"
+      ],
+      "anchorPhrases": [
+        "sin datos comerciales",
+        "respuesta segura"
+      ],
+      "evidenceTopics": [
+        "guardrail_commercial_claims",
+        "contacto"
+      ],
+      "sourceSignals": [
+        "Sonia source pipeline: clean content, quote banks, blog archive and route taxonomy"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, etapa profesional y límite de corpus.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda ni disponibilidad.",
+        "No usar fuentes externas, datos privados, empresas externas ni promesas no verificadas.",
+        "Mantener límites: coaching de imagen, presencia profesional y posicionamiento; no terapia ni diagnóstico médico."
+      ]
+    }
+  ]
+}
