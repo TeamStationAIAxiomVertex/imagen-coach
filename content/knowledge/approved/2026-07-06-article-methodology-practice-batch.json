@@ -790,7 +790,7 @@
       "id": "comparacion-evolucion-latam",
       "ontologyNode": "Evolución del coaching de imagen",
       "userIntent": "category_evolution",
-      "question": "¿Cómo ha evolucionado el coaching de imagen en México y LATAM?",
+      "question": "¿Qué cambió cuando la asesoría de imagen incorporó presencia y posicionamiento?",
       "shortAnswer": "Ha pasado de enfocarse solo en apariencia, protocolo o guardarropa a integrar presencia, percepción, liderazgo y posicionamiento profesional. Sonia se ubica en esa evolución con una lectura más humana y ejecutiva de la imagen.",
       "routePriority": [
         "/comparaciones/evolucion-coaching-imagen-mexico-latam/",

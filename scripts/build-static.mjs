@@ -11,6 +11,13 @@ const DIST = path.join(ROOT, "dist");
 const KNOWLEDGE_APPROVED_DIR = path.join(ROOT, "content/knowledge/approved");
 const SITE_URL = "https://coachdeimagen.com";
 const LEGACY_SITE_URL = "https://imagencoach.com";
+const RAIZ_SITE_URL = "https://raiz.coachdeimagen.com";
+const RAIZ_CONTEXT_ROUTES = new Set([
+  "/mentalidad",
+  "/seguridad-profesional",
+  "/imagen-presencia/sostener-tu-siguiente-nivel-profesional",
+  "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia",
+]);
 const BRAND_NAME = "Coach De Imagen";
 const ASSET_VERSION = "20260523-semantic-authority-v1";
 const SCRIPT_VERSION = "20260525-webmcp-registertool-v1";
@@ -5135,6 +5142,40 @@ function ctaBridge(page, label = "Agendar diagnóstico") {
   </section>`;
 }
 
+function raizProgramBridge(page) {
+  if (!RAIZ_CONTEXT_ROUTES.has(page.route)) return "";
+  const routeCopy = {
+    "/mentalidad": {
+      label: "Identidad en práctica",
+      title: "La Raíz: trabajar identidad, valor y relación con el dinero.",
+      text: "Un recorrido guiado de 9 semanas para observar patrones, practicar límites y comunicar valor con más claridad.",
+    },
+    "/seguridad-profesional": {
+      label: "Proceso guiado",
+      title: "Llevar seguridad, visibilidad y valor a una práctica de 9 semanas.",
+      text: "La Raíz conecta identidad, capacidad de recibir, límites y comunicación de valor en un programa para mujeres y hombres.",
+    },
+    "/imagen-presencia/sostener-tu-siguiente-nivel-profesional": {
+      label: "Aplicación relacionada",
+      title: "La Raíz: un proceso para sostener decisiones distintas.",
+      text: "Disponible online en español y semipresencial en Guadalajara, con información actual confirmada directamente por Sonia.",
+    },
+    "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia": {
+      label: "Programa de 9 semanas",
+      title: "La Raíz: identidad, valor y relación con el dinero.",
+      text: "Un proceso para mujeres y hombres, disponible online en español y semipresencial en Guadalajara. La información de fechas, modalidad e inversión vive en su sitio oficial.",
+    },
+  }[page.route];
+  return `<section class="section cta-bridge" aria-label="Programa La Raíz">
+    <div>
+      <p class="section-label">${escapeHtml(routeCopy.label)}</p>
+      <h2>${headlineHtml(routeCopy.title)}</h2>
+      <p>${escapeHtml(routeCopy.text)}</p>
+    </div>
+    <a class="btn secondary" href="${RAIZ_SITE_URL}/">Conocer La Raíz</a>
+  </section>`;
+}
+
 function commercialPageContent(page, pages, clusters) {
   const model = COMMERCIAL_PAGE_MODELS[page.route];
   if (!model) return "";
@@ -5142,6 +5183,7 @@ function commercialPageContent(page, pages, clusters) {
   ${commercialFitGrid(model)}
   ${commercialMethodNotes(page, model)}
   ${sourceTeachingPanel(page)}
+  ${raizProgramBridge(page)}
   ${commercialWorkflow(page)}
   ${commercialOutcomes(model)}
   ${commercialRelatedArticles(page, model, pages, clusters)}
@@ -5443,6 +5485,7 @@ function renderSemanticHub(hub, pages, clusters) {
       </figure>
     </section>
     ${sourceTeachingPanel(pageMeta)}
+    ${raizProgramBridge(pageMeta)}
     <section class="section authority-hub-map">
       <div class="section-heading">
         <p class="section-label">Temas principales</p>
@@ -6325,6 +6368,7 @@ function renderAuthorityPage(page, pages, clusters = []) {
         ${authorityCopy.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("")}
       </div>
     </section>
+    ${raizProgramBridge(pageMeta)}
     <section class="section faq-section">
       <div class="section-heading">
         <p class="section-label">Preguntas frecuentes</p>
@@ -6706,9 +6750,27 @@ function schema(page) {
         : [{ "@type": "ListItem", position: 2, name: semanticH1(page), item: absoluteUrl(page.route) }]),
     ],
   };
+  const relatedCourseSchema = page.route === "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia"
+    ? {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "@id": `${RAIZ_SITE_URL}/#course`,
+        name: "La Raíz",
+        description: "Programa de coaching de 9 semanas con Sonia McRorey sobre identidad, valor, visibilidad y relación con el dinero.",
+        url: `${RAIZ_SITE_URL}/`,
+        timeRequired: "P9W",
+        inLanguage: "es-MX",
+        provider: {
+          "@type": "Person",
+          name: "Sonia McRorey",
+          url: `${SITE_URL}/sobre-sonia-mcrorey-asesora-de-imagen/`,
+        },
+      }
+    : null;
   return `<script type="application/ld+json">${JSON.stringify(pageSchema)}</script>
   <script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script>
   ${faqSchema ? `<script type="application/ld+json">${JSON.stringify(faqSchema)}</script>` : ""}
+  ${relatedCourseSchema ? `<script type="application/ld+json">${JSON.stringify(relatedCourseSchema)}</script>` : ""}
   ${globalSchemaStack()}`;
 }
 
@@ -6764,6 +6826,7 @@ function renderPage(page, pages, clusters) {
     ${beforeContent}
     ${structuredContentSections(page, lines, pages, clusters)}
     ${afterContent}
+    ${page.route === "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia" ? "" : raizProgramBridge(page)}
   </main>
   ${footer()}
   <script src="/assets/script-${SCRIPT_VERSION}.js" defer></script>
@@ -7329,6 +7392,7 @@ function loadApprovedKnowledgeCards() {
     .sort();
   const cards = [];
   const seen = new Set();
+  const seenQuestions = new Map();
 
   for (const file of files) {
     const fullPath = path.join(KNOWLEDGE_APPROVED_DIR, file);
@@ -7340,7 +7404,12 @@ function loadApprovedKnowledgeCards() {
     for (const rawCard of batchCards) {
       const card = normalizeKnowledgeBatchCard(rawCard, file);
       if (seen.has(card.id)) throw new Error(`Duplicate approved knowledge card id: ${card.id}`);
+      const questionKey = card.question.normalize("NFKC").trim().toLocaleLowerCase("es-MX").replace(/\s+/g, " ");
+      if (seenQuestions.has(questionKey)) {
+        throw new Error(`Duplicate approved knowledge question in ${seenQuestions.get(questionKey)} and ${file}: ${card.question}`);
+      }
       seen.add(card.id);
+      seenQuestions.set(questionKey, file);
       cards.push(card);
     }
   }
@@ -7920,7 +7989,16 @@ function soniaOntologyQuestionCards() {
     if (seen.has(card.id)) throw new Error(`Approved knowledge card duplicates core card id: ${card.id}`);
     seen.add(card.id);
   }
-  return [...coreCards, ...approvedCards];
+  const allCards = [...coreCards, ...approvedCards];
+  const seenQuestions = new Map();
+  for (const card of allCards) {
+    const questionKey = card.question.normalize("NFKC").trim().toLocaleLowerCase("es-MX").replace(/\s+/g, " ");
+    if (seenQuestions.has(questionKey)) {
+      throw new Error(`Knowledge question duplicates card ${seenQuestions.get(questionKey)}: ${card.question}`);
+    }
+    seenQuestions.set(questionKey, card.id);
+  }
+  return allCards;
 }
 
 function soniaOntologyQuestionGroups() {
@@ -9969,6 +10047,7 @@ function openApiDoc(pages) {
     "/geo-sitemap.xml": "Get GEO market URLs.",
     "/intent-sitemap.xml": "Get search-intent URLs.",
     "/authority-sitemap.xml": "Get methodology and authority URLs.",
+    "/knowledge-sitemap.xml": "Get public knowledge and answer-card endpoints for agent retrieval.",
     "/agent/site-profile.json": "Get the structured site profile.",
     "/agent/services.json": "Get the structured service catalog.",
     "/agent/contact.json": "Get structured contact actions.",
@@ -10434,7 +10513,14 @@ La solicitud se procesa mediante una ruta segura de Cloudflare Workers para vali
   await writeFile(distPath("geo-sitemap.xml"), sitemap(GEO_MARKETS));
   await writeFile(distPath("intent-sitemap.xml"), sitemap(INTENT_PAGES));
   await writeFile(distPath("authority-sitemap.xml"), sitemap(AUTHORITY_PAGES));
-  await writeFile(distPath("robots.txt"), `User-agent: *\nAllow: /\nContent-Signal: search=yes, ai-input=yes, ai-train=no\n\nUser-agent: GPTBot\nAllow: /\n\nUser-agent: ChatGPT-User\nAllow: /\n\nUser-agent: OAI-SearchBot\nAllow: /\n\nUser-agent: ClaudeBot\nAllow: /\n\nUser-agent: Claude-User\nAllow: /\n\nUser-agent: PerplexityBot\nAllow: /\n\nUser-agent: Google-Extended\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\nSitemap: ${SITE_URL}/blog-sitemap.xml\nSitemap: ${SITE_URL}/category-sitemap.xml\nSitemap: ${SITE_URL}/service-sitemap.xml\nSitemap: ${SITE_URL}/geo-sitemap.xml\nSitemap: ${SITE_URL}/intent-sitemap.xml\nSitemap: ${SITE_URL}/authority-sitemap.xml\n`);
+  await writeFile(distPath("knowledge-sitemap.xml"), sitemap([
+    { route: "/api/knowledge/questions.md" },
+    { route: "/api/knowledge/questions.json" },
+    { route: "/api/knowledge/cards/index.json" },
+    { route: "/api/knowledge/internal-link-mesh.json" },
+    ...KNOWLEDGE_API_LAYERS.map((layer) => ({ route: `/api/knowledge/cards/${layer.id}.json` })),
+  ]));
+  await writeFile(distPath("robots.txt"), `User-agent: *\nAllow: /\nContent-Signal: search=yes, ai-input=yes, ai-train=no\n\nUser-agent: Cloudflare-AI-Search\nAllow: /\n\nUser-agent: GPTBot\nAllow: /\n\nUser-agent: ChatGPT-User\nAllow: /\n\nUser-agent: OAI-SearchBot\nAllow: /\n\nUser-agent: ClaudeBot\nAllow: /\n\nUser-agent: Claude-User\nAllow: /\n\nUser-agent: PerplexityBot\nAllow: /\n\nUser-agent: Google-Extended\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\nSitemap: ${SITE_URL}/blog-sitemap.xml\nSitemap: ${SITE_URL}/category-sitemap.xml\nSitemap: ${SITE_URL}/service-sitemap.xml\nSitemap: ${SITE_URL}/geo-sitemap.xml\nSitemap: ${SITE_URL}/intent-sitemap.xml\nSitemap: ${SITE_URL}/authority-sitemap.xml\nSitemap: ${SITE_URL}/knowledge-sitemap.xml\n`);
   await writeFile(distPath("_redirects"), `${PATH_REDIRECTS.map(([from, to, status]) => `${from}  ${to}  ${status}`).join("\n")}\n`);
   console.log(`Built ${pages.length + SEMANTIC_HUBS.length + COMPARISON_PAGES.length + GENERATED_AUTHORITY_PAGES.length + 1} routes into dist`);
 }

@@ -5,10 +5,14 @@
     "audit:content": "node scripts/audit-content-density.mjs",
     "audit:intelligence": "node scripts/full-seo-geo-crawl-audit.mjs && node scripts/generate-site-intelligence.mjs",
     "build": "node scripts/build-static.mjs",
+    "build:raiz": "node scripts/build-raiz.mjs",
     "dev": "python3 -m http.server 4173 --directory dist",
+    "dev:raiz": "npm run build:raiz && wrangler pages dev dist-raiz --port 4280 --ip 127.0.0.1",
     "pages:dev": "npm run build && wrangler pages dev dist",
     "ingest:wordpress": "node scripts/ingest-wordpress.mjs",
-    "validate": "node scripts/validate-build.mjs"
+    "validate": "node scripts/validate-build.mjs",
+    "validate:raiz": "node scripts/validate-raiz.mjs",
+    "test:raiz:fx": "node scripts/test-raiz-fx.mjs"
   },
   "dependencies": {
     "image-size": "^2.0.2",

@@ -1,9 +1,9 @@
 # Site Intelligence Score
 
-Generated: 2026-07-09
+Generated: 2026-07-12
 
 
-Source audit: `audit/full-seo-geo-crawl-audit-2026-07-09.json`
+Source audit: `audit/full-seo-geo-crawl-audit-2026-07-12.json`
 
 Average score: **97/100**
 
@@ -27,7 +27,7 @@ Average score: **97/100**
 | /liderazgo | page | 92 | 16 | 20 | 25 | 17 | 14 | 3 |
 | /coach-de-imagen | authority | 94 | 16 | 20 | 25 | 20 | 13 | 8 |
 | /liderazgo-visible | intent | 94 | 16 | 20 | 25 | 20 | 13 | 8 |
-| /sobre-sonia-mcrorey-asesora-de-imagen | page | 94 | 16 | 20 | 25 | 20 | 13 | 5 |
+| /sobre-sonia-mcrorey-asesora-de-imagen | page | 94 | 16 | 20 | 25 | 20 | 13 | 7 |
 | /servicios-asesoria-de-imagen-coaching/coaching-de-abundancia | service | 95 | 20 | 20 | 25 | 17 | 13 | 8 |
 | /servicios-asesoria-de-imagen-coaching/talleres | service | 95 | 20 | 20 | 25 | 17 | 13 | 8 |
 | / | home | 96 | 20 | 20 | 25 | 17 | 14 | 1 |
@@ -43,7 +43,7 @@ Average score: **97/100**
 | /imagen-presencia/la-importancia-de-tu-imagen-personal | article | 96 | 20 | 20 | 25 | 17 | 14 | 4 |
 | /imagen-presencia/los-secretos-de-una-asesora-de-imagen-exitosa | article | 96 | 20 | 20 | 25 | 17 | 14 | 2 |
 | /imagen-presencia/new-tu-guardarropa-te-refleja-o-te-limita | article | 96 | 20 | 20 | 25 | 17 | 14 | 8 |
-| /mentalidad | page | 96 | 20 | 20 | 25 | 17 | 14 | 1 |
+| /mentalidad | page | 96 | 20 | 20 | 25 | 17 | 14 | 6 |
 
 
 ## Strongest Routes
@@ -53,13 +53,13 @@ Average score: **97/100**
 | /contacto | page | 100 | 8 | 83 |
 | /imagen-presencia/amor-propio-estructura-interna-presencia-profesional | article | 99 | 5 | 84 |
 | /imagen-presencia/aprende-a-resaltar-tus-proporciones | article | 99 | 3 | 85 |
-| /imagen-presencia/imagen-identidad-liderazgo | article | 99 | 4 | 84 |
+| /imagen-presencia/imagen-identidad-liderazgo | article | 99 | 6 | 84 |
 | /imagen-presencia/presencia-profesional-estrategica | article | 99 | 7 | 84 |
 | /imagen-presencia/sostener-el-crecimiento | article | 99 | 7 | 84 |
 | /imagen-presencia/sostener-tu-siguiente-nivel-profesional | article | 99 | 8 | 84 |
 | /imagen-presencia/tu-autoconcepto-el-punto-de-partida-para-transformar-tu-imagen | article | 99 | 6 | 84 |
-| /imagen-presencia/tu-color-tu-poder-el-impacto-de-la-colorimetria | article | 99 | 6 | 85 |
-| /imagen-presencia/y-si-tu-imagen-no-fuera-un-disfraz-sino-una-puerta-para-regresar-a-ti-article | article | 99 | 5 | 84 |
+| /imagen-presencia/tu-color-tu-poder-el-impacto-de-la-colorimetria | article | 99 | 7 | 85 |
+| /imagen-presencia/y-si-tu-imagen-no-fuera-un-disfraz-sino-una-puerta-para-regresar-a-ti-article | article | 99 | 6 | 84 |
 | /servicios-asesoria-de-imagen-coaching | service | 99 | 8 | 85 |
 | /aguascalientes | geo | 98 | 1 | 82 |
 | /argentina | geo | 98 | 7 | 83 |

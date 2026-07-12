@@ -785,7 +785,7 @@
       "id": "proporciones-no-esconder-cuerpo",
       "ontologyNode": "Proporciones y Silueta",
       "userIntent": "appearance_practical",
-      "question": "¿Trabajar proporciones significa esconder mi cuerpo?",
+      "question": "¿Cómo elegir líneas y cortes sin esconder mi cuerpo?",
       "shortAnswer": "No. Trabajar proporciones significa entender líneas, equilibrio visual y prendas que acompañan el cuerpo real en un contexto profesional. El objetivo es presencia, comodidad y coherencia, no esconder ni corregir a la persona.",
       "routePriority": [
         "/imagen-profesional/",

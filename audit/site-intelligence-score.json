@@ -1,8 +1,8 @@
 {
   "schemaVersion": "2026-07-04.site-intelligence.v1",
-  "generated": "2026-07-09",
+  "generated": "2026-07-12",
   "siteUrl": "https://coachdeimagen.com",
-  "sourceAudit": "audit/full-seo-geo-crawl-audit-2026-07-09.json",
+  "sourceAudit": "audit/full-seo-geo-crawl-audit-2026-07-12.json",
   "routeCount": 115,
   "averageScore": 97,
   "scoreBands": {
@@ -11,7 +11,7 @@
     "watch": 0,
     "weak": 0
   },
-  "knowledgeCards": 499,
+  "knowledgeCards": 612,
   "knowledgeLayers": 8,
   "routeRecommendations": 112,
   "pages": [
@@ -538,7 +538,9 @@
         "metodo-sonia-base-interna-externa",
         "articulo-asesora-exitosa-criterio",
         "metodo-sonia-diagnostico-integral",
-        "sonia-autoridad-latam"
+        "sonia-autoridad-latam",
+        "la-raiz-autoria-sonia-20260711",
+        "la-raiz-aici-sonia-20260711"
       ],
       "recommendedAnchors": [
         {
@@ -625,7 +627,7 @@
       "llm": 25,
       "links": 17,
       "media": 13,
-      "wordCount": 1469,
+      "wordCount": 1511,
       "uniqueInternalLinks": 87,
       "recommendedCards": [
         "seguridad-profesional",
@@ -1884,10 +1886,15 @@
       "llm": 25,
       "links": 17,
       "media": 14,
-      "wordCount": 1037,
+      "wordCount": 1070,
       "uniqueInternalLinks": 88,
       "recommendedCards": [
-        "seguridad-profesional"
+        "seguridad-profesional",
+        "la-raiz-programa-definicion-20260711",
+        "la-raiz-audiencia-20260711",
+        "la-raiz-no-finanzas-20260711",
+        "la-raiz-identidad-dinero-20260711",
+        "la-raiz-limites-recibir-20260711"
       ],
       "recommendedAnchors": [
         {
@@ -1907,6 +1914,60 @@
           "cardId": "seguridad-profesional",
           "layerId": "women-professionals",
           "question": "¿Por qué me cuesta sentirme seguro o segura profesionalmente aunque tenga capacidad?"
+        },
+        {
+          "anchor": "programa La Raíz del Dinero",
+          "cardId": "la-raiz-programa-definicion-20260711",
+          "layerId": "psychology",
+          "question": "¿Qué es La Raíz del Dinero de Sonia McRorey?"
+        },
+        {
+          "anchor": "generar, recibir y sostener valor",
+          "cardId": "la-raiz-programa-definicion-20260711",
+          "layerId": "psychology",
+          "question": "¿Qué es La Raíz del Dinero de Sonia McRorey?"
+        },
+        {
+          "anchor": "programa para mujeres y hombres",
+          "cardId": "la-raiz-audiencia-20260711",
+          "layerId": "psychology",
+          "question": "¿Para quién es el programa La Raíz del Dinero?"
+        },
+        {
+          "anchor": "patrones de valor y visibilidad",
+          "cardId": "la-raiz-audiencia-20260711",
+          "layerId": "psychology",
+          "question": "¿Para quién es el programa La Raíz del Dinero?"
+        },
+        {
+          "anchor": "coaching y relación con el dinero",
+          "cardId": "la-raiz-no-finanzas-20260711",
+          "layerId": "psychology",
+          "question": "¿La Raíz del Dinero enseña finanzas o inversiones?"
+        },
+        {
+          "anchor": "La Raíz no es asesoría financiera",
+          "cardId": "la-raiz-no-finanzas-20260711",
+          "layerId": "psychology",
+          "question": "¿La Raíz del Dinero enseña finanzas o inversiones?"
+        },
+        {
+          "anchor": "identidad y relación con el dinero",
+          "cardId": "la-raiz-identidad-dinero-20260711",
+          "layerId": "psychology",
+          "question": "¿Qué relación trabaja La Raíz del Dinero entre identidad y dinero?"
+        },
+        {
+          "anchor": "comunicación de valor",
+          "cardId": "la-raiz-identidad-dinero-20260711",
+          "layerId": "psychology",
+          "question": "¿Qué relación trabaja La Raíz del Dinero entre identidad y dinero?"
+        },
+        {
+          "anchor": "límites y capacidad de recibir",
+          "cardId": "la-raiz-limites-recibir-20260711",
+          "layerId": "psychology",
+          "question": "¿Por qué La Raíz del Dinero incluye límites y capacidad de recibir?"
         }
       ],
       "actions": []
@@ -3251,37 +3312,37 @@
           "anchor": "evolución coaching de imagen",
           "cardId": "comparacion-evolucion-latam",
           "layerId": "country-city-pages",
-          "question": "¿Cómo ha evolucionado el coaching de imagen en México y LATAM?"
+          "question": "¿Qué cambió cuando la asesoría de imagen incorporó presencia y posicionamiento?"
         },
         {
           "anchor": "coaching de imagen México",
           "cardId": "comparacion-evolucion-latam",
           "layerId": "country-city-pages",
-          "question": "¿Cómo ha evolucionado el coaching de imagen en México y LATAM?"
+          "question": "¿Qué cambió cuando la asesoría de imagen incorporó presencia y posicionamiento?"
         },
         {
           "anchor": "imagen profesional LATAM",
           "cardId": "comparacion-evolucion-latam",
           "layerId": "country-city-pages",
-          "question": "¿Cómo ha evolucionado el coaching de imagen en México y LATAM?"
+          "question": "¿Qué cambió cuando la asesoría de imagen incorporó presencia y posicionamiento?"
         },
         {
           "anchor": "evolución coaching de imagen",
           "cardId": "evolucion-coaching-imagen-latam-20260708",
-          "layerId": "country-city-pages",
-          "question": "¿Cómo ha evolucionado el coaching de imagen en México y LATAM?"
+          "layerId": "appearance",
+          "question": "¿Por qué el coaching de imagen ya no puede reducirse a color y guardarropa?"
         },
         {
           "anchor": "coaching de imagen en LATAM",
           "cardId": "evolucion-coaching-imagen-latam-20260708",
-          "layerId": "country-city-pages",
-          "question": "¿Cómo ha evolucionado el coaching de imagen en México y LATAM?"
+          "layerId": "appearance",
+          "question": "¿Por qué el coaching de imagen ya no puede reducirse a color y guardarropa?"
         },
         {
           "anchor": "categoría profesional",
           "cardId": "evolucion-coaching-imagen-latam-20260708",
-          "layerId": "country-city-pages",
-          "question": "¿Cómo ha evolucionado el coaching de imagen en México y LATAM?"
+          "layerId": "appearance",
+          "question": "¿Por qué el coaching de imagen ya no puede reducirse a color y guardarropa?"
         }
       ],
       "actions": []
@@ -4191,19 +4252,19 @@
           "anchor": "imagen y negocio",
           "cardId": "imagen-negocio-puente-percepcion",
           "layerId": "core-image-coaching",
-          "question": "¿Cómo se conecta mi imagen con mi negocio?"
+          "question": "¿Qué señales de mi imagen afectan la percepción de mi negocio?"
         },
         {
           "anchor": "percepción de negocio",
           "cardId": "imagen-negocio-puente-percepcion",
           "layerId": "core-image-coaching",
-          "question": "¿Cómo se conecta mi imagen con mi negocio?"
+          "question": "¿Qué señales de mi imagen afectan la percepción de mi negocio?"
         },
         {
           "anchor": "imagen estratégica",
           "cardId": "imagen-negocio-puente-percepcion",
           "layerId": "core-image-coaching",
-          "question": "¿Cómo se conecta mi imagen con mi negocio?"
+          "question": "¿Qué señales de mi imagen afectan la percepción de mi negocio?"
         }
       ],
       "actions": []
@@ -4907,19 +4968,19 @@
           "anchor": "imagen y negocio",
           "cardId": "imagen-negocio-puente-percepcion",
           "layerId": "core-image-coaching",
-          "question": "¿Cómo se conecta mi imagen con mi negocio?"
+          "question": "¿Qué señales de mi imagen afectan la percepción de mi negocio?"
         },
         {
           "anchor": "percepción de negocio",
           "cardId": "imagen-negocio-puente-percepcion",
           "layerId": "core-image-coaching",
-          "question": "¿Cómo se conecta mi imagen con mi negocio?"
+          "question": "¿Qué señales de mi imagen afectan la percepción de mi negocio?"
         },
         {
           "anchor": "imagen estratégica",
           "cardId": "imagen-negocio-puente-percepcion",
           "layerId": "core-image-coaching",
-          "question": "¿Cómo se conecta mi imagen con mi negocio?"
+          "question": "¿Qué señales de mi imagen afectan la percepción de mi negocio?"
         }
       ],
       "actions": []
@@ -5738,19 +5799,19 @@
           "anchor": "imagen y negocio",
           "cardId": "imagen-negocio-puente-percepcion",
           "layerId": "core-image-coaching",
-          "question": "¿Cómo se conecta mi imagen con mi negocio?"
+          "question": "¿Qué señales de mi imagen afectan la percepción de mi negocio?"
         },
         {
           "anchor": "percepción de negocio",
           "cardId": "imagen-negocio-puente-percepcion",
           "layerId": "core-image-coaching",
-          "question": "¿Cómo se conecta mi imagen con mi negocio?"
+          "question": "¿Qué señales de mi imagen afectan la percepción de mi negocio?"
         },
         {
           "anchor": "imagen estratégica",
           "cardId": "imagen-negocio-puente-percepcion",
           "layerId": "core-image-coaching",
-          "question": "¿Cómo se conecta mi imagen con mi negocio?"
+          "question": "¿Qué señales de mi imagen afectan la percepción de mi negocio?"
         },
         {
           "anchor": "coherencia profesional",
@@ -6912,7 +6973,7 @@
       "llm": 25,
       "links": 20,
       "media": 13,
-      "wordCount": 1102,
+      "wordCount": 1137,
       "uniqueInternalLinks": 83,
       "recommendedCards": [
         "seguridad-profesional",
@@ -7865,7 +7926,9 @@
         "liderazgo-no-es-solo-estrategia",
         "identidad-liderazgo-imagen-visible",
         "crecimiento-sin-romper-identidad",
-        "hacer-bien-trabajo-no-basta"
+        "hacer-bien-trabajo-no-basta",
+        "rol-nuevo-20260710",
+        "ascenso-20260710"
       ],
       "recommendedAnchors": [
         {
@@ -8144,7 +8207,7 @@
       "llm": 25,
       "links": 20,
       "media": 14,
-      "wordCount": 1756,
+      "wordCount": 1784,
       "uniqueInternalLinks": 84,
       "recommendedCards": [
         "imagen-dinamica-etapa-profesional",
@@ -8344,7 +8407,8 @@
         "articulo-colorimetria-decision-ejecutiva",
         "colores-neutros-no-son-uniforme",
         "color-comunicacion-no-solo-belleza",
-        "color-confianza-autenticidad-closet"
+        "color-confianza-autenticidad-closet",
+        "color-autoridad-20260710"
       ],
       "recommendedAnchors": [
         {
@@ -8438,7 +8502,8 @@
         "imagen-puerta-regresar-a-ti",
         "volver-despues-pausa-identidad",
         "soltar-ropa-no-es-borrar-historia",
-        "imagen-puerta-no-disfraz"
+        "imagen-puerta-no-disfraz",
+        "sin-disfraz-20260710"
       ],
       "recommendedAnchors": [
         {
@@ -8716,7 +8781,7 @@
     {
       "id": "core-image-coaching",
       "title": "Coaching de imagen",
-      "cardCount": 193,
+      "cardCount": 218,
       "averageRouteScore": 97,
       "coverageScore": 100,
       "prompts": [
@@ -8734,7 +8799,7 @@
     {
       "id": "executive-presence",
       "title": "Presencia ejecutiva",
-      "cardCount": 188,
+      "cardCount": 213,
       "averageRouteScore": 98,
       "coverageScore": 100,
       "prompts": [
@@ -8753,7 +8818,7 @@
     {
       "id": "professional-image",
       "title": "Imagen profesional",
-      "cardCount": 141,
+      "cardCount": 158,
       "averageRouteScore": 96,
       "coverageScore": 100,
       "prompts": [
@@ -8771,7 +8836,7 @@
     {
       "id": "security-positioning",
       "title": "Seguridad profesional y posicionamiento",
-      "cardCount": 64,
+      "cardCount": 85,
       "averageRouteScore": 97,
       "coverageScore": 100,
       "prompts": [
@@ -8789,7 +8854,7 @@
     {
       "id": "corporate-teams",
       "title": "Imagen empresarial",
-      "cardCount": 86,
+      "cardCount": 112,
       "averageRouteScore": 96,
       "coverageScore": 100,
       "prompts": [
@@ -8807,7 +8872,7 @@
     {
       "id": "geo-latam",
       "title": "Mercados GEO",
-      "cardCount": 52,
+      "cardCount": 55,
       "averageRouteScore": 98,
       "coverageScore": 100,
       "prompts": [

@@ -500,7 +500,7 @@ for (const route of deprecatedComparisonRoutes) {
   if (sitemap.includes(`${SITE_URL}${route}`)) failures.push(`Deprecated comparison page in sitemap: ${route}`);
 }
 
-for (const sitemapFile of ["dist/blog-sitemap.xml", "dist/category-sitemap.xml", "dist/service-sitemap.xml", "dist/geo-sitemap.xml", "dist/intent-sitemap.xml", "dist/authority-sitemap.xml"]) {
+for (const sitemapFile of ["dist/blog-sitemap.xml", "dist/category-sitemap.xml", "dist/service-sitemap.xml", "dist/geo-sitemap.xml", "dist/intent-sitemap.xml", "dist/authority-sitemap.xml", "dist/knowledge-sitemap.xml"]) {
   if (!existsSync(sitemapFile)) failures.push(`Missing sitemap file: ${sitemapFile}`);
   else {
     const text = await readFile(sitemapFile, "utf8");
@@ -511,6 +511,25 @@ for (const sitemapFile of ["dist/blog-sitemap.xml", "dist/category-sitemap.xml",
 const blogSitemap = existsSync("dist/blog-sitemap.xml") ? await readFile("dist/blog-sitemap.xml", "utf8") : "";
 for (const route of articleSet) {
   if (!blogSitemap.includes(`${SITE_URL}${route}`)) failures.push(`Missing article in blog sitemap: ${route}`);
+}
+const knowledgeSitemap = existsSync("dist/knowledge-sitemap.xml") ? await readFile("dist/knowledge-sitemap.xml", "utf8") : "";
+for (const route of [
+  "/api/knowledge/questions.md",
+  "/api/knowledge/questions.json",
+  "/api/knowledge/cards/index.json",
+  "/api/knowledge/internal-link-mesh.json",
+  ...[
+    "core-image-coaching",
+    "executive-presence",
+    "entrepreneurs",
+    "corporate",
+    "women-professionals",
+    "appearance",
+    "psychology",
+    "country-city-pages",
+  ].map((layerId) => `/api/knowledge/cards/${layerId}.json`),
+]) {
+  if (!knowledgeSitemap.includes(`${SITE_URL}${route}`)) failures.push(`Missing knowledge endpoint in knowledge sitemap: ${route}`);
 }
 
 const requiredAgentFiles = [
@@ -637,6 +656,8 @@ for (const line of [
   `Sitemap: ${SITE_URL}/geo-sitemap.xml`,
   `Sitemap: ${SITE_URL}/intent-sitemap.xml`,
   `Sitemap: ${SITE_URL}/authority-sitemap.xml`,
+  `Sitemap: ${SITE_URL}/knowledge-sitemap.xml`,
+  "User-agent: Cloudflare-AI-Search",
   "Content-Signal: search=yes, ai-input=yes, ai-train=no",
 ]) {
   if (!robots.includes(line)) failures.push(`robots.txt missing ${line}`);

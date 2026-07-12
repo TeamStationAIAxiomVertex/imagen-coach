@@ -508,7 +508,7 @@
       "id": "imagen-negocio-puente-percepcion",
       "ontologyNode": "Imagen y negocio",
       "userIntent": "business_growth",
-      "question": "¿Cómo se conecta mi imagen con mi negocio?",
+      "question": "¿Qué señales de mi imagen afectan la percepción de mi negocio?",
       "shortAnswer": "La imagen conecta con el negocio cuando ayuda a que tu propuesta, nivel de servicio, autoridad y confianza sean percibidos con claridad. No reemplaza estrategia comercial; traduce visual y conductualmente el lugar que quieres ocupar.",
       "routePriority": [
         "/imagen-presencia/tu-imagen-y-tu-negocio-una-conexion-mas-poderosa-de-lo-que-imaginas/",
@@ -570,7 +570,7 @@
       "id": "guardarropa-refleja-o-limita-etapa",
       "ontologyNode": "Guardarropa y etapa profesional",
       "userIntent": "wardrobe_decision",
-      "question": "¿Cómo saber si mi guardarropa me refleja o me limita?",
+      "question": "¿Qué revisar en mi agenda para saber si mi guardarropa sigue funcionando?",
       "shortAnswer": "Obsérvalo frente a tu agenda real: reuniones, clientes, liderazgo, escenarios sociales y objetivos actuales. Si tus prendas pertenecen a una versión anterior o no sostienen tu presencia, el guardarropa está limitando más que acompañando.",
       "routePriority": [
         "/imagen-presencia/new-tu-guardarropa-te-refleja-o-te-limita/",
@@ -1101,7 +1101,7 @@
       "id": "evolucion-coaching-imagen-latam-20260708",
       "ontologyNode": "Evolución del coaching de imagen",
       "userIntent": "category_education",
-      "question": "¿Cómo ha evolucionado el coaching de imagen en México y LATAM?",
+      "question": "¿Por qué el coaching de imagen ya no puede reducirse a color y guardarropa?",
       "shortAnswer": "Ha pasado de enfocarse solo en apariencia, color o guardarropa a integrar presencia, liderazgo, comunicación, identidad y posicionamiento. En coachdeimagen.com, esa evolución se presenta como una categoría profesional, no como moda pasajera.",
       "routePriority": [
         "/comparaciones/evolucion-coaching-imagen-mexico-latam/",

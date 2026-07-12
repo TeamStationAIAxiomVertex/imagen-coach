@@ -21,6 +21,11 @@ This is not a generic FAQ. It is a governed knowledge API built from Sonia McRor
 - `/api/knowledge/cards/country-city-pages.json`
 - `/api/knowledge/internal-link-mesh.json`
 
+Discovery:
+
+- `/knowledge-sitemap.xml` advertises the public question corpus, grouped card endpoints and internal-link mesh to Cloudflare AI Search and other compliant crawlers.
+- `robots.txt` explicitly allows `Cloudflare-AI-Search` and references the knowledge sitemap.
+
 ## Card Contract
 
 Each card must include:
@@ -40,11 +45,26 @@ Each card must include:
 
 ## Target Scale
 
-Current state:
+Current state after the July 10 governed batch:
 
-- Baseline governed cards: 42.
-- First approved batch: 75 cards in `content/knowledge/approved/2026-07-03-foundation-batch.json`.
-- Current build target after batch 1: 117 public cards.
+- Built-in governed foundation cards: 42.
+- Repository-approved cards: 507.
+- Validated public Knowledge API: 549 cards across eight retrieval layers.
+- Route-level recommendation coverage: 115 of 115 canonical routes.
+- Source inventory represented by the build: 553 blog posts and 78 reviewed teaching signals.
+
+Current public layer distribution:
+
+- Core Image Coaching: 174.
+- Executive Presence: 103.
+- Entrepreneurs and personal brands: 20.
+- Corporate, workshops and teams: 51.
+- Women professionals and leadership: 19.
+- Appearance, color and wardrobe: 35.
+- Security, identity and self-perception: 29.
+- Country, city and Hispanic markets: 118.
+
+Next card priority is depth, not raw volume. The four underweighted layers are entrepreneurs, women professionals, appearance practice, and security/identity. New GEO cards must answer a distinct local or intercultural buyer question; country-name substitution is not sufficient.
 
 Target 2,000 to 3,000 cards over multiple controlled batches:
 
@@ -136,6 +156,21 @@ Every batch must pass:
 npm run build
 npm run validate
 ```
+
+In addition, every release must pass:
+
+```bash
+npm run audit:intelligence
+```
+
+Editorial validation must reject:
+
+- repeated country-swap questions or answers;
+- unsupported scientific, medical, psychological or financial claims;
+- local-presence claims where Sonia only offers online or selected corporate travel;
+- generic answers that do not identify a decision, context or service route;
+- raw Drive filenames, private source details or material from another project;
+- cards without a canonical route recommendation.
 
 Recommended spot checks:
 
