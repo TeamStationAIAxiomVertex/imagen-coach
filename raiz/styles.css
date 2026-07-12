@@ -246,6 +246,10 @@ summary {
   height: 100%;
   object-fit: contain;
   object-position: center top;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.35) 6%, rgba(0, 0, 0, 0.8) 12%, #000 18%);
+  mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.35) 6%, rgba(0, 0, 0, 0.8) 12%, #000 18%);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
 }
 
 .hero-shade {
@@ -2197,6 +2201,8 @@ summary {
     height: 390px;
     object-fit: cover;
     object-position: center top;
+    -webkit-mask-image: none;
+    mask-image: none;
   }
 
   .hero-photo {

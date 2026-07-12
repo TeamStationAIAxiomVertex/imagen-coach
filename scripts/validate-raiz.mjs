@@ -99,9 +99,11 @@ assert(html.includes("8 sesiones en vivo + 1 bonus"), "Program duration is missi
 assert(/top:\s*0;/.test(heroImageRule), "Hero portrait is shifted above its frame and can crop Sonia's head.");
 assert(/height:\s*100%;/.test(heroImageRule), "Hero portrait does not use the full uncropped frame height.");
 assert(/object-position:\s*center top;/.test(heroImageRule), "Hero portrait is not anchored to preserve Sonia's head.");
+assert(/mask-image:\s*linear-gradient\(90deg,[^}]*#000 18%\)/.test(heroImageRule), "Desktop hero portrait is missing its photo-edge blend.");
 assert(/rgba\(36, 21, 43, 0\) 68%/.test(heroShadeRule), "Desktop hero blend does not become transparent before Sonia's portrait.");
 assert(styles.includes("padding-top: 390px"), "Mobile hero copy is not positioned below Sonia's portrait.");
 assert(styles.includes("height: 390px"), "Mobile hero portrait height contract is missing.");
+assert(styles.includes("-webkit-mask-image: none") && styles.includes("mask-image: none"), "Mobile hero does not disable the horizontal portrait mask.");
 assert(html.includes("mujeres y hombres"), "Inclusive audience statement is missing.");
 assert(html.includes("Guadalajara"), "Guadalajara delivery context is missing.");
 assert(html.includes("modalidad online"), "Online delivery context is missing.");
