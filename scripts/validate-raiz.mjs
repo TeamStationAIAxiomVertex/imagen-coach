@@ -112,7 +112,7 @@ assert(html.includes("Inversión de la edición de Julio 2026"), "Pricing editio
 assert(html.includes('class="price-primary"'), "Primary price hierarchy is missing.");
 assert(html.includes('class="pricing-card-head"'), "Branded pricing card header is missing.");
 assert(styles.includes(".pricing-featured .pricing-card-head"), "Semipresencial pricing card brand treatment is missing.");
-assert(/styles\.css\?v=[a-f0-9]{12}/.test(html), "Content-hashed stylesheet version is missing.");
+assert(/styles\.[a-f0-9]{12}\.css/.test(html), "Content-hashed stylesheet filename is missing.");
 assert((html.match(/"@type":"Offer"/g) || []).length === 2, "Expected two nested Offer schema entities.");
 assert((html.match(/"priceCurrency":"MXN"/g) || []).length === 2, "Offer schema must use MXN.");
 assert(decodedLinks.includes("me interesa La Raíz"), "WhatsApp program-interest message is missing.");

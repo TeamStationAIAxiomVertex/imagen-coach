@@ -1413,6 +1413,7 @@ async function build() {
   await Promise.all([
     writeFile(path.join(outputDir, "index.html"), html),
     writeFile(path.join(outputDir, "styles.css"), styles),
+    writeFile(path.join(outputDir, `styles.${buildVersion}.css`), styles),
     writeFile(path.join(outputDir, "content-signal.json"), `${safeJson(contentSignalDocument())}\n`),
     writeFile(path.join(outputDir, "robots.txt"), robots),
     writeFile(path.join(outputDir, "sitemap.xml"), sitemap),
