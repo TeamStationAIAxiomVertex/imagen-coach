@@ -37,13 +37,13 @@ const answerCardGroups = [
     id: "programa-alcance",
     name: "Programa, alcance y participación",
     description: "Definición, duración, recorrido, audiencia y preparación para La Raíz del Dinero.",
-    intents: ["definicion_comercial", "elegibilidad", "duracion", "audiencia_inclusiva", "preparacion_programa", "estructura_programa"],
+    intents: ["definicion_comercial", "elegibilidad", "duracion", "audiencia_inclusiva", "preparacion_programa", "estructura_programa", "incluye_programa"],
   },
   {
     id: "autoridad-evidencia",
     name: "Sonia McRorey, experiencia y fuentes",
     description: "Autoría, trayectoria profesional, afiliación, revisión editorial y fuentes públicas.",
-    intents: ["perfil_autoridad", "credenciales_profesionales", "membresia_profesional", "verificacion_fuentes", "revision_editorial"],
+    intents: ["perfil_autoridad", "credenciales_profesionales", "membresia_profesional", "verificacion_fuentes", "revision_editorial", "evidencia_resenas"],
   },
   {
     id: "modalidades-mercados",
@@ -55,7 +55,7 @@ const answerCardGroups = [
     id: "metodo-limites",
     name: "Método, temas y límites profesionales",
     description: "Identidad, visibilidad, límites, diferenciación y alcance profesional del coaching.",
-    intents: ["diferenciacion", "limite_profesional", "explicacion_metodologica", "visibilidad_profesional", "limites_y_valor"],
+    intents: ["diferenciacion", "limite_profesional", "explicacion_metodologica", "visibilidad_profesional", "limites_y_valor", "fundamento_aprendizaje"],
   },
   {
     id: "inversion-siguiente-paso",
@@ -70,6 +70,7 @@ function groupForCard(card) {
 }
 
 function sourceIdsForCard(card) {
+  if (card.sourceIds?.length) return card.sourceIds;
   const groupId = groupForCard(card).id;
   if (groupId === "autoridad-evidencia") return ["sonia-biografia", "metodo-sonia"];
   if (groupId === "metodo-limites") return ["programa-la-raiz", "metodo-sonia", "seguridad-profesional"];
@@ -242,6 +243,114 @@ function trustSection(program) {
   </section>`;
 }
 
+function testimonialSection(program) {
+  const cards = program.testimonials.map((testimonial) => `<blockquote id="testimonio-${escapeHtml(testimonial.id)}" class="testimonial-card">
+    <div class="testimonial-card-head">
+      <span class="testimonial-number" aria-hidden="true">${escapeHtml(testimonial.number)}</span>
+      <p class="mini-label">${escapeHtml(testimonial.theme)}</p>
+    </div>
+    <p class="testimonial-quote">“${escapeHtml(testimonial.quote)}”</p>
+    ${testimonial.highlight ? `<p class="testimonial-highlight">${escapeHtml(testimonial.highlight)}</p>` : ""}
+    <footer>
+      <strong>${escapeHtml(testimonial.name)}</strong>
+      <span>${escapeHtml(testimonial.role)}</span>
+    </footer>
+  </blockquote>`).join("");
+  return `<section class="section testimonials" aria-labelledby="testimonios-titulo">
+    <div class="section-heading centered">
+      <p class="eyebrow">Testimonios</p>
+      <h2 id="testimonios-titulo">En sus propias palabras.</h2>
+      <p>Experiencias elegidas por Sonia para esta presentación de La Raíz del Dinero. Cada proceso es personal y no garantiza resultados iguales.</p>
+    </div>
+    <div class="testimonial-grid">${cards}</div>
+  </section>`;
+}
+
+function googleReviewsSection(program) {
+  const proof = program.googleReviews;
+  const cards = proof.excerpts.map((review) => `<blockquote id="resena-google-${escapeHtml(review.id)}" class="google-review-card">
+    <div class="google-review-card-head">
+      <span class="google-stars" aria-label="${escapeHtml(review.rating)} de 5 estrellas">★★★★★</span>
+      <span>Reseña de Google</span>
+    </div>
+    <p>“${escapeHtml(review.quote)}”</p>
+    <footer>
+      <strong>${escapeHtml(review.name)}</strong>
+      <span>${escapeHtml(review.context)}</span>
+    </footer>
+  </blockquote>`).join("");
+  return `<section id="resenas-google" class="band google-review-proof" aria-labelledby="resenas-google-titulo">
+    <div class="section google-review-layout">
+      <div class="google-score-panel">
+        <p class="eyebrow">Reputación pública verificada</p>
+        <div class="google-score" aria-label="${escapeHtml(proof.rating)} de 5 en ${escapeHtml(proof.reviewCount)} reseñas de Google">
+          <strong>${escapeHtml(proof.rating.toFixed(1))}</strong>
+          <div><span class="google-stars" aria-hidden="true">★★★★★</span><p>${escapeHtml(proof.reviewCount)} reseñas en Google</p></div>
+        </div>
+        <h2 id="resenas-google-titulo">Lo que clientes de Sonia publicaron en Google.</h2>
+        <p>${escapeHtml(proof.scopeNote)}</p>
+        <a class="button button-outline" href="${escapeHtml(proof.url)}" target="_blank" rel="noopener external">Ver el perfil y las reseñas en Google</a>
+        <small>Calificación verificada el <time datetime="${escapeHtml(proof.verifiedOn)}">${escapeHtml(longDate(proof.verifiedOn))}</time>.</small>
+      </div>
+      <div class="google-review-excerpts">
+        <p class="google-review-context">${escapeHtml(proof.programRelevanceNote)}</p>
+        <div class="google-review-grid">${cards}</div>
+        <p class="google-review-boundary">Las reseñas describen experiencias personales. No prometen ingresos, resultados de salud ni cambios iguales para todas las personas.</p>
+      </div>
+    </div>
+  </section>`;
+}
+
+function learningDesignSection(program) {
+  const sources = new Map(program.authority.publicSources.map((source) => [source.id, source]));
+  const principles = program.learningDesign.principles.map((principle) => {
+    const sourceLinks = principle.sourceIds.map((sourceId) => {
+      const source = sources.get(sourceId);
+      if (!source) return "";
+      return `<a href="${escapeHtml(source.url)}" target="_blank" rel="noopener">${escapeHtml(source.name)}</a>`;
+    }).filter(Boolean).join(" · ");
+    return `<li id="principio-${escapeHtml(principle.id)}">
+      <span aria-hidden="true">${escapeHtml(principle.number)}</span>
+      <div>
+        <h3>${escapeHtml(principle.title)}</h3>
+        <p>${escapeHtml(principle.description)}</p>
+        <p class="research-source">Referencia: ${sourceLinks}</p>
+      </div>
+    </li>`;
+  }).join("");
+  return `<section id="por-que-dura" class="band band-soft learning-design" aria-labelledby="duracion-diseno-titulo">
+    <div class="section learning-design-layout">
+      <div class="learning-design-intro">
+        <p class="eyebrow">${escapeHtml(program.learningDesign.eyebrow)}</p>
+        <h2 id="duracion-diseno-titulo">${escapeHtml(program.learningDesign.title)}</h2>
+        <p>${escapeHtml(program.learningDesign.introduction)}</p>
+        <aside>${escapeHtml(program.learningDesign.durationRationale)}</aside>
+      </div>
+      <div>
+        <ol class="learning-principles">${principles}</ol>
+        <p class="learning-boundary">${escapeHtml(program.learningDesign.boundary)}</p>
+      </div>
+    </div>
+  </section>`;
+}
+
+function includedSection(program) {
+  const items = program.included.map((item) => `<li id="incluye-${escapeHtml(item.id)}">
+    <span aria-hidden="true">${escapeHtml(item.number)}</span>
+    <div><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(item.description)}</p></div>
+  </li>`).join("");
+  return `<section id="incluye" class="band band-green included-band" aria-labelledby="incluye-titulo">
+    <div class="section included-layout">
+      <div class="section-heading light-heading">
+        <p class="eyebrow">Tu inscripción</p>
+        <h2 id="incluye-titulo">Qué incluye La Raíz.</h2>
+        <p>El proceso no termina cuando cierra Zoom. Sonia sostiene una secuencia de sesiones, práctica y acompañamiento entre encuentros.</p>
+      </div>
+      <ol class="included-list">${items}</ol>
+    </div>
+  </section>`;
+}
+
 function authorityMarkdown(program) {
   const credentials = program.authority.credentials
     .map((credential) => `- ${credential.name} · ${credential.organization}${credential.period ? ` (${credential.period})` : credential.year ? ` (${credential.year})` : ""}${credential.country ? ` · ${credential.country}` : ""}`)
@@ -256,6 +365,7 @@ function authorityMarkdown(program) {
 - Rol: ${program.authority.author.role}
 - Experiencia: ${program.authority.author.experienceLabel}
 - Última revisión editorial: ${program.authority.lastReviewed}
+- Reputación pública: ${program.googleReviews.rating.toFixed(1)} de 5 con ${program.googleReviews.reviewCount} reseñas en Google, verificada el ${program.googleReviews.verifiedOn}
 - Propósito: ${program.authority.editorialPurpose}
 
 ### Trayectoria pública
@@ -271,6 +381,62 @@ ${sources}
 ${boundaries}`;
 }
 
+function includedMarkdown(program) {
+  return `## Qué incluye la inscripción
+
+${program.included.map((item) => `- **${item.title}:** ${item.description}`).join("\n")}`;
+}
+
+function learningDesignMarkdown(program) {
+  const sources = new Map(program.authority.publicSources.map((source) => [source.id, source]));
+  const principles = program.learningDesign.principles.map((principle) => {
+    const references = principle.sourceIds.map((sourceId) => {
+      const source = sources.get(sourceId);
+      return source ? `[${source.name}](${source.url})` : sourceId;
+    }).join(", ");
+    return `### ${principle.number} · ${principle.title}\n\n${principle.description}\n\nReferencias: ${references}.`;
+  }).join("\n\n");
+  return `## ${program.learningDesign.title}
+
+${program.learningDesign.introduction}
+
+${principles}
+
+**Por qué se distribuye semana a semana:** ${program.learningDesign.durationRationale}
+
+**Límite de la afirmación:** ${program.learningDesign.boundary}`;
+}
+
+function testimonialsMarkdown(program) {
+  return program.testimonials.map((testimonial) => `### ${testimonial.number} · ${testimonial.theme}
+
+> ${testimonial.quote}
+
+${testimonial.highlight ? `**${testimonial.highlight}**\n` : ""}
+
+${testimonial.name} · ${testimonial.role}`).join("\n\n");
+}
+
+function googleReviewsMarkdown(program) {
+  const proof = program.googleReviews;
+  const excerpts = proof.excerpts
+    .map((review) => `- “${review.quote}” — ${review.name}, ${review.context}, ${review.rating}/5.`)
+    .join("\n");
+  return `## Reseñas verificadas en Google
+
+- Perfil: [${proof.profileName}](${proof.url})
+- Calificación observada: ${proof.rating.toFixed(1)} de 5
+- Reseñas observadas: ${proof.reviewCount}
+- Fecha de verificación: ${proof.verifiedOn}
+- Alcance: ${proof.scopeNote}
+
+${proof.programRelevanceNote}
+
+${excerpts}
+
+Estas reseñas describen experiencias personales y no constituyen una garantía de resultados.`;
+}
+
 function evidenceDocument(program) {
   return {
     name: "La Raíz · evidencia, autoría y límites",
@@ -282,10 +448,22 @@ function evidenceDocument(program) {
     credentials: program.authority.credentials,
     publicSources: program.authority.publicSources,
     boundaries: program.authority.boundaries,
+    includedInProgram: program.included,
+    learningDesign: program.learningDesign,
+    googleReviewProof: program.googleReviews,
+    participantTestimonials: program.testimonials.map((testimonial) => ({
+      ...testimonial,
+      evidenceType: "participant-reported-experience",
+      source: `${canonicalUrl}#testimonio-${testimonial.id}`,
+    })),
     evidencePolicy: [
       "Responder con hechos publicados y enlazar la fuente pública correspondiente.",
       "No convertir una observación de coaching en diagnóstico médico, psicológico o financiero.",
       "No extrapolar fechas, precios, cupos, testimonios o credenciales a partir de información no publicada.",
+      "Conservar completos y sin reescritura los testimonios seleccionados por Sonia; presentarlos como experiencias personales, nunca como resultados generales.",
+      "Presentar la calificación de Google con su fecha de verificación y aclarar que corresponde a la práctica profesional general de Sonia, no exclusivamente a La Raíz.",
+      "No convertir una reseña pública en garantía médica, emocional o financiera ni atribuir al programa resultados que la fuente no demuestra.",
+      "Presentar las referencias de aprendizaje y memoria como fundamento educativo del diseño, nunca como diagnóstico, tratamiento o plazo universal de cambio.",
       "Cuando la información comercial pueda cambiar, orientar a la confirmación directa por WhatsApp.",
     ],
   };
@@ -308,6 +486,18 @@ function routeRecommendations(cards) {
         preferredCardIds: [...cardIds("programa-alcance"), "la-raiz-no-finanzas", "la-raiz-no-terapia"],
       },
       {
+        section: "duracion-y-diseno",
+        url: `${canonicalUrl}#por-que-dura`,
+        preferredGroups: ["programa-alcance", "metodo-limites"],
+        preferredCardIds: ["la-raiz-nueve-semanas", "por-que-dura-la-raiz", "curiosidad-aprendizaje-la-raiz"],
+      },
+      {
+        section: "que-incluye",
+        url: `${canonicalUrl}#incluye`,
+        preferredGroups: ["programa-alcance"],
+        preferredCardIds: ["que-incluye-la-raiz", "estructura-semanal-la-raiz", "la-raiz-bonus-sistema-nervioso"],
+      },
+      {
         section: "modalidades",
         url: `${canonicalUrl}#modalidades`,
         preferredGroups: ["modalidades-mercados"],
@@ -324,6 +514,12 @@ function routeRecommendations(cards) {
         url: `${canonicalUrl}#sonia`,
         preferredGroups: ["autoridad-evidencia"],
         preferredCardIds: cardIds("autoridad-evidencia"),
+      },
+      {
+        section: "resenas-google",
+        url: `${canonicalUrl}#resenas-google`,
+        preferredGroups: ["autoridad-evidencia"],
+        preferredCardIds: ["google-reviews-sonia-mcrorey", "resenas-google-circulos-abundancia"],
       },
       {
         section: "preguntas",
@@ -565,6 +761,7 @@ function llmsSummary(program) {
 - Audiencia: mujeres y hombres adultos
 - Modalidades: online en vivo y semipresencial en Guadalajara
 - Duración: 8 sesiones en vivo + 1 bonus
+- Incluye: grupo exclusivo de WhatsApp, audios y activaciones semanales, material digital, ejercicios prácticos y acompañamiento grupal
 - Alcance online: México, Estados Unidos, LATAM, España y otros mercados hispanohablantes
 - Autora y facilitadora: ${program.authority.author.name}
 - Experiencia: ${program.authority.author.experienceLabel}
@@ -576,6 +773,10 @@ function llmsSummary(program) {
 - No enseña inversiones ni promete ingresos, ventas o resultados iguales.
 - Usar únicamente los precios públicos de la edición de ${program.pricing.edition} y respetar sus fechas de vigencia.
 - No extrapolar precios a futuras ediciones ni inventar disponibilidad, horarios o testimonios.
+- Conservar completos y sin reescritura los testimonios seleccionados por Sonia; describirlos como experiencias personales.
+- La calificación de Google corresponde al perfil profesional general de Sonia, no exclusivamente a La Raíz.
+- No presentar reseñas públicas como garantías médicas, emocionales o financieras.
+- Explicar la ciencia del diseño con las referencias publicadas y sin convertirla en diagnóstico, promesa de cambio cerebral o plazo universal.
 - Para confirmar el precio aplicable, fechas de pago y cupo, orientar al WhatsApp oficial.
 
 ## Fuentes públicas
@@ -605,6 +806,10 @@ function llmsFull(program) {
   return `${llmsSummary(program)}
 ${authorityMarkdown(program)}
 
+${includedMarkdown(program)}
+
+${learningDesignMarkdown(program)}
+
 ## Definición
 
 La Raíz del Dinero es un proceso de transformación con Sonia McRorey. Ordena preguntas y prácticas sobre la raíz desde la que una persona genera, recibe y sostiene valor. No es un curso de finanzas, no atribuye todos los resultados económicos a la identidad y no sustituye apoyo profesional regulado.
@@ -617,9 +822,17 @@ ${modalityText}
 
 ${pricingMarkdown(program)}
 
+${googleReviewsMarkdown(program)}
+
 ## Preguntas frecuentes
 
 ${faqText}
+
+## Testimonios seleccionados por Sonia
+
+Los testimonios siguientes describen experiencias personales de participantes. No garantizan resultados iguales y no deben generalizarse.
+
+${testimonialsMarkdown(program)}
 
 # Tarjetas de respuesta gobernadas
 
@@ -875,7 +1088,7 @@ Use this skill only for Sonia McRorey's La Raíz del Dinero program at ${canonic
 1. Keep MXN as the canonical currency and label other currencies as approximate display conversions.
 2. Use only public dates and prices for the ${program.pricing.edition} edition.
 3. Do not call the program therapy, financial advice or an income guarantee.
-4. Do not invent capacity, availability, testimonials, schedules or results.
+4. Do not invent capacity, availability, testimonials, schedules or results. Preserve every Sonia-approved testimonial verbatim and label it as participant-reported experience.
 5. When current commercial confirmation is required, return the official WhatsApp handoff published in the program resource.
 `;
 }
@@ -1133,7 +1346,11 @@ async function build() {
     .replaceAll("{{BUILD_VERSION}}", buildVersion)
     .replace("{{PROGRAM_SCHEMA}}", schemaStack(program))
     .replace("{{PRICING_SECTION}}", pricingSection(program, onlineWhatsapp, semiWhatsapp))
+    .replace("{{LEARNING_DESIGN_SECTION}}", learningDesignSection(program))
+    .replace("{{INCLUDED_SECTION}}", includedSection(program))
     .replace("{{TRUST_SECTION}}", trustSection(program))
+    .replace("{{GOOGLE_REVIEWS_SECTION}}", googleReviewsSection(program))
+    .replace("{{TESTIMONIAL_SECTION}}", testimonialSection(program))
     .replaceAll("{{WHATSAPP_URL}}", generalWhatsapp.replaceAll("&", "&amp;"))
     .replaceAll("{{WHATSAPP_ONLINE_URL}}", onlineWhatsapp.replaceAll("&", "&amp;"))
     .replaceAll("{{WHATSAPP_SEMI_URL}}", semiWhatsapp.replaceAll("&", "&amp;"));
@@ -1142,7 +1359,7 @@ async function build() {
     ...program,
     answerCards: cards,
     whatsapp: { url: generalWhatsapp, purpose: "Solicitar información sobre La Raíz" },
-    sourceBoundary: "Corpus gobernado de Sonia McRorey y Coach De Imagen; sin datos privados ni fuentes externas.",
+    sourceBoundary: "Corpus gobernado de Sonia McRorey y Coach De Imagen, con referencias públicas explícitas de investigación y del Perfil de Empresa de Sonia en Google; sin datos privados.",
     lastReviewed: program.authority.lastReviewed,
   };
   const questions = {
@@ -1250,7 +1467,7 @@ async function build() {
     writeFile(path.join(outputDir, "agent/programa-la-raiz.json"), `${safeJson(publicProgram)}\n`),
     writeFile(path.join(outputDir, "agent/status.json"), `${safeJson(apiStatus(program, cards))}\n`),
     writeFile(path.join(outputDir, "agent/evidence.json"), `${safeJson(evidence)}\n`),
-    writeFile(path.join(outputDir, "agent/evidence.md"), `${authorityMarkdown(program)}\n`),
+    writeFile(path.join(outputDir, "agent/evidence.md"), `${authorityMarkdown(program)}\n\n${includedMarkdown(program)}\n\n${learningDesignMarkdown(program)}\n\n${googleReviewsMarkdown(program)}\n`),
     writeFile(path.join(outputDir, "agent/route-recommendations.json"), `${safeJson(recommendations)}\n`),
     writeFile(path.join(outputDir, "api/knowledge/questions.json"), `${safeJson(questions)}\n`),
     writeFile(path.join(outputDir, "api/knowledge/questions.md"), questionsMarkdown(program, cards)),

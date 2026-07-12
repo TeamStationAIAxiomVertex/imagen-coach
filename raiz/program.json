@@ -8,7 +8,7 @@
   "audience": "Personas adultas, mujeres y hombres, que desean trabajar la raíz desde la que generan, reciben y sostienen valor.",
   "description": "Programa de transformación con Sonia McRorey para trabajar la raíz desde la que generas, recibes y sostienes valor.",
   "authority": {
-    "lastReviewed": "2026-07-11",
+    "lastReviewed": "2026-07-12",
     "editorialPurpose": "Ayudar a personas hispanohablantes a entender el alcance, los límites y las modalidades de La Raíz del Dinero antes de decidir.",
     "author": {
       "name": "Sonia McRorey",
@@ -87,6 +87,30 @@
         "name": "Seguridad profesional",
         "url": "https://coachdeimagen.com/seguridad-profesional/",
         "supports": ["visibilidad", "límites", "decisiones", "posicionamiento"]
+      },
+      {
+        "id": "hebb-learning-1949",
+        "name": "Donald O. Hebb · The Organization of Behavior (1949)",
+        "url": "https://books.google.com/books/about/The_Organization_of_Behavior.html?id=jvqMAAAAMAAJ",
+        "supports": ["aprendizaje asociativo", "práctica repetida", "diseño educativo"]
+      },
+      {
+        "id": "lally-habit-formation-2010",
+        "name": "Lally et al. · How are habits formed? (2010)",
+        "url": "https://doi.org/10.1002/ejsp.674",
+        "supports": ["variación en formación de hábitos", "práctica sostenida", "diseño de varias semanas"]
+      },
+      {
+        "id": "gruber-curiosity-memory-2014",
+        "name": "Gruber, Gelman y Ranganath · Curiosity and memory (2014)",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/25284006/",
+        "supports": ["curiosidad", "atención", "memoria", "diseño educativo"]
+      },
+      {
+        "id": "google-business-profile",
+        "name": "Perfil de Empresa de Sonia McRorey en Google",
+        "url": "https://www.google.com/maps?cid=9559512298542315659",
+        "supports": ["calificación pública", "volumen de reseñas", "experiencias de clientes", "reputación profesional"]
       }
     ],
     "boundaries": [
@@ -113,6 +137,160 @@
       "availability": "Cupo máximo de 15 personas"
     }
   ],
+  "testimonials": [
+    {
+      "id": "angel-reconciliacion-paz-interior",
+      "number": "01",
+      "theme": "Reconciliación y paz interior",
+      "quote": "Llegué agotado, con una relación con el dinero hecha de miedo y de culpa heredada. En este proceso pude por fin ver de frente lo que cargaba desde hacía años y soltarlo desde el cuerpo, no solo desde la cabeza. Encontré una calma que no sabía que me faltaba.",
+      "highlight": "Más cambios en un mes que en un año de terapia psiquiátrica.",
+      "name": "Ángel",
+      "role": "Participante · La Raíz del Dinero",
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 16"
+    },
+    {
+      "id": "ana-marce-trabajo-fluye",
+      "number": "02",
+      "theme": "El trabajo empieza a fluir solo",
+      "quote": "Llegué escéptica, sin buscar nada en particular. Llevaba más de dos años sin trabajar y tenía ganas de volver a dar clases y ganar mi propio dinero. Una semana después de la primera sesión, sin pedirlo ni buscarlo, empezaron a preguntarme si todavía daba clases de alemán. Algo se movió primero adentro — y el trabajo empezó a fluir hacia mí.",
+      "highlight": "Una semana después de la primera sesión, el trabajo empezó a buscarme a mí.",
+      "name": "Ana Marce",
+      "role": "Participante · La Raíz del Dinero",
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 16"
+    },
+    {
+      "id": "mariana-cuerpo-mente-alinean",
+      "number": "03",
+      "theme": "Cuando el cuerpo y la mente se alinean",
+      "quote": "Durante seis años esperé algo que parecía no llegar nunca. En estas ocho semanas, cuerpo y mente por fin se alinearon y lo que estaba detenido se movió. Lo viví como lo que fue: un milagro sostenido en trabajo real.",
+      "highlight": "8 semanas, 6 años de espera, un milagro. Y la cifra que quería ganar, cumplida.",
+      "name": "Mariana",
+      "role": "Participante · La Raíz del Dinero",
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 16"
+    },
+    {
+      "id": "angeles-claridad-confianza",
+      "number": "04",
+      "theme": "Claridad y confianza",
+      "quote": "Hoy me siento más ligera, con claridad para sostener lo que quiero desde un lugar de confianza, no de urgencia.",
+      "name": "Ángeles",
+      "role": "Participante · La Raíz del Dinero",
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 17"
+    },
+    {
+      "id": "linda-bloqueos-confianza-carrera",
+      "number": "05",
+      "theme": "Confianza y carrera",
+      "quote": "Identifiqué mis bloqueos con el dinero, aprendí a confiar en mí y elevé mi carrera a otro nivel.",
+      "name": "Linda",
+      "role": "Participante · La Raíz del Dinero",
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 17"
+    },
+    {
+      "id": "loreto-perspectiva-dinero",
+      "number": "06",
+      "theme": "Una nueva perspectiva",
+      "quote": "Cambió por completo la perspectiva que tenía del dinero.",
+      "name": "Loreto",
+      "role": "Participante · La Raíz del Dinero",
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 17"
+    }
+  ],
+  "googleReviews": {
+    "sourceId": "google-business-profile",
+    "profileName": "Sonia McRorey Asesoría de Imagen Integral y Escuela de Bienestar",
+    "url": "https://www.google.com/maps?cid=9559512298542315659",
+    "rating": 5,
+    "reviewCount": 20,
+    "verifiedOn": "2026-07-12",
+    "scopeNote": "La calificación corresponde al perfil general de servicios de Sonia McRorey en Google; no es una calificación exclusiva de La Raíz del Dinero.",
+    "programRelevanceNote": "Los extractos seleccionados provienen de reseñas públicas que mencionan círculos de abundancia, prácticas entre sesiones o seguimiento de Sonia.",
+    "excerpts": [
+      {
+        "id": "ana-marcela-seguimiento",
+        "quote": "Además de los ejercicios que manda por WhatsApp, da excelente seguimiento.",
+        "name": "Ana Marcela Pérez Matos",
+        "context": "Círculo de Abundancia",
+        "rating": 5
+      },
+      {
+        "id": "angeles-acompanamiento",
+        "quote": "Durante las sesiones me sentí acompañada, sostenida y comprendida.",
+        "name": "Angeles Ruelas",
+        "context": "Círculo de Abundancia",
+        "rating": 5
+      },
+      {
+        "id": "linda-bloqueos-confianza",
+        "quote": "Me ayudó a identificar mis bloqueos con respecto a la abundancia y confiar en mí.",
+        "name": "Psicóloga Linda Mercado",
+        "context": "Círculo de mujeres",
+        "rating": 5
+      }
+    ]
+  },
+  "included": [
+    {
+      "id": "sesiones-en-vivo",
+      "number": "01",
+      "title": "9 sesiones en vivo",
+      "description": "8 sesiones del programa más 1 bonus de sistema nervioso."
+    },
+    {
+      "id": "whatsapp-exclusivo",
+      "number": "02",
+      "title": "Grupo de WhatsApp exclusivo",
+      "description": "Audios y activaciones semanales para acompañar lo trabajado entre sesiones."
+    },
+    {
+      "id": "material-digital",
+      "number": "03",
+      "title": "Material digital",
+      "description": "Ejercicios prácticos para observar y aplicar cada tema."
+    },
+    {
+      "id": "acompanamiento-grupal",
+      "number": "04",
+      "title": "Acompañamiento grupal",
+      "description": "Durante todo el proceso, en un espacio guiado por Sonia."
+    },
+    {
+      "id": "proceso-transformacion",
+      "number": "05",
+      "title": "Un proceso real de transformación",
+      "description": "Para trabajar tu relación con el dinero, el cuerpo y la energía. Cada experiencia depende de la participación y del contexto de cada persona."
+    }
+  ],
+  "learningDesign": {
+    "eyebrow": "La ciencia detrás del diseño",
+    "title": "Por qué este programa dura lo que dura.",
+    "introduction": "Las 8 sesiones del programa y el bonus se trabajan semana a semana porque una respuesta nueva necesita tiempo para observarse, practicarse e integrarse en la vida real.",
+    "principles": [
+      {
+        "id": "practica-repetida",
+        "number": "01",
+        "title": "La repetición ayuda a construir una respuesta nueva.",
+        "description": "La práctica repetida puede fortalecer asociaciones de aprendizaje. Por eso La Raíz no se queda en una sola conversación: cada encuentro se conecta con ejercicios, audios y activaciones entre sesiones.",
+        "sourceIds": ["hebb-learning-1949"]
+      },
+      {
+        "id": "tiempo-real-cambio",
+        "number": "02",
+        "title": "El cambio no sigue una cuenta universal de 21 días.",
+        "description": "En un estudio de formación de hábitos en la vida real, Lally y su equipo observaron una variación amplia entre personas y conductas, con un punto medio de 66 días. La cifra no es una promesa ni un reloj exacto; respalda la necesidad de practicar durante varias semanas.",
+        "sourceIds": ["lally-habit-formation-2010"]
+      },
+      {
+        "id": "curiosidad-aprendizaje",
+        "number": "03",
+        "title": "La curiosidad puede favorecer la atención y la memoria.",
+        "description": "La investigación ha relacionado los estados de curiosidad con una mejor memoria y con actividad en sistemas dopaminérgicos e hipocampales. Sonia usa preguntas para despertar atención y participación, no para llenar una sesión de información.",
+        "sourceIds": ["gruber-curiosity-memory-2014"]
+      }
+    ],
+    "durationRationale": "Las sesiones semanales, los ejercicios entre encuentros y el grupo de WhatsApp crean una práctica espaciada. Esa continuidad explica la duración del programa: permite volver al tema, probar una respuesta y revisar qué ocurre antes del siguiente encuentro.",
+    "boundary": "Este marco explica el diseño educativo de La Raíz. No afirma que todas las personas cambien en el mismo tiempo, no diagnostica el cerebro y no garantiza resultados emocionales o financieros."
+  },
   "pricing": {
     "currency": "MXN",
     "edition": "Julio 2026",
@@ -199,7 +377,15 @@
     },
     {
       "question": "¿Cuánto dura La Raíz del Dinero?",
-      "answer": "La edición publicada incluye 8 sesiones en vivo y 1 sesión bonus. Cada encuentro trabaja un nivel distinto para descubrir, soltar y activar una relación más clara con valor, dinero y decisiones."
+      "answer": "La edición publicada incluye 8 sesiones en vivo y 1 sesión bonus, distribuidas semana a semana. La continuidad permite observar, practicar y revisar una respuesta antes del siguiente encuentro; no significa que todas las personas cambien en un plazo idéntico."
+    },
+    {
+      "question": "¿Qué incluye la inscripción a La Raíz del Dinero?",
+      "answer": "Incluye 9 sesiones en vivo —8 del programa más 1 bonus de sistema nervioso—, grupo exclusivo de WhatsApp con audios y activaciones semanales, material digital con ejercicios prácticos y acompañamiento grupal durante todo el proceso."
+    },
+    {
+      "question": "¿Por qué La Raíz se trabaja durante varias semanas?",
+      "answer": "Porque el programa usa práctica espaciada: sesión semanal, ejercicios entre encuentros y acompañamiento por WhatsApp. La investigación sobre aprendizaje, hábitos y curiosidad orienta este diseño educativo, pero no establece un plazo universal ni garantiza un resultado."
     },
     {
       "question": "¿Necesito conocimientos de dinero o negocios?",
@@ -260,9 +446,33 @@
     {
       "id": "la-raiz-nueve-semanas",
       "question": "¿Cuánto dura el programa La Raíz del Dinero?",
-      "answer": "La edición publicada incluye 8 sesiones en vivo y 1 sesión bonus. El recorrido ordena niveles de trabajo para descubrir, soltar y activar una relación distinta con valor, dinero y decisiones.",
+      "answer": "La edición publicada incluye 8 sesiones en vivo y 1 sesión bonus, distribuidas semana a semana. El recorrido deja tiempo para observar, practicar y revisar una respuesta antes del siguiente encuentro; no supone que todas las personas cambien en un plazo idéntico.",
       "intent": "duracion",
       "entities": ["8 sesiones en vivo", "sesión bonus", "recorrido", "integración"]
+    },
+    {
+      "id": "que-incluye-la-raiz",
+      "question": "¿Qué incluye la inscripción al programa La Raíz del Dinero?",
+      "answer": "Incluye 9 sesiones en vivo —8 del programa más 1 bonus de sistema nervioso—, acceso a un grupo exclusivo de WhatsApp con audios y activaciones semanales, material digital con ejercicios prácticos y acompañamiento grupal durante todo el proceso.",
+      "intent": "incluye_programa",
+      "entities": ["9 sesiones en vivo", "WhatsApp exclusivo", "material digital", "acompañamiento grupal"],
+      "sourceIds": ["programa-la-raiz"]
+    },
+    {
+      "id": "por-que-dura-la-raiz",
+      "question": "¿Por qué La Raíz del Dinero dura varias semanas?",
+      "answer": "Porque Sonia diseñó una práctica espaciada: sesiones semanales, ejercicios entre encuentros y acompañamiento por WhatsApp. La investigación sobre aprendizaje y formación de hábitos apoya trabajar con continuidad, pero no fija un plazo universal ni garantiza que todas las personas cambien igual.",
+      "intent": "fundamento_aprendizaje",
+      "entities": ["duración La Raíz", "práctica espaciada", "formación de hábitos", "aprendizaje"],
+      "sourceIds": ["programa-la-raiz", "hebb-learning-1949", "lally-habit-formation-2010"]
+    },
+    {
+      "id": "curiosidad-aprendizaje-la-raiz",
+      "question": "¿Qué papel tiene la curiosidad en La Raíz del Dinero?",
+      "answer": "Sonia usa preguntas para despertar atención y participación. Estudios sobre curiosidad han observado mejor memoria durante estados de alta curiosidad y participación de sistemas dopaminérgicos e hipocampales. Es una referencia educativa, no una promesa médica ni financiera.",
+      "intent": "fundamento_aprendizaje",
+      "entities": ["curiosidad", "atención", "memoria", "diseño educativo"],
+      "sourceIds": ["programa-la-raiz", "gruber-curiosity-memory-2014"]
     },
     {
       "id": "la-raiz-identidad-dinero",
@@ -340,6 +550,22 @@
       "answer": "Sí. El contenido público del programa fue revisado el 11 de julio de 2026. Las fechas, promociones y cupos pueden cambiar, por eso Sonia confirma por WhatsApp la información comercial aplicable.",
       "intent": "revision_editorial",
       "entities": ["contenido revisado", "fecha de revisión", "información vigente"]
+    },
+    {
+      "id": "google-reviews-sonia-mcrorey",
+      "question": "¿Sonia McRorey tiene reseñas verificadas en Google?",
+      "answer": "Sí. El perfil público de servicios de Sonia McRorey en Google mostraba una calificación de 5.0 sobre 5 basada en 20 reseñas al 12 de julio de 2026. Esa calificación corresponde a su práctica profesional general, no exclusivamente a La Raíz del Dinero.",
+      "intent": "evidencia_resenas",
+      "entities": ["reseñas de Google", "Sonia McRorey", "5.0 de 5", "reputación profesional"],
+      "sourceIds": ["google-business-profile"]
+    },
+    {
+      "id": "resenas-google-circulos-abundancia",
+      "question": "¿Hay reseñas de Google relacionadas con los círculos de abundancia de Sonia?",
+      "answer": "Sí. Reseñas públicas mencionan acompañamiento durante las sesiones, ejercicios por WhatsApp, seguimiento y trabajo personal sobre abundancia. Son experiencias individuales y no garantizan resultados iguales ni financieros.",
+      "intent": "evidencia_resenas",
+      "entities": ["Círculo de Abundancia", "acompañamiento", "WhatsApp", "experiencias de participantes"],
+      "sourceIds": ["google-business-profile", "programa-la-raiz"]
     },
     {
       "id": "idioma-la-raiz",

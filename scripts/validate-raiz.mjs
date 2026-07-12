@@ -56,6 +56,8 @@ const organizationAgentIndex = JSON.parse(await readFile(path.join(outputDir, ".
 const openApi = JSON.parse(await readFile(path.join(outputDir, "openapi.json"), "utf8"));
 const title = html.match(/<title>([^<]+)<\/title>/i)?.[1] || "";
 const description = html.match(/<meta name="description" content="([^"]+)"/i)?.[1] || "";
+const heroImageRule = styles.match(/\.hero-photo img\s*\{([\s\S]*?)\}/)?.[1] || "";
+const heroShadeRule = styles.match(/\.hero-shade\s*\{([\s\S]*?)\}/)?.[1] || "";
 const h1Count = (html.match(/<h1\b/gi) || []).length;
 const words = stripHtml(html).split(/\s+/).filter(Boolean).length;
 const scripts = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/gi)];
@@ -92,8 +94,14 @@ assert(h1Count === 1, `Expected one H1, found ${h1Count}.`);
 assert(title.length >= 30 && title.length <= 60, `Title length is ${title.length}; expected 30-60.`);
 assert(description.length >= 110 && description.length <= 145, `Description length is ${description.length}; expected 110-145.`);
 assert(html.includes('<link rel="canonical" href="https://raiz.coachdeimagen.com/"'), "Canonical URL is missing or incorrect.");
-assert(words >= 850 && words <= 1650, `Visible word count is ${words}; expected 850-1650.`);
+assert(words >= 850 && words <= 2600, `Visible word count is ${words}; expected 850-2600.`);
 assert(html.includes("8 sesiones en vivo + 1 bonus"), "Program duration is missing.");
+assert(/top:\s*0;/.test(heroImageRule), "Hero portrait is shifted above its frame and can crop Sonia's head.");
+assert(/height:\s*100%;/.test(heroImageRule), "Hero portrait does not use the full uncropped frame height.");
+assert(/object-position:\s*center top;/.test(heroImageRule), "Hero portrait is not anchored to preserve Sonia's head.");
+assert(/rgba\(36, 21, 43, 0\) 68%/.test(heroShadeRule), "Desktop hero blend does not become transparent before Sonia's portrait.");
+assert(styles.includes("padding-top: 390px"), "Mobile hero copy is not positioned below Sonia's portrait.");
+assert(styles.includes("height: 390px"), "Mobile hero portrait height contract is missing.");
 assert(html.includes("mujeres y hombres"), "Inclusive audience statement is missing.");
 assert(html.includes("Guadalajara"), "Guadalajara delivery context is missing.");
 assert(html.includes("modalidad online"), "Online delivery context is missing.");
@@ -113,21 +121,97 @@ assert(html.includes("Última revisión editorial"), "Visible editorial review d
 assert(html.includes("AICI Guadalajara, 2024-2026"), "Visible AICI authority evidence is missing.");
 assert(html.includes("https://coachdeimagen.com/sobre-sonia-mcrorey-asesora-de-imagen/"), "Public Sonia biography source link is missing.");
 assert(html.includes("https://coachdeimagen.com/metodo-sonia-mcrorey/"), "Public Sonia methodology source link is missing.");
+const approvedTestimonialIds = [
+  "angel-reconciliacion-paz-interior",
+  "ana-marce-trabajo-fluye",
+  "mariana-cuerpo-mente-alinean",
+  "angeles-claridad-confianza",
+  "linda-bloqueos-confianza-carrera",
+  "loreto-perspectiva-dinero",
+];
+assert(program.testimonials.length === approvedTestimonialIds.length, `Expected ${approvedTestimonialIds.length} Sonia-approved testimonials, found ${program.testimonials.length}.`);
+assert(JSON.stringify(program.testimonials.map((testimonial) => testimonial.id)) === JSON.stringify(approvedTestimonialIds), "Approved testimonial manifest is incomplete, reordered or contains an unexpected entry.");
+assert(new Set(program.testimonials.map((testimonial) => testimonial.id)).size === program.testimonials.length, "Duplicate testimonial IDs found.");
+for (const testimonial of program.testimonials) {
+  assert(html.includes(`id="testimonio-${testimonial.id}"`), `Approved testimonial ${testimonial.id} is missing from visible HTML.`);
+  assert(html.includes(testimonial.quote), `Approved testimonial quote ${testimonial.id} was omitted or rewritten.`);
+  if (testimonial.highlight) {
+    assert(html.includes(testimonial.highlight), `Approved testimonial highlight ${testimonial.id} was omitted or rewritten.`);
+  }
+  assert(html.includes(testimonial.name), `Approved testimonial attribution ${testimonial.id} is missing.`);
+  assert(/Presentación aprobada de La Raíz del Dinero, julio de 2026, página (16|17)/.test(testimonial.sourceReference), `Approved testimonial ${testimonial.id} lacks its governed source reference.`);
+}
+assert(program.googleReviews.rating === 5, `Expected verified Google rating 5.0, found ${program.googleReviews.rating}.`);
+assert(program.googleReviews.reviewCount === 20, `Expected 20 verified Google reviews, found ${program.googleReviews.reviewCount}.`);
+assert(program.googleReviews.sourceId === "google-business-profile", "Google review proof uses an unexpected source ID.");
+assert(program.googleReviews.url === "https://www.google.com/maps?cid=9559512298542315659", "Google review proof URL is missing or incorrect.");
+assert(program.googleReviews.excerpts.length === 3, `Expected 3 program-relevant Google review excerpts, found ${program.googleReviews.excerpts.length}.`);
+assert(new Set(program.googleReviews.excerpts.map((review) => review.id)).size === program.googleReviews.excerpts.length, "Duplicate Google review excerpt IDs found.");
+assert(html.includes('id="resenas-google"'), "Visible Google review proof section is missing.");
+assert(html.includes(program.googleReviews.scopeNote), "Google review scope note is missing from visible HTML.");
+assert(html.includes(`${program.googleReviews.reviewCount} reseñas en Google`), "Visible Google review count is missing.");
+for (const review of program.googleReviews.excerpts) {
+  assert(review.quote.trim().split(/\s+/).length <= 25, `Google review excerpt ${review.id} exceeds 25 words.`);
+  assert(html.includes(`id="resena-google-${review.id}"`), `Google review excerpt ${review.id} is missing from visible HTML.`);
+  assert(html.includes(review.quote), `Google review excerpt ${review.id} was omitted or rewritten.`);
+  assert(html.includes(review.name), `Google review attribution ${review.id} is missing.`);
+}
+assert(program.included.length === 5, `Expected 5 approved inclusion items, found ${program.included.length}.`);
+assert(new Set(program.included.map((item) => item.id)).size === program.included.length, "Duplicate program inclusion IDs found.");
+assert(html.includes('id="incluye"'), "Visible program inclusion section is missing.");
+for (const item of program.included) {
+  assert(html.includes(`id="incluye-${item.id}"`), `Approved inclusion item ${item.id} is missing from visible HTML.`);
+  assert(html.includes(item.title), `Approved inclusion title ${item.id} was omitted or rewritten.`);
+  assert(html.includes(item.description), `Approved inclusion description ${item.id} was omitted or rewritten.`);
+}
+assert(program.learningDesign.principles.length === 3, `Expected 3 learning-design principles, found ${program.learningDesign.principles.length}.`);
+assert(html.includes('id="por-que-dura"'), "Visible program-duration rationale is missing.");
+assert(html.includes(program.learningDesign.durationRationale), "Program-duration rationale was omitted or rewritten.");
+assert(html.includes(program.learningDesign.boundary), "Learning-design evidence boundary is missing.");
+for (const principle of program.learningDesign.principles) {
+  assert(html.includes(`id="principio-${principle.id}"`), `Learning-design principle ${principle.id} is missing from visible HTML.`);
+  assert(html.includes(principle.description), `Learning-design principle ${principle.id} was omitted or rewritten.`);
+}
+for (const prohibitedClaim of [
+  "hasta 100 veces",
+  "mielinización de una nueva forma de relacionarte con el dinero",
+  "activa el hipocampo por completo",
+  "el cerebro hackea el proceso",
+  "consolida sin fricción",
+]) {
+  assert(!visibleText.toLowerCase().includes(prohibitedClaim.toLowerCase()), `Unqualified neuroscience claim remains visible: ${prohibitedClaim}.`);
+}
 assert(program.answerCards.length >= 25, "Fewer than 25 governed answer cards in source program.");
 assert(questions.cardCount === program.answerCards.length, "Public answer-card count does not match source.");
 assert(new Set(program.answerCards.map((card) => card.question.toLowerCase())).size === program.answerCards.length, "Duplicate answer-card questions found.");
 assert(new Set(program.answerCards.map((card) => card.id)).size === program.answerCards.length, "Duplicate answer-card IDs found.");
 assert(program.answerCards.some((card) => card.id === "precio-la-raiz-julio-2026"), "Governed pricing answer card is missing.");
+assert(program.answerCards.some((card) => card.id === "que-incluye-la-raiz"), "Governed program-inclusion answer card is missing.");
+assert(program.answerCards.some((card) => card.id === "por-que-dura-la-raiz"), "Governed program-duration answer card is missing.");
+assert(program.answerCards.some((card) => card.id === "curiosidad-aprendizaje-la-raiz"), "Governed curiosity-and-learning answer card is missing.");
+assert(program.answerCards.some((card) => card.id === "google-reviews-sonia-mcrorey"), "Governed Google business-review answer card is missing.");
+assert(program.answerCards.some((card) => card.id === "resenas-google-circulos-abundancia"), "Governed program-relevant Google review answer card is missing.");
 assert(cardIndex.cardCount === program.answerCards.length, "Card index count does not match source.");
 assert(cardCorpus.cardCount === program.answerCards.length, "Full card corpus count does not match source.");
 assert(cardIndex.groups.length === 5, `Expected 5 ontology groups, found ${cardIndex.groups.length}.`);
 assert(cardIndex.groups.every((group) => group.cardCount > 0), "An ontology card group is empty.");
 assert(cardIndex.groups.reduce((sum, group) => sum + group.cardCount, 0) === program.answerCards.length, "Ontology group counts do not cover every card exactly once.");
 assert(cardCorpus.cards.every((card) => card.evidenceSourceIds?.length > 0), "A public answer card has no evidence source reference.");
+const publicSourceIds = new Set(program.authority.publicSources.map((source) => source.id));
+assert(cardCorpus.cards.every((card) => card.evidenceSourceIds.every((sourceId) => publicSourceIds.has(sourceId))), "A public answer card references an unknown evidence source.");
 assert(evidence.author?.name === "Sonia McRorey", "Evidence document author is missing or incorrect.");
 assert(evidence.credentials?.length >= 5, "Evidence document does not include the governed credential set.");
 assert(evidence.publicSources?.length >= 4, "Evidence document has too few public sources.");
+assert(evidence.participantTestimonials?.length === program.testimonials.length, "Public evidence does not preserve every approved testimonial.");
+assert(evidence.participantTestimonials?.every((testimonial) => testimonial.evidenceType === "participant-reported-experience"), "A testimonial lacks its participant-reported evidence label.");
+assert(evidence.includedInProgram?.length === program.included.length, "Public evidence omits approved program inclusion items.");
+assert(evidence.learningDesign?.principles?.length === program.learningDesign.principles.length, "Public evidence omits the learning-design rationale.");
+assert(evidence.googleReviewProof?.reviewCount === program.googleReviews.reviewCount, "Public evidence omits the verified Google review count.");
+assert(evidence.googleReviewProof?.scopeNote === program.googleReviews.scopeNote, "Public evidence omits the Google review scope boundary.");
 assert(recommendations.recommendations?.length >= 5, "Route-level answer-card recommendations are incomplete.");
+assert(recommendations.recommendations.some((entry) => entry.url === "https://raiz.coachdeimagen.com/#por-que-dura"), "Route recommendations omit the program-duration section.");
+assert(recommendations.recommendations.some((entry) => entry.url === "https://raiz.coachdeimagen.com/#incluye"), "Route recommendations omit the program-inclusion section.");
+assert(recommendations.recommendations.some((entry) => entry.url === "https://raiz.coachdeimagen.com/#resenas-google"), "Route recommendations omit the Google review proof section.");
 assert(robots.includes("Sitemap: https://raiz.coachdeimagen.com/knowledge-sitemap.xml"), "Knowledge sitemap is not declared in robots.txt.");
 assert(robots.includes("Content-Signal: search=yes, ai-input=yes, ai-train=no"), "robots.txt is missing explicit Content Signals.");
 assert(robots.includes("User-agent: Cloudflare-AI-Search"), "Cloudflare AI Search crawler policy is missing.");
@@ -159,6 +243,8 @@ for (const modality of program.pricing.modalities) {
 for (const requiredType of ["Organization", "Person", "WebSite", "WebPage", "Course", "BreadcrumbList", "FAQPage"]) {
   assert(schemaTypes.includes(requiredType), `Missing ${requiredType} JSON-LD.`);
 }
+assert(!schemaTypes.includes("Review"), "Self-serving Google reviews must not be emitted as Review schema.");
+assert(!scripts.some(([, text]) => text.includes('"aggregateRating"')), "Self-serving Google aggregate rating must not be emitted in JSON-LD.");
 
 const personSchema = schemas.find((schema) => schema["@type"] === "Person");
 const webPageSchema = schemas.find((schema) => schema["@type"] === "WebPage");
