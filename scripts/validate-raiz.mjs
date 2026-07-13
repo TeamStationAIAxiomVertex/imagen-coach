@@ -41,6 +41,11 @@ const questions = JSON.parse(await readFile(path.join(outputDir, "api/knowledge/
 const cardIndex = JSON.parse(await readFile(path.join(outputDir, "api/knowledge/cards/index.json"), "utf8"));
 const cardCorpus = JSON.parse(await readFile(path.join(outputDir, "api/knowledge/cards/la-raiz.json"), "utf8"));
 const evidence = JSON.parse(await readFile(path.join(outputDir, "agent/evidence.json"), "utf8"));
+const soniaLearningSource = await readFile(
+  path.join(outputDir, "agent/sources/sonia-neurociencia-dinero-repeticion.md"),
+  "utf8",
+);
+const llmsFull = await readFile(path.join(outputDir, "llms-full.txt"), "utf8");
 const recommendations = JSON.parse(await readFile(path.join(outputDir, "agent/route-recommendations.json"), "utf8"));
 const robots = await readFile(path.join(outputDir, "robots.txt"), "utf8");
 const knowledgeSitemap = await readFile(path.join(outputDir, "knowledge-sitemap.xml"), "utf8");
@@ -78,6 +83,33 @@ const claimText = visibleText
   .replaceAll(/no garantiza/gi, "")
   .replaceAll(/no promete/gi, "")
   .replaceAll(/sin prometer/gi, "");
+const approvedSoniaLearning = {
+  introduction: "Tu cerebro no necesita motivación. Necesita repetición.",
+  principleDescriptions: [
+    "Con la repetición, las neuronas que se activan juntas se conectan más fuerte. El camino de tierra se convierte en autopista.",
+    "No necesitas motivación nueva cada día. Necesitas una práctica pequeña, con emoción, en tu cuerpo, repetida.",
+    "No necesitas la respuesta ahora. Solo la pregunta abre el camino.",
+  ],
+  durationRationale: "Cada sesión recorre un nivel energético distinto. Cada círculo abre lo que el anterior dejó expuesto. Y al final del proceso, no solo piensas diferente sobre el dinero: lo habitas diferente.",
+  boundary: "La nueva versión no llega de golpe. Se construye. Un día a la vez.",
+};
+const allowedContentModes = new Set([
+  "verbatim",
+  "factual-extract",
+  "editorial-boundary",
+  "editorial-metadata",
+  "third-party-evidence",
+]);
+const publicSourceIds = new Set(program.authority.publicSources.map((source) => source.id));
+const assertProvenance = (items, collectionName) => {
+  for (const item of items) {
+    const label = item.id || item.question || item.title || "unnamed item";
+    assert(allowedContentModes.has(item.contentMode), `${collectionName} ${label} has no allowed contentMode.`);
+    assert(item.sourceIds?.length > 0, `${collectionName} ${label} has no explicit sourceIds.`);
+    assert(item.sourceIds?.every((sourceId) => publicSourceIds.has(sourceId)), `${collectionName} ${label} references an unknown source ID.`);
+    assert(item.sourceReference?.trim(), `${collectionName} ${label} has no sourceReference.`);
+  }
+};
 
 for (const [, text] of scripts) {
   try {
@@ -118,6 +150,15 @@ assert((html.match(/"priceCurrency":"MXN"/g) || []).length === 2, "Offer schema 
 assert(decodedLinks.includes("me interesa La Raíz"), "WhatsApp program-interest message is missing.");
 assert(!/cdn\.tailwindcss|fonts\.googleapis|unpkg\.com|jsdelivr\.net/i.test(html), "Runtime CDN dependency found.");
 assert(!/garantiza (ingresos|ventas)|resultados garantizados|cura|tratamiento terapéutico/i.test(claimText), "Prohibited guarantee or health claim found.");
+assertProvenance(program.contentGovernance.visibleVerbatimPassages, "Visible Sonia passage");
+for (const passage of program.contentGovernance.visibleVerbatimPassages) {
+  assert(passage.contentMode === "verbatim", `Visible Sonia passage ${passage.id} is not locked to verbatim mode.`);
+  assert(html.includes(passage.text), `Approved visible Sonia passage ${passage.id} was omitted or rewritten.`);
+}
+assertProvenance(program.included, "Program inclusion item");
+assertProvenance(program.journey, "Journey item");
+assertProvenance(program.faqs, "FAQ");
+assertProvenance(program.answerCards, "Answer card");
 assert(html.includes('id="criterio-profesional"'), "Visible E-E-A-T trust section is missing.");
 assert(html.includes("Última revisión editorial"), "Visible editorial review date is missing.");
 assert(html.includes("AICI Guadalajara, 2024-2026"), "Visible AICI authority evidence is missing.");
@@ -166,13 +207,80 @@ for (const item of program.included) {
   assert(html.includes(item.title), `Approved inclusion title ${item.id} was omitted or rewritten.`);
   assert(html.includes(item.description), `Approved inclusion description ${item.id} was omitted or rewritten.`);
 }
+assert(program.journey.length === 9, `Expected 9 governed journey items, found ${program.journey.length}.`);
+for (const item of program.journey) {
+  assert(html.includes(`id="recorrido-${item.id}"`), `Journey item ${item.id} is missing from visible HTML.`);
+  assert(html.includes(item.title), `Journey title ${item.id} was omitted or rewritten.`);
+  assert(html.includes(item.description), `Journey description ${item.id} was omitted or rewritten.`);
+  const card = program.answerCards.find((candidate) => candidate.id === `la-raiz-${item.id}`);
+  assert(card, `Journey item ${item.id} has no matching answer card.`);
+  assert(card?.answer === item.description, `Journey answer card ${item.id} diverges from the canonical Sonia passage.`);
+}
+for (const faq of program.faqs) {
+  assert(html.includes(faq.question), `FAQ question was omitted from visible HTML: ${faq.question}`);
+  assert(html.includes(faq.answer), `FAQ answer was omitted or rewritten: ${faq.question}`);
+}
 assert(program.learningDesign.principles.length === 3, `Expected 3 learning-design principles, found ${program.learningDesign.principles.length}.`);
+assert(program.learningDesign.sourceMode === "verbatim", "Learning-design copy is not locked to verbatim source mode.");
+assert(
+  JSON.stringify(program.learningDesign.sourceIds) === JSON.stringify(["programa-la-raiz", "sonia-neurociencia-dinero-repeticion"]),
+  "Learning-design source manifest is missing or reordered.",
+);
+assert(program.learningDesign.introduction === approvedSoniaLearning.introduction, "Sonia's approved learning introduction was rewritten.");
+assert(
+  JSON.stringify(program.learningDesign.principles.map((principle) => principle.description))
+    === JSON.stringify(approvedSoniaLearning.principleDescriptions),
+  "One or more Sonia-authored learning passages were rewritten.",
+);
+assert(program.learningDesign.durationRationale === approvedSoniaLearning.durationRationale, "Sonia's approved duration rationale was rewritten.");
+assert(program.learningDesign.boundary === approvedSoniaLearning.boundary, "Sonia's approved learning-design closing was rewritten.");
+for (const [label, provenance] of [
+  ["learning introduction", program.learningDesign.introductionProvenance],
+  ["duration rationale", program.learningDesign.durationRationaleProvenance],
+  ["learning boundary", program.learningDesign.boundaryProvenance],
+]) {
+  assertProvenance([{ id: label, ...provenance }], "Learning-design passage");
+  assert(provenance?.contentMode === "verbatim", `${label} is not locked to verbatim mode.`);
+}
 assert(html.includes('id="por-que-dura"'), "Visible program-duration rationale is missing.");
 assert(html.includes(program.learningDesign.durationRationale), "Program-duration rationale was omitted or rewritten.");
+assert((html.match(new RegExp(program.learningDesign.durationRationale.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "g")) || []).length >= 3, "Not every visible duration explanation uses the canonical verbatim Sonia passage.");
 assert(html.includes(program.learningDesign.boundary), "Learning-design evidence boundary is missing.");
 for (const principle of program.learningDesign.principles) {
+  assertProvenance([principle], "Learning-design principle");
+  assert(principle.contentMode === "verbatim", `Learning-design principle ${principle.id} is not locked to verbatim mode.`);
   assert(html.includes(`id="principio-${principle.id}"`), `Learning-design principle ${principle.id} is missing from visible HTML.`);
   assert(html.includes(principle.description), `Learning-design principle ${principle.id} was omitted or rewritten.`);
+}
+for (const passage of [
+  approvedSoniaLearning.introduction,
+  ...approvedSoniaLearning.principleDescriptions,
+  approvedSoniaLearning.durationRationale,
+  approvedSoniaLearning.boundary,
+]) {
+  assert(soniaLearningSource.includes(passage), `Public Sonia source document omits approved passage: ${passage}`);
+}
+assert(soniaLearningSource.includes("Modo de publicación: fragmentos textuales aprobados, sin paráfrasis editorial"), "Public Sonia source does not declare verbatim publication mode.");
+const generatedKnowledgeText = [
+  html,
+  llmsFull,
+  JSON.stringify(questions),
+  JSON.stringify(cardCorpus),
+  JSON.stringify(evidence),
+  soniaLearningSource,
+].join("\n");
+for (const prohibitedSyntheticPhrase of [
+  "práctica espaciada",
+  "permite volver al tema",
+  "probar una respuesta",
+  "revisar qué ocurre",
+  "una respuesta nueva necesita tiempo",
+  "Porque Sonia diseñó",
+]) {
+  assert(
+    !generatedKnowledgeText.toLowerCase().includes(prohibitedSyntheticPhrase.toLowerCase()),
+    `Synthetic Sonia program explanation remains in a public surface: ${prohibitedSyntheticPhrase}.`,
+  );
 }
 for (const prohibitedClaim of [
   "hasta 100 veces",
@@ -199,8 +307,9 @@ assert(cardIndex.groups.length === 5, `Expected 5 ontology groups, found ${cardI
 assert(cardIndex.groups.every((group) => group.cardCount > 0), "An ontology card group is empty.");
 assert(cardIndex.groups.reduce((sum, group) => sum + group.cardCount, 0) === program.answerCards.length, "Ontology group counts do not cover every card exactly once.");
 assert(cardCorpus.cards.every((card) => card.evidenceSourceIds?.length > 0), "A public answer card has no evidence source reference.");
-const publicSourceIds = new Set(program.authority.publicSources.map((source) => source.id));
 assert(cardCorpus.cards.every((card) => card.evidenceSourceIds.every((sourceId) => publicSourceIds.has(sourceId))), "A public answer card references an unknown evidence source.");
+assert(cardCorpus.cards.every((card) => card.contentMode && card.sourceReference), "A public answer card lost provenance metadata during generation.");
+assert(cardCorpus.cards.every((card) => JSON.stringify(card.evidenceSourceIds) === JSON.stringify(card.sourceIds)), "A public answer card source was inferred instead of preserved explicitly.");
 assert(evidence.author?.name === "Sonia McRorey", "Evidence document author is missing or incorrect.");
 assert(evidence.credentials?.length >= 5, "Evidence document does not include the governed credential set.");
 assert(evidence.publicSources?.length >= 4, "Evidence document has too few public sources.");
@@ -222,12 +331,13 @@ assert(headers.includes("type=\"application/linkset+json\""), "Link header does 
 assert(headers.includes("/.well-known/api-catalog\n  Content-Type: application/linkset+json"), "API catalog content type rule is missing.");
 assert(headers.includes("/*.md\n  Content-Type: text/markdown"), "Markdown content type rule is missing.");
 const knowledgeUrls = [...knowledgeSitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]);
-assert(knowledgeUrls.length === 9, `Expected 9 knowledge sitemap URLs, found ${knowledgeUrls.length}.`);
+assert(knowledgeUrls.length === 10, `Expected 10 knowledge sitemap URLs, found ${knowledgeUrls.length}.`);
 for (const expectedUrl of [
   "https://raiz.coachdeimagen.com/llms-full.txt",
   "https://raiz.coachdeimagen.com/api/knowledge/questions.md",
   "https://raiz.coachdeimagen.com/api/knowledge/cards/la-raiz.md",
   "https://raiz.coachdeimagen.com/agent/evidence.md",
+  "https://raiz.coachdeimagen.com/agent/sources/sonia-neurociencia-dinero-repeticion.md",
 ]) {
   assert(knowledgeUrls.includes(expectedUrl), `Knowledge sitemap is missing ${expectedUrl}.`);
 }
@@ -365,6 +475,7 @@ for (const relative of [
   "agent/status.json",
   "agent/evidence.json",
   "agent/evidence.md",
+  "agent/sources/sonia-neurociencia-dinero-repeticion.md",
   "agent/route-recommendations.json",
   "api/knowledge/questions.json",
   "api/knowledge/questions.md",

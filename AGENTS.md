@@ -64,6 +64,14 @@ The public module must stay compact: one short quote, one application title, one
 
 Never expose source filenames, Drive document names, bank/payment data, old contact data, old prices, private logistics, raw internal notes or SEO/GEO strategy in public copy.
 
+## Sonia Verbatim Program Rule
+
+For La Raíz and other Sonia-authored programs, do not create bridge copy, explanatory paraphrases, teaching summaries or inferred program rationales in Sonia's voice.
+
+Retrieve program language from the connected Sonia Drive corpus, approved PDFs or governed quote banks. Public teaching copy must be verbatim, must carry a source ID in canonical data and must be checked by the static validator. If an exact approved passage does not answer the question, omit the claim and record a source gap instead of filling it with generated copy.
+
+Editorial boundaries, accessibility labels and legal disclaimers may be written separately when necessary, but they must be visibly distinct from Sonia-authored teaching and must never be described as her quote or rationale.
+
 ## Non-Negotiable URL Contract
 
 All 35 canonical URLs documented in `docs/source-url-inventory.md` must work in the rebuilt site.

@@ -70,11 +70,10 @@ function groupForCard(card) {
 }
 
 function sourceIdsForCard(card) {
-  if (card.sourceIds?.length) return card.sourceIds;
-  const groupId = groupForCard(card).id;
-  if (groupId === "autoridad-evidencia") return ["sonia-biografia", "metodo-sonia"];
-  if (groupId === "metodo-limites") return ["programa-la-raiz", "metodo-sonia", "seguridad-profesional"];
-  return ["programa-la-raiz"];
+  if (!card.sourceIds?.length) {
+    throw new Error(`Answer card ${card.id} has no explicit governed sourceIds.`);
+  }
+  return card.sourceIds;
 }
 
 function enrichedCards(program) {
@@ -334,6 +333,43 @@ function learningDesignSection(program) {
   </section>`;
 }
 
+function journeySection(program) {
+  const items = program.journey.map((item) => `<li${item.id === "bonus-sistema-nervioso" ? ' class="journey-final"' : ""} id="recorrido-${escapeHtml(item.id)}">
+    <span>${escapeHtml(item.number)}</span>
+    <div>
+      <h3>${escapeHtml(item.title)}</h3>
+      <p>${escapeHtml(item.description)}</p>
+    </div>
+  </li>`).join("");
+
+  return `<section id="recorrido" class="section" aria-labelledby="recorrido-titulo">
+    <div class="section-heading centered">
+      <p class="eyebrow">El recorrido</p>
+      <h2 id="recorrido-titulo">8 sesiones en vivo + 1 de bonus.</h2>
+    </div>
+    <aside class="plain-statement">${escapeHtml(program.learningDesign.durationRationale)}</aside>
+    <ol class="journey-grid">${items}</ol>
+  </section>`;
+}
+
+function faqSection(program) {
+  const items = program.faqs.map((faq, index) => `<details${index === 0 ? " open" : ""}>
+    <summary>${escapeHtml(faq.question)}<span aria-hidden="true">+</span></summary>
+    <p>${escapeHtml(faq.answer)}</p>
+  </details>`).join("");
+
+  return `<section id="preguntas" class="band band-soft" aria-labelledby="faq-titulo">
+    <div class="section band-inner faq-layout">
+      <div class="section-heading faq-heading">
+        <p class="eyebrow">Preguntas frecuentes</p>
+        <h2 id="faq-titulo">Respuestas claras antes de elegir.</h2>
+        <p>Si tu pregunta no aparece aquí, el WhatsApp abre una conversación directa con Sonia.</p>
+      </div>
+      <div class="faq-list">${items}</div>
+    </div>
+  </section>`;
+}
+
 function includedSection(program) {
   const items = program.included.map((item) => `<li id="incluye-${escapeHtml(item.id)}">
     <span aria-hidden="true">${escapeHtml(item.number)}</span>
@@ -344,7 +380,7 @@ function includedSection(program) {
       <div class="section-heading light-heading">
         <p class="eyebrow">Tu inscripción</p>
         <h2 id="incluye-titulo">Qué incluye La Raíz.</h2>
-        <p>El proceso no termina cuando cierra Zoom. Sonia sostiene una secuencia de sesiones, práctica y acompañamiento entre encuentros.</p>
+        <p>9 sesiones en vivo. WhatsApp exclusivo. Material digital.</p>
       </div>
       <ol class="included-list">${items}</ol>
     </div>
@@ -384,7 +420,7 @@ ${boundaries}`;
 function includedMarkdown(program) {
   return `## Qué incluye la inscripción
 
-${program.included.map((item) => `- **${item.title}:** ${item.description}`).join("\n")}`;
+${program.included.map((item) => `- **${item.title}:** ${item.description}\n  - Modo: ${item.contentMode}\n  - Referencia: ${item.sourceReference}\n  - Fuentes: ${item.sourceIds.join(", ")}`).join("\n")}`;
 }
 
 function learningDesignMarkdown(program) {
@@ -394,7 +430,7 @@ function learningDesignMarkdown(program) {
       const source = sources.get(sourceId);
       return source ? `[${source.name}](${source.url})` : sourceId;
     }).join(", ");
-    return `### ${principle.number} · ${principle.title}\n\n${principle.description}\n\nReferencias: ${references}.`;
+    return `### ${principle.number} · ${principle.title}\n\n${principle.description}\n\nModo: ${principle.contentMode}.\nReferencia: ${principle.sourceReference}.\nFuentes: ${references}.`;
   }).join("\n\n");
   return `## ${program.learningDesign.title}
 
@@ -404,7 +440,35 @@ ${principles}
 
 **Por qué se distribuye semana a semana:** ${program.learningDesign.durationRationale}
 
-**Límite de la afirmación:** ${program.learningDesign.boundary}`;
+**Cierre textual de Sonia:** ${program.learningDesign.boundary}`;
+}
+
+function soniaLearningSourceMarkdown(program) {
+  const source = program.authority.publicSources.find(
+    (item) => item.id === "sonia-neurociencia-dinero-repeticion",
+  );
+  const principles = program.learningDesign.principles
+    .filter((principle) => principle.sourceIds.includes(source.id))
+    .map((principle) => `> ${principle.description}`)
+    .join("\n\n");
+
+  return `# Sonia McRorey: repetición, práctica y curiosidad
+
+Fuente canónica pública: ${source.url}
+Autora: Sonia McRorey
+Modo de publicación: fragmentos textuales aprobados, sin paráfrasis editorial
+Última revisión: ${program.authority.lastReviewed}
+
+> ${program.learningDesign.introduction}
+
+${principles}
+
+> ${program.learningDesign.boundary}
+
+## Explicación textual del recorrido de La Raíz
+
+> ${program.learningDesign.durationRationale}
+`;
 }
 
 function testimonialsMarkdown(program) {
@@ -753,7 +817,7 @@ function schemaStack(program) {
 function llmsSummary(program) {
   return `# La Raíz del Dinero · Sonia McRorey
 
-> Programa de transformación con 8 sesiones en vivo + 1 bonus para trabajar la raíz desde la que generas, recibes y sostienes valor.
+> 8 sesiones para trabajar la raíz desde la que generas, recibes y sostienes valor.
 
 - URL canónica: ${canonicalUrl}
 - Proveedor: Sonia McRorey
@@ -795,11 +859,11 @@ function llmsFull(program) {
   const modalityText = program.modalities
     .map((item) => `### ${item.name}\n\n- Inicio de esta edición: ${item.startDate}\n- Lugar: ${item.location}\n- Formato: ${item.sessions}\n- Alcance: ${item.availability}`)
     .join("\n\n");
-  const faqText = program.faqs.map((item) => `### ${item.question}\n\n${item.answer}`).join("\n\n");
+  const faqText = program.faqs.map((item) => `### ${item.question}\n\n${item.answer}\n\nModo: ${item.contentMode}.\nReferencia: ${item.sourceReference}.\nFuentes: ${item.sourceIds.join(", ")}.`).join("\n\n");
   const cardText = answerCardGroups.map((group) => {
     const entries = cards
       .filter((card) => card.ontologyGroup === group.id)
-      .map((card) => `### ${card.question}\n\n${card.answer}\n\nFuentes: ${card.evidenceSourceIds.join(", ")}.`)
+      .map((card) => `### ${card.question}\n\n${card.answer}\n\nModo: ${card.contentMode}.\nReferencia: ${card.sourceReference}.\nFuentes: ${card.evidenceSourceIds.join(", ")}.`)
       .join("\n\n");
     return `## ${group.name}\n\n${group.description}\n\n${entries}`;
   }).join("\n\n");
@@ -812,7 +876,11 @@ ${learningDesignMarkdown(program)}
 
 ## Definición
 
-La Raíz del Dinero es un proceso de transformación con Sonia McRorey. Ordena preguntas y prácticas sobre la raíz desde la que una persona genera, recibe y sostiene valor. No es un curso de finanzas, no atribuye todos los resultados económicos a la identidad y no sustituye apoyo profesional regulado.
+No es un curso de finanzas. Es un trabajo de raíz. Es la estructura interna desde la que generas, recibes y sostienes valor. El dinero es la consecuencia visible.
+
+Modo: fragmentos textuales aprobados de Sonia McRorey. Fuentes: programa-la-raiz.
+
+Límite editorial: La Raíz es coaching. No sustituye psicoterapia, atención médica, tratamiento de salud mental ni asesoría financiera.
 
 ## Modalidades
 
@@ -846,7 +914,7 @@ function questionsMarkdown(program, cards) {
 Fuente canónica: ${canonicalUrl}
 Última revisión: ${program.authority.lastReviewed}
 
-${cards.map((card) => `## ${card.question}\n\n${card.answer}\n\nGrupo: ${card.ontologyGroup}.\nFuentes: ${card.evidenceSourceIds.join(", ")}.\n`).join("\n")}`;
+${cards.map((card) => `## ${card.question}\n\n${card.answer}\n\nModo: ${card.contentMode}.\nReferencia: ${card.sourceReference}.\nGrupo: ${card.ontologyGroup}.\nFuentes: ${card.evidenceSourceIds.join(", ")}.\n`).join("\n")}`;
 }
 
 function cardGroupMarkdown(program, group, cards) {
@@ -858,7 +926,7 @@ ${group.description}
 - Última revisión: ${program.authority.lastReviewed}
 - Evidencia pública: ${canonicalUrl}agent/evidence.json
 
-${cards.map((card) => `## ${card.question}\n\n${card.answer}\n\nFuentes: ${card.evidenceSourceIds.join(", ")}.\n`).join("\n")}`;
+${cards.map((card) => `## ${card.question}\n\n${card.answer}\n\nModo: ${card.contentMode}.\nReferencia: ${card.sourceReference}.\nFuentes: ${card.evidenceSourceIds.join(", ")}.\n`).join("\n")}`;
 }
 
 function knowledgeSitemap(program, cardsIndex) {
@@ -867,6 +935,7 @@ function knowledgeSitemap(program, cardsIndex) {
     `${canonicalUrl}api/knowledge/questions.md`,
     `${canonicalUrl}api/knowledge/cards/la-raiz.md`,
     `${canonicalUrl}agent/evidence.md`,
+    `${canonicalUrl}agent/sources/sonia-neurociencia-dinero-repeticion.md`,
     ...cardsIndex.groups.map((group) => `${canonicalUrl}api/knowledge/cards/groups/${group.id}.md`),
   ];
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.map((url) => `<url><loc>${url}</loc><lastmod>${program.authority.lastReviewed}</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>`).join("")}</urlset>\n`;
@@ -1326,6 +1395,7 @@ async function build() {
   await mkdir(path.join(outputDir, ".well-known/agent-skills"), { recursive: true });
   await mkdir(path.join(outputDir, ".well-known/mcp"), { recursive: true });
   await mkdir(path.join(outputDir, "agent"), { recursive: true });
+  await mkdir(path.join(outputDir, "agent/sources"), { recursive: true });
   await mkdir(path.join(outputDir, "api/knowledge/cards/groups"), { recursive: true });
   await Promise.all(skills.map((skill) => mkdir(
     path.join(outputDir, `.well-known/agent-skills/${skill.name}`),
@@ -1346,11 +1416,14 @@ async function build() {
     .replaceAll("{{BUILD_VERSION}}", buildVersion)
     .replace("{{PROGRAM_SCHEMA}}", schemaStack(program))
     .replace("{{PRICING_SECTION}}", pricingSection(program, onlineWhatsapp, semiWhatsapp))
+    .replace("{{JOURNEY_SECTION}}", journeySection(program))
+    .replace("{{FAQ_SECTION}}", faqSection(program))
     .replace("{{LEARNING_DESIGN_SECTION}}", learningDesignSection(program))
     .replace("{{INCLUDED_SECTION}}", includedSection(program))
     .replace("{{TRUST_SECTION}}", trustSection(program))
     .replace("{{GOOGLE_REVIEWS_SECTION}}", googleReviewsSection(program))
     .replace("{{TESTIMONIAL_SECTION}}", testimonialSection(program))
+    .replaceAll("{{DURATION_RATIONALE}}", escapeHtml(program.learningDesign.durationRationale))
     .replaceAll("{{WHATSAPP_URL}}", generalWhatsapp.replaceAll("&", "&amp;"))
     .replaceAll("{{WHATSAPP_ONLINE_URL}}", onlineWhatsapp.replaceAll("&", "&amp;"))
     .replaceAll("{{WHATSAPP_SEMI_URL}}", semiWhatsapp.replaceAll("&", "&amp;"));
@@ -1359,7 +1432,7 @@ async function build() {
     ...program,
     answerCards: cards,
     whatsapp: { url: generalWhatsapp, purpose: "Solicitar información sobre La Raíz" },
-    sourceBoundary: "Corpus gobernado de Sonia McRorey y Coach De Imagen, con referencias públicas explícitas de investigación y del Perfil de Empresa de Sonia en Google; sin datos privados.",
+    sourceBoundary: "Corpus gobernado de Sonia McRorey y Coach De Imagen, con fuentes públicas explícitas de Sonia, datos canónicos del programa y evidencia externa claramente etiquetada; sin datos privados.",
     lastReviewed: program.authority.lastReviewed,
   };
   const questions = {
@@ -1469,6 +1542,10 @@ async function build() {
     writeFile(path.join(outputDir, "agent/status.json"), `${safeJson(apiStatus(program, cards))}\n`),
     writeFile(path.join(outputDir, "agent/evidence.json"), `${safeJson(evidence)}\n`),
     writeFile(path.join(outputDir, "agent/evidence.md"), `${authorityMarkdown(program)}\n\n${includedMarkdown(program)}\n\n${learningDesignMarkdown(program)}\n\n${googleReviewsMarkdown(program)}\n`),
+    writeFile(
+      path.join(outputDir, "agent/sources/sonia-neurociencia-dinero-repeticion.md"),
+      soniaLearningSourceMarkdown(program),
+    ),
     writeFile(path.join(outputDir, "agent/route-recommendations.json"), `${safeJson(recommendations)}\n`),
     writeFile(path.join(outputDir, "api/knowledge/questions.json"), `${safeJson(questions)}\n`),
     writeFile(path.join(outputDir, "api/knowledge/questions.md"), questionsMarkdown(program, cards)),

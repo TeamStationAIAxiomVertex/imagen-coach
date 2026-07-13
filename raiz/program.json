@@ -5,8 +5,118 @@
   "duration": "P8W",
   "durationLabel": "8 sesiones en vivo + 1 bonus",
   "provider": "Sonia McRorey",
-  "audience": "Personas adultas, mujeres y hombres, que desean trabajar la raíz desde la que generan, reciben y sostienen valor.",
-  "description": "Programa de transformación con Sonia McRorey para trabajar la raíz desde la que generas, recibes y sostienes valor.",
+  "audience": "Programa mixto, para hombres y mujeres: los patrones con el dinero no tienen género.",
+  "description": "8 sesiones para trabajar la raíz desde la que generas, recibes y sostienes valor.",
+  "contentGovernance": {
+    "rule": "La enseñanza visible se publica como texto aprobado de Sonia o se omite.",
+    "visibleVerbatimPassages": [
+      {
+        "id": "hero-consecuencia-visible",
+        "text": "El dinero es la consecuencia visible.",
+        "contentMode": "verbatim",
+        "sourceIds": ["programa-la-raiz"],
+        "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 1"
+      },
+      {
+        "id": "hero-raiz-valor",
+        "text": "8 sesiones para trabajar la raíz desde la que generas, recibes y sostienes valor.",
+        "contentMode": "verbatim",
+        "sourceIds": ["programa-la-raiz"],
+        "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 1"
+      },
+      {
+        "id": "no-otro-programa-dinero",
+        "text": "Esto no es otro programa de dinero.",
+        "contentMode": "verbatim",
+        "sourceIds": ["programa-la-raiz"],
+        "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 2"
+      },
+      {
+        "id": "no-finanzas-estrategia-voluntad",
+        "text": "No es finanzas. No es estrategia. No es fuerza de voluntad.",
+        "contentMode": "verbatim",
+        "sourceIds": ["programa-la-raiz"],
+        "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 2"
+      },
+      {
+        "id": "estructura-interna-valor",
+        "text": "Es la estructura interna desde la que generas, recibes y sostienes valor.",
+        "contentMode": "verbatim",
+        "sourceIds": ["programa-la-raiz"],
+        "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 2"
+      },
+      {
+        "id": "dinero-manifestacion",
+        "text": "El dinero tampoco es el punto de partida: también es una manifestación. Refleja la relación que tienes contigo mismo, con tu valor, tu capacidad de recibir, tu seguridad y las decisiones que sostienes.",
+        "contentMode": "verbatim",
+        "sourceIds": ["programa-la-raiz"],
+        "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 2"
+      },
+      {
+        "id": "trabajo-de-raiz",
+        "text": "No es un curso de finanzas. Es un trabajo de raíz.",
+        "contentMode": "verbatim",
+        "sourceIds": ["programa-la-raiz"],
+        "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 3"
+      },
+      {
+        "id": "programa-mixto",
+        "text": "Programa mixto, para hombres y mujeres: los patrones con el dinero no tienen género.",
+        "contentMode": "verbatim",
+        "sourceIds": ["programa-la-raiz"],
+        "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 3"
+      },
+      {
+        "id": "resultado-decisiones",
+        "text": "Dejas de sabotear las decisiones que ya sabías que tenías que tomar.",
+        "contentMode": "verbatim",
+        "sourceIds": ["programa-la-raiz"],
+        "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 4"
+      },
+      {
+        "id": "resultado-decides-rapido",
+        "text": "Decides más rápido, sin dar vueltas.",
+        "contentMode": "verbatim",
+        "sourceIds": ["programa-la-raiz"],
+        "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 4"
+      },
+      {
+        "id": "resultado-no-sin-culpa",
+        "text": "Dices que no a lo que te drena, sin culpa.",
+        "contentMode": "verbatim",
+        "sourceIds": ["programa-la-raiz"],
+        "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 4"
+      },
+      {
+        "id": "resultado-conversaciones-dinero",
+        "text": "Sostienes conversaciones de dinero sin encogerte.",
+        "contentMode": "verbatim",
+        "sourceIds": ["programa-la-raiz"],
+        "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 4"
+      },
+      {
+        "id": "sonia-lo-vivo",
+        "text": "Todo lo que enseño, lo vivo.",
+        "contentMode": "verbatim",
+        "sourceIds": ["programa-la-raiz"],
+        "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 21"
+      },
+      {
+        "id": "sonia-certificacion",
+        "text": "Mi certificación como Coach Activadora de Dinero y Abundancia es la base de este programa.",
+        "contentMode": "verbatim",
+        "sourceIds": ["programa-la-raiz"],
+        "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 21"
+      },
+      {
+        "id": "sonia-mirada-propia",
+        "text": "Hoy acompaño desde una mirada propia: el cuerpo, las creencias y la manera en que te muestras al mundo.",
+        "contentMode": "verbatim",
+        "sourceIds": ["programa-la-raiz"],
+        "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 21"
+      }
+    ]
+  },
   "authority": {
     "lastReviewed": "2026-07-12",
     "editorialPurpose": "Ayudar a personas hispanohablantes a entender el alcance, los límites y las modalidades de La Raíz del Dinero antes de decidir.",
@@ -71,6 +181,12 @@
         "supports": ["alcance", "duración", "modalidades", "inversión", "límites"]
       },
       {
+        "id": "sonia-neurociencia-dinero-repeticion",
+        "name": "Sonia McRorey · Neurociencia del dinero: repetición",
+        "url": "https://raiz.coachdeimagen.com/agent/sources/sonia-neurociencia-dinero-repeticion.md",
+        "supports": ["repetición", "curiosidad", "práctica", "diseño del recorrido"]
+      },
+      {
         "id": "sonia-biografia",
         "name": "Trayectoria de Sonia McRorey",
         "url": "https://coachdeimagen.com/sobre-sonia-mcrorey-asesora-de-imagen/",
@@ -87,24 +203,6 @@
         "name": "Seguridad profesional",
         "url": "https://coachdeimagen.com/seguridad-profesional/",
         "supports": ["visibilidad", "límites", "decisiones", "posicionamiento"]
-      },
-      {
-        "id": "hebb-learning-1949",
-        "name": "Donald O. Hebb · The Organization of Behavior (1949)",
-        "url": "https://books.google.com/books/about/The_Organization_of_Behavior.html?id=jvqMAAAAMAAJ",
-        "supports": ["aprendizaje asociativo", "práctica repetida", "diseño educativo"]
-      },
-      {
-        "id": "lally-habit-formation-2010",
-        "name": "Lally et al. · How are habits formed? (2010)",
-        "url": "https://doi.org/10.1002/ejsp.674",
-        "supports": ["variación en formación de hábitos", "práctica sostenida", "diseño de varias semanas"]
-      },
-      {
-        "id": "gruber-curiosity-memory-2014",
-        "name": "Gruber, Gelman y Ranganath · Curiosity and memory (2014)",
-        "url": "https://pubmed.ncbi.nlm.nih.gov/25284006/",
-        "supports": ["curiosidad", "atención", "memoria", "diseño educativo"]
       },
       {
         "id": "google-business-profile",
@@ -234,62 +332,183 @@
       "id": "sesiones-en-vivo",
       "number": "01",
       "title": "9 sesiones en vivo",
-      "description": "8 sesiones del programa más 1 bonus de sistema nervioso."
+      "description": "8 sesiones del programa más 1 bonus de sistema nervioso.",
+      "contentMode": "factual-extract",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, páginas 13 y 18"
     },
     {
       "id": "whatsapp-exclusivo",
       "number": "02",
       "title": "Grupo de WhatsApp exclusivo",
-      "description": "Audios y activaciones semanales para acompañar lo trabajado entre sesiones."
+      "description": "Audios y activaciones semanales para acompañar lo trabajado entre sesiones.",
+      "contentMode": "factual-extract",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, sección Qué incluye"
     },
     {
       "id": "material-digital",
       "number": "03",
       "title": "Material digital",
-      "description": "Ejercicios prácticos para observar y aplicar cada tema."
+      "description": "Ejercicios prácticos para observar y aplicar cada tema.",
+      "contentMode": "factual-extract",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, sección Qué incluye"
     },
     {
       "id": "acompanamiento-grupal",
       "number": "04",
       "title": "Acompañamiento grupal",
-      "description": "Durante todo el proceso, en un espacio guiado por Sonia."
+      "description": "Durante todo el proceso, en un espacio guiado por Sonia.",
+      "contentMode": "factual-extract",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, sección Qué incluye"
     },
     {
       "id": "proceso-transformacion",
       "number": "05",
       "title": "Un proceso real de transformación",
-      "description": "Para trabajar tu relación con el dinero, el cuerpo y la energía. Cada experiencia depende de la participación y del contexto de cada persona."
+      "description": "Para trabajar tu relación con el dinero, el cuerpo y la energía. Cada experiencia depende de la participación y del contexto de cada persona.",
+      "contentMode": "factual-extract",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, sección Qué incluye"
+    }
+  ],
+  "journey": [
+    {
+      "id": "sesion-1",
+      "number": "01",
+      "title": "Conexión con la madre naturaleza y el dinero",
+      "description": "La relación que existe entre tu conexión con la tierra, con lo natural y con tu capacidad de generar y recibir dinero.",
+      "contentMode": "verbatim",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 5"
+    },
+    {
+      "id": "sesion-2",
+      "number": "02",
+      "title": "Placer, gozo, creatividad y disfrute de recibir",
+      "description": "Cómo el placer y el gozo están directamente conectados con tu capacidad de recibir prosperidad.",
+      "contentMode": "verbatim",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 6"
+    },
+    {
+      "id": "sesion-3",
+      "number": "03",
+      "title": "Poder personal, acción y energía vital",
+      "description": "La conexión directa entre tu energía vital, tu poder de decisión y tu flujo financiero.",
+      "contentMode": "verbatim",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 7"
+    },
+    {
+      "id": "sesion-4",
+      "number": "04",
+      "title": "Corazón abierto y abundancia emocional",
+      "description": "Cómo el estado de tu corazón —lo que sientes, lo que das y lo que te permites recibir— determina directamente tu relación con la prosperidad emocional y material.",
+      "contentMode": "verbatim",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 8"
+    },
+    {
+      "id": "sesion-5",
+      "number": "05",
+      "title": "Voz y límites: comunicar con claridad desde tu alma",
+      "description": "Por qué la dificultad para expresarte, poner límites y comunicar tu valor es un patrón energético que impacta directamente tu prosperidad.",
+      "contentMode": "verbatim",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 9"
+    },
+    {
+      "id": "sesion-6",
+      "number": "06",
+      "title": "Intuición y diseño consciente de tu realidad",
+      "description": "Cómo tu visión interna y tu intuición crean o limitan tu realidad antes de que tomes cualquier acción.",
+      "contentMode": "verbatim",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 10"
+    },
+    {
+      "id": "sesion-7",
+      "number": "07",
+      "title": "Conexión espiritual, fe interna y misión",
+      "description": "La relación entre tu propósito más profundo, tu espiritualidad personal y tu prosperidad material.",
+      "contentMode": "verbatim",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 11"
+    },
+    {
+      "id": "sesion-8",
+      "number": "08",
+      "title": "Integración y propósito como herramienta de manifestación",
+      "description": "Cómo todo el trabajo de las sesiones anteriores se integra en una nueva forma de relacionarte con el dinero, el merecimiento y la prosperidad en tu vida cotidiana.",
+      "contentMode": "verbatim",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 12"
+    },
+    {
+      "id": "bonus-sistema-nervioso",
+      "number": "B",
+      "title": "Sistema nervioso y dinero",
+      "description": "Por qué el cuerpo sabotea, aunque la mente quiera cambiar. Cómo regularlo para que la transformación que viviste durante el programa se sostenga en el tiempo.",
+      "contentMode": "verbatim",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 13"
     }
   ],
   "learningDesign": {
+    "sourceMode": "verbatim",
+    "sourceIds": ["programa-la-raiz", "sonia-neurociencia-dinero-repeticion"],
     "eyebrow": "La ciencia detrás del diseño",
     "title": "Por qué este programa dura lo que dura.",
-    "introduction": "Las 8 sesiones del programa y el bonus se trabajan semana a semana porque una respuesta nueva necesita tiempo para observarse, practicarse e integrarse en la vida real.",
+    "introduction": "Tu cerebro no necesita motivación. Necesita repetición.",
+    "introductionProvenance": {
+      "contentMode": "verbatim",
+      "sourceIds": ["sonia-neurociencia-dinero-repeticion"],
+      "sourceReference": "Imagen Dinero neurociencia Sonia McRorey — Repetición, fragmento aprobado"
+    },
     "principles": [
       {
         "id": "practica-repetida",
         "number": "01",
-        "title": "La repetición ayuda a construir una respuesta nueva.",
-        "description": "La práctica repetida puede fortalecer asociaciones de aprendizaje. Por eso La Raíz no se queda en una sola conversación: cada encuentro se conecta con ejercicios, audios y activaciones entre sesiones.",
-        "sourceIds": ["hebb-learning-1949"]
+        "title": "La repetición construye la transformación",
+        "description": "Con la repetición, las neuronas que se activan juntas se conectan más fuerte. El camino de tierra se convierte en autopista.",
+        "contentMode": "verbatim",
+        "sourceIds": ["sonia-neurociencia-dinero-repeticion"],
+        "sourceReference": "Imagen Dinero neurociencia Sonia McRorey — Repetición, fragmento aprobado"
       },
       {
         "id": "tiempo-real-cambio",
         "number": "02",
-        "title": "El cambio no sigue una cuenta universal de 21 días.",
-        "description": "En un estudio de formación de hábitos en la vida real, Lally y su equipo observaron una variación amplia entre personas y conductas, con un punto medio de 66 días. La cifra no es una promesa ni un reloj exacto; respalda la necesidad de practicar durante varias semanas.",
-        "sourceIds": ["lally-habit-formation-2010"]
+        "title": "La práctica",
+        "description": "No necesitas motivación nueva cada día. Necesitas una práctica pequeña, con emoción, en tu cuerpo, repetida.",
+        "contentMode": "verbatim",
+        "sourceIds": ["sonia-neurociencia-dinero-repeticion"],
+        "sourceReference": "Imagen Dinero neurociencia Sonia McRorey — Repetición, fragmento aprobado"
       },
       {
         "id": "curiosidad-aprendizaje",
         "number": "03",
-        "title": "La curiosidad puede favorecer la atención y la memoria.",
-        "description": "La investigación ha relacionado los estados de curiosidad con una mejor memoria y con actividad en sistemas dopaminérgicos e hipocampales. Sonia usa preguntas para despertar atención y participación, no para llenar una sesión de información.",
-        "sourceIds": ["gruber-curiosity-memory-2014"]
+        "title": "Curiosidad",
+        "description": "No necesitas la respuesta ahora. Solo la pregunta abre el camino.",
+        "contentMode": "verbatim",
+        "sourceIds": ["sonia-neurociencia-dinero-repeticion"],
+        "sourceReference": "Imagen Dinero neurociencia Sonia McRorey — Repetición, fragmento aprobado"
       }
     ],
-    "durationRationale": "Las sesiones semanales, los ejercicios entre encuentros y el grupo de WhatsApp crean una práctica espaciada. Esa continuidad explica la duración del programa: permite volver al tema, probar una respuesta y revisar qué ocurre antes del siguiente encuentro.",
-    "boundary": "Este marco explica el diseño educativo de La Raíz. No afirma que todas las personas cambien en el mismo tiempo, no diagnostica el cerebro y no garantiza resultados emocionales o financieros."
+    "durationRationale": "Cada sesión recorre un nivel energético distinto. Cada círculo abre lo que el anterior dejó expuesto. Y al final del proceso, no solo piensas diferente sobre el dinero: lo habitas diferente.",
+    "durationRationaleProvenance": {
+      "contentMode": "verbatim",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, explicación de la secuencia"
+    },
+    "boundary": "La nueva versión no llega de golpe. Se construye. Un día a la vez.",
+    "boundaryProvenance": {
+      "contentMode": "verbatim",
+      "sourceIds": ["sonia-neurociencia-dinero-repeticion"],
+      "sourceReference": "Imagen Dinero neurociencia Sonia McRorey — Repetición, fragmento aprobado"
+    }
   },
   "pricing": {
     "currency": "MXN",
@@ -353,102 +572,159 @@
   "faqs": [
     {
       "question": "¿Qué es el programa La Raíz del Dinero?",
-      "answer": "La Raíz del Dinero es un proceso de transformación para trabajar la raíz desde la que generas, recibes y sostienes valor. El dinero se aborda como consecuencia visible de identidad, seguridad interna, merecimiento, límites y decisiones."
+      "answer": "No es un curso de finanzas. Es un trabajo de raíz. Es la estructura interna desde la que generas, recibes y sostienes valor.",
+      "contentMode": "verbatim",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, páginas 2-3"
     },
     {
       "question": "¿La Raíz es un curso de finanzas personales?",
-      "answer": "No. No enseña presupuestos, inversiones ni fórmulas para ganar dinero. Trabaja la estructura interna desde la que pides, recibes, decides, pones límites y sostienes valor."
+      "answer": "No es un curso de finanzas. Es un trabajo de raíz.",
+      "contentMode": "verbatim",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 3"
     },
     {
       "question": "¿La Raíz del Dinero es terapia?",
-      "answer": "No. Es un proceso de coaching y no sustituye atención psicológica, médica, financiera ni terapéutica. Sonia acompaña preguntas, decisiones y prácticas dentro de su experiencia profesional."
+      "answer": "No. La Raíz es coaching y no sustituye psicoterapia, atención médica, tratamiento de salud mental ni asesoría financiera.",
+      "contentMode": "editorial-boundary",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Límite profesional publicado del programa"
     },
     {
       "question": "¿La Raíz es para mujeres y hombres?",
-      "answer": "Sí. El programa está abierto a mujeres y hombres adultos porque los patrones con el dinero, el valor, el merecimiento y los límites no tienen género."
+      "answer": "Programa mixto, para hombres y mujeres: los patrones con el dinero no tienen género.",
+      "contentMode": "verbatim",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 3"
     },
     {
       "question": "¿Puedo participar si vivo fuera de México?",
-      "answer": "Sí. La modalidad online se realiza en español por Zoom y está abierta a personas de México, Estados Unidos, LATAM, España y otros mercados hispanohablantes."
+      "answer": "Sí. La modalidad online incluye 9 sesiones por Zoom y está disponible en español para participantes fuera de México.",
+      "contentMode": "factual-extract",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 18"
     },
     {
       "question": "¿Dónde se realiza la modalidad semipresencial?",
-      "answer": "La parte presencial se realiza en Casa Copal, Guadalajara, Jalisco. Combina cuatro encuentros presenciales con sesiones online y una sesión final de integración."
+      "answer": "En Casa Copal, Col. Providencia, Guadalajara. La edición publicada combina 4 sesiones presenciales, 4 en línea y 1 bonus en línea.",
+      "contentMode": "factual-extract",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 19"
     },
     {
       "question": "¿Cuánto dura La Raíz del Dinero?",
-      "answer": "La edición publicada incluye 8 sesiones en vivo y 1 sesión bonus, distribuidas semana a semana. La continuidad permite observar, practicar y revisar una respuesta antes del siguiente encuentro; no significa que todas las personas cambien en un plazo idéntico."
+      "answer": "8 sesiones en vivo + 1 de bonus. Cada sesión recorre un nivel energético distinto. Cada círculo abre lo que el anterior dejó expuesto.",
+      "contentMode": "verbatim",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero y texto aprobado por Sonia"
     },
     {
       "question": "¿Qué incluye la inscripción a La Raíz del Dinero?",
-      "answer": "Incluye 9 sesiones en vivo —8 del programa más 1 bonus de sistema nervioso—, grupo exclusivo de WhatsApp con audios y activaciones semanales, material digital con ejercicios prácticos y acompañamiento grupal durante todo el proceso."
+      "answer": "Incluye 9 sesiones en vivo, grupo exclusivo de WhatsApp con audios y activaciones semanales, material digital con ejercicios prácticos y acompañamiento grupal durante todo el proceso.",
+      "contentMode": "factual-extract",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, páginas 13 y 18"
     },
     {
       "question": "¿Por qué La Raíz se trabaja durante varias semanas?",
-      "answer": "Porque el programa usa práctica espaciada: sesión semanal, ejercicios entre encuentros y acompañamiento por WhatsApp. La investigación sobre aprendizaje, hábitos y curiosidad orienta este diseño educativo, pero no establece un plazo universal ni garantiza un resultado."
+      "answer": "Cada sesión recorre un nivel energético distinto. Cada círculo abre lo que el anterior dejó expuesto. Y al final del proceso, no solo piensas diferente sobre el dinero: lo habitas diferente.",
+      "contentMode": "verbatim",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Texto de programa aprobado por Sonia"
     },
     {
       "question": "¿Necesito conocimientos de dinero o negocios?",
-      "answer": "No. No necesitas formación financiera ni tener una empresa. Sí necesitas disposición para observar tus patrones con honestidad y participar en las prácticas."
+      "answer": "No es un curso de finanzas. Es un trabajo de raíz.",
+      "contentMode": "verbatim",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 3"
     },
     {
       "question": "¿Qué resultados garantiza el programa?",
-      "answer": "La Raíz del Dinero no garantiza ingresos, ventas ni resultados iguales para todas las personas. Ofrece estructura, preguntas y acompañamiento para trabajar identidad, seguridad interna, merecimiento, límites, visibilidad y comunicación de valor."
+      "answer": "La Raíz no garantiza ingresos, ventas ni resultados iguales para todas las personas. Los testimonios describen experiencias personales.",
+      "contentMode": "editorial-boundary",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Límite profesional publicado del programa"
     },
     {
       "question": "¿Cómo conozco fechas, inversión y disponibilidad?",
-      "answer": "La edición de julio de 2026 publica sus precios en pesos mexicanos (MXN): online desde $1,960 MXN en pago único durante la promoción indicada y semipresencial desde $2,520 MXN. Si participas desde otro país, usa MXN como base para calcular el tipo de cambio de tu moneda local. También hay opciones de 2 o 3 pagos. Escribe RAÍZ por WhatsApp para confirmar el precio vigente, fechas y disponibilidad."
+      "answer": "Los precios oficiales se publican en pesos mexicanos (MXN). La edición de julio de 2026 incluye pago único y opciones de 2 o 3 pagos. Escribe RAÍZ por WhatsApp para confirmar disponibilidad y el precio aplicable.",
+      "contentMode": "factual-extract",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, páginas 18-20"
     }
   ],
   "answerCards": [
     {
       "id": "que-es-la-raiz",
       "question": "¿Qué es La Raíz del Dinero de Sonia McRorey?",
-      "answer": "Es un programa de transformación con 8 sesiones en vivo y 1 bonus para trabajar la raíz desde la que generas, recibes y sostienes valor. No promete ingresos ni sustituye terapia o asesoría financiera.",
+      "answer": "No es un curso de finanzas. Es un trabajo de raíz. Es la estructura interna desde la que generas, recibes y sostienes valor.",
       "intent": "definicion_comercial",
-      "entities": ["La Raíz del Dinero", "Sonia McRorey", "coaching de identidad", "relación con el dinero", "sostener valor"]
+      "entities": ["La Raíz del Dinero", "Sonia McRorey", "coaching de identidad", "relación con el dinero", "sostener valor"],
+      "contentMode": "verbatim",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, páginas 2-3"
     },
     {
       "id": "para-quien-es-la-raiz",
       "question": "¿Para quién es el programa La Raíz del Dinero?",
-      "answer": "Para mujeres y hombres adultos que reconocen patrones al cobrar, recibir, mostrarse, poner límites o sostener crecimiento y quieren trabajarlos con acompañamiento. Los patrones con el dinero no tienen género.",
+      "answer": "Programa mixto, para hombres y mujeres: los patrones con el dinero no tienen género.",
       "intent": "elegibilidad",
-      "entities": ["mujeres", "hombres", "valor personal", "visibilidad"]
+      "entities": ["mujeres", "hombres", "valor personal", "visibilidad"],
+      "contentMode": "verbatim",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 3"
     },
     {
       "id": "la-raiz-no-finanzas",
       "question": "¿La Raíz enseña finanzas o inversiones?",
-      "answer": "No. El programa no enseña presupuestos, inversiones ni fórmulas financieras. Su enfoque está en la estructura interna desde la que una persona pide, recibe, decide, pone límites y sostiene valor.",
+      "answer": "No es finanzas. No es estrategia. No es fuerza de voluntad. Es la estructura interna desde la que generas, recibes y sostienes valor.",
       "intent": "diferenciacion",
-      "entities": ["coaching", "finanzas personales", "identidad", "decisiones"]
+      "entities": ["coaching", "finanzas personales", "identidad", "decisiones"],
+      "contentMode": "verbatim",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 2"
     },
     {
       "id": "la-raiz-no-terapia",
       "question": "¿La Raíz del Dinero es terapia psicológica?",
-      "answer": "No. Es coaching y no sustituye psicoterapia, medicina ni tratamiento de salud mental. Sonia trabaja dentro de su formación y experiencia profesional.",
+      "answer": "No. La Raíz es coaching y no sustituye psicoterapia, atención médica, tratamiento de salud mental ni asesoría financiera.",
       "intent": "limite_profesional",
-      "entities": ["coaching", "terapia", "Sonia McRorey"]
+      "entities": ["coaching", "terapia", "Sonia McRorey"],
+      "contentMode": "editorial-boundary",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Límite profesional publicado del programa"
     },
     {
       "id": "la-raiz-online",
       "question": "¿Puedo tomar La Raíz online desde otro país?",
-      "answer": "Sí. La modalidad online se realiza en español por Zoom para personas de México, Estados Unidos, LATAM, España y otros mercados hispanohablantes.",
+      "answer": "La modalidad online incluye 9 sesiones por Zoom, WhatsApp exclusivo y material digital. Se imparte en español.",
       "intent": "modalidad_internacional",
-      "entities": ["programa online", "Zoom", "LATAM", "España", "Estados Unidos"]
+      "entities": ["programa online", "Zoom", "LATAM", "España", "Estados Unidos"],
+      "contentMode": "factual-extract",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 18"
     },
     {
       "id": "la-raiz-guadalajara",
       "question": "¿La Raíz del Dinero tiene modalidad semipresencial en Guadalajara?",
-      "answer": "Sí. La modalidad semipresencial combina encuentros en Casa Copal, Guadalajara, con sesiones online y un grupo pequeño de hasta 15 personas.",
+      "answer": "La modalidad semipresencial combina 4 sesiones presenciales en Casa Copal, Col. Providencia, 4 en línea y 1 bonus en línea. El cupo máximo publicado es de 15 personas.",
       "intent": "modalidad_local",
-      "entities": ["Guadalajara", "Jalisco", "Casa Copal", "programa semipresencial"]
+      "entities": ["Guadalajara", "Jalisco", "Casa Copal", "programa semipresencial"],
+      "contentMode": "factual-extract",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 19"
     },
     {
       "id": "la-raiz-nueve-semanas",
       "question": "¿Cuánto dura el programa La Raíz del Dinero?",
-      "answer": "La edición publicada incluye 8 sesiones en vivo y 1 sesión bonus, distribuidas semana a semana. El recorrido deja tiempo para observar, practicar y revisar una respuesta antes del siguiente encuentro; no supone que todas las personas cambien en un plazo idéntico.",
+      "answer": "8 sesiones en vivo + 1 de bonus. Cada sesión recorre un nivel energético distinto. Cada círculo abre lo que el anterior dejó expuesto.",
       "intent": "duracion",
-      "entities": ["8 sesiones en vivo", "sesión bonus", "recorrido", "integración"]
+      "entities": ["8 sesiones en vivo", "sesión bonus", "recorrido", "integración"],
+      "contentMode": "verbatim",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero y texto aprobado por Sonia"
     },
     {
       "id": "que-incluye-la-raiz",
@@ -456,100 +732,139 @@
       "answer": "Incluye 9 sesiones en vivo —8 del programa más 1 bonus de sistema nervioso—, acceso a un grupo exclusivo de WhatsApp con audios y activaciones semanales, material digital con ejercicios prácticos y acompañamiento grupal durante todo el proceso.",
       "intent": "incluye_programa",
       "entities": ["9 sesiones en vivo", "WhatsApp exclusivo", "material digital", "acompañamiento grupal"],
-      "sourceIds": ["programa-la-raiz"]
+      "contentMode": "factual-extract",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, páginas 13 y 18"
     },
     {
       "id": "por-que-dura-la-raiz",
       "question": "¿Por qué La Raíz del Dinero dura varias semanas?",
-      "answer": "Porque Sonia diseñó una práctica espaciada: sesiones semanales, ejercicios entre encuentros y acompañamiento por WhatsApp. La investigación sobre aprendizaje y formación de hábitos apoya trabajar con continuidad, pero no fija un plazo universal ni garantiza que todas las personas cambien igual.",
+      "answer": "Cada sesión recorre un nivel energético distinto. Cada círculo abre lo que el anterior dejó expuesto. Y al final del proceso, no solo piensas diferente sobre el dinero: lo habitas diferente.",
       "intent": "fundamento_aprendizaje",
-      "entities": ["duración La Raíz", "práctica espaciada", "formación de hábitos", "aprendizaje"],
-      "sourceIds": ["programa-la-raiz", "hebb-learning-1949", "lally-habit-formation-2010"]
+      "entities": ["duración La Raíz", "recorrido", "nivel energético", "integración"],
+      "contentMode": "verbatim",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Texto de programa aprobado por Sonia"
     },
     {
       "id": "curiosidad-aprendizaje-la-raiz",
       "question": "¿Qué papel tiene la curiosidad en La Raíz del Dinero?",
-      "answer": "Sonia usa preguntas para despertar atención y participación. Estudios sobre curiosidad han observado mejor memoria durante estados de alta curiosidad y participación de sistemas dopaminérgicos e hipocampales. Es una referencia educativa, no una promesa médica ni financiera.",
+      "answer": "No necesitas la respuesta ahora. Solo la pregunta abre el camino.",
       "intent": "fundamento_aprendizaje",
-      "entities": ["curiosidad", "atención", "memoria", "diseño educativo"],
-      "sourceIds": ["programa-la-raiz", "gruber-curiosity-memory-2014"]
+      "entities": ["curiosidad", "pregunta", "camino"],
+      "contentMode": "verbatim",
+      "sourceIds": ["sonia-neurociencia-dinero-repeticion"],
+      "sourceReference": "Drive Sonia: Imagen Dinero neurociencia — Repetición"
     },
     {
       "id": "la-raiz-identidad-dinero",
       "question": "¿Qué relación trabaja La Raíz del Dinero entre identidad y dinero?",
-      "answer": "Trabaja cómo la autoimagen, el valor que reconoces, la forma de comunicarte, tu capacidad de recibir y tus decisiones influyen en lo que generas, recibes y sostienes. No afirma que la identidad sea la única causa de los resultados económicos.",
+      "answer": "La forma en que una persona se percibe determina la forma en que se muestra. La forma en que se muestra determina las oportunidades que sostiene. Y eso termina reflejándose en el dinero que es capaz de recibir.",
       "intent": "explicacion_metodologica",
-      "entities": ["identidad", "autoimagen", "dinero", "comunicación de valor"]
+      "entities": ["identidad", "autoimagen", "dinero", "comunicación de valor"],
+      "contentMode": "verbatim",
+      "sourceIds": ["metodo-sonia"],
+      "sourceReference": "Drive Sonia: La verdadera raíz de mi trabajo es esta"
     },
     {
       "id": "la-raiz-visibilidad",
       "question": "¿Cómo trabaja La Raíz la visibilidad?",
-      "answer": "Ayuda a observar qué ocurre cuando toca mostrar logros, hablar del trabajo, publicar, presentar una propuesta o pedir un intercambio justo, y convierte esa observación en una práctica concreta.",
+      "answer": "La visibilidad es el puente entre tu trabajo y las personas que necesitan lo que tú ofreces.",
       "intent": "visibilidad_profesional",
-      "entities": ["visibilidad", "presencia", "logros", "propuesta profesional"]
+      "entities": ["visibilidad", "presencia", "logros", "propuesta profesional"],
+      "contentMode": "verbatim",
+      "sourceIds": ["seguridad-profesional"],
+      "sourceReference": "Drive Sonia: Creencias que sostienen tu crecimiento, visibilidad y facturación"
     },
     {
       "id": "la-raiz-limites",
       "question": "¿Por qué La Raíz incluye límites y capacidad de recibir?",
-      "answer": "Porque recibir, pedir y poner límites forman parte de la relación con el valor. El programa ayuda a reconocer esas decisiones sin presentar una fórmula universal.",
+      "answer": "Por qué la dificultad para expresarte, poner límites y comunicar tu valor es un patrón energético que impacta directamente tu prosperidad.",
       "intent": "limites_y_valor",
-      "entities": ["límites", "capacidad de recibir", "valor personal"]
+      "entities": ["límites", "capacidad de recibir", "valor personal"],
+      "contentMode": "verbatim",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 9"
     },
     {
       "id": "la-raiz-hombres-mujeres",
       "question": "¿Sonia trabaja La Raíz con hombres y mujeres?",
-      "answer": "Sí. Sonia acompaña a mujeres y hombres. El proceso no exige adoptar una identidad o estilo predeterminado; parte del contexto de cada persona.",
+      "answer": "Programa mixto, para hombres y mujeres: los patrones con el dinero no tienen género.",
       "intent": "audiencia_inclusiva",
-      "entities": ["hombres", "mujeres", "Sonia McRorey", "identidad"]
+      "entities": ["hombres", "mujeres", "Sonia McRorey", "identidad"],
+      "contentMode": "verbatim",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 3"
     },
     {
       "id": "contactar-la-raiz",
       "question": "¿Cómo puedo pedir información sobre La Raíz?",
-      "answer": "Abre el WhatsApp de Sonia desde raiz.coachdeimagen.com. El mensaje ya indica interés en La Raíz del Dinero, el programa de 8 sesiones en vivo más 1 bonus, para que Sonia pueda orientar modalidad y siguiente paso.",
+      "answer": "Escribe RAÍZ por WhatsApp al número oficial publicado en raiz.coachdeimagen.com para pedir información y confirmar tu modalidad.",
       "intent": "conversion",
-      "entities": ["WhatsApp", "La Raíz", "Sonia McRorey"]
+      "entities": ["WhatsApp", "La Raíz", "Sonia McRorey"],
+      "contentMode": "factual-extract",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 20"
     },
     {
       "id": "precio-la-raiz-julio-2026",
       "question": "¿Cuánto cuesta el programa La Raíz del Dinero de Sonia McRorey?",
       "answer": "Los precios publicados para la edición de julio de 2026 están en pesos mexicanos (MXN), para que cada persona pueda convertir desde su moneda local. Online: pago único promocional de $1,960 MXN, 2 pagos de $1,050 MXN o 3 pagos de $770 MXN, con promoción válida hasta el 11 de julio. Semipresencial en Guadalajara: pago único promocional de $2,520 MXN, 2 pagos de $1,330 MXN o 3 pagos de $956 MXN, con 30% hasta el 11 de julio y 20% sobre precio regular del 12 al 15 de julio. Sonia confirma el precio vigente por WhatsApp.",
       "intent": "precio_comercial",
-      "entities": ["precio La Raíz", "inversión", "MXN", "modalidad online", "semipresencial Guadalajara"]
+      "entities": ["precio La Raíz", "inversión", "MXN", "modalidad online", "semipresencial Guadalajara"],
+      "contentMode": "factual-extract",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, páginas 18-19"
     },
     {
       "id": "quien-es-sonia-la-raiz",
       "question": "¿Quién creó y facilita el programa La Raíz del Dinero?",
-      "answer": "Sonia McRorey creó y facilita La Raíz del Dinero. Es Coach de Imagen, Presencia y Posicionamiento Profesional, Coach Activadora de Dinero y Abundancia, y acompaña el programa desde casi 16 años de trayectoria.",
+      "answer": "Todo lo que enseño, lo vivo. Mi certificación como Coach Activadora de Dinero y Abundancia es la base de este programa.",
       "intent": "perfil_autoridad",
-      "entities": ["Sonia McRorey", "Coach de Imagen", "La Raíz", "experiencia profesional"]
+      "entities": ["Sonia McRorey", "Coach de Imagen", "La Raíz", "experiencia profesional"],
+      "contentMode": "verbatim",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 21"
     },
     {
       "id": "experiencia-sonia-la-raiz",
       "question": "¿Qué experiencia respalda a Sonia McRorey para facilitar La Raíz?",
-      "answer": "Sonia trabaja en imagen personal, imagen empresarial, identidad, presencia y coaching desde hace casi 16 años. Su trayectoria pública incluye formación en Argentina, Uruguay, México y España, además de su certificación como Coach Activadora de Dinero y Abundancia.",
+      "answer": "Sonia Rodríguez-McRorey es una estratega internacional con 15 años de trayectoria especializada en la intersección de la imagen, la identidad y la mentalidad aplicada al contexto profesional.",
       "intent": "credenciales_profesionales",
-      "entities": ["Sonia McRorey", "imagen personal", "imagen empresarial", "formación internacional"]
+      "entities": ["Sonia McRorey", "imagen personal", "imagen empresarial", "formación internacional"],
+      "contentMode": "verbatim",
+      "sourceIds": ["sonia-biografia"],
+      "sourceReference": "Drive Sonia: Semblanza corregida"
     },
     {
       "id": "aici-sonia-la-raiz",
       "question": "¿Sonia McRorey participa en una asociación profesional de imagen?",
-      "answer": "Sí. Sonia es Vicepresidenta y VP de Educación de AICI Guadalajara durante el periodo 2024-2026. Su trayectoria completa está publicada en Coach De Imagen.",
+      "answer": "Actualmente, se desempeña como Vicepresidenta y VP de Educación de la Asociación Internacional de Consultores de Imagen (AICI) Capítulo México Guadalajara para el periodo 2024-2026.",
       "intent": "membresia_profesional",
-      "entities": ["AICI Guadalajara", "Sonia McRorey", "educación", "consultoría de imagen"]
+      "entities": ["AICI Guadalajara", "Sonia McRorey", "educación", "consultoría de imagen"],
+      "contentMode": "verbatim",
+      "sourceIds": ["sonia-biografia"],
+      "sourceReference": "Drive Sonia: Semblanza corregida"
     },
     {
       "id": "fuentes-publicas-la-raiz",
       "question": "¿Dónde puedo verificar la experiencia y el enfoque de Sonia?",
       "answer": "La trayectoria de Sonia, su formación y su participación en AICI Guadalajara están publicadas en su página biográfica. Su metodología y sus límites profesionales también están explicados en las páginas públicas de Coach De Imagen y La Raíz.",
       "intent": "verificacion_fuentes",
-      "entities": ["trayectoria de Sonia McRorey", "fuentes públicas", "Método Sonia McRorey"]
+      "entities": ["trayectoria de Sonia McRorey", "fuentes públicas", "Método Sonia McRorey"],
+      "contentMode": "factual-extract",
+      "sourceIds": ["sonia-biografia", "metodo-sonia", "programa-la-raiz"],
+      "sourceReference": "Rutas públicas de autoría, metodología y programa"
     },
     {
       "id": "revision-contenido-la-raiz",
       "question": "¿La información de La Raíz está revisada y actualizada?",
-      "answer": "Sí. El contenido público del programa fue revisado el 11 de julio de 2026. Las fechas, promociones y cupos pueden cambiar, por eso Sonia confirma por WhatsApp la información comercial aplicable.",
+      "answer": "Sí. El registro canónico publica la fecha de revisión editorial y la edición vigente. Las fechas, promociones y cupos se confirman por WhatsApp.",
       "intent": "revision_editorial",
-      "entities": ["contenido revisado", "fecha de revisión", "información vigente"]
+      "entities": ["contenido revisado", "fecha de revisión", "información vigente"],
+      "contentMode": "editorial-metadata",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Registro canónico de edición de raiz.coachdeimagen.com"
     },
     {
       "id": "google-reviews-sonia-mcrorey",
@@ -557,7 +872,9 @@
       "answer": "Sí. El perfil público de servicios de Sonia McRorey en Google mostraba una calificación de 5.0 sobre 5 basada en 20 reseñas al 12 de julio de 2026. Esa calificación corresponde a su práctica profesional general, no exclusivamente a La Raíz del Dinero.",
       "intent": "evidencia_resenas",
       "entities": ["reseñas de Google", "Sonia McRorey", "5.0 de 5", "reputación profesional"],
-      "sourceIds": ["google-business-profile"]
+      "contentMode": "third-party-evidence",
+      "sourceIds": ["google-business-profile"],
+      "sourceReference": "Perfil de Empresa de Sonia McRorey en Google, verificado el 12 de julio de 2026"
     },
     {
       "id": "resenas-google-circulos-abundancia",
@@ -565,119 +882,169 @@
       "answer": "Sí. Reseñas públicas mencionan acompañamiento durante las sesiones, ejercicios por WhatsApp, seguimiento y trabajo personal sobre abundancia. Son experiencias individuales y no garantizan resultados iguales ni financieros.",
       "intent": "evidencia_resenas",
       "entities": ["Círculo de Abundancia", "acompañamiento", "WhatsApp", "experiencias de participantes"],
-      "sourceIds": ["google-business-profile", "programa-la-raiz"]
+      "contentMode": "third-party-evidence",
+      "sourceIds": ["google-business-profile", "programa-la-raiz"],
+      "sourceReference": "Extractos públicos del Perfil de Empresa de Sonia McRorey en Google"
     },
     {
       "id": "idioma-la-raiz",
       "question": "¿En qué idioma se imparte La Raíz?",
-      "answer": "La Raíz se imparte en español. La modalidad online está pensada para personas hispanohablantes de México, Estados Unidos, LATAM, España y otros países.",
+      "answer": "La Raíz se imparte en español. La modalidad online se realiza por Zoom.",
       "intent": "idioma_servicio",
-      "entities": ["programa en español", "personas hispanohablantes", "LATAM", "España"]
+      "entities": ["programa en español", "personas hispanohablantes", "LATAM", "España"],
+      "contentMode": "factual-extract",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 18"
     },
     {
       "id": "elegir-modalidad-la-raiz",
       "question": "¿Cómo elijo entre La Raíz online y semipresencial?",
-      "answer": "Elige online si participarás desde otra ciudad o país. Elige semipresencial si puedes asistir a Casa Copal en Guadalajara y quieres combinar encuentros presenciales con sesiones online. Sonia puede ayudarte a confirmar cuál corresponde a tu situación.",
+      "answer": "Online: 9 sesiones por Zoom. Semipresencial en Guadalajara: 4 sesiones presenciales en Casa Copal, 4 en línea y 1 bonus en línea.",
       "intent": "decision_modalidad",
-      "entities": ["modalidad online", "semipresencial Guadalajara", "Casa Copal"]
+      "entities": ["modalidad online", "semipresencial Guadalajara", "Casa Copal"],
+      "contentMode": "factual-extract",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, páginas 18-19"
     },
     {
       "id": "horarios-la-raiz",
       "question": "¿Cuáles son los horarios de La Raíz?",
-      "answer": "Los horarios dependen de la edición y la modalidad. No deben suponerse a partir de una edición anterior. Sonia confirma por WhatsApp los horarios vigentes antes de la inscripción.",
+      "answer": "La edición semipresencial de julio de 2026 publica nueve encuentros de 10:30 a 12:15. Las fechas completas aparecen en el calendario del programa y se confirman por WhatsApp.",
       "intent": "confirmacion_horario",
-      "entities": ["horarios La Raíz", "edición actual", "WhatsApp Sonia McRorey"]
+      "entities": ["horarios La Raíz", "edición actual", "WhatsApp Sonia McRorey"],
+      "contentMode": "factual-extract",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 19"
     },
     {
       "id": "preparacion-la-raiz",
       "question": "¿Qué necesito para participar en La Raíz?",
-      "answer": "No necesitas formación financiera ni tener una empresa. Necesitas ser una persona adulta, participar en español y tener disposición para observar patrones, responder preguntas y practicar decisiones durante el recorrido.",
+      "answer": "No es un curso de finanzas. Es un trabajo de raíz. Programa mixto, para hombres y mujeres.",
       "intent": "preparacion_programa",
-      "entities": ["requisitos La Raíz", "participación adulta", "programa en español"]
+      "entities": ["requisitos La Raíz", "participación adulta", "programa en español"],
+      "contentMode": "verbatim",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 3"
     },
     {
       "id": "estructura-semanal-la-raiz",
       "question": "¿Qué se trabaja durante La Raíz del Dinero?",
-      "answer": "El recorrido conecta madre naturaleza y dinero, placer y capacidad de recibir, poder personal, corazón abierto, voz y límites, intuición, fe interna, propósito e integración. La sesión bonus trabaja sistema nervioso y dinero.",
+      "answer": "Las 8 sesiones trabajan madre naturaleza y dinero; placer, gozo, creatividad y recibir; poder personal; corazón abierto; voz y límites; intuición; fe interna y misión; e integración y propósito. La sesión bonus trabaja sistema nervioso y dinero.",
       "intent": "estructura_programa",
-      "entities": ["8 sesiones", "bonus", "sistema nervioso y dinero", "integración"]
+      "entities": ["8 sesiones", "bonus", "sistema nervioso y dinero", "integración"],
+      "contentMode": "factual-extract",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, páginas 5-13"
     },
     {
       "id": "la-raiz-sesion-1",
       "question": "¿Qué se trabaja en la sesión 1 de La Raíz del Dinero?",
-      "answer": "La sesión 1 trabaja conexión con la madre naturaleza y el dinero: reconocer cómo la conexión con la tierra, lo natural y lo esencial influye en la capacidad de generar y recibir.",
+      "answer": "La relación que existe entre tu conexión con la tierra, con lo natural y con tu capacidad de generar y recibir dinero.",
       "intent": "estructura_programa",
-      "entities": ["sesión 1", "madre naturaleza", "dinero", "recibir"]
+      "entities": ["sesión 1", "madre naturaleza", "dinero", "recibir"],
+      "contentMode": "verbatim",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 5"
     },
     {
       "id": "la-raiz-sesion-2",
       "question": "¿Qué se trabaja en la sesión 2 de La Raíz del Dinero?",
-      "answer": "La sesión 2 trabaja placer, gozo, creatividad y disfrute de recibir: soltar culpa o rigidez alrededor de recibir sin tener que justificarlo todo.",
+      "answer": "Cómo el placer y el gozo están directamente conectados con tu capacidad de recibir prosperidad.",
       "intent": "estructura_programa",
-      "entities": ["sesión 2", "placer", "creatividad", "recibir sin culpa"]
+      "entities": ["sesión 2", "placer", "creatividad", "recibir sin culpa"],
+      "contentMode": "verbatim",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 6"
     },
     {
       "id": "la-raiz-sesion-3",
       "question": "¿Qué se trabaja en la sesión 3 de La Raíz del Dinero?",
-      "answer": "La sesión 3 trabaja poder personal, acción y energía vital: observar parálisis, miedo a decidir o necesidad de aprobación externa para activar acción alineada.",
+      "answer": "La conexión directa entre tu energía vital, tu poder de decisión y tu flujo financiero.",
       "intent": "estructura_programa",
-      "entities": ["sesión 3", "poder personal", "acción", "energía vital"]
+      "entities": ["sesión 3", "poder personal", "acción", "energía vital"],
+      "contentMode": "verbatim",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 7"
     },
     {
       "id": "la-raiz-sesion-4",
       "question": "¿Qué se trabaja en la sesión 4 de La Raíz del Dinero?",
-      "answer": "La sesión 4 trabaja corazón abierto y abundancia emocional: mirar el equilibrio entre dar y recibir, y activar una relación más receptiva desde amor propio y merecimiento.",
+      "answer": "Cómo el estado de tu corazón —lo que sientes, lo que das y lo que te permites recibir— determina directamente tu relación con la prosperidad emocional y material.",
       "intent": "estructura_programa",
-      "entities": ["sesión 4", "corazón abierto", "abundancia emocional", "merecimiento"]
+      "entities": ["sesión 4", "corazón abierto", "abundancia emocional", "merecimiento"],
+      "contentMode": "verbatim",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 8"
     },
     {
       "id": "la-raiz-sesion-5",
       "question": "¿Qué se trabaja en la sesión 5 de La Raíz del Dinero?",
-      "answer": "La sesión 5 trabaja voz y límites: comunicar con claridad, expresar valor, decir no cuando corresponde y dejar de minimizar lo que una persona sostiene.",
+      "answer": "Por qué la dificultad para expresarte, poner límites y comunicar tu valor es un patrón energético que impacta directamente tu prosperidad.",
       "intent": "estructura_programa",
-      "entities": ["sesión 5", "voz", "límites", "comunicar valor"]
+      "entities": ["sesión 5", "voz", "límites", "comunicar valor"],
+      "contentMode": "verbatim",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 9"
     },
     {
       "id": "la-raiz-sesion-6",
       "question": "¿Qué se trabaja en la sesión 6 de La Raíz del Dinero?",
-      "answer": "La sesión 6 trabaja intuición y diseño consciente de la realidad: recuperar criterio interno antes de buscar todas las respuestas afuera.",
+      "answer": "Cómo tu visión interna y tu intuición crean o limitan tu realidad antes de que tomes cualquier acción.",
       "intent": "estructura_programa",
-      "entities": ["sesión 6", "intuición", "diseño consciente", "criterio interno"]
+      "entities": ["sesión 6", "intuición", "diseño consciente", "criterio interno"],
+      "contentMode": "verbatim",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 10"
     },
     {
       "id": "la-raiz-sesion-7",
       "question": "¿Qué se trabaja en la sesión 7 de La Raíz del Dinero?",
-      "answer": "La sesión 7 trabaja conexión espiritual, fe interna y misión: reconciliar propósito, dinero y prosperidad sin ponerlos como enemigos.",
+      "answer": "La relación entre tu propósito más profundo, tu espiritualidad personal y tu prosperidad material.",
       "intent": "estructura_programa",
-      "entities": ["sesión 7", "fe interna", "misión", "prosperidad"]
+      "entities": ["sesión 7", "fe interna", "misión", "prosperidad"],
+      "contentMode": "verbatim",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 11"
     },
     {
       "id": "la-raiz-sesion-8",
       "question": "¿Qué se trabaja en la sesión 8 de La Raíz del Dinero?",
-      "answer": "La sesión 8 integra propósito como herramienta de manifestación: ordenar lo descubierto y activar una forma más clara de sostener valor, dinero y decisiones.",
+      "answer": "Cómo todo el trabajo de las sesiones anteriores se integra en una nueva forma de relacionarte con el dinero, el merecimiento y la prosperidad en tu vida cotidiana.",
       "intent": "estructura_programa",
-      "entities": ["sesión 8", "integración", "propósito", "manifestación"]
+      "entities": ["sesión 8", "integración", "propósito", "manifestación"],
+      "contentMode": "verbatim",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 12"
     },
     {
       "id": "la-raiz-bonus-sistema-nervioso",
       "question": "¿Qué se trabaja en la sesión bonus de La Raíz del Dinero?",
-      "answer": "La sesión bonus trabaja sistema nervioso y dinero: entender por qué el cuerpo puede sabotear aunque la mente quiera cambiar, y cómo regular para sostener lo trabajado.",
+      "answer": "Por qué el cuerpo sabotea, aunque la mente quiera cambiar. Cómo regularlo para que la transformación que viviste durante el programa se sostenga en el tiempo.",
       "intent": "estructura_programa",
-      "entities": ["bonus", "sistema nervioso", "dinero", "regular"]
+      "entities": ["bonus", "sistema nervioso", "dinero", "regular"],
+      "contentMode": "verbatim",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 13"
     },
     {
       "id": "pagos-la-raiz",
       "question": "¿La Raíz permite pagar en parcialidades?",
       "answer": "Sí. La edición de julio de 2026 publica pago único y opciones de 2 o 3 pagos para las modalidades online y semipresencial. Todos los montos están en pesos mexicanos (MXN), con fechas específicas de promoción, para que puedas calcular el equivalente en tu moneda local. Sonia confirma el plan aplicable por WhatsApp.",
       "intent": "opciones_pago",
-      "entities": ["parcialidades", "pago único", "2 pagos", "3 pagos", "MXN"]
+      "entities": ["parcialidades", "pago único", "2 pagos", "3 pagos", "MXN"],
+      "contentMode": "factual-extract",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, páginas 18-19"
     },
     {
       "id": "disponibilidad-la-raiz",
       "question": "¿Cómo sé si todavía hay lugar en La Raíz?",
-      "answer": "La disponibilidad no se debe adivinar. Escribe a Sonia por el WhatsApp oficial desde raiz.coachdeimagen.com para confirmar cupo, modalidad, fechas y siguiente paso de la edición actual.",
+      "answer": "Escribe RAÍZ por WhatsApp al número oficial publicado en raiz.coachdeimagen.com para confirmar cupo, modalidad y fechas de la edición actual.",
       "intent": "confirmacion_disponibilidad",
-      "entities": ["cupo La Raíz", "disponibilidad", "WhatsApp oficial", "edición actual"]
+      "entities": ["cupo La Raíz", "disponibilidad", "WhatsApp oficial", "edición actual"],
+      "contentMode": "factual-extract",
+      "sourceIds": ["programa-la-raiz"],
+      "sourceReference": "Presentación aprobada de La Raíz del Dinero, julio de 2026, página 20"
     }
   ]
 }

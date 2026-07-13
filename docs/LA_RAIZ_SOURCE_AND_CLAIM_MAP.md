@@ -29,7 +29,7 @@ This file governs the public program page at `https://raiz.coachdeimagen.com/`. 
 - Editorial review date for this edition: July 12, 2026.
 - Approved public testimonials: Ángel, Ana Marce, Mariana, Ángeles, Linda and Loreto, using the complete wording selected by Sonia on pages 16-17 of the July 2026 program presentation.
 - Approved inclusion set: 9 live sessions; exclusive WhatsApp group with weekly audios and activations; digital material with practical exercises; group accompaniment throughout; and a process addressing the relationship with money, body and energy.
-- Program-design rationale: weekly sessions, between-session exercises and WhatsApp accompaniment create spaced practice rather than a one-time information session.
+- Sonia's approved explanation of the program sequence: “Cada sesión recorre un nivel energético distinto. Cada círculo abre lo que el anterior dejó expuesto. Y al final del proceso, no solo piensas diferente sobre el dinero: lo habitas diferente.”
 - Google Business Profile proof verified July 12, 2026: 5.0 out of 5 from 20 public reviews for Sonia McRorey's overall professional practice.
 - Program-relevant Google excerpts are limited to short passages about accompaniment, WhatsApp exercises, follow-up and abundance-related reflection. They do not establish a separate La Raíz rating.
 
@@ -42,9 +42,21 @@ This file governs the public program page at `https://raiz.coachdeimagen.com/`. 
 5. Sonia's public biography and methodology routes are the verification layer for visible E-E-A-T claims. Raw private source filenames are never exposed as public proof.
 6. Sonia's approved July 2026 program presentation governs the public testimonial set. Every selected testimonial must be retained in full, attributed as published and labeled as a participant's personal experience.
 7. The earlier approved La Raíz program deck governs the complete `¿Qué incluye?` list. Current dates, delivery structure and prices still come from the July 2026 commercial record.
-8. The July 2026 deck governs Sonia's explanation of why the program is distributed over several weeks. Public wording must preserve the educational idea while qualifying scientific claims against the cited research.
-9. Public research references may support the learning-design rationale only: Hebb (1949) for associative learning, Lally et al. (2010) for wide variation in real-world habit formation, and Gruber et al. (2014) for curiosity-related memory findings.
+8. The July 2026 deck governs Sonia's explanation of why the program is distributed over several weeks. The explanation must be published verbatim or omitted. Agents and editors may not paraphrase, extend or invent a bridge rationale.
+9. Sonia's approved Drive source on repetition, practice and curiosity may supply additional teaching language only as exact, source-identified excerpts. External research is not part of the current public La Raíz corpus and may not be converted into Sonia's voice or used to manufacture program claims.
 10. Sonia's public Google Business Profile is the governed external source for the time-stamped aggregate rating and selected short review excerpts. The rating applies to Sonia's general business profile, not exclusively to La Raíz.
+
+## Provenance modes
+
+Every FAQ, answer card, journey item, learning passage and program-inclusion item must carry one of these explicit modes:
+
+- `verbatim`: exact Sonia-authored language from an approved source. It may not be rewritten.
+- `factual-extract`: normalized dates, prices, delivery details or inclusion facts taken from the canonical program record.
+- `editorial-boundary`: legal, safety or scope language that is intentionally separate from Sonia's teaching voice.
+- `editorial-metadata`: review dates, source-navigation facts or other publication metadata.
+- `third-party-evidence`: short, attributed external review evidence that is never presented as Sonia's language.
+
+Every governed item must also contain explicit `sourceIds` and a human-readable `sourceReference`. The build may not infer a source when one is absent.
 
 ## Public agent retrieval layer
 
@@ -67,6 +79,8 @@ Cloudflare AI Search can index these public documents after its website source s
 - Claims that identity is the only cause of financial outcomes.
 - Testimonials or private participant details that Sonia did not select for public use.
 - Rewritten, shortened or generalized versions of Sonia's approved testimonials.
+- Synthetic bridge copy, editorial paraphrases or inferred explanations presented as Sonia's program rationale.
+- Any answer about why La Raíz lasts several weeks that is not an exact approved Sonia passage with a governed source ID.
 - Google review claims that imply a guaranteed financial, medical, fertility, therapeutic or universal outcome.
 - `Review` or `AggregateRating` JSON-LD derived from self-hosted Google review excerpts. The proof remains visible and source-linked, not self-serving rich-result markup.
 
@@ -83,6 +97,6 @@ Before each edition:
 7. Keep every answer card mapped to a public evidence source or to the canonical program record.
 8. Confirm that every testimonial selected by Sonia remains present, complete and unchanged in `raiz/program.json`, visible HTML and the public evidence document.
 9. Confirm that all five approved inclusion items remain in canonical data, visible HTML and the public agent evidence.
-10. Confirm that the learning-design section cites its public references and retains the educational, non-medical, non-guarantee boundary.
+10. Confirm that every learning-design passage exactly matches an approved Sonia source, carries its governed source ID and contains no synthetic bridge copy.
 11. Re-verify the Google rating and review count before changing their date-stamped values; preserve the general-business scope note and source link.
 12. Keep Google review excerpts below 25 words, verbatim, attributable and free of implied guarantees.
