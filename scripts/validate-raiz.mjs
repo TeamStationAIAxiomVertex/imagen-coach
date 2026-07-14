@@ -61,6 +61,7 @@ const organizationAgentIndex = JSON.parse(await readFile(path.join(outputDir, ".
 const openApi = JSON.parse(await readFile(path.join(outputDir, "openapi.json"), "utf8"));
 const title = html.match(/<title>([^<]+)<\/title>/i)?.[1] || "";
 const description = html.match(/<meta name="description" content="([^"]+)"/i)?.[1] || "";
+const socialCardUrl = "https://raiz.coachdeimagen.com/assets/social/la-raiz-programa-sonia-mcrorey-v2.png";
 const heroImageRule = styles.match(/\.hero-photo img\s*\{([\s\S]*?)\}/)?.[1] || "";
 const heroShadeRule = styles.match(/\.hero-shade\s*\{([\s\S]*?)\}/)?.[1] || "";
 const h1Count = (html.match(/<h1\b/gi) || []).length;
@@ -434,6 +435,11 @@ for (const toolName of [
 }
 assert(agentTools.includes("readOnlyHint: true"), "WebMCP tools do not advertise read-only behavior.");
 assert(html.includes("agent-tools.js?v="), "The WebMCP browser tool script is not loaded by the page.");
+assert(html.includes(`<meta property="og:image" content="${socialCardUrl}"`), "Open Graph does not use the current La Raíz social card.");
+assert(html.includes(`<meta property="og:image:secure_url" content="${socialCardUrl}"`), "Open Graph secure image URL is missing.");
+assert(html.includes(`<meta name="twitter:image" content="${socialCardUrl}"`), "Twitter does not use the current La Raíz social card.");
+assert(html.includes("<meta property=\"og:image:alt\""), "Open Graph image alt text is missing.");
+assert(html.includes("<meta name=\"twitter:image:alt\""), "Twitter image alt text is missing.");
 
 for (const relative of [
   "assets/sonia-la-raiz-hero-960.avif",
@@ -443,6 +449,7 @@ for (const relative of [
   "assets/sonia-la-raiz-about-720.webp",
   "assets/sonia-la-raiz-about-720.jpg",
   "assets/social/la-raiz-programa-sonia-mcrorey.png",
+  "assets/social/la-raiz-programa-sonia-mcrorey-v2.png",
   "robots.txt",
   "sitemap.xml",
   "knowledge-sitemap.xml",

@@ -630,7 +630,7 @@ async function optimizePortrait(source, basename, width, height) {
 async function buildSocialCard() {
   const photo = await sharp(path.join(root, "assets/sonia-mcrorey-latina-leadership-color.jpg"))
     .rotate()
-    .resize(470, 630, { fit: "cover", position: "attention" })
+    .resize(500, 630, { fit: "cover", position: "attention" })
     .jpeg({ quality: 86, mozjpeg: true })
     .toBuffer();
   const icon = await sharp(path.join(root, "assets/sonia-icon.svg"))
@@ -638,28 +638,51 @@ async function buildSocialCard() {
     .png()
     .toBuffer();
   const logo = await sharp(path.join(root, "assets/sonia-logo-ai.png"))
-    .resize({ width: 250, withoutEnlargement: true })
+    .resize({ width: 230, withoutEnlargement: true })
     .png()
     .toBuffer();
-  const textLayer = Buffer.from(`<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  const cardBase = Buffer.from(`<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
     <rect width="1200" height="630" fill="#24152b"/>
-    <rect x="728" width="2" height="630" fill="#8c4799"/>
-    <circle cx="92" cy="87" r="36" fill="#f8f6f9"/>
-    <text x="145" y="78" fill="#dfc9e4" font-family="Arial, sans-serif" font-size="19" font-weight="700" letter-spacing="3">8 SESIONES EN VIVO + 1 BONUS</text>
-    <text x="72" y="225" fill="#ffffff" font-family="Georgia, serif" font-size="84" font-weight="500">La Raíz del Dinero</text>
-    <text x="72" y="292" fill="#dfc9e4" font-family="Georgia, serif" font-size="39" font-style="italic">Generar, recibir y sostener valor</text>
-    <text x="72" y="366" fill="#e6dfe8" font-family="Arial, sans-serif" font-size="25">Online en español · Semipresencial</text>
-    <text x="72" y="402" fill="#e6dfe8" font-family="Arial, sans-serif" font-size="25">en Guadalajara</text>
-    <rect x="72" y="474" width="340" height="82" rx="5" fill="#f8f6f9"/>
   </svg>`);
-  await sharp(textLayer)
+  const portraitBlend = Buffer.from(`<svg width="170" height="630" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="blend" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#24152b" stop-opacity="1" />
+        <stop offset="0.72" stop-color="#24152b" stop-opacity="0.32" />
+        <stop offset="1" stop-color="#24152b" stop-opacity="0" />
+      </linearGradient>
+    </defs>
+    <rect width="170" height="630" fill="url(#blend)" />
+  </svg>`);
+  const textLayer = Buffer.from(`<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="88" cy="72" r="28" fill="#f8f6f9"/>
+    <text x="132" y="67" fill="#dfc9e4" font-family="Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="2.6">PROGRAMA EN VIVO · SONIA MCROREY</text>
+    <text x="72" y="190" fill="#ffffff" font-family="Georgia, serif" font-size="86" font-weight="500">La Raíz</text>
+    <text x="72" y="270" fill="#c985d5" font-family="Georgia, serif" font-size="72" font-style="italic">del Dinero</text>
+    <text x="72" y="322" fill="#f3edf4" font-family="Arial, sans-serif" font-size="23">La raíz desde la que generas, recibes</text>
+    <text x="72" y="354" fill="#f3edf4" font-family="Arial, sans-serif" font-size="23">y sostienes valor.</text>
+    <line x1="72" y1="382" x2="642" y2="382" stroke="#8c4799" stroke-width="1"/>
+    <rect x="72" y="407" width="260" height="48" rx="4" fill="#35203e" stroke="#8c4799" stroke-width="1"/>
+    <text x="202" y="438" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="1.2">8 SESIONES + 1 BONUS</text>
+    <rect x="344" y="407" width="298" height="48" rx="4" fill="#35203e" stroke="#8c4799" stroke-width="1"/>
+    <text x="493" y="438" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="1.2">ONLINE · GUADALAJARA</text>
+    <rect x="72" y="486" width="290" height="72" rx="4" fill="#f8f6f9"/>
+    <text x="390" y="532" fill="#dfc9e4" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="1.4">RAIZ.COACHDEIMAGEN.COM</text>
+  </svg>`);
+  const socialCard = await sharp(cardBase)
     .composite([
-      { input: photo, left: 730, top: 0 },
-      { input: icon, left: 73, top: 68 },
-      { input: logo, left: 105, top: 494 },
+      { input: photo, left: 700, top: 0 },
+      { input: portraitBlend, left: 665, top: 0 },
+      { input: textLayer, left: 0, top: 0 },
+      { input: icon, left: 69, top: 53 },
+      { input: logo, left: 102, top: 500 },
     ])
     .png({ compressionLevel: 9 })
-    .toFile(path.join(assetsDir, "social/la-raiz-programa-sonia-mcrorey.png"));
+    .toBuffer();
+  await Promise.all([
+    writeFile(path.join(assetsDir, "social/la-raiz-programa-sonia-mcrorey.png"), socialCard),
+    writeFile(path.join(assetsDir, "social/la-raiz-programa-sonia-mcrorey-v2.png"), socialCard),
+  ]);
 }
 
 function schemaStack(program) {
