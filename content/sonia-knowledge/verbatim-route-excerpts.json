@@ -1,0 +1,145 @@
+{
+  "schemaVersion": "2026-07-14",
+  "status": "verbatim-primary-source",
+  "verifiedAt": "2026-07-14",
+  "verificationMethod": "Connected Google Drive corpus fetch",
+  "policy": "Only exact Sonia McRorey excerpts verified in the connected Drive corpus may appear as attributed Sonia language.",
+  "sources": [
+    {
+      "id": "identity-visibility-abundance-2026",
+      "driveFileId": "1SnVaIsP7R2itpmuAyIjeR8oUD6cvbnBN",
+      "modifiedTime": "2026-07-09T21:07:04.000Z",
+      "author": "Sonia McRorey",
+      "excerpts": [
+        {
+          "id": "self-perception-shapes-presence",
+          "text": "La forma en que una persona se percibe determina la forma en que se muestra.",
+          "topics": ["autoconcepto", "identidad", "presencia"],
+          "matchTerms": ["autoconcepto", "identidad", "percepción", "presencia", "seguridad profesional", "imagen interna"],
+          "routePrefixes": ["/mentalidad", "/seguridad-profesional", "/inseguridad-profesional", "/seguridad-profesional-femenina", "/metodo-sonia-mcrorey", "/sistema-presencia-profesional", "/imagen-presencia/rebranding-imagen-mentalidad-abundancia"]
+        },
+        {
+          "id": "presence-shapes-opportunity",
+          "text": "La forma en que se muestra determina las oportunidades que sostiene. Y eso termina reflejándose en el dinero que es capaz de recibir.",
+          "topics": ["visibilidad", "oportunidades", "dinero"],
+          "matchTerms": ["oportunidades", "dinero", "crecimiento", "visibilidad", "empresarias", "negocio", "posicionamiento"],
+          "routePrefixes": ["/empresarias", "/imagen-estrategica", "/imagen-ejecutiva-para-empresarias", "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia", "/modelo-imagen-estrategica"]
+        },
+        {
+          "id": "identity-expresses-itself",
+          "text": "La identidad siempre termina expresándose.",
+          "topics": ["identidad", "imagen", "presencia"],
+          "matchTerms": ["identidad", "imagen", "presencia", "estilo", "comunicación"],
+          "routePrefixes": ["/imagen-profesional", "/presencia-ejecutiva", "/comunicacion-no-verbal", "/coach-de-imagen", "/servicios-asesoria-de-imagen-coaching"]
+        },
+        {
+          "id": "money-amplifies-identity",
+          "text": "El dinero amplifica la identidad.",
+          "topics": ["dinero", "identidad", "crecimiento"],
+          "matchTerms": ["dinero", "crecimiento", "abundancia", "empresarias", "negocio"],
+          "routePrefixes": ["/empresarias", "/imagen-ejecutiva-para-empresarias", "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia"]
+        },
+        {
+          "id": "release-survival-identity",
+          "text": "Se trata de dejar de sostener una identidad creada para sobrevivir.",
+          "topics": ["identidad", "seguridad", "cambio"],
+          "matchTerms": ["identidad", "cambio", "reinventar", "rebranding", "seguridad interna", "transición"],
+          "routePrefixes": ["/mentalidad", "/seguridad-profesional", "/inseguridad-profesional", "/imagen-presencia/rebranding-imagen-mentalidad-abundancia"]
+        },
+        {
+          "id": "remember-before-permission",
+          "text": "Consiste en recordar quién eras antes de necesitar permiso para existir.",
+          "topics": ["identidad", "visibilidad", "permiso"],
+          "matchTerms": ["mujeres", "liderazgo femenino", "visibilidad", "permiso", "seguridad", "latinas", "hispanas"],
+          "routePrefixes": ["/imagen-para-mujeres-lideres", "/presencia-ejecutiva-femenina", "/seguridad-profesional-femenina", "/miami-hispanos", "/houston-hispanos", "/dallas-hispanos", "/los-angeles-hispanos", "/san-diego-hispanos", "/new-york-hispanos"]
+        },
+        {
+          "id": "identity-without-permission",
+          "text": "Es hora de dejar de intentar ser quien aprendiste que debías ser. Es hora de recordar quién eres cuando ya no necesitas permiso para existir.",
+          "topics": ["identidad", "visibilidad", "autenticidad"],
+          "matchTerms": ["identidad", "visibilidad", "autenticidad", "mujeres líderes", "seguridad profesional"],
+          "routePrefixes": ["/imagen-para-mujeres-lideres", "/liderazgo-visible", "/framework-liderazgo-visible", "/seguridad-profesional-femenina"]
+        }
+      ]
+    },
+    {
+      "id": "professional-image-context-2026",
+      "driveFileId": "1nez8f_tSVseDkjKwiv-V09E96OIFFgls",
+      "modifiedTime": "2026-06-12T15:32:52.000Z",
+      "author": "Sonia McRorey",
+      "excerpts": [
+        {
+          "id": "image-is-strategic-tool",
+          "text": "La imagen profesional no es un uniforme. Es una herramienta estratégica.",
+          "topics": ["imagen profesional", "estrategia", "contexto"],
+          "matchTerms": ["imagen profesional", "imagen ejecutiva", "industria", "personalidad", "contexto", "estrategia"],
+          "routePrefixes": ["/imagen-profesional", "/imagen-estrategica", "/como-verme-mas-profesional", "/modelo-imagen-estrategica", "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen", "/imagen-presencia/imagen-profesional-segun-industria-y-personalidad"]
+        },
+        {
+          "id": "authority-varies",
+          "text": "La autoridad no siempre se ve igual. La credibilidad tampoco.",
+          "topics": ["autoridad", "credibilidad", "liderazgo"],
+          "matchTerms": ["autoridad", "credibilidad", "liderazgo", "presencia ejecutiva", "director", "ejecutiva", "CEO"],
+          "routePrefixes": ["/presencia-ejecutiva", "/liderazgo", "/liderazgo-visible", "/como-proyectar-autoridad", "/framework-liderazgo-visible", "/comparaciones"]
+        },
+        {
+          "id": "image-begins-in-identity",
+          "text": "Por eso la imagen profesional no comienza en el clóset. Comienza en la identidad.",
+          "topics": ["imagen profesional", "identidad", "clóset"],
+          "matchTerms": ["imagen profesional", "identidad", "clóset", "guardarropa", "estilo", "asesoría de imagen"],
+          "routePrefixes": ["/imagen-profesional", "/coach-de-imagen", "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen", "/comparaciones/coaching-de-imagen-vs-consultoria-tradicional", "/comparaciones/styling-vs-coaching-de-imagen"]
+        },
+        {
+          "id": "impact-is-coherence",
+          "text": "Impacto significa coherencia estratégica.",
+          "topics": ["coherencia", "impacto", "posicionamiento"],
+          "matchTerms": ["coherencia", "impacto", "posicionamiento", "percepción", "presencia profesional"],
+          "routePrefixes": ["/presencia-ejecutiva", "/imagen-estrategica", "/como-mejorar-mi-presencia-profesional", "/sistema-presencia-profesional", "/comparaciones"]
+        },
+        {
+          "id": "personality-is-strategic-intelligence",
+          "text": "Adaptar la imagen a tu personalidad no es debilidad. Es inteligencia estratégica.",
+          "topics": ["personalidad", "imagen", "estrategia"],
+          "matchTerms": ["personalidad", "estilo personal", "imagen profesional", "industria", "adaptar"],
+          "routePrefixes": ["/imagen-profesional", "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen", "/imagen-presencia/imagen-profesional-segun-industria-y-personalidad"]
+        },
+        {
+          "id": "strategic-image-aligns",
+          "text": "La imagen profesional estratégica no busca uniformarte. Busca alinearte.",
+          "topics": ["imagen profesional", "alineación", "estrategia"],
+          "matchTerms": ["imagen profesional", "imagen estratégica", "alinear", "coherencia", "estilo"],
+          "routePrefixes": ["/imagen-profesional", "/imagen-estrategica", "/modelo-imagen-estrategica", "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen"]
+        },
+        {
+          "id": "authority-is-projected",
+          "text": "Porque la autoridad real no se impone. Se proyecta.",
+          "topics": ["autoridad", "proyección", "liderazgo"],
+          "matchTerms": ["autoridad", "proyectar", "liderazgo", "presencia ejecutiva", "comunicación no verbal"],
+          "routePrefixes": ["/como-proyectar-autoridad", "/presencia-ejecutiva", "/liderazgo-visible", "/comunicacion-no-verbal-ejecutiva", "/framework-liderazgo-visible"]
+        }
+      ]
+    },
+    {
+      "id": "color-image-science-2026",
+      "driveFileId": "1gQ9j9D8EKkn_T-Gra_5-I42IefPycCfM",
+      "modifiedTime": "2026-06-12T15:27:05.000Z",
+      "author": "Sonia McRorey",
+      "excerpts": [
+        {
+          "id": "color-reveals-identity",
+          "text": "El color correcto no te transforma. Hace visible la identidad que tu cuerpo ya reconoce como auténtica.",
+          "topics": ["color", "identidad", "autenticidad"],
+          "matchTerms": ["color", "colorimetría", "paleta", "tono", "contraste", "identidad"],
+          "routePrefixes": ["/imagen-presencia/tu-color-tu-poder-el-impacto-de-la-colorimetria", "/imagen-presencia/asesoria-de-imagen-tu-color-tu-poder", "/imagen-presencia/aprende-a-resaltar-tus-proporciones"]
+        },
+        {
+          "id": "color-strengthens-message",
+          "text": "Tu mensaje llega directo. Tu presencia se vuelve memorable. Tu liderazgo se vuelve más claro, sólido, confiable.",
+          "topics": ["color", "presencia", "liderazgo"],
+          "matchTerms": ["color", "colorimetría", "mensaje", "presencia", "liderazgo"],
+          "routePrefixes": ["/imagen-presencia/tu-color-tu-poder-el-impacto-de-la-colorimetria", "/imagen-presencia/asesoria-de-imagen-tu-color-tu-poder"]
+        }
+      ]
+    }
+  ]
+}

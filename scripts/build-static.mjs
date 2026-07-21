@@ -20,7 +20,8 @@ const RAIZ_CONTEXT_ROUTES = new Set([
 ]);
 const BRAND_NAME = "Coach De Imagen";
 const ASSET_VERSION = "20260523-semantic-authority-v1";
-const SCRIPT_VERSION = "20260525-webmcp-registertool-v1";
+const SCRIPT_VERSION = "20260721-conversion-events-v1";
+const CONVERSION_SCRIPT_VERSION = "20260721-v1";
 const SOCIAL_CARD_VERSION = "v2";
 const WHATSAPP = "https://wa.me/526646105348?text=Hola%20Sonia%2C%20me%20interesa%20agendar%20un%20diagn%C3%B3stico.";
 const CONTACT = {
@@ -60,6 +61,8 @@ let INLINE_CSS = "";
 let SONIA_TEACHING_CONFIG = { teachings: [], routeMap: {}, fallbacks: {} };
 let SONIA_TEACHINGS_BY_ID = new Map();
 let SONIA_SOURCE_CORPUS = { blogBank: null, driveBank: null, inventory: null };
+let SONIA_VERBATIM_CONFIG = { sources: [] };
+let SONIA_VERBATIM_EXCERPTS = [];
 const OWNED_CATEGORY = "Coaching de Imagen con profundidad psicológica y posicionamiento profesional";
 const DOMINANCE_FORMULA = "Semantic precision + emotional sophistication + executive positioning + AI readability";
 const SEMANTIC_AUTHORITY_LADDER = [
@@ -2980,6 +2983,99 @@ function teachingForPage(page = {}) {
   return SONIA_TEACHINGS_BY_ID.get(teachingId) || SONIA_TEACHINGS_BY_ID.get(fallbacks.default);
 }
 
+function pageVerbatimSearchText(page = {}) {
+  const values = [
+    page.route,
+    page.title,
+    page.heroTitle,
+    page.description,
+    page.name,
+    page.cluster,
+    page.focus,
+    page.angle,
+    ...(Array.isArray(page.terms) ? page.terms : []),
+    ...(Array.isArray(page.path) ? page.path : []),
+    ...(Array.isArray(page.topics) ? page.topics.map((topic) => topic?.label || topic?.id || topic) : []),
+  ];
+  return normalizeTeachingSourceText(values.filter(Boolean).join(" "));
+}
+
+function routeMatchesVerbatimPrefix(route = "", prefix = "") {
+  if (!route || !prefix) return false;
+  return route === prefix || route.startsWith(`${prefix}/`);
+}
+
+function verbatimExcerptsForPage(page = {}, limit = 3) {
+  const selected = [];
+  const seen = new Set();
+  const teaching = teachingForPage(page);
+
+  if (teaching?.quote) {
+    const normalized = normalizeTeachingSourceText(teaching.quote);
+    selected.push({
+      id: `teaching:${teaching.id}`,
+      text: teaching.quote,
+      sourceId: `source-bank:${teaching.sourceBank || "approved"}`,
+      modifiedTime: null,
+    });
+    seen.add(normalized);
+  }
+
+  const route = page.route || "";
+  const haystack = pageVerbatimSearchText(page);
+  const ranked = SONIA_VERBATIM_EXCERPTS
+    .map((excerpt) => {
+      const routeScore = (excerpt.routePrefixes || []).reduce(
+        (score, prefix) => score + (routeMatchesVerbatimPrefix(route, prefix) ? 80 : 0),
+        0,
+      );
+      const termScore = (excerpt.matchTerms || []).reduce(
+        (score, term) => score + (haystack.includes(normalizeTeachingSourceText(term)) ? 12 : 0),
+        0,
+      );
+      return { excerpt, score: routeScore + termScore };
+    })
+    .filter((item) => item.score > 0)
+    .sort((a, b) => b.score - a.score || a.excerpt.id.localeCompare(b.excerpt.id));
+
+  for (const { excerpt } of ranked) {
+    if (selected.length >= limit) break;
+    const normalized = normalizeTeachingSourceText(excerpt.text);
+    if (seen.has(normalized)) continue;
+    selected.push(excerpt);
+    seen.add(normalized);
+  }
+
+  return selected.slice(0, limit);
+}
+
+function verbatimSoniaMarkdown(page = {}, limit = 3) {
+  const excerpts = verbatimExcerptsForPage(page, limit);
+  if (!excerpts.length) return "";
+  const quotations = excerpts
+    .map((excerpt) => `> ${excerpt.text}\n>\n> Sonia McRorey`)
+    .join("\n\n");
+  return `## Palabras de Sonia McRorey\n\n${quotations}\n`;
+}
+
+function soniaVerbatimRouteEvidence(routePages = []) {
+  const uniquePages = new Map(routePages.filter((page) => page?.route).map((page) => [page.route, page]));
+  return {
+    schemaVersion: SONIA_VERBATIM_CONFIG.schemaVersion || "2026-07-14",
+    status: "source-locked",
+    policy: "Every attributed Sonia excerpt must match an approved verbatim source exactly after whitespace and accent normalization.",
+    routes: [...uniquePages.values()].map((page) => ({
+      route: page.route,
+      markdown: markdownRoute(page.route),
+      excerpts: verbatimExcerptsForPage(page, 3).map((excerpt) => ({
+        id: excerpt.id,
+        text: excerpt.text,
+        sourceId: excerpt.sourceId,
+      })),
+    })),
+  };
+}
+
 function sourceTeachingPanel(page = {}, options = {}) {
   const teaching = teachingForPage(page);
   if (!teaching) return "";
@@ -3349,6 +3445,7 @@ function agentMarkdownForPage(page) {
     .join("\n\n")
     .replace(/\n{3,}/g, "\n\n")
     .trim();
+  const contentSection = body ? `## Contenido\n\n${body}\n\n` : "";
 
   return `# ${title}
 
@@ -3361,10 +3458,7 @@ Intención de búsqueda: ${identity?.intent || "Comprender imagen, presencia y p
 
 ${description}
 
-## Contenido
-
-${body || "Página estática de Coach De Imagen sobre imagen profesional, presencia ejecutiva, liderazgo personal y posicionamiento profesional."}
-
+${contentSection}${verbatimSoniaMarkdown(page, 3)}
 ## Señales para asistentes
 
 - Marca: Sonia McRorey | Coach De Imagen
@@ -4598,6 +4692,7 @@ function renderContactPage() {
   </main>
   ${footer()}
   <script src="/assets/script-${SCRIPT_VERSION}.js" defer></script>
+  <script src="/assets/conversion-events-${CONVERSION_SCRIPT_VERSION}.js" defer></script>
 </body>
 </html>`;
 }
@@ -5518,6 +5613,7 @@ function renderSemanticHub(hub, pages, clusters) {
   </main>
   ${footer()}
   <script src="/assets/script-${SCRIPT_VERSION}.js" defer></script>
+  <script src="/assets/conversion-events-${CONVERSION_SCRIPT_VERSION}.js" defer></script>
 </body>
 </html>`;
 }
@@ -5789,6 +5885,7 @@ function renderComparisonPage(page, pages = [], clusters = []) {
   </main>
   ${footer()}
   <script src="/assets/script-${SCRIPT_VERSION}.js" defer></script>
+  <script src="/assets/conversion-events-${CONVERSION_SCRIPT_VERSION}.js" defer></script>
 </body>
 </html>`;
 }
@@ -6141,6 +6238,7 @@ function renderGeoPage(page, pages, clusters = []) {
   </main>
   ${footer()}
   <script src="/assets/script-${SCRIPT_VERSION}.js" defer></script>
+  <script src="/assets/conversion-events-${CONVERSION_SCRIPT_VERSION}.js" defer></script>
 </body>
 </html>`;
 }
@@ -6289,6 +6387,7 @@ function renderIntentPage(page, pages, clusters = []) {
   </main>
   ${footer()}
   <script src="/assets/script-${SCRIPT_VERSION}.js" defer></script>
+  <script src="/assets/conversion-events-${CONVERSION_SCRIPT_VERSION}.js" defer></script>
 </body>
 </html>`;
 }
@@ -6392,6 +6491,7 @@ function renderAuthorityPage(page, pages, clusters = []) {
   </main>
   ${footer()}
   <script src="/assets/script-${SCRIPT_VERSION}.js" defer></script>
+  <script src="/assets/conversion-events-${CONVERSION_SCRIPT_VERSION}.js" defer></script>
 </body>
 </html>`;
 }
@@ -6401,6 +6501,7 @@ function generatedMarkdown(page) {
 
 ${page.description}
 
+${verbatimSoniaMarkdown(page, 3)}
 ## Entidad
 
 Sonia McRorey | ${BRAND_NAME}.
@@ -6425,10 +6526,12 @@ Agendar diagnóstico privado: ${absoluteUrl(CONTACT_ROUTE)}
 }
 
 function hubMarkdown(hub) {
+  const page = { ...hub, type: "hub" };
   return `# ${hub.title}
 
 ${hub.description}
 
+${verbatimSoniaMarkdown(page, 3)}
 ## Cluster semántico
 
 ${hub.cluster}
@@ -6452,6 +6555,7 @@ function comparisonMarkdown(page) {
 
 ${page.description}
 
+${verbatimSoniaMarkdown(page, 3)}
 ## Enfoque
 
 ${page.focus}
@@ -6461,10 +6565,6 @@ ${page.angle}
 ## Ruta de evolución
 
 ${(page.path || []).map((item) => `- ${item}`).join("\n")}
-
-## Relación con Coach De Imagen
-
-Esta página explica una diferencia de categoría para entender cómo el coaching de imagen integra imagen profesional, presencia ejecutiva, liderazgo visible, seguridad interna y posicionamiento profesional.
 
 ## Acción
 
@@ -6830,6 +6930,7 @@ function renderPage(page, pages, clusters) {
   </main>
   ${footer()}
   <script src="/assets/script-${SCRIPT_VERSION}.js" defer></script>
+  <script src="/assets/conversion-events-${CONVERSION_SCRIPT_VERSION}.js" defer></script>
 </body>
 </html>`;
 }
@@ -6869,6 +6970,10 @@ function normalizeTeachingSourceText(text = "") {
     .trim();
 }
 
+function normalizeTeachingVerbatimText(text = "") {
+  return normalizeTeachingSourceText(text).replace(/[.!?]+$/u, "");
+}
+
 function quoteTextsFromKnowledgeBank(bank) {
   if (!bank || !Array.isArray(bank.quotes)) return [];
   return bank.quotes
@@ -6882,11 +6987,16 @@ async function loadSoniaTeachingLayer() {
   const driveBank = JSON.parse(await readFile(rootPath("content/sonia-knowledge/drive-quote-bank.json"), "utf8"));
   const blogBank = JSON.parse(await readFile(rootPath("content/sonia-knowledge/quote-bank.json"), "utf8"));
   const inventory = JSON.parse(await readFile(rootPath("content/sonia-knowledge/drive-source-inventory.json"), "utf8"));
+  const verbatimConfig = JSON.parse(await readFile(rootPath("content/sonia-knowledge/verbatim-route-excerpts.json"), "utf8"));
   const sourceTexts = [...quoteTextsFromKnowledgeBank(driveBank), ...quoteTextsFromKnowledgeBank(blogBank)];
   const missing = [];
 
   for (const teaching of config.teachings || []) {
     const sourceSnippet = normalizeTeachingSourceText(teaching.sourceSnippet || teaching.quote);
+    if (normalizeTeachingVerbatimText(teaching.quote) !== normalizeTeachingVerbatimText(teaching.sourceSnippet || teaching.quote)) {
+      missing.push(`${teaching.id || "unknown"}: attributed quote differs from source snippet`);
+      continue;
+    }
     if (!sourceTexts.some((source) => source.includes(sourceSnippet))) {
       missing.push(teaching.id || teaching.quote);
     }
@@ -6896,9 +7006,56 @@ async function loadSoniaTeachingLayer() {
     throw new Error(`Sonia teaching source validation failed for: ${missing.join(", ")}`);
   }
 
+  if (/teamstation/i.test(JSON.stringify(verbatimConfig))) {
+    throw new Error("Sonia verbatim source bank contains cross-project terminology.");
+  }
+
+  const sourceIds = new Set();
+  const excerptIds = new Set();
+  const excerptTexts = new Set();
+  const verbatimExcerpts = [];
+  for (const source of verbatimConfig.sources || []) {
+    if (!source.id || sourceIds.has(source.id)) {
+      throw new Error(`Invalid or duplicate Sonia verbatim source id: ${source.id || "missing"}`);
+    }
+    if (source.author !== "Sonia McRorey" || !source.driveFileId || !source.modifiedTime) {
+      throw new Error(`Incomplete Sonia Drive provenance for source: ${source.id}`);
+    }
+    sourceIds.add(source.id);
+    for (const excerpt of source.excerpts || []) {
+      const normalizedText = normalizeTeachingSourceText(excerpt.text);
+      if (!excerpt.id || excerptIds.has(excerpt.id) || !normalizedText) {
+        throw new Error(`Invalid or duplicate Sonia verbatim excerpt id: ${excerpt.id || "missing"}`);
+      }
+      if (excerptTexts.has(normalizedText)) {
+        throw new Error(`Duplicate Sonia verbatim excerpt text: ${excerpt.id}`);
+      }
+      if (!Array.isArray(excerpt.topics) || !excerpt.topics.length) {
+        throw new Error(`Sonia verbatim excerpt has no topics: ${excerpt.id}`);
+      }
+      if (!(excerpt.matchTerms?.length || excerpt.routePrefixes?.length)) {
+        throw new Error(`Sonia verbatim excerpt has no route matching evidence: ${excerpt.id}`);
+      }
+      excerptIds.add(excerpt.id);
+      excerptTexts.add(normalizedText);
+      verbatimExcerpts.push({
+        ...excerpt,
+        sourceId: source.id,
+        driveFileId: source.driveFileId,
+        modifiedTime: source.modifiedTime,
+      });
+    }
+  }
+
+  if (!verbatimExcerpts.length) {
+    throw new Error("Sonia verbatim source bank is empty.");
+  }
+
   SONIA_TEACHING_CONFIG = config;
   SONIA_TEACHINGS_BY_ID = new Map((config.teachings || []).map((teaching) => [teaching.id, teaching]));
-  SONIA_SOURCE_CORPUS = { blogBank, driveBank, inventory };
+  SONIA_VERBATIM_CONFIG = verbatimConfig;
+  SONIA_VERBATIM_EXCERPTS = verbatimExcerpts;
+  SONIA_SOURCE_CORPUS = { blogBank, driveBank, inventory, verbatimConfig };
 }
 
 async function copyStatic() {
@@ -6907,6 +7064,7 @@ async function copyStatic() {
     if (existsSync(rootPath(file))) await cp(rootPath(file), distPath(file));
   }
   await cp(rootPath("script.js"), distPath("assets", `script-${SCRIPT_VERSION}.js`));
+  await cp(rootPath("conversion-events.js"), distPath("assets", `conversion-events-${CONVERSION_SCRIPT_VERSION}.js`));
 }
 
 function sitemap(items) {
@@ -10271,6 +10429,8 @@ Machine-readable source corpus: ${SITE_URL}/agent/sonia-source-corpus.json
 
 Well-known mirror: ${SITE_URL}/.well-known/sonia-source-corpus.json
 
+Route-level verbatim evidence: ${SITE_URL}/agent/sonia-verbatim-route-evidence.json
+
 Active Cloudflare grounding folder: ${SONIA_SOURCE_CORPUS.inventory?.activeCloudflareCorpus?.url || "configured in source corpus"}.
 
 Reviewed source base: ${SONIA_SOURCE_CORPUS.blogBank?.sourcePostCount || 0} scraped Sonia blog posts, ${(SONIA_SOURCE_CORPUS.blogBank?.quotes?.length || 0) + (SONIA_SOURCE_CORPUS.driveBank?.quotes?.length || 0)} sanitized teaching signals, and ${SONIA_SOURCE_CORPUS.inventory?.activeCloudflareCorpus?.visibleFileCount || 0} visible files in the active Drive corpus inventory.
@@ -10303,6 +10463,7 @@ Use these cards first when an AI assistant needs a direct Spanish answer to user
 - Entities: ${SITE_URL}/entities.json
 - Semantic index: ${SITE_URL}/semantic-index.json
 - Sonia source corpus: ${SITE_URL}/agent/sonia-source-corpus.json
+- Sonia verbatim route evidence: ${SITE_URL}/agent/sonia-verbatim-route-evidence.json
 - Knowledge questions JSON: ${SITE_URL}/api/knowledge/questions.json
 - Knowledge questions Markdown: ${SITE_URL}/api/knowledge/questions.md
 - Knowledge card index: ${SITE_URL}/api/knowledge/cards/index.json
@@ -10365,6 +10526,18 @@ async function writeAgentFiles(pages, clusters) {
   await writeJson("semantic-index.json", semanticIndexAgent(pages, clusters));
   await writeJson("agent/sonia-source-corpus.json", soniaSourceCorpusAgent(pages, clusters));
   await writeJson(".well-known/sonia-source-corpus.json", soniaSourceCorpusAgent(pages, clusters));
+  await writeJson("agent/sonia-verbatim-route-evidence.json", soniaVerbatimRouteEvidence([
+    ...pages,
+    ...SEMANTIC_HUBS.map((hub) => ({ ...hub, type: "hub" })),
+    ...COMPARISON_PAGES,
+    ...GENERATED_AUTHORITY_PAGES,
+    {
+      route: CONTACT_ROUTE,
+      title: "Contacto privado para diagnóstico de Coach de Imagen",
+      description: "Solicita un diagnóstico privado con Sonia McRorey para coaching de imagen, presencia profesional, posicionamiento, imagen empresarial o seguridad profesional.",
+      type: "contact",
+    },
+  ]));
   await writeJson(".well-known/agent.json", agentCard(pages));
   await writeJson(".well-known/agent-card.json", a2aAgentCard());
   await writeJson(".well-known/ai-plugin.json", {
@@ -10484,15 +10657,23 @@ async function main() {
     await mkdir(path.dirname(markdownOut), { recursive: true });
     await writeFile(markdownOut, generatedMarkdown(page));
   }
-  const contactPage = { route: CONTACT_ROUTE };
+  const contactPage = {
+    route: CONTACT_ROUTE,
+    title: "Contacto privado para diagnóstico de Coach de Imagen",
+    description: "Solicita un diagnóstico privado con Sonia McRorey para coaching de imagen, presencia profesional, posicionamiento, imagen empresarial o seguridad profesional.",
+    type: "contact",
+  };
   const contactOut = routeOutputPath(CONTACT_ROUTE);
   await mkdir(path.dirname(contactOut), { recursive: true });
   await writeFile(contactOut, renderContactPage());
   const contactMarkdownOut = markdownOutputPath(CONTACT_ROUTE);
   await mkdir(path.dirname(contactMarkdownOut), { recursive: true });
-  await writeFile(contactMarkdownOut, `# Contacto privado para diagnostico de Coach de Imagen
+  await writeFile(contactMarkdownOut, `# ${contactPage.title}
 
-Solicita un diagnostico privado con Sonia McRorey para coaching de imagen, presencia profesional, posicionamiento, imagen empresarial o seguridad profesional.
+${contactPage.description}
+
+${verbatimSoniaMarkdown(contactPage, 2)}
+## Datos solicitados
 
 - Nombre completo
 - Email
@@ -10501,7 +10682,9 @@ Solicita un diagnostico privado con Sonia McRorey para coaching de imagen, prese
 - Servicio de interes
 - Contexto profesional
 
-La solicitud se procesa mediante una ruta segura de Cloudflare Workers para validacion, proteccion antispam y resumen privado del contexto antes de llegar al inbox de Sonia.
+## Canal
+
+La solicitud utiliza el formulario privado de contacto del sitio.
 `);
   await writeFile(distPath("sitemap.xml"), sitemap([...pages, ...SEMANTIC_HUBS, ...COMPARISON_PAGES, ...GENERATED_AUTHORITY_PAGES, contactPage]));
   await writeFile(distPath("category-sitemap.xml"), sitemap(SEMANTIC_HUBS));

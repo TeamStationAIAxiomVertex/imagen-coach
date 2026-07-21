@@ -12,7 +12,8 @@
     "ingest:wordpress": "node scripts/ingest-wordpress.mjs",
     "validate": "node scripts/validate-build.mjs",
     "validate:raiz": "node scripts/validate-raiz.mjs",
-    "test:raiz:fx": "node scripts/test-raiz-fx.mjs"
+    "test:raiz:fx": "node scripts/test-raiz-fx.mjs",
+    "test:conversion-events": "node scripts/test-conversion-events.mjs"
   },
   "dependencies": {
     "image-size": "^2.0.2",

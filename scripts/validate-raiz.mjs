@@ -51,6 +51,7 @@ const robots = await readFile(path.join(outputDir, "robots.txt"), "utf8");
 const knowledgeSitemap = await readFile(path.join(outputDir, "knowledge-sitemap.xml"), "utf8");
 const headers = await readFile(path.join(outputDir, "_headers"), "utf8");
 const agentTools = await readFile(path.join(outputDir, "agent-tools.js"), "utf8");
+const conversionRuntime = await readFile(path.join(outputDir, "conversion-events.js"), "utf8");
 const apiCatalog = JSON.parse(await readFile(path.join(outputDir, ".well-known/api-catalog"), "utf8"));
 const skillsIndex = JSON.parse(await readFile(path.join(outputDir, ".well-known/agent-skills/index.json"), "utf8"));
 const mcpCard = JSON.parse(await readFile(path.join(outputDir, ".well-known/mcp/server-card.json"), "utf8"));
@@ -149,6 +150,10 @@ assert(/styles\.[a-f0-9]{12}\.css/.test(html), "Content-hashed stylesheet filena
 assert((html.match(/"@type":"Offer"/g) || []).length === 2, "Expected two nested Offer schema entities.");
 assert((html.match(/"priceCurrency":"MXN"/g) || []).length === 2, "Offer schema must use MXN.");
 assert(decodedLinks.includes("me interesa La Raíz"), "WhatsApp program-interest message is missing.");
+assert(html.includes("https://www.instagram.com/soniamcrorey/"), "Official Sonia Instagram link is missing.");
+assert(html.includes('rel="me noopener"'), "Instagram identity link is missing rel=me.");
+assert(html.includes('"sameAs":["https://www.instagram.com/soniamcrorey/"]'), "Sonia Person schema is missing Instagram sameAs.");
+assert(html.includes("Preguntar por La Raíz"), "Visible WhatsApp program handoff is missing.");
 assert(!/cdn\.tailwindcss|fonts\.googleapis|unpkg\.com|jsdelivr\.net/i.test(html), "Runtime CDN dependency found.");
 assert(!/garantiza (ingresos|ventas)|resultados garantizados|cura|tratamiento terapéutico/i.test(claimText), "Prohibited guarantee or health claim found.");
 assertProvenance(program.contentGovernance.visibleVerbatimPassages, "Visible Sonia passage");
@@ -435,6 +440,10 @@ for (const toolName of [
 }
 assert(agentTools.includes("readOnlyHint: true"), "WebMCP tools do not advertise read-only behavior.");
 assert(html.includes("agent-tools.js?v="), "The WebMCP browser tool script is not loaded by the page.");
+assert(html.includes("conversion-events.js?v="), "The first-party conversion runtime is not loaded by the page.");
+for (const marker of ["/api/conversion-event", "navigator.sendBeacon", "whatsapp_handoff", "instagram_visit", "raiz_interest"]) {
+  assert(conversionRuntime.includes(marker), `Conversion runtime is missing ${marker}.`);
+}
 assert(html.includes(`<meta property="og:image" content="${socialCardUrl}"`), "Open Graph does not use the current La Raíz social card.");
 assert(html.includes(`<meta property="og:image:secure_url" content="${socialCardUrl}"`), "Open Graph secure image URL is missing.");
 assert(html.includes(`<meta name="twitter:image" content="${socialCardUrl}"`), "Twitter does not use the current La Raíz social card.");
@@ -458,6 +467,7 @@ for (const relative of [
   "content-signal.json",
   "auth.md",
   "agent-tools.js",
+  "conversion-events.js",
   ".well-known/agent.json",
   ".well-known/api-catalog",
   ".well-known/api-catalog.json",

@@ -1,9 +1,9 @@
 # Site Intelligence Score
 
-Generated: 2026-07-12
+Generated: 2026-07-16
 
 
-Source audit: `audit/full-seo-geo-crawl-audit-2026-07-12.json`
+Source audit: `audit/full-seo-geo-crawl-audit-2026-07-16.json`
 
 Average score: **97/100**
 
@@ -62,7 +62,7 @@ Average score: **97/100**
 | /imagen-presencia/y-si-tu-imagen-no-fuera-un-disfraz-sino-una-puerta-para-regresar-a-ti-article | article | 99 | 6 | 84 |
 | /servicios-asesoria-de-imagen-coaching | service | 99 | 8 | 85 |
 | /aguascalientes | geo | 98 | 1 | 82 |
-| /argentina | geo | 98 | 7 | 83 |
+| /argentina | geo | 98 | 8 | 83 |
 | /barranquilla | geo | 98 | 1 | 83 |
 | /bogota | geo | 98 | 5 | 83 |
 | /buenos-aires | geo | 98 | 2 | 84 |

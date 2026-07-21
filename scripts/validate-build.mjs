@@ -5,6 +5,8 @@ import { imageSize } from "image-size";
 
 const manifest = JSON.parse(await readFile("content/clean/manifest.json", "utf8"));
 const strategy = JSON.parse(await readFile("content/strategy/article-clusters.json", "utf8"));
+const teachingRouteMap = JSON.parse(await readFile("content/sonia-knowledge/teaching-route-map.json", "utf8"));
+const verbatimRouteExcerpts = JSON.parse(await readFile("content/sonia-knowledge/verbatim-route-excerpts.json", "utf8"));
 const failures = [];
 const SITE_URL = "https://coachdeimagen.com";
 const LEGACY_SITE_URL = "https://imagencoach.com";
@@ -108,6 +110,22 @@ const authorityRoutes = [
 ];
 const contactRoutes = ["/contacto"];
 const expectedRoutes = new Set([...routeSet, ...semanticHubRoutes, ...comparisonRoutes, ...geoRoutes, ...intentRoutes, ...authorityRoutes, ...contactRoutes]);
+function normalizeSoniaSourceText(text = "") {
+  return String(text)
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/\s+/g, " ")
+    .trim();
+}
+function markdownPathForRoute(route) {
+  if (route === "/") return "dist/index.md";
+  return path.join("dist", `${route.replace(/^\/+|\/+$/g, "")}.md`);
+}
+const approvedSoniaExcerpts = new Set([
+  ...(teachingRouteMap.teachings || []).map((teaching) => teaching.quote),
+  ...(verbatimRouteExcerpts.sources || []).flatMap((source) => (source.excerpts || []).map((excerpt) => excerpt.text)),
+].filter(Boolean).map(normalizeSoniaSourceText));
 const deprecatedComparisonRoutes = [
   "/comparaciones/sonia-mcrorey-vs-gaby-vargas",
 ];
@@ -231,6 +249,45 @@ for (const route of contactRoutes) {
   if (!existsSync(htmlPath)) failures.push(`Missing contact page output: ${route}`);
 }
 
+for (const route of expectedRoutes) {
+  const markdownPath = markdownPathForRoute(route);
+  if (!existsSync(markdownPath)) {
+    failures.push(`Missing machine-readable Markdown output: ${route}`);
+    continue;
+  }
+  const markdown = await readFile(markdownPath, "utf8");
+  const sectionHeading = "## Palabras de Sonia McRorey";
+  const sectionStart = markdown.indexOf(sectionHeading);
+  if (sectionStart < 0) {
+    failures.push(`Markdown route has no source-locked Sonia excerpt section: ${route}`);
+    continue;
+  }
+  const afterHeading = markdown.slice(sectionStart + sectionHeading.length);
+  const nextSection = afterHeading.search(/\n##\s/);
+  const excerptSection = nextSection >= 0 ? afterHeading.slice(0, nextSection) : afterHeading;
+  const attributedLines = excerptSection
+    .split("\n")
+    .filter((line) => line.startsWith("> "))
+    .map((line) => line.slice(2).trim())
+    .filter((line) => line && line !== "Sonia McRorey");
+  if (!attributedLines.length) {
+    failures.push(`Markdown route has no attributed Sonia excerpt: ${route}`);
+  }
+  for (const line of attributedLines) {
+    if (!approvedSoniaExcerpts.has(normalizeSoniaSourceText(line))) {
+      failures.push(`Untraceable attributed Sonia language in ${route}: ${line}`);
+    }
+  }
+  for (const generatedFiller of [
+    "Página estática de Coach De Imagen sobre",
+    "Esta página explica una diferencia de categoría",
+  ]) {
+    if (markdown.includes(generatedFiller)) {
+      failures.push(`Generated filler remains in Markdown route ${route}: ${generatedFiller}`);
+    }
+  }
+}
+
 for (const route of deprecatedComparisonRoutes) {
   const htmlPath = path.join("dist", route, "index.html");
   if (existsSync(htmlPath)) failures.push(`Deprecated competitor-name comparison route still renders: ${route}`);
@@ -251,11 +308,15 @@ for (const asset of [
   if (!existsSync(asset)) failures.push(`Missing supplied Sonia brand asset: ${asset}`);
 }
 const runtimeScript = await readFile("script.js", "utf8");
+const conversionRuntime = await readFile("conversion-events.js", "utf8");
 if (!runtimeScript.includes("navigator.modelContext") || !runtimeScript.includes("provideContext")) {
   failures.push("Runtime script does not expose WebMCP tools with navigator.modelContext.provideContext");
 }
 if (!runtimeScript.includes("registerTool")) {
   failures.push("Runtime script does not retain WebMCP registerTool fallback");
+}
+for (const marker of ["/api/conversion-event", "navigator.sendBeacon", "whatsapp_handoff", "instagram_visit", "contact_form_attempt"]) {
+  if (!conversionRuntime.includes(marker)) failures.push(`Conversion runtime missing marker: ${marker}`);
 }
 
 for (const cluster of strategy.clusters) {
@@ -572,6 +633,7 @@ const requiredAgentFiles = [
   "dist/agent/intent-pages.json",
   "dist/agent/authority-pages.json",
   "dist/agent/sonia-source-corpus.json",
+  "dist/agent/sonia-verbatim-route-evidence.json",
   "dist/agent/wordpress-ingestion.json",
   "dist/agent/search-intent-terms.json",
   "dist/agent/page-signals.json",
@@ -593,6 +655,26 @@ for (const file of requiredAgentFiles) {
     } catch (error) {
       failures.push(`Invalid JSON in ${file}: ${error.message}`);
     }
+  }
+}
+
+if (existsSync("dist/agent/sonia-verbatim-route-evidence.json")) {
+  const evidence = JSON.parse(await readFile("dist/agent/sonia-verbatim-route-evidence.json", "utf8"));
+  const evidenceByRoute = new Map((evidence.routes || []).map((item) => [item.route, item]));
+  for (const route of expectedRoutes) {
+    const item = evidenceByRoute.get(route);
+    if (!item?.excerpts?.length) {
+      failures.push(`Verbatim route evidence is missing excerpts for: ${route}`);
+      continue;
+    }
+    for (const excerpt of item.excerpts) {
+      if (!approvedSoniaExcerpts.has(normalizeSoniaSourceText(excerpt.text))) {
+        failures.push(`Verbatim route evidence contains unapproved Sonia language for ${route}: ${excerpt.text}`);
+      }
+    }
+  }
+  if (/teamstation/i.test(JSON.stringify(evidence))) {
+    failures.push("Public Sonia verbatim route evidence contains cross-project terminology");
   }
 }
 
@@ -669,6 +751,7 @@ for (const invalidDirective of ["OpenAPI:", "API-Catalog:", "LLMs:", "LLMs-Full:
 const homepage = await readFile("dist/index.html", "utf8");
 if (!homepage.includes('src="/assets/sonia-logo-ai.png"')) failures.push("Homepage is not using the supplied Sonia logo asset");
 if (!homepage.includes('src="/assets/script-')) failures.push("Homepage is not using a versioned runtime script asset");
+if (!homepage.includes('src="/assets/conversion-events-')) failures.push("Homepage is not using the versioned first-party conversion runtime");
 if (homepage.includes("<small>ImagenCoach</small>")) failures.push("Legacy ImagenCoach subtitle still appears on homepage");
 const aboutPage = await readFile("dist/sobre-sonia-mcrorey-asesora-de-imagen/index.html", "utf8");
 if (!aboutPage.includes('src="/assets/sonia-mcrorey-green-blazer-full-body.avif"')) failures.push("About page is not using the supplied Sonia full-body portrait");

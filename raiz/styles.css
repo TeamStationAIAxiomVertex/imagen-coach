@@ -1786,6 +1786,24 @@ summary {
   border-color: var(--white);
 }
 
+.final-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.button-social {
+  color: var(--white);
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.48);
+}
+
+.button-social:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--white);
+}
+
 .site-footer {
   padding: 44px 0;
   background: #f7f5f8;
@@ -1806,10 +1824,78 @@ summary {
   height: auto;
 }
 
-.footer-inner > div > p {
+.footer-brand > p {
   margin: 6px 0 0;
   color: var(--muted);
   font-size: 13px;
+}
+
+.footer-social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.footer-social-links a {
+  display: inline-grid;
+  grid-template-columns: 34px auto;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 8px 14px 8px 8px;
+  color: var(--green-deep);
+  background: var(--white);
+  border: 1px solid rgba(32, 92, 64, 0.2);
+  border-radius: 6px;
+}
+
+.footer-social-links a:hover {
+  color: var(--plum);
+  border-color: rgba(140, 71, 153, 0.32);
+}
+
+.footer-social-icon {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  color: currentColor;
+  background: var(--green-soft);
+  border-radius: 50%;
+}
+
+.footer-social-icon svg {
+  width: 19px;
+  height: 19px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.6;
+}
+
+.footer-social-icon .icon-fill {
+  fill: currentColor;
+  stroke: none;
+}
+
+.footer-social-links a > span:last-child {
+  display: grid;
+  gap: 1px;
+  line-height: 1.2;
+}
+
+.footer-social-links strong {
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.footer-social-links small {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 600;
 }
 
 .footer-inner nav {
@@ -2159,6 +2245,10 @@ summary {
   .footer-inner nav {
     justify-content: flex-start;
   }
+
+  .footer-social-links {
+    width: 100%;
+  }
 }
 
 @media (max-width: 520px) {
@@ -2188,6 +2278,13 @@ summary {
   .footer-inner,
   .final-inner {
     width: min(100% - 32px, var(--max));
+  }
+
+  .final-actions,
+  .final-actions .button,
+  .footer-social-links,
+  .footer-social-links a {
+    width: 100%;
   }
 
   .hero {

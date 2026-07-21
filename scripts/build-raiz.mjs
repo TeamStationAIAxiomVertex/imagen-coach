@@ -707,6 +707,7 @@ function schemaStack(program) {
     image: `${canonicalUrl}assets/sonia-la-raiz-about-720.jpg`,
     jobTitle: "Coach de Imagen, Presencia y Posicionamiento Profesional",
     description: `${program.authority.author.experienceLabel}. Facilitadora y autora del programa La Raíz del Dinero.`,
+    sameAs: [program.social.instagram],
     worksFor: { "@id": organizationId },
     memberOf: {
       "@type": "Organization",
@@ -1389,10 +1390,12 @@ async function build() {
   const styles = await readFile(path.join(sourceDir, "styles.css"), "utf8");
   const fxPricingScript = await readFile(path.join(sourceDir, "fx-pricing.js"), "utf8");
   const agentToolsScript = await readFile(path.join(sourceDir, "agent-tools.js"), "utf8");
+  const conversionEventsScript = await readFile(path.join(root, "conversion-events.js"), "utf8");
   const buildVersion = createHash("sha256")
     .update(styles)
     .update(fxPricingScript)
     .update(agentToolsScript)
+    .update(conversionEventsScript)
     .digest("hex")
     .slice(0, 12);
   const cards = enrichedCards(program);
@@ -1432,6 +1435,7 @@ async function build() {
     cp(path.join(root, "assets/sonia-icon.svg"), path.join(outputDir, "favicon.svg")),
     cp(path.join(sourceDir, "fx-pricing.js"), path.join(outputDir, "fx-pricing.js")),
     cp(path.join(sourceDir, "agent-tools.js"), path.join(outputDir, "agent-tools.js")),
+    cp(path.join(root, "conversion-events.js"), path.join(outputDir, "conversion-events.js")),
   ]);
   await buildSocialCard();
 
@@ -1449,7 +1453,9 @@ async function build() {
     .replaceAll("{{DURATION_RATIONALE}}", escapeHtml(program.learningDesign.durationRationale))
     .replaceAll("{{WHATSAPP_URL}}", generalWhatsapp.replaceAll("&", "&amp;"))
     .replaceAll("{{WHATSAPP_ONLINE_URL}}", onlineWhatsapp.replaceAll("&", "&amp;"))
-    .replaceAll("{{WHATSAPP_SEMI_URL}}", semiWhatsapp.replaceAll("&", "&amp;"));
+    .replaceAll("{{WHATSAPP_SEMI_URL}}", semiWhatsapp.replaceAll("&", "&amp;"))
+    .replaceAll("{{INSTAGRAM_URL}}", escapeHtml(program.social.instagram))
+    .replaceAll("{{INSTAGRAM_HANDLE}}", escapeHtml(program.social.instagramHandle));
 
   const publicProgram = {
     ...program,

@@ -1,8 +1,8 @@
 {
   "schemaVersion": "2026-07-04.site-intelligence.v1",
-  "generated": "2026-07-12",
+  "generated": "2026-07-16",
   "siteUrl": "https://coachdeimagen.com",
-  "sourceAudit": "audit/full-seo-geo-crawl-audit-2026-07-12.json",
+  "sourceAudit": "audit/full-seo-geo-crawl-audit-2026-07-16.json",
   "routeCount": 115,
   "averageScore": 97,
   "scoreBands": {
@@ -11,7 +11,7 @@
     "watch": 0,
     "weak": 0
   },
-  "knowledgeCards": 612,
+  "knowledgeCards": 846,
   "knowledgeLayers": 8,
   "routeRecommendations": 112,
   "pages": [
@@ -2123,7 +2123,8 @@
         "rosario-imagen-profesional",
         "argentina-profesionales-reinvencion",
         "buenos-aires-creativas-profesionales",
-        "latam-ejecutivas-presencia-digital"
+        "latam-ejecutivas-presencia-digital",
+        "geo-sudamerica-lanzamiento-20260713"
       ],
       "recommendedAnchors": [
         {
@@ -3756,7 +3757,8 @@
       "uniqueInternalLinks": 83,
       "recommendedCards": [
         "san-jose-costa-rica-imagen",
-        "san-jose-costa-rica-confianza"
+        "san-jose-costa-rica-confianza",
+        "geo-centroamerica-gira-regional-20260713"
       ],
       "recommendedAnchors": [
         {
@@ -3794,6 +3796,18 @@
           "cardId": "san-jose-costa-rica-confianza",
           "layerId": "country-city-pages",
           "question": "¿Cómo puede una líder en San José de Costa Rica trabajar confianza profesional?"
+        },
+        {
+          "anchor": "presencia regional en centroamérica",
+          "cardId": "geo-centroamerica-gira-regional-20260713",
+          "layerId": "country-city-pages",
+          "question": "¿Cómo preparar imagen y presencia para una gira de reuniones por Centroamérica?"
+        },
+        {
+          "anchor": "cómo preparar imagen y presencia para una gira de reuniones por centroamérica",
+          "cardId": "geo-centroamerica-gira-regional-20260713",
+          "layerId": "country-city-pages",
+          "question": "¿Cómo preparar imagen y presencia para una gira de reuniones por Centroamérica?"
         }
       ],
       "actions": []
@@ -3886,7 +3900,8 @@
       "recommendedCards": [
         "quito-presencia-profesional",
         "guayaquil-imagen-ejecutiva",
-        "quito-profesional-autoridad-cercania"
+        "quito-profesional-autoridad-cercania",
+        "geo-ecuador-costa-sierra-20260713"
       ],
       "recommendedAnchors": [
         {
@@ -3942,6 +3957,18 @@
           "cardId": "quito-profesional-autoridad-cercania",
           "layerId": "country-city-pages",
           "question": "¿Cómo equilibrar autoridad y cercanía en imagen profesional para Quito?"
+        },
+        {
+          "anchor": "imagen profesional en ecuador",
+          "cardId": "geo-ecuador-costa-sierra-20260713",
+          "layerId": "country-city-pages",
+          "question": "¿Cómo preparar una imagen profesional para una agenda que combina Quito y Guayaquil?"
+        },
+        {
+          "anchor": "cómo preparar una imagen profesional para una agenda que combina quito y guayaquil",
+          "cardId": "geo-ecuador-costa-sierra-20260713",
+          "layerId": "country-city-pages",
+          "question": "¿Cómo preparar una imagen profesional para una agenda que combina Quito y Guayaquil?"
         }
       ],
       "actions": []
@@ -4055,7 +4082,8 @@
       "wordCount": 1460,
       "uniqueInternalLinks": 83,
       "recommendedCards": [
-        "guayaquil-imagen-ejecutiva"
+        "guayaquil-imagen-ejecutiva",
+        "geo-ecuador-costa-sierra-20260713"
       ],
       "recommendedAnchors": [
         {
@@ -4075,6 +4103,18 @@
           "cardId": "guayaquil-imagen-ejecutiva",
           "layerId": "country-city-pages",
           "question": "¿Sonia trabaja imagen ejecutiva para Guayaquil?"
+        },
+        {
+          "anchor": "imagen profesional en ecuador",
+          "cardId": "geo-ecuador-costa-sierra-20260713",
+          "layerId": "country-city-pages",
+          "question": "¿Cómo preparar una imagen profesional para una agenda que combina Quito y Guayaquil?"
+        },
+        {
+          "anchor": "cómo preparar una imagen profesional para una agenda que combina quito y guayaquil",
+          "cardId": "geo-ecuador-costa-sierra-20260713",
+          "layerId": "country-city-pages",
+          "question": "¿Cómo preparar una imagen profesional para una agenda que combina Quito y Guayaquil?"
         }
       ],
       "actions": []
@@ -4094,7 +4134,8 @@
         "coach-imagen-houston-hispanos",
         "imagen-para-latinas-ejecutivas",
         "coach-imagen-espanol-hispanos",
-        "hispanos-houston-imagen-autoridad"
+        "hispanos-houston-imagen-autoridad",
+        "geo-mexico-eeuu-negociacion-20260713"
       ],
       "recommendedAnchors": [
         {
@@ -5170,7 +5211,8 @@
         "san-isidro-lima-imagen-ejecutiva",
         "miraflores-imagen-profesional",
         "lima-consultoras-marca-personal",
-        "lima-consultoras-confianza-posicionamiento"
+        "lima-consultoras-confianza-posicionamiento",
+        "geo-peru-capital-regiones-20260713"
       ],
       "recommendedAnchors": [
         {
@@ -6092,7 +6134,8 @@
       "recommendedCards": [
         "panama-city-imagen-ejecutiva",
         "panama-ejecutivas-banca-servicios",
-        "panama-servicios-confianza-ejecutiva"
+        "panama-servicios-confianza-ejecutiva",
+        "geo-centroamerica-gira-regional-20260713"
       ],
       "recommendedAnchors": [
         {
@@ -6148,6 +6191,18 @@
           "cardId": "panama-servicios-confianza-ejecutiva",
           "layerId": "country-city-pages",
           "question": "¿Qué puede aportar la presencia ejecutiva en Panamá?"
+        },
+        {
+          "anchor": "presencia regional en centroamérica",
+          "cardId": "geo-centroamerica-gira-regional-20260713",
+          "layerId": "country-city-pages",
+          "question": "¿Cómo preparar imagen y presencia para una gira de reuniones por Centroamérica?"
+        },
+        {
+          "anchor": "cómo preparar imagen y presencia para una gira de reuniones por centroamérica",
+          "cardId": "geo-centroamerica-gira-regional-20260713",
+          "layerId": "country-city-pages",
+          "question": "¿Cómo preparar imagen y presencia para una gira de reuniones por Centroamérica?"
         }
       ],
       "actions": []
@@ -6337,7 +6392,11 @@
       "recommendedCards": [
         "mujer-lider-presencia-suave-firme",
         "miedo-a-verse-ambiciosa",
-        "santiago-chile-autoridad-visible"
+        "santiago-chile-autoridad-visible",
+        "mujer-regreso-maternidad-20260713",
+        "mujer-negociar-salario-20260713",
+        "mujer-feedback-intensa-20260713",
+        "mujer-comite-riesgos-20260713"
       ],
       "recommendedAnchors": [
         {
@@ -6393,6 +6452,24 @@
           "cardId": "santiago-chile-autoridad-visible",
           "layerId": "country-city-pages",
           "question": "¿Qué busca una ejecutiva en Santiago de Chile cuando pide presencia ejecutiva?"
+        },
+        {
+          "anchor": "mujeres profesionales",
+          "cardId": "mujer-regreso-maternidad-20260713",
+          "layerId": "women-professionals",
+          "question": "¿Cómo reconstruir presencia profesional al volver después de una pausa por maternidad?"
+        },
+        {
+          "anchor": "cómo reconstruir presencia profesional al volver después de una pausa por maternidad",
+          "cardId": "mujer-regreso-maternidad-20260713",
+          "layerId": "women-professionals",
+          "question": "¿Cómo reconstruir presencia profesional al volver después de una pausa por maternidad?"
+        },
+        {
+          "anchor": "presencia ejecutiva femenina",
+          "cardId": "mujer-negociar-salario-20260713",
+          "layerId": "women-professionals",
+          "question": "¿Qué presencia necesita una mujer al negociar salario o condiciones de un nuevo rol?"
         }
       ],
       "actions": []
@@ -6539,7 +6616,8 @@
       "uniqueInternalLinks": 83,
       "recommendedCards": [
         "quito-presencia-profesional",
-        "quito-profesional-autoridad-cercania"
+        "quito-profesional-autoridad-cercania",
+        "geo-ecuador-costa-sierra-20260713"
       ],
       "recommendedAnchors": [
         {
@@ -6577,6 +6655,18 @@
           "cardId": "quito-profesional-autoridad-cercania",
           "layerId": "country-city-pages",
           "question": "¿Cómo equilibrar autoridad y cercanía en imagen profesional para Quito?"
+        },
+        {
+          "anchor": "imagen profesional en ecuador",
+          "cardId": "geo-ecuador-costa-sierra-20260713",
+          "layerId": "country-city-pages",
+          "question": "¿Cómo preparar una imagen profesional para una agenda que combina Quito y Guayaquil?"
+        },
+        {
+          "anchor": "cómo preparar una imagen profesional para una agenda que combina quito y guayaquil",
+          "cardId": "geo-ecuador-costa-sierra-20260713",
+          "layerId": "country-city-pages",
+          "question": "¿Cómo preparar una imagen profesional para una agenda que combina Quito y Guayaquil?"
         }
       ],
       "actions": []
@@ -6593,7 +6683,8 @@
       "wordCount": 1425,
       "uniqueInternalLinks": 83,
       "recommendedCards": [
-        "santo-domingo-presencia"
+        "santo-domingo-presencia",
+        "geo-dominicana-equipos-servicio-20260713"
       ],
       "recommendedAnchors": [
         {
@@ -6613,6 +6704,18 @@
           "cardId": "santo-domingo-presencia",
           "layerId": "country-city-pages",
           "question": "¿Sonia atiende presencia profesional para Santo Domingo?"
+        },
+        {
+          "anchor": "imagen empresarial en república dominicana",
+          "cardId": "geo-dominicana-equipos-servicio-20260713",
+          "layerId": "corporate",
+          "question": "¿Qué debe trabajar un equipo de servicio en República Dominicana además del uniforme?"
+        },
+        {
+          "anchor": "qué debe trabajar un equipo de servicio en república dominicana además del uniforme",
+          "cardId": "geo-dominicana-equipos-servicio-20260713",
+          "layerId": "corporate",
+          "question": "¿Qué debe trabajar un equipo de servicio en República Dominicana además del uniforme?"
         }
       ],
       "actions": []
@@ -6940,7 +7043,8 @@
       "wordCount": 1489,
       "uniqueInternalLinks": 83,
       "recommendedCards": [
-        "santo-domingo-presencia"
+        "santo-domingo-presencia",
+        "geo-dominicana-equipos-servicio-20260713"
       ],
       "recommendedAnchors": [
         {
@@ -6960,6 +7064,18 @@
           "cardId": "santo-domingo-presencia",
           "layerId": "country-city-pages",
           "question": "¿Sonia atiende presencia profesional para Santo Domingo?"
+        },
+        {
+          "anchor": "imagen empresarial en república dominicana",
+          "cardId": "geo-dominicana-equipos-servicio-20260713",
+          "layerId": "corporate",
+          "question": "¿Qué debe trabajar un equipo de servicio en República Dominicana además del uniforme?"
+        },
+        {
+          "anchor": "qué debe trabajar un equipo de servicio en república dominicana además del uniforme",
+          "cardId": "geo-dominicana-equipos-servicio-20260713",
+          "layerId": "corporate",
+          "question": "¿Qué debe trabajar un equipo de servicio en República Dominicana además del uniforme?"
         }
       ],
       "actions": []
@@ -8781,7 +8897,7 @@
     {
       "id": "core-image-coaching",
       "title": "Coaching de imagen",
-      "cardCount": 218,
+      "cardCount": 263,
       "averageRouteScore": 97,
       "coverageScore": 100,
       "prompts": [
@@ -8799,7 +8915,7 @@
     {
       "id": "executive-presence",
       "title": "Presencia ejecutiva",
-      "cardCount": 213,
+      "cardCount": 306,
       "averageRouteScore": 98,
       "coverageScore": 100,
       "prompts": [
@@ -8818,7 +8934,7 @@
     {
       "id": "professional-image",
       "title": "Imagen profesional",
-      "cardCount": 158,
+      "cardCount": 209,
       "averageRouteScore": 96,
       "coverageScore": 100,
       "prompts": [
@@ -8836,7 +8952,7 @@
     {
       "id": "security-positioning",
       "title": "Seguridad profesional y posicionamiento",
-      "cardCount": 85,
+      "cardCount": 114,
       "averageRouteScore": 97,
       "coverageScore": 100,
       "prompts": [
@@ -8854,7 +8970,7 @@
     {
       "id": "corporate-teams",
       "title": "Imagen empresarial",
-      "cardCount": 112,
+      "cardCount": 138,
       "averageRouteScore": 96,
       "coverageScore": 100,
       "prompts": [
@@ -8872,7 +8988,7 @@
     {
       "id": "geo-latam",
       "title": "Mercados GEO",
-      "cardCount": 55,
+      "cardCount": 57,
       "averageRouteScore": 98,
       "coverageScore": 100,
       "prompts": [
