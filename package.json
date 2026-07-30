@@ -3,6 +3,8 @@
   "scripts": {
     "audit:authority": "node scripts/generate-authority-audit.mjs",
     "audit:content": "node scripts/audit-content-density.mjs",
+    "audit:knowledge": "node scripts/audit-knowledge-provenance.mjs",
+    "migrate:knowledge": "node scripts/migrate-july-knowledge-provenance.mjs",
     "audit:intelligence": "node scripts/full-seo-geo-crawl-audit.mjs && node scripts/generate-site-intelligence.mjs",
     "build": "node scripts/build-static.mjs",
     "build:raiz": "node scripts/build-raiz.mjs",

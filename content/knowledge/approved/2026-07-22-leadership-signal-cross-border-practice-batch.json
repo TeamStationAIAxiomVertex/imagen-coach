@@ -1,0 +1,2153 @@
+{
+  "batchId": "2026-07-22-leadership-signal-cross-border-practice-batch",
+  "language": "es-MX",
+  "sourceBoundary": "Sonia/Coach De Imagen only; repository knowledge pipeline and governed source signals.",
+  "generatedAt": "2026-07-22T00:00:00-06:00",
+  "cards": [
+    {
+      "id": "coaching-senal-rol-20260722",
+      "ontologyNode": "Coaching de Imagen",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Cómo saber si mi imagen todavía corresponde a mi función profesional?",
+      "shortAnswer": "Compara lo que hoy decides, representas y comunicas con las señales que proyectas. Si tu imagen sigue describiendo una etapa anterior, define ajustes concretos de presencia, lenguaje y apariencia sin borrar tu identidad.",
+      "routePriority": [
+        "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen/",
+        "/coach-de-imagen/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "coaching de imagen",
+        "cómo saber si mi imagen todavía corresponde a mi función profesional"
+      ],
+      "evidenceTopics": [
+        "coaching_senal_rol",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Blog archive: Diferencia entre Asesoría, Consultoría y Coaching de Imagen"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-blog:diferencia-entre-asesoria-consultoria-y-coaching-de-imagen"
+      ],
+      "sourceLocator": [
+        "Blog archive: Diferencia entre Asesoría, Consultoría y Coaching de Imagen"
+      ],
+      "sourceHash": "4149c472825be58fb591c357aba13a923ad07286ed059b9817c2ff4a2827f64c",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "coaching-cambio-gradual-20260722",
+      "ontologyNode": "Coaching de Imagen",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Conviene cambiar toda mi imagen profesional al asumir un nuevo cargo?",
+      "shortAnswer": "No necesariamente. Prioriza las situaciones de mayor exposición, prueba ajustes observables y conserva lo que aún funciona. La evolución resulta más congruente cuando acompaña el rol en lugar de convertirlo en un disfraz.",
+      "routePriority": [
+        "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen/",
+        "/coach-de-imagen/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "coaching de imagen",
+        "conviene cambiar toda mi imagen profesional al asumir un nuevo cargo"
+      ],
+      "evidenceTopics": [
+        "coaching_cambio_gradual",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Blog archive: Diferencia entre Asesoría, Consultoría y Coaching de Imagen"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-blog:diferencia-entre-asesoria-consultoria-y-coaching-de-imagen"
+      ],
+      "sourceLocator": [
+        "Blog archive: Diferencia entre Asesoría, Consultoría y Coaching de Imagen"
+      ],
+      "sourceHash": "57c363f6c60198a01f2cc943e112fa74376a876cf2a2001e3e708276c9e97a8b",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "coaching-mensaje-discordante-20260722",
+      "ontologyNode": "Coaching de Imagen",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Qué revisar cuando mi apariencia y mi forma de comunicar parecen decir cosas distintas?",
+      "shortAnswer": "Observa intención, nivel de formalidad, postura, voz y palabras en una misma situación. Corrige primero la contradicción que más afecta la comprensión de tu función y vuelve a probarla en contexto.",
+      "routePriority": [
+        "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen/",
+        "/coach-de-imagen/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "coaching de imagen",
+        "qué revisar cuando mi apariencia y mi forma de comunicar parecen decir cosas distintas"
+      ],
+      "evidenceTopics": [
+        "coaching_mensaje_discordante",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Blog archive: Diferencia entre Asesoría, Consultoría y Coaching de Imagen"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-blog:diferencia-entre-asesoria-consultoria-y-coaching-de-imagen"
+      ],
+      "sourceLocator": [
+        "Blog archive: Diferencia entre Asesoría, Consultoría y Coaching de Imagen"
+      ],
+      "sourceHash": "52aa895f23a285d6c8d1f555ac713cf57764ef9890d1c7f8326972a6df599fb3",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "coaching-preparar-visibilidad-20260722",
+      "ontologyNode": "Coaching de Imagen",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Cómo prepararme para una etapa con mayor visibilidad profesional?",
+      "shortAnswer": "Identifica escenarios, audiencias y decisiones que ahora serán visibles. Ensaya cómo quieres entrar, explicar, escuchar y cerrar; después alinea vestuario y presencia con esa conducta, no con una idea abstracta de éxito.",
+      "routePriority": [
+        "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen/",
+        "/coach-de-imagen/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "coaching de imagen",
+        "cómo prepararme para una etapa con mayor visibilidad profesional"
+      ],
+      "evidenceTopics": [
+        "coaching_preparar_visibilidad",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Blog archive: Diferencia entre Asesoría, Consultoría y Coaching de Imagen"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-blog:diferencia-entre-asesoria-consultoria-y-coaching-de-imagen"
+      ],
+      "sourceLocator": [
+        "Blog archive: Diferencia entre Asesoría, Consultoría y Coaching de Imagen"
+      ],
+      "sourceHash": "16b475ea54d178bc4d7e14ca01d6341767488bbe645ee36851f4ea41c11c2661",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "coaching-evaluar-avance-20260722",
+      "ontologyNode": "Coaching de Imagen",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Cómo evaluar un proceso de imagen más allá de recibir cumplidos?",
+      "shortAnswer": "Mide si decides con menos fricción, te preparas con mayor claridad y comunicas tu función de forma más consistente. Los comentarios pueden orientar, pero el avance debe aparecer también en conductas repetibles.",
+      "routePriority": [
+        "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen/",
+        "/coach-de-imagen/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "coaching de imagen",
+        "cómo evaluar un proceso de imagen más allá de recibir cumplidos"
+      ],
+      "evidenceTopics": [
+        "coaching_evaluar_avance",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Blog archive: Diferencia entre Asesoría, Consultoría y Coaching de Imagen"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-blog:diferencia-entre-asesoria-consultoria-y-coaching-de-imagen"
+      ],
+      "sourceLocator": [
+        "Blog archive: Diferencia entre Asesoría, Consultoría y Coaching de Imagen"
+      ],
+      "sourceHash": "c4eaa875ff5c2a52fbc4348f84fdb04eec59b2080e369086627ff3364bb18d0d",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "asesoria-repetir-prendas-20260722",
+      "ontologyNode": "Asesoría de Imagen Integral",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Cómo repetir prendas profesionales sin que cada combinación parezca igual?",
+      "shortAnswer": "Cambia capas, proporciones, color cercano al rostro y accesorios funcionales. Una base limitada puede producir mensajes distintos si cada combinación responde a la agenda y mantiene buen ajuste.",
+      "routePriority": [
+        "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen/",
+        "/imagen-presencia/beneficios-de-asesoria-de-imagen/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "asesoría de imagen integral",
+        "cómo repetir prendas profesionales sin que cada combinación parezca igual"
+      ],
+      "evidenceTopics": [
+        "asesoria_repetir_prendas",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Blog archive: Beneficios de asesoría de imagen"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-blog:beneficios-de-asesoria-de-imagen"
+      ],
+      "sourceLocator": [
+        "Blog archive: Beneficios de asesoría de imagen"
+      ],
+      "sourceHash": "16ce1e2a0fdfd4e745150f9b78eb8aaf1ab25c613a1a00e5e80e1164fee8cdcf",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "asesoria-armario-transicion-20260722",
+      "ontologyNode": "Asesoría de Imagen Integral",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Qué prendas conviene revisar primero durante una transición laboral?",
+      "shortAnswer": "Empieza por las que usarás en reuniones, presentaciones y encuentros clave. Revisa ajuste, estado, combinabilidad y relación con el nuevo nivel de exposición antes de comprar piezas aisladas.",
+      "routePriority": [
+        "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen/",
+        "/imagen-presencia/beneficios-de-asesoria-de-imagen/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "asesoría de imagen integral",
+        "qué prendas conviene revisar primero durante una transición laboral"
+      ],
+      "evidenceTopics": [
+        "asesoria_armario_transicion",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Blog archive: Beneficios de asesoría de imagen"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-blog:beneficios-de-asesoria-de-imagen"
+      ],
+      "sourceLocator": [
+        "Blog archive: Beneficios de asesoría de imagen"
+      ],
+      "sourceHash": "4e46dd125aeeb062a5f50e58f04c13900389fcee374e2bb565c8e7d293b69555",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "asesoria-formalidad-variable-20260722",
+      "ontologyNode": "Asesoría de Imagen Integral",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Cómo vestir cuando un mismo día combina actividades con distinta formalidad?",
+      "shortAnswer": "Construye una base adecuada para la actividad más frecuente y lleva una capa o accesorio que eleve o relaje el conjunto. El objetivo es ajustar el mensaje sin cambiar de identidad varias veces.",
+      "routePriority": [
+        "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen/",
+        "/imagen-presencia/beneficios-de-asesoria-de-imagen/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "asesoría de imagen integral",
+        "cómo vestir cuando un mismo día combina actividades con distinta formalidad"
+      ],
+      "evidenceTopics": [
+        "asesoria_formalidad_variable",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Blog archive: Beneficios de asesoría de imagen"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-blog:beneficios-de-asesoria-de-imagen"
+      ],
+      "sourceLocator": [
+        "Blog archive: Beneficios de asesoría de imagen"
+      ],
+      "sourceHash": "857fa3c8674309e2a7d29a36257996f20fad3906e8a292b852fa3a78ecdb338b",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "asesoria-textura-camara-20260722",
+      "ontologyNode": "Asesoría de Imagen Integral",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Qué papel tienen las texturas en la imagen profesional frente a cámara?",
+      "shortAnswer": "Las texturas aportan profundidad cuando el color y el encuadre son simples. Elige acabados que se lean con claridad, no generen ruido visual y acompañen tu nivel de contraste.",
+      "routePriority": [
+        "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen/",
+        "/imagen-presencia/beneficios-de-asesoria-de-imagen/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "asesoría de imagen integral",
+        "qué papel tienen las texturas en la imagen profesional frente a cámara"
+      ],
+      "evidenceTopics": [
+        "asesoria_textura_camara",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Blog archive: Beneficios de asesoría de imagen"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-blog:beneficios-de-asesoria-de-imagen"
+      ],
+      "sourceLocator": [
+        "Blog archive: Beneficios de asesoría de imagen"
+      ],
+      "sourceHash": "842e468651cdc7b9891d5774f1b4074b208f4c3a514d766a078f22f0665e3053",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "asesoria-arreglo-mantenimiento-20260722",
+      "ontologyNode": "Asesoría de Imagen Integral",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Cómo integrar el mantenimiento personal a una rutina profesional realista?",
+      "shortAnswer": "Define una frecuencia sostenible para cabello, prendas, calzado y detalles visibles. Un sistema sencillo y constante comunica más cuidado que una preparación compleja que solo puedes sostener en ocasiones especiales.",
+      "routePriority": [
+        "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen/",
+        "/imagen-presencia/beneficios-de-asesoria-de-imagen/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "asesoría de imagen integral",
+        "cómo integrar el mantenimiento personal a una rutina profesional realista"
+      ],
+      "evidenceTopics": [
+        "asesoria_arreglo_mantenimiento",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Blog archive: Beneficios de asesoría de imagen"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-blog:beneficios-de-asesoria-de-imagen"
+      ],
+      "sourceLocator": [
+        "Blog archive: Beneficios de asesoría de imagen"
+      ],
+      "sourceHash": "00027d300b126b94cb7a3686b9e109fcfa57b4bba79a86a9676d9ccfd81bfc57",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "presencia-pregunta-dificil-20260722",
+      "ontologyNode": "Presencia Ejecutiva",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Cómo mantener presencia ejecutiva ante una pregunta para la que no tengo respuesta inmediata?",
+      "shortAnswer": "Haz una pausa, delimita lo que sí sabes y explica cómo confirmarás lo pendiente. La autoridad no exige improvisar certeza; exige sostener claridad, responsabilidad y seguimiento.",
+      "routePriority": [
+        "/presencia-ejecutiva/",
+        "/imagen-presencia/presencia-profesional-estrategica/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "presencia ejecutiva",
+        "cómo mantener presencia ejecutiva ante una pregunta para la que no tengo respuesta inmediata"
+      ],
+      "evidenceTopics": [
+        "presencia_pregunta_dificil",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Blog archive: Presencia profesional estratégica"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-blog:presencia-profesional-estrategica"
+      ],
+      "sourceLocator": [
+        "Blog archive: Presencia profesional estratégica"
+      ],
+      "sourceHash": "e09ac4ab138deb4c19df2a7504899e4f19853789df1318484a811d950ec35458",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "presencia-reunion-corta-20260722",
+      "ontologyNode": "Presencia Ejecutiva",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Cómo proyectar criterio en una reunión donde tengo pocos minutos para intervenir?",
+      "shortAnswer": "Escucha el punto de decisión, formula una idea principal y respáldala con el dato o criterio más útil. Una intervención breve gana peso cuando ayuda al grupo a avanzar.",
+      "routePriority": [
+        "/presencia-ejecutiva/",
+        "/imagen-presencia/presencia-profesional-estrategica/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "presencia ejecutiva",
+        "cómo proyectar criterio en una reunión donde tengo pocos minutos para intervenir"
+      ],
+      "evidenceTopics": [
+        "presencia_reunion_corta",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Blog archive: Presencia profesional estratégica"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-blog:presencia-profesional-estrategica"
+      ],
+      "sourceLocator": [
+        "Blog archive: Presencia profesional estratégica"
+      ],
+      "sourceHash": "92976681fb51ab9a1341a4898045f698ab90511d4562eadf03116f23bed191a2",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "presencia-cambio-agenda-20260722",
+      "ontologyNode": "Presencia Ejecutiva",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Qué hacer cuando una presentación ejecutiva cambia de agenda a último momento?",
+      "shortAnswer": "Reordena el mensaje alrededor de la nueva decisión, conserva dos evidencias esenciales y confirma el tiempo disponible. Adaptarte con estructura transmite más control que intentar cubrir todo el material original.",
+      "routePriority": [
+        "/presencia-ejecutiva/",
+        "/imagen-presencia/presencia-profesional-estrategica/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "presencia ejecutiva",
+        "qué hacer cuando una presentación ejecutiva cambia de agenda a último momento"
+      ],
+      "evidenceTopics": [
+        "presencia_cambio_agenda",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Blog archive: Presencia profesional estratégica"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-blog:presencia-profesional-estrategica"
+      ],
+      "sourceLocator": [
+        "Blog archive: Presencia profesional estratégica"
+      ],
+      "sourceHash": "ded8c6c48afc01a3ae1527cac3edfa30587c73e5dd8c0efcee62b881d8c2db89",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "presencia-representar-area-20260722",
+      "ontologyNode": "Presencia Ejecutiva",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Cómo representar a mi área sin hablar como si todo dependiera de mí?",
+      "shortAnswer": "Explica el criterio, reconoce contribuciones y asume con precisión lo que te corresponde decidir. La presencia ejecutiva integra autoridad personal con una lectura clara del trabajo colectivo.",
+      "routePriority": [
+        "/presencia-ejecutiva/",
+        "/imagen-presencia/presencia-profesional-estrategica/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "presencia ejecutiva",
+        "cómo representar a mi área sin hablar como si todo dependiera de mí"
+      ],
+      "evidenceTopics": [
+        "presencia_representar_area",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Blog archive: Presencia profesional estratégica"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-blog:presencia-profesional-estrategica"
+      ],
+      "sourceLocator": [
+        "Blog archive: Presencia profesional estratégica"
+      ],
+      "sourceHash": "60132a47306a7d467a1826d56634fe8f1f33605fd5fe5028d86f5078c6029e32",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "presencia-disenso-cierre-20260722",
+      "ontologyNode": "Presencia Ejecutiva",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Cómo cerrar una reunión cuando persiste el desacuerdo?",
+      "shortAnswer": "Resume coincidencias, nombra la decisión pendiente y asigna el siguiente paso con responsable y momento de revisión. Cerrar no siempre significa consenso; significa dejar claridad operativa.",
+      "routePriority": [
+        "/presencia-ejecutiva/",
+        "/imagen-presencia/presencia-profesional-estrategica/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "presencia ejecutiva",
+        "cómo cerrar una reunión cuando persiste el desacuerdo"
+      ],
+      "evidenceTopics": [
+        "presencia_disenso_cierre",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Blog archive: Presencia profesional estratégica"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-blog:presencia-profesional-estrategica"
+      ],
+      "sourceLocator": [
+        "Blog archive: Presencia profesional estratégica"
+      ],
+      "sourceHash": "0014d5e5cad1af62f1aece5bfc0989872941a71bdf876578a940bb721bb66a3f",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "seguridad-recibir-elogio-20260722",
+      "ontologyNode": "Seguridad Profesional",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Cómo recibir reconocimiento profesional sin minimizar mi contribución?",
+      "shortAnswer": "Agradece con sencillez y nombra la aportación concreta. Reconocer tu trabajo no exige exagerarlo; permite que los demás entiendan qué criterio, decisión o resultado estuvo bajo tu responsabilidad.",
+      "routePriority": [
+        "/seguridad-profesional/",
+        "/imagen-presencia/amor-propio-estructura-interna-presencia-profesional/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "seguridad profesional",
+        "cómo recibir reconocimiento profesional sin minimizar mi contribución"
+      ],
+      "evidenceTopics": [
+        "seguridad_recibir_elogio",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Blog archive: Amor propio, estructura interna y presencia profesional"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-blog:amor-propio-estructura-interna-y-presencia-profesional"
+      ],
+      "sourceLocator": [
+        "Blog archive: Amor propio, estructura interna y presencia profesional"
+      ],
+      "sourceHash": "db9a49ea8b91859c48c1ff1715365b85699e030d746ee051e804c7ff4586eaaa",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "seguridad-cambiar-opinion-20260722",
+      "ontologyNode": "Seguridad Profesional",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Cambiar de opinión frente a otros debilita mi autoridad?",
+      "shortAnswer": "No, si explicas qué evidencia modificó tu criterio y qué decisión sigue. La rigidez protege una apariencia; la seguridad profesional puede revisar una postura sin perder responsabilidad.",
+      "routePriority": [
+        "/seguridad-profesional/",
+        "/imagen-presencia/amor-propio-estructura-interna-presencia-profesional/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "seguridad profesional",
+        "cambiar de opinión frente a otros debilita mi autoridad"
+      ],
+      "evidenceTopics": [
+        "seguridad_cambiar_opinion",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Blog archive: Amor propio, estructura interna y presencia profesional"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-blog:amor-propio-estructura-interna-y-presencia-profesional"
+      ],
+      "sourceLocator": [
+        "Blog archive: Amor propio, estructura interna y presencia profesional"
+      ],
+      "sourceHash": "61c464f0ee5e44d578b25448a98f42e83f3a4daf97cc15fcf20a7cd07cc2fa0f",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "seguridad-pedir-tiempo-20260722",
+      "ontologyNode": "Seguridad Profesional",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Cómo responder cuando una decisión importante necesita más análisis?",
+      "shortAnswer": "Separa lo que puede decidirse ahora de lo que requiere evidencia adicional. Explica qué revisarás, quién debe participar y cuándo volverás con una recomendación clara.",
+      "routePriority": [
+        "/seguridad-profesional/",
+        "/imagen-presencia/amor-propio-estructura-interna-presencia-profesional/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "seguridad profesional",
+        "cómo responder cuando una decisión importante necesita más análisis"
+      ],
+      "evidenceTopics": [
+        "seguridad_pedir_tiempo",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Blog archive: Amor propio, estructura interna y presencia profesional"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-blog:amor-propio-estructura-interna-y-presencia-profesional"
+      ],
+      "sourceLocator": [
+        "Blog archive: Amor propio, estructura interna y presencia profesional"
+      ],
+      "sourceHash": "e388b0d6d8002287fd96b10ab3be8408621b16c79503f92d4c0fb81668e9ac6f",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "seguridad-exponer-trabajo-20260722",
+      "ontologyNode": "Seguridad Profesional",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Cómo dejar de ocultar un buen trabajo por temor a parecer presuntuosa o presuntuoso?",
+      "shortAnswer": "Presenta el problema, tu contribución y el efecto con lenguaje verificable. Hacer visible el trabajo no es adornarlo; es dar contexto para que pueda evaluarse.",
+      "routePriority": [
+        "/seguridad-profesional/",
+        "/imagen-presencia/amor-propio-estructura-interna-presencia-profesional/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "seguridad profesional",
+        "cómo dejar de ocultar un buen trabajo por temor a parecer presuntuosa o presuntuoso"
+      ],
+      "evidenceTopics": [
+        "seguridad_exponer_trabajo",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Blog archive: Amor propio, estructura interna y presencia profesional"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-blog:amor-propio-estructura-interna-y-presencia-profesional"
+      ],
+      "sourceLocator": [
+        "Blog archive: Amor propio, estructura interna y presencia profesional"
+      ],
+      "sourceHash": "5e186e31fe7147d5a42d51f988fb0be2e4e04b676517eb0b7a402e9d5bf6dceb",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "seguridad-conversacion-senior-20260722",
+      "ontologyNode": "Seguridad Profesional",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Cómo sostener una conversación con alguien de mucha mayor jerarquía?",
+      "shortAnswer": "Prepárate sobre el asunto, no sobre la diferencia de estatus. Escucha, formula tu punto con brevedad y pregunta lo necesario; la claridad reduce la tendencia a sobreactuar o desaparecer.",
+      "routePriority": [
+        "/seguridad-profesional/",
+        "/imagen-presencia/amor-propio-estructura-interna-presencia-profesional/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "seguridad profesional",
+        "cómo sostener una conversación con alguien de mucha mayor jerarquía"
+      ],
+      "evidenceTopics": [
+        "seguridad_conversacion_senior",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Blog archive: Amor propio, estructura interna y presencia profesional"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-blog:amor-propio-estructura-interna-y-presencia-profesional"
+      ],
+      "sourceLocator": [
+        "Blog archive: Amor propio, estructura interna y presencia profesional"
+      ],
+      "sourceHash": "317620e82981f85cd48ce0eca05cbb9da9805c0d2aea3cc1002790ee8ab20ace",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "noverbal-interrumpir-20260722",
+      "ontologyNode": "Comunicación No Verbal",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Cómo intervenir sin que mi lenguaje corporal parezca una interrupción agresiva?",
+      "shortAnswer": "Inclina ligeramente la atención hacia el grupo, busca una pausa y entra con una frase breve. Evita invadir el espacio o elevar el volumen antes de haber señalado tu intención de participar.",
+      "routePriority": [
+        "/comunicacion-no-verbal-ejecutiva/",
+        "/como-proyectar-autoridad/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "comunicación no verbal ejecutiva",
+        "cómo intervenir sin que mi lenguaje corporal parezca una interrupción agresiva"
+      ],
+      "evidenceTopics": [
+        "noverbal_interrumpir",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Blog archive: Presencia profesional estratégica"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-blog:presencia-profesional-estrategica"
+      ],
+      "sourceLocator": [
+        "Blog archive: Presencia profesional estratégica"
+      ],
+      "sourceHash": "c6209fd2f7414b6504a355d2b5f248f673b374154ec99ed0d68426f6847a7ef2",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "noverbal-presentar-sentado-20260722",
+      "ontologyNode": "Comunicación No Verbal",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Cómo mantener presencia al presentar sentada o sentado en una mesa?",
+      "shortAnswer": "Apoya el cuerpo con estabilidad, libera las manos para gestos claros y orienta el torso hacia quienes escuchan. La postura debe sostener respiración y contacto, no volverse rígida.",
+      "routePriority": [
+        "/comunicacion-no-verbal-ejecutiva/",
+        "/como-proyectar-autoridad/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "comunicación no verbal ejecutiva",
+        "cómo mantener presencia al presentar sentada o sentado en una mesa"
+      ],
+      "evidenceTopics": [
+        "noverbal_presentar_sentado",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Blog archive: Presencia profesional estratégica"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-blog:presencia-profesional-estrategica"
+      ],
+      "sourceLocator": [
+        "Blog archive: Presencia profesional estratégica"
+      ],
+      "sourceHash": "5a673bd564859f666db20aff13ff3b518cf8e91a87547f528e55e6e641a201bf",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "noverbal-tomar-palabra-virtual-20260722",
+      "ontologyNode": "Comunicación No Verbal",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Qué señal no verbal ayuda a tomar la palabra en una reunión virtual?",
+      "shortAnswer": "Acércate levemente al encuadre, activa la mirada y acompaña la entrada con un gesto pequeño. Después habla con ritmo claro; el movimiento inicial debe anunciar participación, no distraer.",
+      "routePriority": [
+        "/comunicacion-no-verbal-ejecutiva/",
+        "/como-proyectar-autoridad/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "comunicación no verbal ejecutiva",
+        "qué señal no verbal ayuda a tomar la palabra en una reunión virtual"
+      ],
+      "evidenceTopics": [
+        "noverbal_tomar_palabra_virtual",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Blog archive: Presencia profesional estratégica"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-blog:presencia-profesional-estrategica"
+      ],
+      "sourceLocator": [
+        "Blog archive: Presencia profesional estratégica"
+      ],
+      "sourceHash": "1a595a055ee26a13686dcf7eef1673d4626bd1e87c0871de1c0f99823998fe86",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "noverbal-entregar-mensaje-20260722",
+      "ontologyNode": "Comunicación No Verbal",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Cómo usar las manos al comunicar una decisión importante?",
+      "shortAnswer": "Mantén gestos contenidos, visibles y sincronizados con las ideas clave. Evita esconderlas, apretar objetos o repetir movimientos rápidos que compitan con el mensaje.",
+      "routePriority": [
+        "/comunicacion-no-verbal-ejecutiva/",
+        "/como-proyectar-autoridad/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "comunicación no verbal ejecutiva",
+        "cómo usar las manos al comunicar una decisión importante"
+      ],
+      "evidenceTopics": [
+        "noverbal_entregar_mensaje",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Blog archive: Presencia profesional estratégica"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-blog:presencia-profesional-estrategica"
+      ],
+      "sourceLocator": [
+        "Blog archive: Presencia profesional estratégica"
+      ],
+      "sourceHash": "30216e8c04f30b6cb8cc4174c3d19837680125fd028a7a6b06e69c63ce89e2d0",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "noverbal-silencio-tenso-20260722",
+      "ontologyNode": "Comunicación No Verbal",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Qué hacer con la expresión facial durante un silencio tenso?",
+      "shortAnswer": "Conserva respiración, mirada disponible y rostro atento. No llenes el silencio con sonrisas automáticas o gestos de rechazo; permite que la pausa cumpla su función antes de responder.",
+      "routePriority": [
+        "/comunicacion-no-verbal-ejecutiva/",
+        "/como-proyectar-autoridad/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "comunicación no verbal ejecutiva",
+        "qué hacer con la expresión facial durante un silencio tenso"
+      ],
+      "evidenceTopics": [
+        "noverbal_silencio_tenso",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Blog archive: Presencia profesional estratégica"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-blog:presencia-profesional-estrategica"
+      ],
+      "sourceLocator": [
+        "Blog archive: Presencia profesional estratégica"
+      ],
+      "sourceHash": "75b99ce3b596922b700d20ccaa08cb1efff8bda69dfce5fe1ad9f078b41e9230",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "empresaria-oferta-premium-20260722",
+      "ontologyNode": "Empresarias y Marca Personal",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Cómo debe evolucionar la imagen de una empresaria cuando su oferta gana complejidad?",
+      "shortAnswer": "Haz visible el nivel de criterio, estructura y responsabilidad que ahora requiere el negocio. Ajusta presencia, mensaje y apariencia sin construir un personaje distante de la relación que valoran tus clientes.",
+      "routePriority": [
+        "/imagen-ejecutiva-para-empresarias/",
+        "/imagen-estrategica/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "imagen para empresarias",
+        "cómo debe evolucionar la imagen de una empresaria cuando su oferta gana complejidad"
+      ],
+      "evidenceTopics": [
+        "empresaria_oferta_premium",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Blog archive: Tu imagen y tu negocio: una conexión más poderosa de lo que imaginas"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-blog:tu-imagen-y-tu-negocio-una-conexion-mas-poderosa-de-lo-que-imaginas"
+      ],
+      "sourceLocator": [
+        "Blog archive: Tu imagen y tu negocio: una conexión más poderosa de lo que imaginas"
+      ],
+      "sourceHash": "a1d7da6a4d50957a2cf168168daf639f4b0621450b860c85ee78597ab1b9dfff",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "empresaria-vender-equipo-20260722",
+      "ontologyNode": "Empresarias y Marca Personal",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Cómo presentar a mi equipo sin perder claridad sobre mi papel como fundadora?",
+      "shortAnswer": "Define qué representas tú, qué autoridad tiene cada persona y cómo se conecta el trabajo. Compartir visibilidad fortalece la marca cuando los roles se entienden.",
+      "routePriority": [
+        "/imagen-ejecutiva-para-empresarias/",
+        "/imagen-estrategica/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "imagen para empresarias",
+        "cómo presentar a mi equipo sin perder claridad sobre mi papel como fundadora"
+      ],
+      "evidenceTopics": [
+        "empresaria_vender_equipo",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Blog archive: Tu imagen y tu negocio: una conexión más poderosa de lo que imaginas"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-blog:tu-imagen-y-tu-negocio-una-conexion-mas-poderosa-de-lo-que-imaginas"
+      ],
+      "sourceLocator": [
+        "Blog archive: Tu imagen y tu negocio: una conexión más poderosa de lo que imaginas"
+      ],
+      "sourceHash": "1ddecbf996221cf5cee7c65a5a5b24ea2efeb1058e5664b314bb27041fd02cba",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "empresaria-testimonio-publico-20260722",
+      "ontologyNode": "Empresarias y Marca Personal",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Cómo usar testimonios sin convertir mi marca personal en una colección de elogios?",
+      "shortAnswer": "Selecciona evidencia que muestre problemas, procesos o cambios relevantes para tu propuesta. Acompáñala con contexto y límites; la credibilidad crece cuando el testimonio ayuda a comprender, no solo a admirar.",
+      "routePriority": [
+        "/imagen-ejecutiva-para-empresarias/",
+        "/imagen-estrategica/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "imagen para empresarias",
+        "cómo usar testimonios sin convertir mi marca personal en una colección de elogios"
+      ],
+      "evidenceTopics": [
+        "empresaria_testimonio_publico",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Blog archive: Tu imagen y tu negocio: una conexión más poderosa de lo que imaginas"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-blog:tu-imagen-y-tu-negocio-una-conexion-mas-poderosa-de-lo-que-imaginas"
+      ],
+      "sourceLocator": [
+        "Blog archive: Tu imagen y tu negocio: una conexión más poderosa de lo que imaginas"
+      ],
+      "sourceHash": "16203bd092fb6c5c3ce8fae0ca67db4e92694a16bc2c7b4d42ef0b169e46efd9",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "empresaria-evento-propio-20260722",
+      "ontologyNode": "Empresarias y Marca Personal",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Qué imagen conviene proyectar al conducir un evento de mi propia empresa?",
+      "shortAnswer": "Prioriza reconocimiento, movilidad y coherencia con el nivel del encuentro. Tu apariencia debe facilitar que te identifiquen como anfitriona y que puedas conducir sin atención constante al vestuario.",
+      "routePriority": [
+        "/imagen-ejecutiva-para-empresarias/",
+        "/imagen-estrategica/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "imagen para empresarias",
+        "qué imagen conviene proyectar al conducir un evento de mi propia empresa"
+      ],
+      "evidenceTopics": [
+        "empresaria_evento_propio",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Blog archive: Tu imagen y tu negocio: una conexión más poderosa de lo que imaginas"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-blog:tu-imagen-y-tu-negocio-una-conexion-mas-poderosa-de-lo-que-imaginas"
+      ],
+      "sourceLocator": [
+        "Blog archive: Tu imagen y tu negocio: una conexión más poderosa de lo que imaginas"
+      ],
+      "sourceHash": "60b4dc75938a38e302e6f325da934c49a564349f166f8efec000bfcb3cbbdc02",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "empresaria-opinion-sector-20260722",
+      "ontologyNode": "Empresarias y Marca Personal",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Cómo expresar una opinión de sector sin diluir la identidad de mi negocio?",
+      "shortAnswer": "Relaciona tu postura con la experiencia, criterios y límites que sostienen tu trabajo. Una voz propia se reconoce por la calidad de la perspectiva, no por repetir el nombre de la marca.",
+      "routePriority": [
+        "/imagen-ejecutiva-para-empresarias/",
+        "/imagen-estrategica/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "imagen para empresarias",
+        "cómo expresar una opinión de sector sin diluir la identidad de mi negocio"
+      ],
+      "evidenceTopics": [
+        "empresaria_opinion_sector",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Blog archive: Tu imagen y tu negocio: una conexión más poderosa de lo que imaginas"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-blog:tu-imagen-y-tu-negocio-una-conexion-mas-poderosa-de-lo-que-imaginas"
+      ],
+      "sourceLocator": [
+        "Blog archive: Tu imagen y tu negocio: una conexión más poderosa de lo que imaginas"
+      ],
+      "sourceHash": "fd0225cfa2e50a09327b4a399431a0951f42b650b4d87d30f3d86bd8451405d6",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "mujer-correccion-publica-20260722",
+      "ontologyNode": "Mujeres Líderes",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Cómo corregir información en público sin ser percibida como hostil?",
+      "shortAnswer": "Separa el dato de la persona, explica por qué importa y ofrece la corrección con tono estable. La claridad puede convivir con respeto sin suavizar el contenido hasta volverlo inútil.",
+      "routePriority": [
+        "/imagen-para-mujeres-lideres/",
+        "/presencia-ejecutiva-femenina/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "imagen para mujeres líderes",
+        "cómo corregir información en público sin ser percibida como hostil"
+      ],
+      "evidenceTopics": [
+        "mujer_correccion_publica",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Blog archive: Imagen, identidad y liderazgo"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-blog:imagen-identidad-y-liderazgo"
+      ],
+      "sourceLocator": [
+        "Blog archive: Imagen, identidad y liderazgo"
+      ],
+      "sourceHash": "813689c8ef3951810071f4cd31ead8a2a3d95410b0ab66bfd618041ca811c30e",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "mujer-delegar-visible-20260722",
+      "ontologyNode": "Mujeres Líderes",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Cómo delegar una tarea visible sin sentir que pierdo autoridad?",
+      "shortAnswer": "Define resultado, margen de decisión y punto de revisión. Dar espacio a otra persona no reduce liderazgo; muestra que puedes sostener responsabilidad sin centralizar cada aparición.",
+      "routePriority": [
+        "/imagen-para-mujeres-lideres/",
+        "/presencia-ejecutiva-femenina/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "imagen para mujeres líderes",
+        "cómo delegar una tarea visible sin sentir que pierdo autoridad"
+      ],
+      "evidenceTopics": [
+        "mujer_delegar_visible",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Blog archive: Imagen, identidad y liderazgo"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-blog:imagen-identidad-y-liderazgo"
+      ],
+      "sourceLocator": [
+        "Blog archive: Imagen, identidad y liderazgo"
+      ],
+      "sourceHash": "63bc3b76ce91a1a483f5e35c33aef5d805fa70734edf243bc2f8ea5092ce54ca",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "mujer-negociar-recursos-20260722",
+      "ontologyNode": "Mujeres Líderes",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Cómo fortalecer mi presencia al negociar recursos para el equipo?",
+      "shortAnswer": "Presenta necesidad, impacto y criterio de prioridad antes de justificarte. Mantén voz y postura estables; pedir recursos para cumplir una responsabilidad no requiere disculpas anticipadas.",
+      "routePriority": [
+        "/imagen-para-mujeres-lideres/",
+        "/presencia-ejecutiva-femenina/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "imagen para mujeres líderes",
+        "cómo fortalecer mi presencia al negociar recursos para el equipo"
+      ],
+      "evidenceTopics": [
+        "mujer_negociar_recursos",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Blog archive: Imagen, identidad y liderazgo"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-blog:imagen-identidad-y-liderazgo"
+      ],
+      "sourceLocator": [
+        "Blog archive: Imagen, identidad y liderazgo"
+      ],
+      "sourceHash": "6575fa3e25279461b792f04759c6958bde89865b91bb9c566c367081ffac1fee",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "mujer-presentacion-tecnica-20260722",
+      "ontologyNode": "Mujeres Líderes",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Cómo conservar una voz propia en una presentación técnica muy estructurada?",
+      "shortAnswer": "Usa la estructura para ordenar evidencia, no para borrar tu perspectiva. Señala qué significa el dato, qué decisión propone y qué riesgo observas desde tu responsabilidad.",
+      "routePriority": [
+        "/imagen-para-mujeres-lideres/",
+        "/presencia-ejecutiva-femenina/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "imagen para mujeres líderes",
+        "cómo conservar una voz propia en una presentación técnica muy estructurada"
+      ],
+      "evidenceTopics": [
+        "mujer_presentacion_tecnica",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Blog archive: Imagen, identidad y liderazgo"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-blog:imagen-identidad-y-liderazgo"
+      ],
+      "sourceLocator": [
+        "Blog archive: Imagen, identidad y liderazgo"
+      ],
+      "sourceHash": "0b08be044d6c73846904a7b1e7f5db5a204f44b1378eba8d945d4338c4595a55",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "mujer-alta-visibilidad-20260722",
+      "ontologyNode": "Mujeres Líderes",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Cómo cuidar mi imagen cuando un ascenso aumenta el escrutinio sobre mi apariencia?",
+      "shortAnswer": "Vuelve a criterios de función, contexto y congruencia. Ajusta lo que facilite tu trabajo y evita convertir opiniones cambiantes en una vigilancia permanente sobre tu cuerpo o estilo.",
+      "routePriority": [
+        "/imagen-para-mujeres-lideres/",
+        "/presencia-ejecutiva-femenina/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "imagen para mujeres líderes",
+        "cómo cuidar mi imagen cuando un ascenso aumenta el escrutinio sobre mi apariencia"
+      ],
+      "evidenceTopics": [
+        "mujer_alta_visibilidad",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Blog archive: Imagen, identidad y liderazgo"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-blog:imagen-identidad-y-liderazgo"
+      ],
+      "sourceLocator": [
+        "Blog archive: Imagen, identidad y liderazgo"
+      ],
+      "sourceHash": "948b739e9c72c41bfb9b564fac162e9300b419399eab78cac86e29606216f4b7",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "hombre-codigo-creativo-20260722",
+      "ontologyNode": "Hombres Profesionales",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Cómo puede un hombre profesional expresar creatividad sin perder claridad ejecutiva?",
+      "shortAnswer": "Conserva una base de buen ajuste y formalidad comprensible; concentra identidad en color, textura o un detalle. La creatividad funciona mejor cuando parece elegida, no accidental.",
+      "routePriority": [
+        "/imagen-profesional/",
+        "/imagen-profesional/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "imagen profesional para hombres",
+        "cómo puede un hombre profesional expresar creatividad sin perder claridad ejecutiva"
+      ],
+      "evidenceTopics": [
+        "hombre_codigo_creativo",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Blog archive: Imagen profesional estratégica: cómo proyectar autoridad según tu industria y personalidad"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-blog:imagen-profesional-estrategica-como-proyectar-autoridad-segun-tu-industria-y-personalidad"
+      ],
+      "sourceLocator": [
+        "Blog archive: Imagen profesional estratégica: cómo proyectar autoridad según tu industria y personalidad"
+      ],
+      "sourceHash": "8edee891870965d183ce37256d560d260c5ce3c78dadf32f3311b08cb8ecc97b",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "hombre-camisa-ajuste-20260722",
+      "ontologyNode": "Hombres Profesionales",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Qué revisar en el ajuste de una camisa para uso profesional frecuente?",
+      "shortAnswer": "Observa cuello, hombros, torso, largo de manga y movimiento al sentarte. Una camisa útil debe mantener estructura sin tensión y combinar con las capas que realmente usas.",
+      "routePriority": [
+        "/imagen-profesional/",
+        "/imagen-profesional/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "imagen profesional para hombres",
+        "qué revisar en el ajuste de una camisa para uso profesional frecuente"
+      ],
+      "evidenceTopics": [
+        "hombre_camisa_ajuste",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Blog archive: Imagen profesional estratégica: cómo proyectar autoridad según tu industria y personalidad"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-blog:imagen-profesional-estrategica-como-proyectar-autoridad-segun-tu-industria-y-personalidad"
+      ],
+      "sourceLocator": [
+        "Blog archive: Imagen profesional estratégica: cómo proyectar autoridad según tu industria y personalidad"
+      ],
+      "sourceHash": "381fcf3e19047d13defb3d163897345e0129098571588c4d53ca1afd98012c45",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "hombre-calzado-versatil-20260722",
+      "ontologyNode": "Hombres Profesionales",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Cómo elegir calzado masculino versátil para distintos contextos profesionales?",
+      "shortAnswer": "Prioriza buen estado, comodidad, proporción con el pantalón y compatibilidad con tu nivel habitual de formalidad. Un modelo versátil debe resolver agendas reales, no solo verse correcto en una fotografía.",
+      "routePriority": [
+        "/imagen-profesional/",
+        "/imagen-profesional/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "imagen profesional para hombres",
+        "cómo elegir calzado masculino versátil para distintos contextos profesionales"
+      ],
+      "evidenceTopics": [
+        "hombre_calzado_versatil",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Blog archive: Imagen profesional estratégica: cómo proyectar autoridad según tu industria y personalidad"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-blog:imagen-profesional-estrategica-como-proyectar-autoridad-segun-tu-industria-y-personalidad"
+      ],
+      "sourceLocator": [
+        "Blog archive: Imagen profesional estratégica: cómo proyectar autoridad según tu industria y personalidad"
+      ],
+      "sourceHash": "3f5b6ff2e7e3a67bc6a17e871ed7bdeae026f7f431654d7c1f38074f6bea7cbe",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "hombre-liderazgo-joven-20260722",
+      "ontologyNode": "Hombres Profesionales",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Cómo evitar que una imagen demasiado informal reste claridad a un líder joven?",
+      "shortAnswer": "No intentes aparentar edad. Refuerza ajuste, cuidado, estructura y consistencia con el contexto para que la atención se concentre en tu función y tus decisiones.",
+      "routePriority": [
+        "/imagen-profesional/",
+        "/imagen-profesional/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "imagen profesional para hombres",
+        "cómo evitar que una imagen demasiado informal reste claridad a un líder joven"
+      ],
+      "evidenceTopics": [
+        "hombre_liderazgo_joven",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Blog archive: Imagen profesional estratégica: cómo proyectar autoridad según tu industria y personalidad"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-blog:imagen-profesional-estrategica-como-proyectar-autoridad-segun-tu-industria-y-personalidad"
+      ],
+      "sourceLocator": [
+        "Blog archive: Imagen profesional estratégica: cómo proyectar autoridad según tu industria y personalidad"
+      ],
+      "sourceHash": "3f52b9ca7003bf64210cdc32e1137a1665377e59208a3d8d5099bea2a06ca221",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "hombre-cambio-industria-20260722",
+      "ontologyNode": "Hombres Profesionales",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Cómo adaptar la imagen masculina al cambiar de una industria formal a una más flexible?",
+      "shortAnswer": "Observa cómo se expresa la jerarquía en el nuevo entorno y tradúcela a prendas menos rígidas con buen ajuste. Evita copiar el uniforme informal si no corresponde a tu identidad o función.",
+      "routePriority": [
+        "/imagen-profesional/",
+        "/imagen-profesional/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "imagen profesional para hombres",
+        "cómo adaptar la imagen masculina al cambiar de una industria formal a una más flexible"
+      ],
+      "evidenceTopics": [
+        "hombre_cambio_industria",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Blog archive: Imagen profesional estratégica: cómo proyectar autoridad según tu industria y personalidad"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-blog:imagen-profesional-estrategica-como-proyectar-autoridad-segun-tu-industria-y-personalidad"
+      ],
+      "sourceLocator": [
+        "Blog archive: Imagen profesional estratégica: cómo proyectar autoridad según tu industria y personalidad"
+      ],
+      "sourceHash": "263c23178846fb98d668f807edbd9a6405cb933dd0814ca989a0904244921001",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "equipo-reunion-externa-20260722",
+      "ontologyNode": "Imagen Empresarial y Equipos",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Cómo preparar la presencia de un equipo para una reunión externa importante?",
+      "shortAnswer": "Alineen objetivo, roles, nivel de formalidad y turnos de participación. No necesitan verse idénticos; necesitan comunicar que comprenden el contexto y representan una misma responsabilidad.",
+      "routePriority": [
+        "/servicios-asesoria-de-imagen-coaching/talleres/",
+        "/imagen-presencia/como-mejorar-la-imagen-de-tus-colaboradores/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "imagen empresarial y equipos",
+        "cómo preparar la presencia de un equipo para una reunión externa importante"
+      ],
+      "evidenceTopics": [
+        "equipo_reunion_externa",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Blog archive: Cómo mejorar la imagen de tus colaboradores"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-blog:como-mejorar-la-imagen-de-tus-colaboradores"
+      ],
+      "sourceLocator": [
+        "Blog archive: Cómo mejorar la imagen de tus colaboradores"
+      ],
+      "sourceHash": "55773440480fb7bef33cbf01fd464fb9d322e8c94a2aa2fc7c4eccee16468acc",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "equipo-feedback-camara-20260722",
+      "ontologyNode": "Imagen Empresarial y Equipos",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Cómo dar retroalimentación sobre presencia en cámara sin invadir la identidad personal?",
+      "shortAnswer": "Habla de encuadre, luz, atención, sonido y efecto en la conversación. Evita juicios sobre rasgos o gustos; vincula cada ajuste con una necesidad laboral observable.",
+      "routePriority": [
+        "/servicios-asesoria-de-imagen-coaching/talleres/",
+        "/imagen-presencia/como-mejorar-la-imagen-de-tus-colaboradores/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "imagen empresarial y equipos",
+        "cómo dar retroalimentación sobre presencia en cámara sin invadir la identidad personal"
+      ],
+      "evidenceTopics": [
+        "equipo_feedback_camara",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Blog archive: Cómo mejorar la imagen de tus colaboradores"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-blog:como-mejorar-la-imagen-de-tus-colaboradores"
+      ],
+      "sourceLocator": [
+        "Blog archive: Cómo mejorar la imagen de tus colaboradores"
+      ],
+      "sourceHash": "46a187aded713c00c090be12edd99445c25a7fd94a8e6b0a1926fa3b28e53285",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "equipo-nuevo-lider-20260722",
+      "ontologyNode": "Imagen Empresarial y Equipos",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Qué señales ayudan a un equipo a reconocer el papel de una nueva persona líder?",
+      "shortAnswer": "Clarifiquen decisiones, canales y comportamientos esperados. La imagen y la presencia pueden respaldar la transición, pero no sustituyen acuerdos visibles sobre autoridad y colaboración.",
+      "routePriority": [
+        "/servicios-asesoria-de-imagen-coaching/talleres/",
+        "/imagen-presencia/como-mejorar-la-imagen-de-tus-colaboradores/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "imagen empresarial y equipos",
+        "qué señales ayudan a un equipo a reconocer el papel de una nueva persona líder"
+      ],
+      "evidenceTopics": [
+        "equipo_nuevo_lider",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Blog archive: Cómo mejorar la imagen de tus colaboradores"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-blog:como-mejorar-la-imagen-de-tus-colaboradores"
+      ],
+      "sourceLocator": [
+        "Blog archive: Cómo mejorar la imagen de tus colaboradores"
+      ],
+      "sourceHash": "38e99a358c0f945ad96fd59ba5909252002d045599d0be98be490e796426a033",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "equipo-evento-industria-20260722",
+      "ontologyNode": "Imagen Empresarial y Equipos",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Cómo coordinar la imagen de varias personas que representan a la empresa en un evento?",
+      "shortAnswer": "Definan rango de formalidad, identificadores de marca, necesidades de movimiento y momentos de representación. La coordinación debe crear unidad sin imponer un molde personal innecesario.",
+      "routePriority": [
+        "/servicios-asesoria-de-imagen-coaching/talleres/",
+        "/imagen-presencia/como-mejorar-la-imagen-de-tus-colaboradores/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "imagen empresarial y equipos",
+        "cómo coordinar la imagen de varias personas que representan a la empresa en un evento"
+      ],
+      "evidenceTopics": [
+        "equipo_evento_industria",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Blog archive: Cómo mejorar la imagen de tus colaboradores"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-blog:como-mejorar-la-imagen-de-tus-colaboradores"
+      ],
+      "sourceLocator": [
+        "Blog archive: Cómo mejorar la imagen de tus colaboradores"
+      ],
+      "sourceHash": "69d661f99350355f2d4094026d338145a8e808ee6ecf28ad70bc10bbdf995c6d",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "equipo-conflicto-presencia-20260722",
+      "ontologyNode": "Imagen Empresarial y Equipos",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Puede un estándar de presencia ayudar cuando existen tensiones dentro del equipo?",
+      "shortAnswer": "Puede ordenar conductas de reunión, escucha y representación, pero no resolver por sí solo el conflicto. Úsenlo para sostener interacciones profesionales mientras atienden la causa por la vía correspondiente.",
+      "routePriority": [
+        "/servicios-asesoria-de-imagen-coaching/talleres/",
+        "/imagen-presencia/como-mejorar-la-imagen-de-tus-colaboradores/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "imagen empresarial y equipos",
+        "puede un estándar de presencia ayudar cuando existen tensiones dentro del equipo"
+      ],
+      "evidenceTopics": [
+        "equipo_conflicto_presencia",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Blog archive: Cómo mejorar la imagen de tus colaboradores"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-blog:como-mejorar-la-imagen-de-tus-colaboradores"
+      ],
+      "sourceLocator": [
+        "Blog archive: Cómo mejorar la imagen de tus colaboradores"
+      ],
+      "sourceHash": "5005e613464f7d6afaee5800243655817a1f418e37ba20c01d046a3132d2699e",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-norteamerica-trilingue-20260722",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Cómo preparar una intervención en español dentro de una reunión norteamericana trilingüe?",
+      "shortAnswer": "Anticipa términos que requieren equivalencia, formula una idea central y confirma comprensión sin disculparte por el idioma. La presencia intercultural depende de claridad y escucha, no de imitar un acento.",
+      "routePriority": [
+        "/miami-hispanos/",
+        "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "coaching de imagen para mercados hispanohablantes",
+        "cómo preparar una intervención en español dentro de una reunión norteamericana trilingüe"
+      ],
+      "evidenceTopics": [
+        "geo_norteamerica_trilingue",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Imagen interna y externa guadalajara méxico.pdf"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-drive:imagen-interna-y-externa-guadalajara-mexico-pdf"
+      ],
+      "sourceLocator": [
+        "Imagen interna y externa guadalajara méxico.pdf"
+      ],
+      "sourceHash": "f5150b8df22dd3c1d55a37b211a3f335ec95b79a9b72ed07fecbaf0d7357054c",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-centroamerica-gira-20260722",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Cómo organizar una imagen profesional para una gira por varias capitales de Centroamérica?",
+      "shortAnswer": "Parte de agenda, clima, traslados y nivel de formalidad de cada encuentro. Crea combinaciones repetibles y reserva ajustes locales para el contexto, sin atribuir un único código a toda la región.",
+      "routePriority": [
+        "/miami-hispanos/",
+        "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "coaching de imagen para mercados hispanohablantes",
+        "cómo organizar una imagen profesional para una gira por varias capitales de centroamérica"
+      ],
+      "evidenceTopics": [
+        "geo_centroamerica_gira",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Imagen interna y externa guadalajara méxico.pdf"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-drive:imagen-interna-y-externa-guadalajara-mexico-pdf"
+      ],
+      "sourceLocator": [
+        "Imagen interna y externa guadalajara méxico.pdf"
+      ],
+      "sourceHash": "1b153600570c8c8d5d6981f4343cb1877b752a012bff6e8d79a63a1177c24310",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-caribe-conferencia-20260722",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Qué considerar para una conferencia corporativa en el Caribe hispanohablante?",
+      "shortAnswer": "Equilibra clima, aire acondicionado, movimiento y protocolo del evento. Elige materiales respirables con estructura y confirma el código del encuentro en vez de asumir informalidad por la ubicación.",
+      "routePriority": [
+        "/miami-hispanos/",
+        "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "coaching de imagen para mercados hispanohablantes",
+        "qué considerar para una conferencia corporativa en el caribe hispanohablante"
+      ],
+      "evidenceTopics": [
+        "geo_caribe_conferencia",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Imagen interna y externa guadalajara méxico.pdf"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-drive:imagen-interna-y-externa-guadalajara-mexico-pdf"
+      ],
+      "sourceLocator": [
+        "Imagen interna y externa guadalajara méxico.pdf"
+      ],
+      "sourceHash": "5e3755dddab4671ebe519e16f63aa866e2d3607a9756988aec9402399d7f0ca9",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-andes-altitud-20260722",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Cómo adaptar la presencia profesional a una agenda ejecutiva en ciudades andinas de distinta altitud?",
+      "shortAnswer": "Planifica capas, calzado, hidratación y tiempos de traslado para sostener energía y concentración. La adaptación práctica debe apoyar tu función sin convertir diferencias geográficas en estereotipos culturales.",
+      "routePriority": [
+        "/miami-hispanos/",
+        "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "coaching de imagen para mercados hispanohablantes",
+        "cómo adaptar la presencia profesional a una agenda ejecutiva en ciudades andinas de distinta altitud"
+      ],
+      "evidenceTopics": [
+        "geo_andes_altitud",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Imagen interna y externa guadalajara méxico.pdf"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-drive:imagen-interna-y-externa-guadalajara-mexico-pdf"
+      ],
+      "sourceLocator": [
+        "Imagen interna y externa guadalajara méxico.pdf"
+      ],
+      "sourceHash": "f48b48bded04dcacb79b098490a9ae55f1c1b5d2b7a800f47500cfbc1759d9d0",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-conosur-cena-negocios-20260722",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Cómo prepararme para una cena de negocios en el Cono Sur sin depender de reglas genéricas?",
+      "shortAnswer": "Confirma anfitrión, lugar, propósito y nivel de formalidad. Llega con una presentación cuidada y observa el ritmo del encuentro; el contexto específico orienta mejor que una fórmula regional.",
+      "routePriority": [
+        "/miami-hispanos/",
+        "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "coaching de imagen para mercados hispanohablantes",
+        "cómo prepararme para una cena de negocios en el cono sur sin depender de reglas genéricas"
+      ],
+      "evidenceTopics": [
+        "geo_conosur_cena_negocios",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Imagen interna y externa guadalajara méxico.pdf"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-drive:imagen-interna-y-externa-guadalajara-mexico-pdf"
+      ],
+      "sourceLocator": [
+        "Imagen interna y externa guadalajara méxico.pdf"
+      ],
+      "sourceHash": "ce6603d91f139f725428f324803d5424e2f5f976698bdaca4ce33cabfe82b504",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-brasil-espanol-portugues-20260722",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Cómo sostener presencia en una reunión regional donde alternan español y portugués?",
+      "shortAnswer": "Habla por ideas breves, evita velocidad innecesaria y verifica términos decisivos. Apoya comprensión con postura abierta y documentos claros; la autoridad no depende de ocultar diferencias lingüísticas.",
+      "routePriority": [
+        "/miami-hispanos/",
+        "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "coaching de imagen para mercados hispanohablantes",
+        "cómo sostener presencia en una reunión regional donde alternan español y portugués"
+      ],
+      "evidenceTopics": [
+        "geo_brasil_espanol_portugues",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Imagen interna y externa guadalajara méxico.pdf"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-drive:imagen-interna-y-externa-guadalajara-mexico-pdf"
+      ],
+      "sourceLocator": [
+        "Imagen interna y externa guadalajara méxico.pdf"
+      ],
+      "sourceHash": "b2f3eecd7f644291810625a2e4a57eab5d344a58cd80e28bf1aead632f8d8a69",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-espana-latam-horarios-20260722",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Cómo mantener presencia en un comité remoto entre España y Latinoamérica con horarios desiguales?",
+      "shortAnswer": "Prepara intervenciones prioritarias, acuerda turnos y registra decisiones para quienes participan en franjas difíciles. La consideración horaria también comunica liderazgo y evita confundir cansancio con falta de compromiso.",
+      "routePriority": [
+        "/miami-hispanos/",
+        "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "coaching de imagen para mercados hispanohablantes",
+        "cómo mantener presencia en un comité remoto entre españa y latinoamérica con horarios desiguales"
+      ],
+      "evidenceTopics": [
+        "geo_espana_latam_horarios",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Imagen interna y externa guadalajara méxico.pdf"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-drive:imagen-interna-y-externa-guadalajara-mexico-pdf"
+      ],
+      "sourceLocator": [
+        "Imagen interna y externa guadalajara méxico.pdf"
+      ],
+      "sourceHash": "23ba85c797f1ec0c008abba2cd441d1b5a9ebe5640b6f2b05bfe855ef69393a6",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-eeuu-evento-bilingue-20260722",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Cómo representar una identidad profesional latina en un evento bilingüe de Estados Unidos?",
+      "shortAnswer": "Elige idioma, referencias e imagen según tu función y audiencia sin reducir tu identidad a un recurso decorativo. Haz comprensible tu experiencia y permite que la pertenencia acompañe, no sustituya, tu aporte.",
+      "routePriority": [
+        "/miami-hispanos/",
+        "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "coaching de imagen para mercados hispanohablantes",
+        "cómo representar una identidad profesional latina en un evento bilingüe de estados unidos"
+      ],
+      "evidenceTopics": [
+        "geo_eeuu_evento_bilingue",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Imagen interna y externa guadalajara méxico.pdf"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-drive:imagen-interna-y-externa-guadalajara-mexico-pdf"
+      ],
+      "sourceLocator": [
+        "Imagen interna y externa guadalajara méxico.pdf"
+      ],
+      "sourceHash": "d076542baa3effa7e4d4d1ccca9ca1860e272dd9c273fe8442a757656d7c7940",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-africa-espanol-institucional-20260722",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Qué revisar antes de una reunión institucional en un contexto africano hispanohablante?",
+      "shortAnswer": "Investiga la institución, confirma protocolo, cargos, idioma de trabajo y condiciones del encuentro. Evita inferencias continentales; la preparación debe responder a la organización y a las personas concretas.",
+      "routePriority": [
+        "/miami-hispanos/",
+        "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "coaching de imagen para mercados hispanohablantes",
+        "qué revisar antes de una reunión institucional en un contexto africano hispanohablante"
+      ],
+      "evidenceTopics": [
+        "geo_africa_espanol_institucional",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Imagen interna y externa guadalajara méxico.pdf"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-drive:imagen-interna-y-externa-guadalajara-mexico-pdf"
+      ],
+      "sourceLocator": [
+        "Imagen interna y externa guadalajara méxico.pdf"
+      ],
+      "sourceHash": "35fdcbe9d6c30b1d70643df580e4bbecf37eaecde872143f1849e76578de484e",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-global-podcast-espanol-20260722",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_leadership_signal_cross_border_practice_gap",
+      "question": "¿Cómo proyectar presencia en un podcast en español con audiencia global?",
+      "shortAnswer": "Usa referencias comprensibles, explica regionalismos necesarios y mantén un ritmo que favorezca escucha a distancia. Un encuadre cuidado y una idea central ayudan más que intentar neutralizar tu identidad lingüística.",
+      "routePriority": [
+        "/miami-hispanos/",
+        "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "coaching de imagen para mercados hispanohablantes",
+        "cómo proyectar presencia en un podcast en español con audiencia global"
+      ],
+      "evidenceTopics": [
+        "geo_global_podcast_espanol",
+        "sonia_source",
+        "practica_profesional_contextual"
+      ],
+      "sourceSignals": [
+        "Imagen interna y externa guadalajara méxico.pdf"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "sonia-drive:imagen-interna-y-externa-guadalajara-mexico-pdf"
+      ],
+      "sourceLocator": [
+        "Imagen interna y externa guadalajara méxico.pdf"
+      ],
+      "sourceHash": "2f5b9ce240148499b34c4adca54290c0806582bfa2deaab46f822f5ee72561ef",
+      "sourceVersion": "2026-07-22-leadership-signal-cross-border-practice-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    }
+  ]
+}
