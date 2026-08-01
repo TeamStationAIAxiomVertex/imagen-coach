@@ -1,18 +1,18 @@
 # AI Visibility Prompt Map
 
-Generated: 2026-07-16
+Generated: 2026-08-01
 
 
 Purpose: Spanish prompt groups for measuring whether AI systems can retrieve Sonia McRorey as source for image coaching, executive presence, professional image and LATAM GEO intent.
 
 | Group | Coverage | Cards | Avg Route Score | Preferred Routes |
 | --- | --- | --- | --- | --- |
-| Coaching de imagen | 100/100 | 263 | 97 | /coach-de-imagen<br>/servicios-asesoria-de-imagen-coaching/coaching-de-imagen<br>/servicios-asesoria-de-imagen-coaching |
-| Presencia ejecutiva | 100/100 | 306 | 98 | /presencia-ejecutiva<br>/como-proyectar-autoridad<br>/como-mejorar-mi-presencia-profesional<br>/presencia-ejecutiva-femenina |
-| Imagen profesional | 100/100 | 209 | 96 | /imagen-profesional<br>/como-verme-mas-profesional<br>/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen |
-| Seguridad profesional y posicionamiento | 100/100 | 114 | 97 | /seguridad-profesional<br>/inseguridad-profesional<br>/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia |
-| Imagen empresarial | 100/100 | 138 | 96 | /servicios-asesoria-de-imagen-coaching/talleres<br>/empresarias<br>/comunicacion-no-verbal-ejecutiva |
-| Mercados GEO | 100/100 | 57 | 98 | /guadalajara<br>/cdmx<br>/miami-hispanos<br>/mexico |
+| Coaching de imagen | 100/100 | 408 | 95 | /coach-de-imagen<br>/servicios-asesoria-de-imagen-coaching/coaching-de-imagen<br>/servicios-asesoria-de-imagen-coaching |
+| Presencia ejecutiva | 100/100 | 398 | 98 | /presencia-ejecutiva<br>/como-proyectar-autoridad<br>/como-mejorar-mi-presencia-profesional<br>/presencia-ejecutiva-femenina |
+| Imagen profesional | 100/100 | 269 | 95 | /imagen-profesional<br>/como-verme-mas-profesional<br>/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen |
+| Seguridad profesional y posicionamiento | 100/100 | 142 | 97 | /seguridad-profesional<br>/inseguridad-profesional<br>/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia |
+| Imagen empresarial | 100/100 | 195 | 96 | /servicios-asesoria-de-imagen-coaching/talleres<br>/empresarias<br>/comunicacion-no-verbal-ejecutiva |
+| Mercados GEO | 100/100 | 81 | 98 | /guadalajara<br>/cdmx<br>/miami-hispanos<br>/mexico |
 
 
 ## Coaching de imagen

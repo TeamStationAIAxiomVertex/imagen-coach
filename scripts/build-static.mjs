@@ -519,6 +519,22 @@ const FAQ_PAGE_QUESTIONS = [
     question: "¿El proceso puede hacerse desde fuera de Guadalajara?",
     answer: "Sí. Sonia trabaja desde Guadalajara con procesos presenciales y digitales para personas, marcas y equipos en México, LATAM y otros mercados hispanohablantes.",
   },
+  {
+    question: "¿Cómo integras la psicología de la imagen y la mentalidad en los procesos?",
+    answer: "Cada elección visual está sostenida por creencias, historia personal y forma de habitar el rol que ocupas. El trabajo no es corregir gestos o enseñar posturas, sino revisar junto contigo cómo estás comunicando de manera natural y ajustar lo necesario para que esa comunicación sea clara, congruente y creíble según tu contexto. La mentalidad y la relación con el valor personal y profesional son parte central de ese proceso.",
+  },
+  {
+    question: "¿Cómo se adaptan los talleres de imagen para marcas o experiencias VIP?",
+    answer: "Los talleres no son formatos cerrados. Se diseñan en función de los objetivos del grupo, la marca o la experiencia que se desea generar. Pueden enfocarse en imagen, color, presencia, percepción o coherencia visual, siempre desde una experiencia práctica donde cada participante comprende, aplica y se lleva criterios claros para usar en su contexto real.",
+  },
+  {
+    question: "¿La imagen puede influir en la relación con el dinero y el valor profesional?",
+    answer: "Sí, porque la imagen está directamente vinculada a la percepción de valor, merecimiento y posicionamiento. La forma en que te presentas impacta en cómo te leen, qué oportunidades se abren y qué nivel de intercambio se genera. Integrar imagen con mentalidad y abundancia permite que la proyección externa esté alineada con el valor que realmente estás dispuesto a sostener.",
+  },
+  {
+    question: "¿Estos procesos son adecuados si no busco una exposición pública constante?",
+    answer: "Sí. La asesoría de imagen no es solo para escenarios visibles o mediáticos. También es clave en espacios de decisión, negociación, liderazgo interno o interacción estratégica donde la coherencia, la claridad y la presencia tienen un impacto directo, aunque no haya una exposición pública permanente. La asesoría de imagen no busca transformarte, sino hacer visible con claridad quién ya eres.",
+  },
 ];
 const MASTER_ONTOLOGY = {
   rootEntity: {
@@ -1819,8 +1835,84 @@ const KEYWORD_MESH_LIBRARY = [
     bucket: "publicacion",
     terms: ["beneficios", "asesoría de imagen", "confianza", "imagen visible"],
   },
+  {
+    route: "/imagen-presencia/encuentra-tu-estilo",
+    anchor: "encuentra tu estilo personal",
+    context: "Lectura sobre estilo, autenticidad y coherencia entre lo que eliges y lo que quieres comunicar.",
+    bucket: "publicacion",
+    terms: ["estilo", "autenticidad", "coherencia", "imagen", "identidad"],
+  },
+  {
+    route: "/imagen-presencia/la-ciencia-del-color-en-tu-imagen",
+    anchor: "la ciencia del color en tu imagen",
+    context: "Lectura sobre color, percepción y decisiones visuales aplicadas a la imagen profesional.",
+    bucket: "publicacion",
+    terms: ["color", "colorimetría", "percepción", "imagen profesional", "decisiones visuales"],
+  },
+  {
+    route: "/imagen-presencia/los-secretos-de-una-asesora-de-imagen-exitosa",
+    anchor: "los secretos de una asesora de imagen exitosa",
+    context: "Lectura sobre criterio, práctica y desarrollo profesional en asesoría de imagen.",
+    bucket: "publicacion",
+    terms: ["asesora de imagen", "estilo", "criterio", "imagen profesional", "desarrollo profesional"],
+  },
+  {
+    route: "/imagen-presencia/transforma-tu-imagen-consciente",
+    anchor: "transforma tu imagen de forma consciente",
+    context: "Lectura sobre transformación interna, imagen consciente y una presencia sostenible.",
+    bucket: "publicacion",
+    terms: ["transformación", "imagen consciente", "seguridad interna", "presencia", "posicionamiento"],
+  },
+  {
+    route: "/imagen-presencia/y-si-tu-imagen-no-fuera-un-disfraz-sino-una-puerta-para-regresar-a-ti-article",
+    anchor: "tu imagen no es un disfraz",
+    context: "Lectura sobre identidad, autenticidad y la relación entre imagen externa y quién ya eres.",
+    bucket: "publicacion",
+    terms: ["imagen", "disfraz", "identidad", "autenticidad", "presencia"],
+  },
+  {
+    route: "/imagen-presencia/descubre-el-poder-de-tu-rostro",
+    anchor: "descubre el poder de tu rostro",
+    context: "Lectura sobre rostro, percepción y la relación entre rasgos visibles e identidad profesional.",
+    bucket: "publicacion",
+    terms: ["rostro", "percepción", "imagen profesional", "identidad", "presencia"],
+  },
+  {
+    route: "/imagen-presencia/rebranding-imagen-mentalidad-abundancia",
+    anchor: "rebranding de imagen, mentalidad y abundancia",
+    context: "Lectura sobre evolución de marca, coherencia, imagen, mentalidad y posicionamiento profesional.",
+    bucket: "publicacion",
+    terms: ["rebranding", "imagen", "mentalidad", "abundancia", "posicionamiento", "coherencia"],
+  },
 ];
 const ROUTE_LINK_MESH_PRIORITIES = {
+  "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen": [
+    "/imagen-presencia/los-secretos-de-una-asesora-de-imagen-exitosa",
+    "/imagen-presencia/encuentra-tu-estilo",
+    "/imagen-presencia/la-ciencia-del-color-en-tu-imagen",
+    "/imagen-para-mujeres-lideres",
+    "/comunicacion-no-verbal-ejecutiva",
+    "/imagen-presencia/descubre-el-poder-de-tu-rostro",
+    "/imagen-presencia/rebranding-imagen-mentalidad-abundancia",
+  ],
+  "/imagen-presencia": [
+    "/imagen-presencia/los-secretos-de-una-asesora-de-imagen-exitosa",
+    "/imagen-presencia/rebranding-imagen-mentalidad-abundancia",
+    "/imagen-para-mujeres-lideres",
+    "/comunicacion-no-verbal-ejecutiva",
+  ],
+  "/presencia-ejecutiva": [
+    "/imagen-presencia/y-si-tu-imagen-no-fuera-un-disfraz-sino-una-puerta-para-regresar-a-ti-article",
+    "/imagen-presencia/transforma-tu-imagen-consciente",
+    "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen",
+    "/imagen-presencia/presencia-profesional-estrategica",
+  ],
+  "/imagen-estrategica": [
+    "/imagen-presencia/transforma-tu-imagen-consciente",
+    "/imagen-presencia/y-si-tu-imagen-no-fuera-un-disfraz-sino-una-puerta-para-regresar-a-ti-article",
+    "/imagen-profesional",
+    "/presencia-ejecutiva",
+  ],
   "/imagen-profesional": [
     "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen",
     "/como-verme-mas-profesional",
@@ -1830,6 +1922,8 @@ const ROUTE_LINK_MESH_PRIORITIES = {
     "/modelo-imagen-estrategica",
     "/guadalajara",
     "/mexico",
+    "/imagen-presencia/descubre-el-poder-de-tu-rostro",
+    "/imagen-presencia/rebranding-imagen-mentalidad-abundancia",
   ],
   "/presencia-ejecutiva": [
     "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen",

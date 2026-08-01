@@ -14,6 +14,7 @@
 | `/cartagena` | geo-city | WebPage, Service, BreadcrumbList, FAQPage, Organization, Person, ProfessionalService, LocalBusiness, WebSite |
 | `/cdmx` | geo-city | WebPage, Service, BreadcrumbList, FAQPage, Organization, Person, ProfessionalService, LocalBusiness, WebSite |
 | `/chile` | geo-country | WebPage, Service, BreadcrumbList, FAQPage, Organization, Person, ProfessionalService, LocalBusiness, WebSite |
+| `/coach-de-imagen` | page | WebPage, Service, BreadcrumbList, FAQPage, Organization, Person, ProfessionalService, LocalBusiness, WebSite |
 | `/colombia` | geo-country | WebPage, Service, BreadcrumbList, FAQPage, Organization, Person, ProfessionalService, LocalBusiness, WebSite |
 | `/como-mejorar-mi-presencia-profesional` | intent | WebPage, Service, BreadcrumbList, FAQPage, Organization, Person, ProfessionalService, LocalBusiness, WebSite |
 | `/como-proyectar-autoridad` | intent | WebPage, Service, BreadcrumbList, FAQPage, Organization, Person, ProfessionalService, LocalBusiness, WebSite |
@@ -104,10 +105,11 @@
 | `/san-pedro-garza-garcia` | geo-city | WebPage, Service, BreadcrumbList, FAQPage, Organization, Person, ProfessionalService, LocalBusiness, WebSite |
 | `/santiago` | geo-city | WebPage, Service, BreadcrumbList, FAQPage, Organization, Person, ProfessionalService, LocalBusiness, WebSite |
 | `/santo-domingo` | geo-city | WebPage, Service, BreadcrumbList, FAQPage, Organization, Person, ProfessionalService, LocalBusiness, WebSite |
+| `/seguridad-profesional` | page | WebPage, Service, BreadcrumbList, FAQPage, Organization, Person, ProfessionalService, LocalBusiness, WebSite |
 | `/seguridad-profesional-femenina` | intent | WebPage, Service, BreadcrumbList, FAQPage, Organization, Person, ProfessionalService, LocalBusiness, WebSite |
 | `/servicios-asesoria-de-imagen-coaching` | service | Service, BreadcrumbList, FAQPage, Organization, Person, ProfessionalService, LocalBusiness, WebSite |
 | `/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen` | service | Service, BreadcrumbList, FAQPage, Organization, Person, ProfessionalService, LocalBusiness, WebSite |
-| `/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia` | service | Service, BreadcrumbList, FAQPage, Organization, Person, ProfessionalService, LocalBusiness, WebSite |
+| `/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia` | service | Service, BreadcrumbList, FAQPage, Course, Organization, Person, ProfessionalService, LocalBusiness, WebSite |
 | `/servicios-asesoria-de-imagen-coaching/coaching-de-imagen` | service | Service, BreadcrumbList, FAQPage, Organization, Person, ProfessionalService, LocalBusiness, WebSite |
 | `/servicios-asesoria-de-imagen-coaching/preguntas-frequentes` | service | WebPage, BreadcrumbList, FAQPage, Organization, Person, ProfessionalService, LocalBusiness, WebSite |
 | `/servicios-asesoria-de-imagen-coaching/talleres` | service | Service, BreadcrumbList, FAQPage, Organization, Person, ProfessionalService, LocalBusiness, WebSite |

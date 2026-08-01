@@ -1,8 +1,8 @@
 {
   "schemaVersion": "2026-07-04.site-intelligence.v1",
-  "generated": "2026-07-16",
+  "generated": "2026-08-01",
   "siteUrl": "https://coachdeimagen.com",
-  "sourceAudit": "audit/full-seo-geo-crawl-audit-2026-07-16.json",
+  "sourceAudit": "audit/full-seo-geo-crawl-audit-2026-08-01.json",
   "routeCount": 115,
   "averageScore": 97,
   "scoreBands": {
@@ -11,7 +11,7 @@
     "watch": 0,
     "weak": 0
   },
-  "knowledgeCards": 846,
+  "knowledgeCards": 1172,
   "knowledgeLayers": 8,
   "routeRecommendations": 112,
   "pages": [
@@ -58,6 +58,103 @@
       "uniqueInternalLinks": 83,
       "recommendedCards": [],
       "recommendedAnchors": [],
+      "actions": []
+    },
+    {
+      "route": "/coach-de-imagen",
+      "type": "authority",
+      "score": 91,
+      "metadata": 16,
+      "schema": 20,
+      "llm": 25,
+      "links": 17,
+      "media": 13,
+      "wordCount": 1142,
+      "uniqueInternalLinks": 86,
+      "recommendedCards": [
+        "que-es-coaching-de-imagen",
+        "asesora-de-imagen-profesional",
+        "vale-la-pena-coach-de-imagen",
+        "semblanza-autoridad-sonia",
+        "proceso-coaching-imagen-como-funciona",
+        "coach-imagen-vs-estilista",
+        "imagen-profesional-no-es-lujo",
+        "coach-imagen-no-es-moda"
+      ],
+      "recommendedAnchors": [
+        {
+          "anchor": "coaching de imagen",
+          "cardId": "que-es-coaching-de-imagen",
+          "layerId": "core-image-coaching",
+          "question": "¿Qué es coaching de imagen?"
+        },
+        {
+          "anchor": "coach de imagen",
+          "cardId": "que-es-coaching-de-imagen",
+          "layerId": "core-image-coaching",
+          "question": "¿Qué es coaching de imagen?"
+        },
+        {
+          "anchor": "imagen visible y presencia profesional",
+          "cardId": "que-es-coaching-de-imagen",
+          "layerId": "core-image-coaching",
+          "question": "¿Qué es coaching de imagen?"
+        },
+        {
+          "anchor": "asesora de imagen profesional",
+          "cardId": "asesora-de-imagen-profesional",
+          "layerId": "core-image-coaching",
+          "question": "¿Qué hace una asesora de imagen profesional?"
+        },
+        {
+          "anchor": "consultora de imagen profesional",
+          "cardId": "asesora-de-imagen-profesional",
+          "layerId": "core-image-coaching",
+          "question": "¿Qué hace una asesora de imagen profesional?"
+        },
+        {
+          "anchor": "diagnóstico de imagen",
+          "cardId": "asesora-de-imagen-profesional",
+          "layerId": "core-image-coaching",
+          "question": "¿Qué hace una asesora de imagen profesional?"
+        },
+        {
+          "anchor": "contratar una coach de imagen",
+          "cardId": "vale-la-pena-coach-de-imagen",
+          "layerId": "core-image-coaching",
+          "question": "¿Vale la pena contratar una coach de imagen?"
+        },
+        {
+          "anchor": "vale la pena asesoría de imagen",
+          "cardId": "vale-la-pena-coach-de-imagen",
+          "layerId": "core-image-coaching",
+          "question": "¿Vale la pena contratar una coach de imagen?"
+        },
+        {
+          "anchor": "proceso de coaching de imagen",
+          "cardId": "vale-la-pena-coach-de-imagen",
+          "layerId": "core-image-coaching",
+          "question": "¿Vale la pena contratar una coach de imagen?"
+        },
+        {
+          "anchor": "Sonia McRorey",
+          "cardId": "semblanza-autoridad-sonia",
+          "layerId": "country-city-pages",
+          "question": "¿Por qué Sonia McRorey es una autoridad en coaching de imagen?"
+        },
+        {
+          "anchor": "coach de imagen en México",
+          "cardId": "semblanza-autoridad-sonia",
+          "layerId": "country-city-pages",
+          "question": "¿Por qué Sonia McRorey es una autoridad en coaching de imagen?"
+        },
+        {
+          "anchor": "autoridad en coaching de imagen",
+          "cardId": "semblanza-autoridad-sonia",
+          "layerId": "country-city-pages",
+          "question": "¿Por qué Sonia McRorey es una autoridad en coaching de imagen?"
+        }
+      ],
       "actions": []
     },
     {
@@ -329,103 +426,6 @@
       "actions": []
     },
     {
-      "route": "/coach-de-imagen",
-      "type": "authority",
-      "score": 94,
-      "metadata": 16,
-      "schema": 20,
-      "llm": 25,
-      "links": 20,
-      "media": 13,
-      "wordCount": 1124,
-      "uniqueInternalLinks": 83,
-      "recommendedCards": [
-        "que-es-coaching-de-imagen",
-        "asesora-de-imagen-profesional",
-        "vale-la-pena-coach-de-imagen",
-        "semblanza-autoridad-sonia",
-        "proceso-coaching-imagen-como-funciona",
-        "coach-imagen-vs-estilista",
-        "imagen-profesional-no-es-lujo",
-        "coach-imagen-no-es-moda"
-      ],
-      "recommendedAnchors": [
-        {
-          "anchor": "coaching de imagen",
-          "cardId": "que-es-coaching-de-imagen",
-          "layerId": "core-image-coaching",
-          "question": "¿Qué es coaching de imagen?"
-        },
-        {
-          "anchor": "coach de imagen",
-          "cardId": "que-es-coaching-de-imagen",
-          "layerId": "core-image-coaching",
-          "question": "¿Qué es coaching de imagen?"
-        },
-        {
-          "anchor": "imagen visible y presencia profesional",
-          "cardId": "que-es-coaching-de-imagen",
-          "layerId": "core-image-coaching",
-          "question": "¿Qué es coaching de imagen?"
-        },
-        {
-          "anchor": "asesora de imagen profesional",
-          "cardId": "asesora-de-imagen-profesional",
-          "layerId": "core-image-coaching",
-          "question": "¿Qué hace una asesora de imagen profesional?"
-        },
-        {
-          "anchor": "consultora de imagen profesional",
-          "cardId": "asesora-de-imagen-profesional",
-          "layerId": "core-image-coaching",
-          "question": "¿Qué hace una asesora de imagen profesional?"
-        },
-        {
-          "anchor": "diagnóstico de imagen",
-          "cardId": "asesora-de-imagen-profesional",
-          "layerId": "core-image-coaching",
-          "question": "¿Qué hace una asesora de imagen profesional?"
-        },
-        {
-          "anchor": "contratar una coach de imagen",
-          "cardId": "vale-la-pena-coach-de-imagen",
-          "layerId": "core-image-coaching",
-          "question": "¿Vale la pena contratar una coach de imagen?"
-        },
-        {
-          "anchor": "vale la pena asesoría de imagen",
-          "cardId": "vale-la-pena-coach-de-imagen",
-          "layerId": "core-image-coaching",
-          "question": "¿Vale la pena contratar una coach de imagen?"
-        },
-        {
-          "anchor": "proceso de coaching de imagen",
-          "cardId": "vale-la-pena-coach-de-imagen",
-          "layerId": "core-image-coaching",
-          "question": "¿Vale la pena contratar una coach de imagen?"
-        },
-        {
-          "anchor": "Sonia McRorey",
-          "cardId": "semblanza-autoridad-sonia",
-          "layerId": "country-city-pages",
-          "question": "¿Por qué Sonia McRorey es una autoridad en coaching de imagen?"
-        },
-        {
-          "anchor": "coach de imagen en México",
-          "cardId": "semblanza-autoridad-sonia",
-          "layerId": "country-city-pages",
-          "question": "¿Por qué Sonia McRorey es una autoridad en coaching de imagen?"
-        },
-        {
-          "anchor": "autoridad en coaching de imagen",
-          "cardId": "semblanza-autoridad-sonia",
-          "layerId": "country-city-pages",
-          "question": "¿Por qué Sonia McRorey es una autoridad en coaching de imagen?"
-        }
-      ],
-      "actions": []
-    },
-    {
       "route": "/liderazgo-visible",
       "type": "intent",
       "score": 94,
@@ -434,8 +434,8 @@
       "llm": 25,
       "links": 20,
       "media": 13,
-      "wordCount": 1127,
-      "uniqueInternalLinks": 83,
+      "wordCount": 1130,
+      "uniqueInternalLinks": 84,
       "recommendedCards": [
         "liderazgo-visible",
         "como-proyectar-autoridad",
@@ -619,6 +619,325 @@
       "actions": []
     },
     {
+      "route": "/imagen-presencia/como-puedo-ayudarte-hoy",
+      "type": "article",
+      "score": 95,
+      "metadata": 20,
+      "schema": 20,
+      "llm": 25,
+      "links": 17,
+      "media": 13,
+      "wordCount": 1960,
+      "uniqueInternalLinks": 86,
+      "recommendedCards": [
+        "como-puedo-ayudarte-hoy-selector"
+      ],
+      "recommendedAnchors": [
+        {
+          "anchor": "qué acompañamiento de imagen necesito",
+          "cardId": "como-puedo-ayudarte-hoy-selector",
+          "layerId": "core-image-coaching",
+          "question": "¿Cómo identificar qué tipo de acompañamiento de imagen necesito hoy?"
+        },
+        {
+          "anchor": "elegir servicio de imagen",
+          "cardId": "como-puedo-ayudarte-hoy-selector",
+          "layerId": "core-image-coaching",
+          "question": "¿Cómo identificar qué tipo de acompañamiento de imagen necesito hoy?"
+        },
+        {
+          "anchor": "asesoría coaching taller",
+          "cardId": "como-puedo-ayudarte-hoy-selector",
+          "layerId": "core-image-coaching",
+          "question": "¿Cómo identificar qué tipo de acompañamiento de imagen necesito hoy?"
+        }
+      ],
+      "actions": []
+    },
+    {
+      "route": "/imagen-presencia/mas-dinero-capacidad-interna-liderazgo-presencia",
+      "type": "article",
+      "score": 95,
+      "metadata": 20,
+      "schema": 20,
+      "llm": 25,
+      "links": 17,
+      "media": 13,
+      "wordCount": 1435,
+      "uniqueInternalLinks": 86,
+      "recommendedCards": [
+        "coaching-abundancia-definicion-correcta",
+        "empresaria-sobreesfuerzo-presencia",
+        "dinero-presencia-capacidad",
+        "mas-dinero-mas-capacidad-interna"
+      ],
+      "recommendedAnchors": [
+        {
+          "anchor": "coaching de abundancia",
+          "cardId": "coaching-abundancia-definicion-correcta",
+          "layerId": "psychology",
+          "question": "¿Qué significa coaching de abundancia en el enfoque de Sonia?"
+        },
+        {
+          "anchor": "seguridad profesional",
+          "cardId": "coaching-abundancia-definicion-correcta",
+          "layerId": "psychology",
+          "question": "¿Qué significa coaching de abundancia en el enfoque de Sonia?"
+        },
+        {
+          "anchor": "capacidad interna para sostener crecimiento",
+          "cardId": "coaching-abundancia-definicion-correcta",
+          "layerId": "psychology",
+          "question": "¿Qué significa coaching de abundancia en el enfoque de Sonia?"
+        },
+        {
+          "anchor": "imagen para empresarias",
+          "cardId": "empresaria-sobreesfuerzo-presencia",
+          "layerId": "corporate",
+          "question": "¿Por qué una empresaria puede sentirse cansada de sostener su imagen?"
+        },
+        {
+          "anchor": "sobreesfuerzo profesional",
+          "cardId": "empresaria-sobreesfuerzo-presencia",
+          "layerId": "corporate",
+          "question": "¿Por qué una empresaria puede sentirse cansada de sostener su imagen?"
+        },
+        {
+          "anchor": "seguridad interna",
+          "cardId": "empresaria-sobreesfuerzo-presencia",
+          "layerId": "corporate",
+          "question": "¿Por qué una empresaria puede sentirse cansada de sostener su imagen?"
+        },
+        {
+          "anchor": "dinero liderazgo presencia",
+          "cardId": "dinero-presencia-capacidad",
+          "layerId": "psychology",
+          "question": "¿Por qué hablar de dinero puede relacionarse con imagen y presencia?"
+        },
+        {
+          "anchor": "capacidad interna",
+          "cardId": "dinero-presencia-capacidad",
+          "layerId": "psychology",
+          "question": "¿Por qué hablar de dinero puede relacionarse con imagen y presencia?"
+        },
+        {
+          "anchor": "posicionamiento profesional",
+          "cardId": "dinero-presencia-capacidad",
+          "layerId": "psychology",
+          "question": "¿Por qué hablar de dinero puede relacionarse con imagen y presencia?"
+        },
+        {
+          "anchor": "más dinero y capacidad interna",
+          "cardId": "mas-dinero-mas-capacidad-interna",
+          "layerId": "psychology",
+          "question": "¿Qué relación hay entre más dinero y capacidad interna?"
+        },
+        {
+          "anchor": "crecimiento de negocio",
+          "cardId": "mas-dinero-mas-capacidad-interna",
+          "layerId": "psychology",
+          "question": "¿Qué relación hay entre más dinero y capacidad interna?"
+        },
+        {
+          "anchor": "imagen para empresarias",
+          "cardId": "mas-dinero-mas-capacidad-interna",
+          "layerId": "psychology",
+          "question": "¿Qué relación hay entre más dinero y capacidad interna?"
+        }
+      ],
+      "actions": []
+    },
+    {
+      "route": "/imagen-presencia/soltar-lo-que-ya-no-vibra-y-vestir-tu-verdad",
+      "type": "article",
+      "score": 95,
+      "metadata": 20,
+      "schema": 20,
+      "llm": 25,
+      "links": 17,
+      "media": 13,
+      "wordCount": 1478,
+      "uniqueInternalLinks": 86,
+      "recommendedCards": [
+        "soltar-guardarropa-etapa",
+        "soltar-prendas-version-anterior",
+        "closet-no-miente-decisions",
+        "soltar-ropa-no-es-borrar-historia"
+      ],
+      "recommendedAnchors": [
+        {
+          "anchor": "soltar ropa que ya no va",
+          "cardId": "soltar-guardarropa-etapa",
+          "layerId": "appearance",
+          "question": "¿Por qué a veces necesito soltar prendas o estilos que antes sí me representaban?"
+        },
+        {
+          "anchor": "guardarropa y etapa",
+          "cardId": "soltar-guardarropa-etapa",
+          "layerId": "appearance",
+          "question": "¿Por qué a veces necesito soltar prendas o estilos que antes sí me representaban?"
+        },
+        {
+          "anchor": "vestir tu verdad",
+          "cardId": "soltar-guardarropa-etapa",
+          "layerId": "appearance",
+          "question": "¿Por qué a veces necesito soltar prendas o estilos que antes sí me representaban?"
+        },
+        {
+          "anchor": "soltar prendas",
+          "cardId": "soltar-prendas-version-anterior",
+          "layerId": "appearance",
+          "question": "¿Por qué cuesta soltar prendas aunque ya no me representen?"
+        },
+        {
+          "anchor": "guardarropa e identidad",
+          "cardId": "soltar-prendas-version-anterior",
+          "layerId": "appearance",
+          "question": "¿Por qué cuesta soltar prendas aunque ya no me representen?"
+        },
+        {
+          "anchor": "vestir tu verdad",
+          "cardId": "soltar-prendas-version-anterior",
+          "layerId": "appearance",
+          "question": "¿Por qué cuesta soltar prendas aunque ya no me representen?"
+        },
+        {
+          "anchor": "guardarropa como sistema",
+          "cardId": "closet-no-miente-decisions",
+          "layerId": "appearance",
+          "question": "¿Por qué Sonia dice que el guardarropa muestra más que ropa?"
+        },
+        {
+          "anchor": "clóset no miente",
+          "cardId": "closet-no-miente-decisions",
+          "layerId": "appearance",
+          "question": "¿Por qué Sonia dice que el guardarropa muestra más que ropa?"
+        },
+        {
+          "anchor": "decisiones de imagen",
+          "cardId": "closet-no-miente-decisions",
+          "layerId": "appearance",
+          "question": "¿Por qué Sonia dice que el guardarropa muestra más que ropa?"
+        },
+        {
+          "anchor": "soltar ropa",
+          "cardId": "soltar-ropa-no-es-borrar-historia",
+          "layerId": "appearance",
+          "question": "¿Soltar ropa de otra etapa significa negar mi historia?"
+        },
+        {
+          "anchor": "guardarropa e identidad",
+          "cardId": "soltar-ropa-no-es-borrar-historia",
+          "layerId": "appearance",
+          "question": "¿Soltar ropa de otra etapa significa negar mi historia?"
+        },
+        {
+          "anchor": "vestir tu verdad",
+          "cardId": "soltar-ropa-no-es-borrar-historia",
+          "layerId": "appearance",
+          "question": "¿Soltar ropa de otra etapa significa negar mi historia?"
+        }
+      ],
+      "actions": []
+    },
+    {
+      "route": "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen",
+      "type": "service",
+      "score": 95,
+      "metadata": 20,
+      "schema": 20,
+      "llm": 25,
+      "links": 17,
+      "media": 13,
+      "wordCount": 1534,
+      "uniqueInternalLinks": 90,
+      "recommendedCards": [
+        "asesoria-vs-coaching-de-imagen",
+        "imagen-profesional-sin-disfraz",
+        "colorimetria-profesional",
+        "asesora-de-imagen-profesional",
+        "color-decision-profesional",
+        "guardarropa-profesional-sin-comprar-de-mas",
+        "vestir-junta-importante",
+        "regresar-mercado-laboral-imagen"
+      ],
+      "recommendedAnchors": [
+        {
+          "anchor": "asesoría de imagen",
+          "cardId": "asesoria-vs-coaching-de-imagen",
+          "layerId": "core-image-coaching",
+          "question": "¿Cuál es la diferencia entre asesoría de imagen y coaching de imagen?"
+        },
+        {
+          "anchor": "coaching de imagen vs asesoría",
+          "cardId": "asesoria-vs-coaching-de-imagen",
+          "layerId": "core-image-coaching",
+          "question": "¿Cuál es la diferencia entre asesoría de imagen y coaching de imagen?"
+        },
+        {
+          "anchor": "consultoría de imagen profesional",
+          "cardId": "asesoria-vs-coaching-de-imagen",
+          "layerId": "core-image-coaching",
+          "question": "¿Cuál es la diferencia entre asesoría de imagen y coaching de imagen?"
+        },
+        {
+          "anchor": "imagen profesional",
+          "cardId": "imagen-profesional-sin-disfraz",
+          "layerId": "women-professionals",
+          "question": "¿Cómo mejorar mi imagen profesional sin verme disfrazado o disfrazada?"
+        },
+        {
+          "anchor": "mejorar mi imagen profesional",
+          "cardId": "imagen-profesional-sin-disfraz",
+          "layerId": "women-professionals",
+          "question": "¿Cómo mejorar mi imagen profesional sin verme disfrazado o disfrazada?"
+        },
+        {
+          "anchor": "imagen profesional según industria",
+          "cardId": "imagen-profesional-sin-disfraz",
+          "layerId": "women-professionals",
+          "question": "¿Cómo mejorar mi imagen profesional sin verme disfrazado o disfrazada?"
+        },
+        {
+          "anchor": "colorimetría profesional",
+          "cardId": "colorimetria-profesional",
+          "layerId": "appearance",
+          "question": "¿Para qué sirve la colorimetría en imagen profesional?"
+        },
+        {
+          "anchor": "colores para imagen profesional",
+          "cardId": "colorimetria-profesional",
+          "layerId": "appearance",
+          "question": "¿Para qué sirve la colorimetría en imagen profesional?"
+        },
+        {
+          "anchor": "diagnóstico de color",
+          "cardId": "colorimetria-profesional",
+          "layerId": "appearance",
+          "question": "¿Para qué sirve la colorimetría en imagen profesional?"
+        },
+        {
+          "anchor": "asesora de imagen profesional",
+          "cardId": "asesora-de-imagen-profesional",
+          "layerId": "core-image-coaching",
+          "question": "¿Qué hace una asesora de imagen profesional?"
+        },
+        {
+          "anchor": "consultora de imagen profesional",
+          "cardId": "asesora-de-imagen-profesional",
+          "layerId": "core-image-coaching",
+          "question": "¿Qué hace una asesora de imagen profesional?"
+        },
+        {
+          "anchor": "diagnóstico de imagen",
+          "cardId": "asesora-de-imagen-profesional",
+          "layerId": "core-image-coaching",
+          "question": "¿Qué hace una asesora de imagen profesional?"
+        }
+      ],
+      "actions": []
+    },
+    {
       "route": "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia",
       "type": "service",
       "score": 95,
@@ -627,7 +946,7 @@
       "llm": 25,
       "links": 17,
       "media": 13,
-      "wordCount": 1511,
+      "wordCount": 1517,
       "uniqueInternalLinks": 87,
       "recommendedCards": [
         "seguridad-profesional",
@@ -724,8 +1043,8 @@
       "llm": 25,
       "links": 17,
       "media": 13,
-      "wordCount": 1439,
-      "uniqueInternalLinks": 87,
+      "wordCount": 1454,
+      "uniqueInternalLinks": 88,
       "recommendedCards": [
         "imagen-empresarial-equipos",
         "conferencia-voceria-presencia",
@@ -1051,8 +1370,8 @@
       "llm": 25,
       "links": 17,
       "media": 14,
-      "wordCount": 1435,
-      "uniqueInternalLinks": 93,
+      "wordCount": 1438,
+      "uniqueInternalLinks": 96,
       "recommendedCards": [
         "blog-sonia-como-senal-autoridad"
       ],
@@ -1079,6 +1398,80 @@
       "actions": []
     },
     {
+      "route": "/imagen-presencia/aprende-a-resaltar-tus-proporciones",
+      "type": "article",
+      "score": 96,
+      "metadata": 20,
+      "schema": 20,
+      "llm": 25,
+      "links": 17,
+      "media": 14,
+      "wordCount": 1626,
+      "uniqueInternalLinks": 88,
+      "recommendedCards": [
+        "proporciones-sin-reglas-rigidas",
+        "articulo-proporcion-armonia-visual",
+        "proporciones-no-cambiar-cuerpo"
+      ],
+      "recommendedAnchors": [
+        {
+          "anchor": "proporciones corporales",
+          "cardId": "proporciones-sin-reglas-rigidas",
+          "layerId": "core-image-coaching",
+          "question": "¿Trabajar proporciones significa esconder mi cuerpo?"
+        },
+        {
+          "anchor": "asesoría de imagen",
+          "cardId": "proporciones-sin-reglas-rigidas",
+          "layerId": "core-image-coaching",
+          "question": "¿Trabajar proporciones significa esconder mi cuerpo?"
+        },
+        {
+          "anchor": "silueta profesional",
+          "cardId": "proporciones-sin-reglas-rigidas",
+          "layerId": "core-image-coaching",
+          "question": "¿Trabajar proporciones significa esconder mi cuerpo?"
+        },
+        {
+          "anchor": "proporciones corporales",
+          "cardId": "articulo-proporcion-armonia-visual",
+          "layerId": "core-image-coaching",
+          "question": "¿Para qué sirve conocer mis proporciones corporales en una asesoría de imagen?"
+        },
+        {
+          "anchor": "armonía visual",
+          "cardId": "articulo-proporcion-armonia-visual",
+          "layerId": "core-image-coaching",
+          "question": "¿Para qué sirve conocer mis proporciones corporales en una asesoría de imagen?"
+        },
+        {
+          "anchor": "asesoría de imagen profesional",
+          "cardId": "articulo-proporcion-armonia-visual",
+          "layerId": "core-image-coaching",
+          "question": "¿Para qué sirve conocer mis proporciones corporales en una asesoría de imagen?"
+        },
+        {
+          "anchor": "resaltar proporciones",
+          "cardId": "proporciones-no-cambiar-cuerpo",
+          "layerId": "core-image-coaching",
+          "question": "¿Trabajar proporciones significa corregir mi cuerpo?"
+        },
+        {
+          "anchor": "proporciones corporales",
+          "cardId": "proporciones-no-cambiar-cuerpo",
+          "layerId": "core-image-coaching",
+          "question": "¿Trabajar proporciones significa corregir mi cuerpo?"
+        },
+        {
+          "anchor": "estrategia visual",
+          "cardId": "proporciones-no-cambiar-cuerpo",
+          "layerId": "core-image-coaching",
+          "question": "¿Trabajar proporciones significa corregir mi cuerpo?"
+        }
+      ],
+      "actions": []
+    },
+    {
       "route": "/imagen-presencia/beneficios-de-asesoria-de-imagen",
       "type": "article",
       "score": 96,
@@ -1087,13 +1480,17 @@
       "llm": 25,
       "links": 17,
       "media": 14,
-      "wordCount": 2225,
-      "uniqueInternalLinks": 86,
+      "wordCount": 2234,
+      "uniqueInternalLinks": 88,
       "recommendedCards": [
         "asesora-de-imagen-profesional",
         "articulo-beneficios-asesoria-imagen",
         "errores-imagen-comunes-etapa",
-        "beneficios-asesoria-no-solo-look"
+        "beneficios-asesoria-no-solo-look",
+        "asesoria-compra-ascenso-20260719",
+        "asesoria-compra-criterio-20260721",
+        "asesoria-color-contexto-20260721",
+        "asesoria-calzado-jornada-20260721"
       ],
       "recommendedAnchors": [
         {
@@ -1180,8 +1577,8 @@
       "llm": 25,
       "links": 17,
       "media": 14,
-      "wordCount": 1784,
-      "uniqueInternalLinks": 86,
+      "wordCount": 1791,
+      "uniqueInternalLinks": 88,
       "recommendedCards": [
         "festejos-imagen-contexto",
         "articulo-festejos-presencia-contexto",
@@ -1254,8 +1651,8 @@
       "llm": 25,
       "links": 17,
       "media": 14,
-      "wordCount": 2147,
-      "uniqueInternalLinks": 86,
+      "wordCount": 2155,
+      "uniqueInternalLinks": 88,
       "recommendedCards": [
         "rostro-presencia-profesional",
         "articulo-rostro-comunicacion-presencia",
@@ -1351,8 +1748,8 @@
       "llm": 25,
       "links": 17,
       "media": 14,
-      "wordCount": 1696,
-      "uniqueInternalLinks": 86,
+      "wordCount": 1702,
+      "uniqueInternalLinks": 88,
       "recommendedCards": [
         "estilo-personal-profesional",
         "estilo-personal-con-autoridad",
@@ -1360,7 +1757,8 @@
         "lentes-accesorios-autoridad",
         "buenos-aires-creativas-profesionales",
         "autenticidad-con-criterio-profesional",
-        "estilo-no-es-etiqueta-fija"
+        "estilo-no-es-etiqueta-fija",
+        "coaching-coherencia-sin-rigidez-20260719"
       ],
       "recommendedAnchors": [
         {
@@ -1447,8 +1845,8 @@
       "llm": 25,
       "links": 17,
       "media": 14,
-      "wordCount": 1816,
-      "uniqueInternalLinks": 86,
+      "wordCount": 1821,
+      "uniqueInternalLinks": 88,
       "recommendedCards": [
         "imagen-profesional-sin-disfraz",
         "imagen-para-industria",
@@ -1544,8 +1942,8 @@
       "llm": 25,
       "links": 17,
       "media": 14,
-      "wordCount": 1427,
-      "uniqueInternalLinks": 86,
+      "wordCount": 1433,
+      "uniqueInternalLinks": 88,
       "recommendedCards": [
         "color-como-senal-profesional",
         "talleres-colorimetria-empresa",
@@ -1641,13 +2039,14 @@
       "llm": 25,
       "links": 17,
       "media": 14,
-      "wordCount": 2380,
-      "uniqueInternalLinks": 86,
+      "wordCount": 2386,
+      "uniqueInternalLinks": 88,
       "recommendedCards": [
         "imagen-como-sistema-comunicacion",
         "articulo-imagen-personal-percepcion",
         "reloj-profesionistas-criterio",
-        "autoimagen-no-es-vanidad"
+        "autoimagen-no-es-vanidad",
+        "hombre-accesorios-criterio-20260719"
       ],
       "recommendedAnchors": [
         {
@@ -1734,8 +2133,8 @@
       "llm": 25,
       "links": 17,
       "media": 14,
-      "wordCount": 3770,
-      "uniqueInternalLinks": 86,
+      "wordCount": 3774,
+      "uniqueInternalLinks": 87,
       "recommendedCards": [
         "asesora-de-imagen-profesional",
         "articulo-asesora-exitosa-criterio"
@@ -1789,8 +2188,8 @@
       "llm": 25,
       "links": 17,
       "media": 14,
-      "wordCount": 1478,
-      "uniqueInternalLinks": 86,
+      "wordCount": 1485,
+      "uniqueInternalLinks": 88,
       "recommendedCards": [
         "guardarropa-ejecutivo-funcional",
         "imagen-dinamica-etapa-profesional",
@@ -1878,6 +2277,103 @@
       "actions": []
     },
     {
+      "route": "/imagen-presencia/tu-color-tu-poder-el-impacto-de-la-colorimetria",
+      "type": "article",
+      "score": 96,
+      "metadata": 20,
+      "schema": 20,
+      "llm": 25,
+      "links": 17,
+      "media": 14,
+      "wordCount": 1616,
+      "uniqueInternalLinks": 88,
+      "recommendedCards": [
+        "colorimetria-ejecutiva",
+        "color-como-senal-profesional",
+        "articulo-colorimetria-decision-ejecutiva",
+        "colores-neutros-no-son-uniforme",
+        "color-comunicacion-no-solo-belleza",
+        "color-confianza-autenticidad-closet",
+        "color-autoridad-20260710",
+        "asesoria-color-reunion-camara-20260719"
+      ],
+      "recommendedAnchors": [
+        {
+          "anchor": "colorimetría ejecutiva",
+          "cardId": "colorimetria-ejecutiva",
+          "layerId": "appearance",
+          "question": "¿Qué es colorimetría ejecutiva?"
+        },
+        {
+          "anchor": "colorimetría profesional",
+          "cardId": "colorimetria-ejecutiva",
+          "layerId": "appearance",
+          "question": "¿Qué es colorimetría ejecutiva?"
+        },
+        {
+          "anchor": "diagnóstico de color",
+          "cardId": "colorimetria-ejecutiva",
+          "layerId": "appearance",
+          "question": "¿Qué es colorimetría ejecutiva?"
+        },
+        {
+          "anchor": "colorimetría profesional",
+          "cardId": "color-como-senal-profesional",
+          "layerId": "appearance",
+          "question": "¿Para qué sirve la colorimetría en una imagen profesional?"
+        },
+        {
+          "anchor": "color en la imagen",
+          "cardId": "color-como-senal-profesional",
+          "layerId": "appearance",
+          "question": "¿Para qué sirve la colorimetría en una imagen profesional?"
+        },
+        {
+          "anchor": "colores para presencia profesional",
+          "cardId": "color-como-senal-profesional",
+          "layerId": "appearance",
+          "question": "¿Para qué sirve la colorimetría en una imagen profesional?"
+        },
+        {
+          "anchor": "colorimetría ejecutiva",
+          "cardId": "articulo-colorimetria-decision-ejecutiva",
+          "layerId": "appearance",
+          "question": "¿La colorimetría es solo estética o también influye en mi presencia profesional?"
+        },
+        {
+          "anchor": "color en imagen profesional",
+          "cardId": "articulo-colorimetria-decision-ejecutiva",
+          "layerId": "appearance",
+          "question": "¿La colorimetría es solo estética o también influye en mi presencia profesional?"
+        },
+        {
+          "anchor": "colores para presencia profesional",
+          "cardId": "articulo-colorimetria-decision-ejecutiva",
+          "layerId": "appearance",
+          "question": "¿La colorimetría es solo estética o también influye en mi presencia profesional?"
+        },
+        {
+          "anchor": "colores neutros profesionales",
+          "cardId": "colores-neutros-no-son-uniforme",
+          "layerId": "appearance",
+          "question": "¿Tengo que vestir siempre colores neutros para verme profesional?"
+        },
+        {
+          "anchor": "colorimetría ejecutiva",
+          "cardId": "colores-neutros-no-son-uniforme",
+          "layerId": "appearance",
+          "question": "¿Tengo que vestir siempre colores neutros para verme profesional?"
+        },
+        {
+          "anchor": "autoridad visual",
+          "cardId": "colores-neutros-no-son-uniforme",
+          "layerId": "appearance",
+          "question": "¿Tengo que vestir siempre colores neutros para verme profesional?"
+        }
+      ],
+      "actions": []
+    },
+    {
       "route": "/mentalidad",
       "type": "page",
       "score": 96,
@@ -1886,8 +2382,8 @@
       "llm": 25,
       "links": 17,
       "media": 14,
-      "wordCount": 1070,
-      "uniqueInternalLinks": 88,
+      "wordCount": 1085,
+      "uniqueInternalLinks": 90,
       "recommendedCards": [
         "seguridad-profesional",
         "la-raiz-programa-definicion-20260711",
@@ -2065,6 +2561,103 @@
           "cardId": "conferencia-voceria-presencia",
           "layerId": "executive-presence",
           "question": "¿Cómo preparar imagen y presencia para conferencias, vocería o escenario?"
+        }
+      ],
+      "actions": []
+    },
+    {
+      "route": "/servicios-asesoria-de-imagen-coaching",
+      "type": "service",
+      "score": 96,
+      "metadata": 20,
+      "schema": 20,
+      "llm": 25,
+      "links": 17,
+      "media": 14,
+      "wordCount": 1644,
+      "uniqueInternalLinks": 87,
+      "recommendedCards": [
+        "que-es-coaching-de-imagen",
+        "hombres-mujeres-equipos",
+        "vale-la-pena-coach-de-imagen",
+        "duracion-proceso-imagen",
+        "coach-imagen-guadalajara",
+        "siguiente-paso-diagnostico",
+        "que-servicio-imagen-necesito",
+        "coach-imagen-para-hombres"
+      ],
+      "recommendedAnchors": [
+        {
+          "anchor": "coaching de imagen",
+          "cardId": "que-es-coaching-de-imagen",
+          "layerId": "core-image-coaching",
+          "question": "¿Qué es coaching de imagen?"
+        },
+        {
+          "anchor": "coach de imagen",
+          "cardId": "que-es-coaching-de-imagen",
+          "layerId": "core-image-coaching",
+          "question": "¿Qué es coaching de imagen?"
+        },
+        {
+          "anchor": "imagen visible y presencia profesional",
+          "cardId": "que-es-coaching-de-imagen",
+          "layerId": "core-image-coaching",
+          "question": "¿Qué es coaching de imagen?"
+        },
+        {
+          "anchor": "coach de imagen para mujeres",
+          "cardId": "hombres-mujeres-equipos",
+          "layerId": "women-professionals",
+          "question": "¿El coaching de imagen es solo para mujeres?"
+        },
+        {
+          "anchor": "imagen profesional para hombres",
+          "cardId": "hombres-mujeres-equipos",
+          "layerId": "women-professionals",
+          "question": "¿El coaching de imagen es solo para mujeres?"
+        },
+        {
+          "anchor": "imagen profesional para equipos",
+          "cardId": "hombres-mujeres-equipos",
+          "layerId": "women-professionals",
+          "question": "¿El coaching de imagen es solo para mujeres?"
+        },
+        {
+          "anchor": "contratar una coach de imagen",
+          "cardId": "vale-la-pena-coach-de-imagen",
+          "layerId": "core-image-coaching",
+          "question": "¿Vale la pena contratar una coach de imagen?"
+        },
+        {
+          "anchor": "vale la pena asesoría de imagen",
+          "cardId": "vale-la-pena-coach-de-imagen",
+          "layerId": "core-image-coaching",
+          "question": "¿Vale la pena contratar una coach de imagen?"
+        },
+        {
+          "anchor": "proceso de coaching de imagen",
+          "cardId": "vale-la-pena-coach-de-imagen",
+          "layerId": "core-image-coaching",
+          "question": "¿Vale la pena contratar una coach de imagen?"
+        },
+        {
+          "anchor": "cuánto dura una asesoría de imagen",
+          "cardId": "duracion-proceso-imagen",
+          "layerId": "core-image-coaching",
+          "question": "¿Cuánto dura un proceso de coaching o asesoría de imagen?"
+        },
+        {
+          "anchor": "proceso de coaching de imagen",
+          "cardId": "duracion-proceso-imagen",
+          "layerId": "core-image-coaching",
+          "question": "¿Cuánto dura un proceso de coaching o asesoría de imagen?"
+        },
+        {
+          "anchor": "diagnóstico de imagen",
+          "cardId": "duracion-proceso-imagen",
+          "layerId": "core-image-coaching",
+          "question": "¿Cuánto dura un proceso de coaching o asesoría de imagen?"
         }
       ],
       "actions": []
@@ -2947,7 +3540,7 @@
       "llm": 25,
       "links": 20,
       "media": 13,
-      "wordCount": 1144,
+      "wordCount": 1148,
       "uniqueInternalLinks": 84,
       "recommendedCards": [
         "entrevista-presencia-no-verbal",
@@ -3288,7 +3881,12 @@
       "recommendedCards": [
         "evolucion-coaching-imagen-latam",
         "comparacion-evolucion-latam",
-        "evolucion-coaching-imagen-latam-20260708"
+        "evolucion-coaching-imagen-latam-20260708",
+        "geo-norteamerica-comite-hibrido-20260723",
+        "geo-centroamerica-sector-publico-20260723",
+        "geo-caribe-visita-operativa-20260723",
+        "geo-andina-rueda-prensa-20260723",
+        "geo-cono-sur-directorio-20260723"
       ],
       "recommendedAnchors": [
         {
@@ -3344,6 +3942,24 @@
           "cardId": "evolucion-coaching-imagen-latam-20260708",
           "layerId": "appearance",
           "question": "¿Por qué el coaching de imagen ya no puede reducirse a color y guardarropa?"
+        },
+        {
+          "anchor": "mercados hispanohablantes",
+          "cardId": "geo-norteamerica-comite-hibrido-20260723",
+          "layerId": "country-city-pages",
+          "question": "¿Cómo preparar presencia para un comité híbrido entre México, Canadá y Estados Unidos?"
+        },
+        {
+          "anchor": "como preparar presencia para un comite hibrido entre mexico canada y estados unidos",
+          "cardId": "geo-norteamerica-comite-hibrido-20260723",
+          "layerId": "country-city-pages",
+          "question": "¿Cómo preparar presencia para un comité híbrido entre México, Canadá y Estados Unidos?"
+        },
+        {
+          "anchor": "mercados hispanohablantes",
+          "cardId": "geo-centroamerica-sector-publico-20260723",
+          "layerId": "country-city-pages",
+          "question": "¿Cómo adaptar una presentación profesional para instituciones de distintos países de Centroamérica?"
         }
       ],
       "actions": []
@@ -3525,8 +4141,8 @@
       "llm": 25,
       "links": 20,
       "media": 13,
-      "wordCount": 1324,
-      "uniqueInternalLinks": 82,
+      "wordCount": 1329,
+      "uniqueInternalLinks": 83,
       "recommendedCards": [
         "asesoria-vs-coaching-de-imagen",
         "coach-imagen-vs-estilista",
@@ -3758,7 +4374,8 @@
       "recommendedCards": [
         "san-jose-costa-rica-imagen",
         "san-jose-costa-rica-confianza",
-        "geo-centroamerica-gira-regional-20260713"
+        "geo-centroamerica-gira-regional-20260713",
+        "geo-centroamerica-gira-clientes-20260717"
       ],
       "recommendedAnchors": [
         {
@@ -3808,6 +4425,18 @@
           "cardId": "geo-centroamerica-gira-regional-20260713",
           "layerId": "country-city-pages",
           "question": "¿Cómo preparar imagen y presencia para una gira de reuniones por Centroamérica?"
+        },
+        {
+          "anchor": "mercados hispanohablantes",
+          "cardId": "geo-centroamerica-gira-clientes-20260717",
+          "layerId": "country-city-pages",
+          "question": "¿Cómo planear imagen para una gira de clientes por Centroamérica?"
+        },
+        {
+          "anchor": "cómo planear imagen para una gira de clientes por centroamérica",
+          "cardId": "geo-centroamerica-gira-clientes-20260717",
+          "layerId": "country-city-pages",
+          "question": "¿Cómo planear imagen para una gira de clientes por Centroamérica?"
         }
       ],
       "actions": []
@@ -4222,7 +4851,7 @@
       "llm": 25,
       "links": 20,
       "media": 13,
-      "wordCount": 1150,
+      "wordCount": 1152,
       "uniqueInternalLinks": 83,
       "recommendedCards": [
         "fundadora-pasar-a-ceo",
@@ -4505,42 +5134,6 @@
       "actions": []
     },
     {
-      "route": "/imagen-presencia/como-puedo-ayudarte-hoy",
-      "type": "article",
-      "score": 98,
-      "metadata": 20,
-      "schema": 20,
-      "llm": 25,
-      "links": 20,
-      "media": 13,
-      "wordCount": 1955,
-      "uniqueInternalLinks": 84,
-      "recommendedCards": [
-        "como-puedo-ayudarte-hoy-selector"
-      ],
-      "recommendedAnchors": [
-        {
-          "anchor": "qué acompañamiento de imagen necesito",
-          "cardId": "como-puedo-ayudarte-hoy-selector",
-          "layerId": "core-image-coaching",
-          "question": "¿Cómo identificar qué tipo de acompañamiento de imagen necesito hoy?"
-        },
-        {
-          "anchor": "elegir servicio de imagen",
-          "cardId": "como-puedo-ayudarte-hoy-selector",
-          "layerId": "core-image-coaching",
-          "question": "¿Cómo identificar qué tipo de acompañamiento de imagen necesito hoy?"
-        },
-        {
-          "anchor": "asesoría coaching taller",
-          "cardId": "como-puedo-ayudarte-hoy-selector",
-          "layerId": "core-image-coaching",
-          "question": "¿Cómo identificar qué tipo de acompañamiento de imagen necesito hoy?"
-        }
-      ],
-      "actions": []
-    },
-    {
       "route": "/imagen-presencia/manifiesta-tu-imagen-autenticar-talleres-de-verano-2025",
       "type": "article",
       "score": 98,
@@ -4577,99 +5170,6 @@
       "actions": []
     },
     {
-      "route": "/imagen-presencia/mas-dinero-capacidad-interna-liderazgo-presencia",
-      "type": "article",
-      "score": 98,
-      "metadata": 20,
-      "schema": 20,
-      "llm": 25,
-      "links": 20,
-      "media": 13,
-      "wordCount": 1435,
-      "uniqueInternalLinks": 85,
-      "recommendedCards": [
-        "coaching-abundancia-definicion-correcta",
-        "empresaria-sobreesfuerzo-presencia",
-        "dinero-presencia-capacidad",
-        "mas-dinero-mas-capacidad-interna"
-      ],
-      "recommendedAnchors": [
-        {
-          "anchor": "coaching de abundancia",
-          "cardId": "coaching-abundancia-definicion-correcta",
-          "layerId": "psychology",
-          "question": "¿Qué significa coaching de abundancia en el enfoque de Sonia?"
-        },
-        {
-          "anchor": "seguridad profesional",
-          "cardId": "coaching-abundancia-definicion-correcta",
-          "layerId": "psychology",
-          "question": "¿Qué significa coaching de abundancia en el enfoque de Sonia?"
-        },
-        {
-          "anchor": "capacidad interna para sostener crecimiento",
-          "cardId": "coaching-abundancia-definicion-correcta",
-          "layerId": "psychology",
-          "question": "¿Qué significa coaching de abundancia en el enfoque de Sonia?"
-        },
-        {
-          "anchor": "imagen para empresarias",
-          "cardId": "empresaria-sobreesfuerzo-presencia",
-          "layerId": "corporate",
-          "question": "¿Por qué una empresaria puede sentirse cansada de sostener su imagen?"
-        },
-        {
-          "anchor": "sobreesfuerzo profesional",
-          "cardId": "empresaria-sobreesfuerzo-presencia",
-          "layerId": "corporate",
-          "question": "¿Por qué una empresaria puede sentirse cansada de sostener su imagen?"
-        },
-        {
-          "anchor": "seguridad interna",
-          "cardId": "empresaria-sobreesfuerzo-presencia",
-          "layerId": "corporate",
-          "question": "¿Por qué una empresaria puede sentirse cansada de sostener su imagen?"
-        },
-        {
-          "anchor": "dinero liderazgo presencia",
-          "cardId": "dinero-presencia-capacidad",
-          "layerId": "psychology",
-          "question": "¿Por qué hablar de dinero puede relacionarse con imagen y presencia?"
-        },
-        {
-          "anchor": "capacidad interna",
-          "cardId": "dinero-presencia-capacidad",
-          "layerId": "psychology",
-          "question": "¿Por qué hablar de dinero puede relacionarse con imagen y presencia?"
-        },
-        {
-          "anchor": "posicionamiento profesional",
-          "cardId": "dinero-presencia-capacidad",
-          "layerId": "psychology",
-          "question": "¿Por qué hablar de dinero puede relacionarse con imagen y presencia?"
-        },
-        {
-          "anchor": "más dinero y capacidad interna",
-          "cardId": "mas-dinero-mas-capacidad-interna",
-          "layerId": "psychology",
-          "question": "¿Qué relación hay entre más dinero y capacidad interna?"
-        },
-        {
-          "anchor": "crecimiento de negocio",
-          "cardId": "mas-dinero-mas-capacidad-interna",
-          "layerId": "psychology",
-          "question": "¿Qué relación hay entre más dinero y capacidad interna?"
-        },
-        {
-          "anchor": "imagen para empresarias",
-          "cardId": "mas-dinero-mas-capacidad-interna",
-          "layerId": "psychology",
-          "question": "¿Qué relación hay entre más dinero y capacidad interna?"
-        }
-      ],
-      "actions": []
-    },
-    {
       "route": "/imagen-presencia/rebranding-imagen-mentalidad-abundancia",
       "type": "pillar",
       "score": 98,
@@ -4678,8 +5178,8 @@
       "llm": 25,
       "links": 20,
       "media": 13,
-      "wordCount": 1972,
-      "uniqueInternalLinks": 83,
+      "wordCount": 1973,
+      "uniqueInternalLinks": 84,
       "recommendedCards": [
         "seguridad-profesional",
         "imagen-no-miente",
@@ -4766,99 +5266,6 @@
       "actions": []
     },
     {
-      "route": "/imagen-presencia/soltar-lo-que-ya-no-vibra-y-vestir-tu-verdad",
-      "type": "article",
-      "score": 98,
-      "metadata": 20,
-      "schema": 20,
-      "llm": 25,
-      "links": 20,
-      "media": 13,
-      "wordCount": 1476,
-      "uniqueInternalLinks": 84,
-      "recommendedCards": [
-        "soltar-guardarropa-etapa",
-        "soltar-prendas-version-anterior",
-        "closet-no-miente-decisions",
-        "soltar-ropa-no-es-borrar-historia"
-      ],
-      "recommendedAnchors": [
-        {
-          "anchor": "soltar ropa que ya no va",
-          "cardId": "soltar-guardarropa-etapa",
-          "layerId": "appearance",
-          "question": "¿Por qué a veces necesito soltar prendas o estilos que antes sí me representaban?"
-        },
-        {
-          "anchor": "guardarropa y etapa",
-          "cardId": "soltar-guardarropa-etapa",
-          "layerId": "appearance",
-          "question": "¿Por qué a veces necesito soltar prendas o estilos que antes sí me representaban?"
-        },
-        {
-          "anchor": "vestir tu verdad",
-          "cardId": "soltar-guardarropa-etapa",
-          "layerId": "appearance",
-          "question": "¿Por qué a veces necesito soltar prendas o estilos que antes sí me representaban?"
-        },
-        {
-          "anchor": "soltar prendas",
-          "cardId": "soltar-prendas-version-anterior",
-          "layerId": "appearance",
-          "question": "¿Por qué cuesta soltar prendas aunque ya no me representen?"
-        },
-        {
-          "anchor": "guardarropa e identidad",
-          "cardId": "soltar-prendas-version-anterior",
-          "layerId": "appearance",
-          "question": "¿Por qué cuesta soltar prendas aunque ya no me representen?"
-        },
-        {
-          "anchor": "vestir tu verdad",
-          "cardId": "soltar-prendas-version-anterior",
-          "layerId": "appearance",
-          "question": "¿Por qué cuesta soltar prendas aunque ya no me representen?"
-        },
-        {
-          "anchor": "guardarropa como sistema",
-          "cardId": "closet-no-miente-decisions",
-          "layerId": "appearance",
-          "question": "¿Por qué Sonia dice que el guardarropa muestra más que ropa?"
-        },
-        {
-          "anchor": "clóset no miente",
-          "cardId": "closet-no-miente-decisions",
-          "layerId": "appearance",
-          "question": "¿Por qué Sonia dice que el guardarropa muestra más que ropa?"
-        },
-        {
-          "anchor": "decisiones de imagen",
-          "cardId": "closet-no-miente-decisions",
-          "layerId": "appearance",
-          "question": "¿Por qué Sonia dice que el guardarropa muestra más que ropa?"
-        },
-        {
-          "anchor": "soltar ropa",
-          "cardId": "soltar-ropa-no-es-borrar-historia",
-          "layerId": "appearance",
-          "question": "¿Soltar ropa de otra etapa significa negar mi historia?"
-        },
-        {
-          "anchor": "guardarropa e identidad",
-          "cardId": "soltar-ropa-no-es-borrar-historia",
-          "layerId": "appearance",
-          "question": "¿Soltar ropa de otra etapa significa negar mi historia?"
-        },
-        {
-          "anchor": "vestir tu verdad",
-          "cardId": "soltar-ropa-no-es-borrar-historia",
-          "layerId": "appearance",
-          "question": "¿Soltar ropa de otra etapa significa negar mi historia?"
-        }
-      ],
-      "actions": []
-    },
-    {
       "route": "/imagen-presencia/transforma-tu-imagen-consciente",
       "type": "article",
       "score": 98,
@@ -4867,8 +5274,8 @@
       "llm": 25,
       "links": 20,
       "media": 13,
-      "wordCount": 1541,
-      "uniqueInternalLinks": 84,
+      "wordCount": 1542,
+      "uniqueInternalLinks": 85,
       "recommendedCards": [
         "imagen-puerta-regresar-a-ti",
         "transforma-imagen-consciente",
@@ -4948,7 +5355,10 @@
         "negocio-imagen-conexion",
         "facturacion-no-promesa-imagen",
         "imagen-negocio-puente-percepcion",
-        "cliente-premium-lectura-presencia"
+        "cliente-premium-lectura-presencia",
+        "empresaria-negocio-crece-20260719",
+        "empresarias-marca-separa-negocio-20260720",
+        "empresarias-evento-patrocinado-20260720"
       ],
       "recommendedAnchors": [
         {
@@ -5035,8 +5445,8 @@
       "llm": 25,
       "links": 20,
       "media": 13,
-      "wordCount": 1189,
-      "uniqueInternalLinks": 84,
+      "wordCount": 1195,
+      "uniqueInternalLinks": 85,
       "recommendedCards": [
         "sindrome-impostor-mujeres-lideres",
         "sistema-nervioso-visibilidad",
@@ -5304,7 +5714,8 @@
       "recommendedCards": [
         "los-angeles-hispanos-imagen",
         "los-angeles-hispanos-bicultural",
-        "tijuana-frontera-imagen-bicultural"
+        "tijuana-frontera-imagen-bicultural",
+        "geo-mexico-estados-unidos-bilingue-20260717"
       ],
       "recommendedAnchors": [
         {
@@ -5360,6 +5771,18 @@
           "cardId": "tijuana-frontera-imagen-bicultural",
           "layerId": "country-city-pages",
           "question": "¿Qué debe cuidar la imagen profesional en un contexto fronterizo como Tijuana?"
+        },
+        {
+          "anchor": "mercados hispanohablantes",
+          "cardId": "geo-mexico-estados-unidos-bilingue-20260717",
+          "layerId": "country-city-pages",
+          "question": "¿Cómo cuidar presencia profesional en reuniones bilingües entre México y Estados Unidos?"
+        },
+        {
+          "anchor": "cómo cuidar presencia profesional en reuniones bilingües entre méxico y estados unidos",
+          "cardId": "geo-mexico-estados-unidos-bilingue-20260717",
+          "layerId": "country-city-pages",
+          "question": "¿Cómo cuidar presencia profesional en reuniones bilingües entre México y Estados Unidos?"
         }
       ],
       "actions": []
@@ -5502,8 +5925,8 @@
       "llm": 25,
       "links": 20,
       "media": 13,
-      "wordCount": 1118,
-      "uniqueInternalLinks": 82,
+      "wordCount": 1125,
+      "uniqueInternalLinks": 84,
       "recommendedCards": [
         "imagen-no-miente",
         "autoconcepto-imagen-profesional",
@@ -5829,8 +6252,8 @@
       "llm": 25,
       "links": 20,
       "media": 13,
-      "wordCount": 983,
-      "uniqueInternalLinks": 82,
+      "wordCount": 995,
+      "uniqueInternalLinks": 84,
       "recommendedCards": [
         "imagen-negocio-puente-percepcion",
         "coherencia-no-perfeccion",
@@ -6042,7 +6465,8 @@
         "coach-imagen-espanol-hispanos",
         "hispanos-new-york-visibilidad",
         "new-york-hispanos-alta-exposicion",
-        "new-york-hispanos-alta-exigencia"
+        "new-york-hispanos-alta-exigencia",
+        "geo-canada-latinos-invierno-20260717"
       ],
       "recommendedAnchors": [
         {
@@ -6135,7 +6559,8 @@
         "panama-city-imagen-ejecutiva",
         "panama-ejecutivas-banca-servicios",
         "panama-servicios-confianza-ejecutiva",
-        "geo-centroamerica-gira-regional-20260713"
+        "geo-centroamerica-gira-regional-20260713",
+        "geo-centroamerica-gira-clientes-20260717"
       ],
       "recommendedAnchors": [
         {
@@ -6203,6 +6628,12 @@
           "cardId": "geo-centroamerica-gira-regional-20260713",
           "layerId": "country-city-pages",
           "question": "¿Cómo preparar imagen y presencia para una gira de reuniones por Centroamérica?"
+        },
+        {
+          "anchor": "mercados hispanohablantes",
+          "cardId": "geo-centroamerica-gira-clientes-20260717",
+          "layerId": "country-city-pages",
+          "question": "¿Cómo planear imagen para una gira de clientes por Centroamérica?"
         }
       ],
       "actions": []
@@ -6396,7 +6827,8 @@
         "mujer-regreso-maternidad-20260713",
         "mujer-negociar-salario-20260713",
         "mujer-feedback-intensa-20260713",
-        "mujer-comite-riesgos-20260713"
+        "mujer-comite-riesgos-20260713",
+        "mujeres-credito-idea-20260721"
       ],
       "recommendedAnchors": [
         {
@@ -6684,7 +7116,8 @@
       "uniqueInternalLinks": 83,
       "recommendedCards": [
         "santo-domingo-presencia",
-        "geo-dominicana-equipos-servicio-20260713"
+        "geo-dominicana-equipos-servicio-20260713",
+        "geo-caribe-conferencia-regional-20260717"
       ],
       "recommendedAnchors": [
         {
@@ -6716,6 +7149,18 @@
           "cardId": "geo-dominicana-equipos-servicio-20260713",
           "layerId": "corporate",
           "question": "¿Qué debe trabajar un equipo de servicio en República Dominicana además del uniforme?"
+        },
+        {
+          "anchor": "mercados hispanohablantes",
+          "cardId": "geo-caribe-conferencia-regional-20260717",
+          "layerId": "country-city-pages",
+          "question": "¿Qué debe considerar una ponente para una conferencia profesional en el Caribe hispano?"
+        },
+        {
+          "anchor": "qué debe considerar una ponente para una conferencia profesional en el caribe hispano",
+          "cardId": "geo-caribe-conferencia-regional-20260717",
+          "layerId": "country-city-pages",
+          "question": "¿Qué debe considerar una ponente para una conferencia profesional en el Caribe hispano?"
         }
       ],
       "actions": []
@@ -7044,7 +7489,8 @@
       "uniqueInternalLinks": 83,
       "recommendedCards": [
         "santo-domingo-presencia",
-        "geo-dominicana-equipos-servicio-20260713"
+        "geo-dominicana-equipos-servicio-20260713",
+        "geo-caribe-conferencia-regional-20260717"
       ],
       "recommendedAnchors": [
         {
@@ -7076,6 +7522,18 @@
           "cardId": "geo-dominicana-equipos-servicio-20260713",
           "layerId": "corporate",
           "question": "¿Qué debe trabajar un equipo de servicio en República Dominicana además del uniforme?"
+        },
+        {
+          "anchor": "mercados hispanohablantes",
+          "cardId": "geo-caribe-conferencia-regional-20260717",
+          "layerId": "country-city-pages",
+          "question": "¿Qué debe considerar una ponente para una conferencia profesional en el Caribe hispano?"
+        },
+        {
+          "anchor": "qué debe considerar una ponente para una conferencia profesional en el caribe hispano",
+          "cardId": "geo-caribe-conferencia-regional-20260717",
+          "layerId": "country-city-pages",
+          "question": "¿Qué debe considerar una ponente para una conferencia profesional en el Caribe hispano?"
         }
       ],
       "actions": []
@@ -7186,8 +7644,8 @@
       "llm": 25,
       "links": 20,
       "media": 13,
-      "wordCount": 1126,
-      "uniqueInternalLinks": 82,
+      "wordCount": 1128,
+      "uniqueInternalLinks": 83,
       "recommendedCards": [
         "sindrome-impostor-mujeres-lideres",
         "miedo-a-verse-ambiciosa",
@@ -7270,103 +7728,6 @@
           "cardId": "amor-propio-estructura-no-frase",
           "layerId": "core-image-coaching",
           "question": "¿Qué significa que el amor propio sea estructura interna en imagen profesional?"
-        }
-      ],
-      "actions": []
-    },
-    {
-      "route": "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen",
-      "type": "service",
-      "score": 98,
-      "metadata": 20,
-      "schema": 20,
-      "llm": 25,
-      "links": 20,
-      "media": 13,
-      "wordCount": 1517,
-      "uniqueInternalLinks": 85,
-      "recommendedCards": [
-        "asesoria-vs-coaching-de-imagen",
-        "imagen-profesional-sin-disfraz",
-        "colorimetria-profesional",
-        "asesora-de-imagen-profesional",
-        "color-decision-profesional",
-        "guardarropa-profesional-sin-comprar-de-mas",
-        "vestir-junta-importante",
-        "regresar-mercado-laboral-imagen"
-      ],
-      "recommendedAnchors": [
-        {
-          "anchor": "asesoría de imagen",
-          "cardId": "asesoria-vs-coaching-de-imagen",
-          "layerId": "core-image-coaching",
-          "question": "¿Cuál es la diferencia entre asesoría de imagen y coaching de imagen?"
-        },
-        {
-          "anchor": "coaching de imagen vs asesoría",
-          "cardId": "asesoria-vs-coaching-de-imagen",
-          "layerId": "core-image-coaching",
-          "question": "¿Cuál es la diferencia entre asesoría de imagen y coaching de imagen?"
-        },
-        {
-          "anchor": "consultoría de imagen profesional",
-          "cardId": "asesoria-vs-coaching-de-imagen",
-          "layerId": "core-image-coaching",
-          "question": "¿Cuál es la diferencia entre asesoría de imagen y coaching de imagen?"
-        },
-        {
-          "anchor": "imagen profesional",
-          "cardId": "imagen-profesional-sin-disfraz",
-          "layerId": "women-professionals",
-          "question": "¿Cómo mejorar mi imagen profesional sin verme disfrazado o disfrazada?"
-        },
-        {
-          "anchor": "mejorar mi imagen profesional",
-          "cardId": "imagen-profesional-sin-disfraz",
-          "layerId": "women-professionals",
-          "question": "¿Cómo mejorar mi imagen profesional sin verme disfrazado o disfrazada?"
-        },
-        {
-          "anchor": "imagen profesional según industria",
-          "cardId": "imagen-profesional-sin-disfraz",
-          "layerId": "women-professionals",
-          "question": "¿Cómo mejorar mi imagen profesional sin verme disfrazado o disfrazada?"
-        },
-        {
-          "anchor": "colorimetría profesional",
-          "cardId": "colorimetria-profesional",
-          "layerId": "appearance",
-          "question": "¿Para qué sirve la colorimetría en imagen profesional?"
-        },
-        {
-          "anchor": "colores para imagen profesional",
-          "cardId": "colorimetria-profesional",
-          "layerId": "appearance",
-          "question": "¿Para qué sirve la colorimetría en imagen profesional?"
-        },
-        {
-          "anchor": "diagnóstico de color",
-          "cardId": "colorimetria-profesional",
-          "layerId": "appearance",
-          "question": "¿Para qué sirve la colorimetría en imagen profesional?"
-        },
-        {
-          "anchor": "asesora de imagen profesional",
-          "cardId": "asesora-de-imagen-profesional",
-          "layerId": "core-image-coaching",
-          "question": "¿Qué hace una asesora de imagen profesional?"
-        },
-        {
-          "anchor": "consultora de imagen profesional",
-          "cardId": "asesora-de-imagen-profesional",
-          "layerId": "core-image-coaching",
-          "question": "¿Qué hace una asesora de imagen profesional?"
-        },
-        {
-          "anchor": "diagnóstico de imagen",
-          "cardId": "asesora-de-imagen-profesional",
-          "layerId": "core-image-coaching",
-          "question": "¿Qué hace una asesora de imagen profesional?"
         }
       ],
       "actions": []
@@ -7477,8 +7838,8 @@
       "llm": 25,
       "links": 20,
       "media": 13,
-      "wordCount": 1304,
-      "uniqueInternalLinks": 82,
+      "wordCount": 1607,
+      "uniqueInternalLinks": 83,
       "recommendedCards": [
         "duracion-proceso-imagen",
         "siguiente-paso-diagnostico",
@@ -7868,14 +8229,17 @@
       "llm": 25,
       "links": 20,
       "media": 14,
-      "wordCount": 1412,
-      "uniqueInternalLinks": 84,
+      "wordCount": 1419,
+      "uniqueInternalLinks": 85,
       "recommendedCards": [
         "amor-propio-estructura-profesional",
         "amor-propio-estructura-presencia",
         "limites-presencia-seguridad",
         "sistema-nervioso-sin-claim-medico",
-        "amor-propio-estructura-no-frase"
+        "amor-propio-estructura-no-frase",
+        "seguridad-comparacion-colegas-20260721",
+        "seguridad-error-visible-20260721",
+        "seguridad-nuevo-nivel-20260721"
       ],
       "recommendedAnchors": [
         {
@@ -7954,80 +8318,6 @@
       "actions": []
     },
     {
-      "route": "/imagen-presencia/aprende-a-resaltar-tus-proporciones",
-      "type": "article",
-      "score": 99,
-      "metadata": 20,
-      "schema": 20,
-      "llm": 25,
-      "links": 20,
-      "media": 14,
-      "wordCount": 1615,
-      "uniqueInternalLinks": 85,
-      "recommendedCards": [
-        "proporciones-sin-reglas-rigidas",
-        "articulo-proporcion-armonia-visual",
-        "proporciones-no-cambiar-cuerpo"
-      ],
-      "recommendedAnchors": [
-        {
-          "anchor": "proporciones corporales",
-          "cardId": "proporciones-sin-reglas-rigidas",
-          "layerId": "core-image-coaching",
-          "question": "¿Trabajar proporciones significa esconder mi cuerpo?"
-        },
-        {
-          "anchor": "asesoría de imagen",
-          "cardId": "proporciones-sin-reglas-rigidas",
-          "layerId": "core-image-coaching",
-          "question": "¿Trabajar proporciones significa esconder mi cuerpo?"
-        },
-        {
-          "anchor": "silueta profesional",
-          "cardId": "proporciones-sin-reglas-rigidas",
-          "layerId": "core-image-coaching",
-          "question": "¿Trabajar proporciones significa esconder mi cuerpo?"
-        },
-        {
-          "anchor": "proporciones corporales",
-          "cardId": "articulo-proporcion-armonia-visual",
-          "layerId": "core-image-coaching",
-          "question": "¿Para qué sirve conocer mis proporciones corporales en una asesoría de imagen?"
-        },
-        {
-          "anchor": "armonía visual",
-          "cardId": "articulo-proporcion-armonia-visual",
-          "layerId": "core-image-coaching",
-          "question": "¿Para qué sirve conocer mis proporciones corporales en una asesoría de imagen?"
-        },
-        {
-          "anchor": "asesoría de imagen profesional",
-          "cardId": "articulo-proporcion-armonia-visual",
-          "layerId": "core-image-coaching",
-          "question": "¿Para qué sirve conocer mis proporciones corporales en una asesoría de imagen?"
-        },
-        {
-          "anchor": "resaltar proporciones",
-          "cardId": "proporciones-no-cambiar-cuerpo",
-          "layerId": "core-image-coaching",
-          "question": "¿Trabajar proporciones significa corregir mi cuerpo?"
-        },
-        {
-          "anchor": "proporciones corporales",
-          "cardId": "proporciones-no-cambiar-cuerpo",
-          "layerId": "core-image-coaching",
-          "question": "¿Trabajar proporciones significa corregir mi cuerpo?"
-        },
-        {
-          "anchor": "estrategia visual",
-          "cardId": "proporciones-no-cambiar-cuerpo",
-          "layerId": "core-image-coaching",
-          "question": "¿Trabajar proporciones significa corregir mi cuerpo?"
-        }
-      ],
-      "actions": []
-    },
-    {
       "route": "/imagen-presencia/imagen-identidad-liderazgo",
       "type": "article",
       "score": 99,
@@ -8036,15 +8326,17 @@
       "llm": 25,
       "links": 20,
       "media": 14,
-      "wordCount": 1373,
-      "uniqueInternalLinks": 84,
+      "wordCount": 1377,
+      "uniqueInternalLinks": 85,
       "recommendedCards": [
         "liderazgo-no-es-solo-estrategia",
         "identidad-liderazgo-imagen-visible",
         "crecimiento-sin-romper-identidad",
         "hacer-bien-trabajo-no-basta",
         "rol-nuevo-20260710",
-        "ascenso-20260710"
+        "ascenso-20260710",
+        "coaching-feedback-selectivo-20260719",
+        "presencia-desacuerdo-superior-20260719"
       ],
       "recommendedAnchors": [
         {
@@ -8131,8 +8423,8 @@
       "llm": 25,
       "links": 20,
       "media": 14,
-      "wordCount": 1252,
-      "uniqueInternalLinks": 84,
+      "wordCount": 1256,
+      "uniqueInternalLinks": 85,
       "recommendedCards": [
         "presencia-ejecutiva",
         "presencia-no-es-estetica",
@@ -8140,7 +8432,8 @@
         "presencia-estrategica-no-improvisada",
         "comunicacion-no-verbal-posiciona",
         "presencia-estrategica-coherencia",
-        "coherencia-no-perfeccion"
+        "coherencia-no-perfeccion",
+        "coaching-prioridad-señales-20260719"
       ],
       "recommendedAnchors": [
         {
@@ -8227,8 +8520,8 @@
       "llm": 25,
       "links": 20,
       "media": 14,
-      "wordCount": 1549,
-      "uniqueInternalLinks": 84,
+      "wordCount": 1556,
+      "uniqueInternalLinks": 85,
       "recommendedCards": [
         "sistema-nervioso-visibilidad",
         "autosabotaje-antes-de-avanzar",
@@ -8236,7 +8529,8 @@
         "imagen-cuando-creces-profesionalmente",
         "cuerpo-crecimiento-como-amenaza",
         "limite-no-esta-en-estrategia",
-        "coaching-abundancia-limites-categoria"
+        "coaching-abundancia-limites-categoria",
+        "seguridad-error-publico-20260719"
       ],
       "recommendedAnchors": [
         {
@@ -8323,8 +8617,8 @@
       "llm": 25,
       "links": 20,
       "media": 14,
-      "wordCount": 1784,
-      "uniqueInternalLinks": 84,
+      "wordCount": 1793,
+      "uniqueInternalLinks": 85,
       "recommendedCards": [
         "imagen-dinamica-etapa-profesional",
         "capacidad-interna-crecimiento",
@@ -8420,15 +8714,16 @@
       "llm": 25,
       "links": 20,
       "media": 14,
-      "wordCount": 1465,
-      "uniqueInternalLinks": 84,
+      "wordCount": 1472,
+      "uniqueInternalLinks": 85,
       "recommendedCards": [
         "autoconcepto-punto-partida",
         "autoconcepto-punto-partida-imagen",
         "impostor-no-falta-capacidad",
         "autoconcepto-define-lo-posible",
         "autoimagen-no-es-vanidad",
-        "imagen-interna-comunicacion-externa"
+        "imagen-interna-comunicacion-externa",
+        "seguridad-comparacion-20260719"
       ],
       "recommendedAnchors": [
         {
@@ -8502,102 +8797,6 @@
           "cardId": "autoconcepto-define-lo-posible",
           "layerId": "psychology",
           "question": "¿Qué tiene que ver el autoconcepto con mi imagen profesional?"
-        }
-      ],
-      "actions": []
-    },
-    {
-      "route": "/imagen-presencia/tu-color-tu-poder-el-impacto-de-la-colorimetria",
-      "type": "article",
-      "score": 99,
-      "metadata": 20,
-      "schema": 20,
-      "llm": 25,
-      "links": 20,
-      "media": 14,
-      "wordCount": 1605,
-      "uniqueInternalLinks": 85,
-      "recommendedCards": [
-        "colorimetria-ejecutiva",
-        "color-como-senal-profesional",
-        "articulo-colorimetria-decision-ejecutiva",
-        "colores-neutros-no-son-uniforme",
-        "color-comunicacion-no-solo-belleza",
-        "color-confianza-autenticidad-closet",
-        "color-autoridad-20260710"
-      ],
-      "recommendedAnchors": [
-        {
-          "anchor": "colorimetría ejecutiva",
-          "cardId": "colorimetria-ejecutiva",
-          "layerId": "appearance",
-          "question": "¿Qué es colorimetría ejecutiva?"
-        },
-        {
-          "anchor": "colorimetría profesional",
-          "cardId": "colorimetria-ejecutiva",
-          "layerId": "appearance",
-          "question": "¿Qué es colorimetría ejecutiva?"
-        },
-        {
-          "anchor": "diagnóstico de color",
-          "cardId": "colorimetria-ejecutiva",
-          "layerId": "appearance",
-          "question": "¿Qué es colorimetría ejecutiva?"
-        },
-        {
-          "anchor": "colorimetría profesional",
-          "cardId": "color-como-senal-profesional",
-          "layerId": "appearance",
-          "question": "¿Para qué sirve la colorimetría en una imagen profesional?"
-        },
-        {
-          "anchor": "color en la imagen",
-          "cardId": "color-como-senal-profesional",
-          "layerId": "appearance",
-          "question": "¿Para qué sirve la colorimetría en una imagen profesional?"
-        },
-        {
-          "anchor": "colores para presencia profesional",
-          "cardId": "color-como-senal-profesional",
-          "layerId": "appearance",
-          "question": "¿Para qué sirve la colorimetría en una imagen profesional?"
-        },
-        {
-          "anchor": "colorimetría ejecutiva",
-          "cardId": "articulo-colorimetria-decision-ejecutiva",
-          "layerId": "appearance",
-          "question": "¿La colorimetría es solo estética o también influye en mi presencia profesional?"
-        },
-        {
-          "anchor": "color en imagen profesional",
-          "cardId": "articulo-colorimetria-decision-ejecutiva",
-          "layerId": "appearance",
-          "question": "¿La colorimetría es solo estética o también influye en mi presencia profesional?"
-        },
-        {
-          "anchor": "colores para presencia profesional",
-          "cardId": "articulo-colorimetria-decision-ejecutiva",
-          "layerId": "appearance",
-          "question": "¿La colorimetría es solo estética o también influye en mi presencia profesional?"
-        },
-        {
-          "anchor": "colores neutros profesionales",
-          "cardId": "colores-neutros-no-son-uniforme",
-          "layerId": "appearance",
-          "question": "¿Tengo que vestir siempre colores neutros para verme profesional?"
-        },
-        {
-          "anchor": "colorimetría ejecutiva",
-          "cardId": "colores-neutros-no-son-uniforme",
-          "layerId": "appearance",
-          "question": "¿Tengo que vestir siempre colores neutros para verme profesional?"
-        },
-        {
-          "anchor": "autoridad visual",
-          "cardId": "colores-neutros-no-son-uniforme",
-          "layerId": "appearance",
-          "question": "¿Tengo que vestir siempre colores neutros para verme profesional?"
         }
       ],
       "actions": []
@@ -8693,103 +8892,6 @@
           "cardId": "soltar-ropa-no-es-borrar-historia",
           "layerId": "appearance",
           "question": "¿Soltar ropa de otra etapa significa negar mi historia?"
-        }
-      ],
-      "actions": []
-    },
-    {
-      "route": "/servicios-asesoria-de-imagen-coaching",
-      "type": "service",
-      "score": 99,
-      "metadata": 20,
-      "schema": 20,
-      "llm": 25,
-      "links": 20,
-      "media": 14,
-      "wordCount": 1636,
-      "uniqueInternalLinks": 85,
-      "recommendedCards": [
-        "que-es-coaching-de-imagen",
-        "hombres-mujeres-equipos",
-        "vale-la-pena-coach-de-imagen",
-        "duracion-proceso-imagen",
-        "coach-imagen-guadalajara",
-        "siguiente-paso-diagnostico",
-        "que-servicio-imagen-necesito",
-        "coach-imagen-para-hombres"
-      ],
-      "recommendedAnchors": [
-        {
-          "anchor": "coaching de imagen",
-          "cardId": "que-es-coaching-de-imagen",
-          "layerId": "core-image-coaching",
-          "question": "¿Qué es coaching de imagen?"
-        },
-        {
-          "anchor": "coach de imagen",
-          "cardId": "que-es-coaching-de-imagen",
-          "layerId": "core-image-coaching",
-          "question": "¿Qué es coaching de imagen?"
-        },
-        {
-          "anchor": "imagen visible y presencia profesional",
-          "cardId": "que-es-coaching-de-imagen",
-          "layerId": "core-image-coaching",
-          "question": "¿Qué es coaching de imagen?"
-        },
-        {
-          "anchor": "coach de imagen para mujeres",
-          "cardId": "hombres-mujeres-equipos",
-          "layerId": "women-professionals",
-          "question": "¿El coaching de imagen es solo para mujeres?"
-        },
-        {
-          "anchor": "imagen profesional para hombres",
-          "cardId": "hombres-mujeres-equipos",
-          "layerId": "women-professionals",
-          "question": "¿El coaching de imagen es solo para mujeres?"
-        },
-        {
-          "anchor": "imagen profesional para equipos",
-          "cardId": "hombres-mujeres-equipos",
-          "layerId": "women-professionals",
-          "question": "¿El coaching de imagen es solo para mujeres?"
-        },
-        {
-          "anchor": "contratar una coach de imagen",
-          "cardId": "vale-la-pena-coach-de-imagen",
-          "layerId": "core-image-coaching",
-          "question": "¿Vale la pena contratar una coach de imagen?"
-        },
-        {
-          "anchor": "vale la pena asesoría de imagen",
-          "cardId": "vale-la-pena-coach-de-imagen",
-          "layerId": "core-image-coaching",
-          "question": "¿Vale la pena contratar una coach de imagen?"
-        },
-        {
-          "anchor": "proceso de coaching de imagen",
-          "cardId": "vale-la-pena-coach-de-imagen",
-          "layerId": "core-image-coaching",
-          "question": "¿Vale la pena contratar una coach de imagen?"
-        },
-        {
-          "anchor": "cuánto dura una asesoría de imagen",
-          "cardId": "duracion-proceso-imagen",
-          "layerId": "core-image-coaching",
-          "question": "¿Cuánto dura un proceso de coaching o asesoría de imagen?"
-        },
-        {
-          "anchor": "proceso de coaching de imagen",
-          "cardId": "duracion-proceso-imagen",
-          "layerId": "core-image-coaching",
-          "question": "¿Cuánto dura un proceso de coaching o asesoría de imagen?"
-        },
-        {
-          "anchor": "diagnóstico de imagen",
-          "cardId": "duracion-proceso-imagen",
-          "layerId": "core-image-coaching",
-          "question": "¿Cuánto dura un proceso de coaching o asesoría de imagen?"
         }
       ],
       "actions": []
@@ -8897,8 +8999,8 @@
     {
       "id": "core-image-coaching",
       "title": "Coaching de imagen",
-      "cardCount": 263,
-      "averageRouteScore": 97,
+      "cardCount": 408,
+      "averageRouteScore": 95,
       "coverageScore": 100,
       "prompts": [
         "¿Qué es coaching de imagen?",
@@ -8915,7 +9017,7 @@
     {
       "id": "executive-presence",
       "title": "Presencia ejecutiva",
-      "cardCount": 306,
+      "cardCount": 398,
       "averageRouteScore": 98,
       "coverageScore": 100,
       "prompts": [
@@ -8934,8 +9036,8 @@
     {
       "id": "professional-image",
       "title": "Imagen profesional",
-      "cardCount": 209,
-      "averageRouteScore": 96,
+      "cardCount": 269,
+      "averageRouteScore": 95,
       "coverageScore": 100,
       "prompts": [
         "¿Cómo verme más profesional?",
@@ -8952,7 +9054,7 @@
     {
       "id": "security-positioning",
       "title": "Seguridad profesional y posicionamiento",
-      "cardCount": 114,
+      "cardCount": 142,
       "averageRouteScore": 97,
       "coverageScore": 100,
       "prompts": [
@@ -8970,7 +9072,7 @@
     {
       "id": "corporate-teams",
       "title": "Imagen empresarial",
-      "cardCount": 138,
+      "cardCount": 195,
       "averageRouteScore": 96,
       "coverageScore": 100,
       "prompts": [
@@ -8988,7 +9090,7 @@
     {
       "id": "geo-latam",
       "title": "Mercados GEO",
-      "cardCount": 57,
+      "cardCount": 81,
       "averageRouteScore": 98,
       "coverageScore": 100,
       "prompts": [
