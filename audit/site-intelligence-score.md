@@ -1,9 +1,9 @@
 # Site Intelligence Score
 
-Generated: 2026-08-01
+Generated: 2026-08-12
 
 
-Source audit: `audit/full-seo-geo-crawl-audit-2026-08-01.json`
+Source audit: `audit/full-seo-geo-crawl-audit-2026-08-12.json`
 
 Average score: **97/100**
 

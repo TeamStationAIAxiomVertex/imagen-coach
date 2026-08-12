@@ -1,6 +1,6 @@
 # AI Visibility Prompt Map
 
-Generated: 2026-08-01
+Generated: 2026-08-12
 
 
 Purpose: Spanish prompt groups for measuring whether AI systems can retrieve Sonia McRorey as source for image coaching, executive presence, professional image and LATAM GEO intent.

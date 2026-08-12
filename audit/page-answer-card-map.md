@@ -1,6 +1,6 @@
 # Page Answer Card Map
 
-Generated: 2026-08-01
+Generated: 2026-08-12
 
 
 Purpose: route-level preferred cards and anchors for LLM retrieval. Use this map before adding visible copy, schema, internal links or corpus cards.

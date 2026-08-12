@@ -1,8 +1,8 @@
 {
   "schemaVersion": "2026-07-04.site-intelligence.v1",
-  "generated": "2026-08-01",
+  "generated": "2026-08-12",
   "siteUrl": "https://coachdeimagen.com",
-  "sourceAudit": "audit/full-seo-geo-crawl-audit-2026-08-01.json",
+  "sourceAudit": "audit/full-seo-geo-crawl-audit-2026-08-12.json",
   "routeCount": 115,
   "averageScore": 97,
   "scoreBands": {
