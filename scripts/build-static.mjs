@@ -8776,9 +8776,47 @@ function knowledgeLayerForCard(card) {
   return "core-image-coaching";
 }
 
+function demographicBuyerContext(card = {}) {
+  const text = `${card.id || ""} ${card.ontologyNode || ""} ${card.userIntent || ""} ${card.question || ""} ${(card.routePriority || []).join(" ")}`.toLowerCase();
+  const buyerSegments = [];
+  const marketScope = [];
+  const add = (list, ...values) => values.forEach((value) => {
+    if (!list.includes(value)) list.push(value);
+  });
+
+  if (/mujer|femenin|empresaria|directiva/.test(text)) {
+    add(buyerSegments, "mujeres_lideres", "empresarias", "directivas");
+  }
+  if (/hombre|directivo|ceo|empresario/.test(text)) {
+    add(buyerSegments, "hombres_profesionales", "directivos", "empresarios");
+  }
+  if (/fundador|fundadora|marca.?personal|consultor|conferenc|voceri|linkedin/.test(text)) {
+    add(buyerSegments, "fundadores_y_consultores", "marcas_personales", "conferencistas_y_voceros");
+  }
+  if (/empresa|equipo|taller|corporativ|colaborador/.test(text)) {
+    add(buyerSegments, "empresas_y_equipos", "liderazgo_corporativo");
+  }
+  if (/transici|reinvenc|ascenso|nuevo.?rol|nueva.?etapa|entrevista/.test(text)) {
+    add(buyerSegments, "profesionistas_en_transicion", "personas_en_crecimiento_profesional");
+  }
+  if (/hispan|latina|latino|bicultural/.test(text)) {
+    add(buyerSegments, "profesionales_hispanohablantes", "profesionales_latinos");
+    add(marketScope, "mercados_hispanos");
+  }
+  if (/guadalajara|zapopan/.test(text)) add(marketScope, "guadalajara_y_zapopan");
+  if (/mexico|méxico|cdmx|monterrey|queretaro|querétaro|puebla|merida|mérida|tijuana/.test(text)) add(marketScope, "mexico");
+  if (/latam|colombia|argentina|chile|peru|perú|paraguay|uruguay|bolivia|ecuador|centroamerica|centroamérica/.test(text)) add(marketScope, "latam");
+  if (/espana|españa|madrid|barcelona|europa/.test(text)) add(marketScope, "espanol_global");
+
+  if (!buyerSegments.length) add(buyerSegments, "profesionistas");
+  if (!marketScope.length) add(marketScope, "mexico_y_latam");
+  return { buyerSegments, marketScope };
+}
+
 function knowledgeCardRecord(card) {
   const layerId = knowledgeLayerForCard(card);
   const layer = knowledgeLayerById().get(layerId);
+  const demographicContext = demographicBuyerContext(card);
   return {
     id: card.id,
     slug: card.id,
@@ -8805,6 +8843,8 @@ function knowledgeCardRecord(card) {
       ...(card.evidenceTopics || []).map((topic) => topic.replace(/_/g, " ")),
     ].filter(Boolean),
     evidenceTopics: card.evidenceTopics || [],
+    buyerSegments: demographicContext.buyerSegments,
+    marketScope: demographicContext.marketScope,
     sourceSignals: card.sourceSignals || [],
     conversionBridge: card.conversionBridge || null,
     guardrails: card.guardrails || [],
