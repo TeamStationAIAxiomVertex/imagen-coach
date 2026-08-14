@@ -9,15 +9,15 @@ source_policy: source_locked
 
 # Seguridad profesional
 
-**Propuesta de título SEO:** Seguridad profesional | Visibilidad, liderazgo y crecimiento
+**Título propuesto:** Seguridad profesional | Cómo sostener visibilidad y crecimiento
 
-**Descripción para buscadores:** Comprende la seguridad profesional y cómo se relaciona con visibilidad, decisiones, liderazgo y crecimiento con Sonia McRorey.
+**Descripción para buscadores:** Aprende qué es la seguridad profesional y cómo puede ayudarte a sostener visibilidad, decisiones y crecimiento con Sonia McRorey.
 
 ## Objetivo de la página
 
-Esta página define la seguridad profesional dentro del sistema de Coach de Imagen de Sonia McRorey. Responde una intención informativa y de consideración: qué significa sentirse capaz, pero tener dificultad para sostener más visibilidad, responsabilidad, liderazgo o crecimiento.
+Esta página explica qué significa la seguridad profesional para Sonia McRorey. Ayuda a las personas que saben hacer su trabajo, pero se sienten incómodas cuando tienen que mostrarse más, decidir, liderar o crecer.
 
-La página no presenta una promesa clínica, financiera ni de resultados garantizados. La ruta conecta el concepto con servicios y lecturas relacionadas para que cada persona pueda elegir el siguiente paso con más claridad.
+La página no promete curas ni resultados seguros. Presenta el tema con claridad y lleva a otras páginas para que cada persona pueda decidir qué necesita.
 
 ## Enseñanzas verificadas
 
@@ -33,27 +33,27 @@ La página no presenta una promesa clínica, financiera ni de resultados garanti
 >
 > Sonia McRorey
 
-## Preguntas que debe resolver
+## Preguntas que debe responder
 
 ### ¿Qué es la seguridad profesional?
 
-Es la capacidad interna de sostener visibilidad, decisiones, liderazgo y crecimiento sin vivirlos como amenaza.
+Es poder mostrarse, decidir, liderar y crecer sin sentir que todo eso es una amenaza.
 
 ### ¿Cómo puede notarse cuando falta?
 
-Puede aparecer como dificultad para mostrarse, cobrar, decidir, dirigir o ocupar espacios de mayor responsabilidad. La página debe presentar estos puntos como señales para reflexionar, no como diagnóstico.
+Puede notarse cuando una persona se esconde, posterga decisiones, tiene dificultad para cobrar o evita espacios de mayor responsabilidad. Son señales para pensar, no un diagnóstico.
 
 ### ¿Cómo se relaciona con la imagen profesional?
 
-La forma en que una persona se percibe determina la forma en que se muestra. Por eso, la seguridad profesional se conecta con presencia, comunicación, percepción y posicionamiento.
+La forma en que una persona se ve a sí misma influye en la forma en que se muestra. Por eso, este tema se relaciona con la presencia, la comunicación y la manera en que otras personas la perciben.
 
 ### ¿Qué ruta relacionada puede explorar una persona?
 
-La decisión puede continuar por seguridad profesional femenina, inseguridad profesional, presencia ejecutiva, liderazgo visible, Método Sonia McRorey o un diagnóstico privado.
+Después puede leer sobre seguridad profesional femenina, inseguridad profesional, presencia ejecutiva, liderazgo visible o el Método Sonia McRorey. También puede pedir un diagnóstico privado.
 
-## Enlaces internos propuestos
+## Enlaces que ayudan a seguir
 
-Usar estos enlaces con intención explícita, sin repetir el mismo texto ancla:
+Cada enlace lleva a un tema diferente:
 
 - **seguridad profesional femenina** → `/seguridad-profesional-femenina/`
 - **inseguridad profesional** → `/inseguridad-profesional/`
@@ -64,13 +64,13 @@ Usar estos enlaces con intención explícita, sin repetir el mismo texto ancla:
 - **preguntas frecuentes** → `/servicios-asesoria-de-imagen-coaching/preguntas-frequentes/`
 - **diagnóstico privado** → `/contacto/`
 
-## Fuentes verificadas
+## De dónde sale esta información
 
 - `content/sonia-knowledge/verbatim-route-excerpts.json`: `self-perception-shapes-presence`
 - `content/sonia-knowledge/verbatim-route-excerpts.json`: `release-survival-identity`
 - `content/sonia-knowledge/drive-quote-bank.json`: `La capacidad de sostener.pdf`, candidatos sobre capacidad interna, autoconcepto y cuerpo
 - `content/strategy/sonia-pillar-ontology.json`: nodo `seguridad-posicionamiento`
 
-## Publicación controlada
+## Antes de publicarlo
 
-Este archivo es un borrador para revisión de Sonia. No debe publicarse como `/seguridad-profesional.md` ni incorporarse como nueva copia visible hasta que Sonia confirme el texto. Después de su aprobación, el generador está preparado para producir la versión pública junto con la página HTML, el sitemap, el perfil de agentes y la malla de enlaces.
+Este archivo es un borrador para que Sonia lo revise. No se publicará como `/seguridad-profesional.md` ni se pondrá en la página hasta que ella confirme el texto. Después de su aprobación, se prepararán la página, su versión `.md` y sus enlaces.
