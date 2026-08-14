@@ -61,6 +61,7 @@ let INLINE_CSS = "";
 let SONIA_TEACHING_CONFIG = { teachings: [], routeMap: {}, fallbacks: {} };
 let SONIA_TEACHINGS_BY_ID = new Map();
 let SONIA_SOURCE_CORPUS = { blogBank: null, driveBank: null, inventory: null };
+let SONIA_PILLAR_ONTOLOGY = { pillars: [], sourceClusters: [], audiences: [], geographies: [], graphEdges: [] };
 let SONIA_VERBATIM_CONFIG = { sources: [] };
 let SONIA_VERBATIM_EXCERPTS = [];
 const OWNED_CATEGORY = "Coaching de Imagen con profundidad psicológica y posicionamiento profesional";
@@ -3393,7 +3394,12 @@ function socialKickerForPage(page) {
 function socialMetaTags(page, description, type = "website") {
   const title = socialTitleForPage(page);
   const image = `${SITE_URL}${socialCardPath(page.route)}`;
-  return `<meta property="og:type" content="${type}" />
+  const articleTags = type === "article" ? `
+  <meta property="og:site_name" content="Coach De Imagen | Sonia McRorey" />
+  <meta property="article:section" content="Imagen, presencia y liderazgo profesional" />
+  <meta property="article:author" content="Sonia McRorey" />${page.modifiedTime ? `
+  <meta property="article:modified_time" content="${escapeHtml(page.modifiedTime)}" />` : ""}` : "";
+  return `<meta property="og:type" content="${type}" />${articleTags}
   <meta property="og:title" content="${escapeHtml(title)}" />
   <meta property="og:description" content="${escapeHtml(description)}" />
   <meta property="og:url" content="${absoluteUrl(page.route)}" />
@@ -4736,6 +4742,7 @@ function renderContactPage() {
   <link rel="alternate" type="text/plain" href="${SITE_URL}/llms-full.txt" title="Contexto GEO completo para asistentes" />
   <link rel="alternate" type="text/markdown" href="${SITE_URL}${markdownRoute(CONTACT_ROUTE)}" title="Versión Markdown para agentes" />
   <link rel="alternate" type="application/json" href="${SITE_URL}/agent/site-profile.json" title="Perfil estructurado para asistentes" />
+  <link rel="alternate" type="application/json" href="${SITE_URL}/agent/article-meta-cards.json" title="Tarjetas meta de publicaciones" />
   <link rel="agent" type="application/json" href="${SITE_URL}/.well-known/agent.json" />
   <link rel="api-catalog" type="application/linkset+json" href="${SITE_URL}/.well-known/api-catalog" />
   ${socialMetaTags(page, metaDescription, "website")}
@@ -7081,6 +7088,7 @@ async function loadSoniaTeachingLayer() {
   const driveBank = JSON.parse(await readFile(rootPath("content/sonia-knowledge/drive-quote-bank.json"), "utf8"));
   const blogBank = JSON.parse(await readFile(rootPath("content/sonia-knowledge/quote-bank.json"), "utf8"));
   const inventory = JSON.parse(await readFile(rootPath("content/sonia-knowledge/drive-source-inventory.json"), "utf8"));
+  const pillarOntology = JSON.parse(await readFile(rootPath("content/strategy/sonia-pillar-ontology.json"), "utf8"));
   const verbatimConfig = JSON.parse(await readFile(rootPath("content/sonia-knowledge/verbatim-route-excerpts.json"), "utf8"));
   const sourceTexts = [...quoteTextsFromKnowledgeBank(driveBank), ...quoteTextsFromKnowledgeBank(blogBank)];
   const missing = [];
@@ -7150,6 +7158,7 @@ async function loadSoniaTeachingLayer() {
   SONIA_VERBATIM_CONFIG = verbatimConfig;
   SONIA_VERBATIM_EXCERPTS = verbatimExcerpts;
   SONIA_SOURCE_CORPUS = { blogBank, driveBank, inventory, verbatimConfig };
+  SONIA_PILLAR_ONTOLOGY = pillarOntology;
 }
 
 async function copyStatic() {
@@ -9216,6 +9225,46 @@ function publicationsAgent(pages, clusters) {
   };
 }
 
+function articleMetaCardsAgent(pages, clusters) {
+  const clusterMap = articleClusterByRoute(clusters);
+  const articles = pages.filter((page) => page.type === "article");
+  return {
+    schemaVersion: "2026-08-13",
+    siteUrl: SITE_URL,
+    language: "es-MX",
+    purpose: "Canonical URL, SEO metadata and social-card retrieval for Sonia McRorey's static articles.",
+    cardContract: {
+      canonicalUrl: "The only indexable article URL.",
+      title: "SEO title and social title are derived from the existing article heading.",
+      description: "The meta description is derived from the existing article summary and capped for search snippets.",
+      image: "The generated 1200x630 social card for the article route.",
+      sourcePolicy: "Existing Sonia article metadata only. No generated teaching claims are added here.",
+    },
+    articles: articles.map((page) => {
+      const cluster = clusterMap.get(page.route);
+      const description = metaDescriptionForPage(page, page.description);
+      return {
+        route: page.route,
+        canonicalUrl: absoluteUrl(page.route),
+        seoTitle: seoTitleForPage(page),
+        socialTitle: socialTitleForPage(page),
+        metaDescription: description,
+        ogType: "article",
+        ogUrl: absoluteUrl(page.route),
+        ogImage: `${SITE_URL}${socialCardPath(page.route)}`,
+        ogImageWidth: 1200,
+        ogImageHeight: 630,
+        twitterCard: "summary_large_image",
+        imageAlt: `Tarjeta social de ${cleanDisplayTitle(page.heroTitle || page.title)} | Sonia McRorey`,
+        articleSection: cluster?.label || "Imagen, presencia y liderazgo profesional",
+        relatedService: cluster?.primaryService ? absoluteUrl(cluster.primaryService) : null,
+        relatedServiceLabel: cluster?.primaryService ? semanticShortLabel(cluster.primaryService, "Servicio relacionado") : null,
+        modifiedTime: page.modifiedTime || null,
+      };
+    }),
+  };
+}
+
 function ontologyAgent(pages = []) {
   return {
     schemaVersion: "2026-05-23",
@@ -9242,6 +9291,7 @@ function ontologyAgent(pages = []) {
     ontologyQuestionCards: soniaOntologyQuestionCards(),
     ontologyQuestionGroups: soniaOntologyQuestionGroups(),
     industryAnswerTaxonomy: soniaIndustryAnswerTaxonomy(),
+    pillarOntology: `${SITE_URL}/agent/pillar-ontology.json`,
     routeAnswerRecommendationCount: soniaRouteAnswerRecommendations(pages).length,
     searchIntentLayers: SEARCH_INTENT_LAYERS.map((layer) => ({
       id: layer.id,
@@ -9260,6 +9310,26 @@ function ontologyAgent(pages = []) {
       "¿Dónde tomar asesoría de imagen en Guadalajara?",
       "¿Quién ofrece talleres de imagen corporativa en México?",
     ],
+  };
+}
+
+function pillarOntologyAgent() {
+  const graph = SONIA_PILLAR_ONTOLOGY || {};
+  return {
+    ...graph,
+    site: SITE_URL,
+    generatedFor: "static agent retrieval and editorial planning",
+    pillars: (graph.pillars || []).map((pillar) => ({
+      ...pillar,
+      url: routeUrl(pillar.route),
+      relatedRoutes: (pillar.relatedRoutes || []).map((route) => routeUrl(route)),
+      evidence: {
+        sourceClusters: pillar.sourceClusters || [],
+        articleCluster: pillar.articleCluster || null,
+        status: "source-grounded-plan",
+      },
+    })),
+    graphEdges: (graph.graphEdges || []).map((edge) => ({ ...edge })),
   };
 }
 
@@ -9339,6 +9409,7 @@ function semanticIndexAgent(pages, clusters) {
     ],
     sourceCorpus: {
       url: `${SITE_URL}/agent/sonia-source-corpus.json`,
+      pillarOntology: `${SITE_URL}/agent/pillar-ontology.json`,
       industryAnswerTaxonomy: `${SITE_URL}/agent/industry-answer-taxonomy.json`,
       ontologyQuestionCardCount: soniaOntologyQuestionCards().length,
       ontologyQuestionGroups: soniaOntologyQuestionGroups(),
@@ -9687,6 +9758,12 @@ function apiCatalogAgent() {
         type: "source-corpus",
         url: `${SITE_URL}/agent/sonia-source-corpus.json`,
         description: "Sonia-only corpus contract with Drive inventory, blog-derived teaching signals, quote-bank governance and route evidence for LLM grounding.",
+      },
+      {
+        name: "Sonia pillar ontology",
+        type: "pillar-ontology",
+        url: `${SITE_URL}/agent/pillar-ontology.json`,
+        description: "Source-grounded graph connecting Sonia's reviewed corpus to service pillars, audiences, geographies, article clusters and retrieval questions.",
       },
       {
         name: "Spanish Knowledge Questions",
@@ -10345,6 +10422,8 @@ function openApiDoc(pages) {
     "/agent/contact.json": "Get structured contact actions.",
     "/agent/comparisons.json": "Get category ownership comparison pages.",
     "/agent/publications.json": "Get publication and article signals.",
+    "/agent/article-meta-cards.json": "Get canonical article URLs, SEO metadata and social-card metadata.",
+    "/agent/pillar-ontology.json": "Get the Sonia-only source-grounded pillar ontology and editorial retrieval graph.",
     "/agent/ontology.json": "Get canonical ontology and terms.",
     "/agent/semantic-hubs.json": "Get static semantic hub definitions.",
     "/agent/geo-markets.json": "Get GEO market page definitions.",
@@ -10561,6 +10640,8 @@ WordPress is only the authoring and ingestion source. RSS detects post changes a
 
 Machine-readable source corpus: ${SITE_URL}/agent/sonia-source-corpus.json
 
+Source-grounded pillar ontology: ${SITE_URL}/agent/pillar-ontology.json
+
 Well-known mirror: ${SITE_URL}/.well-known/sonia-source-corpus.json
 
 Route-level verbatim evidence: ${SITE_URL}/agent/sonia-verbatim-route-evidence.json
@@ -10660,6 +10741,7 @@ async function writeAgentFiles(pages, clusters) {
   await writeJson("semantic-index.json", semanticIndexAgent(pages, clusters));
   await writeJson("agent/sonia-source-corpus.json", soniaSourceCorpusAgent(pages, clusters));
   await writeJson(".well-known/sonia-source-corpus.json", soniaSourceCorpusAgent(pages, clusters));
+  await writeJson("agent/pillar-ontology.json", pillarOntologyAgent());
   await writeJson("agent/sonia-verbatim-route-evidence.json", soniaVerbatimRouteEvidence([
     ...pages,
     ...SEMANTIC_HUBS.map((hub) => ({ ...hub, type: "hub" })),
@@ -10714,6 +10796,7 @@ async function writeAgentFiles(pages, clusters) {
   await writeJson("agent/contact.json", contactAgent());
   await writeJson("agent/comparisons.json", comparisonsAgent());
   await writeJson("agent/publications.json", publicationsAgent(pages, clusters));
+  await writeJson("agent/article-meta-cards.json", articleMetaCardsAgent(pages, clusters));
   await writeJson("agent/ontology.json", ontologyAgent(pages));
   await writeJson("agent/route-answer-recommendations.json", routeAnswerRecommendationsAgent(pages));
   await writeJson("agent/industry-answer-taxonomy.json", soniaIndustryAnswerTaxonomy());

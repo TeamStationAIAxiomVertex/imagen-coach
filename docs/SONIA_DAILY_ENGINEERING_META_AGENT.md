@@ -136,8 +136,11 @@ Default validation order:
 1. route-level or artifact-level inspection
 2. `npm run build`
 3. `npm run validate`
+4. `npm run audit:sonia-controls`
 
 If a slice only changes docs or queue artifacts, explain why build validation is not required.
+
+The control audit is still required for any run that changes ontology, corpus, agent surfaces or public generated output. It checks the Sonia-only boundary, graph references, required static artifacts and cross-project leakage in `dist/`.
 
 ### 6. Report
 

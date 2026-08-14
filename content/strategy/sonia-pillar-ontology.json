@@ -1,0 +1,150 @@
+{
+  "schemaVersion": "2026-08-13",
+  "graphType": "source-grounded-pillar-ontology",
+  "site": "https://coachdeimagen.com",
+  "language": "es-MX",
+  "sourceBoundary": "Sonia McRorey / Coach De Imagen only",
+  "sourcePolicy": {
+    "purpose": "Connect Sonia's reviewed corpus to service, buyer, geography and article retrieval without treating generated text as source material.",
+    "evidenceOrder": [
+      "active Cloudflare corpus inventory and controlled addenda",
+      "reviewed Drive quote bank and verbatim route evidence",
+      "scraped Sonia blog archive",
+      "existing published route metadata"
+    ],
+    "quoteRule": "Candidate language remains review_required until Sonia approves it. Do not present synthesized summaries as verbatim quotations.",
+    "pageRule": "Pillar plans are editorial maps. They do not authorize new public copy, pricing, testimonials or medical, financial or income claims.",
+    "boundaryRule": "No unrelated company, project, prompt, route, buyer language or ontology may enter this graph."
+  },
+  "primaryEntity": {
+    "id": "sonia-mcrorey",
+    "name": "Sonia McRorey",
+    "type": "Person",
+    "role": "Coach de Imagen, Presencia y Posicionamiento Profesional",
+    "base": "Guadalajara, México",
+    "serviceArea": ["México", "LATAM", "mercados hispanohablantes"]
+  },
+  "sourceClusters": [
+    {"id":"foundational_doctrine_addenda","role":"category definition, service architecture, image axioms and nonverbal communication"},
+    {"id":"seguridad_dinero_capacidad","role":"security, visibility, money relationship and sustainable growth capacity"},
+    {"id":"identidad_autoconcepto_presencia","role":"identity, self-concept and embodied professional presence"},
+    {"id":"imagen_estilo_color_guardarropa","role":"image consulting, color, wardrobe and practical style decisions"},
+    {"id":"mexico_contexto_ejecutivo","role":"Mexico, Guadalajara, authority proof and regional professional context"}
+  ],
+  "audiences": [
+    {"id":"professionals","label":"Profesionistas y profesionales en transición","needs":["imagen profesional","presencia","claridad para una nueva etapa"]},
+    {"id":"women-leaders","label":"Mujeres líderes y empresarias","needs":["autoridad visible","liderazgo","posicionamiento"]},
+    {"id":"executives-founders","label":"Ejecutivos, directivos y fundadores","needs":["presencia ejecutiva","percepción","decisiones"]},
+    {"id":"companies-teams","label":"Empresas, marcas y equipos","needs":["imagen corporativa","comunicación","experiencias y talleres"]},
+    {"id":"hispanic-markets","label":"Profesionales hispanohablantes en América y España","needs":["acompañamiento en español","contexto cultural","modalidad online"]}
+  ],
+  "geographies": [
+    {"id":"guadalajara","label":"Guadalajara","mode":"presencial y online"},
+    {"id":"mexico","label":"México","mode":"online, presencial según disponibilidad"},
+    {"id":"latam","label":"LATAM","mode":"online y conferencias seleccionadas"},
+    {"id":"hispanic-americas","label":"Mercados hispanohablantes de América","mode":"online y viaje corporativo seleccionado"},
+    {"id":"spain","label":"España","mode":"online"}
+  ],
+  "pillars": [
+    {
+      "id":"coach-de-imagen",
+      "label":"Coaching de Imagen",
+      "route":"/servicios-asesoria-de-imagen-coaching/coaching-de-imagen",
+      "purpose":"Define la categoría y conecta imagen visible, identidad, presencia, comunicación y posicionamiento profesional.",
+      "sourceClusters":["foundational_doctrine_addenda","identidad_autoconcepto_presencia"],
+      "audiences":["professionals","women-leaders","executives-founders"],
+      "geographies":["guadalajara","mexico","latam","hispanic-americas","spain"],
+      "relatedRoutes":["/coach-de-imagen","/presencia-ejecutiva","/imagen-estrategica","/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen"],
+      "articleCluster":"presencia-liderazgo-identidad",
+      "articleCandidates":["Qué es el coaching de imagen y cuándo puede ayudarte","Imagen, identidad y liderazgo profesional","Presencia profesional: identidad antes que apariencia"],
+      "retrievalQuestions":["¿Qué es el coaching de imagen?","¿En qué se diferencia de una asesoría de imagen?","¿Cómo se relacionan imagen, identidad y presencia profesional?"]
+    },
+    {
+      "id":"imagen-profesional",
+      "label":"Imagen Profesional",
+      "route":"/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen",
+      "purpose":"Organiza imagen, estilo, color, rostro, proporciones, guardarropa y decisiones visuales dentro del contexto profesional de cada persona.",
+      "sourceClusters":["imagen_estilo_color_guardarropa","foundational_doctrine_addenda"],
+      "audiences":["professionals","women-leaders","executives-founders"],
+      "geographies":["guadalajara","mexico","latam","hispanic-americas"],
+      "relatedRoutes":["/imagen-profesional","/imagen-estrategica","/imagen-presencia/beneficios-de-asesoria-de-imagen","/imagen-presencia/imagen-profesional-segun-industria-y-personalidad"],
+      "articleCluster":"imagen-estilo-profesional",
+      "articleCandidates":["Imagen profesional según industria y personalidad","Color, estilo y guardarropa para una nueva etapa","Cómo ordenar tu imagen sin perder identidad"],
+      "retrievalQuestions":["¿Cómo funciona una asesoría de imagen profesional?","¿Qué incluye una asesoría de imagen integral?","¿Cómo elegir una imagen profesional sin verte disfrazado?"]
+    },
+    {
+      "id":"presencia-ejecutiva",
+      "label":"Presencia Ejecutiva",
+      "route":"/presencia-ejecutiva",
+      "purpose":"Conecta percepción, comunicación no verbal, liderazgo visible y autoridad profesional en reuniones, dirección y exposición.",
+      "sourceClusters":["foundational_doctrine_addenda","identidad_autoconcepto_presencia","mexico_contexto_ejecutivo"],
+      "audiences":["women-leaders","executives-founders","professionals"],
+      "geographies":["guadalajara","mexico","latam","hispanic-americas","spain"],
+      "relatedRoutes":["/comunicacion-no-verbal","/liderazgo","/imagen-presencia/presencia-profesional-estrategica","/como-proyectar-autoridad"],
+      "articleCluster":"presencia-liderazgo-identidad",
+      "articleCandidates":["Presencia profesional estratégica según contexto","Comunicación no verbal y autoridad profesional","Cómo sostener liderazgo visible"],
+      "retrievalQuestions":["¿Qué es la presencia ejecutiva?","¿Cómo proyectar autoridad sin fingir?","¿Qué comunica la presencia antes de hablar?"]
+    },
+    {
+      "id":"imagen-estrategica",
+      "label":"Imagen Estratégica",
+      "route":"/imagen-estrategica",
+      "purpose":"Explica la imagen como sistema de percepción, identidad, liderazgo y posicionamiento profesional, no como apariencia aislada.",
+      "sourceClusters":["foundational_doctrine_addenda","identidad_autoconcepto_presencia","mexico_contexto_ejecutivo"],
+      "audiences":["professionals","women-leaders","executives-founders","companies-teams"],
+      "geographies":["guadalajara","mexico","latam","hispanic-americas"],
+      "relatedRoutes":["/coach-de-imagen","/presencia-ejecutiva","/liderazgo-visible","/comparaciones/imagen-superficial-vs-presencia-profesional"],
+      "articleCluster":"presencia-liderazgo-identidad",
+      "articleCandidates":["Imagen estratégica: percepción antes que tendencia","De la imagen superficial a la presencia profesional","Imagen, identidad y posicionamiento"],
+      "retrievalQuestions":["¿Qué significa imagen estratégica?","¿Cómo se relaciona la imagen con el posicionamiento?","¿Por qué la imagen profesional depende del contexto?"]
+    },
+    {
+      "id":"liderazgo-visible",
+      "label":"Liderazgo Visible",
+      "route":"/liderazgo-visible",
+      "purpose":"Reúne liderazgo, visibilidad, seguridad profesional, comunicación y crecimiento sostenible para mujeres y hombres con mayor responsabilidad.",
+      "sourceClusters":["seguridad_dinero_capacidad","identidad_autoconcepto_presencia","mexico_contexto_ejecutivo"],
+      "audiences":["women-leaders","executives-founders","professionals"],
+      "geographies":["guadalajara","mexico","latam","hispanic-americas"],
+      "relatedRoutes":["/liderazgo","/empresarias","/inseguridad-profesional","/seguridad-profesional-femenina"],
+      "articleCluster":"seguridad-posicionamiento-profesional",
+      "articleCandidates":["Cómo sostener una nueva etapa profesional","Seguridad profesional y miedo a ser visible","Liderazgo visible para mujeres empresarias"],
+      "retrievalQuestions":["¿Cómo hacer visible mi liderazgo?","¿Por qué me siento inseguro aunque tenga experiencia?","¿Cómo sostener más responsabilidad profesional?"]
+    },
+    {
+      "id":"imagen-empresarial",
+      "label":"Imagen Empresarial y Talleres",
+      "route":"/servicios-asesoria-de-imagen-coaching/talleres",
+      "purpose":"Organiza talleres, comunicación no verbal, imagen corporativa y experiencias para empresas, marcas y equipos.",
+      "sourceClusters":["foundational_doctrine_addenda","mexico_contexto_ejecutivo"],
+      "audiences":["companies-teams","executives-founders"],
+      "geographies":["guadalajara","mexico","latam","hispanic-americas"],
+      "relatedRoutes":["/comunicacion-no-verbal","/imagen-presencia/como-mejorar-la-imagen-de-tus-colaboradores","/contacto"],
+      "articleCluster":"empresas-marcas-equipos",
+      "articleCandidates":["Imagen profesional para equipos y colaboradores","Comunicación no verbal en empresas","Talleres de imagen para marcas y equipos"],
+      "retrievalQuestions":["¿Qué talleres de imagen puede ofrecer Sonia a una empresa?","¿Cómo se trabaja la imagen corporativa?","¿Qué cambia en un equipo después de un taller?"]
+    },
+    {
+      "id":"seguridad-posicionamiento",
+      "label":"Seguridad y Posicionamiento Profesional",
+      "route":"/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia",
+      "purpose":"Preserva la URL histórica y la conecta públicamente con seguridad profesional, decisiones, visibilidad, liderazgo y posicionamiento, sin convertirla en una promesa de riqueza.",
+      "sourceClusters":["seguridad_dinero_capacidad","identidad_autoconcepto_presencia"],
+      "audiences":["women-leaders","executives-founders","professionals"],
+      "geographies":["guadalajara","mexico","latam","hispanic-americas"],
+      "relatedRoutes":["/seguridad-profesional-femenina","/liderazgo-visible","/inseguridad-profesional","/mentalidad"],
+      "articleCluster":"seguridad-posicionamiento-profesional",
+      "articleCandidates":["Seguridad profesional para sostener crecimiento","Imagen, dinero y capacidad de decisión","Visibilidad profesional sin perder coherencia"],
+      "retrievalQuestions":["¿Qué trabaja el coaching de seguridad y posicionamiento?","¿Cómo se relacionan visibilidad y seguridad profesional?","¿Cómo sostener crecimiento sin vivirlo como amenaza?"]
+    }
+  ],
+  "graphEdges": [
+    {"from":"coach-de-imagen","to":"imagen-profesional","type":"service-to-sibling"},
+    {"from":"imagen-profesional","to":"presencia-ejecutiva","type":"visible-to-perceived"},
+    {"from":"presencia-ejecutiva","to":"liderazgo-visible","type":"presence-to-leadership"},
+    {"from":"liderazgo-visible","to":"seguridad-posicionamiento","type":"leadership-to-capacity"},
+    {"from":"imagen-estrategica","to":"imagen-empresarial","type":"individual-to-team"},
+    {"from":"guadalajara","to":"all-pillars","type":"local-base"},
+    {"from":"latam","to":"all-pillars","type":"regional-service-area"}
+  ]
+}
