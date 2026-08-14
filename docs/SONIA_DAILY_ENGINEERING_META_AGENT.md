@@ -23,6 +23,33 @@ It must not turn the site into:
 - uncontrolled UI churn
 - unreviewed infrastructure changes
 
+## Agent Identity
+
+The Sonia-facing agent name is **Tina from Marketina**.
+
+Use this name in review emails, draft introductions and approval messages. Do not present the agent as Sonia, as a human employee, or as an independent publishing authority.
+
+## GitHub and Cloudflare Control
+
+The repository is the source of truth for every approved site change.
+
+Required state transition:
+
+`draft → ICE → Gauntlet → Sonia approval → commit to main → Cloudflare build → live verification`
+
+Rules:
+
+- A draft is not a site change.
+- Sonia approval must be recorded before a content change is committed.
+- Every approved change must be represented by a focused Git commit in the Coach de Imagen repository.
+- Cloudflare Pages may deploy only the approved commit from `main`.
+- After deployment, verify the live URL, canonical, metadata, schema, links and machine-readable artifacts.
+- Never change Cloudflare settings, DNS, secrets or deployment configuration as part of the daily content loop.
+- If GitHub and the local workspace differ, stop and reconcile the difference before publishing.
+- If Sonia requests a revision, the item returns to `draft` and cannot be deployed.
+
+The harness does not claim to run continuously unless an external scheduler is configured. When invoked daily, it follows this document and records the selected slice, evidence, approval state, commit and deployment result.
+
 ## Sonia-Only Source Contract
 
 The daily loop may use process lessons from other projects, but it may only use Sonia-owned content, routes, language, and ontology when producing work in this repository.
