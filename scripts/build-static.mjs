@@ -1252,7 +1252,7 @@ const AUTHORITY_PAGES = [
   {
     route: "/seguridad-profesional",
     title: "Seguridad Profesional",
-    description: "Definición de seguridad profesional: la capacidad interna para sostener visibilidad, decisiones, liderazgo y crecimiento sin vivirlos como amenaza.",
+    description: "Aprende qué es la seguridad profesional y cómo puede ayudarte a sostener visibilidad, decisiones y crecimiento con Sonia McRorey.",
     focus: "seguridad profesional",
     pillars: ["Visibilidad", "Decisión", "Cuerpo", "Autoconcepto", "Sostenimiento"],
     eyebrow: "Definición profesional",
@@ -1264,50 +1264,50 @@ const AUTHORITY_PAGES = [
     definitionCards: [
       {
         title: "No es solo confianza",
-        text: "No depende de sentirse perfecta. Depende de poder sostener exposición, responsabilidad y lectura profesional con más estabilidad.",
+        text: "No se trata de sentirte perfecta. Se trata de poder mostrarte y hacerte cargo de lo que viene.",
         icon: "mentalidad",
       },
       {
         title: "Aparece al crecer",
-        text: "Se vuelve visible cuando una promoción, venta, liderazgo o mayor exposición empieza a exigir más presencia.",
+        text: "Se nota cuando toca vender, cobrar, liderar o mostrarse más.",
         icon: "liderazgo",
       },
       {
         title: "Se expresa en el cuerpo",
-        text: "Respiración, postura, tensión, voz y forma de entrar a una conversación también comunican seguridad o amenaza.",
+        text: "La postura, la voz y la forma de entrar a una conversación también comunican.",
         icon: "presencia",
       },
       {
         title: "Impacta decisiones",
-        text: "Si la capacidad existe pero la seguridad no acompaña, la persona posterga, minimiza o se esconde justo antes de avanzar.",
+        text: "Cuando la seguridad no acompaña, una persona puede postergar, minimizarse o esconderse.",
         icon: "decision",
       },
       {
         title: "Sostiene posicionamiento",
-        text: "Cuando la seguridad interna se ordena, la imagen, la voz y la presencia dejan de pelear con el crecimiento.",
+        text: "Cuando la base interna se ordena, la imagen y la presencia pueden acompañar el crecimiento.",
         icon: "percepcion",
       },
     ],
     copy: [
-      "Sonia usa seguridad profesional para nombrar algo que muchas personas viven antes de pedir ayuda: saben hacer su trabajo, pero algo se tensiona cuando toca cobrar más, mostrarse más, dirigir, vender o crecer.",
-      "Ese límite no siempre se resuelve con más estrategia. A veces requiere trabajar la capacidad interna de sostener visibilidad, decisión, autoridad y expansión para que la presencia profesional no se vuelva una actuación o un esfuerzo de control.",
+      "Esta página explica qué significa la seguridad profesional para Sonia McRorey. Ayuda a las personas que saben hacer su trabajo, pero se sienten incómodas cuando tienen que mostrarse más, decidir, liderar o crecer.",
+      "La forma en que una persona se percibe determina la forma en que se muestra. Por eso, este tema se relaciona con la presencia, la comunicación y la manera en que otras personas la perciben.",
     ],
     faq: [
       {
         question: "¿Qué es seguridad profesional?",
-        answer: "Es la capacidad interna de sostener visibilidad, decisiones, liderazgo, dinero y crecimiento sin vivirlos como amenaza o sabotearlos justo antes de que ocurran.",
+        answer: "Es poder mostrarse, decidir, liderar y crecer sin sentir que todo eso es una amenaza.",
       },
       {
         question: "¿Cómo se nota cuando falta seguridad profesional?",
-        answer: "Suele aparecer como postergación, exceso de preparación, miedo al juicio, dificultad para cobrar, minimizar logros o tensión al ocupar espacios de mayor responsabilidad.",
+        answer: "Puede notarse cuando una persona se esconde, posterga decisiones, tiene dificultad para cobrar o evita espacios de mayor responsabilidad. Son señales para pensar, no un diagnóstico.",
       },
       {
-        question: "¿Esto sustituye estrategia o posicionamiento?",
-        answer: "No. Lo complementa. Cuando la estrategia existe, la seguridad profesional ayuda a sostenerla con cuerpo, presencia, decisión y exposición real.",
+        question: "¿Cómo se relaciona con la imagen profesional?",
+        answer: "La forma en que una persona se ve a sí misma influye en la forma en que se muestra. Por eso, este tema se relaciona con la presencia, la comunicación y la manera en que otras personas la perciben.",
       },
       {
         question: "¿Con qué servicio se trabaja este tema?",
-        answer: "Se trabaja sobre todo en la ruta de seguridad y posicionamiento profesional, aunque también puede aparecer dentro de coaching de imagen y presencia cuando el bloqueo principal está en sostener autoridad visible.",
+        answer: "Después puede leer sobre seguridad profesional femenina, inseguridad profesional, presencia ejecutiva, liderazgo visible o el Método Sonia McRorey. También puede pedir un diagnóstico privado.",
       },
     ],
     parentRoute: "/",

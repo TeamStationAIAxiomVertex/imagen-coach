@@ -1,5 +1,5 @@
 ---
-status: review_required
+status: approved_for_publication
 route: /seguridad-profesional/
 canonical: https://coachdeimagen.com/seguridad-profesional
 language: es-MX
@@ -71,6 +71,6 @@ Cada enlace lleva a un tema diferente:
 - `content/sonia-knowledge/drive-quote-bank.json`: `La capacidad de sostener.pdf`, candidatos sobre capacidad interna, autoconcepto y cuerpo
 - `content/strategy/sonia-pillar-ontology.json`: nodo `seguridad-posicionamiento`
 
-## Antes de publicarlo
+## Estado de publicación
 
-Este archivo es un borrador para que Sonia lo revise. No se publicará como `/seguridad-profesional.md` ni se pondrá en la página hasta que ella confirme el texto. Después de su aprobación, se prepararán la página, su versión `.md` y sus enlaces.
+Sonia autorizó la publicación de este borrador. La página pública y su versión `.md` se generan desde la fuente de rutas del sitio después de pasar las validaciones de contenido, enlaces, esquema y build.
