@@ -1,14 +1,14 @@
 # Knowledge Provenance Audit
 
 - Status: **PASS_WITH_MIGRATION_WARNINGS**
-- Strict July batch cards checked: **110**
+- Strict governed batch cards checked: **185**
 - Cards missing sourceIds/contentMode/sourceVersion: **0**
 - Violations: **0**
 - Warnings: **0**
 
 ## Enforcement
 
-July batches must contain Sonia-only source signals, usable routes, non-duplicate questions, anchor phrases and guardrails. Private Drive filenames and unrelated project identifiers remain prohibited in public cards.
+Governed batches must contain Sonia-only source signals, usable routes, non-duplicate questions, anchor phrases and guardrails. Private Drive filenames and unrelated project identifiers remain prohibited in public cards.
 
 ## Violations
 

@@ -8,7 +8,8 @@ const queueDir = path.join(root, "content/knowledge/queue");
 const reportPath = path.join(root, "content/knowledge/reports/knowledge-provenance-audit.md");
 const strictBatches = [
   "2026-07-22-leadership-signal-cross-border-practice-batch.json",
-  "2026-07-23-decision-authority-regional-context-batch.json"
+  "2026-07-23-decision-authority-regional-context-batch.json",
+  "2026-08-25-geo-buyer-decision-batch.json"
 ];
 
 const files = [
@@ -132,14 +133,14 @@ const report = [
   "# Knowledge Provenance Audit",
   "",
   `- Status: **${status}**`,
-  `- Strict July batch cards checked: **${strictCardCount}**`,
+  `- Strict governed batch cards checked: **${strictCardCount}**`,
   `- Cards missing sourceIds/contentMode/sourceVersion: **${legacySourceCount}**`,
   `- Violations: **${violations.length}**`,
   `- Warnings: **${warnings.length}**`,
   "",
   "## Enforcement",
   "",
-  "July batches must contain Sonia-only source signals, usable routes, non-duplicate questions, anchor phrases and guardrails. Private Drive filenames and unrelated project identifiers remain prohibited in public cards.",
+  "Governed batches must contain Sonia-only source signals, usable routes, non-duplicate questions, anchor phrases and guardrails. Private Drive filenames and unrelated project identifiers remain prohibited in public cards.",
   "",
   "## Violations",
   "",

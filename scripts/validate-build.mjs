@@ -1,6 +1,7 @@
 import { readdir, readFile, stat } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import path from "node:path";
+import { createHash } from "node:crypto";
 import { imageSize } from "image-size";
 
 const manifest = JSON.parse(await readFile("content/clean/manifest.json", "utf8"));
@@ -8,6 +9,13 @@ const strategy = JSON.parse(await readFile("content/strategy/article-clusters.js
 const teachingRouteMap = JSON.parse(await readFile("content/sonia-knowledge/teaching-route-map.json", "utf8"));
 const verbatimRouteExcerpts = JSON.parse(await readFile("content/sonia-knowledge/verbatim-route-excerpts.json", "utf8"));
 const failures = [];
+const APPROVED_SECURITY_ARTICLE_SOURCE = "content/clean/pages/imagen-presencia-seguridad-profesional-cuando-tu-capacidad-ya-crecio.md";
+const APPROVED_SECURITY_ARTICLE_SHA256 = "0376208b1d7aa824a26e6901af3e0e89c5d1d2ae6aa12c657c091bb0cfcc7876";
+const approvedSecurityArticleSource = await readFile(APPROVED_SECURITY_ARTICLE_SOURCE, "utf8");
+const approvedSecurityArticleHash = createHash("sha256").update(approvedSecurityArticleSource).digest("hex");
+if (approvedSecurityArticleHash !== APPROVED_SECURITY_ARTICLE_SHA256) {
+  failures.push(`Approved security article source changed: ${approvedSecurityArticleHash}`);
+}
 const SITE_URL = "https://coachdeimagen.com";
 const LEGACY_SITE_URL = "https://imagencoach.com";
 const SOCIAL_CARD_VERSION = "v2";
@@ -125,6 +133,7 @@ function markdownPathForRoute(route) {
 const approvedSoniaExcerpts = new Set([
   ...(teachingRouteMap.teachings || []).map((teaching) => teaching.quote),
   ...(verbatimRouteExcerpts.sources || []).flatMap((source) => (source.excerpts || []).map((excerpt) => excerpt.text)),
+  ...approvedSecurityArticleSource.split("\n").map((line) => line.trim()).filter(Boolean),
 ].filter(Boolean).map(normalizeSoniaSourceText));
 const deprecatedComparisonRoutes = [
   "/comparaciones/sonia-mcrorey-vs-gaby-vargas",

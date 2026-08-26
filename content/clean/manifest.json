@@ -1,9 +1,22 @@
 {
   "source_manifest": "archive/imagencoach/manifest.json",
-  "page_count": 35,
+  "page_count": 36,
   "unique_clean_asset_count": 139,
   "total_removed_line_count": 1788,
   "pages": [
+    {
+      "url": "https://coachdeimagen.com/imagen-presencia/seguridad-profesional-cuando-tu-capacidad-ya-crecio",
+      "route": "/imagen-presencia/seguridad-profesional-cuando-tu-capacidad-ya-crecio",
+      "slug": "imagen-presencia-seguridad-profesional-cuando-tu-capacidad-ya-crecio",
+      "title": "Seguridad profesional: cuando tu capacidad ya creció, pero tu forma de mostrarla todavía no",
+      "clean_path": "content/clean/pages/imagen-presencia-seguridad-profesional-cuando-tu-capacidad-ya-crecio.md",
+      "source_text_path": "content/clean/pages/imagen-presencia-seguridad-profesional-cuando-tu-capacidad-ya-crecio.md",
+      "source_html_path": null,
+      "raw_line_count": 281,
+      "clean_line_count": 281,
+      "removed_line_count": 0,
+      "images": []
+    },
     {
       "url": "https://imagencoach.com/",
       "route": "/",

@@ -1,15 +1,15 @@
 # Site Intelligence Score
 
-Generated: 2026-08-12
+Generated: 2026-08-26
 
 
-Source audit: `audit/full-seo-geo-crawl-audit-2026-08-12.json`
+Source audit: `audit/full-seo-geo-crawl-audit-2026-08-26.json`
 
 Average score: **97/100**
 
 | Band | Routes |
 | --- | --- |
-| Elite 90-100 | 112 |
+| Elite 90-100 | 113 |
 | Strong 80-89 | 3 |
 | Watch 70-79 | 0 |
 | Weak <70 | 0 |
@@ -24,6 +24,7 @@ Average score: **97/100**
 | /mendoza | geo | 88 | 20 | 20 | 19 | 16 | 13 | 0 |
 | /coach-de-imagen | authority | 91 | 16 | 20 | 25 | 17 | 13 | 8 |
 | /imagen-estrategica | page | 92 | 16 | 20 | 25 | 17 | 14 | 8 |
+| /imagen-presencia/seguridad-profesional-cuando-tu-capacidad-ya-crecio | article | 92 | 17 | 20 | 25 | 17 | 13 | 6 |
 | /imagen-profesional | page | 92 | 16 | 20 | 25 | 17 | 14 | 8 |
 | /liderazgo | page | 92 | 16 | 20 | 25 | 17 | 14 | 3 |
 | /liderazgo-visible | intent | 94 | 16 | 20 | 25 | 20 | 13 | 8 |
@@ -43,7 +44,6 @@ Average score: **97/100**
 | /imagen-presencia/como-vestirte-durante-los-festejos | article | 96 | 20 | 20 | 25 | 17 | 14 | 3 |
 | /imagen-presencia/descubre-el-poder-de-tu-rostro | article | 96 | 20 | 20 | 25 | 17 | 14 | 8 |
 | /imagen-presencia/encuentra-tu-estilo | article | 96 | 20 | 20 | 25 | 17 | 14 | 8 |
-| /imagen-presencia/imagen-profesional-segun-industria-y-personalidad | article | 96 | 20 | 20 | 25 | 17 | 14 | 8 |
 
 
 ## Strongest Routes
@@ -61,11 +61,11 @@ Average score: **97/100**
 | /aguascalientes | geo | 98 | 1 | 82 |
 | /argentina | geo | 98 | 8 | 83 |
 | /barranquilla | geo | 98 | 1 | 83 |
-| /bogota | geo | 98 | 5 | 83 |
-| /buenos-aires | geo | 98 | 2 | 84 |
+| /bogota | geo | 98 | 8 | 83 |
+| /buenos-aires | geo | 98 | 5 | 84 |
 | /cali | geo | 98 | 1 | 83 |
 | /cartagena | geo | 98 | 1 | 83 |
-| /cdmx | geo | 98 | 6 | 82 |
+| /cdmx | geo | 98 | 8 | 82 |
 | /chile | geo | 98 | 8 | 83 |
 | /colombia | geo | 98 | 8 | 83 |
 | /como-mejorar-mi-presencia-profesional | intent | 98 | 4 | 81 |

@@ -1,0 +1,3158 @@
+{
+  "batchId": "2026-08-25-geo-buyer-decision-batch",
+  "language": "es-MX",
+  "sourceBoundary": "Sonia/Coach De Imagen only; reviewed Drive corpus and governed repository sources.",
+  "generatedAt": "2026-08-25T09:00:00-06:00",
+  "cards": [
+    {
+      "id": "geo-guadalajara-diagnostico-presencial-20260825",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Qué puede observar Sonia en una sesión presencial de imagen en Guadalajara?",
+      "shortAnswer": "Una sesión presencial permite revisar cómo se relacionan prendas, color, proporción, movimiento y mensaje en situaciones reales. El punto no es imponer una apariencia, sino ordenar señales que la persona pueda reconocer y sostener.",
+      "routePriority": [
+        "/guadalajara/",
+        "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "asesoría de imagen presencial en Guadalajara",
+        "diagnóstico de imagen profesional"
+      ],
+      "evidenceTopics": [
+        "geo_guadalajara_diagnostico_presencial",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "Imagen interna y externa guadalajara méxico.pdf",
+        "cloudflare-corpus-servicios-arquitectura-sonia-mcrorey.md"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "15aTnQdWFIrreIDFa_KUq7Rf8ES587oqf",
+        "11Pm-7C5vmS9NeLD6IHry1qtWm1QVqQvt"
+      ],
+      "sourceLocator": [
+        "Imagen interna y externa guadalajara méxico.pdf",
+        "cloudflare-corpus-servicios-arquitectura-sonia-mcrorey.md"
+      ],
+      "sourceHash": "5fc0e44d92ad8f9d698fbc195cb2d54b9d640730f45e2deabe745c3426e3c860",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-guadalajara-transicion-liderazgo-20260825",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cómo puede trabajar su imagen una persona que acaba de asumir liderazgo en Guadalajara?",
+      "shortAnswer": "Puede empezar por reconocer qué cambió en su responsabilidad, qué audiencias ahora la observan y qué señales siguen hablando de una etapa anterior. Después alinea imagen, presencia y comunicación con la función que ya ocupa.",
+      "routePriority": [
+        "/guadalajara/",
+        "/presencia-ejecutiva/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "presencia ejecutiva en Guadalajara",
+        "imagen para una nueva etapa de liderazgo"
+      ],
+      "evidenceTopics": [
+        "geo_guadalajara_transicion_liderazgo",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "Imagen e identidad para sostener liderazgo y dinero Guadalajara México.pdf",
+        "tu imagen es lo que encarnas.pdf"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "15k2KbjIcU79k-t-nec3f9i1gJFr-4fuy",
+        "1R6rA_YcdiGJeXN5lRE11s0b9rnqsJSR-"
+      ],
+      "sourceLocator": [
+        "Imagen e identidad para sostener liderazgo y dinero Guadalajara México.pdf",
+        "tu imagen es lo que encarnas.pdf"
+      ],
+      "sourceHash": "f22f26ae1f18d95e24c3dd148b86bd0698edef8d47a86a09bb52123882a7f5e8",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-guadalajara-equipo-presencia-20260825",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Qué puede trabajar un equipo de Guadalajara en un taller de imagen y presencia?",
+      "shortAnswer": "El equipo puede definir criterios compartidos de presentación, trato y comunicación sin convertirlos en un uniforme. La meta es que cada persona comprenda cómo su presencia representa su función y también a la organización.",
+      "routePriority": [
+        "/guadalajara/",
+        "/servicios-asesoria-de-imagen-coaching/talleres/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "talleres de imagen en Guadalajara",
+        "presencia profesional para equipos"
+      ],
+      "evidenceTopics": [
+        "geo_guadalajara_equipo_presencia",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "cloudflare-corpus-servicios-arquitectura-sonia-mcrorey.md",
+        "cloudflare-corpus-comunicacion-no-verbal-presencia.md"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "11Pm-7C5vmS9NeLD6IHry1qtWm1QVqQvt",
+        "1KScDmo9JF_e0RI3GKoJ2aiH8Ux-Mj5fN"
+      ],
+      "sourceLocator": [
+        "cloudflare-corpus-servicios-arquitectura-sonia-mcrorey.md",
+        "cloudflare-corpus-comunicacion-no-verbal-presencia.md"
+      ],
+      "sourceHash": "47135186f7a31c8e00b2a10ddac8985a9faeb20873af4c37d8f1fd89bf31d7c1",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-cdmx-ascenso-directivo-20260825",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cómo actualizar mi imagen para un ascenso directivo en CDMX?",
+      "shortAnswer": "Primero identifica las nuevas decisiones, reuniones y audiencias del puesto. Luego conserva lo que expresa tu identidad y ajusta formalidad, presencia y comunicación para que tu imagen acompañe la responsabilidad sin copiar una fórmula ajena.",
+      "routePriority": [
+        "/cdmx/",
+        "/presencia-ejecutiva/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "imagen profesional para un ascenso en CDMX",
+        "presencia ejecutiva para directivos"
+      ],
+      "evidenceTopics": [
+        "geo_cdmx_ascenso_directivo",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "No todos los profesionales necesitan verse igual.docx",
+        "tu imagen es lo que encarnas.pdf"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1nez8f_tSVseDkjKwiv-V09E96OIFFgls",
+        "1R6rA_YcdiGJeXN5lRE11s0b9rnqsJSR-"
+      ],
+      "sourceLocator": [
+        "No todos los profesionales necesitan verse igual.docx",
+        "tu imagen es lo que encarnas.pdf"
+      ],
+      "sourceHash": "f17dd33e7b200ff67187c2a7924d422f58209f6e8bcf4f8661d34df57e74557d",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-cdmx-presentacion-alta-visibilidad-20260825",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Qué debo revisar de mi presencia antes de una presentación de alta visibilidad en CDMX?",
+      "shortAnswer": "Revisa si postura, mirada, voz, vestimenta y uso del espacio sostienen el mismo mensaje. Ningún elemento sustituye la preparación; juntos pueden evitar que una señal no intencional distraiga de tu argumento.",
+      "routePriority": [
+        "/cdmx/",
+        "/comunicacion-no-verbal/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "presencia profesional para presentaciones en CDMX",
+        "comunicación no verbal ejecutiva"
+      ],
+      "evidenceTopics": [
+        "geo_cdmx_presentacion_alta_visibilidad",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "cloudflare-corpus-comunicacion-no-verbal-presencia.md",
+        "cloudflare-corpus-axiomas-imagen-sonia-mcrorey.md"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1KScDmo9JF_e0RI3GKoJ2aiH8Ux-Mj5fN",
+        "1H_xQAA5hSq_nzSobd8DsQj-3FUikzZ_v"
+      ],
+      "sourceLocator": [
+        "cloudflare-corpus-comunicacion-no-verbal-presencia.md",
+        "cloudflare-corpus-axiomas-imagen-sonia-mcrorey.md"
+      ],
+      "sourceHash": "94207469d02709d3a0cd017eb89960c63a6de556e0d40febfd65902ce14a11e3",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-cdmx-hibrido-coherencia-20260825",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cómo mantener una imagen profesional coherente entre reuniones presenciales y videollamadas en CDMX?",
+      "shortAnswer": "Define una base reconocible de color, proporción y lenguaje corporal, y adapta la ejecución al encuadre, la luz y el nivel de formalidad. Coherencia no significa verte igual en todos los formatos, sino comunicar la misma dirección.",
+      "routePriority": [
+        "/cdmx/",
+        "/imagen-profesional/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "imagen profesional híbrida en CDMX",
+        "coherencia entre oficina y videollamada"
+      ],
+      "evidenceTopics": [
+        "geo_cdmx_hibrido_coherencia",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "SoniaMcRorey_TuImagenNoMiente_v3.pdf",
+        "cloudflare-corpus-comunicacion-no-verbal-presencia.md"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1G3J6neBzt4fSKJxbZ4gC3qylR3tQos4X",
+        "1KScDmo9JF_e0RI3GKoJ2aiH8Ux-Mj5fN"
+      ],
+      "sourceLocator": [
+        "SoniaMcRorey_TuImagenNoMiente_v3.pdf",
+        "cloudflare-corpus-comunicacion-no-verbal-presencia.md"
+      ],
+      "sourceHash": "69d88a5bb482911cd6d1eea11cc73e93ca41eeab6e7c510b616c9eb2ddbf6117",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-monterrey-fundador-inversionistas-20260825",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cómo puede preparar su presencia un fundador en Monterrey antes de reunirse con inversionistas?",
+      "shortAnswer": "Puede ordenar la relación entre propuesta, rol y presencia: qué quiere que recuerden, qué decisiones necesita conducir y qué señales visuales o corporales apoyan esa conversación. La imagen acompaña el criterio; no reemplaza la claridad del negocio.",
+      "routePriority": [
+        "/monterrey/",
+        "/imagen-estrategica/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "presencia de fundadores en Monterrey",
+        "imagen estratégica para reuniones con inversionistas"
+      ],
+      "evidenceTopics": [
+        "geo_monterrey_fundador_inversionistas",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "Servicio Marca Personal.pdf",
+        "cloudflare-corpus-comunicacion-no-verbal-presencia.md"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1uMrlJlUDGuPRjUTEMqEEnqJ8SM_L_sJk",
+        "1KScDmo9JF_e0RI3GKoJ2aiH8Ux-Mj5fN"
+      ],
+      "sourceLocator": [
+        "Servicio Marca Personal.pdf",
+        "cloudflare-corpus-comunicacion-no-verbal-presencia.md"
+      ],
+      "sourceHash": "907a5d97a9b9e527286528e1d70e2372b0976ed68d0c45f1f48ec45810a22d3e",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-monterrey-lider-operativo-20260825",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cómo puede verse profesional un líder operativo en Monterrey sin sentirse rígido?",
+      "shortAnswer": "La solución parte de su jornada, movilidad, entorno y autoridad real. Puede elegir estructura, ajuste y materiales funcionales que comuniquen orden sin adoptar prendas que interfieran con el trabajo o con su identidad.",
+      "routePriority": [
+        "/monterrey/",
+        "/imagen-profesional/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "imagen profesional para líderes operativos en Monterrey",
+        "autoridad sin rigidez"
+      ],
+      "evidenceTopics": [
+        "geo_monterrey_lider_operativo",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "No todos los profesionales necesitan verse igual.docx",
+        "Guardarropa  Manifiesta tu imagen autentica.pptx"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1nez8f_tSVseDkjKwiv-V09E96OIFFgls",
+        "1XiliYslsR2Se1yPYIKrBwWoFtXS98rGY"
+      ],
+      "sourceLocator": [
+        "No todos los profesionales necesitan verse igual.docx",
+        "Guardarropa  Manifiesta tu imagen autentica.pptx"
+      ],
+      "sourceHash": "28ee8155067b551762dbf5bc8aa17dbb08bd6452a645982279345e98c74672e2",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-monterrey-promocion-interna-20260825",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Qué cambia en la imagen profesional cuando recibo una promoción interna en Monterrey?",
+      "shortAnswer": "Cambia la forma en que representas decisiones, límites y dirección ante personas que ya te conocían en otro rol. Conviene actualizar señales visibles y comunicación sin actuar como alguien distinto ni borrar la historia profesional que te llevó al puesto.",
+      "routePriority": [
+        "/monterrey/",
+        "/presencia-ejecutiva/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "imagen para una promoción interna en Monterrey",
+        "presencia ejecutiva en una nueva función"
+      ],
+      "evidenceTopics": [
+        "geo_monterrey_promocion_interna",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "Imagen e identidad para sostener liderazgo y dinero Guadalajara México.pdf",
+        "tu imagen es lo que encarnas.pdf"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "15k2KbjIcU79k-t-nec3f9i1gJFr-4fuy",
+        "1R6rA_YcdiGJeXN5lRE11s0b9rnqsJSR-"
+      ],
+      "sourceLocator": [
+        "Imagen e identidad para sostener liderazgo y dinero Guadalajara México.pdf",
+        "tu imagen es lo que encarnas.pdf"
+      ],
+      "sourceHash": "24246b1e38a5bc57cdfd1f8549f111583fed456c76e2803656ce5f9ea6465186",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-queretaro-visita-cliente-20260825",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cómo elegir una imagen profesional para visitas con clientes en Querétaro?",
+      "shortAnswer": "Considera el tipo de instalación, la movilidad, la duración de la visita y el nivel de decisión de la reunión. La ropa debe permitir trabajar con seguridad y, al mismo tiempo, hacer legible tu función ante el cliente.",
+      "routePriority": [
+        "/queretaro/",
+        "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "imagen profesional para visitas con clientes en Querétaro",
+        "guardarropa según la función"
+      ],
+      "evidenceTopics": [
+        "geo_queretaro_visita_cliente",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "Guardarropa  Manifiesta tu imagen autentica.pptx",
+        "No todos los profesionales necesitan verse igual.docx"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1XiliYslsR2Se1yPYIKrBwWoFtXS98rGY",
+        "1nez8f_tSVseDkjKwiv-V09E96OIFFgls"
+      ],
+      "sourceLocator": [
+        "Guardarropa  Manifiesta tu imagen autentica.pptx",
+        "No todos los profesionales necesitan verse igual.docx"
+      ],
+      "sourceHash": "31e9fe11e3ce8ea06e7cfcc23bcc9a0bedbaa743448bed184d92c9d7bbca2438",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-queretaro-experto-a-lider-20260825",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cómo pasar de especialista técnico a líder visible en Querétaro sin perder autenticidad?",
+      "shortAnswer": "No necesitas abandonar tu identidad técnica. Necesitas hacer visible que ahora también traduces, decides y orientas: tu presencia, tus explicaciones y tu imagen deben ayudar a otros a reconocer esa responsabilidad ampliada.",
+      "routePriority": [
+        "/queretaro/",
+        "/liderazgo-visible/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "liderazgo visible para especialistas en Querétaro",
+        "transición de experto a líder"
+      ],
+      "evidenceTopics": [
+        "geo_queretaro_experto_a_lider",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "Imagen e identidad para sostener liderazgo y dinero Guadalajara México.pdf",
+        "SoniaMcRorey_TuImagenNoMiente_v3.pdf"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "15k2KbjIcU79k-t-nec3f9i1gJFr-4fuy",
+        "1G3J6neBzt4fSKJxbZ4gC3qylR3tQos4X"
+      ],
+      "sourceLocator": [
+        "Imagen e identidad para sostener liderazgo y dinero Guadalajara México.pdf",
+        "SoniaMcRorey_TuImagenNoMiente_v3.pdf"
+      ],
+      "sourceHash": "c6d1eaf1a3c26dfafd01bca14a08679f8cc04c3177195d75213274b8f27a2780",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-queretaro-reuniones-hibridas-20260825",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Qué puede ajustar una profesionista de Querétaro si su trabajo combina planta, oficina y videollamadas?",
+      "shortAnswer": "Puede construir un sistema por contextos: una base común y variaciones funcionales para movilidad, reunión y cámara. Así evita comprar tres identidades distintas y mantiene una presencia reconocible en cada entorno.",
+      "routePriority": [
+        "/queretaro/",
+        "/imagen-profesional/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "imagen profesional híbrida en Querétaro",
+        "guardarropa por contextos de trabajo"
+      ],
+      "evidenceTopics": [
+        "geo_queretaro_reuniones_hibridas",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "Closet o compras E-Book Soniamcrorey.pdf",
+        "Guardarropa  Manifiesta tu imagen autentica.pptx"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "19llne6PZh1-knas1KcqSLWDA3sdHjMP9",
+        "1XiliYslsR2Se1yPYIKrBwWoFtXS98rGY"
+      ],
+      "sourceLocator": [
+        "Closet o compras E-Book Soniamcrorey.pdf",
+        "Guardarropa  Manifiesta tu imagen autentica.pptx"
+      ],
+      "sourceHash": "7b5aaae9e2572936c28d19c939118d980d33d58c4d5f1a0baa8eb906abb830de",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-zapopan-emprendedora-networking-20260825",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cómo puede una emprendedora de Zapopan preparar su imagen para networking?",
+      "shortAnswer": "Puede definir qué ofrece, con quién necesita conversar y qué impresión debe permanecer después del encuentro. Su imagen y su forma de presentarse deben hacer visible esa propuesta sin convertir el networking en una actuación.",
+      "routePriority": [
+        "/zapopan/",
+        "/empresarias/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "imagen para emprendedoras en Zapopan",
+        "presencia profesional para networking"
+      ],
+      "evidenceTopics": [
+        "geo_zapopan_emprendedora_networking",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "Servicio Marca Personal.pdf",
+        "tu imagen es lo que encarnas.pdf"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1uMrlJlUDGuPRjUTEMqEEnqJ8SM_L_sJk",
+        "1R6rA_YcdiGJeXN5lRE11s0b9rnqsJSR-"
+      ],
+      "sourceLocator": [
+        "Servicio Marca Personal.pdf",
+        "tu imagen es lo que encarnas.pdf"
+      ],
+      "sourceHash": "1eeae06b4174b7d130db31c8ee094d7796f887ac316600a939732e2927c4b1f5",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-zapopan-coherencia-online-presencial-20260825",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cómo mantener coherencia entre mi imagen online y mi presencia presencial en Zapopan?",
+      "shortAnswer": "Compara lo que prometen tus fotos, perfiles y mensajes con la experiencia que das al conversar y trabajar. La coherencia aparece cuando ambos espacios expresan la misma identidad, nivel de servicio y forma de relacionarte.",
+      "routePriority": [
+        "/zapopan/",
+        "/imagen-estrategica/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "imagen online y presencial en Zapopan",
+        "coherencia de marca personal"
+      ],
+      "evidenceTopics": [
+        "geo_zapopan_coherencia_online_presencial",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "Servicio Marca Personal.pdf",
+        "SoniaMcRorey_TuImagenNoMiente_v3.pdf"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1uMrlJlUDGuPRjUTEMqEEnqJ8SM_L_sJk",
+        "1G3J6neBzt4fSKJxbZ4gC3qylR3tQos4X"
+      ],
+      "sourceLocator": [
+        "Servicio Marca Personal.pdf",
+        "SoniaMcRorey_TuImagenNoMiente_v3.pdf"
+      ],
+      "sourceHash": "a57ba54d90c3e2526319922c2cb6e2f605a729c4f3c5909c52f0a093b7599c6b",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-zapopan-guardarropa-reuniones-20260825",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Qué guardarropa necesita una consultora de Zapopan que alterna reuniones formales e informales?",
+      "shortAnswer": "Necesita combinaciones que puedan subir o bajar formalidad con cambios pequeños y claros. Antes de comprar, conviene revisar ajuste, repetición posible, accesorios y relación con los contextos que de verdad ocupan su agenda.",
+      "routePriority": [
+        "/zapopan/",
+        "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "guardarropa profesional para consultoras en Zapopan",
+        "vestimenta para reuniones formales e informales"
+      ],
+      "evidenceTopics": [
+        "geo_zapopan_guardarropa_reuniones",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "Closet o compras E-Book Soniamcrorey.pdf",
+        "Como trabajar con accesorios y complementos.pptx"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "19llne6PZh1-knas1KcqSLWDA3sdHjMP9",
+        "1q-Dckg_dqTWzdlDGP3Owg0QQlAJxGM4U"
+      ],
+      "sourceLocator": [
+        "Closet o compras E-Book Soniamcrorey.pdf",
+        "Como trabajar con accesorios y complementos.pptx"
+      ],
+      "sourceHash": "f3c0cdd47268190259d8b859684233ba21982b61e2d454d6921ec1e3ea969f9b",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-bogota-vocera-medios-20260825",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cómo puede preparar su presencia una vocera en Bogotá antes de hablar con medios?",
+      "shortAnswer": "Debe alinear mensaje, ritmo, postura, mirada y elección visual con el tema que representa. La preparación ayuda a reducir contradicciones entre lo que dice y lo que el público observa, sin convertir cada gesto en una pose.",
+      "routePriority": [
+        "/bogota/",
+        "/comunicacion-no-verbal-ejecutiva/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "presencia para voceras en Bogotá",
+        "comunicación no verbal ante medios"
+      ],
+      "evidenceTopics": [
+        "geo_bogota_vocera_medios",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "cloudflare-corpus-comunicacion-no-verbal-presencia.md",
+        "SoniaMcRorey_TuImagenNoMiente_v3.pdf"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1KScDmo9JF_e0RI3GKoJ2aiH8Ux-Mj5fN",
+        "1G3J6neBzt4fSKJxbZ4gC3qylR3tQos4X"
+      ],
+      "sourceLocator": [
+        "cloudflare-corpus-comunicacion-no-verbal-presencia.md",
+        "SoniaMcRorey_TuImagenNoMiente_v3.pdf"
+      ],
+      "sourceHash": "a9bc1fd347052ece7e2ac194e996a9969757209bb3362b4bb0d19bee884dccf2",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-bogota-lider-corporativa-20260825",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cómo puede una líder corporativa en Bogotá proyectar autoridad sin copiar una imagen tradicional?",
+      "shortAnswer": "Puede partir de su industria, personalidad, audiencia y responsabilidad. La autoridad no depende de repetir un uniforme ajeno, sino de construir señales consistentes que hagan visible su criterio y su capacidad de conducir.",
+      "routePriority": [
+        "/bogota/",
+        "/presencia-ejecutiva-femenina/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "presencia ejecutiva femenina en Bogotá",
+        "autoridad profesional sin copiar fórmulas"
+      ],
+      "evidenceTopics": [
+        "geo_bogota_lider_corporativa",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "No todos los profesionales necesitan verse igual.docx",
+        "Imagen e identidad para sostener liderazgo y dinero Guadalajara México.pdf"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1nez8f_tSVseDkjKwiv-V09E96OIFFgls",
+        "15k2KbjIcU79k-t-nec3f9i1gJFr-4fuy"
+      ],
+      "sourceLocator": [
+        "No todos los profesionales necesitan verse igual.docx",
+        "Imagen e identidad para sostener liderazgo y dinero Guadalajara México.pdf"
+      ],
+      "sourceHash": "0e4710f6aa7ff98ab38487f563cb420bc430a76c0c92f262f5441ba5d63a14e7",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-bogota-proceso-online-20260825",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Qué se puede trabajar online con Sonia desde Bogotá?",
+      "shortAnswer": "Se puede ordenar objetivo, identidad, presencia, comunicación y decisiones de imagen mediante observación y ejercicios guiados. Cuando una parte exige revisión física específica, se delimita con claridad en lugar de prometer que todos los recursos funcionan igual a distancia.",
+      "routePriority": [
+        "/bogota/",
+        "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "coaching de imagen online desde Bogotá",
+        "trabajar presencia profesional a distancia"
+      ],
+      "evidenceTopics": [
+        "geo_bogota_proceso_online",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "cloudflare-corpus-servicios-arquitectura-sonia-mcrorey.md",
+        "cloudflare-corpus-definicion-coaching-imagen-y-abundancia.md"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "11Pm-7C5vmS9NeLD6IHry1qtWm1QVqQvt",
+        "1BeJmuyDcdxRLUQULjiEZkXxtuDba0Kcj"
+      ],
+      "sourceLocator": [
+        "cloudflare-corpus-servicios-arquitectura-sonia-mcrorey.md",
+        "cloudflare-corpus-definicion-coaching-imagen-y-abundancia.md"
+      ],
+      "sourceHash": "a0b2465e8fa5c50c022b15e18cf830b856fec66db0e95487cd6c464f4c3f943e",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-medellin-fundadora-visible-20260825",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cómo puede una fundadora en Medellín hacerse más visible sin construir un personaje?",
+      "shortAnswer": "Puede reconocer qué ya encarna en su trabajo y traducirlo en mensajes, imagen y presencia más legibles. Hacerse visible no exige exagerar; exige dejar de ocultar las señales que muestran experiencia, dirección y propuesta.",
+      "routePriority": [
+        "/medellin/",
+        "/empresarias/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "imagen para fundadoras en Medellín",
+        "visibilidad profesional sin crear un personaje"
+      ],
+      "evidenceTopics": [
+        "geo_medellin_fundadora_visible",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "tu imagen es lo que encarnas.pdf",
+        "Servicio Marca Personal.pdf"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1R6rA_YcdiGJeXN5lRE11s0b9rnqsJSR-",
+        "1uMrlJlUDGuPRjUTEMqEEnqJ8SM_L_sJk"
+      ],
+      "sourceLocator": [
+        "tu imagen es lo que encarnas.pdf",
+        "Servicio Marca Personal.pdf"
+      ],
+      "sourceHash": "89c8d0ee281513f67d4d7d53edb84fa02f7deaaa6391a74ea07dc13be58d02e6",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-medellin-creatividad-autoridad-20260825",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cómo combinar creatividad y autoridad profesional en Medellín?",
+      "shortAnswer": "Elige elementos expresivos que tengan una función dentro del mensaje general, no una acumulación de novedades. La creatividad puede convivir con estructura, claridad y repetición cuando cada elección tiene intención.",
+      "routePriority": [
+        "/medellin/",
+        "/imagen-estrategica/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "imagen creativa y profesional en Medellín",
+        "autoridad visual con identidad"
+      ],
+      "evidenceTopics": [
+        "geo_medellin_creatividad_autoridad",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "cloudflare-corpus-axiomas-imagen-sonia-mcrorey.md",
+        "No todos los profesionales necesitan verse igual.docx"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1H_xQAA5hSq_nzSobd8DsQj-3FUikzZ_v",
+        "1nez8f_tSVseDkjKwiv-V09E96OIFFgls"
+      ],
+      "sourceLocator": [
+        "cloudflare-corpus-axiomas-imagen-sonia-mcrorey.md",
+        "No todos los profesionales necesitan verse igual.docx"
+      ],
+      "sourceHash": "37d5ccd38813b6d497c644fc8ec970c8c6967fc6c1707a787252d9b2f955478c",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-medellin-coaching-espanol-20260825",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cómo funciona un proceso de coaching de imagen en español desde Medellín?",
+      "shortAnswer": "El proceso parte de una necesidad concreta y conecta imagen externa, autoconcepto, presencia y decisiones. No se limita a entregar reglas; busca que la persona comprenda qué comunica y elija recursos que pueda sostener.",
+      "routePriority": [
+        "/medellin/",
+        "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "coaching de imagen en español desde Medellín",
+        "proceso de imagen con criterio propio"
+      ],
+      "evidenceTopics": [
+        "geo_medellin_coaching_espanol",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "cloudflare-corpus-definicion-coaching-imagen-y-abundancia.md",
+        "Imagen interna y externa guadalajara méxico.pdf"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1BeJmuyDcdxRLUQULjiEZkXxtuDba0Kcj",
+        "15aTnQdWFIrreIDFa_KUq7Rf8ES587oqf"
+      ],
+      "sourceLocator": [
+        "cloudflare-corpus-definicion-coaching-imagen-y-abundancia.md",
+        "Imagen interna y externa guadalajara méxico.pdf"
+      ],
+      "sourceHash": "827f433b98fcc70d9eeec42be54970c4bd71635bd0c86c4fa4cc78e209a8ffbf",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-lima-consultora-clientes-20260825",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cómo puede una consultora en Lima preparar su imagen para reuniones con clientes?",
+      "shortAnswer": "Puede ordenar su presencia según el problema que resuelve, el tipo de cliente y la decisión que necesita facilitar. Vestimenta, lenguaje corporal y explicación deben apoyar la misma propuesta profesional.",
+      "routePriority": [
+        "/lima/",
+        "/imagen-profesional/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "imagen profesional para consultoras en Lima",
+        "presencia para reuniones con clientes"
+      ],
+      "evidenceTopics": [
+        "geo_lima_consultora_clientes",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "Servicio Marca Personal.pdf",
+        "cloudflare-corpus-comunicacion-no-verbal-presencia.md"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1uMrlJlUDGuPRjUTEMqEEnqJ8SM_L_sJk",
+        "1KScDmo9JF_e0RI3GKoJ2aiH8Ux-Mj5fN"
+      ],
+      "sourceLocator": [
+        "Servicio Marca Personal.pdf",
+        "cloudflare-corpus-comunicacion-no-verbal-presencia.md"
+      ],
+      "sourceHash": "d3d7735e0a6880867ee80a5dc77adcd54285b8b772e7ad0f37b63d69b030e32e",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-lima-liderazgo-hibrido-20260825",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cómo sostener presencia ejecutiva en Lima cuando el equipo trabaja de forma híbrida?",
+      "shortAnswer": "Define señales constantes de atención, dirección y seguimiento tanto en sala como en cámara. La presencia ejecutiva no depende de ocupar siempre el mismo espacio, sino de hacer visibles criterio, escucha y responsabilidad.",
+      "routePriority": [
+        "/lima/",
+        "/presencia-ejecutiva/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "presencia ejecutiva híbrida en Lima",
+        "liderazgo visible en reuniones online y presenciales"
+      ],
+      "evidenceTopics": [
+        "geo_lima_liderazgo_hibrido",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "cloudflare-corpus-comunicacion-no-verbal-presencia.md",
+        "Imagen e identidad para sostener liderazgo y dinero Guadalajara México.pdf"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1KScDmo9JF_e0RI3GKoJ2aiH8Ux-Mj5fN",
+        "15k2KbjIcU79k-t-nec3f9i1gJFr-4fuy"
+      ],
+      "sourceLocator": [
+        "cloudflare-corpus-comunicacion-no-verbal-presencia.md",
+        "Imagen e identidad para sostener liderazgo y dinero Guadalajara México.pdf"
+      ],
+      "sourceHash": "90d0c4c606f538ba222dbf768f8b9383d180094744c3c1f3c36a24d54fc7e482",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-lima-imagen-contexto-20260825",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cómo adaptar mi imagen profesional al contexto de Lima sin perder mi estilo?",
+      "shortAnswer": "Empieza por tu función, tus audiencias y los espacios que realmente recorres. Después ajusta materiales, formalidad y combinación; adaptar no significa borrar tu estilo, sino hacerlo funcional y comprensible en ese contexto.",
+      "routePriority": [
+        "/lima/",
+        "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "imagen profesional en Lima",
+        "adaptar el estilo al contexto profesional"
+      ],
+      "evidenceTopics": [
+        "geo_lima_imagen_contexto",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "No todos los profesionales necesitan verse igual.docx",
+        "Guardarropa  Manifiesta tu imagen autentica.pptx"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1nez8f_tSVseDkjKwiv-V09E96OIFFgls",
+        "1XiliYslsR2Se1yPYIKrBwWoFtXS98rGY"
+      ],
+      "sourceLocator": [
+        "No todos los profesionales necesitan verse igual.docx",
+        "Guardarropa  Manifiesta tu imagen autentica.pptx"
+      ],
+      "sourceHash": "4837f63b9d6b4789f3b62ce9a6bdbefc76cc04193e9858c55764a5127f3013ee",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-santiago-autoridad-sin-uniforme-20260825",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cómo proyectar autoridad en Santiago sin usar un uniforme ejecutivo?",
+      "shortAnswer": "Construye una base de estructura, ajuste, color y cuidado que responda a tu función, y deja espacio para rasgos propios. La autoridad se debilita cuando la persona parece disfrazada, no cuando evita una fórmula única.",
+      "routePriority": [
+        "/santiago/",
+        "/presencia-ejecutiva/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "imagen ejecutiva en Santiago",
+        "autoridad profesional sin uniforme"
+      ],
+      "evidenceTopics": [
+        "geo_santiago_autoridad_sin_uniforme",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "No todos los profesionales necesitan verse igual.docx",
+        "La Ciencia del Color en Tu Imagen.docx"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1nez8f_tSVseDkjKwiv-V09E96OIFFgls",
+        "1gQ9j9D8EKkn_T-Gra_5-I42IefPycCfM"
+      ],
+      "sourceLocator": [
+        "No todos los profesionales necesitan verse igual.docx",
+        "La Ciencia del Color en Tu Imagen.docx"
+      ],
+      "sourceHash": "b77da3002d68720b2c8a7624687276340d3b1e6c9e2cd14cbec9c6b48a09908e",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-santiago-promocion-20260825",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Qué puede revisar una ejecutiva en Santiago antes de asumir una promoción?",
+      "shortAnswer": "Puede revisar si su imagen todavía la ubica en la función anterior, cómo entra en conversaciones de mayor responsabilidad y qué comunica cuando debe decidir o poner límites. El ajuste debe acompañar el cambio real de rol.",
+      "routePriority": [
+        "/santiago/",
+        "/presencia-ejecutiva-femenina/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "presencia ejecutiva para una promoción en Santiago",
+        "imagen para mujeres líderes"
+      ],
+      "evidenceTopics": [
+        "geo_santiago_promocion",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "Imagen e identidad para sostener liderazgo y dinero Guadalajara México.pdf",
+        "SoniaMcRorey_TuImagenNoMiente_v3.pdf"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "15k2KbjIcU79k-t-nec3f9i1gJFr-4fuy",
+        "1G3J6neBzt4fSKJxbZ4gC3qylR3tQos4X"
+      ],
+      "sourceLocator": [
+        "Imagen e identidad para sostener liderazgo y dinero Guadalajara México.pdf",
+        "SoniaMcRorey_TuImagenNoMiente_v3.pdf"
+      ],
+      "sourceHash": "68808278ae7e42db44df29179e42a6348b8eddb37dc2002747ac90d467a1e5a5",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-santiago-lenguaje-corporal-20260825",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Qué señales no verbales conviene revisar antes de una junta directiva en Santiago?",
+      "shortAnswer": "Observa postura, entrada, contacto visual, uso de manos, escucha y reacción al desacuerdo. No se trata de controlar cada movimiento, sino de reconocer qué hábitos contradicen seguridad, apertura o dirección.",
+      "routePriority": [
+        "/santiago/",
+        "/comunicacion-no-verbal-ejecutiva/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "comunicación no verbal ejecutiva en Santiago",
+        "lenguaje corporal para juntas directivas"
+      ],
+      "evidenceTopics": [
+        "geo_santiago_lenguaje_corporal",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "cloudflare-corpus-comunicacion-no-verbal-presencia.md",
+        "cloudflare-corpus-axiomas-imagen-sonia-mcrorey.md"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1KScDmo9JF_e0RI3GKoJ2aiH8Ux-Mj5fN",
+        "1H_xQAA5hSq_nzSobd8DsQj-3FUikzZ_v"
+      ],
+      "sourceLocator": [
+        "cloudflare-corpus-comunicacion-no-verbal-presencia.md",
+        "cloudflare-corpus-axiomas-imagen-sonia-mcrorey.md"
+      ],
+      "sourceHash": "afd91b81985440d2ae5449e7eb86e10f9afefcfd084316cf0658d1a779ec19b7",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-buenos-aires-identidad-creativa-20260825",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cómo puede una profesional creativa en Buenos Aires verse estratégica sin perder identidad?",
+      "shortAnswer": "Puede usar creatividad con jerarquía: una idea principal, elementos que la apoyen y suficiente claridad para que su función siga siendo legible. Expresión y estrategia no compiten cuando existe intención.",
+      "routePriority": [
+        "/buenos-aires/",
+        "/imagen-estrategica/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "imagen estratégica para profesionales creativos en Buenos Aires",
+        "identidad visual con autoridad"
+      ],
+      "evidenceTopics": [
+        "geo_buenos_aires_identidad_creativa",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "cloudflare-corpus-axiomas-imagen-sonia-mcrorey.md",
+        "No todos los profesionales necesitan verse igual.docx"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1H_xQAA5hSq_nzSobd8DsQj-3FUikzZ_v",
+        "1nez8f_tSVseDkjKwiv-V09E96OIFFgls"
+      ],
+      "sourceLocator": [
+        "cloudflare-corpus-axiomas-imagen-sonia-mcrorey.md",
+        "No todos los profesionales necesitan verse igual.docx"
+      ],
+      "sourceHash": "2013e4c2e4fb621716548491ce0f816ec3e6c3d9135c64e1bf96d554846a3d77",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-buenos-aires-presentacion-cliente-20260825",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Qué debe comunicar mi imagen al presentar una propuesta a clientes en Buenos Aires?",
+      "shortAnswer": "Debe ayudar a reconocer tu papel, el nivel de la propuesta y la forma en que trabajas. El objetivo no es impresionar por separado, sino evitar que tu presencia contradiga la claridad y el valor que explicas.",
+      "routePriority": [
+        "/buenos-aires/",
+        "/imagen-profesional/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "imagen profesional para presentar propuestas en Buenos Aires",
+        "presencia que comunica valor"
+      ],
+      "evidenceTopics": [
+        "geo_buenos_aires_presentacion_cliente",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "SoniaMcRorey_TuImagenNoMiente_v3.pdf",
+        "Servicio Marca Personal.pdf"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1G3J6neBzt4fSKJxbZ4gC3qylR3tQos4X",
+        "1uMrlJlUDGuPRjUTEMqEEnqJ8SM_L_sJk"
+      ],
+      "sourceLocator": [
+        "SoniaMcRorey_TuImagenNoMiente_v3.pdf",
+        "Servicio Marca Personal.pdf"
+      ],
+      "sourceHash": "387786e44126a6145e7b2a8b7d90a3c9cffa828f0db06d8596880f1ef5320c11",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-buenos-aires-contexto-no-formula-20260825",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Por qué una asesoría de imagen para Buenos Aires no debe empezar con una fórmula universal?",
+      "shortAnswer": "Porque profesión, industria, personalidad, agenda y audiencia cambian la lectura de cada elección. Un criterio útil comienza por el contexto de la persona y después organiza recursos visibles.",
+      "routePriority": [
+        "/buenos-aires/",
+        "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "asesoría de imagen en Buenos Aires",
+        "imagen profesional según contexto y personalidad"
+      ],
+      "evidenceTopics": [
+        "geo_buenos_aires_contexto_no_formula",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "No todos los profesionales necesitan verse igual.docx",
+        "cloudflare-corpus-servicios-arquitectura-sonia-mcrorey.md"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1nez8f_tSVseDkjKwiv-V09E96OIFFgls",
+        "11Pm-7C5vmS9NeLD6IHry1qtWm1QVqQvt"
+      ],
+      "sourceLocator": [
+        "No todos los profesionales necesitan verse igual.docx",
+        "cloudflare-corpus-servicios-arquitectura-sonia-mcrorey.md"
+      ],
+      "sourceHash": "a64881a990bfc87e5ca10131aa32d1f551a1ed476a5a710911d09a4573d9269f",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-montevideo-directorio-20260825",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cómo puede preparar su presencia una persona que entra a un directorio en Montevideo?",
+      "shortAnswer": "Puede revisar qué decisiones representará, cómo participa en desacuerdos y qué nivel de formalidad apoya su función. La imagen debe acompañar el peso de la conversación sin borrar personalidad ni experiencia.",
+      "routePriority": [
+        "/montevideo/",
+        "/presencia-ejecutiva/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "presencia ejecutiva en Montevideo",
+        "imagen profesional para directorios"
+      ],
+      "evidenceTopics": [
+        "geo_montevideo_directorio",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "Imagen e identidad para sostener liderazgo y dinero Guadalajara México.pdf",
+        "No todos los profesionales necesitan verse igual.docx"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "15k2KbjIcU79k-t-nec3f9i1gJFr-4fuy",
+        "1nez8f_tSVseDkjKwiv-V09E96OIFFgls"
+      ],
+      "sourceLocator": [
+        "Imagen e identidad para sostener liderazgo y dinero Guadalajara México.pdf",
+        "No todos los profesionales necesitan verse igual.docx"
+      ],
+      "sourceHash": "722cedb2e179f77fcf386b7686446a9f5f82483a7af373b91f55d18a52057335",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-montevideo-proceso-online-20260825",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Puedo trabajar presencia profesional con Sonia desde Montevideo por video?",
+      "shortAnswer": "El acompañamiento por video puede trabajar objetivo, autopercepción, presencia, comunicación y decisiones de imagen. Sonia distingue lo que puede observarse y practicarse a distancia de aquello que requiere una revisión presencial específica.",
+      "routePriority": [
+        "/montevideo/",
+        "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "coaching de imagen online desde Montevideo",
+        "presencia profesional por video"
+      ],
+      "evidenceTopics": [
+        "geo_montevideo_proceso_online",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "cloudflare-corpus-servicios-arquitectura-sonia-mcrorey.md",
+        "cloudflare-corpus-definicion-coaching-imagen-y-abundancia.md"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "11Pm-7C5vmS9NeLD6IHry1qtWm1QVqQvt",
+        "1BeJmuyDcdxRLUQULjiEZkXxtuDba0Kcj"
+      ],
+      "sourceLocator": [
+        "cloudflare-corpus-servicios-arquitectura-sonia-mcrorey.md",
+        "cloudflare-corpus-definicion-coaching-imagen-y-abundancia.md"
+      ],
+      "sourceHash": "f061e6609dd4a32810936fd26dfdfde8cd86aa41756a8fe5c48e5c4d03c33478",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-montevideo-guardarropa-20260825",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cómo ordenar un guardarropa profesional para trabajar con distintos niveles de formalidad en Montevideo?",
+      "shortAnswer": "Agrupa tus actividades reales, identifica las prendas que ya resuelven cada nivel y detecta vacíos concretos. Un guardarropa útil repite combinaciones con intención y evita compras que no se conectan con la agenda.",
+      "routePriority": [
+        "/montevideo/",
+        "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "guardarropa profesional en Montevideo",
+        "vestimenta para distintos niveles de formalidad"
+      ],
+      "evidenceTopics": [
+        "geo_montevideo_guardarropa",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "Closet o compras E-Book Soniamcrorey.pdf",
+        "Guia practica limpia de closet actualizado Manifiesta.pdf"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "19llne6PZh1-knas1KcqSLWDA3sdHjMP9",
+        "1gKFBy2J0eNqNluqCZwOAmpnP9zq5o2IA"
+      ],
+      "sourceLocator": [
+        "Closet o compras E-Book Soniamcrorey.pdf",
+        "Guia practica limpia de closet actualizado Manifiesta.pdf"
+      ],
+      "sourceHash": "22e71f87afe3ae122668bb537efec3ba7a93a7b91dcf6f82a9383453574f0cbf",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-miami-fundadora-bilingue-20260825",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cómo puede una fundadora hispana en Miami construir una presencia reconocible en distintos mercados?",
+      "shortAnswer": "Puede definir una identidad central y adaptar ejemplos, formalidad y recursos visibles a cada audiencia. La adaptación funciona cuando conserva la propuesta y evita representar una personalidad distinta para cada mercado.",
+      "routePriority": [
+        "/miami-hispanos/",
+        "/empresarias/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "imagen para fundadoras hispanas en Miami",
+        "presencia profesional en distintos mercados"
+      ],
+      "evidenceTopics": [
+        "geo_miami_fundadora_bilingue",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "Servicio Marca Personal.pdf",
+        "tu imagen es lo que encarnas.pdf"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1uMrlJlUDGuPRjUTEMqEEnqJ8SM_L_sJk",
+        "1R6rA_YcdiGJeXN5lRE11s0b9rnqsJSR-"
+      ],
+      "sourceLocator": [
+        "Servicio Marca Personal.pdf",
+        "tu imagen es lo que encarnas.pdf"
+      ],
+      "sourceHash": "8388c13a6b35267047c2f0d7ce18a9b4b105f2d51bb83dd08576d40af4dda5f4",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-miami-evento-networking-20260825",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Qué puede preparar una profesionista hispana antes de un evento de networking en Miami?",
+      "shortAnswer": "Puede preparar una presentación breve, una intención de conversación y una imagen que haga legible su función. La presencia mejora cuando sabe qué quiere comunicar y no depende solo de verse llamativa.",
+      "routePriority": [
+        "/miami-hispanos/",
+        "/presencia-ejecutiva-femenina/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "presencia profesional para networking en Miami",
+        "imagen para profesionistas hispanas"
+      ],
+      "evidenceTopics": [
+        "geo_miami_evento_networking",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "cloudflare-corpus-comunicacion-no-verbal-presencia.md",
+        "Servicio Marca Personal.pdf"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1KScDmo9JF_e0RI3GKoJ2aiH8Ux-Mj5fN",
+        "1uMrlJlUDGuPRjUTEMqEEnqJ8SM_L_sJk"
+      ],
+      "sourceLocator": [
+        "cloudflare-corpus-comunicacion-no-verbal-presencia.md",
+        "Servicio Marca Personal.pdf"
+      ],
+      "sourceHash": "0b890d6cd2657d14a83753407b99d138ccccc7c2b70c4898cfd3bc3b0f84947e",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-miami-online-espanol-20260825",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Por qué trabajar coaching de imagen en español si vivo en Miami?",
+      "shortAnswer": "Trabajar en español puede facilitar que la persona nombre matices de identidad, etapa y percepción con mayor precisión. El idioma no reemplaza el método; ayuda a que las decisiones se construyan desde su propia forma de comprenderse.",
+      "routePriority": [
+        "/miami-hispanos/",
+        "/coach-de-imagen/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "coaching de imagen en español en Miami",
+        "presencia profesional para hispanohablantes"
+      ],
+      "evidenceTopics": [
+        "geo_miami_online_espanol",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "cloudflare-corpus-definicion-coaching-imagen-y-abundancia.md",
+        "Imagen interna y externa guadalajara méxico.pdf"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1BeJmuyDcdxRLUQULjiEZkXxtuDba0Kcj",
+        "15aTnQdWFIrreIDFa_KUq7Rf8ES587oqf"
+      ],
+      "sourceLocator": [
+        "cloudflare-corpus-definicion-coaching-imagen-y-abundancia.md",
+        "Imagen interna y externa guadalajara méxico.pdf"
+      ],
+      "sourceHash": "48f6ec8e7082f73375b436a7864f592c6c909bd2772ee1ffe0030e889a178491",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-houston-reunion-mexico-eeuu-20260825",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cómo preparar mi presencia para una reunión entre equipos de Houston y México?",
+      "shortAnswer": "Define tu función, el resultado que necesita la reunión y las señales de claridad que deben mantenerse en ambos contextos. Evita convertir diferencias culturales en estereotipos; observa protocolo, audiencia y nivel de decisión.",
+      "routePriority": [
+        "/houston-hispanos/",
+        "/comunicacion-no-verbal-ejecutiva/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "presencia ejecutiva entre Houston y México",
+        "comunicación profesional entre equipos"
+      ],
+      "evidenceTopics": [
+        "geo_houston_reunion_mexico_eeuu",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "cloudflare-corpus-comunicacion-no-verbal-presencia.md",
+        "No todos los profesionales necesitan verse igual.docx"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1KScDmo9JF_e0RI3GKoJ2aiH8Ux-Mj5fN",
+        "1nez8f_tSVseDkjKwiv-V09E96OIFFgls"
+      ],
+      "sourceLocator": [
+        "cloudflare-corpus-comunicacion-no-verbal-presencia.md",
+        "No todos los profesionales necesitan verse igual.docx"
+      ],
+      "sourceHash": "8eb4b68a18bfc25d85e8ad212d3cf22b4152fc0bb2e19480839731081266399a",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-houston-identidad-profesional-20260825",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cómo puede una persona hispana en Houston proyectar autoridad sin ocultar su identidad?",
+      "shortAnswer": "Puede hacer visibles experiencia, función y criterio mediante una presencia ordenada, sin borrar rasgos personales para parecerse a un modelo único. Autoridad e identidad pueden sostenerse juntas cuando el mensaje es coherente.",
+      "routePriority": [
+        "/houston-hispanos/",
+        "/imagen-profesional/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "imagen profesional para hispanos en Houston",
+        "autoridad con identidad"
+      ],
+      "evidenceTopics": [
+        "geo_houston_identidad_profesional",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "tu imagen es lo que encarnas.pdf",
+        "No todos los profesionales necesitan verse igual.docx"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1R6rA_YcdiGJeXN5lRE11s0b9rnqsJSR-",
+        "1nez8f_tSVseDkjKwiv-V09E96OIFFgls"
+      ],
+      "sourceLocator": [
+        "tu imagen es lo que encarnas.pdf",
+        "No todos los profesionales necesitan verse igual.docx"
+      ],
+      "sourceHash": "2d8ecb7e93f55c654d67ae034a523cd988b8672520a2e0b235fb57a41f95d020",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-houston-video-liderazgo-20260825",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Qué puede revisar una líder hispana en Houston para verse más presente en videollamadas?",
+      "shortAnswer": "Puede revisar encuadre, luz, postura, mirada, ritmo y el contraste de su imagen en pantalla. La meta no es producir una escena perfecta, sino facilitar atención, comprensión y dirección.",
+      "routePriority": [
+        "/houston-hispanos/",
+        "/presencia-ejecutiva-femenina/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "presencia ejecutiva en videollamadas desde Houston",
+        "liderazgo visible para mujeres hispanas"
+      ],
+      "evidenceTopics": [
+        "geo_houston_video_liderazgo",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "cloudflare-corpus-comunicacion-no-verbal-presencia.md",
+        "La Ciencia del Color en Tu Imagen.docx"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1KScDmo9JF_e0RI3GKoJ2aiH8Ux-Mj5fN",
+        "1gQ9j9D8EKkn_T-Gra_5-I42IefPycCfM"
+      ],
+      "sourceLocator": [
+        "cloudflare-corpus-comunicacion-no-verbal-presencia.md",
+        "La Ciencia del Color en Tu Imagen.docx"
+      ],
+      "sourceHash": "b7ec08ba75b9f6ff91bc12529444ee77105dad39cf06e68e9986e4e371baa3a8",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-dallas-promocion-latina-20260825",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cómo puede preparar su imagen una profesional latina en Dallas antes de una promoción?",
+      "shortAnswer": "Puede comparar las demandas del nuevo rol con las señales que hoy comunica. No necesita cambiar todo; necesita ajustar aquello que todavía la presenta desde una responsabilidad anterior.",
+      "routePriority": [
+        "/dallas-hispanos/",
+        "/presencia-ejecutiva-femenina/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "imagen para una promoción en Dallas",
+        "presencia ejecutiva para profesionales latinas"
+      ],
+      "evidenceTopics": [
+        "geo_dallas_promocion_latina",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "Imagen e identidad para sostener liderazgo y dinero Guadalajara México.pdf",
+        "SoniaMcRorey_TuImagenNoMiente_v3.pdf"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "15k2KbjIcU79k-t-nec3f9i1gJFr-4fuy",
+        "1G3J6neBzt4fSKJxbZ4gC3qylR3tQos4X"
+      ],
+      "sourceLocator": [
+        "Imagen e identidad para sostener liderazgo y dinero Guadalajara México.pdf",
+        "SoniaMcRorey_TuImagenNoMiente_v3.pdf"
+      ],
+      "sourceHash": "997e253fbf84abfc7b5bdf70c0ed9e65205a2d8bc1d634ce367bc5dc09006357",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-dallas-networking-profesional-20260825",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cómo puede un profesional hispano en Dallas usar su imagen para facilitar networking?",
+      "shortAnswer": "Puede hacer más clara su función mediante una presentación breve, una imagen congruente y una forma de escuchar que abra conversación. La ropa inicia una lectura, pero la presencia completa la experiencia.",
+      "routePriority": [
+        "/dallas-hispanos/",
+        "/imagen-profesional/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "imagen profesional para networking en Dallas",
+        "presencia de profesionales hispanos"
+      ],
+      "evidenceTopics": [
+        "geo_dallas_networking_profesional",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "SoniaMcRorey_TuImagenNoMiente_v3.pdf",
+        "cloudflare-corpus-comunicacion-no-verbal-presencia.md"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1G3J6neBzt4fSKJxbZ4gC3qylR3tQos4X",
+        "1KScDmo9JF_e0RI3GKoJ2aiH8Ux-Mj5fN"
+      ],
+      "sourceLocator": [
+        "SoniaMcRorey_TuImagenNoMiente_v3.pdf",
+        "cloudflare-corpus-comunicacion-no-verbal-presencia.md"
+      ],
+      "sourceHash": "1fa21125aa28f2194dfb9b906288b1e9ec5acf500249f0bc68059d70fdbb75bb",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-dallas-equipo-comercial-20260825",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Qué puede trabajar un equipo comercial hispano en Dallas sobre imagen profesional?",
+      "shortAnswer": "Puede acordar criterios de claridad, cuidado y adaptación al cliente sin exigir que todas las personas se vean iguales. También puede revisar cómo postura, escucha y trato sostienen la experiencia de la marca.",
+      "routePriority": [
+        "/dallas-hispanos/",
+        "/servicios-asesoria-de-imagen-coaching/talleres/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "imagen profesional para equipos comerciales en Dallas",
+        "presencia de marca sin uniformidad"
+      ],
+      "evidenceTopics": [
+        "geo_dallas_equipo_comercial",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "cloudflare-corpus-servicios-arquitectura-sonia-mcrorey.md",
+        "cloudflare-corpus-comunicacion-no-verbal-presencia.md"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "11Pm-7C5vmS9NeLD6IHry1qtWm1QVqQvt",
+        "1KScDmo9JF_e0RI3GKoJ2aiH8Ux-Mj5fN"
+      ],
+      "sourceLocator": [
+        "cloudflare-corpus-servicios-arquitectura-sonia-mcrorey.md",
+        "cloudflare-corpus-comunicacion-no-verbal-presencia.md"
+      ],
+      "sourceHash": "c6f210e360fde6013b353581b542ed1c92f8f0c1fd783342d59ed88747efc05f",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-new-york-rol-alta-visibilidad-20260825",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cómo puede una profesional hispana en New York preparar su imagen para un rol de alta visibilidad?",
+      "shortAnswer": "Puede definir qué responsabilidad representa, qué audiencias la observan y qué señales deben permanecer consistentes bajo presión. La visibilidad se sostiene mejor cuando imagen, mensaje y conducta parten de una identidad clara.",
+      "routePriority": [
+        "/new-york-hispanos/",
+        "/presencia-ejecutiva-femenina/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "presencia ejecutiva para hispanas en New York",
+        "imagen para roles de alta visibilidad"
+      ],
+      "evidenceTopics": [
+        "geo_new_york_rol_alta_visibilidad",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "Imagen e identidad para sostener liderazgo y dinero Guadalajara México.pdf",
+        "tu imagen es lo que encarnas.pdf"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "15k2KbjIcU79k-t-nec3f9i1gJFr-4fuy",
+        "1R6rA_YcdiGJeXN5lRE11s0b9rnqsJSR-"
+      ],
+      "sourceLocator": [
+        "Imagen e identidad para sostener liderazgo y dinero Guadalajara México.pdf",
+        "tu imagen es lo que encarnas.pdf"
+      ],
+      "sourceHash": "cf0c47e6a062c51d7c60f1cc0a98a1fe8bff7aec70342bfce72efc206245f590",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-new-york-guardarropa-eficiente-20260825",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cómo crear un guardarropa profesional eficiente para una agenda cambiante en New York?",
+      "shortAnswer": "Empieza por las actividades que más se repiten y crea combinaciones capaces de responder a cambios de formalidad. Prioriza ajuste, movilidad, capas y accesorios útiles antes de aumentar el número de prendas.",
+      "routePriority": [
+        "/new-york-hispanos/",
+        "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "guardarropa profesional en New York",
+        "vestimenta para una agenda cambiante"
+      ],
+      "evidenceTopics": [
+        "geo_new_york_guardarropa_eficiente",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "Guardarropa  Manifiesta tu imagen autentica.pptx",
+        "Como trabajar con accesorios y complementos.pptx"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1XiliYslsR2Se1yPYIKrBwWoFtXS98rGY",
+        "1q-Dckg_dqTWzdlDGP3Owg0QQlAJxGM4U"
+      ],
+      "sourceLocator": [
+        "Guardarropa  Manifiesta tu imagen autentica.pptx",
+        "Como trabajar con accesorios y complementos.pptx"
+      ],
+      "sourceHash": "a5f0baec4153ff06caebcb69493a3a14a727664fdab43ef6e487f1d5291d41a4",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "geo-new-york-coaching-online-20260825",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cómo puede ayudar un proceso online de coaching de imagen a un profesional hispano en New York?",
+      "shortAnswer": "Puede ayudarle a ordenar percepción, presencia y decisiones desde su contexto laboral real. El proceso no promete una imagen universal; construye criterios para reconocer qué comunica y qué necesita ajustar.",
+      "routePriority": [
+        "/new-york-hispanos/",
+        "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "coaching de imagen online para hispanos en New York",
+        "criterio de imagen profesional"
+      ],
+      "evidenceTopics": [
+        "geo_new_york_coaching_online",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "cloudflare-corpus-definicion-coaching-imagen-y-abundancia.md",
+        "No todos los profesionales necesitan verse igual.docx"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1BeJmuyDcdxRLUQULjiEZkXxtuDba0Kcj",
+        "1nez8f_tSVseDkjKwiv-V09E96OIFFgls"
+      ],
+      "sourceLocator": [
+        "cloudflare-corpus-definicion-coaching-imagen-y-abundancia.md",
+        "No todos los profesionales necesitan verse igual.docx"
+      ],
+      "sourceHash": "eb2fa2abb29a4d7bfeacf7acfc8ea6cbb0524cb90203da67f2854e5eab76836c",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "buyer-mujer-autoridad-sin-imitar-20260825",
+      "ontologyNode": "Mujeres Líderes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cómo puede una mujer proyectar autoridad sin imitar códigos masculinos de liderazgo?",
+      "shortAnswer": "Puede identificar las señales que hacen visible su criterio, su límite y su dirección, y expresarlas desde una imagen coherente con su identidad. La autoridad no exige copiar otra forma de habitar el poder.",
+      "routePriority": [
+        "/imagen-para-mujeres-lideres/",
+        "/presencia-ejecutiva-femenina/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "autoridad profesional para mujeres",
+        "liderazgo visible sin imitar códigos ajenos"
+      ],
+      "evidenceTopics": [
+        "buyer_mujer_autoridad_sin_imitar",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "Imagen e identidad para sostener liderazgo y dinero Guadalajara México.pdf",
+        "tu imagen es lo que encarnas.pdf"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "15k2KbjIcU79k-t-nec3f9i1gJFr-4fuy",
+        "1R6rA_YcdiGJeXN5lRE11s0b9rnqsJSR-"
+      ],
+      "sourceLocator": [
+        "Imagen e identidad para sostener liderazgo y dinero Guadalajara México.pdf",
+        "tu imagen es lo que encarnas.pdf"
+      ],
+      "sourceHash": "060b80735a8c2c0ab4031e2a298ac390a6b3d15bd23331faf31bf167c83aa828",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "buyer-mujer-ambicion-visible-20260825",
+      "ontologyNode": "Mujeres Líderes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cómo mostrar ambición profesional sin sentir que debo hacerme más pequeña?",
+      "shortAnswer": "Empieza por nombrar la responsabilidad que quieres asumir y observar dónde reduces voz, presencia o reconocimiento. Hacer visible una aspiración no obliga a exagerar; permite que tus decisiones sean congruentes con ella.",
+      "routePriority": [
+        "/imagen-para-mujeres-lideres/",
+        "/seguridad-profesional/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "ambición profesional femenina",
+        "seguridad para ocupar más espacio"
+      ],
+      "evidenceTopics": [
+        "buyer_mujer_ambicion_visible",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "Imagen e identidad para sostener liderazgo y dinero Guadalajara México.pdf",
+        "Imagen interna y externa guadalajara méxico.pdf"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "15k2KbjIcU79k-t-nec3f9i1gJFr-4fuy",
+        "15aTnQdWFIrreIDFa_KUq7Rf8ES587oqf"
+      ],
+      "sourceLocator": [
+        "Imagen e identidad para sostener liderazgo y dinero Guadalajara México.pdf",
+        "Imagen interna y externa guadalajara méxico.pdf"
+      ],
+      "sourceHash": "a2d713ab524219053eada7457195bb486185a05aa4de3b0fcd1849575f4440bf",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "buyer-mujer-promocion-presencia-20260825",
+      "ontologyNode": "Mujeres Líderes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Qué debe revisar una mujer antes de aceptar un puesto con mayor exposición?",
+      "shortAnswer": "Conviene revisar qué cambia en sus audiencias, decisiones y límites, además de la imagen que hoy sostiene. La nueva etapa necesita recursos visibles y una presencia capaces de acompañar una responsabilidad mayor.",
+      "routePriority": [
+        "/presencia-ejecutiva-femenina/",
+        "/presencia-ejecutiva/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "presencia ejecutiva para mujeres",
+        "imagen para un puesto de mayor exposición"
+      ],
+      "evidenceTopics": [
+        "buyer_mujer_promocion_presencia",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "Imagen e identidad para sostener liderazgo y dinero Guadalajara México.pdf",
+        "SoniaMcRorey_TuImagenNoMiente_v3.pdf"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "15k2KbjIcU79k-t-nec3f9i1gJFr-4fuy",
+        "1G3J6neBzt4fSKJxbZ4gC3qylR3tQos4X"
+      ],
+      "sourceLocator": [
+        "Imagen e identidad para sostener liderazgo y dinero Guadalajara México.pdf",
+        "SoniaMcRorey_TuImagenNoMiente_v3.pdf"
+      ],
+      "sourceHash": "85520815cf0c65a11cfec7ea3e53f4588fdf385a8b1f0626b6228d6776448436",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "buyer-mujer-critica-apariencia-20260825",
+      "ontologyNode": "Mujeres Líderes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cómo responder cuando se juzga más mi apariencia que mi trabajo?",
+      "shortAnswer": "Separa la retroalimentación útil de la preferencia o el prejuicio, y vuelve al contexto: función, audiencia y resultado. Puedes ajustar una señal concreta sin aceptar que tu apariencia defina el valor completo de tu trabajo.",
+      "routePriority": [
+        "/imagen-para-mujeres-lideres/",
+        "/imagen-profesional/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "mujeres líderes e imagen profesional",
+        "criterio ante críticas de apariencia"
+      ],
+      "evidenceTopics": [
+        "buyer_mujer_critica_apariencia",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "No todos los profesionales necesitan verse igual.docx",
+        "cloudflare-corpus-axiomas-imagen-sonia-mcrorey.md"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1nez8f_tSVseDkjKwiv-V09E96OIFFgls",
+        "1H_xQAA5hSq_nzSobd8DsQj-3FUikzZ_v"
+      ],
+      "sourceLocator": [
+        "No todos los profesionales necesitan verse igual.docx",
+        "cloudflare-corpus-axiomas-imagen-sonia-mcrorey.md"
+      ],
+      "sourceHash": "b42e662cfb4397d5d2a3e4eaaec06244bd5e857b8a0d7496246b85913865ed9a",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "buyer-mujer-visibilidad-experta-20260825",
+      "ontologyNode": "Mujeres Líderes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cómo puede una experta hacerse visible sin sentir que presume?",
+      "shortAnswer": "Puede compartir criterio, proceso y resultados de su trabajo con claridad, sin convertir la comunicación en autopromoción vacía. La visibilidad profesional también consiste en permitir que otros comprendan qué sabe y cómo aporta.",
+      "routePriority": [
+        "/imagen-para-mujeres-lideres/",
+        "/empresarias/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "visibilidad profesional para mujeres expertas",
+        "marca personal con criterio"
+      ],
+      "evidenceTopics": [
+        "buyer_mujer_visibilidad_experta",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "Servicio Marca Personal.pdf",
+        "tu imagen es lo que encarnas.pdf"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1uMrlJlUDGuPRjUTEMqEEnqJ8SM_L_sJk",
+        "1R6rA_YcdiGJeXN5lRE11s0b9rnqsJSR-"
+      ],
+      "sourceLocator": [
+        "Servicio Marca Personal.pdf",
+        "tu imagen es lo que encarnas.pdf"
+      ],
+      "sourceHash": "96bae1bacb0be5a483a3d60803fbb54078a8bb09acb2e7bb08fe3c9199523f38",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "buyer-hombre-formula-traje-20260825",
+      "ontologyNode": "Hombres Profesionales",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Un hombre necesita usar traje para proyectar autoridad profesional?",
+      "shortAnswer": "No de forma automática. La autoridad depende de función, industria, audiencia, ajuste, cuidado y conducta; un traje fuera de contexto puede comunicar menos criterio que una elección más sencilla y bien resuelta.",
+      "routePriority": [
+        "/presencia-ejecutiva/",
+        "/imagen-profesional/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "imagen ejecutiva masculina",
+        "autoridad profesional sin traje obligatorio"
+      ],
+      "evidenceTopics": [
+        "buyer_hombre_formula_traje",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "No todos los profesionales necesitan verse igual.docx",
+        "cloudflare-corpus-axiomas-imagen-sonia-mcrorey.md"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1nez8f_tSVseDkjKwiv-V09E96OIFFgls",
+        "1H_xQAA5hSq_nzSobd8DsQj-3FUikzZ_v"
+      ],
+      "sourceLocator": [
+        "No todos los profesionales necesitan verse igual.docx",
+        "cloudflare-corpus-axiomas-imagen-sonia-mcrorey.md"
+      ],
+      "sourceHash": "d9114403c88971198be898a60386a0fceab6f0cee94bcf02dd09ce96d7b5845a",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "buyer-hombre-lenguaje-corporal-20260825",
+      "ontologyNode": "Hombres Profesionales",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Qué puede revisar un hombre de su lenguaje corporal para proyectar seguridad sin rigidez?",
+      "shortAnswer": "Puede observar postura, velocidad, mirada, manos y reacción al desacuerdo. Seguridad no significa endurecer el cuerpo; significa mantener presencia, escucha y dirección sin cerrar la interacción.",
+      "routePriority": [
+        "/comunicacion-no-verbal/",
+        "/presencia-ejecutiva/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "lenguaje corporal masculino",
+        "seguridad profesional sin rigidez"
+      ],
+      "evidenceTopics": [
+        "buyer_hombre_lenguaje_corporal",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "cloudflare-corpus-comunicacion-no-verbal-presencia.md",
+        "Imagen e identidad para sostener liderazgo y dinero Guadalajara México.pdf"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1KScDmo9JF_e0RI3GKoJ2aiH8Ux-Mj5fN",
+        "15k2KbjIcU79k-t-nec3f9i1gJFr-4fuy"
+      ],
+      "sourceLocator": [
+        "cloudflare-corpus-comunicacion-no-verbal-presencia.md",
+        "Imagen e identidad para sostener liderazgo y dinero Guadalajara México.pdf"
+      ],
+      "sourceHash": "cdad43f0b8ef799bc7d9be2824c214de8120524402f0ddc98c6f604fc570399a",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "buyer-hombre-accesorios-identidad-20260825",
+      "ontologyNode": "Hombres Profesionales",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cómo usar accesorios masculinos sin que distraigan de mi presencia profesional?",
+      "shortAnswer": "Elige pocos elementos relacionados con tu estilo, escala y contexto, y repítelos con intención. Un accesorio funciona cuando completa la lectura de la persona, no cuando compite con todo lo que quiere comunicar.",
+      "routePriority": [
+        "/imagen-profesional/",
+        "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "accesorios masculinos profesionales",
+        "estilo personal para hombres"
+      ],
+      "evidenceTopics": [
+        "buyer_hombre_accesorios_identidad",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "Como trabajar con accesorios y complementos.pptx",
+        "cloudflare-corpus-axiomas-imagen-sonia-mcrorey.md"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1q-Dckg_dqTWzdlDGP3Owg0QQlAJxGM4U",
+        "1H_xQAA5hSq_nzSobd8DsQj-3FUikzZ_v"
+      ],
+      "sourceLocator": [
+        "Como trabajar con accesorios y complementos.pptx",
+        "cloudflare-corpus-axiomas-imagen-sonia-mcrorey.md"
+      ],
+      "sourceHash": "b8123941839464ba35c0c94db6f7e270592da39ff20875a81cc00313aaebab25",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "buyer-hombre-cambio-carrera-20260825",
+      "ontologyNode": "Hombres Profesionales",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cómo actualizar mi imagen masculina después de un cambio de carrera?",
+      "shortAnswer": "Revisa qué parte de tu guardarropa pertenece a la función anterior y qué exige el nuevo contexto. Conserva lo que sigue expresando identidad y construye combinaciones que hagan legible tu nueva dirección profesional.",
+      "routePriority": [
+        "/imagen-profesional/",
+        "/coach-de-imagen/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "imagen masculina para un cambio de carrera",
+        "actualizar guardarropa profesional"
+      ],
+      "evidenceTopics": [
+        "buyer_hombre_cambio_carrera",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "Guardarropa  Manifiesta tu imagen autentica.pptx",
+        "SoniaMcRorey_TuImagenNoMiente_v3.pdf"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1XiliYslsR2Se1yPYIKrBwWoFtXS98rGY",
+        "1G3J6neBzt4fSKJxbZ4gC3qylR3tQos4X"
+      ],
+      "sourceLocator": [
+        "Guardarropa  Manifiesta tu imagen autentica.pptx",
+        "SoniaMcRorey_TuImagenNoMiente_v3.pdf"
+      ],
+      "sourceHash": "de07225a1ed9196b521ce3eaeb23d54fede11810ef6d4fe68c5a22cb0ae80dce",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "buyer-hombre-hibrido-camara-20260825",
+      "ontologyNode": "Hombres Profesionales",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cómo adaptar mi imagen masculina a oficina y videollamadas sin duplicar el guardarropa?",
+      "shortAnswer": "Usa una base común y ajusta contraste, capas y nivel de estructura según el formato. La misma prenda puede funcionar distinto en cámara y en persona si se cuidan encuadre, color y combinación.",
+      "routePriority": [
+        "/imagen-profesional/",
+        "/comunicacion-no-verbal/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "imagen masculina híbrida",
+        "guardarropa para oficina y videollamadas"
+      ],
+      "evidenceTopics": [
+        "buyer_hombre_hibrido_camara",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "La Ciencia del Color en Tu Imagen.docx",
+        "Guardarropa  Manifiesta tu imagen autentica.pptx"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1gQ9j9D8EKkn_T-Gra_5-I42IefPycCfM",
+        "1XiliYslsR2Se1yPYIKrBwWoFtXS98rGY"
+      ],
+      "sourceLocator": [
+        "La Ciencia del Color en Tu Imagen.docx",
+        "Guardarropa  Manifiesta tu imagen autentica.pptx"
+      ],
+      "sourceHash": "ea66a1b7ecf04eaae1f2442d60f62d0bcae15b2c135cf5173fa684184f6b7138",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "buyer-fundador-promesa-marca-20260825",
+      "ontologyNode": "Empresarias y Marca Personal",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cómo saber si mi imagen personal sostiene la promesa de mi negocio?",
+      "shortAnswer": "Compara lo que tu negocio promete con la experiencia que das al presentarte, explicar y relacionarte. Si la propuesta habla de claridad o confianza, pero tu presencia comunica confusión, existe una brecha que puede trabajarse.",
+      "routePriority": [
+        "/empresarias/",
+        "/imagen-estrategica/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "imagen personal y promesa de marca",
+        "presencia de fundadores"
+      ],
+      "evidenceTopics": [
+        "buyer_fundador_promesa_marca",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "Servicio Marca Personal.pdf",
+        "SoniaMcRorey_TuImagenNoMiente_v3.pdf"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1uMrlJlUDGuPRjUTEMqEEnqJ8SM_L_sJk",
+        "1G3J6neBzt4fSKJxbZ4gC3qylR3tQos4X"
+      ],
+      "sourceLocator": [
+        "Servicio Marca Personal.pdf",
+        "SoniaMcRorey_TuImagenNoMiente_v3.pdf"
+      ],
+      "sourceHash": "87b14d80d93fe3392a4663fa0a097170df47595702735fa9741071310805a213",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "buyer-consultor-comunicar-valor-20260825",
+      "ontologyNode": "Empresarias y Marca Personal",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cómo puede una consultora comunicar valor antes de explicar todos sus servicios?",
+      "shortAnswer": "Puede hacer legibles su especialidad, criterio y forma de trabajar mediante una presentación clara y una presencia congruente. La imagen no demuestra por sí sola el valor, pero puede facilitar o dificultar que otros lo reconozcan.",
+      "routePriority": [
+        "/empresarias/",
+        "/imagen-profesional/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "imagen profesional para consultoras",
+        "comunicar valor con presencia"
+      ],
+      "evidenceTopics": [
+        "buyer_consultor_comunicar_valor",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "Servicio Marca Personal.pdf",
+        "tu imagen es lo que encarnas.pdf"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1uMrlJlUDGuPRjUTEMqEEnqJ8SM_L_sJk",
+        "1R6rA_YcdiGJeXN5lRE11s0b9rnqsJSR-"
+      ],
+      "sourceLocator": [
+        "Servicio Marca Personal.pdf",
+        "tu imagen es lo que encarnas.pdf"
+      ],
+      "sourceHash": "506d0f39a8e89b7663ea1163d64481c21cb00d060e9c3e71a34c25bd6fe3e384",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "buyer-fundador-lanzamiento-20260825",
+      "ontologyNode": "Empresarias y Marca Personal",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Qué debe revisar una persona fundadora antes de presentar una nueva oferta?",
+      "shortAnswer": "Debe revisar si el mensaje, la imagen y la forma de ocupar el espacio expresan la etapa actual del negocio. Una oferta nueva pierde claridad cuando quien la presenta todavía comunica una versión anterior.",
+      "routePriority": [
+        "/imagen-estrategica/",
+        "/empresarias/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "imagen para lanzar una nueva oferta",
+        "presencia estratégica de fundadores"
+      ],
+      "evidenceTopics": [
+        "buyer_fundador_lanzamiento",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "Servicio Marca Personal.pdf",
+        "SoniaMcRorey_TuImagenNoMiente_v3.pdf"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1uMrlJlUDGuPRjUTEMqEEnqJ8SM_L_sJk",
+        "1G3J6neBzt4fSKJxbZ4gC3qylR3tQos4X"
+      ],
+      "sourceLocator": [
+        "Servicio Marca Personal.pdf",
+        "SoniaMcRorey_TuImagenNoMiente_v3.pdf"
+      ],
+      "sourceHash": "b330c99b6105eb8f203c400b4bd89dc8640c8b99090116252171a57ce10d102e",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "buyer-consultor-foto-video-20260825",
+      "ontologyNode": "Empresarias y Marca Personal",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cómo preparar mi imagen para fotos y videos de marca personal sin sentirme disfrazado?",
+      "shortAnswer": "Define primero qué trabajo, etapa y tono deben representar las imágenes. Después elige vestimenta, color y postura que ya puedas reconocer como propios, en lugar de construir un personaje solo para la sesión.",
+      "routePriority": [
+        "/imagen-estrategica/",
+        "/imagen-profesional/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "fotos profesionales de marca personal",
+        "imagen auténtica para video"
+      ],
+      "evidenceTopics": [
+        "buyer_consultor_foto_video",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "Servicio Marca Personal.pdf",
+        "La Ciencia del Color en Tu Imagen.docx"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1uMrlJlUDGuPRjUTEMqEEnqJ8SM_L_sJk",
+        "1gQ9j9D8EKkn_T-Gra_5-I42IefPycCfM"
+      ],
+      "sourceLocator": [
+        "Servicio Marca Personal.pdf",
+        "La Ciencia del Color en Tu Imagen.docx"
+      ],
+      "sourceHash": "4723c7d4c0d266385b7e31506941f445db3a797afbbc4d50b2d8e973bf3bc27d",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "buyer-fundador-ventas-presencia-20260825",
+      "ontologyNode": "Empresarias y Marca Personal",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cómo influye la presencia del fundador en una conversación de ventas?",
+      "shortAnswer": "La presencia influye en cómo se reciben claridad, confianza y responsabilidad durante la conversación. No reemplaza una buena oferta, pero puede reforzarla cuando el cuerpo, la imagen y el mensaje expresan la misma dirección.",
+      "routePriority": [
+        "/empresarias/",
+        "/comunicacion-no-verbal/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "presencia del fundador en ventas",
+        "imagen y confianza profesional"
+      ],
+      "evidenceTopics": [
+        "buyer_fundador_ventas_presencia",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "cloudflare-corpus-comunicacion-no-verbal-presencia.md",
+        "SoniaMcRorey_TuImagenNoMiente_v3.pdf"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1KScDmo9JF_e0RI3GKoJ2aiH8Ux-Mj5fN",
+        "1G3J6neBzt4fSKJxbZ4gC3qylR3tQos4X"
+      ],
+      "sourceLocator": [
+        "cloudflare-corpus-comunicacion-no-verbal-presencia.md",
+        "SoniaMcRorey_TuImagenNoMiente_v3.pdf"
+      ],
+      "sourceHash": "b8b4d94b978c9bebc4285f2646e4e20e992c89c52e5ba117a8b793a750942d07",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "buyer-equipo-criterios-sin-uniforme-20260825",
+      "ontologyNode": "Imagen Empresarial y Equipos",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cómo definir criterios de imagen para un equipo sin convertirlos en uniforme?",
+      "shortAnswer": "Define el resultado que debe compartir el equipo: claridad, cuidado, adaptación al cliente o reconocimiento de función. Después permite variaciones de estilo dentro de límites comprensibles y explicados.",
+      "routePriority": [
+        "/servicios-asesoria-de-imagen-coaching/talleres/",
+        "/imagen-profesional/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "criterios de imagen para equipos",
+        "presencia corporativa sin uniforme"
+      ],
+      "evidenceTopics": [
+        "buyer_equipo_criterios_sin_uniforme",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "cloudflare-corpus-servicios-arquitectura-sonia-mcrorey.md",
+        "No todos los profesionales necesitan verse igual.docx"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "11Pm-7C5vmS9NeLD6IHry1qtWm1QVqQvt",
+        "1nez8f_tSVseDkjKwiv-V09E96OIFFgls"
+      ],
+      "sourceLocator": [
+        "cloudflare-corpus-servicios-arquitectura-sonia-mcrorey.md",
+        "No todos los profesionales necesitan verse igual.docx"
+      ],
+      "sourceHash": "5a67d7e196d5465308559654ff05d70fe7424571e1b9d723bdee60802a03adaf",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "buyer-vocero-coherencia-marca-20260825",
+      "ontologyNode": "Imagen Empresarial y Equipos",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Qué debe revisar una persona vocera para representar a su organización con coherencia?",
+      "shortAnswer": "Debe comprender el mensaje, el nivel de autoridad que representa y la experiencia que la organización quiere ofrecer. Imagen, postura, escucha y respuesta deben acompañar esa función sin borrar su identidad personal.",
+      "routePriority": [
+        "/comunicacion-no-verbal-ejecutiva/",
+        "/servicios-asesoria-de-imagen-coaching/talleres/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "imagen profesional para voceros",
+        "coherencia de marca en comunicación ejecutiva"
+      ],
+      "evidenceTopics": [
+        "buyer_vocero_coherencia_marca",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "cloudflare-corpus-comunicacion-no-verbal-presencia.md",
+        "cloudflare-corpus-servicios-arquitectura-sonia-mcrorey.md"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1KScDmo9JF_e0RI3GKoJ2aiH8Ux-Mj5fN",
+        "11Pm-7C5vmS9NeLD6IHry1qtWm1QVqQvt"
+      ],
+      "sourceLocator": [
+        "cloudflare-corpus-comunicacion-no-verbal-presencia.md",
+        "cloudflare-corpus-servicios-arquitectura-sonia-mcrorey.md"
+      ],
+      "sourceHash": "67475298e643a63d8893e30751d8e3bdd5dacfb4efb63421ff1e3918296d8784",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "buyer-equipo-reunion-cliente-20260825",
+      "ontologyNode": "Imagen Empresarial y Equipos",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Qué señales de presencia puede revisar un equipo antes de reunirse con un cliente importante?",
+      "shortAnswer": "Puede revisar cómo entra, se distribuye, escucha, toma turnos y responde a preguntas. También conviene acordar quién conduce cada parte para que la presencia colectiva no comunique desorden.",
+      "routePriority": [
+        "/servicios-asesoria-de-imagen-coaching/talleres/",
+        "/comunicacion-no-verbal/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "presencia profesional para reuniones con clientes",
+        "comunicación no verbal de equipos"
+      ],
+      "evidenceTopics": [
+        "buyer_equipo_reunion_cliente",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "cloudflare-corpus-comunicacion-no-verbal-presencia.md",
+        "cloudflare-corpus-axiomas-imagen-sonia-mcrorey.md"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1KScDmo9JF_e0RI3GKoJ2aiH8Ux-Mj5fN",
+        "1H_xQAA5hSq_nzSobd8DsQj-3FUikzZ_v"
+      ],
+      "sourceLocator": [
+        "cloudflare-corpus-comunicacion-no-verbal-presencia.md",
+        "cloudflare-corpus-axiomas-imagen-sonia-mcrorey.md"
+      ],
+      "sourceHash": "b2ceb735cd32f0ab429cbfd2ccd80c019f095f55185f9206eecffd54f0b1b055",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "buyer-equipo-retroalimentacion-imagen-20260825",
+      "ontologyNode": "Imagen Empresarial y Equipos",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cómo dar retroalimentación de imagen profesional sin atacar a una persona?",
+      "shortAnswer": "Habla de una situación, una señal observable y el efecto relacionado con la función. Evita convertir gusto personal, cuerpo o identidad en problema; la conversación debe ofrecer un criterio aplicable y respetuoso.",
+      "routePriority": [
+        "/servicios-asesoria-de-imagen-coaching/talleres/",
+        "/imagen-profesional/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "retroalimentación de imagen profesional",
+        "criterios respetuosos para equipos"
+      ],
+      "evidenceTopics": [
+        "buyer_equipo_retroalimentacion_imagen",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "No todos los profesionales necesitan verse igual.docx",
+        "cloudflare-corpus-servicios-arquitectura-sonia-mcrorey.md"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1nez8f_tSVseDkjKwiv-V09E96OIFFgls",
+        "11Pm-7C5vmS9NeLD6IHry1qtWm1QVqQvt"
+      ],
+      "sourceLocator": [
+        "No todos los profesionales necesitan verse igual.docx",
+        "cloudflare-corpus-servicios-arquitectura-sonia-mcrorey.md"
+      ],
+      "sourceHash": "b7e31ec21b0d107b31aa44500dc11713f4a9dfd67b5dbc9d21ca3e086176630b",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "buyer-equipo-taller-necesidad-20260825",
+      "ontologyNode": "Imagen Empresarial y Equipos",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cuándo necesita una empresa un taller de imagen y presencia en lugar de reglas de vestimenta?",
+      "shortAnswer": "Cuando el problema incluye trato, comunicación, percepción de función o experiencia del cliente, una lista de prendas resulta insuficiente. Un taller permite comprender por qué existen los criterios y cómo aplicarlos en situaciones reales.",
+      "routePriority": [
+        "/servicios-asesoria-de-imagen-coaching/talleres/",
+        "/imagen-profesional/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "taller de imagen empresarial",
+        "presencia profesional para equipos"
+      ],
+      "evidenceTopics": [
+        "buyer_equipo_taller_necesidad",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "cloudflare-corpus-servicios-arquitectura-sonia-mcrorey.md",
+        "cloudflare-corpus-comunicacion-no-verbal-presencia.md"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "11Pm-7C5vmS9NeLD6IHry1qtWm1QVqQvt",
+        "1KScDmo9JF_e0RI3GKoJ2aiH8Ux-Mj5fN"
+      ],
+      "sourceLocator": [
+        "cloudflare-corpus-servicios-arquitectura-sonia-mcrorey.md",
+        "cloudflare-corpus-comunicacion-no-verbal-presencia.md"
+      ],
+      "sourceHash": "cf244247742fa736789c662bf34667e46b97e78e53283f1eac3877f8266cf590",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "buyer-remoto-presencia-camara-20260825",
+      "ontologyNode": "Presencia Ejecutiva",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cómo proyectar presencia ejecutiva por cámara sin actuar para la pantalla?",
+      "shortAnswer": "Ajusta encuadre, luz, mirada y ritmo para facilitar la conversación, pero conserva una forma natural de hablar y escuchar. La cámara necesita claridad adicional, no una personalidad distinta.",
+      "routePriority": [
+        "/presencia-ejecutiva/",
+        "/comunicacion-no-verbal-ejecutiva/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "presencia ejecutiva por cámara",
+        "comunicación no verbal en videollamadas"
+      ],
+      "evidenceTopics": [
+        "buyer_remoto_presencia_camara",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "cloudflare-corpus-comunicacion-no-verbal-presencia.md",
+        "tu imagen es lo que encarnas.pdf"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1KScDmo9JF_e0RI3GKoJ2aiH8Ux-Mj5fN",
+        "1R6rA_YcdiGJeXN5lRE11s0b9rnqsJSR-"
+      ],
+      "sourceLocator": [
+        "cloudflare-corpus-comunicacion-no-verbal-presencia.md",
+        "tu imagen es lo que encarnas.pdf"
+      ],
+      "sourceHash": "6655f3dae537feb23f5649d1f7812691ad3062ec881b4d45fafc58f93ae062c4",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "buyer-remoto-contexto-cultural-20260825",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cómo adaptar mi imagen a otro país sin depender de estereotipos culturales?",
+      "shortAnswer": "Observa el sector, la organización, la audiencia y el propósito de cada encuentro. Pregunta por protocolos concretos y ajusta formalidad o recursos sin asumir que todas las personas de un país esperan lo mismo.",
+      "routePriority": [
+        "/coach-de-imagen/",
+        "/imagen-profesional/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "imagen profesional en otro país",
+        "adaptación intercultural sin estereotipos"
+      ],
+      "evidenceTopics": [
+        "buyer_remoto_contexto_cultural",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "No todos los profesionales necesitan verse igual.docx",
+        "cloudflare-corpus-servicios-arquitectura-sonia-mcrorey.md"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1nez8f_tSVseDkjKwiv-V09E96OIFFgls",
+        "11Pm-7C5vmS9NeLD6IHry1qtWm1QVqQvt"
+      ],
+      "sourceLocator": [
+        "No todos los profesionales necesitan verse igual.docx",
+        "cloudflare-corpus-servicios-arquitectura-sonia-mcrorey.md"
+      ],
+      "sourceHash": "fec1dbf81a1823eecf10162632a8fc8a6c7c4426d6caa400aa8306ad50f6a6b1",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "buyer-remoto-viaje-guardarropa-20260825",
+      "ontologyNode": "Guardarropa Profesional",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cómo preparar un guardarropa de viaje para varias reuniones profesionales?",
+      "shortAnswer": "Organiza las reuniones por formalidad, clima y actividad, y elige piezas que formen varias combinaciones. Incluye alternativas para cambios reales, no prendas adicionales sin una función definida.",
+      "routePriority": [
+        "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen/",
+        "/imagen-profesional/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "guardarropa de viaje profesional",
+        "combinaciones para reuniones de trabajo"
+      ],
+      "evidenceTopics": [
+        "buyer_remoto_viaje_guardarropa",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "Guardarropa  Manifiesta tu imagen autentica.pptx",
+        "Closet o compras E-Book Soniamcrorey.pdf"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1XiliYslsR2Se1yPYIKrBwWoFtXS98rGY",
+        "19llne6PZh1-knas1KcqSLWDA3sdHjMP9"
+      ],
+      "sourceLocator": [
+        "Guardarropa  Manifiesta tu imagen autentica.pptx",
+        "Closet o compras E-Book Soniamcrorey.pdf"
+      ],
+      "sourceHash": "54c77340e78c364e588b2bbef0b52b446a3c9942d580c388e1578bb24b47d90f",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "buyer-remoto-idioma-identidad-20260825",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Qué ventaja tiene trabajar identidad e imagen profesional en mi idioma principal?",
+      "shortAnswer": "Permite nombrar con mayor precisión cómo te ves, qué quieres comunicar y qué señales te incomodan. Esa precisión ayuda a tomar decisiones propias, aunque el trabajo profesional ocurra en más de un idioma.",
+      "routePriority": [
+        "/coach-de-imagen/",
+        "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "coaching de imagen en español",
+        "identidad profesional para hispanohablantes"
+      ],
+      "evidenceTopics": [
+        "buyer_remoto_idioma_identidad",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "cloudflare-corpus-definicion-coaching-imagen-y-abundancia.md",
+        "Imagen interna y externa guadalajara méxico.pdf"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1BeJmuyDcdxRLUQULjiEZkXxtuDba0Kcj",
+        "15aTnQdWFIrreIDFa_KUq7Rf8ES587oqf"
+      ],
+      "sourceLocator": [
+        "cloudflare-corpus-definicion-coaching-imagen-y-abundancia.md",
+        "Imagen interna y externa guadalajara méxico.pdf"
+      ],
+      "sourceHash": "ed6b595e3e5d296046b199bdae8b2f6f13d695684c55a293bf9b3ac486cd8809",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "buyer-remoto-consistencia-mercados-20260825",
+      "ontologyNode": "Mercados Hispanohablantes",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cómo mantener una presencia reconocible cuando trabajo con clientes de varios países?",
+      "shortAnswer": "Define los rasgos que no cambian: propuesta, trato, criterio y base visual. Después adapta ejemplos, protocolo y formalidad a cada contexto sin reconstruir tu identidad en cada conversación.",
+      "routePriority": [
+        "/imagen-estrategica/",
+        "/coach-de-imagen/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "presencia profesional en varios países",
+        "imagen estratégica para mercados hispanos"
+      ],
+      "evidenceTopics": [
+        "buyer_remoto_consistencia_mercados",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "Servicio Marca Personal.pdf",
+        "No todos los profesionales necesitan verse igual.docx"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1uMrlJlUDGuPRjUTEMqEEnqJ8SM_L_sJk",
+        "1nez8f_tSVseDkjKwiv-V09E96OIFFgls"
+      ],
+      "sourceLocator": [
+        "Servicio Marca Personal.pdf",
+        "No todos los profesionales necesitan verse igual.docx"
+      ],
+      "sourceHash": "a65e89151190f77844d0231c85c4ec7c369a762ecb745f90385a7fb035a22cab",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "buyer-practico-color-rostro-20260825",
+      "ontologyNode": "Colorimetría",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Por qué conviene observar el color cerca del rostro y no solo en una paleta?",
+      "shortAnswer": "Porque luz, contraste, cabello, ojos y piel modifican la lectura del color en cada persona. La observación cerca del rostro permite evaluar el efecto real antes de convertir una recomendación general en decisión.",
+      "routePriority": [
+        "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen/",
+        "/imagen-profesional/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "colorimetría cerca del rostro",
+        "color para imagen profesional"
+      ],
+      "evidenceTopics": [
+        "buyer_practico_color_rostro",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "La Ciencia del Color en Tu Imagen.docx",
+        "cloudflare-corpus-axiomas-imagen-sonia-mcrorey.md"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1gQ9j9D8EKkn_T-Gra_5-I42IefPycCfM",
+        "1H_xQAA5hSq_nzSobd8DsQj-3FUikzZ_v"
+      ],
+      "sourceLocator": [
+        "La Ciencia del Color en Tu Imagen.docx",
+        "cloudflare-corpus-axiomas-imagen-sonia-mcrorey.md"
+      ],
+      "sourceHash": "43d85349ac3be32cf01e66e198eeb49301232221f06a91d0bb87738b482da84e",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "buyer-practico-closet-no-comprar-20260825",
+      "ontologyNode": "Guardarropa Profesional",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cómo saber si necesito comprar ropa o aprender a combinar lo que ya tengo?",
+      "shortAnswer": "Haz un inventario de actividades y combinaciones completas. Si existen prendas suficientes pero no forman conjuntos útiles, el problema es de organización; si falta una función concreta, entonces la compra tiene un propósito verificable.",
+      "routePriority": [
+        "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen/",
+        "/imagen-profesional/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "ordenar el clóset antes de comprar",
+        "guardarropa profesional funcional"
+      ],
+      "evidenceTopics": [
+        "buyer_practico_closet_no_comprar",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "Closet o compras E-Book Soniamcrorey.pdf",
+        "Guia practica limpia de closet actualizado Manifiesta.pdf"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "19llne6PZh1-knas1KcqSLWDA3sdHjMP9",
+        "1gKFBy2J0eNqNluqCZwOAmpnP9zq5o2IA"
+      ],
+      "sourceLocator": [
+        "Closet o compras E-Book Soniamcrorey.pdf",
+        "Guia practica limpia de closet actualizado Manifiesta.pdf"
+      ],
+      "sourceHash": "7590549f7581efd3ca97305fee63eb86d2d0b65e0a795d09a0ac280ab679669d",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "buyer-practico-accesorio-mensaje-20260825",
+      "ontologyNode": "Guardarropa Profesional",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cómo elegir accesorios que apoyen mi mensaje profesional?",
+      "shortAnswer": "Elige escala, cantidad, color y nivel de detalle según tu cuerpo, tu estilo y el contexto. El accesorio debe dirigir o completar la mirada, no introducir una historia que compita con tu función.",
+      "routePriority": [
+        "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen/",
+        "/imagen-profesional/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "accesorios para imagen profesional",
+        "complementos según estilo y contexto"
+      ],
+      "evidenceTopics": [
+        "buyer_practico_accesorio_mensaje",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "Como trabajar con accesorios y complementos.pptx",
+        "cloudflare-corpus-axiomas-imagen-sonia-mcrorey.md"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1q-Dckg_dqTWzdlDGP3Owg0QQlAJxGM4U",
+        "1H_xQAA5hSq_nzSobd8DsQj-3FUikzZ_v"
+      ],
+      "sourceLocator": [
+        "Como trabajar con accesorios y complementos.pptx",
+        "cloudflare-corpus-axiomas-imagen-sonia-mcrorey.md"
+      ],
+      "sourceHash": "4dfce379d34052bf2f1c2424d18707b70857bf7fdd0e2b826ba5ce0d3e6a136e",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "buyer-practico-compra-criterio-20260825",
+      "ontologyNode": "Guardarropa Profesional",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Qué preguntas debo hacer antes de comprar una prenda para trabajar?",
+      "shortAnswer": "Pregunta qué actividad resuelve, con qué prendas combina, cuántas veces puede usarse, qué cuidado exige y si permite moverte. Si no responde a una necesidad real, la compra no fortalece el guardarropa.",
+      "routePriority": [
+        "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen/",
+        "/imagen-profesional/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "compras inteligentes para el guardarropa profesional",
+        "criterios antes de comprar ropa"
+      ],
+      "evidenceTopics": [
+        "buyer_practico_compra_criterio",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "Closet o compras E-Book Soniamcrorey.pdf",
+        "Guardarropa  Manifiesta tu imagen autentica.pptx"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "19llne6PZh1-knas1KcqSLWDA3sdHjMP9",
+        "1XiliYslsR2Se1yPYIKrBwWoFtXS98rGY"
+      ],
+      "sourceLocator": [
+        "Closet o compras E-Book Soniamcrorey.pdf",
+        "Guardarropa  Manifiesta tu imagen autentica.pptx"
+      ],
+      "sourceHash": "f22dc44456f027b52e39e27d56f535712e3f5d8a2325bbedc10337b1e59af6ef",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    },
+    {
+      "id": "buyer-practico-jornada-larga-20260825",
+      "ontologyNode": "Guardarropa Profesional",
+      "userIntent": "governed_geo_buyer_decision_gap",
+      "question": "¿Cómo construir una imagen profesional que funcione durante una jornada larga?",
+      "shortAnswer": "Prioriza ajuste, movilidad, temperatura, calzado y facilidad para recuperar la forma de la prenda. La presencia se debilita si la ropa exige atención constante o impide concentrarte en el trabajo.",
+      "routePriority": [
+        "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen/",
+        "/imagen-profesional/",
+        "/contacto/"
+      ],
+      "anchorPhrases": [
+        "imagen profesional para jornadas largas",
+        "ropa de trabajo con movilidad"
+      ],
+      "evidenceTopics": [
+        "buyer_practico_jornada_larga",
+        "sonia_source",
+        "geo_buyer_decision"
+      ],
+      "sourceSignals": [
+        "Guardarropa  Manifiesta tu imagen autentica.pptx",
+        "SoniaMcRorey_TuImagenNoMiente_v3.pdf"
+      ],
+      "conversionBridge": "Conectar con la ruta prioritaria según intención, audiencia y contexto profesional.",
+      "guardrails": [
+        "No inventar precios, garantías, fechas, agenda, disponibilidad ni estado de contacto.",
+        "No usar fuentes externas, datos privados ni material fuera del corpus Sonia/Coach De Imagen.",
+        "No terapia, diagnóstico médico, estereotipos culturales ni promesas de resultados."
+      ],
+      "sourceIds": [
+        "1XiliYslsR2Se1yPYIKrBwWoFtXS98rGY",
+        "1G3J6neBzt4fSKJxbZ4gC3qylR3tQos4X"
+      ],
+      "sourceLocator": [
+        "Guardarropa  Manifiesta tu imagen autentica.pptx",
+        "SoniaMcRorey_TuImagenNoMiente_v3.pdf"
+      ],
+      "sourceHash": "fbedab54fd1a3fe2467d0217571e83606475d95d2df3ccd3ae08a81e8a2d569a",
+      "sourceVersion": "2026-08-25-geo-buyer-decision-batch-provenance-v1",
+      "contentMode": "editorial_synthesis_from_reviewed_sonia_sources"
+    }
+  ]
+}
