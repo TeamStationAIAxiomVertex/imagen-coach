@@ -308,3 +308,13 @@ Do not cut DNS from Weblium to Cloudflare until:
 - link tests pass
 - visual QA passes on desktop and mobile
 - Cloudflare preview crawl confirms all 35 URLs return expected status
+
+## SEO recovery regression, 2026-09-08
+
+Live evidence: 115 of 116 sitemap URLs redirected to slash URLs while final HTML declared non-slash canonicals; 48 geographic pages exposed internal search/semantic labels; 43 pages contained FAQ questions absent from body text; an unknown URL returned the homepage with HTTP 200. Existing approved article changes must remain intact.
+
+Acceptance: canonical page URLs, sitemap locations, schema page references and rendered page links agree with the directory-index serving format; unknown pages use a top-level noindex 404 document; geography templates do not expose internal labels; FAQ markup retains only questions and answers present in main content. API/file/external URLs remain unchanged. Approved source SHA-256 remains 0376208b1d7aa824a26e6901af3e0e89c5d1d2ae6aa12c657c091bb0cfcc7876.
+
+Checks: node --test scripts/test-page-seo.mjs; npm run build; npm run validate; local Pages HTTP checks for root, geographic, service, approved article and unknown routes; desktop/mobile geography and 404 navigation. Production host redirects require separate deployment approval.
+
+Focused browser regression: the first 404 template omitted the shared navigation script; the mobile menu button had no handler. Require the existing shared script on the 404 document and re-test mobile menu opening and return-home navigation.

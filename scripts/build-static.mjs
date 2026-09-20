@@ -5,6 +5,9 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { imageSize } from "image-size";
 import sharp from "sharp";
+import { finalizePageHtml, pageUrl } from "./page-seo.mjs";
+
+let CANONICAL_PAGE_ROUTES = new Set();
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DIST = path.join(ROOT, "dist");
@@ -98,12 +101,44 @@ const APPROVED_SECURITY_ARTICLE_HEADINGS = [
   "¿Sientes que estás para más, pero todavía no ves qué te está frenando?",
 ];
 const APPROVED_SECURITY_ARTICLE_FINAL_CTA = "Si sientes que estás para más pero todavía no ves qué te está frenando, podemos comenzar por ahí.";
+const VALIDATION_ARTICLE_ROUTE = "/imagen-presencia/quien-eres-cuando-nadie-te-esta-validando";
+const IMAGE_VALUE_ARTICLE_ROUTE = "/imagen-presencia/la-imagen-no-crea-tu-valor-lo-hace-visible";
 const APPROVED_SECURITY_ARTICLE_LINKS = [
   ["posición de liderazgo", "/liderazgo"],
   ["seguridad profesional", "/seguridad-profesional"],
   ["imagen estratégica", "/imagen-estrategica"],
   ["imagen profesional", "/imagen-profesional"],
 ];
+const ARTICLE_INLINE_LINKS = {
+  [VALIDATION_ARTICLE_ROUTE]: [
+    ["aprobación de los demás", "/inseguridad-profesional"],
+    ["precio de tu trabajo", APPROVED_SECURITY_ARTICLE_ROUTE],
+    ["experiencia y algo valioso que aportar", "/imagen-profesional"],
+    ["crecer profesionalmente", "/imagen-presencia/sostener-tu-siguiente-nivel-profesional"],
+    ["ocupar tu lugar", "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen"],
+    ["búsqueda de validación", "/inseguridad-profesional"],
+    ["propio criterio", "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia"],
+    ["procesos de pensamiento", "/metodo-sonia-mcrorey"],
+    ["tomar una decisión", "/sistema-presencia-profesional"],
+    ["mayor autoridad", "/liderazgo-visible"],
+    ["cambio real de identidad", "/imagen-presencia/imagen-identidad-liderazgo"],
+    ["ausencia de miedo", "/presencia-ejecutiva"],
+  ],
+  [IMAGE_VALUE_ARTICLE_ROUTE]: [
+    ["tu apariencia", "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen"],
+    ["la idea que los demás construyen de ti", "/imagen-profesional"],
+    ["tu comportamiento", "/comunicacion-no-verbal"],
+    ["ocupar un espacio", "/presencia-ejecutiva"],
+    ["capacidad de ocupar tu lugar", "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen"],
+    ["hablar de su valor", "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia"],
+    ["verte más profesional", "/imagen-profesional"],
+    ["comunicación no verbal", "/comunicacion-no-verbal"],
+    ["seguridad con la que sostienes determinadas decisiones", "/inseguridad-profesional"],
+    ["tu identidad", "/imagen-presencia/imagen-identidad-liderazgo"],
+    ["tu presencia", "/presencia-ejecutiva"],
+    ["imagen estratégica", "/imagen-estrategica"],
+  ],
+};
 const ROUTE_KNOWLEDGE_CARD_OVERRIDES = {
   [APPROVED_SECURITY_ARTICLE_ROUTE]: [
     "no-me-siento-segura-experiencia",
@@ -158,6 +193,29 @@ const SEMANTIC_TITLES = {
     entity: "Seguridad profesional",
     intent: "Comprender cómo identidad, percepción, imagen, decisiones y visibilidad influyen en la seguridad profesional.",
     description: "Sonia McRorey explica cómo identidad, imagen, decisiones y visibilidad influyen en la seguridad profesional y el siguiente nivel.",
+  },
+  [VALIDATION_ARTICLE_ROUTE]: {
+    h1: "¿Quién eres cuando nadie te está validando?",
+    shortLabel: "Validación y criterio propio",
+    menuLabel: "Validación y criterio propio",
+    cardTitle: "Validación, criterio propio e identidad",
+    seoTitle: "¿Quién eres cuando nadie te está validando? | Sonia McRorey",
+    supportHeading: "Una lectura sobre validación externa, criterio propio y decisiones profesionales.",
+    entity: "Seguridad interna",
+    intent: "Reconocer cuándo la validación externa condiciona decisiones, presencia y crecimiento profesional.",
+    description: "Sonia McRorey reflexiona sobre validación externa, criterio propio y las decisiones que construyen identidad y presencia profesional.",
+  },
+  [IMAGE_VALUE_ARTICLE_ROUTE]: {
+    h1: "La imagen no crea tu valor. Lo hace visible.",
+    shortLabel: "Imagen y valor profesional",
+    menuLabel: "Imagen y valor profesional",
+    cardTitle: "Imagen, percepción y valor profesional",
+    seoTitle: "La imagen no crea tu valor. Lo hace visible. | Sonia McRorey",
+    supportHeading: "Una lectura sobre imagen estratégica, percepción, presencia y valor profesional.",
+    entity: "Imagen estratégica",
+    intent: "Entender la imagen como expresión visible del valor profesional, la identidad, la presencia y la etapa que una persona está construyendo.",
+    description: "Sonia McRorey explica cómo imagen estratégica, presencia, comunicación y percepción hacen visible tu valor profesional y tu etapa actual.",
+    socialDescription: "Imagen estratégica, presencia y percepción para hacer visible tu valor profesional.",
   },
   "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen": {
     h1: "Asesoría de Imagen Integral",
@@ -321,6 +379,8 @@ const ROUTE_IMAGE_OVERRIDES = {
   "/imagen-presencia/imagen-profesional-segun-industria-y-personalidad": IMAGE_ASSETS.colorConsulting,
   "/imagen-presencia/rebranding-imagen-mentalidad-abundancia": IMAGE_ASSETS.soniaGreenFullBody,
   [APPROVED_SECURITY_ARTICLE_ROUTE]: IMAGE_ASSETS.soniaBWSecurity,
+  [VALIDATION_ARTICLE_ROUTE]: IMAGE_ASSETS.soniaBWSecurity,
+  [IMAGE_VALUE_ARTICLE_ROUTE]: IMAGE_ASSETS.soniaBWSecurity,
   "/imagen-presencia/tu-color-tu-poder-el-impacto-de-la-colorimetria": IMAGE_ASSETS.colorConsulting,
   "/imagen-presencia/la-ciencia-del-color-en-tu-imagen": IMAGE_ASSETS.colorConsulting,
   "/imagen-presencia/aprende-a-resaltar-tus-proporciones": IMAGE_ASSETS.mirrorStyle,
@@ -334,6 +394,8 @@ const ROUTE_IMAGE_OVERRIDES = {
 const ROUTE_HERO_ALT_OVERRIDES = {
   "/imagen-presencia/presencia-profesional-estrategica": "Sonia McRorey en un retrato editorial sobre presencia profesional estratégica, coherencia y autoridad visible.",
   [APPROVED_SECURITY_ARTICLE_ROUTE]: "Sonia McRorey en retrato de cuerpo completo sobre seguridad profesional, identidad, presencia y evolución profesional.",
+  [VALIDATION_ARTICLE_ROUTE]: "Sonia McRorey en retrato editorial sobre seguridad interna, criterio propio, presencia e identidad profesional.",
+  [IMAGE_VALUE_ARTICLE_ROUTE]: "Sonia McRorey en retrato editorial sobre imagen estratégica, presencia, identidad y valor profesional.",
 };
 const HERO_REJECTED_IMAGE_STEMS = new Set([
   "a1659cc99df8e64c", // generic stock headshot, not Sonia's positioning.
@@ -1931,6 +1993,25 @@ const KEYWORD_MESH_LIBRARY = [
   },
 ];
 const ROUTE_LINK_MESH_PRIORITIES = {
+  [VALIDATION_ARTICLE_ROUTE]: [
+    "/servicios-asesoria-de-imagen-coaching/coaching-de-abundancia",
+    APPROVED_SECURITY_ARTICLE_ROUTE,
+    "/imagen-presencia/sostener-tu-siguiente-nivel-profesional",
+    "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen",
+    "/inseguridad-profesional",
+    "/imagen-presencia/imagen-identidad-liderazgo",
+    "/presencia-ejecutiva",
+  ],
+  [IMAGE_VALUE_ARTICLE_ROUTE]: [
+    "/imagen-profesional",
+    "/presencia-ejecutiva",
+    "/imagen-estrategica",
+    "/servicios-asesoria-de-imagen-coaching/coaching-de-imagen",
+    "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen",
+    "/imagen-presencia/imagen-identidad-liderazgo",
+    "/comunicacion-no-verbal",
+    "/sistema-presencia-profesional",
+  ],
   "/servicios-asesoria-de-imagen-coaching/asesoria-de-imagen": [
     "/imagen-presencia/los-secretos-de-una-asesora-de-imagen-exitosa",
     "/imagen-presencia/encuentra-tu-estilo",
@@ -2722,7 +2803,7 @@ async function generateSocialCards(pages, hubs, comparisons, generatedPages = []
   for (const page of routes) {
     const svg = socialCardSvg({
       title: socialTitleForPage(page),
-      description: metaDescriptionForPage(page, page.description),
+      description: socialDescriptionForPage(page),
       kicker: socialKickerForPage(page),
       route: page.route,
       logoBase64,
@@ -2869,15 +2950,15 @@ function isHeadingCandidate(line) {
   return /^[A-ZÁÉÍÓÚÑ]/.test(line) && line.split(/\s+/).length <= 11;
 }
 
-function paragraphize(lines, { allowHeadings = false } = {}) {
+function paragraphize(lines, { allowHeadings = false, page = null, linkedPhrases = new Set() } = {}) {
   const blocks = [];
   for (const line of normalizeContentLines(lines)) {
     if (isListLine(line)) {
-      blocks.push(`<p class="bullet-line">${escapeHtml(line)}</p>`);
+      blocks.push(`<p class="bullet-line">${linkedEditorialHtml(line, page, linkedPhrases)}</p>`);
     } else if (allowHeadings && isHeadingCandidate(line)) {
       blocks.push(`<h3>${escapeHtml(line)}</h3>`);
     } else {
-      blocks.push(`<p>${escapeHtml(line)}</p>`);
+      blocks.push(`<p>${linkedEditorialHtml(line, page, linkedPhrases)}</p>`);
     }
   }
   return blocks.join("\n");
@@ -3275,6 +3356,69 @@ function highlightOntologyTerms(text = "", topics = [], maxHighlights = 3) {
   return escapeHtml(text);
 }
 
+function articleInlineLinksForRoute(route) {
+  return ARTICLE_INLINE_LINKS[route] || [];
+}
+
+function renderInlineMarkdownHtml(value = "") {
+  return String(value)
+    .replace(/\*\*([^*\n]+)\*\*/g, "<strong>$1</strong>")
+    .replace(/(^|[^*])\*([^*\n]+)\*([^*]|$)/g, "$1<em>$2</em>$3");
+}
+
+function linkedEditorialHtml(text = "", page = null, linkedPhrases = new Set(), topics = [], maxHighlights = 2) {
+  const escaped = highlightOntologyTerms(text, topics, maxHighlights);
+  const links = articleInlineLinksForRoute(page?.route);
+  if (!links.length) return renderInlineMarkdownHtml(escaped);
+
+  let remaining = escaped;
+  let output = "";
+  while (remaining) {
+    const lowered = remaining.toLocaleLowerCase("es-MX");
+    const available = links
+      .filter(([phrase]) => !linkedPhrases.has(phrase))
+      .map(([phrase, route]) => ({ phrase, route, index: lowered.indexOf(phrase.toLocaleLowerCase("es-MX")) }))
+      .filter((match) => match.index >= 0)
+      .sort((a, b) => a.index - b.index)[0];
+    if (!available) {
+      output += remaining;
+      break;
+    }
+    output += remaining.slice(0, available.index);
+    const matchedText = remaining.slice(available.index, available.index + available.phrase.length);
+    output += `<a href="${available.route}">${matchedText}</a>`;
+    linkedPhrases.add(available.phrase);
+    remaining = remaining.slice(available.index + available.phrase.length);
+  }
+  return renderInlineMarkdownHtml(output);
+}
+
+function linkedEditorialMarkdown(text = "", page = null, linkedPhrases = new Set()) {
+  const links = articleInlineLinksForRoute(page?.route);
+  if (!links.length) return text;
+
+  let remaining = String(text);
+  let output = "";
+  while (remaining) {
+    const lowered = remaining.toLocaleLowerCase("es-MX");
+    const available = links
+      .filter(([phrase]) => !linkedPhrases.has(phrase))
+      .map(([phrase, route]) => ({ phrase, route, index: lowered.indexOf(phrase.toLocaleLowerCase("es-MX")) }))
+      .filter((match) => match.index >= 0)
+      .sort((a, b) => a.index - b.index)[0];
+    if (!available) {
+      output += remaining;
+      break;
+    }
+    output += remaining.slice(0, available.index);
+    const matchedText = remaining.slice(available.index, available.index + available.phrase.length);
+    output += `[${matchedText}](${absoluteUrl(available.route)})`;
+    linkedPhrases.add(available.phrase);
+    remaining = remaining.slice(available.index + available.phrase.length);
+  }
+  return output;
+}
+
 function splitContent(markdown) {
   return normalizeContentLines(stripFrontMatter(markdown).split(/\r?\n/));
 }
@@ -3421,6 +3565,10 @@ function seoTitleForPage(page) {
 function socialTitleForPage(page) {
   const base = cleanDisplayTitle(semanticH1(page) || page.title || BRAND_NAME);
   return fitTitleLength(base, 76);
+}
+
+function socialDescriptionForPage(page) {
+  return (semanticIdentity(page.route)?.socialDescription || metaDescriptionForPage(page, page.description)).replace(/\s+/g, " ").trim();
 }
 
 function socialKickerForPage(page) {
@@ -3709,12 +3857,13 @@ function agentMarkdownForPage(page) {
   const bodyLines = coreBodyLines(page, lines)
     .filter((line) => !/imagencoach\.com|weblium|sourceTextPath|sourceHtmlPath|imageCount/i.test(line))
     .slice(0, page.type === "article" || page.type === "pillar" ? 140 : 70);
+  const linkedMarkdownPhrases = new Set();
   const body = bodyLines
     .map((line, index) => {
       if (index > 0 && shouldStartSection(line, { heading: "", lines: bodyLines.slice(Math.max(0, index - 3), index) }, page)) {
         return `\n## ${line.replace(/^#+\s*/, "")}`;
       }
-      return line;
+      return linkedEditorialMarkdown(line, page, linkedMarkdownPhrases);
     })
     .join("\n\n")
     .replace(/\n{3,}/g, "\n\n")
@@ -3744,7 +3893,7 @@ ${contentSection}${verbatimSoniaMarkdown(page, 3)}
 }
 
 function absoluteUrl(route) {
-  return `${SITE_URL}${route === "/" ? "/" : route}`;
+  return pageUrl(`${SITE_URL}${route === "/" ? "/" : route}`, CANONICAL_PAGE_ROUTES, SITE_URL);
 }
 
 function routeUrl(route) {
@@ -3883,18 +4032,35 @@ function renderSemanticCopy(lines, topics = []) {
   return blocks.join("\n");
 }
 
-function articleLineBlocks(line, topics = []) {
+function articleLineBlocks(line, topics = [], page = null, linkedPhrases = new Set()) {
   const sentences = splitSentences(line);
   const source = sentences.length > 1 ? sentences : [line];
-  return source.map((item) => `<p>${highlightOntologyTerms(item, topics, 2)}</p>`).join("\n");
+  return source.map((item) => `<p>${linkedEditorialHtml(item, page, linkedPhrases, topics, 2)}</p>`).join("\n");
 }
 
-function renderArticleProse(lines, topics = []) {
+function imageValueBulletItems(line = "") {
+  const clean = cleanDisplayTitle(line);
+  if (/^(Observo|Cómo|Qué elige|Qué palabras|Qué sucede cuando)/i.test(clean) && clean.length <= 170) return [clean];
+  if (/^(Tal vez sea|Tal vez necesites)/i.test(clean) && clean.length <= 150) return [clean];
+  if (/^(Qué cambió|Qué estás|Qué quieres|Y qué necesitas)/i.test(clean) && clean.length <= 120) return [clean];
+  if (/^a tu[ s]?|^y a las decisiones/i.test(clean)) return [clean];
+  const concreteChoices = clean.match(/^Y después llevar esa comprensión a algo muy concreto:\s*(.+)$/i);
+  if (concreteChoices) {
+    const items = concreteChoices[1]
+      .split(/,\s+(?=a tu|a tus|y a las)/i)
+      .map((item) => item.trim())
+      .filter(Boolean);
+    return ["Y después llevar esa comprensión a algo muy concreto:", ...items];
+  }
+  return null;
+}
+
+function renderArticleProse(lines, topics = [], page = null, linkedPhrases = new Set()) {
   const blocks = [];
   let list = [];
   const flushList = () => {
     if (!list.length) return;
-    blocks.push(`<ul class="article-prose-list">${list.map((item) => `<li>${highlightOntologyTerms(item.replace(/^[-•●✔️👉🌟💌🎓🟣✨]\s*/, ""), topics, 1)}</li>`).join("")}</ul>`);
+    blocks.push(`<ul class="article-prose-list">${list.map((item) => `<li>${linkedEditorialHtml(item.replace(/^[-•●✔️👉🌟💌🎓🟣✨]\s*/, ""), page, linkedPhrases, topics, 1)}</li>`).join("")}</ul>`);
     list = [];
   };
 
@@ -3903,11 +4069,31 @@ function renderArticleProse(lines, topics = []) {
       list.push(line);
       continue;
     }
+    if (page?.route === IMAGE_VALUE_ARTICLE_ROUTE) {
+      const firstUnderstandMatch = String(line).match(/^(\*\*Primero necesito entender qué está pasando contigo\.\*\*)\s+(Qué cambió\.)$/);
+      if (firstUnderstandMatch) {
+        flushList();
+        blocks.push(`<p>${linkedEditorialHtml(firstUnderstandMatch[1], page, linkedPhrases, topics, 1)}</p>`);
+        list.push(firstUnderstandMatch[2]);
+        continue;
+      }
+      const imageValueItems = imageValueBulletItems(line);
+      if (imageValueItems?.length) {
+        if (imageValueItems[0].endsWith(":")) {
+          flushList();
+          blocks.push(`<p>${linkedEditorialHtml(imageValueItems[0], page, linkedPhrases, topics, 1)}</p>`);
+          list.push(...imageValueItems.slice(1));
+        } else {
+          list.push(...imageValueItems);
+        }
+        continue;
+      }
+    }
     flushList();
     if (isHeadingCandidate(line)) {
       blocks.push(`<h3>${escapeHtml(cleanDisplayTitle(line))}</h3>`);
     } else {
-      blocks.push(articleLineBlocks(line, topics));
+      blocks.push(articleLineBlocks(line, topics, page, linkedPhrases));
     }
   }
 
@@ -4986,7 +5172,9 @@ function breadcrumbs(page) {
   const isImagenPresenciaRoute = page.route.startsWith("/imagen-presencia/");
   const label = isImagenPresenciaRoute ? "Imagen y Presencia" : "Servicios";
   const parent = isImagenPresenciaRoute ? "/imagen-presencia" : "/servicios-asesoria-de-imagen-coaching";
-  const currentLabel = isImagenPresenciaRoute ? semanticShortLabel(page.route, cleanDisplayTitle(page.heroTitle)) : semanticShortLabel(page.route, page.heroTitle);
+  const currentLabel = page.route === IMAGE_VALUE_ARTICLE_ROUTE
+    ? "Valor profesional"
+    : isImagenPresenciaRoute ? semanticShortLabel(page.route, cleanDisplayTitle(page.heroTitle)) : semanticShortLabel(page.route, page.heroTitle);
   return `<nav class="breadcrumbs section" aria-label="Breadcrumbs"><a href="/">Inicio</a><span>/</span><a href="${parent}">${label}</a><span>/</span><span aria-current="page">${escapeHtml(currentLabel)}</span></nav>`;
 }
 
@@ -5017,6 +5205,8 @@ function hero(page, lines) {
   const pageContentLines = contentLinesForPage(page, lines);
   const lede = page.route === APPROVED_SECURITY_ARTICLE_ROUTE
     ? [APPROVED_SECURITY_ARTICLE_SUBTITLE]
+    : page.route === IMAGE_VALUE_ARTICLE_ROUTE
+    ? [semanticSupportHeading(page)]
     : page.route === "/servicios-asesoria-de-imagen-coaching/preguntas-frequentes"
     ? [semanticDescription(page)]
     : page.type === "pillar" ? [semanticDescription(page), semanticIdentity(page.route)?.intent].filter(Boolean)
@@ -5024,7 +5214,7 @@ function hero(page, lines) {
     : page.type === "article" ? coreBodyLines(page, pageContentLines).filter((line) => !isArticleHeadingCandidate(line)).slice(0, 2)
     : nonTitleLines(page, lines, 1).slice(0, 2);
   const eyebrow = page.route === APPROVED_SECURITY_ARTICLE_ROUTE ? "Seguridad profesional" : page.type === "article" ? "Imagen, presencia y mentalidad" : page.type === "pillar" ? "Imagen y presencia profesional" : page.type === "service" ? "Servicio" : page.type === "about" ? "Sobre Sonia" : BRAND_NAME;
-  return `<section class="section hero imagen-hero ${page.type}-hero">
+  return `<section class="section hero imagen-hero ${page.type}-hero${page.route === APPROVED_SECURITY_ARTICLE_ROUTE ? " approved-security-hero" : ""}">
     <div class="hero-copy">
       <p class="eyebrow">${eyebrow}</p>
       <h1>${headlineHtml(page.heroTitle)}</h1>
@@ -5094,10 +5284,13 @@ function articleReadingMap(page, sections, cluster, pages) {
   const service = cluster ? pageByRoute(pages).get(cluster.primaryService) : null;
   const topics = sectionTopics([page.heroTitle, page.description, ...sections.flatMap((section) => [section.heading])], page, new Map(), 4);
   const visibleSections = sections.slice(0, 6);
+  const mapHeading = page.route === IMAGE_VALUE_ARTICLE_ROUTE
+    ? "Imagen estratégica, percepción y valor profesional."
+    : articleMapHeading(cluster);
   return `<section class="section article-reading-map" aria-label="Mapa de lectura">
     <div class="article-map-copy">
       <p class="section-label">${escapeHtml(cluster?.label || "Publicación")}</p>
-      <h2>${headlineHtml(articleMapHeading(cluster))}</h2>
+      <h2>${headlineHtml(mapHeading)}</h2>
       <p>${escapeHtml(page.description || cardDescription(page))}</p>
       ${topicChips(topics)}
     </div>
@@ -5117,30 +5310,58 @@ function articleReadingMap(page, sections, cluster, pages) {
 function approvedSecurityReadingMap(page, pages, cluster) {
   const article = page.approvedArticle;
   const service = cluster ? pageByRoute(pages).get(cluster.primaryService) : null;
-  return `<section class="section article-reading-map approved-security-reading-map" aria-label="Mapa de lectura">
-    <div class="article-map-copy">
-      <p class="section-label">Seguridad profesional</p>
-      <h2>${escapeHtml(article.subtitle)}</h2>
-      <p>Sonia McRorey</p>
-    </div>
-    <div class="article-map-panel">
-      <div class="article-meta-grid">
-        <span><strong>${readingMinutes([...article.introLines, ...article.sections.flatMap((section) => section.lines)])}</strong> min</span>
-        <span><strong>${article.sections.length}</strong> secciones</span>
-        <span><strong>${escapeHtml(service ? semanticShortLabel(service.route, service.heroTitle) : "Seguridad profesional")}</strong> ruta</span>
+  return `<section class="section approved-security-reading-map" aria-label="Guía de lectura">
+    <header class="approved-reading-header">
+      <div>
+        <p class="section-label">Guía de lectura</p>
+        <h2>Contenido del artículo</h2>
       </div>
-      <nav class="article-toc" aria-label="Secciones de la publicación">
-        ${article.sections.map((section, index) => `<a href="#articulo-${index + 1}-${slugify(section.heading)}"><span>${String(index + 1).padStart(2, "0")}</span>${escapeHtml(section.heading)}</a>`).join("")}
-      </nav>
-    </div>
+      <div class="approved-article-meta" aria-label="Datos del artículo">
+        <span><strong>${readingMinutes([...article.introLines, ...article.sections.flatMap((section) => section.lines)])}</strong> min de lectura</span>
+        <span><strong>${article.sections.length}</strong> secciones</span>
+        <span><strong>Sonia McRorey</strong></span>
+        ${service ? `<a href="${service.route}">${escapeHtml(semanticShortLabel(service.route, service.heroTitle))}</a>` : ""}
+      </div>
+    </header>
+    <nav class="approved-article-toc" aria-label="Secciones de la publicación">
+      ${article.sections.map((section, index) => `<a href="#articulo-${index + 1}-${slugify(section.heading)}"><span>${String(index + 1).padStart(2, "0")}</span><strong>${escapeHtml(section.heading)}</strong></a>`).join("")}
+    </nav>
   </section>`;
 }
 
 function approvedSecurityParagraphs(lines, linkedPhrases) {
-  return lines.map((line) => {
-    const questionClass = /^¿.+\?$/u.test(line) ? " article-question" : "";
-    return `<p${questionClass ? ` class="${questionClass.trim()}"` : ""}>${approvedPhraseLinkedHtml(line, linkedPhrases)}</p>`;
-  }).join("");
+  const output = [];
+  let index = 0;
+
+  while (index < lines.length) {
+    if (/^¿.+\?$/u.test(lines[index])) {
+      const questions = [];
+      while (index < lines.length && /^¿.+\?$/u.test(lines[index])) {
+        questions.push(lines[index]);
+        index += 1;
+      }
+      output.push(`<div class="approved-question-group">${questions.map((line) => `<p>${approvedPhraseLinkedHtml(line, linkedPhrases)}</p>`).join("")}</div>`);
+      continue;
+    }
+
+    const shortLines = [];
+    let cursor = index;
+    while (cursor < lines.length && !/^¿.+\?$/u.test(lines[cursor]) && lines[cursor].length <= 92) {
+      shortLines.push(lines[cursor]);
+      cursor += 1;
+    }
+
+    if (shortLines.length >= 3) {
+      output.push(`<ul class="approved-rhythm-list">${shortLines.map((line) => `<li>${approvedPhraseLinkedHtml(line, linkedPhrases)}</li>`).join("")}</ul>`);
+      index = cursor;
+      continue;
+    }
+
+    output.push(`<p>${approvedPhraseLinkedHtml(lines[index], linkedPhrases)}</p>`);
+    index += 1;
+  }
+
+  return output.join("");
 }
 
 function approvedSecurityStructuredContent(page, pages, clusters) {
@@ -5149,17 +5370,12 @@ function approvedSecurityStructuredContent(page, pages, clusters) {
   const service = cluster ? pageByRoute(pages).get(cluster.primaryService) : null;
   const linkedPhrases = new Set();
   return `${approvedSecurityReadingMap(page, pages, cluster)}
-  <article class="section article-layout approved-security-article" aria-label="Contenido de la publicación">
-    <aside class="article-side-cta">
-      <p class="section-label">Ruta relacionada</p>
-      <h2>${escapeHtml(service ? semanticShortLabel(service.route, service.heroTitle) : "Seguridad profesional")}</h2>
-      ${service ? `<a class="btn primary" href="${service.route}">${escapeHtml(serviceLabel(service.route, pages))}</a>` : `<a class="btn primary" href="${WHATSAPP}" target="_blank" rel="noopener">Agendar diagnóstico</a>`}
-    </aside>
+  <article class="section approved-security-article" aria-label="Contenido de la publicación">
     <div class="article-main">
-      <section class="article-section-card approved-article-intro" aria-label="Introducción">
+      <header class="approved-article-intro">
         <div class="article-copy">${approvedSecurityParagraphs(article.introLines, linkedPhrases)}</div>
-      </section>
-      ${article.sections.map((section, index) => `<section class="article-section-card approved-source-section" id="articulo-${index + 1}-${slugify(section.heading)}">
+      </header>
+      ${article.sections.map((section, index) => `<section class="approved-source-section" id="articulo-${index + 1}-${slugify(section.heading)}">
         <div class="article-section-head">
           <span>${String(index + 1).padStart(2, "0")}</span>
           <div><h2>${escapeHtml(section.heading)}</h2></div>
@@ -5167,14 +5383,20 @@ function approvedSecurityStructuredContent(page, pages, clusters) {
         <div class="article-copy">${approvedSecurityParagraphs(section.lines, linkedPhrases)}</div>
       </section>`).join("")}
       <aside class="approved-article-closing">
-        <p>${escapeHtml(article.finalCta)}</p>
-        <a class="btn primary" href="${WHATSAPP}" target="_blank" rel="noopener">Hablar con Sonia</a>
+        <div>
+          <p class="section-label">Siguiente paso</p>
+          <p>${escapeHtml(article.finalCta)}</p>
+        </div>
+        <div class="actions">
+          ${service ? `<a class="btn secondary" href="${service.route}">${escapeHtml(serviceLabel(service.route, pages))}</a>` : ""}
+          <a class="btn primary" href="${WHATSAPP}" target="_blank" rel="noopener">Hablar con Sonia</a>
+        </div>
       </aside>
     </div>
   </article>`;
 }
 
-function renderArticleSection(page, section, index, previousSections, clusterMap) {
+function renderArticleSection(page, section, index, previousSections, clusterMap, linkedPhrases = new Set()) {
   const duplicateEarlier = previousSections.some((item) => item.heading.toLowerCase() === section.heading.toLowerCase());
   const heading = duplicateEarlier ? `${section.heading} en contexto` : section.heading;
   const topics = sectionTopics([heading, ...section.lines], page, clusterMap);
@@ -5188,7 +5410,7 @@ function renderArticleSection(page, section, index, previousSections, clusterMap
         ${topicChips(topics)}
       </div>
     </div>
-    <div class="article-copy">${renderArticleProse(section.lines, topics)}</div>
+    <div class="article-copy">${renderArticleProse(section.lines, topics, page, linkedPhrases)}</div>
   </section>`;
 }
 
@@ -5199,6 +5421,7 @@ function articleStructuredContent(page, lines, pages, clusters) {
   const clusterMap = articleClusterByRoute(clusters);
   const cluster = clusterMap.get(page.route);
   const service = cluster ? pageByRoute(pages).get(cluster.primaryService) : null;
+  const linkedPhrases = new Set();
   return `${articleReadingMap(page, sections, cluster, pages)}
   <article class="section article-layout" aria-label="Contenido de la publicación">
     <aside class="article-side-cta">
@@ -5208,7 +5431,7 @@ function articleStructuredContent(page, lines, pages, clusters) {
       ${service ? `<a class="btn primary" href="${service.route}">${escapeHtml(serviceLabel(service.route, pages))}</a>` : `<a class="btn primary" href="${WHATSAPP}" target="_blank" rel="noopener">Agendar diagnóstico</a>`}
     </aside>
     <div class="article-main">
-      ${sections.map((section, index) => renderArticleSection(page, section, index, sections.slice(0, index), clusterMap)).join("")}
+      ${sections.map((section, index) => renderArticleSection(page, section, index, sections.slice(0, index), clusterMap, linkedPhrases)).join("")}
     </div>
   </article>`;
 }
@@ -6490,7 +6713,7 @@ function renderGeoPage(page, pages, clusters = []) {
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
   ${header(page.route)}
   <main id="contenido">
-    ${generatedBreadcrumbs(page, "GEO LATAM", "/mexico")}
+    ${generatedBreadcrumbs(page, "México y LATAM", "/mexico")}
     <section class="section hero imagen-hero geo-hero">
       <div class="hero-copy">
         <p class="eyebrow">${escapeHtml(page.tier)} · ${escapeHtml(page.country)}</p>
@@ -6527,9 +6750,9 @@ function renderGeoPage(page, pages, clusters = []) {
     ${sourceTeachingPanel(page, { label: "Lectura de Sonia" })}
     <section class="section geo-signals">
       <div class="section-heading compact-heading">
-        <p class="section-label">Intenciones de búsqueda</p>
+        <p class="section-label">Necesidades profesionales</p>
         <h2>${headlineHtml(`Lo que realmente se necesita resolver en ${page.name}.`)}</h2>
-        <p>Estas son las necesidades que suelen vivir debajo de búsquedas como coach de imagen, asesora de imagen, presencia ejecutiva, imagen profesional e imagen para empresarias.</p>
+        <p>Identifica qué necesitas trabajar para elegir el acompañamiento adecuado.</p>
       </div>
       ${geoIntentCards(page)}
     </section>
@@ -6539,19 +6762,6 @@ function renderGeoPage(page, pages, clusters = []) {
         <h2>${headlineHtml(`Cómo elegir el proceso adecuado para ${page.name}.`)}</h2>
       </div>
       ${geoServiceCards(page)}
-    </section>
-    <section class="section geo-language">
-      <div class="section-heading compact-heading">
-        <p class="section-label">Lenguaje local</p>
-        <h2>${headlineHtml("La terminología cambia, pero la necesidad de presencia permanece.")}</h2>
-      </div>
-      <div class="definition-grid">
-        ${splitSemanticTerms(page.languagePattern).map((term) => `<dfn class="definition-card" title="${escapeHtml(term)}">
-          <span class="generated-card-icon">${topicIcon(geoTermIcon(term))}</span>
-          <span>${escapeHtml(term)}</span>
-          <small>Señal semántica para ${escapeHtml(page.name)} y mercados hispanohablantes.</small>
-        </dfn>`).join("")}
-      </div>
     </section>
     <section class="section faq-section">
       <div class="section-heading">
@@ -6568,7 +6778,7 @@ function renderGeoPage(page, pages, clusters = []) {
     </section>
     <section class="section authority-linking">
       <div class="section-heading">
-        <p class="section-label">Mapa de autoridad</p>
+        <p class="section-label">Servicios y lecturas relacionadas</p>
         <h2>${headlineHtml(`Rutas conectadas con ${page.name}.`)}</h2>
       </div>
       ${internalAuthorityLinks(page, pages, clusters)}
@@ -9183,13 +9393,10 @@ function soniaKnowledgeQuestionsJson(pages = []) {
     totals: {
       cards: cards.length,
       layers: KNOWLEDGE_API_LAYERS.length,
-      routeRecommendations: soniaRouteAnswerRecommendations(pages).length,
       sourceBlogPosts: SONIA_SOURCE_CORPUS.blogBank?.sourcePostCount || 0,
       reviewedSignals:
         (SONIA_SOURCE_CORPUS.blogBank?.quotes?.length || 0) + (SONIA_SOURCE_CORPUS.driveBank?.quotes?.length || 0),
     },
-    layers: soniaKnowledgeLayerGroups(),
-    cards,
   };
 }
 
@@ -9509,6 +9716,11 @@ function publicationsAgent(pages, clusters) {
       url: routeUrl(page.route),
       cluster: clusterMap.get(page.route)?.label || "Imagen, Presencia y Mentalidad",
       relatedService: clusterMap.get(page.route)?.primaryService ? routeUrl(clusterMap.get(page.route).primaryService) : null,
+      anchoredInternalLinks: articleInlineLinksForRoute(page.route).map(([anchor, route]) => ({
+        anchor,
+        route,
+        url: routeUrl(route),
+      })),
       description: page.description,
     })),
   };
@@ -9548,6 +9760,11 @@ function articleMetaCardsAgent(pages, clusters) {
         articleSection: cluster?.label || "Imagen, presencia y liderazgo profesional",
         relatedService: cluster?.primaryService ? absoluteUrl(cluster.primaryService) : null,
         relatedServiceLabel: cluster?.primaryService ? semanticShortLabel(cluster.primaryService, "Servicio relacionado") : null,
+        anchoredInternalLinks: articleInlineLinksForRoute(page.route).map(([anchor, route]) => ({
+          anchor,
+          route,
+          canonicalUrl: absoluteUrl(route),
+        })),
         modifiedTime: page.modifiedTime || null,
       };
     }),
@@ -11104,6 +11321,7 @@ async function writeAgentFiles(pages, clusters) {
 
 async function main() {
   const pages = await loadPages();
+  CANONICAL_PAGE_ROUTES = new Set([...pages, ...SEMANTIC_HUBS, ...COMPARISON_PAGES, ...GENERATED_AUTHORITY_PAGES, { route: CONTACT_ROUTE }].map((page) => page.route));
   const clusters = await loadClusters();
   await loadSoniaTeachingLayer();
   IMAGE_DIMENSIONS = await loadImageDimensions();
@@ -11117,7 +11335,7 @@ async function main() {
   for (const page of pages) {
     const out = routeOutputPath(page.route);
     await mkdir(path.dirname(out), { recursive: true });
-    await writeFile(out, renderPage(page, pages, clusters));
+    await writeFile(out, finalizePageHtml(renderPage(page, pages, clusters), CANONICAL_PAGE_ROUTES, SITE_URL));
     const markdownOut = markdownOutputPath(page.route);
     await mkdir(path.dirname(markdownOut), { recursive: true });
     await writeFile(markdownOut, agentMarkdownForPage(page));
@@ -11125,7 +11343,7 @@ async function main() {
   for (const hub of SEMANTIC_HUBS) {
     const out = routeOutputPath(hub.route);
     await mkdir(path.dirname(out), { recursive: true });
-    await writeFile(out, renderSemanticHub(hub, pages, clusters));
+    await writeFile(out, finalizePageHtml(renderSemanticHub(hub, pages, clusters), CANONICAL_PAGE_ROUTES, SITE_URL));
     const markdownOut = markdownOutputPath(hub.route);
     await mkdir(path.dirname(markdownOut), { recursive: true });
     await writeFile(markdownOut, hubMarkdown(hub));
@@ -11133,7 +11351,7 @@ async function main() {
   for (const page of COMPARISON_PAGES) {
     const out = routeOutputPath(page.route);
     await mkdir(path.dirname(out), { recursive: true });
-    await writeFile(out, renderComparisonPage(page, pages, clusters));
+    await writeFile(out, finalizePageHtml(renderComparisonPage(page, pages, clusters), CANONICAL_PAGE_ROUTES, SITE_URL));
     const markdownOut = markdownOutputPath(page.route);
     await mkdir(path.dirname(markdownOut), { recursive: true });
     await writeFile(markdownOut, comparisonMarkdown(page));
@@ -11141,7 +11359,7 @@ async function main() {
   for (const page of GEO_MARKETS) {
     const out = routeOutputPath(page.route);
     await mkdir(path.dirname(out), { recursive: true });
-    await writeFile(out, renderGeoPage(page, pages, clusters));
+    await writeFile(out, finalizePageHtml(renderGeoPage(page, pages, clusters), CANONICAL_PAGE_ROUTES, SITE_URL));
     const markdownOut = markdownOutputPath(page.route);
     await mkdir(path.dirname(markdownOut), { recursive: true });
     await writeFile(markdownOut, generatedMarkdown(page));
@@ -11149,7 +11367,7 @@ async function main() {
   for (const page of INTENT_PAGES) {
     const out = routeOutputPath(page.route);
     await mkdir(path.dirname(out), { recursive: true });
-    await writeFile(out, renderIntentPage(page, pages, clusters));
+    await writeFile(out, finalizePageHtml(renderIntentPage(page, pages, clusters), CANONICAL_PAGE_ROUTES, SITE_URL));
     const markdownOut = markdownOutputPath(page.route);
     await mkdir(path.dirname(markdownOut), { recursive: true });
     await writeFile(markdownOut, generatedMarkdown(page));
@@ -11157,7 +11375,7 @@ async function main() {
   for (const page of AUTHORITY_PAGES) {
     const out = routeOutputPath(page.route);
     await mkdir(path.dirname(out), { recursive: true });
-    await writeFile(out, renderAuthorityPage(page, pages, clusters));
+    await writeFile(out, finalizePageHtml(renderAuthorityPage(page, pages, clusters), CANONICAL_PAGE_ROUTES, SITE_URL));
     const markdownOut = markdownOutputPath(page.route);
     await mkdir(path.dirname(markdownOut), { recursive: true });
     await writeFile(markdownOut, generatedMarkdown(page));
@@ -11170,7 +11388,7 @@ async function main() {
   };
   const contactOut = routeOutputPath(CONTACT_ROUTE);
   await mkdir(path.dirname(contactOut), { recursive: true });
-  await writeFile(contactOut, renderContactPage());
+  await writeFile(contactOut, finalizePageHtml(renderContactPage(), CANONICAL_PAGE_ROUTES, SITE_URL));
   const contactMarkdownOut = markdownOutputPath(CONTACT_ROUTE);
   await mkdir(path.dirname(contactMarkdownOut), { recursive: true });
   await writeFile(contactMarkdownOut, `# ${contactPage.title}
@@ -11191,6 +11409,24 @@ ${verbatimSoniaMarkdown(contactPage, 2)}
 
 La solicitud utiliza el formulario privado de contacto del sitio.
 `);
+  await writeFile(distPath("404.html"), finalizePageHtml(`<!doctype html>
+<html lang="es-MX"><head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <title>Página no encontrada | Sonia McRorey</title>
+  ${stylesheetLinks()}
+</head><body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  ${header("/")}
+  <main id="contenido"><section class="section">
+    <p class="section-label">Error 404</p><h1>Página no encontrada</h1>
+    <p>El enlace no existe o la página cambió de dirección.</p>
+    <a class="btn primary" href="/">Volver al inicio</a>
+    <a class="btn secondary" href="/servicios-asesoria-de-imagen-coaching">Ver servicios</a>
+  </section></main>
+  ${footer()}
+  <script src="/assets/script-${SCRIPT_VERSION}.js" defer></script>
+</body></html>`, CANONICAL_PAGE_ROUTES, SITE_URL));
   await writeFile(distPath("sitemap.xml"), sitemap([...pages, ...SEMANTIC_HUBS, ...COMPARISON_PAGES, ...GENERATED_AUTHORITY_PAGES, contactPage]));
   await writeFile(distPath("category-sitemap.xml"), sitemap(SEMANTIC_HUBS));
   await writeFile(distPath("service-sitemap.xml"), sitemap([

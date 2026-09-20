@@ -1,6 +1,6 @@
 {
   "source_manifest": "archive/imagencoach/manifest.json",
-  "page_count": 36,
+  "page_count": 38,
   "unique_clean_asset_count": 139,
   "total_removed_line_count": 1788,
   "pages": [
@@ -14,6 +14,32 @@
       "source_html_path": null,
       "raw_line_count": 281,
       "clean_line_count": 281,
+      "removed_line_count": 0,
+      "images": []
+    },
+    {
+      "url": "https://coachdeimagen.com/imagen-presencia/quien-eres-cuando-nadie-te-esta-validando",
+      "route": "/imagen-presencia/quien-eres-cuando-nadie-te-esta-validando",
+      "slug": "imagen-presencia-quien-eres-cuando-nadie-te-esta-validando",
+      "title": "¿Quién eres cuando nadie te está validando?",
+      "clean_path": "content/clean/pages/imagen-presencia-quien-eres-cuando-nadie-te-esta-validando.md",
+      "source_text_path": "content/clean/pages/imagen-presencia-quien-eres-cuando-nadie-te-esta-validando.md",
+      "source_html_path": null,
+      "raw_line_count": 168,
+      "clean_line_count": 168,
+      "removed_line_count": 0,
+      "images": []
+    },
+    {
+      "url": "https://coachdeimagen.com/imagen-presencia/la-imagen-no-crea-tu-valor-lo-hace-visible",
+      "route": "/imagen-presencia/la-imagen-no-crea-tu-valor-lo-hace-visible",
+      "slug": "imagen-presencia-la-imagen-no-crea-tu-valor-lo-hace-visible",
+      "title": "La imagen no crea tu valor. Lo hace visible.",
+      "clean_path": "content/clean/pages/imagen-presencia-la-imagen-no-crea-tu-valor-lo-hace-visible.md",
+      "source_text_path": "content/clean/pages/imagen-presencia-la-imagen-no-crea-tu-valor-lo-hace-visible.md",
+      "source_html_path": null,
+      "raw_line_count": 175,
+      "clean_line_count": 175,
       "removed_line_count": 0,
       "images": []
     },

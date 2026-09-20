@@ -113,7 +113,7 @@ async function walk(directory) {
   for (const entry of entries) {
     const fullPath = path.join(directory, entry.name);
     if (entry.isDirectory()) files.push(...await walk(fullPath));
-    else if (entry.name.endsWith(".html")) files.push(fullPath);
+    else if (entry.name.endsWith(".html") && fullPath !== path.join(DIST, "404.html")) files.push(fullPath);
   }
   return files;
 }
@@ -242,7 +242,7 @@ function issue(severity, route, category, message) {
 
 function pageIssues(page, routeSet) {
   const issues = [];
-  const expectedCanonical = `${SITE_URL}${page.route === "/" ? "/" : page.route}`;
+  const expectedCanonical = `${SITE_URL}${page.route === "/" ? "/" : `${page.route}/`}`;
   if (!page.title) issues.push(issue("critical", page.route, "title", "Missing title tag."));
   if (page.titleLength > 70) issues.push(issue("high", page.route, "title", `Title too long: ${page.titleLength} chars.`));
   if (page.titleLength < 25) issues.push(issue("medium", page.route, "title", `Title likely too short: ${page.titleLength} chars.`));
@@ -258,7 +258,7 @@ function pageIssues(page, routeSet) {
   if (/noindex/i.test(page.robots)) issues.push(issue("critical", page.route, "indexing", `Noindex detected: ${page.robots}`));
   if (!page.schemaValid) issues.push(issue("critical", page.route, "schema", "Invalid JSON-LD."));
   if (!page.breadcrumbSchema && page.route !== "/") issues.push(issue("medium", page.route, "schema", "Missing BreadcrumbList schema."));
-  if (!page.faqSchema && ["service", "geo", "intent", "authority", "faq"].includes(page.type)) issues.push(issue("medium", page.route, "schema", "Missing FAQPage schema on high-intent route."));
+  if (!page.faqSchema && page.type === "faq") issues.push(issue("medium", page.route, "schema", "Missing FAQPage schema on high-intent route."));
   if (page.type === "service" && !page.serviceSchema) issues.push(issue("high", page.route, "schema", "Service route missing Service schema."));
   if (page.type === "article" && !page.articleSchema) issues.push(issue("medium", page.route, "schema", "Article route missing Article schema."));
   if (!page.ogTitle || !page.ogDescription || !page.ogImage) issues.push(issue("medium", page.route, "social", "Incomplete OpenGraph metadata."));

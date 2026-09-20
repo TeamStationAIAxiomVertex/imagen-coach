@@ -3,6 +3,7 @@ import { existsSync } from "node:fs";
 import path from "node:path";
 import { createHash } from "node:crypto";
 import { imageSize } from "image-size";
+import { faqIsVisible, pageText, pageUrl } from "./page-seo.mjs";
 
 const manifest = JSON.parse(await readFile("content/clean/manifest.json", "utf8"));
 const strategy = JSON.parse(await readFile("content/strategy/article-clusters.json", "utf8"));
@@ -10,6 +11,7 @@ const teachingRouteMap = JSON.parse(await readFile("content/sonia-knowledge/teac
 const verbatimRouteExcerpts = JSON.parse(await readFile("content/sonia-knowledge/verbatim-route-excerpts.json", "utf8"));
 const failures = [];
 const APPROVED_SECURITY_ARTICLE_SOURCE = "content/clean/pages/imagen-presencia-seguridad-profesional-cuando-tu-capacidad-ya-crecio.md";
+const APPROVED_SECURITY_ARTICLE_ROUTE = "/imagen-presencia/seguridad-profesional-cuando-tu-capacidad-ya-crecio";
 const APPROVED_SECURITY_ARTICLE_SHA256 = "0376208b1d7aa824a26e6901af3e0e89c5d1d2ae6aa12c657c091bb0cfcc7876";
 const approvedSecurityArticleSource = await readFile(APPROVED_SECURITY_ARTICLE_SOURCE, "utf8");
 const approvedSecurityArticleHash = createHash("sha256").update(approvedSecurityArticleSource).digest("hex");
@@ -361,7 +363,14 @@ async function walkHtml(directory) {
   return files;
 }
 
-const htmlFiles = await walkHtml("dist");
+const htmlFiles = (await walkHtml("dist")).filter((file) => file !== path.join("dist", "404.html"));
+const notFoundFile = "dist/404.html";
+if (!existsSync(notFoundFile)) failures.push("Missing top-level 404.html; hosting may return the homepage for unknown paths");
+else {
+  const notFound = await readFile(notFoundFile, "utf8");
+  if (!/<script src="\/assets\/script-[^"]+\.js" defer><\/script>/.test(notFound)) failures.push("404 page missing shared navigation script");
+  if (!notFound.includes('name="robots" content="noindex"') || /rel="canonical"/.test(notFound)) failures.push("404 page must be noindex without a homepage canonical");
+}
 const renderedRoutes = new Set(htmlFiles.map((file) => (file === path.join("dist", "index.html") ? "/" : `/${path.dirname(path.relative("dist", file)).replaceAll(path.sep, "/")}`)));
 for (const route of expectedRoutes) {
   if (!renderedRoutes.has(route)) failures.push(`Expected route did not render HTML: ${route}`);
@@ -443,8 +452,24 @@ for (const file of htmlFiles) {
     failures.push(`Service page missing Service JSON-LD in ${file}`);
   }
   if (articleSet.has(routeForSchema) && !jsonLdTypes.includes("Article")) failures.push(`Article page missing Article JSON-LD in ${file}`);
-  if ((routeForSchema === "/contacto" || routeForSchema === "/servicios-asesoria-de-imagen-coaching/preguntas-frequentes" || routeForSchema.startsWith("/comparaciones")) && !jsonLdTypes.includes("FAQPage")) {
+  if ((routeForSchema === "/servicios-asesoria-de-imagen-coaching/preguntas-frequentes") && !jsonLdTypes.includes("FAQPage")) {
     failures.push(`FAQ-intent page missing FAQPage JSON-LD in ${file}`);
+  }
+  const mainText = pageText(html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i)?.[1] || "");
+  for (const label of ["Intenciones de búsqueda", "Señal semántica", "Mapa de autoridad", "GEO LATAM"]) {
+    if (mainText.includes(label)) failures.push(`Internal SEO label in ${file}: ${label}`);
+  }
+  for (const match of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
+    const parsed = JSON.parse(match[1]);
+    const nodes = Array.isArray(parsed) ? parsed : parsed["@graph"] || [parsed];
+    for (const node of nodes.filter((item) => [].concat(item["@type"] || []).includes("FAQPage"))) {
+      for (const item of node.mainEntity || []) {
+        if (!faqIsVisible(item, mainText)) failures.push(`FAQ schema not supported by visible question and answer in ${file}: ${item.name}`);
+      }
+    }
+  }
+  for (const match of html.matchAll(/\b(?:href|content)="([^"]*)"/g)) {
+    if (pageUrl(match[1], renderedRoutes, SITE_URL) !== match[1]) failures.push(`Noncanonical page URL in ${file}: ${match[1]}`);
   }
   const visibleWords = html
     .replace(/<script[\s\S]*?<\/script>/gi, " ")
@@ -498,14 +523,19 @@ for (const file of htmlFiles) {
     if (jsonLdTypes.includes("Article")) failures.push(`Pillar page should not render Article JSON-LD: ${file}`);
   }
   if (articleSet.has(routeForDensity)) {
-    if (!/class="[^"]*\barticle-reading-map\b/.test(html)) failures.push(`Article missing reading map navigation: ${file}`);
-    if (!/class="[^"]*\barticle-layout\b/.test(html)) failures.push(`Article missing editorial layout: ${file}`);
+    const usesApprovedSecurityTemplate = routeForDensity === APPROVED_SECURITY_ARTICLE_ROUTE;
+    const hasReadingMap = /class="[^"]*\barticle-reading-map\b/.test(html)
+      || (usesApprovedSecurityTemplate && /class="[^"]*\bapproved-security-reading-map\b/.test(html));
+    const hasEditorialLayout = /class="[^"]*\barticle-layout\b/.test(html)
+      || (usesApprovedSecurityTemplate && /class="[^"]*\bapproved-security-article\b/.test(html));
+    if (!hasReadingMap) failures.push(`Article missing reading map navigation: ${file}`);
+    if (!hasEditorialLayout) failures.push(`Article missing editorial layout: ${file}`);
     if (!/<div class="article-copy">\s*<p>/.test(html)) failures.push(`Article body is not rendering as prose paragraphs: ${file}`);
     if (/<div class="article-copy">[\s\S]*?class="insight-step"/.test(html)) failures.push(`Article body leaked service-style insight cards: ${file}`);
     if (/<div class="article-copy">[\s\S]*?class="signal-list"/.test(html)) failures.push(`Article body leaked service-style signal lists: ${file}`);
   }
   const route = file === path.join("dist", "index.html") ? "/" : `/${path.dirname(path.relative("dist", file)).replaceAll(path.sep, "/")}`;
-  const expectedCanonical = `${SITE_URL}${route === "/" ? "/" : route}`;
+  const expectedCanonical = `${SITE_URL}${route === "/" ? "/" : `${route}/`}`;
   const canonicalMatch = html.match(/<link rel="canonical" href="([^"]+)" \/>/);
   if (!canonicalMatch) failures.push(`Missing canonical link in ${file}`);
   else if (canonicalMatch[1] !== expectedCanonical) failures.push(`Canonical mismatch in ${file}: expected ${expectedCanonical}, got ${canonicalMatch[1]}`);
@@ -541,6 +571,10 @@ for (const file of htmlFiles) {
 }
 
 const sitemap = await readFile("dist/sitemap.xml", "utf8");
+for (const match of sitemap.matchAll(/<loc>(.*?)<\/loc>/g)) {
+  if (pageUrl(match[1], renderedRoutes, SITE_URL) !== match[1]) failures.push(`Noncanonical sitemap URL: ${match[1]}`);
+  if (match[1].includes("404")) failures.push("404 page must not appear in sitemap");
+}
 if (sitemap.includes(`${LEGACY_SITE_URL}/`)) failures.push("Sitemap still contains legacy imagencoach.com host");
 for (const page of manifest.pages) {
   if (!sitemap.includes(`${SITE_URL}${page.route === "/" ? "/" : page.route}`)) {
