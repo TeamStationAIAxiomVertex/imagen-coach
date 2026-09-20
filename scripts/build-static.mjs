@@ -11067,7 +11067,6 @@ async function writeAgentFiles(pages, clusters) {
   await writeJson(".well-known/mcp.json", mcpServerCard());
   await writeJson(".well-known/mcp/server-card.json", mcpServerCard());
   await writeJson(".well-known/mcp/server-cards.json", mcpServerCards());
-  await writeJson(".well-known/http-message-signatures-directory", httpMessageSignaturesDirectory());
   await writeJson(".well-known/oauth-authorization-server", oauthAuthorizationServer());
   await writeJson(".well-known/openid-configuration", oauthAuthorizationServer());
   await writeJson(".well-known/oauth-protected-resource", oauthProtectedResource());

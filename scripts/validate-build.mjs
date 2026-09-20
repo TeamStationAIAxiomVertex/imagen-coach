@@ -621,7 +621,6 @@ const requiredAgentFiles = [
   "dist/.well-known/mcp.json",
   "dist/.well-known/mcp/server-card.json",
   "dist/.well-known/mcp/server-cards.json",
-  "dist/.well-known/http-message-signatures-directory",
   "dist/.well-known/oauth-authorization-server",
   "dist/.well-known/openid-configuration",
   "dist/.well-known/oauth-protected-resource",
@@ -649,6 +648,8 @@ const requiredAgentFiles = [
   "dist/agent/redirects.json",
   "dist/agent/conversion-map.json",
 ];
+if (!existsSync("functions/[[path]].js")) failures.push("Missing Web Bot Auth catch-all Function: functions/[[path]].js");
+if (!existsSync("functions/_web-bot-auth.js")) failures.push("Missing Web Bot Auth helper Function: functions/_web-bot-auth.js");
 for (const file of requiredAgentFiles) {
   if (!existsSync(file)) {
     failures.push(`Missing agentic file: ${file}`);
