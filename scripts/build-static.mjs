@@ -5000,7 +5000,7 @@ function contactPageSchema() {
     "@type": "ContactPage",
     name: "Contacto privado para diagnóstico de Coach de Imagen",
     url: absoluteUrl(CONTACT_ROUTE),
-    description: "Formulario privado para solicitar un diagnóstico con Sonia McRorey sobre coaching de imagen, presencia profesional y posicionamiento.",
+    description: "Contacto por WhatsApp para solicitar un diagnóstico con Sonia McRorey sobre coaching de imagen, presencia profesional y posicionamiento.",
     inLanguage: "es-MX",
     about: {
       "@type": "ProfessionalService",
@@ -5025,61 +5025,21 @@ function contactPageSchema() {
 }
 
 function contactIntakeForm() {
-  const serviceOptions = CONTACT_SERVICE_OPTIONS.map((item) => `<option value="${escapeHtml(item)}">${escapeHtml(item)}</option>`).join("");
-  const countryOptions = CONTACT_COUNTRIES.map((item) => `<option value="${escapeHtml(item)}">${escapeHtml(item)}</option>`).join("");
-  return `<form class="concierge-form" data-contact-form action="/api/contact" method="post" novalidate>
-    <input type="hidden" name="source_page" value="${CONTACT_ROUTE}" />
-    <input type="hidden" name="started_at" value="" data-started-at />
-    <input type="hidden" name="utm_source" value="" data-utm="utm_source" />
-    <input type="hidden" name="utm_medium" value="" data-utm="utm_medium" />
-    <input type="hidden" name="utm_campaign" value="" data-utm="utm_campaign" />
-    <label class="bot-field" aria-hidden="true">Sitio web<input type="text" name="company_website" tabindex="-1" autocomplete="off" /></label>
-    <div class="form-row two">
-      <label>Nombre completo
-        <input name="name" autocomplete="name" required maxlength="90" placeholder="Tu nombre" />
-      </label>
-      <label>Email
-        <input name="email" type="email" autocomplete="email" required maxlength="140" placeholder="tu@email.com" />
-      </label>
+  return `<div class="concierge-form" aria-labelledby="whatsapp-diagnostico">
+    <div>
+      <p class="section-label">WhatsApp directo</p>
+      <h3 id="whatsapp-diagnostico">Envía tu contexto por WhatsApp.</h3>
+      <p>Sonia está manejando el primer contacto por WhatsApp. Comparte tu ciudad, etapa profesional, área de interés y qué necesitas ordenar en tu imagen o presencia.</p>
     </div>
-    <div class="form-row two">
-      <label>Teléfono / WhatsApp
-        <input name="phone" autocomplete="tel" required maxlength="40" placeholder="+52..." />
-      </label>
-      <label>LinkedIn o sitio profesional
-        <input name="linkedin" type="url" maxlength="220" placeholder="https://www.linkedin.com/in/..." />
-      </label>
-    </div>
-    <div class="form-row three">
-      <label>Ciudad
-        <input name="city" autocomplete="address-level2" maxlength="90" placeholder="Guadalajara, CDMX, Monterrey..." />
-      </label>
-      <label>País
-        <select name="country" autocomplete="country-name">
-          <option value="">Seleccionar</option>
-          ${countryOptions}
-        </select>
-      </label>
-      <label>Área de interés
-        <select name="service_interest" required>
-          <option value="">Seleccionar</option>
-          ${serviceOptions}
-        </select>
-      </label>
-    </div>
-    <label>¿Qué necesitas sostener, ordenar o proyectar mejor?
-      <textarea name="message" required rows="7" maxlength="1800" placeholder="Cuéntale a Sonia el contexto: etapa profesional, reto de imagen o presencia, audiencia, urgencia y resultado que buscas."></textarea>
-    </label>
-    <label class="concierge-check">
-      <input type="checkbox" name="concierge_mode" value="1" checked />
-      <span>Permitir que el asistente privado resuma mi contexto para que Sonia responda con mayor precisión.</span>
-    </label>
+    <ul class="article-prose-list">
+      <li>Nombre y ciudad.</li>
+      <li>Objetivo principal: imagen, presencia, posicionamiento, empresa o seguridad profesional.</li>
+      <li>Contexto profesional y fecha aproximada en que te gustaría empezar.</li>
+    </ul>
     <div class="form-actions">
-      <button class="btn primary" type="submit">Enviar diagnóstico privado</button>
-      <a class="btn secondary" href="${WHATSAPP}" target="_blank" rel="noopener">Prefiero WhatsApp</a>
+      <a class="btn primary" href="${WHATSAPP}" target="_blank" rel="noopener">Escribir por WhatsApp</a>
     </div>
-    <p class="form-status" role="status" aria-live="polite"></p>
-  </form>`;
+  </div>`;
 }
 
 function renderContactPage() {
@@ -5118,7 +5078,7 @@ function renderContactPage() {
       <div>
         <p class="eyebrow">Atención privada</p>
         <h1>${headlineHtml("Contacto para diagnóstico de Coach de Imagen")}</h1>
-        <p>Un formulario privado para entender tu etapa, tu contexto profesional y el tipo de presencia que necesitas sostener antes de definir una ruta con Sonia.</p>
+        <p>Un contacto directo por WhatsApp para entender tu etapa, tu contexto profesional y el tipo de presencia que necesitas sostener antes de definir una ruta con Sonia.</p>
         <div class="concierge-signals" aria-label="Qué revisa Sonia">
           <span>${topicIcon("percepcion")}Percepción</span>
           <span>${topicIcon("presencia")}Presencia</span>
@@ -5130,8 +5090,8 @@ function renderContactPage() {
         <p class="section-label">Cómo se usa</p>
         <ol>
           <li><span>01</span>Compartes contexto profesional y área de interés.</li>
-          <li><span>02</span>La solicitud se valida de forma segura antes de llegar al inbox de Sonia.</li>
-          <li><span>03</span>El asistente privado resume señales clave para responder con más precisión.</li>
+          <li><span>02</span>Sonia recibe tu contexto directamente por WhatsApp.</li>
+          <li><span>03</span>El primer intercambio ayuda a definir si necesitas imagen, presencia, posicionamiento o seguridad profesional.</li>
         </ol>
       </aside>
     </section>
@@ -5139,7 +5099,7 @@ function renderContactPage() {
       <div class="section-heading">
         <p class="section-label">Diagnóstico privado</p>
         <h2>${headlineHtml("Cuéntale a Sonia qué necesitas resolver.")}</h2>
-        <p>El formulario conserva accesibilidad, claridad semántica y una experiencia privada; el envío se procesa con validación y protección antispam.</p>
+        <p>WhatsApp queda como canal principal para iniciar la conversación sin depender de correo o formulario.</p>
       </div>
       ${contactIntakeForm()}
     </section>
@@ -7313,7 +7273,7 @@ function faqItemsForPage(page) {
       {
         question: "¿Cómo solicito un diagnóstico privado?",
         answer:
-          "Puedes completar el formulario privado de contacto o escribir por WhatsApp. Sonia recibe tu contexto profesional, necesidad principal y datos de contacto para responder con precisión.",
+          "Puedes escribir por WhatsApp desde la página de contacto. Sonia recibe tu contexto profesional, necesidad principal y datos de contacto para responder con precisión.",
       },
       {
         question: "¿Qué información conviene enviar?",
@@ -10037,8 +9997,8 @@ function contactAgent() {
     schemaVersion: "2026-05-23",
     siteUrl: SITE_URL,
     language: "es-MX",
-    endpoint: `${SITE_URL}/api/contact`,
     intakePage: absoluteUrl(CONTACT_ROUTE),
+    whatsapp: WHATSAPP,
     business: {
       name: "Sonia McRorey",
       brand: BRAND_NAME,
@@ -10049,20 +10009,19 @@ function contactAgent() {
     },
     privacy: {
       publicEmail: false,
-      secrets: ["RESEND_API_KEY", "LEAD_TO_EMAIL", "RESEND_FROM_EMAIL", "OPENAI_API_KEY", "OPENAI_MODEL"],
-      antispam: ["KV IP rate limiting", "honeypot", "timestamp validation", "disposable email block", "link threshold", "HTML sanitization"],
+      note: "No public contact form or email delivery endpoint is exposed; WhatsApp is the active contact channel.",
     },
     serviceInterestOptions: CONTACT_SERVICE_OPTIONS,
     actions: [
       {
         name: "Agendar diagnóstico",
-        type: "Static contact form",
+        type: "WhatsApp handoff page",
         url: absoluteUrl(CONTACT_ROUTE),
-        endpoint: `${SITE_URL}/api/contact`,
+        handoffUrl: WHATSAPP,
       },
       {
         name: "WhatsApp directo",
-        type: "WhatsApp fallback",
+        type: "WhatsApp directo",
         url: WHATSAPP,
         message: "Hola Sonia, me interesa agendar un diagnóstico.",
       },
@@ -10164,14 +10123,13 @@ function conversionMapAgent() {
     primaryConversion: {
       name: "Agendar diagnóstico",
       actionUrl: absoluteUrl(CONTACT_ROUTE),
-      apiEndpoint: `${SITE_URL}/api/contact`,
-      fallbackUrl: WHATSAPP,
+      whatsappUrl: WHATSAPP,
     },
     funnel: [
       { stage: "awareness", target: "/", signals: [BRAND_NAME, "Sonia McRorey", "coach de imagen", "presencia ejecutiva"] },
       { stage: "service-fit", target: "/servicios-asesoria-de-imagen-coaching", signals: ["asesoría de imagen ejecutiva", "coaching profesional", "imagen corporativa", "talleres empresariales"] },
       { stage: "trust", target: "/sobre-sonia-mcrorey-asesora-de-imagen", signals: ["trayectoria", "AICI", "formación", "enfoque"] },
-      { stage: "contact", target: CONTACT_ROUTE, signals: ["formulario privado", "concierge AI", "diagnóstico", "primera sesión"] },
+      { stage: "contact", target: CONTACT_ROUTE, signals: ["WhatsApp", "diagnóstico", "primera sesión"] },
     ],
   };
 }
@@ -10299,7 +10257,7 @@ function apiCatalogAgent() {
         name: "Agent auth instructions",
         type: "auth-md",
         url: `${SITE_URL}/auth.md`,
-        description: "Public agent registration and access instructions for anonymous read surfaces and validated contact intake.",
+        description: "Public agent registration and access instructions for anonymous read surfaces and WhatsApp contact handoff.",
       },
       {
         name: "Organization agent index",
@@ -10335,7 +10293,7 @@ function apiCatalogLinkset() {
         ],
       },
       {
-        anchor: `${SITE_URL}/api/contact`,
+        anchor: absoluteUrl(CONTACT_ROUTE),
         "service-desc": [
           { href: `${SITE_URL}/openapi.json`, type: "application/openapi+json" },
         ],
@@ -10475,7 +10433,7 @@ function a2aAgentCard() {
         id: "get-contact-options",
         name: "Obtener opciones de contacto",
         description:
-          "Expone la ruta pública de contacto, el endpoint de intake y la alternativa por WhatsApp para agendar con Sonia McRorey.",
+          "Expone la ruta pública de contacto y el enlace de WhatsApp para agendar con Sonia McRorey.",
         tags: ["contacto", "intake", "whatsapp", "diagnostico"],
         examples: ["Quiero agendar una conversación privada con Sonia."],
         inputModes: ["text/plain", "application/json"],
@@ -10598,7 +10556,7 @@ function mcpServerCard() {
       version: "2026.05.24",
     },
     description:
-      "Static discovery card for Sonia McRorey's Coach De Imagen authority site. The site exposes resources, OpenAPI, llms context, semantic indexes and contact intake metadata; no remote MCP tool execution is enabled.",
+      "Static discovery card for Sonia McRorey's Coach De Imagen authority site. The site exposes resources, OpenAPI, llms context, semantic indexes and WhatsApp contact metadata; no remote MCP tool execution is enabled.",
     url: `${SITE_URL}/.well-known/mcp/server-card.json`,
     homepage: SITE_URL,
     transport: {
@@ -10666,7 +10624,7 @@ Coach De Imagen publica contenido estático, archivos de descubrimiento y metada
 - Token OAuth requerido para lectura pública: no
 - Claim ceremony requerida: no
 - Revocación de credenciales: no aplica
-- Escritura disponible: sólo \`POST ${SITE_URL}/api/contact\`
+- Escritura disponible: no hay endpoint público de escritura en este dominio
 
 ## Recursos públicos para agentes
 
@@ -10684,25 +10642,18 @@ Coach De Imagen publica contenido estático, archivos de descubrimiento y metada
 
 ## Escritura permitida
 
-El único endpoint de escritura pública es \`POST ${SITE_URL}/api/contact\`.
-
-Requisitos:
-
-- payload JSON válido
-- campos requeridos del formulario de contacto
-- controles antispam y rate limiting
-- uso orientado a mensajes reales para Sonia McRorey
+No hay endpoint público de escritura en este dominio. El contacto operativo se realiza por WhatsApp desde la ruta pública de contacto.
 
 ## Reglas prácticas para agentes
 
 1. Para leer páginas, FAQs, hubs, comparaciones, glosario y metadatos, usa acceso anónimo.
-2. Para enviar contexto privado a Sonia, usa \`POST ${SITE_URL}/api/contact\`.
+2. Para enviar contexto privado a Sonia, usa el enlace de WhatsApp publicado en la ruta de contacto.
 3. No intentes intercambio de tokens ni device flow en este dominio: actualmente no existen.
 4. Si en el futuro se habilita OAuth real, este archivo y los metadatos \`/.well-known/\` serán la fuente canónica del cambio.
 
 ## Contacto
 
-- Contacto humano: sonia@coachdeimagen.com
+- Contacto humano: WhatsApp publicado en la ruta de contacto
 - Ruta pública de contacto: ${SITE_URL}${CONTACT_ROUTE}
 `;
 }
@@ -10727,14 +10678,7 @@ function agentRegistrationMetadata() {
       `${SITE_URL}/llms.txt`,
       `${SITE_URL}/llms-full.txt`,
     ],
-    write_actions: [
-      {
-        name: "contact-intake",
-        endpoint: `${SITE_URL}/api/contact`,
-        auth: "none",
-        antiSpam: true,
-      },
-    ],
+    write_actions: [],
     status: "public-anonymous-read-no-agent-registration-required",
   };
 }
@@ -10746,7 +10690,7 @@ function agentClaimMetadata() {
     claim_uri: `${SITE_URL}/.well-known/agent-claim.json`,
     claim_supported: false,
     reason:
-      "Coach De Imagen does not require a claim ceremony for public content access or validated contact intake.",
+      "Coach De Imagen does not require a claim ceremony for public content access or WhatsApp contact handoff.",
     status: "claim-not-required",
   };
 }
@@ -10768,7 +10712,7 @@ function oauthAuthorizationServer() {
     issuer: SITE_URL,
     jwks_uri: `${SITE_URL}/.well-known/jwks.json`,
     service_documentation: `${SITE_URL}/openapi.json`,
-    scopes_supported: ["public:read", "contact:intake"],
+    scopes_supported: ["public:read"],
     response_types_supported: [],
     grant_types_supported: [],
     token_endpoint_auth_methods_supported: [],
@@ -10803,7 +10747,7 @@ function oauthNotEnabled() {
   return {
     status: "oauth-not-enabled",
     reason:
-      "Coach De Imagen exposes public static content and a validated contact intake endpoint. No protected OAuth resource is required for current public discovery.",
+      "Coach De Imagen exposes public static content and a WhatsApp contact handoff. No protected OAuth resource is required for current public discovery.",
     documentation: `${SITE_URL}/openapi.json`,
     contact: `${SITE_URL}${CONTACT_ROUTE}`,
   };
@@ -10815,10 +10759,10 @@ function oauthProtectedResource() {
     resource_name: `${BRAND_NAME} | Sonia McRorey`,
     resource_logo_uri: `${SITE_URL}/assets/sonia-logo-ai.png`,
     authorization_servers: [SITE_URL],
-    scopes_supported: ["public:read", "contact:intake"],
+    scopes_supported: ["public:read"],
     resource_documentation: `${SITE_URL}/openapi.json`,
     bearer_methods_supported: ["header"],
-    status: "public-content-and-contact-intake-no-bearer-token-required",
+    status: "public-content-and-whatsapp-contact-no-bearer-token-required",
   };
 }
 
@@ -10849,7 +10793,7 @@ function organizationAgentIndex() {
           "semantic-discovery",
           "service-recommendation",
           "faq-resolution",
-          "contact-intake-metadata",
+          "whatsapp-contact-metadata",
         ],
       },
     ],
@@ -11017,43 +10961,6 @@ function openApiDoc(pages) {
       },
     };
   }
-  paths["/api/contact"] = {
-    post: {
-      tags: ["Contact"],
-      operationId: "submit_contact_intake",
-      summary: "Submit a private Coach de Imagen lead intake.",
-      requestBody: {
-        required: true,
-        content: {
-          "application/json": {
-            schema: {
-              type: "object",
-              required: ["name", "email", "phone", "service_interest", "message", "started_at"],
-              properties: {
-                name: { type: "string" },
-                email: { type: "string", format: "email" },
-                phone: { type: "string" },
-                city: { type: "string" },
-                country: { type: "string" },
-                linkedin: { type: "string" },
-                service_interest: { type: "string", enum: CONTACT_SERVICE_OPTIONS },
-                message: { type: "string" },
-                concierge_mode: { type: "boolean" },
-                source_page: { type: "string" },
-                started_at: { type: "string" },
-              },
-            },
-          },
-        },
-      },
-      responses: {
-        200: { description: "Lead accepted and emailed to Sonia." },
-        400: { description: "Validation failed." },
-        429: { description: "Rate limit exceeded." },
-        500: { description: "Contact service unavailable." },
-      },
-    },
-  };
   return {
     openapi: "3.1.0",
     info: {
@@ -11407,7 +11314,7 @@ ${verbatimSoniaMarkdown(contactPage, 2)}
 
 ## Canal
 
-La solicitud utiliza el formulario privado de contacto del sitio.
+El contacto operativo se realiza por WhatsApp desde la ruta pública de contacto.
 `);
   await writeFile(distPath("404.html"), finalizePageHtml(`<!doctype html>
 <html lang="es-MX"><head>

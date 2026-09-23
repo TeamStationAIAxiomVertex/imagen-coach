@@ -724,9 +724,10 @@ if (existsSync("dist/agent/sonia-verbatim-route-evidence.json")) {
 
 if (existsSync("dist/auth.md")) {
   const authMd = await readFile("dist/auth.md", "utf8");
-  for (const term of ["Registro requerido: no", "/.well-known/oauth-protected-resource", "/.well-known/oauth-authorization-server", "POST https://coachdeimagen.com/api/contact"]) {
+  for (const term of ["Registro requerido: no", "/.well-known/oauth-protected-resource", "/.well-known/oauth-authorization-server", "Escritura disponible: no hay endpoint público de escritura", "WhatsApp"]) {
     if (!authMd.includes(term)) failures.push(`auth.md missing ${term}`);
   }
+  if (authMd.includes("/api/contact")) failures.push("auth.md still advertises /api/contact");
 }
 
 if (existsSync("dist/.well-known/oauth-authorization-server")) {
