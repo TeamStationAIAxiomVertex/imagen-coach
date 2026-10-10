@@ -45,7 +45,7 @@ node scripts/test-page-seo.mjs
 
 Healthy as of 2026-10-10:
 
-- Main branch aligned with `origin/main` after commit `9f8c125`.
+- Main branch contains the repo-owned context retrieval file. Use `git log -5 --oneline` for the exact latest context-only commit; production functionality was last live-verified after the `9f8c125` llms.txt publish.
 - Cloudflare Pages production live on `coachdeimagen.com`.
 - Agent Ready scan returns Level 5.
 - Web Bot Auth returns `pass`.
@@ -75,6 +75,11 @@ Healthy as of 2026-10-10:
   - Converted root `llms.txt` bare URLs into Markdown links.
   - Added AEO map links to `llms.txt`.
   - Added validation for H1, Markdown links, and AEO authority map link.
+
+- `dd52af27a029af5899af0ede4d373ccda922f32a` — `Add Sonia agent context retrieval`
+  - Added this compact recovery file for future Sonia agents.
+  - Keeps context reload small and points to receipts instead of copying transcripts.
+  - Does not change production behavior or secrets.
 
 ## Cloudflare/AEO limits checked
 
