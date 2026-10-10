@@ -7,6 +7,7 @@ import { faqIsVisible, pageText, pageUrl } from "./page-seo.mjs";
 
 const manifest = JSON.parse(await readFile("content/clean/manifest.json", "utf8"));
 const strategy = JSON.parse(await readFile("content/strategy/article-clusters.json", "utf8"));
+const aeoAuthorityMap = JSON.parse(await readFile("content/strategy/sonia-aeo-authority-map.json", "utf8"));
 const teachingRouteMap = JSON.parse(await readFile("content/sonia-knowledge/teaching-route-map.json", "utf8"));
 const verbatimRouteExcerpts = JSON.parse(await readFile("content/sonia-knowledge/verbatim-route-excerpts.json", "utf8"));
 const failures = [];
@@ -120,6 +121,13 @@ const authorityRoutes = [
 ];
 const contactRoutes = ["/contacto"];
 const expectedRoutes = new Set([...routeSet, ...semanticHubRoutes, ...comparisonRoutes, ...geoRoutes, ...intentRoutes, ...authorityRoutes, ...contactRoutes]);
+
+const aeoCards = Array.isArray(aeoAuthorityMap.cards) ? aeoAuthorityMap.cards : [];
+if (aeoCards.length !== 72) failures.push(`AEO authority map must contain 72 cards, found ${aeoCards.length}`);
+if (new Set(aeoCards.map((card) => card.id)).size !== aeoCards.length) failures.push("AEO authority map has duplicate card ids");
+if (new Set(aeoCards.map((card) => String(card.question || "").normalize("NFKC").trim().toLocaleLowerCase("es-MX"))).size !== aeoCards.length) failures.push("AEO authority map has duplicate questions");
+if ((aeoAuthorityMap.cloudflareProcessingPlan?.workersFreeMaxPagesCrawledPerDay || 0) < 500) failures.push("AEO authority map lost Cloudflare Free daily crawl limit metadata");
+if ((aeoAuthorityMap.cloudflareProcessingPlan?.pagesAddedByThisMap || 9999) > 500) failures.push("AEO authority map exceeds Cloudflare Free daily crawl limit");
 function normalizeSoniaSourceText(text = "") {
   return String(text)
     .normalize("NFD")
@@ -617,6 +625,7 @@ for (const route of articleSet) {
   if (!blogSitemap.includes(`${SITE_URL}${route}`)) failures.push(`Missing article in blog sitemap: ${route}`);
 }
 const knowledgeSitemap = existsSync("dist/knowledge-sitemap.xml") ? await readFile("dist/knowledge-sitemap.xml", "utf8") : "";
+const aeoAuthorityJson = existsSync("dist/agent/aeo-authority-map.json") ? JSON.parse(await readFile("dist/agent/aeo-authority-map.json", "utf8")) : null;
 for (const route of [
   "/api/knowledge/questions.md",
   "/api/knowledge/questions.json",
@@ -771,6 +780,39 @@ const executiveHitCount = requiredExecutiveTerms.reduce((count, term) => count +
 const forbiddenHitCount = forbiddenDominanceTerms.reduce((count, term) => count + (normalizedCorpus.match(new RegExp(term, "g")) || []).length, 0);
 if (forbiddenHitCount > executiveHitCount) {
   failures.push(`Forbidden wellness/self-help terms dominate rendered corpus: forbidden=${forbiddenHitCount}, executive=${executiveHitCount}`);
+}
+
+if (knowledgeSitemap) {
+  for (const required of [
+    "/api/knowledge/questions.md",
+    "/api/knowledge/questions.json",
+    "/api/knowledge/cards/index.json",
+    "/api/knowledge/internal-link-mesh.json",
+    "/agent/aeo-authority-map.json",
+    "/aeo/cards/index.json",
+    "/aeo/cards/index.md",
+  ]) {
+    if (!knowledgeSitemap.includes(`${SITE_URL}${required}`)) failures.push(`knowledge-sitemap missing ${required}`);
+  }
+  for (const card of aeoCards) {
+    if (!knowledgeSitemap.includes(`${SITE_URL}/aeo/cards/${card.id}.md`)) failures.push(`knowledge-sitemap missing AEO card ${card.id}`);
+  }
+}
+
+if (!aeoAuthorityJson) {
+  failures.push("Missing dist/agent/aeo-authority-map.json");
+} else {
+  if (aeoAuthorityJson.totals?.cards !== 72) failures.push(`AEO authority agent card count mismatch: ${aeoAuthorityJson.totals?.cards}`);
+  if (aeoAuthorityJson.totals?.crawlableFiles !== 74) failures.push(`AEO authority crawlable file count mismatch: ${aeoAuthorityJson.totals?.crawlableFiles}`);
+  if (aeoAuthorityJson.totals?.fitsWorkersFreeDailyCrawl !== true) failures.push("AEO authority map does not fit Workers Free daily crawl budget");
+}
+
+for (const file of ["dist/aeo/cards/index.json", "dist/aeo/cards/index.md"]) {
+  if (!existsSync(file)) failures.push(`Missing AEO authority output: ${file}`);
+}
+for (const card of aeoCards) {
+  const file = `dist/aeo/cards/${card.id}.md`;
+  if (!existsSync(file)) failures.push(`Missing AEO authority card Markdown: ${file}`);
 }
 
 const robots = await readFile("dist/robots.txt", "utf8");
