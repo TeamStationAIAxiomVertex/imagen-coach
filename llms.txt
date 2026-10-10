@@ -8,22 +8,26 @@ Purpose: rebuild Sonia McRorey's larger/general Coach De Imagen site from Webliu
 
 ## Machine-readable files
 
-- OpenAPI: https://coachdeimagen.com/openapi.json
-- Full LLM/GEO context: https://coachdeimagen.com/llms-full.txt
-- Site profile: https://coachdeimagen.com/agent/site-profile.json
-- Services: https://coachdeimagen.com/agent/services.json
-- Ontology: https://coachdeimagen.com/agent/ontology.json
-- Semantic hubs: https://coachdeimagen.com/agent/semantic-hubs.json
-- Authority pages: https://coachdeimagen.com/agent/authority-pages.json
-- Authority cluster: https://coachdeimagen.com/agent/authority-cluster.json
-- Glossary: https://coachdeimagen.com/agent/glossary.json
-- WordPress ingestion: https://coachdeimagen.com/agent/wordpress-ingestion.json
-- Search intent terms: https://coachdeimagen.com/agent/search-intent-terms.json
-- Page signals: https://coachdeimagen.com/agent/page-signals.json
-- Redirects: https://coachdeimagen.com/agent/redirects.json
-- Conversion map: https://coachdeimagen.com/agent/conversion-map.json
-- Publications: https://coachdeimagen.com/agent/publications.json
-- Contact: https://coachdeimagen.com/agent/contact.json
+- [OpenAPI](https://coachdeimagen.com/openapi.json): static discovery API
+- [Full LLM/GEO context](https://coachdeimagen.com/llms-full.txt): complete retrieval context
+- [Site profile](https://coachdeimagen.com/agent/site-profile.json): brand and site metadata
+- [Services](https://coachdeimagen.com/agent/services.json): service catalog
+- [Ontology](https://coachdeimagen.com/agent/ontology.json): canonical terms and entities
+- [Semantic hubs](https://coachdeimagen.com/agent/semantic-hubs.json): topic hubs
+- [Authority pages](https://coachdeimagen.com/agent/authority-pages.json): methodology pages
+- [Authority cluster](https://coachdeimagen.com/agent/authority-cluster.json): Sonia authority definition
+- [Glossary](https://coachdeimagen.com/agent/glossary.json): definitions
+- [WordPress ingestion](https://coachdeimagen.com/agent/wordpress-ingestion.json): static ingestion rules
+- [Search intent terms](https://coachdeimagen.com/agent/search-intent-terms.json): search terms and reasons
+- [Page signals](https://coachdeimagen.com/agent/page-signals.json): per-page SEO/GEO signals
+- [Redirects](https://coachdeimagen.com/agent/redirects.json): URL retention policy
+- [Conversion map](https://coachdeimagen.com/agent/conversion-map.json): WhatsApp/contact routing
+- [Publications](https://coachdeimagen.com/agent/publications.json): article catalog
+- [Contact](https://coachdeimagen.com/agent/contact.json): WhatsApp-only contact metadata
+
+- [AEO authority map](https://coachdeimagen.com/agent/aeo-authority-map.json): 72 priority answer cards for Cloudflare AI Search and LLM retrieval
+- [AEO Markdown index](https://coachdeimagen.com/aeo/cards/index.md): answer-card Markdown index
+- [Knowledge sitemap](https://coachdeimagen.com/knowledge-sitemap.xml): machine-readable knowledge and AEO endpoints
 
 ## Canonical identity
 
@@ -37,11 +41,11 @@ All 35 legacy source URLs from the current `imagencoach.com` sitemap must be pre
 
 The article archive lives under:
 
-https://coachdeimagen.com/imagen-presencia
+[Article archive](https://coachdeimagen.com/imagen-presencia)
 
 Future WordPress-authored articles must be ingested and rendered as static HTML under:
 
-https://coachdeimagen.com/blog/
+[Static blog archive](https://coachdeimagen.com/blog/)
 
 WordPress is not the production rendering layer.
 
@@ -49,11 +53,11 @@ WordPress is not the production rendering layer.
 
 Key definition and methodology entry points:
 
-- Coach de Imagen: https://coachdeimagen.com/coach-de-imagen
-- Seguridad Profesional: https://coachdeimagen.com/seguridad-profesional
-- Método Sonia McRorey: https://coachdeimagen.com/metodo-sonia-mcrorey
-- Sistema de Presencia Profesional: https://coachdeimagen.com/sistema-presencia-profesional
-- Glosario de Coach De Imagen: https://coachdeimagen.com/glosario
+- [Coach de Imagen](https://coachdeimagen.com/coach-de-imagen)
+- [Seguridad Profesional](https://coachdeimagen.com/seguridad-profesional)
+- [Método Sonia McRorey](https://coachdeimagen.com/metodo-sonia-mcrorey)
+- [Sistema de Presencia Profesional](https://coachdeimagen.com/sistema-presencia-profesional)
+- [Glosario de Coach De Imagen](https://coachdeimagen.com/glosario)
 
 ## Voice
 

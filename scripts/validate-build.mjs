@@ -711,6 +711,11 @@ for (const file of requiredAgentFiles) {
   }
 }
 
+const compactLlms = await readFile("dist/llms.txt", "utf8");
+if (!/^#\s+\S+/m.test(compactLlms)) failures.push("llms.txt must contain an H1 heading");
+if (!/\[[^\]]+\]\(https:\/\/coachdeimagen\.com\/[^)]+\)/.test(compactLlms)) failures.push("llms.txt must contain at least one Markdown link");
+if (!compactLlms.includes("[AEO authority map](https://coachdeimagen.com/agent/aeo-authority-map.json)")) failures.push("llms.txt missing AEO authority map Markdown link");
+
 if (existsSync("dist/agent/sonia-verbatim-route-evidence.json")) {
   const evidence = JSON.parse(await readFile("dist/agent/sonia-verbatim-route-evidence.json", "utf8"));
   const evidenceByRoute = new Map((evidence.routes || []).map((item) => [item.route, item]));
