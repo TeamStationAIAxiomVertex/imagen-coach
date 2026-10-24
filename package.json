@@ -3,6 +3,7 @@
   "scripts": {
     "audit:authority": "node scripts/generate-authority-audit.mjs",
     "audit:content": "node scripts/audit-content-density.mjs",
+    "audit:density:rendered": "node scripts/audit-rendered-density.mjs",
     "audit:knowledge": "node scripts/audit-knowledge-provenance.mjs",
     "audit:sonia-controls": "node scripts/audit-sonia-controls.mjs",
     "migrate:knowledge": "node scripts/migrate-july-knowledge-provenance.mjs",
