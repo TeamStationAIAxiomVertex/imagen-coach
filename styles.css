@@ -3788,6 +3788,11 @@ details[open] summary::after {
   object-position: center center;
 }
 
+/* Article heroes are text-bearing banners; cover crops their wording on phones. */
+.article-hero-media img {
+  object-fit: contain;
+}
+
 .about-hero .hero-media img {
   object-position: center top;
 }

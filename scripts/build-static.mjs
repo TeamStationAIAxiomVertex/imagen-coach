@@ -5188,7 +5188,7 @@ function hero(page, lines) {
         <a class="btn secondary" href="${page.type === "article" || page.type === "pillar" ? "/imagen-presencia" : "/servicios-asesoria-de-imagen-coaching"}">${page.type === "article" || page.type === "pillar" ? "Ver publicaciones" : "Ver servicios"}</a>
       </div>
     </div>
-    <figure class="hero-media${image.includes("full-body") ? " portrait-media" : ""}${page.route === "/servicios-asesoria-de-imagen-coaching/preguntas-frequentes" ? " faq-hero-media" : ""}">
+    <figure class="hero-media${image.includes("full-body") ? " portrait-media" : ""}${page.route === "/servicios-asesoria-de-imagen-coaching/preguntas-frequentes" ? " faq-hero-media" : ""}${page.type === "article" ? " article-hero-media" : ""}">
       ${heroImageTag(image, heroAlt)}
       <figcaption>${iconImageTag("/assets/sonia-icon.svg")} Sonia McRorey · ${BRAND_NAME}</figcaption>
     </figure>
@@ -5254,7 +5254,6 @@ function articleReadingMap(page, sections, cluster, pages) {
     <div class="article-map-copy">
       <p class="section-label">${escapeHtml(cluster?.label || "Publicación")}</p>
       <h2>${headlineHtml(mapHeading)}</h2>
-      <p>${escapeHtml(page.description || cardDescription(page))}</p>
       ${topicChips(topics)}
     </div>
     <div class="article-map-panel">
@@ -5379,7 +5378,11 @@ function renderArticleSection(page, section, index, previousSections, clusterMap
 
 function articleStructuredContent(page, lines, pages, clusters) {
   if (page.route === APPROVED_SECURITY_ARTICLE_ROUTE) return approvedSecurityStructuredContent(page, pages, clusters);
-  const sections = classifyContent(page, lines);
+  // The hero lede already shows the opening lines; drop them from the body so they are not printed twice.
+  const ledeLines = new Set(coreBodyLines(page, contentLinesForPage(page, lines)).filter((line) => !isArticleHeadingCandidate(line)).slice(0, 2));
+  const sections = classifyContent(page, lines)
+    .map((section) => ({ ...section, lines: section.lines.filter((line) => !ledeLines.has(line)) }))
+    .filter((section) => section.lines.length);
   if (!sections.length) return "";
   const clusterMap = articleClusterByRoute(clusters);
   const cluster = clusterMap.get(page.route);
@@ -5390,7 +5393,6 @@ function articleStructuredContent(page, lines, pages, clusters) {
     <aside class="article-side-cta">
       <p class="section-label">Ruta relacionada</p>
       <h2>${headlineHtml(service ? semanticShortLabel(service.route, service.heroTitle) : "Coach de Imagen")}</h2>
-      <p>${escapeHtml(cluster?.description || "Lectura conectada con imagen, presencia y posicionamiento profesional.")}</p>
       ${service ? `<a class="btn primary" href="${service.route}">${escapeHtml(serviceLabel(service.route, pages))}</a>` : `<a class="btn primary" href="${WHATSAPP}" target="_blank" rel="noopener">Agendar diagnóstico</a>`}
     </aside>
     <div class="article-main">
