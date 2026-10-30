@@ -4,6 +4,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import sharp from "sharp";
 import { BUILD_DATE } from "./build-clock.mjs";
+import { PAGES_ROUTES_JSON } from "./pages-routes.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const sourceDir = path.join(root, "raiz");
@@ -1518,6 +1519,7 @@ async function build() {
     writeFile(path.join(outputDir, "styles.css"), styles),
     writeFile(path.join(outputDir, `styles.${buildVersion}.css`), styles),
     writeFile(path.join(outputDir, "content-signal.json"), `${safeJson(contentSignalDocument())}\n`),
+    writeFile(path.join(outputDir, "_routes.json"), PAGES_ROUTES_JSON),
     writeFile(path.join(outputDir, "robots.txt"), robots),
     writeFile(path.join(outputDir, "sitemap.xml"), sitemap),
     writeFile(path.join(outputDir, "knowledge-sitemap.xml"), knowledgeSitemap(program, cardsIndex)),

@@ -7,6 +7,7 @@ import { imageSize } from "image-size";
 import sharp from "sharp";
 import { finalizePageHtml, pageUrl } from "./page-seo.mjs";
 import { BUILD_YEAR } from "./build-clock.mjs";
+import { PAGES_ROUTES_JSON } from "./pages-routes.mjs";
 
 let CANONICAL_PAGE_ROUTES = new Set();
 
@@ -11494,6 +11495,7 @@ El contacto operativo se realiza por WhatsApp desde la ruta pública de contacto
     ...aeoAuthorityCards().map((card) => ({ route: `/aeo/cards/${card.id}.md` })),
   ]));
   await writeFile(distPath("robots.txt"), `User-agent: *\nAllow: /\nContent-Signal: search=yes, ai-input=yes, ai-train=no\n\nUser-agent: Cloudflare-AI-Search\nAllow: /\n\nUser-agent: GPTBot\nAllow: /\n\nUser-agent: ChatGPT-User\nAllow: /\n\nUser-agent: OAI-SearchBot\nAllow: /\n\nUser-agent: ClaudeBot\nAllow: /\n\nUser-agent: Claude-User\nAllow: /\n\nUser-agent: PerplexityBot\nAllow: /\n\nUser-agent: Google-Extended\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\nSitemap: ${SITE_URL}/blog-sitemap.xml\nSitemap: ${SITE_URL}/category-sitemap.xml\nSitemap: ${SITE_URL}/service-sitemap.xml\nSitemap: ${SITE_URL}/geo-sitemap.xml\nSitemap: ${SITE_URL}/intent-sitemap.xml\nSitemap: ${SITE_URL}/authority-sitemap.xml\nSitemap: ${SITE_URL}/knowledge-sitemap.xml\n`);
+  await writeFile(distPath("_routes.json"), PAGES_ROUTES_JSON);
   await writeFile(distPath("_redirects"), `${PATH_REDIRECTS.map(([from, to, status]) => `${from}  ${to}  ${status}`).join("\n")}\n`);
   console.log(`Built ${pages.length + SEMANTIC_HUBS.length + COMPARISON_PAGES.length + GENERATED_AUTHORITY_PAGES.length + 1} routes into dist`);
 }
