@@ -1,8 +1,10 @@
 import { cp, mkdir, readFile, readdir, rm, writeFile } from "node:fs/promises";
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { createHash } from "node:crypto";
+import { execFile } from "node:child_process";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { promisify } from "node:util";
 import { imageSize } from "image-size";
 import sharp from "sharp";
 import { finalizePageHtml, pageUrl } from "./page-seo.mjs";
@@ -7458,6 +7460,7 @@ async function loadPages() {
   const manifest = JSON.parse(await readFile(rootPath("content/clean/manifest.json"), "utf8"));
   const pages = [];
   for (const item of manifest.pages) {
+    CONTENT_SOURCE_BY_ROUTE.set(item.route, item.clean_path);
     const markdown = await readFile(rootPath(item.clean_path), "utf8");
     const type = pageType(item.route);
     const approvedArticle = item.route === APPROVED_SECURITY_ARTICLE_ROUTE ? parseApprovedSecurityArticle(markdown) : null;
@@ -7589,9 +7592,40 @@ async function copyStatic() {
   await cp(rootPath("conversion-events.js"), distPath("assets", `conversion-events-${CONVERSION_SCRIPT_VERSION}.js`));
 }
 
+// Last-commit date (YYYY-MM-DD) for each tracked file, read from git history.
+// Sitemap lastmod must reflect real content change, so a build-time stamp is never used.
+const CONTENT_SOURCE_BY_ROUTE = new Map();
+const SHARED_SOURCE_FILES = ["scripts/build-static.mjs", "styles.css"];
+
+async function gitLastModifiedByFile() {
+  const lastmod = new Map();
+  try {
+    const { stdout } = await promisify(execFile)("git", ["log", "--format=@%cs", "--name-only", "--", "content", ...SHARED_SOURCE_FILES], { cwd: ROOT, maxBuffer: 64 * 1024 * 1024 });
+    let date = null;
+    for (const line of stdout.split("\n")) {
+      if (line.startsWith("@")) date = line.slice(1);
+      else if (line && date && !lastmod.has(line)) lastmod.set(line, date);
+    }
+  } catch {
+    // Not a git checkout: leave lastmod out rather than invent a date.
+  }
+  return lastmod;
+}
+
+const LASTMOD_BY_FILE = await gitLastModifiedByFile();
+
+// A page with its own clean source is dated by that file alone; generated routes fall back to the shared generator.
+function lastmodForRoute(route) {
+  const source = CONTENT_SOURCE_BY_ROUTE.get(route);
+  return (source && LASTMOD_BY_FILE.get(source)) || LASTMOD_BY_FILE.get(SHARED_SOURCE_FILES[0]) || null;
+}
+
 function sitemap(items) {
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${items
-    .map((item) => `  <url><loc>${absoluteUrl(item.route)}</loc></url>`)
+    .map((item) => {
+      const lastmod = lastmodForRoute(item.route);
+      return `  <url><loc>${absoluteUrl(item.route)}</loc>${lastmod ? `<lastmod>${lastmod}</lastmod>` : ""}</url>`;
+    })
     .join("\n")}\n</urlset>\n`;
 }
 
