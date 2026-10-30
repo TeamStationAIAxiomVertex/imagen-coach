@@ -1,0 +1,34 @@
+name: verify
+
+# Runs the repo's single definition of done (npm run verify) on every pull
+# request and on every push to main. Deploys are handled by Cloudflare Pages;
+# this workflow only proves the commit builds, validates and is deterministic.
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: verify-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      WRANGLER_SEND_METRICS: "false"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Full history: build dates and sitemap lastmod come from git commits.
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - run: npm run verify
