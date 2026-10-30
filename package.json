@@ -5,6 +5,8 @@
     "node": ">=22 <23"
   },
   "scripts": {
+    "verify": "node scripts/verify.mjs",
+    "smoke:functions": "node scripts/smoke-functions.mjs",
     "audit:authority": "node scripts/generate-authority-audit.mjs",
     "audit:content": "node scripts/audit-content-density.mjs",
     "audit:knowledge": "node scripts/audit-knowledge-provenance.mjs",
