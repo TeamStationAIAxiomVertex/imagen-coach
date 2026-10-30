@@ -1,5 +1,9 @@
 {
   "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22 <23"
+  },
   "scripts": {
     "audit:authority": "node scripts/generate-authority-audit.mjs",
     "audit:content": "node scripts/audit-content-density.mjs",
@@ -20,7 +24,6 @@
   },
   "dependencies": {
     "image-size": "^2.0.2",
-    "resend": "^6.12.3",
     "sharp": "^0.34.5"
   },
   "devDependencies": {
