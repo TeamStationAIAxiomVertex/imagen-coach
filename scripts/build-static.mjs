@@ -6,6 +6,7 @@ import { fileURLToPath } from "node:url";
 import { imageSize } from "image-size";
 import sharp from "sharp";
 import { finalizePageHtml, pageUrl } from "./page-seo.mjs";
+import { BUILD_YEAR } from "./build-clock.mjs";
 
 let CANONICAL_PAGE_ROUTES = new Set();
 
@@ -4935,7 +4936,7 @@ function footer() {
       </div>
     </section>
     <div class="section footer-legal">
-      <p>© ${new Date().getFullYear()} Sonia McRorey · ${BRAND_NAME}</p>
+      <p>© ${BUILD_YEAR} Sonia McRorey · ${BRAND_NAME}</p>
       <p>Coaching de Imagen, Presencia y Posicionamiento Profesional en Guadalajara, México y LATAM.</p>
     </div>
   </footer>`;

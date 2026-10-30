@@ -3,6 +3,7 @@ import { createHash } from "node:crypto";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import sharp from "sharp";
+import { BUILD_DATE } from "./build-clock.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const sourceDir = path.join(root, "raiz");
@@ -10,7 +11,7 @@ const outputDir = path.join(root, "dist-raiz");
 const assetsDir = path.join(outputDir, "assets");
 const canonicalUrl = "https://raiz.coachdeimagen.com/";
 const mainSiteUrl = "https://coachdeimagen.com";
-const buildDate = new Date().toISOString().slice(0, 10);
+const buildDate = BUILD_DATE;
 
 const readJson = async (file) => JSON.parse(await readFile(file, "utf8"));
 const safeJson = (value) => JSON.stringify(value).replaceAll("<", "\\u003c");
@@ -1508,7 +1509,7 @@ async function build() {
   };
 
   const robots = `User-agent: *\nAllow: /\nContent-Signal: search=yes, ai-input=yes, ai-train=no\n\nUser-agent: GPTBot\nAllow: /\n\nUser-agent: ChatGPT-User\nAllow: /\n\nUser-agent: OAI-SearchBot\nAllow: /\n\nUser-agent: ClaudeBot\nAllow: /\n\nUser-agent: Claude-User\nAllow: /\n\nUser-agent: PerplexityBot\nAllow: /\n\nUser-agent: Google-Extended\nAllow: /\n\nUser-agent: Cloudflare-AI-Search\nAllow: /\n\nSitemap: ${canonicalUrl}sitemap.xml\nSitemap: ${canonicalUrl}knowledge-sitemap.xml\n`;
-  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>${canonicalUrl}</loc><lastmod>${new Date().toISOString().slice(0, 10)}</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url></urlset>\n`;
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>${canonicalUrl}</loc><lastmod>${buildDate}</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url></urlset>\n`;
   const headers = `/*\n  X-Content-Type-Options: nosniff\n  X-Frame-Options: SAMEORIGIN\n  Referrer-Policy: strict-origin-when-cross-origin\n  Permissions-Policy: camera=(), microphone=(), geolocation=()\n  Content-Signal: search=yes, ai-input=yes, ai-train=no\n  Link: <${canonicalUrl}openapi.json>; rel="service-desc"; type="application/openapi+json", <${canonicalUrl}.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json", <${canonicalUrl}llms.txt>; rel="alternate"; type="text/plain", <${canonicalUrl}.well-known/agent.json>; rel="agent"; type="application/json", <${canonicalUrl}.well-known/agent-skills/index.json>; rel="service-meta"; type="application/json", <${canonicalUrl}agent/evidence.json>; rel="describedby"; type="application/json"\n\n/assets/*\n  Cache-Control: public, max-age=86400, must-revalidate\n\n/*.css\n  Cache-Control: public, max-age=31536000, immutable\n\n/agent-tools.js\n  Cache-Control: public, max-age=31536000, immutable\n\n/fx-pricing.js\n  Cache-Control: public, max-age=31536000, immutable\n\n/*.json\n  Cache-Control: public, max-age=3600\n  Access-Control-Allow-Origin: *\n\n/*.md\n  Content-Type: text/markdown; charset=utf-8\n  Cache-Control: public, max-age=3600\n  Access-Control-Allow-Origin: *\n\n/.well-known/api-catalog\n  Content-Type: application/linkset+json; charset=utf-8\n  Cache-Control: public, max-age=3600\n  Access-Control-Allow-Origin: *\n\n/.well-known/oauth-authorization-server\n  Content-Type: application/json; charset=utf-8\n  Cache-Control: public, max-age=3600\n  Access-Control-Allow-Origin: *\n\n/.well-known/oauth-protected-resource\n  Content-Type: application/json; charset=utf-8\n  Cache-Control: public, max-age=3600\n  Access-Control-Allow-Origin: *\n\n/.well-known/oauth-not-enabled\n  Content-Type: application/json; charset=utf-8\n  Cache-Control: public, max-age=3600\n  Access-Control-Allow-Origin: *\n\n/openapi.json\n  Content-Type: application/openapi+json; charset=utf-8\n  Cache-Control: public, max-age=3600\n  Access-Control-Allow-Origin: *\n`;
   const redirects = `/index.html / 301\n`;
 
