@@ -8094,7 +8094,18 @@ function loadApprovedKnowledgeCards() {
   return cards;
 }
 
+// Built once per run: knowledgeCardRecord asks for the full card list once per card,
+// and rebuilding it re-read every approved batch file each time (quadratic).
+// Frozen so a caller that mutates the shared list fails loudly instead of
+// silently changing output.
+let SONIA_ONTOLOGY_QUESTION_CARDS = null;
+
 function soniaOntologyQuestionCards() {
+  SONIA_ONTOLOGY_QUESTION_CARDS ??= Object.freeze(buildSoniaOntologyQuestionCards().map((card) => Object.freeze(card)));
+  return SONIA_ONTOLOGY_QUESTION_CARDS;
+}
+
+function buildSoniaOntologyQuestionCards() {
   const coreCards = [
     {
       id: "que-es-coaching-de-imagen",
@@ -11366,6 +11377,8 @@ async function writeAgentFiles(pages, clusters) {
 }
 
 async function main() {
+  // Start from an empty dist so output depends only on source, never on earlier builds.
+  await rm(DIST, { recursive: true, force: true });
   const pages = await loadPages();
   CANONICAL_PAGE_ROUTES = new Set([...pages, ...SEMANTIC_HUBS, ...COMPARISON_PAGES, ...GENERATED_AUTHORITY_PAGES, { route: CONTACT_ROUTE }].map((page) => page.route));
   const clusters = await loadClusters();
