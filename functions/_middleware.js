@@ -59,11 +59,11 @@ export async function onRequest(context) {
     return context.next();
   }
 
+  // Read the sibling .md file through the Pages asset binding, not a public
+  // subrequest: no second trip through the zone (bot challenges, WAF) and no
+  // cross-deployment reads on preview URLs.
   const markdownUrl = new URL(markdownPath(url.pathname), url.origin);
-  const markdownResponse = await fetch(markdownUrl, {
-    headers: { accept: "text/plain, text/markdown;q=0.9,*/*;q=0.1" },
-    cf: { cacheTtl: 300, cacheEverything: true },
-  });
+  const markdownResponse = await context.env.ASSETS.fetch(markdownUrl);
 
   if (markdownResponse.ok) {
     const text = await markdownResponse.text();

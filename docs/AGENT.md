@@ -104,8 +104,7 @@ The recurring Sonia improvement loop must follow `docs/SONIA_DAILY_ENGINEERING_M
 Run:
 
 ```bash
-npm run build
-npm run validate
+npm run verify
 ```
 
-Do not push deploy-facing changes if either command fails.
+It builds both sites, runs every validator and test, smoke-tests the Pages Functions and proves the build is deterministic. Do not push deploy-facing changes if it fails. See `docs/DEPLOYMENT_PIPELINE.md`.

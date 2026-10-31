@@ -328,7 +328,7 @@ Use `docs/SEMANTIC_HIERARCHY_REPAIR_REPORT.md` as the current canonical naming a
 
 ## Testing Expectations
 
-Before deployment, validation must prove:
+`npm run verify` is the executable gate for this list; see `docs/DEPLOYMENT_PIPELINE.md`. Before deployment, validation must prove:
 
 - all 35 canonical URLs build
 - all internal links resolve or intentionally redirect

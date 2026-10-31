@@ -1,5 +1,7 @@
 # Contact Concierge System
 
+> **Status: removed from the codebase.** As of commit 81736f5 there is no `functions/api/contact.js`, and `/contacto/` renders no form; contact runs through WhatsApp links. This document is kept as history. Do not set the secrets listed below for the current site. Any that are still configured on the Pages project are unused and should be removed or rotated. See `docs/DEPLOYMENT_PIPELINE.md` for the current backend.
+
 ## Objective
 
 The contact system is a static-first executive intake for Sonia McRorey. The visible page remains crawlable HTML at `/contacto/`; form submission is handled by Cloudflare Pages Functions at `/api/contact`.
