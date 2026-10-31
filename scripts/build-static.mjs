@@ -1,8 +1,10 @@
 import { cp, mkdir, readFile, readdir, rm, writeFile } from "node:fs/promises";
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { createHash } from "node:crypto";
+import { execFile } from "node:child_process";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { promisify } from "node:util";
 import { imageSize } from "image-size";
 import sharp from "sharp";
 import { finalizePageHtml, pageUrl } from "./page-seo.mjs";
@@ -5188,7 +5190,7 @@ function hero(page, lines) {
         <a class="btn secondary" href="${page.type === "article" || page.type === "pillar" ? "/imagen-presencia" : "/servicios-asesoria-de-imagen-coaching"}">${page.type === "article" || page.type === "pillar" ? "Ver publicaciones" : "Ver servicios"}</a>
       </div>
     </div>
-    <figure class="hero-media${image.includes("full-body") ? " portrait-media" : ""}${page.route === "/servicios-asesoria-de-imagen-coaching/preguntas-frequentes" ? " faq-hero-media" : ""}">
+    <figure class="hero-media${image.includes("full-body") ? " portrait-media" : ""}${page.route === "/servicios-asesoria-de-imagen-coaching/preguntas-frequentes" ? " faq-hero-media" : ""}${page.type === "article" ? " article-hero-media" : ""}">
       ${heroImageTag(image, heroAlt)}
       <figcaption>${iconImageTag("/assets/sonia-icon.svg")} Sonia McRorey · ${BRAND_NAME}</figcaption>
     </figure>
@@ -5254,7 +5256,6 @@ function articleReadingMap(page, sections, cluster, pages) {
     <div class="article-map-copy">
       <p class="section-label">${escapeHtml(cluster?.label || "Publicación")}</p>
       <h2>${headlineHtml(mapHeading)}</h2>
-      <p>${escapeHtml(page.description || cardDescription(page))}</p>
       ${topicChips(topics)}
     </div>
     <div class="article-map-panel">
@@ -5379,7 +5380,11 @@ function renderArticleSection(page, section, index, previousSections, clusterMap
 
 function articleStructuredContent(page, lines, pages, clusters) {
   if (page.route === APPROVED_SECURITY_ARTICLE_ROUTE) return approvedSecurityStructuredContent(page, pages, clusters);
-  const sections = classifyContent(page, lines);
+  // The hero lede already shows the opening lines; drop them from the body so they are not printed twice.
+  const ledeLines = new Set(coreBodyLines(page, contentLinesForPage(page, lines)).filter((line) => !isArticleHeadingCandidate(line)).slice(0, 2));
+  const sections = classifyContent(page, lines)
+    .map((section) => ({ ...section, lines: section.lines.filter((line) => !ledeLines.has(line)) }))
+    .filter((section) => section.lines.length);
   if (!sections.length) return "";
   const clusterMap = articleClusterByRoute(clusters);
   const cluster = clusterMap.get(page.route);
@@ -5390,7 +5395,6 @@ function articleStructuredContent(page, lines, pages, clusters) {
     <aside class="article-side-cta">
       <p class="section-label">Ruta relacionada</p>
       <h2>${headlineHtml(service ? semanticShortLabel(service.route, service.heroTitle) : "Coach de Imagen")}</h2>
-      <p>${escapeHtml(cluster?.description || "Lectura conectada con imagen, presencia y posicionamiento profesional.")}</p>
       ${service ? `<a class="btn primary" href="${service.route}">${escapeHtml(serviceLabel(service.route, pages))}</a>` : `<a class="btn primary" href="${WHATSAPP}" target="_blank" rel="noopener">Agendar diagnóstico</a>`}
     </aside>
     <div class="article-main">
@@ -7161,11 +7165,14 @@ function articleExtras(page, pages, clusters) {
   const cluster = clusterMap.get(page.route);
   if (!cluster) return "";
   const map = pageByRoute(pages);
-  const related = cluster.articles
+  // Rotate through the cluster so every member receives sibling links, not only the first few.
+  const members = cluster.articles.filter((route) => map.has(route));
+  const start = members.indexOf(page.route);
+  const related = members
+    .map((_, index) => members[(start + 1 + index) % members.length])
     .filter((route) => route !== page.route)
-    .map((route) => map.get(route))
-    .filter(Boolean)
-    .slice(0, 3);
+    .slice(0, 3)
+    .map((route) => map.get(route));
   const teachingPanel = page.route === APPROVED_SECURITY_ARTICLE_ROUTE ? "" : sourceTeachingPanel(page, { label: "Nota de Sonia" });
   return `${teachingPanel}
   <section class="section article-context">
@@ -7455,6 +7462,7 @@ async function loadPages() {
   const manifest = JSON.parse(await readFile(rootPath("content/clean/manifest.json"), "utf8"));
   const pages = [];
   for (const item of manifest.pages) {
+    CONTENT_SOURCE_BY_ROUTE.set(item.route, item.clean_path);
     const markdown = await readFile(rootPath(item.clean_path), "utf8");
     const type = pageType(item.route);
     const approvedArticle = item.route === APPROVED_SECURITY_ARTICLE_ROUTE ? parseApprovedSecurityArticle(markdown) : null;
@@ -7586,9 +7594,40 @@ async function copyStatic() {
   await cp(rootPath("conversion-events.js"), distPath("assets", `conversion-events-${CONVERSION_SCRIPT_VERSION}.js`));
 }
 
+// Last-commit date (YYYY-MM-DD) for each tracked file, read from git history.
+// Sitemap lastmod must reflect real content change, so a build-time stamp is never used.
+const CONTENT_SOURCE_BY_ROUTE = new Map();
+const SHARED_SOURCE_FILES = ["scripts/build-static.mjs", "styles.css"];
+
+async function gitLastModifiedByFile() {
+  const lastmod = new Map();
+  try {
+    const { stdout } = await promisify(execFile)("git", ["log", "--format=@%cs", "--name-only", "--", "content", ...SHARED_SOURCE_FILES], { cwd: ROOT, maxBuffer: 64 * 1024 * 1024 });
+    let date = null;
+    for (const line of stdout.split("\n")) {
+      if (line.startsWith("@")) date = line.slice(1);
+      else if (line && date && !lastmod.has(line)) lastmod.set(line, date);
+    }
+  } catch {
+    // Not a git checkout: leave lastmod out rather than invent a date.
+  }
+  return lastmod;
+}
+
+const LASTMOD_BY_FILE = await gitLastModifiedByFile();
+
+// A page with its own clean source is dated by that file alone; generated routes fall back to the shared generator.
+function lastmodForRoute(route) {
+  const source = CONTENT_SOURCE_BY_ROUTE.get(route);
+  return (source && LASTMOD_BY_FILE.get(source)) || LASTMOD_BY_FILE.get(SHARED_SOURCE_FILES[0]) || null;
+}
+
 function sitemap(items) {
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${items
-    .map((item) => `  <url><loc>${absoluteUrl(item.route)}</loc></url>`)
+    .map((item) => {
+      const lastmod = lastmodForRoute(item.route);
+      return `  <url><loc>${absoluteUrl(item.route)}</loc>${lastmod ? `<lastmod>${lastmod}</lastmod>` : ""}</url>`;
+    })
     .join("\n")}\n</urlset>\n`;
 }
 
